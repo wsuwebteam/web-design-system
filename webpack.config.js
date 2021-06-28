@@ -1,20 +1,40 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
+const path = require('path');
 
-module.exports = {
-    entry: {
-        '/components/global-header/dist': './components/global-header/src/build'
-    },
-    output: {
-        path: path.resolve(__dirname),
-        filename: './[name]/script.js'
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        filename: './[name]/component.html',
-        inject: false,
-        minify: false,
-        template: path.resolve(__filename) + './template.html',
-      })
-    ]
-  }
+module.exports = env => {
+
+	const DEV = env.NODE_ENV === 'development';
+
+	return {
+		context: __dirname,
+		entry: {
+			'bundles/dist/wsu-design-system': './bundles/src/wsu-design-system.js',
+		},
+		output: {
+			filename: '[name].js',
+			path: path.resolve(__dirname)
+		},
+		mode: DEV ? 'development' : 'production',
+		devtool: DEV ? 'inline-source-map' : 'source-map',
+		devServer: {
+			writeToDisk: true,
+			contentBase: path.join(__dirname),
+			overlay: true,
+			quiet: false,
+			port: 9000
+		},
+		module: {
+			rules: [
+				{
+					test: /\.m?js$/,
+					exclude: /(node_modules|bower_components)/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
+				}
+			],
+		}
+	}
+};

@@ -281,14 +281,29 @@ $zindex-tooltip:                    1080;
 /* ========================================================
 == Modals ==
 ==========================================================*/
-.wsu-dropdown--modal {
+.wsu-dropdown-modal {
   position: relative; }
-  .wsu-dropdown--modal > ul {
-    top: 100%;
+  .wsu-dropdown-modal > ul {
+    top: calc(100% + 50px);
     position: absolute;
     box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
-    display: none; }
+    transition: top 300ms cubic-bezier(0, 0, 0.03, 1) 150ms, opacity 300ms cubic-bezier(0, 0, 0.03, 1) 150ms;
+    opacity: 0;
+    visibility: hidden; }
+
+.wsu-dropdown-modal[aria-expanded="false"].wsu-animating > ul {
+  visibility: visible;
+  transition-delay: 0ms; }
+
+.wsu-dropdown-modal[aria-expanded="true"],
+.wsu-dropdown-modal:not(.wsu-dropdown-modal--click):hover {
+  position: relative; }
+  .wsu-dropdown-modal[aria-expanded="true"] > ul,
+  .wsu-dropdown-modal:not(.wsu-dropdown-modal--click):hover > ul {
+    top: 100%;
+    opacity: 1;
+    visibility: visible; }
 
 /*
 - Colors
@@ -443,15 +458,24 @@ $zindex-tooltip:                    1080;
     line-height: 1.5;
     font-weight: 600;
     padding-left: 1.5rem; }
-
-.wsu-header-global .wsu-navigation-utility {
-  flex: 1;
-  justify-content: flex-end; }
-  .wsu-header-global .wsu-navigation-utility a {
-    font-size: 0.75rem;
-    line-height: 1.5;
-    font-weight: 600;
-    text-transform: uppercase; }
+  .wsu-header-global__more-link::before {
+    content: '\F12F';
+    display: inline;
+    font-family: 'wsu-icons';
+    font-size: 1rem; }
+  .wsu-header-global__more-link ~ ul {
+    right: 0.6875rem;
+    width: 260px;
+    box-sizing: border-box; }
+  .wsu-header-global .wsu-navigation-utility {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end; }
+    .wsu-header-global .wsu-navigation-utility a {
+      font-size: 0.75rem;
+      line-height: 1.5;
+      font-weight: 600;
+      text-transform: uppercase; }
 
 /*
 - Colors
@@ -587,23 +611,23 @@ $zindex-tooltip:                    1080;
 /* ========================================================
 == Modals ==
 ==========================================================*/
-.wsu-menu-utility--horizontal {
+.wsu-menu-utility-horizontal {
   font-family: "Montserrat", sans-serif;
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0; }
-  .wsu-menu-utility--horizontal > li {
+  .wsu-menu-utility-horizontal > li {
     margin: 0;
     padding: 0 0.6875rem;
     display: flex;
     align-items: center; }
-    .wsu-menu-utility--horizontal > li > a {
+    .wsu-menu-utility-horizontal > li > a {
       text-decoration: none;
       position: relative;
       color: inherit;
       position: relative; }
-      .wsu-menu-utility--horizontal > li > a::after {
+      .wsu-menu-utility-horizontal > li > a::after {
         content: '';
         display: block;
         position: absolute;
@@ -613,10 +637,10 @@ $zindex-tooltip:                    1080;
         height: 4px;
         opacity: 0;
         transition: bottom 200ms cubic-bezier(0, 0, 0.03, 1), opacity 200ms cubic-bezier(0, 0, 0.03, 1); }
-      .wsu-menu-utility--horizontal > li > a:focus::after, .wsu-menu-utility--horizontal > li > a:hover::after {
+      .wsu-menu-utility-horizontal > li > a:focus::after, .wsu-menu-utility-horizontal > li > a:hover::after {
         opacity: 1;
         bottom: -6px; }
-    .wsu-menu-utility--horizontal > li > button {
+    .wsu-menu-utility-horizontal > li > button {
       position: relative;
       background-color: transparent;
       outline: none;
@@ -627,7 +651,7 @@ $zindex-tooltip:                    1080;
       line-height: inherit;
       color: inherit;
       position: relative; }
-      .wsu-menu-utility--horizontal > li > button::after {
+      .wsu-menu-utility-horizontal > li > button::after {
         content: '';
         display: block;
         position: absolute;
@@ -637,7 +661,7 @@ $zindex-tooltip:                    1080;
         height: 4px;
         opacity: 0;
         transition: bottom 200ms cubic-bezier(0, 0, 0.03, 1), opacity 200ms cubic-bezier(0, 0, 0.03, 1); }
-      .wsu-menu-utility--horizontal > li > button:focus::after, .wsu-menu-utility--horizontal > li > button:hover::after {
+      .wsu-menu-utility-horizontal > li > button:focus::after, .wsu-menu-utility-horizontal > li > button:hover::after {
         opacity: 1;
         bottom: -6px; }
 

@@ -27,19 +27,37 @@
         
     }
 
+    &__more-link {
+    
+        &::before {
+            content: '\F12F';
+            display: inline;
+            font-family: 'wsu-icons';
+            font-size: 1rem;
+        }
+
+        & ~ ul {
+            right: $wsu-spacing--xxsmall;
+            width: $wsu-width--navigation-open;
+            box-sizing: border-box;
+        }
+
+    }
+
+    .wsu-navigation-utility {
+
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    
+        a {
+            @include wsu-font--xsmall;
+            font-weight: $wsu-font-weight--semibold;
+            text-transform: uppercase;
+        }
+    
+    } 
+
 
 }
 
-
-.wsu-header-global .wsu-navigation-utility {
-
-    flex: 1;
-    justify-content: flex-end;
-
-    a {
-        @include wsu-font--xsmall;
-        font-weight: $wsu-font-weight--semibold;
-        text-transform: uppercase;
-    }
-
-} 
