@@ -1,0 +1,35 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-dropdown-modal {
+    position: relative;
+
+    & > ul {
+        top: calc(100% + 50px);
+        position: absolute;
+        @include wsu-modal-box;
+        transition: top $wsu-transition-speed--medium $wsu-easing 150ms, opacity $wsu-transition-speed--medium $wsu-easing 150ms;
+        opacity: 0;
+        visibility: hidden;
+    } 
+}
+
+.wsu-dropdown-modal[aria-expanded="false"].wsu-animating {
+
+    & > ul {
+        visibility: visible;
+        transition-delay: 0ms;
+    }
+}
+
+.wsu-dropdown-modal[aria-expanded="true"],
+.wsu-dropdown-modal:not(.wsu-dropdown-modal--click):hover {
+    position: relative;
+
+    & > ul {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+    } 
+}

@@ -17,7 +17,7 @@ gulp.task('buildHtml', function () {
 
     return gulp.src('components/src/**/*.njk')
       .pipe(nunjucksRender({
-        path: ['_templates/','components/src/'] // String or Array
+        path: ['_templates/','components/src/','pages/'] // String or Array
       }))
       .pipe(gulp.dest('components/dist/'));
       

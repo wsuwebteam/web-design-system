@@ -26,10 +26,12 @@
 <body>
 	<div class="wsu-custom-demo">
 		
-<ul class="wsu-modal-navigation">
-    <li>
-        <a href="#">Dropdown</a>
+<div class="wsu-demo-component wsu-demo-dropdown--modal">
+<ul>
+    <li class="wsu-dropdown-modal" aria-expanded="false" aria-haspopup="true">
+        <a href="#" role="button">Dropdown</a>
         <ul>
+            <li><a href="#">Menu Item</a></li>
             <li><a href="#">Menu Item</a></li>
             <li><a href="#">Menu Item</a></li>
             <li><a href="#">Menu Item</a></li>
@@ -37,7 +39,34 @@
         </ul>
     </li>
 </ul>
+</div>
+<div class="wsu-demo-component wsu-demo-dropdown--modal">
+<ul>
+    <li class="wsu-dropdown-modal wsu-dropdown-modal--click" aria-expanded="false" aria-haspopup="true">
+        <a href="#" role="button">Dropdown Click</a>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+</ul>
+</div>
 <style>
+.wsu-demo-dropdown--modal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wsu-demo-dropdown--modal li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 </style>
 
 	</div>
