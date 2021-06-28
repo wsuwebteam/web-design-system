@@ -1,0 +1,12 @@
+@import '../variables';
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: $wsu-color--gray-85;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "wsu-web-design-system",
+    "description": "Web design system for Washington State University",
+    "version": "0.0.1",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-nunjucks": "^5.1.0",
+        "gulp-nunjucks-render": "^2.2.3",
+        "gulp-sass": "^4.1.0",
+        "webpack": "^5.39.1",
+        "webpack-cli": "^4.7.2"
+    },
+    "scripts": {
+        "build": "webpack --config webpack.config.js"
+    }
+}
