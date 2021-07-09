@@ -1,0 +1,39 @@
+.wsu-menu-utility {
+    font-family: $wsu-font-family;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: $wsu-font-size--small;
+    font-weight: 500;
+
+    a {
+        outline: none;
+    }
+
+    & > li {
+        margin: 0;
+        padding: 0 $wsu-spacing--xxsmall;
+        align-items: center;
+        padding: calc( #{$wsu-spacing--xxsmall} / 2 ) 0;
+
+        & > a {
+            text-decoration: none;
+            position: relative;
+            color: inherit;
+            display: inline-block;
+            @include wsu-menu-item--crimson-bar( -4px );
+        } 
+
+        & > button:not([class*="wsu-button-"]) { 
+            background-color: transparent;
+            display: inline-block;
+            line-height: inherit;
+            outline: none;
+            border: none;
+            font-weight: 500;
+            padding: 0;
+            @include wsu-menu-item--crimson-bar( -4px );
+        }
+
+    }
+}

@@ -1,0 +1,37 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-footer-global {
+    font-family: $wsu-font-family;
+    background-color: $wsu-color--gray-85;
+	color: $wsu-color--gray-0;
+	display: flex;
+	align-items: center;
+	font-size: 0.8rem;
+    font-weight: 500;
+	justify-content: flex-end;
+    min-height: 60px;
+	box-sizing: border-box;
+    padding: 0 $wsu-spacing--medium;
+
+    &__copyright {
+        margin-right: $wsu-spacing--small;
+    }
+
+    .wsu-menu-utility-horizontal > li {
+        padding: 0 $wsu-spacing--small;
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: $wsu-spacing--medium $wsu-spacing--large $wsu-spacing--xxmedium;
+
+        &__copyright {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-bottom: $wsu-spacing--xsmall;
+        }
+    }
+}  

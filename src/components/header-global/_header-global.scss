@@ -1,0 +1,118 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-header-global {
+    font-family: $wsu-font-family;
+    height: 60px;
+    border-top: 4px solid $wsu-color--crimson;
+    background-color: $wsu-color--gray-0;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    z-index: calc( #{$wsu-zindex--navigation} + 1 );
+    
+
+    &__navigation {
+
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    
+        a {
+            @include wsu-font--xsmall;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        li {
+        
+            &[aria-expanded] {
+                position: relative;
+
+                & > ul {
+                    @include wsu-modal-box();
+                    background-color: #fff;
+                    top: calc( 100% + #{$wsu-spacing--xsmall} );
+                    position: absolute; 
+                    right: 0;
+                    padding: $wsu-spacing--small $wsu-spacing--xxmedium;
+                    transition: opacity $wsu-transition-speed--fast $wsu-easing, top $wsu-transition-speed--medium $wsu-easing;
+                }
+            }
+
+            &[aria-expanded="false"] { 
+
+                & > ul {
+                    opacity: 0;
+                    top: calc( 100% + #{$wsu-spacing--xsmall} + 50px );
+                }
+            }
+
+            &[aria-expanded="false"]:not(.wsu-animating) {
+
+                & > ul {
+                    visibility: hidden;
+                }
+            }
+        }
+
+    
+    }
+
+    .wsu-menu-utility-horizontal {
+         
+        & > li:last-child {
+
+            position: relative;
+            margin-left: $wsu-spacing--xxsmall;
+            padding: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 1px;
+                background-color: $wsu-color--gray-15;
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            & > button {
+                width: 60px;
+
+                &::after {
+                    max-width: 40%;
+                    left: 30%;
+                }
+            }
+
+        }
+
+        @media screen and (min-width: $wsu-breakpoint--tablet-large) {
+            padding-right: $wsu-spacing--small;
+        }
+    }
+
+    .wsu-button-ui-close {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: $wsu-spacing--xxsmall;
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet-large) {
+
+        .wsu-menu-utility-horizontal > li:not([class*="wsu-breakpoint"]):not(.wsu-header-global__search) {
+            display: none;
+        }
+        
+    }
+
+
+}
+
+
+
+
+
+
+

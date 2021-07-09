@@ -65,7 +65,7 @@
 /* ========================================================
 == Menu Items ==
 ==========================================================*/
-@mixin wsu-menu-item--crimson-bar {
+@mixin wsu-menu-item--crimson-bar( $drop: -6px, $thickness: 4px ) {
     position: relative;
 
     &::after {
@@ -75,7 +75,7 @@
         width: 100%;
         bottom: 0;
         background-color: $wsu-color--crimson-light;
-        height: 4px;
+        height: $thickness;
         opacity: 0;
         transition: bottom $wsu-transition-speed--fast $wsu-easing, opacity $wsu-transition-speed--fast $wsu-easing;
     }
@@ -85,7 +85,7 @@
 
         &::after {
             opacity: 1;
-            bottom: -6px;
+            bottom: $drop;
         }
 
     }
@@ -96,6 +96,15 @@
 ==========================================================*/
 
 @mixin wsu-modal-box {
-    box-shadow: $wsu-dropshadow--medium;
+    box-shadow: $wsu-dropshadow--low;
     border-radius: $wsu-border-radius--medium;
+}
+
+/* ========================================================
+== Transitions ==
+==========================================================*/
+
+@mixin wsu-transition-navigation-vertical {
+    transition-duration: $wsu-transition-speed--fast;
+    transition-timing-function: $wsu-easing;
 }
