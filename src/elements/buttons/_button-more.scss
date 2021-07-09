@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-button-more {
+    
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    &::before {
+        content: '\F12F';
+	    font-family: 'wsu-icons';
+        color: inherit;
+    }
+
+    &--horizontal {
+        &::before {
+            content: '\F130';
+        }
+    }
+}

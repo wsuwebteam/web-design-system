@@ -1,11 +1,10 @@
 const gulp = require('gulp');
-
 const { src, series, parellel, dest, watch } = require('gulp');
-
 const nunjucksRender = require('gulp-nunjucks-render');
-
+const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
-
+const minify = require('gulp-minify');
+const cleanCSS = require('gulp-clean-css');
 
 const components = [
     'components/global-header/'
@@ -14,12 +13,11 @@ const components = [
 
 gulp.task('buildHtml', function () {
 
-
-    return gulp.src('components/src/**/*.njk')
+    return gulp.src('src/**/**/*.njk')
       .pipe(nunjucksRender({
-        path: ['_templates/','components/src/','pages/'] // String or Array
+        path: ['_templates/','src/components/','pages/', 'src/elements/'] // String or Array
       }))
-      .pipe(gulp.dest('components/dist/'));
+      .pipe(gulp.dest('dist/'));
       
   });
 
@@ -30,22 +28,32 @@ gulp.task('styles', () => {
 });
 
 gulp.task('bundleStyle', () => {
-    return gulp.src('bundles/src/*.scss')
+    return gulp.src('src/bundles/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('bundles/dist/'));
+        .pipe(autoprefixer())
+        .pipe(cleanCSS({compatibility: 'ie11'}))
+        .pipe(gulp.dest('dist/bundles/'));
 });
 
 
 gulp.task('watch', () => {
-    gulp.watch('components/src/**/*.scss', (done) => {
+    gulp.watch('src/components/**/*.scss', (done) => {
         gulp.series(['styles','bundleStyle'])(done);
     });
 
-    gulp.watch('components/src/**/*.njk', (done) => {
+    gulp.watch('src/elements/**/*.scss', (done) => {
+        gulp.series(['styles','bundleStyle'])(done);
+    });
+
+    gulp.watch('src/components/**/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
 
     gulp.watch('_templates/*.njk', (done) => {
+        gulp.series(['buildHtml'])(done);
+    });
+
+    gulp.watch('src/elements/**/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
 });

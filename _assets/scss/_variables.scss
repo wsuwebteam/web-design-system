@@ -7,6 +7,7 @@
 - Font Family
 - Font Size
 - Font Weights
+- Media Sizes
 - Spacing
 - Transition Speed
 - Z-Index
@@ -102,6 +103,15 @@ $wsu-font-weight--semibold:   600;
 $wsu-font-weight--bold:       700;
 $wsu-font-weight--extrabold:  800;
 
+/* ========================================================
+== Media Sizes ==
+==========================================================*/
+$wsu-breakpoint--ultrawide:    1400px;
+$wsu-breakpoint--desktop:      1260px;
+$wsu-breakpoint--tablet-large: 992px;
+$wsu-breakpoint--tablet:       768px;
+$wsu-breakpoint--phone:        576px;
+$wsu-breakpoint--phone-small:  450px;
 
 
 /* ========================================================
@@ -134,8 +144,13 @@ $wsu-transition-speed--xxfast:  100ms;
 /* ========================================================
 == Widths ==
 ==========================================================*/
-$wsu-width--navigation-open:   260px;
-$wsu-width--navigation-closed: 60px;
+$wsu-width--navigation-open:          280px;
+$wsu-width--navigation-mobile-open:   360px;
+$wsu-width--navigation-closed:        60px;
+$wsu-width--content-narrow:           990px;
+$wsu-width--content:                  1200px;
+$wsu-width--content-wide:             1400px;
+$wsu-width--content-xwide:            1600px;
 
 /* ========================================================
 == Z-Index ==
@@ -151,5 +166,11 @@ $zindex-popover:                    1070;
 $zindex-tooltip:                    1080;
 
 ==========================================================*/
-$wsu-zindex--dropdown: 1000;
-$wsu-zindex--modal-overlay: 1040;
+$wsu-zindex--dropdown:                   1000;
+$wsu-zindex--sticky:                     1020;
+$wsu-zindex--fixed:                      1030;
+$wsu-zindex--modal-backdrop:             1040;
+$wsu-zindex--navigation:                 1050;
+$wsu-zindex--modal:                      1060;
+$wsu-zindex--popover:                    1070;
+$wsu-zindex--tooltip:                    1080;
