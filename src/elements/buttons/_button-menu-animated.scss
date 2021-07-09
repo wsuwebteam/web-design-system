@@ -1,0 +1,90 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-button-menu-animated-bar {
+    background-color: $wsu-color--gray-80;
+    height: 3px;
+    border-radius: 2px;
+    left: 0;
+}
+
+.wsu-button-menu-animated {
+    position: relative;
+
+    &__button {
+        position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		display: block;
+		cursor: pointer;
+		background-color: transparent;
+		outline: none;
+		border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__icon {
+        @include wsu-button-menu-animated-bar();
+        display: block;
+        position: relative;
+        width: 28px;
+        margin: $wsu-spacing--xxsmall auto;
+
+        &::before,
+        &::after {
+            content: '';
+            @include wsu-button-menu-animated-bar();
+            display: block;
+            position: absolute;
+            transition: 
+                left $wsu-transition-speed--xfast $wsu-easing, 
+                transform $wsu-transition-speed--xfast $wsu-easing, 
+                top $wsu-transition-speed--xfast $wsu-easing, 
+                bottom $wsu-transition-speed--xfast $wsu-easing, 
+                width $wsu-transition-speed--xfast $wsu-easing;
+        }
+
+        &::before {
+            bottom: 8px;
+            width: 28px;
+        }
+
+        &::after {
+            top: 8px;
+            width: 20px;
+        }
+    }
+
+    &__text {
+        display: block;
+        font-size: $wsu-font-size--xxsmall;
+        text-transform: uppercase;
+        color: $wsu-color--gray-55;
+    }
+
+    &:focus-within .wsu-button-menu-animated__icon,
+    &:hover .wsu-button-menu-animated__icon,
+    &:focus .wsu-button-menu-animated__icon {
+
+        &::before {
+            transform: rotate(45deg);
+            width: 12px;
+            bottom: 3px;
+            left: 19px;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            width: 12px;
+            top: 3px;
+            left: 19px;
+        }
+
+    }
+
+}

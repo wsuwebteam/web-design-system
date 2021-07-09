@@ -1,0 +1,176 @@
+/*
+- Colors
+---- Crimsons
+---- WSU Grays
+- Dropshadows
+- Easing
+- Font Family
+- Font Size
+- Font Weights
+- Media Sizes
+- Spacing
+- Transition Speed
+- Z-Index
+*/
+
+
+/* ========================================================
+== Border Radius ==
+==========================================================*/
+$wsu-border-radius--xlarge: 12px;
+$wsu-border-radius--large: 6px;
+$wsu-border-radius--medium: 4px;
+$wsu-border-radius--small: 3px;
+$wsu-border-radius--xsmall: 3px;
+
+/* ========================================================
+== Colors ==
+==========================================================*/
+
+/* WSU Crimson */
+$wsu-color--crimson:        #A60F2D;
+$wsu-color--crimson-light:  #CA1237;
+$wsu-color--crimson-accent: #FAE6EA;
+
+/* WSU Grays */
+$wsu-color--gray-0:   hsl(0, 0, 97%); // #f7f7f7
+$wsu-color--gray-5:   hsl(0, 0, 95%); // #f2f2f2
+$wsu-color--gray-10:  hsl(0, 0, 90%); // #e6e6e6
+$wsu-color--gray-15:  hsl(0, 0, 85%); // #d9d9d9
+$wsu-color--gray-20:  hsl(0, 0, 80%); // #cccccc
+$wsu-color--gray-25:  hsl(0, 0, 75%); // #bfbfbf
+$wsu-color--gray-30:  hsl(0, 0, 70%); // #b3b3b3
+$wsu-color--gray-35:  hsl(0, 0, 65%); // #a6a6a6
+$wsu-color--gray-40:  hsl(0, 0, 60%); // #999999
+$wsu-color--gray-45:  hsl(0, 0, 55%); // #8c8c8c
+$wsu-color--gray-50:  hsl(0, 0, 50%); // #808080
+$wsu-color--gray-55:  hsl(0, 0, 45%); // #737373
+$wsu-color--gray-60:  hsl(0, 0, 40%); // #666666
+$wsu-color--gray-65:  hsl(0, 0, 35%); // #595959
+$wsu-color--gray-70:  hsl(0, 0, 30%); // #4d4d4d
+$wsu-color--gray-75:  hsl(0, 0, 25%); // #404040
+$wsu-color--gray-80:  hsl(0, 0, 20%); // #333333
+$wsu-color--gray-85:  hsl(0, 0, 15%); // #262626
+$wsu-color--gray-90:  hsl(0, 0, 10%); // #1a1a1a
+$wsu-color--gray-95:  hsl(0, 0, 3%); // #080808 - 5% and 3% are nearly indistinguishable, so treat them the same and leave the value to maintain consistency
+$wsu-color--gray-100: hsl(0, 0, 3%); // #080808
+
+
+/* ========================================================
+== Dropshadows ==
+==========================================================*/
+$wsu-dropshadow--xlow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+$wsu-dropshadow--low: 0px 0px 7px 1px rgba(0,0,0,0.4);
+$wsu-dropshadow--medium: 0px 0px 12px 1px rgba(0,0,0,0.4);
+$wsu-dropshadow--high: 0px 0px 17px 1px rgba(0,0,0,0.5);
+
+
+/* ========================================================
+== Easing ==
+==========================================================*/
+$wsu-easing: cubic-bezier(0, 0, 0.03, 1);
+
+
+/* ========================================================
+== Font Family ==
+==========================================================*/
+$wsu-font-family: 'Montserrat', sans-serif;
+
+
+/* ========================================================
+== Font Sizes ==
+==========================================================*/
+$wsu-font-size--hero:     5.125rem;
+$wsu-font-size--xxlarge:  3.125rem;
+$wsu-font-size--xlarge:   2rem;
+$wsu-font-size--large:    1.5rem;
+$wsu-font-size--xxmedium: 1.25rem;
+$wsu-font-size--xmedium:  1.125rem;
+$wsu-font-size--medium:   1rem;
+$wsu-font-size--small:    0.875rem;
+$wsu-font-size--xsmall:   0.75rem;
+$wsu-font-size--xxsmall:  0.6875rem;
+
+/* ========================================================
+== Font Weights ==
+==========================================================*/
+$wsu-font-weight--thin:       100;
+$wsu-font-weight--extralight: 200;
+$wsu-font-weight--light:      300;
+$wsu-font-weight--regular:    400;
+$wsu-font-weight--medium:     500;
+$wsu-font-weight--semibold:   600;
+$wsu-font-weight--bold:       700;
+$wsu-font-weight--extrabold:  800;
+
+/* ========================================================
+== Media Sizes ==
+==========================================================*/
+$wsu-breakpoint--ultrawide:    1400px;
+$wsu-breakpoint--desktop:      1260px;
+$wsu-breakpoint--tablet-large: 992px;
+$wsu-breakpoint--tablet:       768px;
+$wsu-breakpoint--phone:        576px;
+$wsu-breakpoint--phone-small:  450px;
+
+
+/* ========================================================
+== Spacing ==
+==========================================================*/
+$wsu-spacing--hero:     6.87rem;
+$wsu-spacing--xlarge:   5.125rem;
+$wsu-spacing--large:    3.125rem;
+$wsu-spacing--xxmedium: 2rem;
+$wsu-spacing--xmedium:  1.75rem;
+$wsu-spacing--medium:   1.5rem;
+$wsu-spacing--small:    1.125rem;
+$wsu-spacing--xsmall:   0.875rem;
+$wsu-spacing--xxsmall:  0.6875rem;
+
+
+/* ========================================================
+== Transition Speed ==
+==========================================================*/
+$wsu-transition-speed--xxslow:  600ms;
+$wsu-transition-speed--xslow:   500ms;
+$wsu-transition-speed--slow:    400ms;
+$wsu-transition-speed--xmedium: 350ms;
+$wsu-transition-speed--medium:  300ms;
+$wsu-transition-speed--fast:    200ms;
+$wsu-transition-speed--xfast:   150ms;
+$wsu-transition-speed--xxfast:  100ms;
+
+
+/* ========================================================
+== Widths ==
+==========================================================*/
+$wsu-width--navigation-open:          280px;
+$wsu-width--navigation-mobile-open:   360px;
+$wsu-width--navigation-closed:        60px;
+$wsu-width--content-narrow:           990px;
+$wsu-width--content:                  1200px;
+$wsu-width--content-wide:             1400px;
+$wsu-width--content-xwide:            1600px;
+
+/* ========================================================
+== Z-Index ==
+
+Bootstrap z-index for reference
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-offcanvas:                  1050;
+$zindex-modal:                      1060;
+$zindex-popover:                    1070;
+$zindex-tooltip:                    1080;
+
+==========================================================*/
+$wsu-zindex--dropdown:                   1000;
+$wsu-zindex--sticky:                     1020;
+$wsu-zindex--fixed:                      1030;
+$wsu-zindex--modal-backdrop:             1040;
+$wsu-zindex--navigation:                 1050;
+$wsu-zindex--modal:                      1060;
+$wsu-zindex--popover:                    1070;
+$wsu-zindex--tooltip:                    1080;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>Component</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" media='all' />
+	<link rel='stylesheet' href='https://cdn.web.wsu.edu/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css' media='all' />
+	<link rel="stylesheet" href="../../../dist/bundles/wsu-design-system.css" media='all' />
+	<style>
+		.wsu-custom-demo {
+			max-width: 1600px;
+			margin: 0 80px;
+			padding: 80px 0;
+			display: flex;
+			align-items: center;
+			min-height: 100vh;
+			box-sizing: border-box;
+		}
+
+		.wsu-custom-demo > * {
+			flex-grow: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="wsu-custom-demo">
+		{% block content %}{% endblock %}
+	</div>
+	<script defer src="../../../dist/bundles/wsu-design-system.js"></script>
+</body>
+</html>

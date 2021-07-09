@@ -1,0 +1,34 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-menu-utility-horizontal {
+    font-family: $wsu-font-family;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+        margin: 0;
+        padding: 0 $wsu-spacing--xxsmall;
+        display: flex;
+        align-items: center;
+
+        & > a {
+            text-decoration: none;
+            position: relative;
+            color: inherit;
+            display: block;
+            outline: none;
+
+            @include wsu-menu-item--crimson-bar;
+        } 
+
+        & > button { 
+
+            @include wsu-menu-item--crimson-bar;
+        }
+
+    }
+
+}
