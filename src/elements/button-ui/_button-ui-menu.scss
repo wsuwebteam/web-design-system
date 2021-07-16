@@ -1,0 +1,9 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-button-ui-menu {
+
+    &::before {
+        content: '\F12A';
+    }
+}

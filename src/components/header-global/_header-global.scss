@@ -10,7 +10,7 @@
     max-width: 100%;
     display: flex;
     z-index: calc( #{$wsu-zindex--navigation} + 1 );
-    
+
 
     &__navigation {
 
@@ -33,11 +33,13 @@
                     @include wsu-modal-box();
                     background-color: #fff;
                     top: calc( 100% + #{$wsu-spacing--xsmall} );
-                    position: absolute; 
+                    position: absolute;
+                    min-width: $wsu-width--navigation-width--modal;
                     right: 0;
                     padding: $wsu-spacing--small $wsu-spacing--xxmedium;
                     transition: opacity $wsu-transition-speed--fast $wsu-easing, top $wsu-transition-speed--medium $wsu-easing;
-                }
+                    box-sizing: border-box;
+                } 
             }
 
             &[aria-expanded="false"] { 

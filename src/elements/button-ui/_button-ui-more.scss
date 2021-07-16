@@ -1,0 +1,15 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-button-ui-more {
+
+    &::before {
+        content: '\F12F';
+    }
+
+    &-horizontal {
+        &::before {
+            content: '\F130';
+        }
+    }
+}

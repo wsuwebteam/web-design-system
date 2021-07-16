@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://cdn.web.wsu.edu/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css');
+
+@import '../../_assets/scss/partials/document';
+@import '../../_assets/scss/partials/utilities.scss';
+
+
+
+@import '../elements/coug-head/_coug-head.scss';
+@import '../elements/coug-head/_coug-head.scss';
+@import '../elements/dropdown-modal/_dropdown-modal.scss';
+
+@import '../elements/menu-toggle/_menu-toggle.scss';
+@import '../elements/menu-utility/_menu-utility.scss';
+@import '../elements/menu-utility-horizontal/_menu-utility-horizontal.scss';
+@import '..//elements/modal-navigation/_modal-navigation.scss';
+
+@import '../elements/wrappers/_wrappers.scss';
+
+.wsu-content {
+    @import '../elements/button/_button.scss';
+    @import '../elements/heading/heading';
+    @import '../elements/paragraph/paragraph';
+    @import '../elements/separator/separator';
+    @import '../elements/link/link.scss';
+}
+
+
+@import '../../src/components/footer-global/_footer-global.scss';
+@import '../../src/components/header-global/_header-global.scss';
+@import '../../src/components/navigation-site-vertical/_navigation-site-vertical.scss';
+@import '../../src/components/wordmark/_wordmark.scss';

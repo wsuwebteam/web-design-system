@@ -15,7 +15,7 @@ gulp.task('buildHtml', function () {
 
     return gulp.src('src/**/**/*.njk')
       .pipe(nunjucksRender({
-        path: ['_templates/','src/components/','pages/', 'src/elements/'] // String or Array
+        path: ['_templates/','src/components/','pages/', 'src/elements/','_template-partials/'] // String or Array
       }))
       .pipe(gulp.dest('dist/'));
       
@@ -54,6 +54,10 @@ gulp.task('watch', () => {
     });
 
     gulp.watch('src/elements/**/*.njk', (done) => {
+        gulp.series(['buildHtml'])(done);
+    });
+
+    gulp.watch('src/pages/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
 });

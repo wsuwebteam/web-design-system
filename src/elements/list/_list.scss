@@ -1,0 +1,58 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+ol,
+ul {
+	margin-top: 0;
+	margin-left: $wsu-spacing--em-xxmedium;
+	margin-bottom: $wsu-spacing--component;
+	padding-left: 0; 
+	margin-right: 0; 
+
+    li {
+        padding-top: 0;
+        margin-bottom: $wsu-spacing--em-xsmall;
+        margin-top: 0;
+        padding-left: $wsu-spacing--em-xxsmall;
+        padding-right: 0;
+        padding-bottom: 0;
+        line-height: 1.4;
+        box-sizing: border-box;
+
+        &::marker {
+            color: $wsu-color--crimson-light;
+        }
+    }
+	
+    ol,
+	ul {
+		margin-bottom: $wsu-spacing--em-small;
+		margin-top: $wsu-spacing--em-xsmall;
+	}
+
+}
+
+ul {
+
+    li li li {
+        list-style-type: circle;
+    }
+
+}
+
+ol {
+
+    li {
+        list-style-type: decimal;
+
+        li {
+            list-style-type: lower-alpha;
+        }
+
+    }
+
+}
+
+@import './list-arrow';
+@import './list-checkmark';
+@import './list-checkbox';

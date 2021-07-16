@@ -1,0 +1,14 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+hr {
+    border-style: solid;
+    border-color: $wsu-color--gray-10;
+    border-top: 8px solid $wsu-color--gray-10;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: $wsu-spacing--large;
+    margin-bottom: $wsu-spacing--large;
+    
+} 

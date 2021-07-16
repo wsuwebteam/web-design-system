@@ -1,0 +1,51 @@
+.wsu-button-ui-close {
+    font-size: $wsu-font-size--xxsmall;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $wsu-color--gray-55;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer; 
+    position: relative;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-bottom: 0;
+
+    &::after {
+        content: '\F154';
+		font-family: 'wsu-icons';
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+        color: $wsu-color--gray-75;
+        margin-left: calc( #{$wsu-spacing--xxsmall} / 2 ); 
+    }
+
+    &::before {
+        content: '';
+		display: block;
+        position: absolute;
+        background-color: $wsu-color--gray-50;
+        width: 0;
+        height: 2px;
+        bottom: 0.15rem;
+        transition: width $wsu-transition-speed--fast $wsu-easing;
+        box-sizing: border-box;
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        background-color: transparent;
+
+        &::before {
+            width: calc( 100% - #{$wsu-font-size--xxmedium } );
+        }
+
+    }
+}  
