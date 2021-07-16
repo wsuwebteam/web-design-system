@@ -18,10 +18,20 @@
 == Border Radius ==
 ==========================================================*/
 $wsu-border-radius--xlarge: 12px;
-$wsu-border-radius--large: 6px;
+$wsu-border-radius--large:  6px;
 $wsu-border-radius--medium: 4px;
-$wsu-border-radius--small: 3px;
+$wsu-border-radius--small:  3px;
 $wsu-border-radius--xsmall: 3px;
+
+/* ========================================================
+== Breakpoints ==
+==========================================================*/
+$wsu-breakpoint--ultrawide:    1400px;
+$wsu-breakpoint--desktop:      1260px;
+$wsu-breakpoint--tablet-large: 992px;
+$wsu-breakpoint--tablet:       768px;
+$wsu-breakpoint--phone:        576px;
+$wsu-breakpoint--phone-small:  450px;
 
 /* ========================================================
 == Colors ==
@@ -59,10 +69,12 @@ $wsu-color--gray-100: hsl(0, 0, 3%); // #080808
 /* ========================================================
 == Dropshadows ==
 ==========================================================*/
-$wsu-dropshadow--xlow: 0px 0px 5px 1px rgba(0,0,0,0.3);
-$wsu-dropshadow--low: 0px 0px 7px 1px rgba(0,0,0,0.4);
-$wsu-dropshadow--medium: 0px 0px 12px 1px rgba(0,0,0,0.4);
-$wsu-dropshadow--high: 0px 0px 17px 1px rgba(0,0,0,0.5);
+$wsu-dropshadow--xlow:   0px 0px 5px rgba(0,0,0,0.3);
+$wsu-dropshadow--low:    0px 0px 7px rgba(0,0,0,0.4);
+$wsu-dropshadow--medium: 0px 0px 14px rgba(0,0,0,0.4);
+$wsu-dropshadow--high:   0px 0px 17px rgba(0,0,0,0.5);
+
+$wsu-dropshadow-rise--medium:   0px 5px 14px rgba(0,0,0,0.4);
 
 
 /* ========================================================
@@ -104,17 +116,6 @@ $wsu-font-weight--bold:       700;
 $wsu-font-weight--extrabold:  800;
 
 /* ========================================================
-== Media Sizes ==
-==========================================================*/
-$wsu-breakpoint--ultrawide:    1400px;
-$wsu-breakpoint--desktop:      1260px;
-$wsu-breakpoint--tablet-large: 992px;
-$wsu-breakpoint--tablet:       768px;
-$wsu-breakpoint--phone:        576px;
-$wsu-breakpoint--phone-small:  450px;
-
-
-/* ========================================================
 == Spacing ==
 ==========================================================*/
 $wsu-spacing--hero:     6.87rem;
@@ -126,6 +127,18 @@ $wsu-spacing--medium:   1.5rem;
 $wsu-spacing--small:    1.125rem;
 $wsu-spacing--xsmall:   0.875rem;
 $wsu-spacing--xxsmall:  0.6875rem;
+
+$wsu-spacing--em-hero:     6.87em;
+$wsu-spacing--em-xlarge:   5.125em;
+$wsu-spacing--em-large:    3.125em;
+$wsu-spacing--em-xxmedium: 2em;
+$wsu-spacing--em-xmedium:  1.75em;
+$wsu-spacing--em-medium:   1.5em;
+$wsu-spacing--em-small:    1.125em;
+$wsu-spacing--em-xsmall:   0.875em;
+$wsu-spacing--em-xxsmall:  0.6875em;
+
+$wsu-spacing--component: $wsu-spacing--medium; 
 
 
 /* ========================================================
@@ -145,8 +158,9 @@ $wsu-transition-speed--xxfast:  100ms;
 == Widths ==
 ==========================================================*/
 $wsu-width--navigation-open:          280px;
-$wsu-width--navigation-mobile-open:   360px;
+$wsu-width--navigation-mobile-open:   320px;
 $wsu-width--navigation-closed:        60px;
+$wsu-width--navigation-width--modal:  200px;
 $wsu-width--content-narrow:           990px;
 $wsu-width--content:                  1200px;
 $wsu-width--content-wide:             1400px;

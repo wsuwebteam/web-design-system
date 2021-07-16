@@ -6,15 +6,22 @@
 @import '../../_assets/scss/partials/utilities.scss';
 
 
-@import '../../src/elements/buttons/_button.scss';
-@import '../../src/elements/coug-head/_coug-head.scss';
-@import '../../src/elements/coug-head/_coug-head.scss';
-@import '../../src/elements/dropdown-modal/_dropdown-modal.scss';
-@import '../../src/elements/menu-toggle/_menu-toggle.scss';
-@import '../../src/elements/menu-utility/_menu-utility.scss';
-@import '../../src/elements/menu-utility-horizontal/_menu-utility-horizontal.scss';
-@import '../../src/elements/modal-navigation/_modal-navigation.scss';
-@import '../../src/elements/wrappers/_wrappers.scss';
+@import '../elements/button/_button.scss';
+@import '../elements/button-ui/_button-ui.scss';
+@import '../elements/coug-head/_coug-head.scss';
+@import '../elements/coug-head/_coug-head.scss';
+@import '../elements/dropdown-modal/_dropdown-modal.scss';
+@import '../elements/form/form';
+@import '../elements/heading/heading';
+@import '../elements/link/link.scss';
+@import '../elements/list/list';
+@import '../elements/menu-toggle/_menu-toggle.scss';
+@import '../elements/menu-utility/_menu-utility.scss';
+@import '../elements/menu-utility-horizontal/_menu-utility-horizontal.scss';
+@import '..//elements/modal-navigation/_modal-navigation.scss';
+@import '../elements/paragraph/paragraph';
+@import '../elements/separator/separator';
+@import '../elements/wrappers/_wrappers.scss';
 
 
 @import '../../src/components/footer-global/_footer-global.scss';

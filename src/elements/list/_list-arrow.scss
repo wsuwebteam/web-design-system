@@ -1,0 +1,13 @@
+
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-list-arrow {
+    li::marker {
+        font-family: 'wsu-icons';
+        content:'\F107';
+        font-size: 0.7em;
+        font-weight: 600;
+    }
+
+}
