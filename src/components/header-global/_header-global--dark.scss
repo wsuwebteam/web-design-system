@@ -1,0 +1,27 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-header-global--dark {
+    background-color: $wsu-color--gray-85;
+
+    .wsu-wordmark {
+
+        &__title {
+            color: $wsu-color--gray-10;
+        }
+
+    }
+
+    .wsu-button-ui-more-horizontal,
+    .wsu-button-ui-more,
+    .wsu-button-ui-search,
+    .wsu-button-ui-menu,
+    .wsu-menu-utility-horizontal > li > a {
+        color: $wsu-color--gray-10;
+    }
+
+    .wsu-menu-utility-horizontal > li:last-child::before {
+        background-color: $wsu-color--gray-60;
+    }
+
+}

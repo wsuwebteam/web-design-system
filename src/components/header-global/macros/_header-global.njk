@@ -1,0 +1,47 @@
+{% macro headerGlobal(bodyClasses) %}
+<header class="wsu-header-global{{ bodyClasses }}">
+    {% include 'wordmark/wordmark.njk' %}
+    <nav class="wsu-header-global__navigation">
+        <ul class="wsu-menu-utility-horizontal">
+            <li>
+                <a href="https://foundation.wsu.edu/">Give</a>
+            </li>
+            <li>
+                <a href="https://admission.wsu.edu/apply/as/find-your-application/">Apply</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/about/statewide/">Locations</a>
+            </li>
+            <li>
+                <a href="https://mywsu.wsu.edu/">My WSU</a>
+            </li>
+            <li class="wsu-header-global__navigation-menu" aria-expanded="false" aria-haspopup="true">
+                <button class="wsu-button-ui-more-horizontal wsu-header-global__navigation-menu--toggle" aria-label="Open WSU Menu"></button>
+                <ul class="wsu-menu-utility">
+                    <li>
+                        <a href="https://foundation.wsu.edu/">Give</a>
+                    </li>
+                    <li>
+                        <a href="https://admission.wsu.edu/apply/as/find-your-application/">Apply</a>
+                    </li>
+                    <li>
+                        <a href="https://wsu.edu/about/statewide/">Locations</a>
+                    </li>
+                    <li>
+                        <a href="https://mywsu.wsu.edu/">My WSU</a>
+                    </li>
+                    <li>
+                        <button class="wsu-button-ui-close wsu-header-global__navigation-menu--close">Close</button>
+                    </li>
+                </ul>
+            </li>
+            <li class="wsu-header-global__search">
+                <a href="https://search.wsu.edu" class="wsu-button-ui-search" title="Search WSU"></a>
+            </li>
+            <li class="wsu-header-global__site-nav">
+                <button class="wsu-button-ui-menu wsu-navigation-site--toggle" aria-label="Open Site Navigation"></button>
+            </li> 
+        </ul>
+    </nav>
+</header> 
+{% endmacro %}
