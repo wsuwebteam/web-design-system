@@ -22,16 +22,28 @@
         padding: 0 $wsu-spacing--small;
     }
 
-    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+    @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
         flex-wrap: wrap;
         justify-content: center;
-        padding: $wsu-spacing--medium $wsu-spacing--large $wsu-spacing--xxmedium;
+        padding: $wsu-spacing--medium $wsu-spacing--large $wsu-spacing--medium;
 
         &__copyright {
             display: block;
             width: 100%;
             text-align: center;
             margin-bottom: $wsu-spacing--xsmall;
+            margin-right: 0;
+        }
+
+        .wsu-menu-utility-horizontal {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            > li {
+                margin-bottom: $wsu-spacing--xxsmall;
+            }
         }
     }
-}  
+} 
+
+@import 'footer-global--light';

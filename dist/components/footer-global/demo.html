@@ -6,8 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<title>Component</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" media='all' />
-	<link rel='stylesheet' href='https://cdn.web.wsu.edu/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css' media='all' />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?ver=0.15.2.1" media='all' />
 	<link rel="stylesheet" href="../../../dist/bundles/wsu-design-system.css" media='all' />
 	<style>
 		.wsu-custom-demo {
@@ -15,19 +14,20 @@
 			margin: 0 80px;
 			padding: 80px 0;
 			display: flex;
-			align-items: center;
+			justify-content: center;
 			min-height: 100vh;
 			box-sizing: border-box;
-		}
-
-		.wsu-custom-demo > * {
-			flex-grow: 1;
+			flex-direction: column;
 		}
 	</style>
 </head>
 <body>
 	<div class="wsu-custom-demo">
 		
+<h2>default</h2>
+
+
+
 <footer class="wsu-footer-global">
     <div class="wsu-footer-global__copyright">
         © Washington State University 2021
@@ -44,11 +44,40 @@
                 <a href="https://portal.wsu.edu/">MyWSU</a>
             </li>
             <li>
-                <a href="https://socialmedia.wsu.edu/">Follow WSU</a>
+                <a href="https://socialmedia.wsu.edu/">Follow&nbsp;WSU</a>
             </li>
         </ul>
     </nav>
 </footer>
+
+
+<h2>.wsu-footer-global--light</h2>
+
+
+
+<footer class="wsu-footer-global wsu-footer-global--light">
+    <div class="wsu-footer-global__copyright">
+        © Washington State University 2021
+    </div>
+    <nav class="wsu-footer-global__navigation">
+        <ul class="wsu-menu-utility-horizontal">
+            <li>
+                <a href="https://access.wsu.edu/">Access</a>
+            </li>
+            <li>
+                <a href="https://policies.wsu.edu/">Policies</a>
+            </li>
+            <li>
+                <a href="https://portal.wsu.edu/">MyWSU</a>
+            </li>
+            <li>
+                <a href="https://socialmedia.wsu.edu/">Follow&nbsp;WSU</a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+
+
 
 	</div>
 	<script defer src="../../../dist/bundles/wsu-design-system.js"></script>

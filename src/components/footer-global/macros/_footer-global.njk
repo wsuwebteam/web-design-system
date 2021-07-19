@@ -1,7 +1,5 @@
-
-
-
-<footer class="wsu-footer-global">
+{% macro footerGlobal(bodyClasses) %}
+<footer class="wsu-footer-global{{ bodyClasses }}">
     <div class="wsu-footer-global__copyright">
         © Washington State University 2021
     </div>
@@ -23,3 +21,4 @@
     </nav>
 </footer>
 
+{% endmacro %}

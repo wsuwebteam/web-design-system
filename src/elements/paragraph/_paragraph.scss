@@ -1,8 +1,15 @@
 p {
     margin-top: 0;
     margin-bottom: $wsu-spacing--component;
+    max-width: 900px;
 
     & + p {
         margin-top: -0.5rem;
     }
+
+    
+}
+.wsu-paragraph--full p,
+p.wsu-paragraph--full {
+    max-width: none;
 }

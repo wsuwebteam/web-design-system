@@ -81,7 +81,7 @@ input[type="radio"] {
     color: $wsu-color--crimson;
 
     & + label {
-        display: inline-block;
+        display: inline;
         vertical-align: middle;
         margin-left: 0.3em;
         margin-right: 1.5em;
