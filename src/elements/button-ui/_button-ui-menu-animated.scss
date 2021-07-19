@@ -2,7 +2,7 @@
 @import '../../../_assets/scss/mixins';
 
 @mixin wsu-button-ui-menu-animated-bar {
-    background-color: $wsu-color--gray-80;
+    background-color: inherit;
     height: 3px;
     border-radius: 2px;
     left: 0;
@@ -37,6 +37,7 @@
 
     &__icon {
         @include wsu-button-ui-menu-animated-bar();
+        background-color: $wsu-color--gray-80;
         display: block;
         position: relative;
         width: 28px;
