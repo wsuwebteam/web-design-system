@@ -31,6 +31,19 @@
 
 }
 
+fieldset {
+    border: 1px solid $wsu-color--gray-20;
+    border-radius: $wsu-border-radius--medium;
+    padding: $wsu-spacing--small $wsu-spacing--medium;
+    margin-bottom: $wsu-spacing--component;
+    margin-top: 0;
+
+    & > legend {
+        padding-left: $wsu-spacing--xxsmall;
+        padding-right: $wsu-spacing--xxsmall;
+    }
+}
+
 input {
 
     &[type="file"],
@@ -113,17 +126,13 @@ select {
         background-repeat: no-repeat;
     }
 
+    @include wsu-form-input-focus();
+
 }
 
-fieldset {
-    border: 1px solid $wsu-color--gray-20;
-    border-radius: $wsu-border-radius--medium;
-    padding: $wsu-spacing--small $wsu-spacing--medium;
-    margin-bottom: $wsu-spacing--component;
-    margin-top: 0;
-
-    & > legend {
-        padding-left: $wsu-spacing--xxsmall;
-        padding-right: $wsu-spacing--xxsmall;
-    }
+textarea {
+    width: 100%;
+    @include wsu-input-field();
+    @include wsu-input-spacing();
+    @include wsu-form-input-focus();
 }

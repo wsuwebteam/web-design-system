@@ -1,0 +1,41 @@
+.wsu-column {
+    padding-left: $wsu-spacing--column;
+    padding-right: $wsu-spacing--column;
+    box-sizing: border-box;
+}
+
+.wsu-row {
+    &--halves {
+
+        .wsu-column {
+            width: 50%;
+            flex-grow: 0;
+        }
+    }
+
+    &--sidebar-left {
+        .wsu-column {
+            width: 66.66%;
+        }
+
+        .wsu-column:first-child {
+            width: 33.33%;
+        }
+    }
+
+    &--sidebar-right {
+        .wsu-column {
+            width: 66.66%;
+        }
+
+        .wsu-column:last-child {
+            width: 33.33%;
+        }
+    }
+
+    &--thrids {
+        .wsu-column {
+            width: 33.33%;
+        }
+    }
+}

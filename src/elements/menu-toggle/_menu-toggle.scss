@@ -3,6 +3,7 @@
     padding: 0;
     list-style-type: none;
     box-sizing: border-box;
+    color: $wsu-color--text;
 
     a:visited,
     a {
@@ -55,6 +56,9 @@
             position: relative;
             padding: 0;
             cursor: pointer;
+            color: $wsu-color--text;
+            border-radius: 0;
+            margin: 0;
 
             &::before {
                 content: '\F103';
@@ -71,9 +75,8 @@
                 width: 0;
                 background-color: $wsu-color--gray-50;
                 position: absolute;
-                bottom: 0.5rem;
-                left: 50%;
-                transform: translateX(calc( #{$wsu-spacing--xsmall} /  -2 ) );
+                bottom: 0;
+                left: 0;
                 transition: width $wsu-transition-speed--xfast;
 
             }
@@ -81,9 +84,11 @@
             &:focus,
             &:hover {
                 background-color: $wsu-color--gray-5;
+                box-shadow: none;
+                color: inherit;
 
                 &::after {
-                    width: $wsu-spacing--xsmall;
+                    width: 100%;
                 }
             }
 
