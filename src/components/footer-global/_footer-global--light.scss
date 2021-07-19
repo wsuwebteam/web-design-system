@@ -1,0 +1,9 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-footer-global--light {
+
+    background-color: #fff;
+    color: $wsu-color--text;
+    border-top: 1px solid $wsu-color--gray-20;
+}
