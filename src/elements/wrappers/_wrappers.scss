@@ -18,29 +18,35 @@
     margin: 0 auto;
     padding: $wsu-spacing--large $wsu-spacing--large $wsu-spacing--large;
     box-sizing: border-box;
+    max-width: $wsu-width--content;
 }
 
-@media screen and (min-width: $wsu-breakpoint--desktop) {
-    .wsu-wrapper-content:not(.wsu-wrapper-content--fluid) {
-        /* max-width: calc( 100vw - #{$wsu-width--navigation-open} - ( 2 * #{$wsu-spacing--large} ) ); */
-        max-width: calc( 100vw - #{$wsu-width--navigation-open} );
+.wsu-navigation-site-vertical ~ .wsu-wrapper-site {
+
+    @media screen and (min-width: $wsu-breakpoint--desktop) {
+        .wsu-wrapper-content:not(.wsu-wrapper-content--fluid) {
+            /* max-width: calc( 100vw - #{$wsu-width--navigation-open} - ( 2 * #{$wsu-spacing--large} ) ); */
+            max-width: calc( 100vw - #{$wsu-width--navigation-open} );
+        }
     }
-}
-
-@media screen and (min-width: calc( #{$wsu-width--content} + #{$wsu-width--navigation-open} - 20px )) {
-    .wsu-wrapper-content:not(.wsu-wrapper-content--wide):not(.wsu-wrapper-content--xwide):not(.wsu-wrapper-content--full):not(.wsu-wrapper-content--fluid) {
-        max-width: $wsu-width--content;
+    
+    @media screen and (min-width: calc( #{$wsu-width--content} + #{$wsu-width--navigation-open} - 20px )) {
+        .wsu-wrapper-content:not(.wsu-wrapper-content--wide):not(.wsu-wrapper-content--xwide):not(.wsu-wrapper-content--full):not(.wsu-wrapper-content--fluid) {
+            max-width: $wsu-width--content;
+        }
     }
-}
-
-@media screen and (min-width: calc( #{$wsu-width--content-wide} + #{$wsu-width--navigation-open} - 20px )) {
-    .wsu-wrapper-content.wsu-wrapper-content--wide {
-        max-width: $wsu-width--content-wide;
+    
+    @media screen and (min-width: calc( #{$wsu-width--content-wide} + #{$wsu-width--navigation-open} - 20px )) {
+        .wsu-wrapper-content.wsu-wrapper-content--wide {
+            max-width: $wsu-width--content-wide;
+        }
     }
-}
-
-@media screen and (min-width: calc( #{$wsu-width--content-xwide} + #{$wsu-width--navigation-open} - 20px )) {
-    .wsu-wrapper-content.wsu-wrapper-content--xwide {
-        max-width: $wsu-width--content-xwide;
+    
+    @media screen and (min-width: calc( #{$wsu-width--content-xwide} + #{$wsu-width--navigation-open} - 20px )) {
+        .wsu-wrapper-content.wsu-wrapper-content--xwide {
+            max-width: $wsu-width--content-xwide;
+        } 
     } 
-} 
+
+}
+

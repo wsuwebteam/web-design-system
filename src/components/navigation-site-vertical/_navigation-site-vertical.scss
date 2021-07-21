@@ -49,9 +49,14 @@
         flex-grow: 1;
     }
 
-    .wsu-button-ui-close {
+    .wsu-button-ui-close:first-child {
         min-height: $wsu-spacing--medium;
         margin: $wsu-spacing--xmedium $wsu-spacing--small $wsu-spacing--xmedium auto;
+    }
+
+    .wsu-button-ui-close:last-child {
+        min-height: $wsu-spacing--medium;
+        margin: $wsu-spacing--medium $wsu-spacing--small $wsu-spacing--small auto;
     }
 
     .wsu-menu-toggle {
