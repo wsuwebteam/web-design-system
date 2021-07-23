@@ -52,8 +52,6 @@ class WsuNavigationSiteVertical {
 
                 let wrapper = elementGet( { elementClass: this.wrapperClass } );
 
-                console.log( wrapper );
-
                 if ( wrapper ) {
 
                     toggleAriaExpandedClose( { 
@@ -103,7 +101,6 @@ class WsuNavigationSiteVertical {
 
             }
 			
-			
 		} catch (error) {
 		  console.error(error);
 		}
@@ -134,4 +131,4 @@ class WsuNavigationSiteVertical {
 
 }
 
-export default WsuNavigationSiteVertical;
+export default WsuNavigationSiteVertical; 

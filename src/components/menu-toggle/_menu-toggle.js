@@ -48,7 +48,13 @@ class WsuMenuToggle {
 
             let eventElement = event.target;
 
-            if ( toggleShould( { eventElement: eventElement, clickClass: this.toggleClass, checkParent: true }) ) {
+            let toggleShouldClick = toggleShould( { eventElement: eventElement, clickClass: this.toggleClass, checkParent: true } );
+            let toggleShouldEmpty = toggleShould( { eventElement: eventElement, checkEmptyLink: true }) && toggleShould( { eventElement: eventElement, checkSibling: true, clickClass: this.toggleClass } );
+
+            console.log( toggleShouldClick );
+            console.log( toggleShouldEmpty );
+
+            if ( toggleShouldClick || toggleShouldEmpty ) {
 
                 event.preventDefault();
 
@@ -64,6 +70,25 @@ class WsuMenuToggle {
                         childElement: childElement,
                         actionPrefix: this.actionPrefix,
                         animateHeight: true,
+                        ariaLabelElement: eventElement,
+                    } );
+
+                }
+
+            }
+
+            if ( toggleShould( { eventElement: eventElement, checkEmptyLink: true }) && toggleShould( { eventElement: eventElement, checkSibling: true, clickClass: this.toggleClass }) ) {
+
+                event.preventDefault();
+
+                let wrapper = elementGet( { elementClass: this.wrapperClass } );
+
+                if ( wrapper ) {
+
+                    toggleAria( { 
+                        wrapper: wrapper,
+                        toggleByClass: this.actionPrefix + '--openned',
+                        actionPrefix: this.actionPrefix,
                         ariaLabelElement: eventElement,
                     } );
 
