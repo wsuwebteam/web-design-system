@@ -33,7 +33,7 @@
     }
 
     .wsu-menu-item--current > a {
-        border-color: $wsu-color--crimson-light; 
+        border-color: $wsu-color--crimson; 
     }
 
     a:focus,
@@ -163,7 +163,7 @@
         }
 
         &[aria-expanded] > a {
-            &::after {
+            &::after { 
                 @include wsu-menu-toggle-border-base();
                 height: 100%;
                 width: 1px;
