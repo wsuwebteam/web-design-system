@@ -76,7 +76,7 @@
         }
 
         & > li {
-            position: relative;
+            position: relative; 
 
             &::before {
                 content: '';
@@ -88,6 +88,12 @@
                 opacity: 0;
                 position: absolute;
                 transition: opacity $wsu-transition-speed--xmedium $wsu-easing;
+            } 
+
+            &:first-child a::before {
+                content: '\F122';
+                font-family: 'wsu-icons';
+                margin-right: 0.3em;
             }
         }
 
@@ -188,7 +194,7 @@
     } 
 
 }
-@import './partials/navigation-empty-link.scss';
+
 @import 'navigation-site-vertical--dark';
 
 @import './partials/media-tablet.scss';

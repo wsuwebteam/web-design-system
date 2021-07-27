@@ -32,6 +32,10 @@
         position: relative;
     }
 
+    .wsu-menu-item--current > a {
+        border-color: $wsu-color--crimson-light; 
+    }
+
     a:focus,
     a:hover {
         background-color: $wsu-color--gray-5;
@@ -84,6 +88,7 @@
                 font-family: 'wsu-icons';
                 transition: transform $wsu-transition-speed--fast;
                 cursor: pointer;
+                font-size: 0.8em;
             }
 
             &::after {
@@ -195,9 +200,9 @@
     & > li > ul > li {
 
         & > a {
-            font-size: $wsu-font-size--small;
+            font-size: $wsu-font-size--xsmall;
             font-weight: 500;
-            padding: 0.5rem $wsu-spacing--medium 0.5rem calc( ( #{$wsu-spacing--medium} * 1.75 ) - 5px);
+            padding: 0.5rem $wsu-spacing--medium 0.5rem calc( ( #{$wsu-spacing--medium} * 1.5 ) - 5px);
             border-left: 5px solid transparent;
         } 
 
@@ -208,9 +213,9 @@
     & > li > ul > li > ul > li {
 
         & > a {
-            font-size: $wsu-font-size--small;
+            font-size: $wsu-font-size--xsmall;
             font-weight: 500;
-            padding: 0.5rem $wsu-spacing--medium 0.5rem calc( ( #{$wsu-spacing--medium} * 2.5 ) - 5px);
+            padding: 0.5rem $wsu-spacing--medium 0.5rem calc( ( #{$wsu-spacing--medium} * 2 ) - 5px);
             border-left: 5px solid transparent;
         }
 

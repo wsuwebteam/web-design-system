@@ -45,6 +45,10 @@ gulp.task('watch', () => {
         gulp.series(['styles','bundleStyle'])(done);
     });
 
+    gulp.watch('src/modules/**/*.scss', (done) => {
+        gulp.series(['styles','bundleStyle'])(done);
+    });
+
     gulp.watch('src/components/**/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
