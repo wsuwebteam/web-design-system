@@ -1,6 +1,6 @@
 //import wsuDropdownModal from "../elements/dropdown-modal/_dropdown-modal";
-import WsuMenuToggle from "../elements/menu-toggle/_menu-toggle";
-import WsuNavigationSiteVertical from '../components/navigation-site-vertical/_navigation-site-vertical';
+import WsuMenuToggle from "../components/menu-toggle/_menu-toggle";
+import WsuNavigationSiteVertical from '../modules/navigation-site-vertical/_navigation-site-vertical';
 import WsuHeaderGlobal from "../components/header-global/_header-global";
 
 

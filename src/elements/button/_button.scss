@@ -4,7 +4,7 @@ input[type="submit"],
 input[type="button"],
 button {
     font-family: $wsu-font-family;
-    background-color: $wsu-color--crimson-light;
+    background-color: $wsu-color--crimson;
     color: #fff;
     border-radius: $wsu-border-radius--large;
     border: none;
@@ -20,9 +20,8 @@ button {
     &:hover,
     &:focus {
         box-shadow: $wsu-dropshadow-rise--medium;
-        background-color: $wsu-color--crimson;
+        background-color: $wsu-color--crimson-light;
     }
-    
 }
 
 .wsu-button {
@@ -91,7 +90,6 @@ button {
     &-search::before {
         content: '\F140';
     }
-
 }
-
+ 
 

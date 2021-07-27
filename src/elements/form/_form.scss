@@ -1,9 +1,13 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
 @mixin wsu-input-field {
     border-radius: $wsu-border-radius--medium;
     background-color: #fff;
     border: 1px solid $wsu-color--gray-30;
     outline: none;
     transition: box-shadow $wsu-transition-speed--medium $wsu-easing;
+    font-size: inherit;
 }
 
 @mixin wsu-input-spacing {

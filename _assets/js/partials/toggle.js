@@ -147,17 +147,24 @@ const toggleShould = ( props ) => {
     let { 
         eventElement = false, 
         clickClass = false,
-        checkParent = false, 
+        checkParent = false,
+        checkSibling = false,
+        checkEmptyLink = false,
     } = props;
 
-    console.log( clickClass )
-    console.log( eventElement.classList.contains( clickClass ) )
+    if ( clickClass && eventElement.classList.contains( clickClass ) ) {
 
-    if ( eventElement.classList.contains( clickClass ) ) {
+        return true;
+
+    } else if ( checkEmptyLink && eventElement.hasAttribute('href') && '#' === eventElement.getAttribute('href') ) {
 
         return true;
 
     } else if ( checkParent && eventElement.parentElement.classList.contains( clickClass ) ) {
+
+        return true;
+
+    } else if ( checkSibling && eventElement.nextElementSibling.classList.contains( clickClass ) ) {
 
         return true;
 
@@ -215,7 +222,7 @@ const toggleHeight = ( props, isExpanding ) => {
 
             setTimeout(
                 function() {
-                    submenu.style.maxHeight = 0;
+                    childElement.style.maxHeight = 0;
                 }, 
                 25
             );

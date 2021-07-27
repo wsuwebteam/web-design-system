@@ -2,7 +2,6 @@ const elementGet = ( { elementClass = false } ) => {
 
     if ( elementClass ) {
 
-		
         let elements = document.getElementsByClassName( elementClass );
         
         if ( 0 < elements.length ) {

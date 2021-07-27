@@ -5,30 +5,12 @@
 @import '../../_assets/scss/partials/document';
 @import '../../_assets/scss/partials/utilities.scss';
 
-
-@import '../elements/button/_button.scss';
-@import '../elements/button-ui/_button-ui.scss';
-@import '../elements/column/column';
-@import '../elements/coug-head/_coug-head.scss';
-@import '../elements/coug-head/_coug-head.scss';
-@import '../elements/dropdown-modal/_dropdown-modal.scss';
-@import '../elements/form/form';
-@import '../elements/heading/heading';
-@import '../elements/link/link.scss';
-@import '../elements/list/list';
-@import '../elements/menu-toggle/_menu-toggle.scss';
-@import '../elements/menu-utility/_menu-utility.scss';
-@import '../elements/menu-utility-horizontal/_menu-utility-horizontal.scss';
-@import '..//elements/modal-navigation/_modal-navigation.scss';
-@import '../elements/paragraph/paragraph';
-@import '../elements/separator/separator';
-@import '../elements/wrappers/_wrappers.scss';
+@import 'wsu-design-system.elements.scss';
+@import 'wsu-design-stystem.components.scss';
+@import 'wsu-design-system.modules.scss';
 
 
-@import '../../src/components/footer-global/_footer-global.scss';
-@import '../../src/components/header-global/_header-global.scss';
-@import '../../src/components/navigation-site-vertical/_navigation-site-vertical.scss';
-@import '../components/row/row';
-@import '../../src/components/wordmark/_wordmark.scss';
+
+
 
 

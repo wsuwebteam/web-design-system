@@ -5,6 +5,7 @@
     "devDependencies": {
         "@babel/core": "^7.14.6",
         "@babel/preset-env": "^7.14.7",
+        "@wordpress/scripts": "^17.0.0",
         "babel-loader": "^8.2.2",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
