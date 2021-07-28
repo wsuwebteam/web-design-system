@@ -1,0 +1,28 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-header-site--dark {
+
+    background-color: $wsu-color--gray-85;
+
+    .wsu-header-site {
+
+        &__subtitle {
+            color: $wsu-color--gray-20;
+        }
+
+        &__label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__title {
+
+            color: $wsu-color--gray-10;
+
+        }
+
+    }
+
+}
