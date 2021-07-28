@@ -11,7 +11,7 @@
     max-width: 100%;
     display: flex;
     z-index: calc( #{$wsu-zindex--navigation} + 1 );
-    box-sizing: border-box;
+    box-sizing: border-box; 
 
 
     &__navigation {
