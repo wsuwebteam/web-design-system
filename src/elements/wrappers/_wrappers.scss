@@ -16,9 +16,21 @@
     position: relative;
     display: block;
     margin: 0 auto;
-    padding: $wsu-spacing--large $wsu-spacing--large $wsu-spacing--large;
+    padding: $wsu-spacing--xxlarge $wsu-spacing--xlarge $wsu-spacing--xlarge;
     box-sizing: border-box;
     max-width: $wsu-width--content;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: calc( (100vw - 100%) / -2);
+        right: calc( (100vw - 100%) / -2);
+        top: 0;
+        width: auto;
+        height: 4px;
+        background-color: $wsu-color--gray-10;
+    }
 }
 
 .wsu-navigation-site-vertical ~ .wsu-wrapper-site {
