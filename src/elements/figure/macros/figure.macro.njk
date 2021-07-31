@@ -1,0 +1,12 @@
+{% macro figure( imageSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', caption='', classes='', link='' ) %}
+<figure class="{{ classes }}">
+    {% if link %}<a href="#">{% endif %}
+    <img src="{{ imageSrc }}" />
+    {% if link %}</a>{% endif %}
+    {% if caption %}
+    <figcaption>
+        {{ caption }}
+    </figcaption>
+    {% endif %}
+</figure>
+{% endmacro %}

@@ -1,0 +1,18 @@
+{% extends "component.njk" %}
+{% from "social-icons/macros/social-icons.macro.njk" import socialIcons %}
+{% block content %}
+<div class="wsu-demo-component">
+{{ socialIcons( ' wsu-social-icons--small' ) }} 
+</div>
+<div class="wsu-demo-component">
+{{ socialIcons() }}
+</div>
+<div class="wsu-demo-component">
+{{ socialIcons( ' wsu-social-icons--large' ) }}
+</div>
+<div class="wsu-demo-component">
+{{ socialIcons( ' wsu-social-icons--xlarge' ) }}
+</div>
+<style>
+</style>
+{%  endblock %} 

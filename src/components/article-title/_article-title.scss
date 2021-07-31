@@ -1,0 +1,38 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+h1.wsu-article-title {
+    @include wsu-font--xxlarge;
+    font-weight: 700;
+}
+
+.wsu-article-title {
+    @include wsu-font--large();
+    font-weight: 7600;
+    color: $wsu-color--gray-75;
+
+    &::after {
+        display: none;
+    }
+
+    &--medium {
+        font-size: $wsu-font-size--large;
+    }
+
+    a::after {
+        display: none;
+    }
+
+    &--large {
+        font-size: $wsu-font-size--xlarge;
+    }
+
+    &--medium {
+        font-size: $wsu-font-size--large;
+    }
+
+    &--small {
+        font-size: $wsu-font-size--xmedium;
+    }
+
+}

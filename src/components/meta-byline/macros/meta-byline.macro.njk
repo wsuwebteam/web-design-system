@@ -1,0 +1,19 @@
+{% macro metaByline( authorName, authorTitle, copy ) %}
+<address class="wsu-meta-byline">
+    {% if copy %}
+    <span class="wsu-meta-byline__text">
+        {{ copy }}
+    </span>
+    {% endif %}
+    {% if authorName %}
+    <span class="wsu-meta-byline__name">
+        {{ authorName }}{% if authorTitle %},{% endif %}
+    </span>
+    {% endif %}
+    {% if authorTitle %}
+    <span class="wsu-meta-byline__title">
+        {{ authorTitle }}
+    </span>
+    {% endif %}
+</address>
+{% endmacro %}

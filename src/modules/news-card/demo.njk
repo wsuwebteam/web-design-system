@@ -1,0 +1,21 @@
+{% extends "component.njk" %}
+{% from "news-card/macros/macro.njk" import newsCard %}
+
+{% block content %}
+<div class="wsu-demo-component">
+{{ newsCard( ' wsu-news-card--large' ) }}
+</div>
+<div class="wsu-demo-component" style="max-width: 300px">
+{{ newsCard( ) }}
+</div>
+<div class="wsu-demo-component" style="max-width: 300px">
+{{ newsCard( '','' ) }}
+</div>
+<style>
+.wsu-demo-component {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %} 

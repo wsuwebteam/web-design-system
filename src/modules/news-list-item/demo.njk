@@ -1,0 +1,19 @@
+{% extends "component.njk" %}
+{% from "news-list-item/macros/macro.njk" import newsListItem %}
+
+{% block content %}
+<div class="wsu-demo-component">
+{{ newsListItem( ) }}
+{{ newsListItem( ) }}
+{{ newsListItem( '' ) }}
+{{ newsListItem( ) }}
+{{ newsListItem( ) }}
+</div>
+<style>
+.wsu-demo-component {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %} 

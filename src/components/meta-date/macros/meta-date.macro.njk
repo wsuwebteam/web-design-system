@@ -1,0 +1,10 @@
+{% macro metaDate( date, copy ) %}
+<div class="wsu-meta-date">
+    {% if copy %}
+    <span class="wsu-meta-date__text">
+        {{ copy }}
+    </span>
+    {% endif %}
+    <time>{{ date }}</time>
+</div>
+{% endmacro %}

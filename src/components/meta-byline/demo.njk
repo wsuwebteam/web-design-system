@@ -1,0 +1,15 @@
+{% extends "component.njk" %}
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% block content %}
+<div class="wsu-demo-component">
+{{ metaByline('Butch T. Cougar', 'WSU Maskot', 'By') }} 
+</div>
+<div class="wsu-demo-component">
+{{ metaByline('Butch T. Cougar', 'WSU Maskot') }} 
+</div>
+<div class="wsu-demo-component">
+{{ metaByline('College of Something Innovative') }} 
+</div>
+<style>
+</style>
+{%  endblock %} 
