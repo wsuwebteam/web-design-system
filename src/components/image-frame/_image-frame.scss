@@ -1,3 +1,118 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
 .wsu-image-frame {
 
-}
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: $wsu-border-radius--small;
+    }
+
+
+    &--full {
+        width: 100%;
+    }
+
+    &--xlarge {
+        width: 900px;
+    }
+
+    &--large {
+        width: 600px;
+    }
+
+    &--xmedium {
+        width: 450px;
+    }
+
+    &--medium {
+        width: 350px;
+    }
+
+    &--small {
+        width: 250px;
+    }
+
+    &--xsmall {
+        width: 200px;
+    }
+
+    &--xxsmall {
+        width: 175px;
+    }
+
+    &--sxxsmall {
+        width: 125px;
+    }
+
+    &.wsu-align {
+
+        &--left {
+            float: left;
+            margin-right: $wsu-spacing--xxmedium;
+        }
+
+        &--center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &--right {
+            float: right;
+            margin-left: $wsu-spacing--xxmedium;
+        }
+    }
+
+    &.wsu-ratio {
+
+        &--2-5::before {
+            padding-top: $wsu-ratio--2-5;
+        }
+        
+        &--16-9::before {
+            padding-top: $wsu-ratio--16-9;
+        }
+
+        &--6-4::before {
+            padding-top: $wsu-ratio--6-4;
+        }
+        
+        &--4-3::before {
+            padding-top: $wsu-ratio--4-3;
+        }
+        
+        &--square::before {
+            padding-top: $wsu-ratio--square;
+        }
+        
+        &--3-4::before {
+            padding-top: $wsu-ratio--3-4;
+        }
+
+    }
+
+    &[class*="wsu-ratio--"] {
+
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+
+
+} 

@@ -1,7 +1,84 @@
 {% extends "component.njk" %}
+{% from "figure/macros/figure.macro.njk" import figure %}
 
 {% block content %}
-{% include 'figure/figure.njk' %}
+<div class="wsu-demo-component" style="max-width: 800px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.', '', '#' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 800px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 1200px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--full' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 1000px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--xlarge' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 800px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--large' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 800px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--medium' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 800px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--small' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 800px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--xsmall' ) }}
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 1000px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--medium wsu-align--left' ) }}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus felis eu lectus fermentum, auctor suscipit tortor tempor. Morbi id vehicula ligula. 
+In hac habitasse platea dictumst. Pellentesque quis orci in felis finibus luctus rhoncus et dui. Praesent vitae varius libero. Etiam convallis, velit sed mollis 
+molestie, purus orci tincidunt felis, a aliquam justo nisl sagittis mauris. Integer tempor iaculis luctus. Morbi a ultrices velit. </p>
+<p>Donec in sapien eget ex facilisis tincidunt. Aenean ultricies tellus vel nisl dictum pellentesque. Phasellus vel diam sit amet dui tempus porta id ut metus. 
+Donec sodales eget dui in convallis. Pellentesque eget velit ut odio tempor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+posuere cubilia curae; Nulla facilisi. Nullam molestie eros arcu, eget tincidunt augue blandit non. Sed rhoncus nec purus nec facilisis. Phasellus vel diam sit amet dui tempus porta id ut metus. 
+Donec sodales eget dui in convallis. Pellentesque eget velit ut odio tempor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+posuere cubilia curae; Nulla facilisi. Nullam molestie eros arcu, eget tincidunt augue blandit non. Sed rhoncus nec purus nec facilisis.
+</p>
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 1000px;">
+<p>Donec in sapien eget ex facilisis tincidunt. Aenean ultricies tellus vel nisl dictum pellentesque. Phasellus vel diam sit amet dui tempus porta id ut metus. 
+Donec sodales eget dui in convallis. Pellentesque eget velit ut odio tempor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+posuere cubilia curae; Nulla facilisi. Nullam molestie eros arcu, eget tincidunt augue blandit non. Sed rhoncus nec purus nec facilisis.
+</p>
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--medium wsu-align--center' ) }}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus felis eu lectus fermentum, auctor suscipit tortor tempor. Morbi id vehicula ligula. 
+In hac habitasse platea dictumst. Pellentesque quis orci in felis finibus luctus rhoncus et dui. Praesent vitae varius libero. Etiam convallis, velit sed mollis 
+molestie, purus orci tincidunt felis, a aliquam justo nisl sagittis mauris. Integer tempor iaculis luctus. Morbi a ultrices velit. </p>
+</div>
+<hr />
+<div class="wsu-demo-component" style="max-width: 1000px;">
+{{ figure('https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','wsu-width--medium wsu-align--right' ) }}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus felis eu lectus fermentum, auctor suscipit tortor tempor. Morbi id vehicula ligula. 
+In hac habitasse platea dictumst. Pellentesque quis orci in felis finibus luctus rhoncus et dui. Praesent vitae varius libero. Etiam convallis, velit sed mollis 
+molestie, purus orci tincidunt felis, a aliquam justo nisl sagittis mauris. Integer tempor iaculis luctus. Morbi a ultrices velit. </p>
+<p>Donec in sapien eget ex facilisis tincidunt. Aenean ultricies tellus vel nisl dictum pellentesque. Phasellus vel diam sit amet dui tempus porta id ut metus. 
+Donec sodales eget dui in convallis. Pellentesque eget velit ut odio tempor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+posuere cubilia curae; Nulla facilisi. Nullam molestie eros arcu, eget tincidunt augue blandit non. Sed rhoncus nec purus nec facilisis. Phasellus vel diam sit amet dui tempus porta id ut metus. 
+Donec sodales eget dui in convallis. Pellentesque eget velit ut odio tempor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+posuere cubilia curae; Nulla facilisi. Nullam molestie eros arcu, eget tincidunt augue blandit non. Sed rhoncus nec purus nec facilisis.
+</p>
+</div>
 <style>
+.wsu-demo-component {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    width: 100%;
+}
 </style>
 {%  endblock %}  

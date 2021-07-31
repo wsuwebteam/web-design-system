@@ -1,0 +1,5 @@
+{% macro articleTitle(classes='', tag='h2', link='', title='Maecenas bibendum volutpat ante et condimentum' ) %}
+<{{ tag }} class="wsu-article-title{{ classes }}">
+    {% if link %}<a href="#">{% endif %}{{ title }}{% if link %}</a>{% endif %}
+</{{ tag }}>
+{% endmacro %}

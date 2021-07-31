@@ -117,6 +117,19 @@ $wsu-font-weight--semibold:   600;
 $wsu-font-weight--bold:       700;
 $wsu-font-weight--extrabold:  800;
 
+
+/* ========================================================
+== Ratios height/width ==
+==========================================================*/
+
+$wsu-ratio--2-5:    40%;
+$wsu-ratio--16-9:   56.25%;
+$wsu-ratio--6-4:    66%;
+$wsu-ratio--4-3:    75%;
+$wsu-ratio--square: 100%;
+$wsu-ratio--3-4:    133%;
+
+
 /* ========================================================
 == Spacing ==
 ==========================================================*/
@@ -141,7 +154,7 @@ $wsu-spacing--em-small:    1.125em;
 $wsu-spacing--em-xsmall:   0.875em;
 $wsu-spacing--em-xxsmall:  0.6875em;
 
-$wsu-spacing--component: $wsu-spacing--medium;
+$wsu-spacing--component: $wsu-spacing--xmedium;
 $wsu-spacing--column:    $wsu-spacing--medium; 
 
 

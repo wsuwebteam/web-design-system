@@ -1,0 +1,29 @@
+{% macro socialIcons( modifierClass='', twitter=true, faceblook=true, linkedin=true, pintrest=true, email=true ) %}
+<ul class="wsu-social-icons{{ modifierClass }}">
+    {% if twitter %}
+    <li class="wsu-social-icons__twitter">
+        <a href="https://twitter.com/icons?text=&url=[site_url]" title="icons on Twitter"></a>
+    </li>
+    {% endif %}
+    {% if faceblook %}
+    <li class="wsu-social-icons__faceblook">
+        <a href="https://www.facebook.com/iconsr/iconsr.php?u=[site_url]" title="icons on FaceBook"></a>
+    </li>
+    {% endif %}
+    {% if linkedin %}
+    <li class="wsu-social-icons__linkedin">
+        <a href="https://www.linkedin.com/iconsArticle?mini=true&url=[site_url]" title="icons on Linkedin"></a>
+    </li>
+    {% endif %}
+    {% if pintrest %}
+    <li class="wsu-social-icons__pintrest">
+        <a href="https://pinterest.com/pin/create/button/?description=&media=&url=[site_url]" title="icons on Linkedin"></a>
+    </li>
+    {% endif %}
+    {% if email %}
+    <li class="wsu-social-icons__email">
+        <a href="mailto:?subject=[title]&body=Check out this: [url]" title="icons with email"></a>
+    </li>
+    {% endif %}
+</ul>
+{% endmacro %}

@@ -64,6 +64,10 @@ gulp.task('watch', () => {
     gulp.watch('src/pages/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
+
+    gulp.watch('src/modules/**/*.njk', (done) => {
+        gulp.series(['buildHtml'])(done);
+    });
 });
 
 

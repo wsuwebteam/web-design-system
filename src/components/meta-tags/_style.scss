@@ -1,0 +1,29 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-meta-tags {
+
+    font-size: $wsu-font-size--xsmall;
+    font-weight: 600;
+
+    &::before {
+        content: "\F14C";
+        font-family: 'wsu-icons';
+        color: inherit;
+        font-size: 0.9em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.2em;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $wsu-color--crimson-light;
+        }
+    }
+} 

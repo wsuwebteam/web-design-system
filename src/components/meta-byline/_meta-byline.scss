@@ -1,0 +1,19 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-meta-byline {
+
+    font-size: $wsu-font-size--xsmall;
+    font-weight: 600;
+    font-style: normal;
+
+    &::before {
+        content: "\F13C";
+        font-family: 'wsu-icons';
+        color: inherit;
+        font-size: 0.9em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.2em;
+    }  
+}

@@ -1,0 +1,8 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-caption {
+
+    @include wsu-font--small();
+    font-weight: 400;  
+}

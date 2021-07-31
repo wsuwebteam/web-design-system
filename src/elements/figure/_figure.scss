@@ -1,6 +1,81 @@
-figure{
-    width: 600px;
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+figure {
+
+    margin: 0 0 $wsu-spacing--component 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    &.wsu-width {
+
+        &--full {
+            width: 100%;
+        }
+
+        &--xlarge {
+            width: 900px;
+        }
+
+        &--large {
+            width: 600px;
+        }
+
+        &--medium {
+            width: 350px;
+        }
+
+        &--small {
+            width: 250px;
+        }
+
+        &--xsmall {
+            width: 200px;
+        }
+    }
+
+    &.wsu-align {
+
+        &--left {
+            float: left;
+            margin-right: $wsu-spacing--xxmedium;
+        }
+
+        &--center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &--right {
+            float: right;
+            margin-left: $wsu-spacing--xxmedium;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: $wsu-border-radius--small;
+    }
 }
- 
- figure > img {
- }
+
+figcaption {
+    @include wsu-font--xsmall();
+    font-weight: 500;
+    position: relative;
+    padding-left: 1.4rem;
+    padding-top: 0.2rem;
+    color: $wsu-color--gray-70;
+
+    &::before {
+        content: "\F134";
+        font-family: 'wsu-icons';
+        display: inline-block;
+        left: 0;
+        top: 0;
+        position: absolute;
+        font-size: $wsu-font-size--medium;
+    }
+
+    
+}

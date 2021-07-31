@@ -1,0 +1,56 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-social-icons {
+
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+        font-size: $wsu-font-size--xlarge;
+        margin: 0 0.4em 0 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-size: inherit;
+        &::before {
+            font-family: 'wsu-icons';
+        }
+
+        &:hover,
+        &:focus {
+            color: $wsu-color--crimson-light;
+        }
+
+    }
+    
+    &__twitter a::before  {
+        content: "\F148";
+    }
+
+    &__faceblook a::before  {
+        content: "\F145";
+    }
+
+    &__linkedin a::before  {
+        content: "\F147";
+    }
+
+    &__pintrest a::before  {
+        content: "\F144";
+    }
+
+    &__email a::before  {
+        content: "\F11A";
+    }
+
+}
+@import 'social-icons--xlarge';
+@import 'social-icons--large';
+@import 'social-icons--small';

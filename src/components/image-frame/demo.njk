@@ -1,9 +1,37 @@
 {% extends "component.njk" %}
+{% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
 
 {% block content %}
 <div class="wsu-demo-component">
-{% include 'image-frame/image-frame.njk' %}
+{{ imageFrame() }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ imageFrame(' wsu-image-frame--large wsu-ratio--2-5' ) }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ imageFrame(' wsu-image-frame--large wsu-ratio--16-9' ) }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ imageFrame(' wsu-image-frame--large wsu-ratio--6-4' ) }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ imageFrame(' wsu-image-frame--large wsu-ratio--4-3' ) }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ imageFrame(' wsu-image-frame--large wsu-ratio--square' ) }} 
+</div>
+<hr />
+<div class="wsu-demo-component">
+{{ imageFrame(' wsu-image-frame--large wsu-ratio--3-4' ) }} 
 </div>
 <style>
+hr {
+    width: 100%;
+}
 </style>
 {%  endblock %}    
