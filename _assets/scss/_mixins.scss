@@ -62,18 +62,26 @@
     line-height: 1.5;
 }
 
+@mixin wsu-link--secondary {
+    color: $wsu-color--gray-75;
+    text-decoration: underline;
+    text-decoration-color: $wsu-color--gray-40;
+}
+
 /* ========================================================
 == Menu Items ==
 ==========================================================*/
-@mixin wsu-menu-item--crimson-bar( $drop: -6px, $thickness: 4px ) {
+@mixin wsu-menu-item--crimson-bar( $drop: -6px, $thickness: 4px, $element: 'after' ) {
     position: relative;
 
-    &::after {
+    &::#{$element} {
         content: '';
         display: block;
         position: absolute;
         width: 100%;
         bottom: 0;
+        left: 0;
+        right: 0;
         background-color: $wsu-color--crimson-light;
         height: $thickness;
         opacity: 0;
@@ -83,7 +91,7 @@
     &:focus,
     &:hover {
 
-        &::after {
+        &::#{$element} {
             opacity: 1;
             bottom: $drop;
         }
@@ -94,6 +102,13 @@
 /* ========================================================
 == Modals ==
 ==========================================================*/
+
+@mixin wsu-modal-box--low {
+    box-shadow: $wsu-dropshadow--low;
+    border-radius: $wsu-border-radius--medium;
+    padding: $wsu-spacing--small 0;
+    box-sizing: border-box;
+}
 
 @mixin wsu-modal-box {
     box-shadow: $wsu-dropshadow--low;

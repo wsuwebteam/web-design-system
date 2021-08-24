@@ -2,49 +2,18 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-image-frame {
+    box-sizing: border-box;
+    position: relative;
 
     img {
         width: 100%;
         height: auto;
         border-radius: $wsu-border-radius--small;
+        display: block;
     }
 
 
-    &--full {
-        width: 100%;
-    }
-
-    &--xlarge {
-        width: 900px;
-    }
-
-    &--large {
-        width: 600px;
-    }
-
-    &--xmedium {
-        width: 450px;
-    }
-
-    &--medium {
-        width: 350px;
-    }
-
-    &--small {
-        width: 250px;
-    }
-
-    &--xsmall {
-        width: 200px;
-    }
-
-    &--xxsmall {
-        width: 175px;
-    }
-
-    &--sxxsmall {
-        width: 125px;
-    }
+    
 
     &.wsu-align {
 
@@ -64,55 +33,116 @@
         }
     }
 
-    &.wsu-ratio {
+}
 
-        &--2-5::before {
-            padding-top: $wsu-ratio--2-5;
-        }
-        
-        &--16-9::before {
-            padding-top: $wsu-ratio--16-9;
-        }
 
-        &--6-4::before {
-            padding-top: $wsu-ratio--6-4;
-        }
-        
-        &--4-3::before {
-            padding-top: $wsu-ratio--4-3;
-        }
-        
-        &--square::before {
-            padding-top: $wsu-ratio--square;
-        }
-        
-        &--3-4::before {
-            padding-top: $wsu-ratio--3-4;
-        }
 
+[class*="wsu-image-ratio"] .wsu-image-frame,
+[class*="wsu-image-frame--fixed-ratio"] .wsu-image-frame,
+.wsu-image-frame[class*="wsu-image-frame--fixed-ratio"],
+.wsu-image-frame[class*="wsu-image-ratio"] {
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: $wsu-ratio--6-4;
     }
 
-    &[class*="wsu-ratio--"] {
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
 
-        position: relative;
+.wsu-image {
 
-        &::before {
-            content: '';
-            display: block;
+    &--ratio {
+
+        &-2-5 {
+
+            &.wsu-image-frame,
+            .wsu-image-frame {
+
+                &::before {
+                    padding-top: $wsu-ratio--2-5 !important;
+                }
+
+            }
+
         }
 
-        img {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+        &-16-9 {
+
+            &.wsu-image-frame,
+            .wsu-image-frame {
+
+                &::before {
+                    padding-top: $wsu-ratio--16-9 !important;
+                }
+
+            }
+
+        }
+
+        &-6-4 {
+
+            &.wsu-image-frame,
+            .wsu-image-frame {
+
+                &::before {
+                    padding-top: $wsu-ratio--6-4 !important;
+                }
+            }
+        }
+
+        &-4-3 {
+
+            &.wsu-image-frame,
+            .wsu-image-frame {
+
+                &::before {
+                    padding-top: $wsu-ratio--4-3 !important;
+                }
+            }
+        }
+
+        &-square {
+
+            &.wsu-image-frame,
+            .wsu-image-frame {
+
+                &::before {
+                    padding-top: $wsu-ratio--square !important;
+                }
+            }
+        }
+
+        &-3-4 {
+
+            &.wsu-image-frame,
+            .wsu-image-frame {
+
+                &::before {
+                    padding-top: $wsu-ratio--3-4 !important;
+                }
+            }
         }
     }
 
+    @each $name, $size in $wsu-image-size-map {
 
+        &-size--#{$name} {
+            &.wsu-image-frame,
+            .wsu-image-frame {
+                width: $size !important;
+            } 
+        }
 
+    } 
 
-} 
+}

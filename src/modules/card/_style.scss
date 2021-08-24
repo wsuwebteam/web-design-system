@@ -1,0 +1,148 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-card {
+
+    margin-bottom: $wsu-spacing--component;
+
+    &__wrapper {
+
+        margin-left: -$wsu-spacing--small;
+        margin-right: -$wsu-spacing--small;
+        
+        display: flex;
+        flex-wrap: wrap;
+
+        &.wsu-per-row {
+
+            &--2 {
+
+                .wsu-card {
+                    width: calc( 50% - ( #{ $wsu-spacing--small } * 2 ) );
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin-left: $wsu-spacing--small;
+                    margin-right: $wsu-spacing--small;
+                }
+            }
+
+        }
+
+    }
+
+    .wsu-title {
+        margin-bottom: $wsu-spacing--xxsmall;
+        padding-top: 0;
+
+        & + .wsu-meta-date {
+            margin-top: -0.4rem;
+        }
+    }
+
+    .wsu-image-frame {
+        margin-bottom: $wsu-spacing--xsmall;
+
+        &:last-child {
+            margin-bottom: 0;
+            margin-top: $wsu-spacing--small;
+        }
+    }
+
+    .wsu-caption {
+        @include wsu-font--small();
+
+        &:not(:first-child) {
+
+            margin-top: $wsu-spacing--xxsmall;
+
+        }
+
+        &:not(:last-child) {
+
+            margin-bottom: $wsu-spacing--xxsmall;
+
+        }
+    }
+
+    &--boxed {
+        padding: $wsu-spacing--xsmall $wsu-spacing--xsmall $wsu-spacing--small;
+        border: 1px solid $wsu-color--gray-10;
+        border-radius: $wsu-border-radius--xsmall;
+    }
+
+    &--horizontal {
+        display: flex;
+        align-items: flex-start;
+
+        & + .wsu-card--horizontal {
+            margin-top: $wsu-spacing--xxmedium;
+        }
+
+        .wsu-image-frame {
+            width: 200px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-right: $wsu-spacing--xmedium;
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+
+            &::before {
+                padding-top: $wsu-ratio--6-4;
+            }
+        }
+
+        .wsu-title {
+            font-size: $wsu-font-size--large;
+            line-height: 1.3;
+            padding-top: 0;
+        }
+
+        .wsu-image-frame:last-child {
+            margin-left: $wsu-spacing--xxmedium;
+        }
+
+    }
+
+    &--small {
+
+        & + .wsu-card--horizontal {
+            margin-top: 0;
+        }
+
+        .wsu-title {
+            font-size: $wsu-font-size--small;
+            line-height: 1.3;
+        }
+
+        .wsu-caption {
+            @include wsu-font--xsmall();
+        }
+    }
+
+    &--large {
+
+        & + .wsu-card--horizontal {
+            margin-top: 0;
+        }
+
+        .wsu-title {
+            font-size: $wsu-font-size--large;
+            line-height: 1.3;
+        }
+
+        .wsu-caption {
+            @include wsu-font--small();
+        }
+    }
+
+}
+
+
+.wsu-row--sidebar-right .wsu-column:last-child .wsu-card__wrapper .wsu-card,
+.wsu-row--sidebar-right .wsu-column:first-child .wsu-card__wrapper .wsu-card,
+.wsu-row--sidebars .wsu-column:first-child .wsu-card__wrapper .wsu-card,
+.wsu-row--sidebars .wsu-column:last-child .wsu-card__wrapper .wsu-card,
+.wsu-row--thirds .wsu-card__wrapper .wsu-card,
+.wsu-row--quarters .wsu-card__wrapper .wsu-card {
+    width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) ) !important;
+}

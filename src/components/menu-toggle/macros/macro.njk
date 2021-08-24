@@ -1,0 +1,42 @@
+{% macro menuToggle( demo='' ) %}
+
+<ul class="wsu-menu-toggle">
+    {% if demo %}
+    <li>
+        <a href="#" >Menu Item</a>
+    </li>
+    <li aria-expanded="false" aria-haspopup="true" class="wsu-menu-item--current">
+        <a href="#" >Menu Item</a><button class="wsu-menu-toggle--toggle"></button>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li aria-expanded="false" aria-haspopup="true">
+                <a href="#" >Menu Item</a><button class="wsu-menu-toggle--toggle"></button>
+                <ul>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" >Menu Item</a>
+    </li>
+    <li>
+        <a href="#" >Menu Item</a>
+    </li>
+    <li>
+        <a href="#" >Menu Item</a>
+    </li>
+    <li>
+        <a href="#" >Menu Item</a>
+    </li>
+    {% else %}
+    {% endif %}
+</ul> 
+{% endmacro %}

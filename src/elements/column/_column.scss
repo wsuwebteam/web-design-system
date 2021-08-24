@@ -1,3 +1,12 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+@mixin fixed_column {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .wsu-column {
     padding-left: $wsu-spacing--column;
     padding-right: $wsu-spacing--column;
@@ -11,6 +20,17 @@
             width: 50%;
             flex-grow: 0;
         }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column {
+                width: 100%;
+                @include fixed_column();
+            }
+
+        }
     }
 
     &--sidebar-left {
@@ -20,6 +40,18 @@
 
         .wsu-column:first-child {
             width: 33.33%;
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column:first-child,
+            .wsu-column {
+                width: 100%;
+                @include fixed_column();
+            }
+
         }
     }
 
@@ -31,11 +63,105 @@
         .wsu-column:last-child {
             width: 33.33%;
         }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column:last-child,
+            .wsu-column {
+                width: 100%;
+                @include fixed_column();
+            }
+
+        }
     }
 
-    &--thrids {
+    &--thirds {
         .wsu-column {
             width: 33.33%;
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column {
+                width: 100%;
+                @include fixed_column();
+            }
+
+        }
+    }
+
+    &--quarters {
+        .wsu-column {
+            width: 25%;
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column {
+                width: 50%;
+                @include fixed_column();
+            }
+
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column {
+                width: 100%;
+                @include fixed_column();
+            }
+
+        }
+    }
+
+    &--sidebars {
+        .wsu-column {
+            width: 25%;
+            @include fixed_column();
+        }
+        .wsu-column:first-child {
+            width: 50%;
+        }
+
+        .wsu-column:nth-child(2) {
+            order: -1;
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column {
+                width: 50%;
+                @include fixed_column();
+                order: 0 !important;
+            }
+
+            .wsu-column:first-child {
+                order: 0;
+                width: 100%;
+            }
+            
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+            flex-wrap: wrap;
+
+            .wsu-column:first-child,
+            .wsu-column {
+                width: 100%;
+                @include fixed_column();
+            }
+            
         }
     }
 }

@@ -1,0 +1,39 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-collapsable {
+
+    .wsu-collapsable--toggle  {
+        cursor: pointer;
+    }
+
+    .wsu-collapsable--content  {
+        overflow: hidden;
+        transition: max-height $wsu-easing $wsu-transition-speed--slow;
+    }
+
+    &[aria-expanded="false"] {
+
+        .wsu-collapsable--content  {
+            display: none;
+            max-height: 0;
+        }
+
+    }
+
+    &[aria-expanded="false"] {
+        .wsu-collapsable--content.wsu-animating {
+            display: block;
+        }
+
+    }
+
+    &[aria-expanded="true"] {
+
+        .wsu-collapsable--content {
+            display: block;
+            max-height: none;
+        }
+
+    }
+}

@@ -1,0 +1,47 @@
+{% extends "component.njk" %}
+{% from "card/macro-reverse.njk" import cardReversed %}
+{% from "card/macro.njk" import card %}
+
+{% block content %}
+<div class="wsu-demo-component--narrow" >
+{{ card( ) }}
+{{ card(' wsu-image--ratio-16-9' ) }}
+{{ card(' wsu-card--boxed' ) }}
+{{ cardReversed() }}
+</div>
+<div class="wsu-demo-component" >
+<hr />
+{{ card(' wsu-card--horizontal' ) }}
+{{ card(' wsu-card--horizontal' ) }}
+{{ card(' wsu-card--horizontal', false ) }}
+{{ card(' wsu-card--horizontal' ) }}
+<hr />
+{{ cardReversed(' wsu-card--horizontal' ) }}
+{{ cardReversed(' wsu-card--horizontal' ) }}
+{{ cardReversed(' wsu-card--horizontal', false ) }}
+<hr />
+</div>
+<div class="wsu-demo-component--narrow" >
+{{ card(' wsu-card--small' ) }}
+{{ card(' wsu-card--small', false, false, false ) }}
+{{ card(' wsu-card--small', false, false, false ) }}
+{{ card(' wsu-card--small', false, false, false ) }}
+</div>
+<div class="wsu-demo-component" >
+<hr />
+{{ card(' wsu-card--large' ) }}
+<hr />
+</div>
+<style>
+.wsu-demo-component--narrow {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wsu-demo-component {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %} 

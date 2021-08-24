@@ -17,8 +17,7 @@
     }
 
     a {
-        color: inherit;
-        text-decoration: none;
+        @include wsu-link--secondary();
 
         &:hover,
         &:focus {

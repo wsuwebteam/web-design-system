@@ -1,0 +1,17 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-callout {
+
+    background-color: $wsu-color--gray-5;
+    padding: $wsu-spacing--medium $wsu-spacing--medium 0;
+    box-sizing: border-box;
+    border: 1px solid $wsu-color--gray-10;
+    border-radius: $wsu-border-radius--medium;
+    margin-bottom: $wsu-spacing--component;
+
+    &--dark {
+        background-color: $wsu-color--gray-85;
+        color: $wsu-color--gray-5;
+    }
+}

@@ -1,0 +1,56 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-search-field {
+
+    position: relative;
+
+
+    &--secondary {
+
+        .wsu-search-field {
+
+            &__input {
+                width: 100%;
+                padding-right: 70px;
+                box-sizing: border-box;
+            }
+
+            &__button {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                display: block;
+                width: 60px;
+                right: 0;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                font-size: 0;
+                background-color: transparent;
+                justify-content: center;
+                align-items: center;
+                box-shadow: none;
+                color: $wsu-color--gray-40;
+
+                &::before {
+                    content: '\F140';
+                    font-family: 'wsu-icons';
+                    color: inherit;
+                    font-size: $wsu-font-size--medium;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $wsu-color--crimson;
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+    }
+
+}

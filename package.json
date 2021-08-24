@@ -1,7 +1,7 @@
 {
-    "name": "wsu-web-design-system",
+    "name": "@wsuwebteam/wsu-web-design-system",
     "description": "Web design system for Washington State University",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "devDependencies": {
         "@babel/core": "^7.14.6",
         "@babel/preset-env": "^7.14.7",
@@ -19,7 +19,20 @@
         "webpack-cli": "^4.7.2"
     },
     "scripts": {
-        "start:bundles": "webpack --config webpack.config.js --watch",
-        "build:bundles": "webpack --config webpack.config.js"
+        "start": "webpack --config webpack.config.js --watch",
+        "build": "webpack --config webpack.config.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/wsuwebteam/web-design-system.git"
+    },
+    "author": "Washington State University",
+    "license": "",
+    "bugs": {
+        "url": "https://github.com/wsuwebteam/web-design-system/issues"
+    },
+    "homepage": "https://github.com/wsuwebteam/web-design-system#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
     }
 }

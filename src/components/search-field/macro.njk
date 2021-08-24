@@ -1,0 +1,6 @@
+{% macro searcField( classes, placeholder='Search') %}
+<div class="wsu-search-field{{classes}}">
+    <input class="wsu-search-field__input" type="text" name="s" value="" placeholder="{{placeholder}}" />
+    <button class="wsu-search-field__button" type="submit">Search</button>
+</div>
+{% endmacro %}

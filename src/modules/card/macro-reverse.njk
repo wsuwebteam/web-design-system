@@ -1,0 +1,24 @@
+{% from "article-title/macros/article-title.macro.njk" import articleTitle %}
+{% from "caption/macros/caption.macro.njk" import caption %}
+{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% from "meta-tags/macros/macro.njk" import metaTags %}
+{% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
+
+{% macro cardReversed( classes='', showImage=true, showTitle=true, showCaption=true, showDate=true, showTags=true, showByline=true ) %}
+
+<article class="wsu-card{{classes}}">
+    <div class="wsu-card__content">
+        {% if showTitle %}<h2 class="wsu-title"><a href="#">Maecenas bibendum volutpat ante et condimentum</a></h2>{% endif %}
+        {% if showDate %}{{ metaDate('June 7,2021') }}{% endif %}
+        {% if showCaption %}{{ caption() }}{% endif %}
+        {% if showByline %}{{ metaByline('Butch T. Cougar', 'WSU Maskot', 'By') }}{% endif %}
+        {% if showTags %}{{ metaTags() }}{% endif %}
+    </div>
+    {% if showImage %}<div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+        <a href="#">
+            <img src="https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg">
+        </a>
+    </div>{% endif %}
+</article>
+{% endmacro %}
