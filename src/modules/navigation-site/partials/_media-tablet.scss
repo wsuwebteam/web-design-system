@@ -2,14 +2,24 @@
 @import './navigation_states';
 @import '../../../../_assets/scss/variables';
 @import '../../../../_assets/scss/mixins';
+@import './mixins';
+
 
 @media screen and (max-width: $wsu-breakpoint--desktop) and (min-width: $wsu-breakpoint--tablet-large) {
 
-    .wsu-navigation-site-vertical {
+    .wsu-navigation-site {
 
-        &:not(.wsu-navigation-site-vertical--openned) {
+        @include wsu-site-navigation-table();
+
+        .wsu-navigation-site__panel {
+
+            @include wsu-site-navigation-panel();
+
+        }
+
+        &:not(.wsu-navigation-site--openned) {
         
-            @include wsu-navigation-site-vertical--closed;
+            @include wsu-navigation-site--closed;
      
          }
      
@@ -19,14 +29,14 @@
              left: 0;
          }
      
-         &.wsu-navigation-site-vertical--openned {  
+         &.wsu-navigation-site--openned {  
              
             & ~ .wsu-wrapper-site {
                 position: relative;
                 left: calc( #{$wsu-width--navigation-open} - #{ $wsu-width--navigation-closed } );
             }
 
-            .wsu-navigation-site-vertical__overlay {
+            .wsu-navigation-site__overlay {
                 opacity: 1;
                 visibility: visible;
             }

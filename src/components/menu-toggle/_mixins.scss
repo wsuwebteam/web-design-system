@@ -1,0 +1,78 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-menu-toggle--horizontal() {
+
+    .wsu-menu-toggle {
+
+        display: flex;
+
+        &::after {
+            display: none !important;
+        }
+
+        a {
+            border-left: none;
+        }
+
+        li {
+
+            &::before {
+                display: none !important;
+            }
+
+        }
+
+        & > li {
+            flex-grow: 0;
+            position: relative;
+
+            & > a {
+                padding: $wsu-spacing--xsmall $wsu-spacing--medium $wsu-spacing--xsmall $wsu-spacing--medium;
+            }
+
+            &[aria-expanded] > a {
+                padding-right: 0.2em;
+            }
+
+            & > ul {
+                position: absolute;
+                top: 100%;
+                width: 225px;
+                padding-left: 5px;
+                padding-right: 5px;
+
+                & > li:first-child {
+                    margin-top: calc( #{$wsu-spacing--xxsmall} + #{$wsu-spacing--small} );
+                }
+
+                & > li:last-child {
+                    margin-bottom: calc( #{$wsu-spacing--xxsmall} + #{$wsu-spacing--small} );
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    top: $wsu-spacing--xxsmall;
+                    bottom: $wsu-spacing--xxsmall;
+                    left: 5px;
+                    right: 5px;
+                    box-shadow: $wsu-dropshadow--xlow;
+                    background-color: #fff;
+                    position: absolute;
+                    border-radius: $wsu-border-radius--small;
+                    
+                }
+            }
+
+        }
+
+        li[aria-expanded] > button {
+            width: 35px;
+        }
+
+    }
+
+}
+
+
