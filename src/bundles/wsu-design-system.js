@@ -1,6 +1,6 @@
 //import wsuDropdownModal from "../elements/dropdown-modal/_dropdown-modal";
 import WsuMenuToggle from "../components/menu-toggle/_menu-toggle";
-import WsuNavigationSiteVertical from '../modules/navigation-site-vertical/_navigation-site-vertical';
+import WsunavigationSite from '../modules/navigation-site/_navigation-site';
 import WsuHeaderGlobal from "../components/header-global/_header-global";
 import WsuAccordion from "../components/accordion/script";
 import WsuCollapsable from "../components/collapsable/script";
@@ -10,7 +10,7 @@ import WsuCollapsable from "../components/collapsable/script";
 
 
 const wsu = {
-    verticalNavitation: new WsuNavigationSiteVertical(),
+    verticalNavitation: new WsunavigationSite(),
     menuToggle: new WsuMenuToggle(),
     headerGlobal: new WsuHeaderGlobal(),
     accordion: new WsuAccordion(),

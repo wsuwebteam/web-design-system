@@ -1,0 +1,48 @@
+@import '../../../../_assets/scss/variables';
+@import '../../../../_assets/scss/mixins';
+
+@import './navigation_states';
+@import '../../../../_assets/scss/variables';
+@import '../../../../_assets/scss/mixins';
+@import './mixins';
+@import '../../../components/menu-toggle/mixins';
+
+/* ====
+= Vertical Navigation =
+======= */
+
+@media screen and (min-width: $wsu-breakpoint--desktop) {
+
+    .wsu-navigation-site:not(.wsu-navigation-site--horizontal) {
+        @include wsu-site-navigation();
+
+        .wsu-navigation-site__panel {
+
+            @include wsu-site-navigation-panel();
+
+        }
+    }
+
+    .wsu-navigation-site--horizontal {
+
+        @include wsu-menu-toggle--horizontal();
+        transform: translateX(0) !important;
+        visibility: visible !important;
+        z-index: $wsu-zindex--navigation;
+
+        .wsu-button-ui-close {
+            display: none !important;
+        }
+
+        .wsu-navigation-site__panel {
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .wsu-button-ui-menu-animated {
+            display: none !important;
+        }
+
+    }
+
+}

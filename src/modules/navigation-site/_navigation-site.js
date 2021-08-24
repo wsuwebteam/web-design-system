@@ -2,17 +2,17 @@ import { elementGet } from "../../../_assets/js/partials/element";
 import { toggleAria, toggleShould, toggleAriaExpandedOpen, toggleAriaExpandedClose } from "../../../_assets/js/partials/toggle";
 import { keyDownEvent } from '../../../_assets/js/partials/events';
 
-class WsuNavigationSiteVertical {
+class WsunavigationSite {
 
     constructor( atts = {} ) {
 
-        this.wrapperClass     = ( atts.hasOwnProperty( 'wrapperClass') ) ? atts.wrapperClass : 'wsu-navigation-site-vertical';
-        this.closeClass       = ( atts.hasOwnProperty( 'closeClass') ) ? atts.closeClass : 'wsu-navigation-site-vertical--close';
-        this.openClass        = ( atts.hasOwnProperty( 'openClass') ) ? atts.openClass : 'wsu-navigation-site-vertical--open';
+        this.wrapperClass     = ( atts.hasOwnProperty( 'wrapperClass') ) ? atts.wrapperClass : 'wsu-navigation-site';
+        this.closeClass       = ( atts.hasOwnProperty( 'closeClass') ) ? atts.closeClass : 'wsu-navigation-site--close';
+        this.openClass        = ( atts.hasOwnProperty( 'openClass') ) ? atts.openClass : 'wsu-navigation-site--open';
         this.toggleClass      = ( atts.hasOwnProperty( 'toggleClass') ) ? atts.toggleClass : 'wsu-navigation-site--toggle';
         this.animatingClass   = ( atts.hasOwnProperty( 'animatingClass') ) ? atts.animatingClass : 'wsu-animating';
         this.animationTiming  = ( atts.hasOwnProperty( 'animationTiming') ) ? atts.animationTiming : 300;
-        this.actionPrefix     = ( atts.hasOwnProperty( 'actionPrefix') ) ? atts.actionPrefix : 'wsu-navigation-site-vertical';
+        this.actionPrefix     = ( atts.hasOwnProperty( 'actionPrefix') ) ? atts.actionPrefix : 'wsu-navigation-site';
         this.timer            = false;
 
         this.init();
@@ -131,4 +131,4 @@ class WsuNavigationSiteVertical {
 
 }
 
-export default WsuNavigationSiteVertical; 
+export default WsunavigationSite; 

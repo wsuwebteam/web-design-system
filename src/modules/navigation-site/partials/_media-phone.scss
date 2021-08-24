@@ -1,16 +1,23 @@
 @import './navigation_states';
 @import '../../../../_assets/scss/variables';
 @import '../../../../_assets/scss/mixins';
+@import './mixins';
+
 
 
 @media screen and (max-width: $wsu-breakpoint--tablet-large) {
 
-    .wsu-navigation-site-vertical {
-        width: $wsu-width--navigation-mobile-open;
-        left: auto;
-        right: 0;
+    .wsu-navigation-site {
 
-        &:not(.wsu-navigation-site-vertical--openned) {
+        @include wsu-site-navigation-phone();
+
+        .wsu-navigation-site__panel {
+
+            @include wsu-site-navigation-panel();
+
+        }
+
+        &:not(.wsu-navigation-site--openned) {
             transform: translateX( $wsu-width--navigation-mobile-open);
         }
 
@@ -23,9 +30,9 @@
             margin-left: 0 !important;
         }
 
-        &.wsu-navigation-site-vertical--openned {
+        &.wsu-navigation-site--openned {
 
-            .wsu-navigation-site-vertical__overlay {
+            .wsu-navigation-site__overlay {
                 opacity: 1;
                 visibility: visible;
             }

@@ -1,0 +1,67 @@
+@import '../../../../_assets/scss/variables';
+@import '../../../../_assets/scss/mixins';
+
+@mixin wsu-site-navigation() {
+    padding: 64px 0 0;
+    position: fixed;
+    width: $wsu-width--navigation-open;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $wsu-color--gray-10;
+    @include wsu-transition-navigation-vertical;
+    transition-property: transform;
+    background-color: #fff;
+    z-index: $wsu-zindex--navigation;
+}
+
+@mixin wsu-site-navigation-table() {
+    padding: 64px 0 0;
+    position: fixed;
+    width: $wsu-width--navigation-open;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $wsu-color--gray-10;
+    @include wsu-transition-navigation-vertical;
+    transition-property: transform;
+    background-color: #fff;
+    z-index: $wsu-zindex--navigation;
+}
+
+@mixin wsu-site-navigation-phone() {
+    padding: 64px 0 0;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $wsu-color--gray-10;
+    @include wsu-transition-navigation-vertical;
+    transition-property: transform;
+    background-color: #fff;
+    z-index: $wsu-zindex--navigation;
+    width: $wsu-width--navigation-mobile-open;
+    left: auto;
+    right: 0;
+}
+
+@mixin wsu-site-navigation-panel() {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 1;
+    transition: opacity $wsu-transition-speed--xfast $wsu-easing;
+    background-color: #fff;
+}

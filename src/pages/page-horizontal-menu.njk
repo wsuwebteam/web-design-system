@@ -2,8 +2,9 @@
 
 {% block content %}
 <div class="wsu-wrapper-global">
-    {% include 'header-global/header-global--dark.njk' %}
-    {% include 'navigation-site/navigation-site--dark.njk' %}
+    {% include 'header-global/header-global.njk' %}
+    {% include 'header-site/header-site.njk' %}
+    {% include 'navigation-site/navigation-site--horizontal.njk' %}
     <div class="wsu-wrapper-site">
         <!-- Site Header -->
         <main class="wsu-wrapper-content">
@@ -13,4 +14,4 @@
     </div>
     {% include 'footer-global/footer-global.njk' %} 
 </div>
-{%  endblock %}  
+{%  endblock %}
