@@ -1,0 +1,38 @@
+.wsu-layout {
+
+    box-sizing: border-box;
+
+    &-panel {
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+
+    &--sidebar {
+
+        display: flex;
+
+        .wsu-layout-panel:first-child {
+            padding-right: $wsu-spacing--column;
+        }
+
+        .wsu-layout-panel:last-child {
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 30%;
+            padding-left: $wsu-spacing--column;
+        }
+
+        @media screen and ( max-width: $wsu-breakpoint--tablet-large ) {
+
+            flex-wrap: wrap;
+
+            .wsu-layout-panel:first-child,
+            .wsu-layout-panel:last-child {
+                flex-grow: 0;
+                flex-shrink: 0;
+                width: 100%;
+                padding-left: 0; 
+            }
+        }
+    }
+} 

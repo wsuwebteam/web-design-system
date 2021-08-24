@@ -1,0 +1,12 @@
+{% extends "component.njk" %}
+{% from "callout/macros/macro.njk" import callout %}
+{% block content %}
+<div class="wsu-demo-component">
+{{ callout() }} 
+</div>
+<div class="wsu-demo-component">
+{{ callout(' wsu-callout--dark') }} 
+</div>
+<style>
+</style>
+{%  endblock %}  

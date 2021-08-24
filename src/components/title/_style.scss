@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-title {
+    font-size: $wsu-font-size--medium;
+    line-height: 1.2;
+    
+    a::after {
+        display: none; 
+    }
+}
+
+@each $name, $size in $wsu-font-size-map {
+
+    .wsu-title--#{$name} {
+        &.wsu-title,
+        .wsu-title {
+            font-size: $size !important;
+            line-height: map-get( $wsu-line-height-tight-map, #{$name} ) !important;
+        } 
+    }
+
+}

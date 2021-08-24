@@ -4,5 +4,9 @@
 .wsu-caption {
 
     @include wsu-font--small();
-    font-weight: 400;  
+    font-weight: 400;
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
 }

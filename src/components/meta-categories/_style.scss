@@ -1,0 +1,19 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-meta-categories {
+
+    @include wsu-font--small();
+    font-weight: 600;
+
+
+    a {
+        @include wsu-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $wsu-color--crimson-light; 
+        }
+    }
+}  

@@ -29,6 +29,7 @@ $wsu-border-radius--xsmall: 3px;
 $wsu-breakpoint--ultrawide:    1400px;
 $wsu-breakpoint--desktop:      1260px;
 $wsu-breakpoint--tablet-large: 992px;
+$wsu-breakpoint--tablet-medium: 860px;
 $wsu-breakpoint--tablet:       768px;
 $wsu-breakpoint--phone:        576px;
 $wsu-breakpoint--phone-small:  450px;
@@ -94,6 +95,9 @@ $wsu-font-family: 'Montserrat', sans-serif;
 /* ========================================================
 == Font Sizes ==
 ==========================================================*/
+
+$wsu-font-sizes: 'hero','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
+
 $wsu-font-size--hero:     5.125rem;
 $wsu-font-size--xxlarge:  3.125rem;
 $wsu-font-size--xlarge:   2rem;
@@ -104,6 +108,19 @@ $wsu-font-size--medium:   1rem;
 $wsu-font-size--small:    0.875rem;
 $wsu-font-size--xsmall:   0.75rem;
 $wsu-font-size--xxsmall:  0.6875rem;
+
+$wsu-font-size-map: (
+    'hero':     $wsu-font-size--hero,
+    'xxlarge':  $wsu-font-size--xxlarge,
+    'xlarge':   $wsu-font-size--xlarge,
+    'large':    $wsu-font-size--large,
+    'xxmedium': $wsu-font-size--xxmedium,
+    'xmedium':  $wsu-font-size--xmedium,
+    'medium':   $wsu-font-size--medium,
+    'small':    $wsu-font-size--small,
+    'xsmall':   $wsu-font-size--xsmall,
+    'xxsmall':  $wsu-font-size--xxsmall,
+);
 
 /* ========================================================
 == Font Weights ==
@@ -117,10 +134,97 @@ $wsu-font-weight--semibold:   600;
 $wsu-font-weight--bold:       700;
 $wsu-font-weight--extrabold:  800;
 
+/* ========================================================
+== Image Sizes ==
+==========================================================*/
+$wsu-image-sizes: 'full','hero','xxlarge','xlarge','large','xmedium','medium','small','xsmall','xxsmall','sxxsmall';
+
+$wsu-image-size--full: 100%;
+$wsu-image-size--hero: 1200px;
+$wsu-image-size--xxlarge: 1200px;
+$wsu-image-size--xlarge: 900px;
+$wsu-image-size--large: 600px;
+$wsu-image-size--xmedium: 450px;
+$wsu-image-size--medium: 350px;
+$wsu-image-size--small: 250px;
+$wsu-image-size--xsmall: 200px;
+$wsu-image-size--xxsmall: 175px;
+$wsu-image-size--sxxsmall: 125px;
+
+$wsu-image-size-map: (
+    'full':$wsu-image-size--full,
+    'hero':$wsu-image-size--hero,
+    'xxlarge':$wsu-image-size--xxlarge,
+    'xlarge':$wsu-image-size--xlarge,
+    'large':$wsu-image-size--large,
+    'xmedium':$wsu-image-size--xmedium,
+    'medium':$wsu-image-size--medium,
+    'small':$wsu-image-size--small,
+    'xsmall':$wsu-image-size--xsmall,
+    'xxsmall':$wsu-image-size--xxsmall,
+    'sxxsmall':$wsu-image-size--sxxsmall
+);
+
+/* ========================================================
+== Line Heights ==
+==========================================================*/
+
+$wsu-line-heights: 'hero','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
+
+$wsu-line-height--hero:     1.15;
+$wsu-line-height--xxlarge:  1.2;
+$wsu-line-height--xlarge:   1.2;
+$wsu-line-height--large:    1.3;
+$wsu-line-height--xxmedium: 1.4;
+$wsu-line-height--xmedium:  1.4;
+$wsu-line-height--medium:   1.5;
+$wsu-line-height--small:    1.5;
+$wsu-line-height--xsmall:   1.5;
+$wsu-line-height--xxsmall:  1.5;
+
+$wsu-line-height--tight-hero:     1.15;
+$wsu-line-height--tight-xxlarge:  1.2;
+$wsu-line-height--tight-xlarge:   1.2;
+$wsu-line-height--tight-large:    1.3;
+$wsu-line-height--tight-xxmedium: 1.3;
+$wsu-line-height--tight-xmedium:  1.3;
+$wsu-line-height--tight-medium:   1.4;
+$wsu-line-height--tight-small:    1.4;
+$wsu-line-height--tight-xsmall:   1.4;
+$wsu-line-height--tight-xxsmall:  1.4;
+
+$wsu-line-height-map: (
+    'hero':     $wsu-line-height--hero,
+    'xxlarge':  $wsu-line-height--xxlarge,
+    'xlarge':   $wsu-line-height--xlarge,
+    'large':    $wsu-line-height--large,
+    'xxmedium': $wsu-line-height--xxmedium,
+    'xmedium':  $wsu-line-height--xmedium,
+    'medium':   $wsu-line-height--medium,
+    'small':    $wsu-line-height--small,
+    'xsmall':   $wsu-line-height--xsmall,
+    'xxsmall':  $wsu-line-height--xxsmall,
+);
+
+$wsu-line-height-tight-map: (
+    'hero':     $wsu-line-height--tight-hero,
+    'xxlarge':  $wsu-line-height--tight-xxlarge,
+    'xlarge':   $wsu-line-height--tight-xlarge,
+    'large':    $wsu-line-height--tight-large,
+    'xxmedium': $wsu-line-height--tight-xxmedium,
+    'xmedium':  $wsu-line-height--tight-xmedium,
+    'medium':   $wsu-line-height--tight-medium,
+    'small':    $wsu-line-height--tight-small,
+    'xsmall':   $wsu-line-height--tight-xsmall,
+    'xxsmall':  $wsu-line-height--tight-xxsmall,
+);
+
 
 /* ========================================================
 == Ratios height/width ==
 ==========================================================*/
+
+$wsu-ratios: '2-5','16-9','6-4','4-3','square','3-4';
 
 $wsu-ratio--2-5:    40%;
 $wsu-ratio--16-9:   56.25%;
@@ -137,7 +241,7 @@ $wsu-spacing--hero:     6.87rem;
 $wsu-spacing--xxlarge:  5.125rem;
 $wsu-spacing--xlarge:   4.125rem;
 $wsu-spacing--large:    3.125rem;
-$wsu-spacing--xxmedium: 2rem;
+$wsu-spacing--xxmedium: 2.25rem;
 $wsu-spacing--xmedium:  1.75rem;
 $wsu-spacing--medium:   1.5rem;
 $wsu-spacing--small:    1.125rem;

@@ -1,4 +1,5 @@
 
+.wsu-button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"],
@@ -25,6 +26,8 @@ button {
 }
 
 .wsu-button {
+    display: inline-block;
+    box-sizing: border-box;
 
     &--small {
         font-size: $wsu-font-size--xsmall;
@@ -36,6 +39,11 @@ button {
 
     &--round {
         border-radius: 2em;
+    }
+
+    &--full-width {
+        display: block;
+        width: 100%;
     }
 
     &--secondary {

@@ -1,0 +1,182 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-menu-dropdown {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: block;
+
+        ul {
+            padding-left: $wsu-spacing--small;
+        }
+    }
+
+    li {
+        margin: 0;
+        list-style-type: none;
+        font-weight: 600;
+        @include wsu-font--small();
+        position: relative;
+        display: block;
+        padding: 0.5em 0;
+
+        li {
+            padding: 0.3em 0;
+            @include wsu-font--xsmall();
+            font-weight: 500;
+        }
+
+    }
+
+    a {
+        padding: 0.1em 0;
+        margin: 0;
+        text-decoration: none;
+        color: inherit;
+        font-weight: inherit;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+
+        @include wsu-menu-item--crimson-bar( -0.25em, 4px, 'before' );
+
+        a {
+            padding: 0.2em 0;
+        }
+
+       /* &::before {
+            content:'';
+            width: 100%;
+            height: 4px;
+            background-color: $wsu-color--crimson-light;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0; 
+        }
+
+        &:hover {
+
+            &::before {
+                opacity: 1;
+                bottom: -8px;
+            }
+
+        }*/
+
+        
+    }
+
+    /**  === First Level === */
+
+    & > li {
+
+
+        & > a {
+            padding: 0.1em;
+            margin: 0 $wsu-spacing--xsmall;
+        }
+
+        &[aria-expanded] {
+
+            & > a {
+
+                &::after {
+                    content: '\F103';
+                    font-family: 'wsu-icons';
+                    font-size: 0.7em;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 0.5em;
+                }
+
+
+            }
+
+
+        }
+
+        /** === Second Level Start === */
+        & > ul {
+            width: $wsu-width--navigation-width--modal;
+            position: absolute;
+            top: 100%;
+            left: calc(  #{$wsu-spacing--xsmall} - #{$wsu-spacing--medium} );
+            padding-top: calc( #{$wsu-spacing--xxsmall} + #{$wsu-spacing--small} );
+            padding-bottom: $wsu-spacing--small;
+            padding-left: $wsu-spacing--medium;
+            padding-right: $wsu-spacing--medium;
+
+            &::before {
+                content: '';
+                display: block;
+                @include wsu-modal-box--low();
+                top: $wsu-spacing--xxsmall;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                position: absolute;
+            }
+
+            & > li {
+
+                @include wsu-font--xsmall();
+                font-weight: 500;
+
+                & > a {
+                    padding: 0.2em 0;
+                }
+
+                &.wsu-menu-dropdown__link {
+
+                    margin-bottom: $wsu-spacing--xxsmall;
+
+                    & > a {
+                        font-weight: 600;
+                        @include wsu-font--small();
+
+                        &::after {
+                            content: "\F108";
+                            font-family: 'wsu-icons';
+                            font-size: 0.7em;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-left: 0.4em;
+                        }
+                    }
+
+                }
+
+                /** === Thrid Level Start === */
+                & > ul {
+
+                    li {
+
+                        
+                        padding: 0.1em 0;
+
+                    }
+
+                    a {
+                        padding: 0.2em 0;
+                        
+                    }
+
+                }
+
+            }
+        }
+    } 
+
+
+}

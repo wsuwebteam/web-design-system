@@ -1,0 +1,17 @@
+{% extends "page-template.njk" %}
+
+{% block content %}
+<div class="wsu-wrapper-global">
+    {% include 'header-global/header-global.njk' %}
+    {% include 'header-site/header-site.njk' %}
+    {% include 'navigation-site/navigation-site--horizontal.njk' %}
+    <div class="wsu-wrapper-site">
+        <!-- Site Header -->
+        <main class="wsu-wrapper-content">
+            <!-- Site content -->
+            {% include 'content-kitchen-sink.njk' %}
+        </main>
+    </div>
+    {% include 'footer-global/footer-global.njk' %} 
+</div>
+{%  endblock %}

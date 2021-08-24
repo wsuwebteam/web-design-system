@@ -1,0 +1,37 @@
+@mixin wsu-navigation-site--closed {
+
+        transform: translateX( calc( #{$wsu-width--navigation-closed} - #{$wsu-width--navigation-open}) );
+
+        .wsu-navigation-site__panel {
+            opacity: 0;
+        }
+
+        .wsu-button-ui-menu-animated {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        &:not(.wsu-animating) {
+
+            .wsu-navigation-site__panel {
+                visibility: hidden;
+            }
+        }
+
+}
+
+
+@mixin wsu-navigation-site--openned {
+
+    transform: translateX( 0 );
+
+    .wsu-navigation-site__panel {
+        opacity: 1;
+    }
+
+    .wsu-button-ui-menu-animated {
+        opacity: 0;
+    }
+
+}

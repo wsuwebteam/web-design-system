@@ -1,0 +1,77 @@
+.wsu-navigation-site--dark {
+    background-color: $wsu-color--gray-90;
+    border-right: 1px solid $wsu-color--gray-80;
+
+    .wsu-navigation-site {
+        &__panel {
+            background-color: $wsu-color--gray-90;
+        }
+    }
+
+    .wsu-button-ui-menu-animated {
+        background-color: $wsu-color--gray-90;
+
+        &:focus-within,
+        &:focus,
+        &:hover {
+            background-color: $wsu-color--gray-80;
+        }
+
+        &__button,
+        &__text {
+            color: $wsu-color--gray-10;
+        }
+
+        &__icon {
+            background-color: $wsu-color--gray-10;
+        }
+    }
+
+    .wsu-menu-toggle {
+
+        a {
+            color: $wsu-color--gray-10 !important;
+
+            &:hover,
+            &:focus {
+                background-color: $wsu-color--gray-75;
+            }
+        }
+
+        & > li {
+
+            &[aria-expanded] > a::after,
+            &::before {
+                background-color: $wsu-color--gray-70;
+            }
+        }
+
+        li[aria-expanded] {
+
+            & > button {
+                color: $wsu-color--gray-10 !important;
+
+                &:hover,
+                &:focus {
+                    background-color: $wsu-color--gray-75;
+                }
+            }
+
+        } 
+
+        &::after {
+            background-color: $wsu-color--gray-70;
+        }
+
+        
+    }
+
+    .wsu-button-ui-close {
+        color: $wsu-color--gray-10;
+
+        &::after {
+            color: $wsu-color--gray-40; 
+        }
+    }
+
+}

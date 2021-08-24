@@ -6,9 +6,9 @@
 {% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
 
 {% macro newsCard( classes='', imageSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', title='Phasellus pharetra nunc nec rutrum porta', articleCaption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.', link='#' ) %}
-<article class="wsu-news-card{{ classes }}">
+<article class="wsu-card wsu-news-card{{ classes }}">
     {% if imageSrc %}
-        {{ imageFrame( ' wsu-ratio--has', '#', imageSrc ) }} 
+        {{ imageFrame( ' wsu-ratio--4-3', '#', imageSrc ) }} 
     {% endif %}
     <div class="wsu-news-card__content">
         {{ articleTitle('','h2','#') }}

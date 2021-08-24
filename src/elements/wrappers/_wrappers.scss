@@ -33,7 +33,7 @@
     }
 }
 
-.wsu-navigation-site-vertical ~ .wsu-wrapper-site {
+.wsu-navigation-site ~ .wsu-wrapper-site {
 
     @media screen and (min-width: $wsu-breakpoint--desktop) {
         .wsu-wrapper-content:not(.wsu-wrapper-content--fluid) {
