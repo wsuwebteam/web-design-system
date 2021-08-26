@@ -1,0 +1,55 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-list {
+
+    &--arrow {
+        li::marker {
+            font-family: 'wsu-icons';
+            content:'\F107';
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+    
+    }
+    
+    &--checkbox {
+        li {
+            list-style-type: none;
+            position: relative;
+    
+            &::before {
+                font-family: 'wsu-icons';
+                content:'\F14B';
+                color: $wsu-color--crimson-light;
+                font-weight: 400;
+                font-size: 1.5em;
+                line-height: 1em;
+                position: absolute;
+                left: -1.1em;
+            }
+            
+        }
+    }
+    
+    &--checkmark {
+        li {
+            
+            list-style-type: none;
+            position: relative;
+    
+            &::before {
+                font-family: 'wsu-icons';
+                content:'\F110';
+                color: $wsu-color--crimson-light;
+                font-weight: 400;
+                font-size: 1.2em;
+                line-height: 1em;
+                position: absolute;
+                left: -1.2em;
+            }
+        }
+    }
+
+}
+
