@@ -1,33 +1,12 @@
-
-.wsu-button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"],
-button {
-    font-family: $wsu-font-family;
-    background-color: $wsu-color--crimson;
-    color: #fff;
-    border-radius: $wsu-border-radius--large;
-    border: none;
-    padding: 1em 3em;
-    font-size: $wsu-font-size--medium;
-    font-weight: 600;
-    line-height: 1.5;
-    cursor: pointer;
-    transition: box-shadow $wsu-transition-speed--fast $wsu-easing;
-    margin-bottom: $wsu-spacing--component;
-    margin-right: $wsu-spacing--xmedium;
-
-    &:hover,
-    &:focus {
-        box-shadow: $wsu-dropshadow-rise--medium;
-        background-color: $wsu-color--crimson-light;
-    }
-}
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../elements/button/style';
 
 .wsu-button {
-    display: inline-block;
+    display: inline-block; 
     box-sizing: border-box;
+    margin-bottom: $wsu-spacing--component;
+    margin-right: $wsu-spacing--xmedium;
 
     &--small {
         font-size: $wsu-font-size--xsmall;
@@ -99,5 +78,3 @@ button {
         content: '\F140';
     }
 }
- 
-
