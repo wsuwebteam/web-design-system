@@ -1,39 +1,98 @@
 .wsu-menu-utility {
     font-family: $wsu-font-family;
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 $wsu-spacing--component 0;
     padding: 0;
     font-size: $wsu-font-size--small;
-    font-weight: 500;
 
     a {
         outline: none;
+        text-decoration: none;
+        color: inherit;
+        font-size: inherit;
+        @include wsu-menu-item--crimson-bar( -4px );
     }
+
+    button:not([class*="wsu-button-"]) {
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-shadow: none;
+        font-weight: inherit;
+        @include wsu-menu-item--crimson-bar( -4px );
+        text-transform: inherit;
+        text-align: left;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 0 0 $wsu-spacing--xxsmall 0;
+        padding: 0.3em 0;
+        display: block;
+        font-weight: 600;
+        font-size: $wsu-font-size--medium;
+        
+        li {
+            font-size: $wsu-font-size--small;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        margin-left: $wsu-spacing--xsmall;
+    }
+
+}
+
+
+/* ==============================================
+= Horizontal Modifier = 
+================================================*/
+
+.wsu-menu-utility--horizontal .wsu-menu-utility,
+.wsu-menu-utility.wsu-menu-utility--horizontal {
+   
+    display: flex;
+    flex-wrap: wrap;
 
     & > li {
-        margin: 0;
-        padding: 0 $wsu-spacing--xxsmall;
-        align-items: center;
-        padding: calc( #{$wsu-spacing--xxsmall} / 2 ) 0;
-
-        & > a {
-            text-decoration: none;
-            position: relative;
-            color: inherit;
-            display: inline-block;
-            @include wsu-menu-item--crimson-bar( -4px );
-        } 
-
-        & > button:not([class*="wsu-button-"]) { 
-            background-color: transparent;
-            display: inline-block;
-            line-height: inherit;
-            outline: none;
-            border: none;
-            font-weight: 500;
-            padding: 0;
-            @include wsu-menu-item--crimson-bar( -4px );
-        }
-
+        margin-right: $wsu-spacing--xxmedium;
+        margin-bottom: $wsu-spacing--small;
     }
+
+}
+
+
+/* ==============================================
+= Spaced Modifier = 
+================================================*/
+
+.wsu-menu-utility--spaced .wsu-menu-utility,
+.wsu-menu-utility.wsu-menu-utility--spaced {
+
+    & > li {
+        margin-bottom: $wsu-spacing--small;
+    }
+
+}
+
+.wsu-menu-utility--flat .wsu-menu-utility,
+.wsu-menu-utility.wsu-menu-utility--flat {
+
+    ul {
+        margin-left: 0 !important;
+    }
+
+    li {
+        padding: .5em 0;
+    }
+
 }

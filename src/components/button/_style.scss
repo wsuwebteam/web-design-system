@@ -8,6 +8,8 @@
     margin-bottom: $wsu-spacing--component;
     margin-right: $wsu-spacing--xmedium;
 
+    @include wsu-button();
+
     &--small {
         font-size: $wsu-font-size--xsmall;
     }

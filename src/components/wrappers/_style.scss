@@ -33,6 +33,10 @@
     }
 }
 
+.wsu-wrapper-content .wsu-hero:first-child {
+    margin-top: -$wsu-spacing--xxlarge;
+}
+
 .wsu-navigation-site ~ .wsu-wrapper-site {
 
     @media screen and (min-width: $wsu-breakpoint--desktop) {

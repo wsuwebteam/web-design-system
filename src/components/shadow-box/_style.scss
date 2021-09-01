@@ -1,0 +1,14 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-shadow-box() {
+    border-radius: $wsu-border-radius--medium;
+    box-shadow: $wsu-shadow--xlow;
+}
+
+.wsu-shadow-box {
+
+    @include wsu-shadow-box();
+
+}
+

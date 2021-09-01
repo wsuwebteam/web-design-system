@@ -1,0 +1,21 @@
+{% extends "page-template.njk" %}
+{% from "footer-site/macro.njk" import footerSite %}
+{% from "hero/_macro.njk" import hero %}
+
+
+{% block content %}
+<div class="wsu-wrapper-global">
+    {% include 'header-global/html.njk' %}
+    {% include 'navigation-site/navigation-site.njk' %}
+    <div class="wsu-wrapper-site">
+        <!-- Site Header -->
+        <main class="wsu-wrapper-content">
+            {{ hero() }}
+            <h1>Lorem ipsum dolor sit amet</h1>
+            {% include 'row/row-thirds.njk' %}
+        </main>
+        {{ footerSite() }}
+    </div>
+    {% include 'footer-global/html.njk' %} 
+</div>
+{%  endblock %}

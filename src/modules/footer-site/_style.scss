@@ -1,0 +1,112 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-footer-site {
+    
+    box-sizing: border-box;
+    padding: $wsu-spacing--xxmedium $wsu-spacing--large $wsu-spacing--xmedium;
+    background-color: $wsu-color--gray-5;
+    position: relative;
+
+    &__title {
+        font-weight: 500;
+        font-size: $wsu-font-size--large;
+        text-transform: uppercase;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 100px;
+        box-sizing: border-box;
+        padding-right: 100px;
+        @media screen and (min-width: $wsu-breakpoint--tablet-large ) {
+            max-width: calc( 100vw - #{$wsu-width--navigation-open});
+        }
+    }
+
+    .wsu-caption {
+        max-width: 600px;
+        @include wsu-font--small();
+        margin-bottom: $wsu-spacing--component;
+    }
+
+    .wsu-menu-utility {
+
+        li {
+            text-transform: uppercase;
+            width: 170px;
+
+            li {
+                font-size: $wsu-font-size--xsmall;
+                width: auto;
+            }
+        }
+
+        & > li {
+            & > button,
+            & > a {
+                text-transform: uppercase;
+            }
+        }
+
+    }
+
+    .wsu-coug-head {
+        position: absolute;
+        top: $wsu-spacing--medium;
+        right: $wsu-spacing--xxmedium;
+    }
+
+    .wsu-caption ~ .wsu-coug-head,
+    .wsu-menu-utility ~ .wsu-coug-head {
+        top: $wsu-spacing--xxmedium;
+    }
+}
+
+.wsu-footer-site--dark {
+    background-color: $wsu-color--gray-85;
+    color: $wsu-color--gray-10;
+}
+
+.wsu-footer-site--white {
+    background-color: #fff;
+    border-top: 1px solid $wsu-color--gray-30;
+
+    .wsu-coug-head {
+        fill: $wsu-color--crimson;
+    }
+}
+
+@media screen and (max-width: $wsu-breakpoint--tablet-large) {
+
+    .wsu-footer-site {
+
+        padding-bottom: $wsu-spacing--xxmedium;
+
+        .wsu-coug-head {
+            position: relative;
+            top: auto !important;
+            bottom: auto;
+            right: auto;
+            left: auto;
+            margin-top: $wsu-spacing--medium;
+            margin-left: auto;
+            margin-right: 0;
+            display: block;
+            width: 60px;
+            height: 60px;
+        }
+
+        &__content {
+            padding-right: 0 !important;
+        }
+
+        .wsu-social-icons {
+            margin-top: 0.4rem;
+        }
+
+    }
+    
+}

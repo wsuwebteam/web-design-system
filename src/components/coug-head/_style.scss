@@ -1,5 +1,26 @@
 @import '../../../_assets/scss/variables';
 
+.wsu-coug-head {
+
+	width: 100px;
+	height: 100px;
+	fill: $wsu-color--crimson;
+
+	&--crimson-light {
+		fill: $wsu-color--crimson-light;
+	}
+
+	&--white {
+		fill: #fff;
+	}
+
+	&--boxed-crimson {
+		background-color: $wsu-color--crimson;
+		fill: #fff;
+	}
+
+}
+
 .wsu-coug-head-boxed {
 	position: relative;
 	justify-content: center;

@@ -1,0 +1,129 @@
+{% macro menuUtility( classes='', showChildren=true, showGrandchildren=true ) %}
+<ul class="wsu-menu-utility{{ classes }}">
+    <li>
+        <a href="#">Menu Item</a>
+         {% if showChildren %}<ul>
+            <li>
+                <button>Button Item</button>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+                {% if showGrandchildren %}<ul>
+                    <li>
+                        <button>Button Item</button>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                </ul>{% endif %}
+            </li>
+        </ul>{% endif %}
+    </li>
+    <li>
+        <a href="#">Menu Item</a>
+        {% if showChildren %}<ul>
+             <li>
+                <button>Button Item</button>
+            </li>
+            <li>
+                <a href="#">long Item Lorem ipsum dolor sit amet</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+                {% if showGrandchildren %}<ul>
+                    <li>
+                        <button>Button Item</button>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                </ul>{% endif %}
+            </li>
+        </ul>{% endif %}
+    </li>
+    <li>
+        <button>Button Item</button>
+         {% if showChildren %}<ul>
+             <li>
+                <button>Button Item</button>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+                {% if showGrandchildren %}<ul>
+                    <li>
+                        <button>Button Item</button>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                </ul>{% endif %}
+            </li>
+        </ul>{% endif %}
+    </li>
+    <li>
+        <a href="#">Menu Item</a>
+         {% if showChildren %}<ul>
+             <li>
+                <button>Button Item</button>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+                {% if showGrandchildren %}<ul>
+                    <li>
+                        <button>Button Item</button>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                </ul>{% endif %}
+            </li>
+        </ul>{% endif %}
+    </li>
+    <li>
+        <a href="#">Menu Item</a>
+         {% if showChildren %}<ul>
+             <li>
+                <button>Button Item</button>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+                {% if showGrandchildren %}<ul>
+                    <li>
+                        <button>Button Item</button>
+                    </li>
+                    <li>
+                        <a href="#">long Item Lorem ipsum dolor sit amet</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu Item</a>
+                    </li>
+                </ul>{% endif %}
+            </li>
+        </ul>{% endif %}
+    </li>
+</ul>
+{% endmacro %}

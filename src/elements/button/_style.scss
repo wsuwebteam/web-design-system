@@ -10,6 +10,7 @@
     line-height: 1.5;
     cursor: pointer;
     transition: box-shadow $wsu-transition-speed--fast $wsu-easing;
+    text-decoration: none;
 
     &:hover,
     &:focus {

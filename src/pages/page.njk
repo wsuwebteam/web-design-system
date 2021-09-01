@@ -1,8 +1,11 @@
 {% extends "page-template.njk" %}
+{% from "footer-site/macro.njk" import footerSite %}
+
+
 
 {% block content %}
 <div class="wsu-wrapper-global">
-    {% include 'header-global/header-global.njk' %}
+    {% include 'header-global/html.njk' %}
     {% include 'navigation-site/navigation-site.njk' %}
     <div class="wsu-wrapper-site">
         <!-- Site Header -->
@@ -10,7 +13,8 @@
             <!-- Site content -->
             {% include 'content-kitchen-sink.njk' %}
         </main>
+        {{ footerSite() }}
     </div>
-    {% include 'footer-global/footer-global.njk' %} 
+    {% include 'footer-global/html.njk' %} 
 </div>
 {%  endblock %}

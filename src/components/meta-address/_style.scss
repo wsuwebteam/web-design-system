@@ -1,0 +1,19 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-meta-address {
+
+    font-size: $wsu-font-size--xsmall;
+
+    a {
+        color: inherit;
+    }
+
+    &__title,
+    &__phone,
+    &__email,
+    &__mail {
+        margin-right: $wsu-spacing--xxsmall;
+    }
+
+}

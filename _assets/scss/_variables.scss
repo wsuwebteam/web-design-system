@@ -68,6 +68,58 @@ $wsu-color--gray-100: hsl(0, 0, 3%); // #080808
 
 $wsu-color--text: $wsu-color--gray-85; // #080808
 
+$wsu-color-map: (
+    'gray-0':        $wsu-color--gray-0,
+    'gray-5':        $wsu-color--gray-5,
+    'gray-10':       $wsu-color--gray-10,
+    'gray-15':       $wsu-color--gray-15,
+    'gray-20':       $wsu-color--gray-20,
+    'gray-25':       $wsu-color--gray-25,
+    'gray-30':       $wsu-color--gray-30,
+    'gray-35':       $wsu-color--gray-35,
+    'gray-40':       $wsu-color--gray-40,
+    'gray-45':       $wsu-color--gray-45,
+    'gray-50':       $wsu-color--gray-50,
+    'gray-55':       $wsu-color--gray-55,
+    'gray-60':       $wsu-color--gray-60,
+    'gray-65':       $wsu-color--gray-65,
+    'gray-70':       $wsu-color--gray-70,
+    'gray-75':       $wsu-color--gray-75,
+    'gray-80':       $wsu-color--gray-80,
+    'gray-85':       $wsu-color--gray-85,
+    'gray-90':       $wsu-color--gray-90,
+    'gray-95':       $wsu-color--gray-95,
+    'gray-100':      $wsu-color--gray-100,
+    'crimson':       $wsu-color--crimson,
+    'crimson-light': $wsu-color--crimson-light,
+);
+
+$wsu-color-background-text-map: (
+    'gray-0':        inherit,
+    'gray-5':        inherit,
+    'gray-10':       inherit,
+    'gray-15':       inherit,
+    'gray-20':       inherit,
+    'gray-25':       inherit,
+    'gray-30':       inherit,
+    'gray-35':       inherit,
+    'gray-40':       inherit,
+    'gray-45':       $wsu-color--gray-5,
+    'gray-50':       $wsu-color--gray-5,
+    'gray-55':       $wsu-color--gray-5,
+    'gray-60':       $wsu-color--gray-5,
+    'gray-65':       $wsu-color--gray-5,
+    'gray-70':       $wsu-color--gray-5,
+    'gray-75':       $wsu-color--gray-5,
+    'gray-80':       $wsu-color--gray-5,
+    'gray-85':       $wsu-color--gray-5,
+    'gray-90':       $wsu-color--gray-5,
+    'gray-95':       $wsu-color--gray-5,
+    'gray-100':      $wsu-color--gray-5,
+    'crimson':       #fff,
+    'crimson-light': #fff,
+);
+
 
 /* ========================================================
 == Dropshadows ==
@@ -76,6 +128,13 @@ $wsu-dropshadow--xlow:   0px 0px 5px rgba(0,0,0,0.3);
 $wsu-dropshadow--low:    0px 0px 7px rgba(0,0,0,0.4);
 $wsu-dropshadow--medium: 0px 0px 14px rgba(0,0,0,0.4);
 $wsu-dropshadow--high:   0px 0px 17px rgba(0,0,0,0.5);
+
+$wsu-shadow--xlow:   0px 0px 5px rgba(0,0,0,0.3);
+$wsu-shadow--low:    0px 0px 7px rgba(0,0,0,0.4);
+$wsu-shadow--medium: 0px 0px 14px rgba(0,0,0,0.4);
+$wsu-shadow--high:   0px 0px 17px rgba(0,0,0,0.5);
+
+$wsu-dropshadow-rise--medium:   0px 5px 14px rgba(0,0,0,0.4);
 
 $wsu-dropshadow-rise--medium:   0px 5px 14px rgba(0,0,0,0.4);
 
@@ -259,7 +318,20 @@ $wsu-spacing--em-xsmall:   0.875em;
 $wsu-spacing--em-xxsmall:  0.6875em;
 
 $wsu-spacing--component: $wsu-spacing--xmedium;
-$wsu-spacing--column:    $wsu-spacing--medium; 
+$wsu-spacing--column:    $wsu-spacing--medium;
+
+$wsu-spacing-map: (
+    'hero':     $wsu-spacing--hero,
+    'xxlarge':  $wsu-spacing--xxlarge,
+    'xlarge':   $wsu-spacing--xlarge,
+    'large':    $wsu-spacing--xlarge,
+    'xxmedium': $wsu-spacing--xxmedium,
+    'xmedium':  $wsu-spacing--xmedium,
+    'medium':   $wsu-spacing--medium,
+    'small':    $wsu-spacing--small,
+    'xsmall':   $wsu-spacing--xsmall,
+    'xxsmall':  $wsu-spacing--xxsmall,
+);
 
 
 /* ========================================================

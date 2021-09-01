@@ -24,7 +24,7 @@
          }
      
          & ~ .wsu-wrapper-site {
-             margin-left: $wsu-width--navigation-closed;
+             margin-left: $wsu-width--navigation-closed !important;
              transition-property: left;
              left: 0;
          }
