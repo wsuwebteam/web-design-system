@@ -21,19 +21,19 @@
 
 @each $spaceName, $space in $wsu-spacing-map{
 
-    .wsu-spacing-before--#{spaceName} {
+    .wsu-spacing-before--#{$spaceName} {
         margin-top: $space !important;
     }
 
-    .wsu-spacing-after--#{spaceName} {
+    .wsu-spacing-after--#{$spaceName} {
         margin-bottom: $space !important;
     }
 
-    .wsu-spacing-top--#{spaceName} {
+    .wsu-spacing-top--#{$spaceName} {
         padding-top: $space !important;
     }
 
-    .wsu-spacing-bottom--#{spaceName} {
+    .wsu-spacing-bottom--#{$spaceName} {
         padding-bottom: $space !important;
     }
 
