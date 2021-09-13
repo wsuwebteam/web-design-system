@@ -1,6 +1,11 @@
 .wsu-row {
     display: flex;
     box-sizing: border-box;
+
+    &[class*="wsu-color-background"] {
+        padding-top: $wsu-spacing--xmedium;
+        margin-bottom: $wsu-spacing--xmedium;
+    }
 }
 
 .wsu-wrapper-content .wsu-row {

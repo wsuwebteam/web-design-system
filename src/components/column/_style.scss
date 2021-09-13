@@ -11,6 +11,11 @@
     padding-left: $wsu-spacing--column;
     padding-right: $wsu-spacing--column;
     box-sizing: border-box;
+
+    &[class*="wsu-color-background"] {
+        padding-top: $wsu-spacing--xmedium;
+        margin-bottom: $wsu-spacing--xmedium;
+    }
 }
 
 .wsu-row {
@@ -18,7 +23,7 @@
 
         .wsu-column {
             width: 50%;
-            flex-grow: 0;
+            flex-grow: 0; 
         }
 
         @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
