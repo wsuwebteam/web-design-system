@@ -5,6 +5,7 @@ import WsuHeaderGlobal from "../modules/header-global/_header-global";
 import WsuAccordion from "../components/accordion/script";
 import WsuCollapsable from "../components/collapsable/script";
 import WsuSubmenuToggle from "../components/submenu-toggle/_script";
+import WsuMenu from "../components/menu/_script";
 
 
 
@@ -17,4 +18,5 @@ const wsu = {
     accordion: new WsuAccordion(),
     collapsable: new WsuCollapsable(),
     submenuToggle: new WsuSubmenuToggle(),
+    menu: new WsuMenu(),
 } 
