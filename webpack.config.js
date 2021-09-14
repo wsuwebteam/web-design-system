@@ -8,6 +8,7 @@ module.exports = env => {
 		context: __dirname,
 		entry: {
 			'dist/bundles/wsu-design-system': './src/bundles/wsu-design-system.js',
+			'dist/bundles/wsu-design-system.init': './src/bundles/wsu-design-system.init.js',
 		},
 		output: {
 			filename: '[name].js',

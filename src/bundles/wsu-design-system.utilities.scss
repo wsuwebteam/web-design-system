@@ -1,0 +1,41 @@
+@import '../../_assets/scss/variables';
+@import '../../_assets/scss/mixins';
+
+
+@each $colorName, $color in $wsu-color-map{
+
+    .wsu-color-background--#{$colorName} {
+        background-color: $color !important;
+        color: map-get( $wsu-color-background-text-map, $colorName );
+    }
+
+}
+
+@each $colorName, $color in $wsu-color-map{
+
+    .wsu-color-text--#{$colorName} {
+        color: $color !important;
+    }
+
+}
+
+@each $spaceName, $space in $wsu-spacing-map{
+
+    .wsu-spacing-before--#{$spaceName} {
+        margin-top: $space !important;
+    }
+
+    .wsu-spacing-after--#{$spaceName} {
+        margin-bottom: $space !important;
+    }
+
+    .wsu-spacing-top--#{$spaceName} {
+        padding-top: $space !important;
+    }
+
+    .wsu-spacing-bottom--#{$spaceName} {
+        padding-bottom: $space !important;
+    }
+
+}
+

@@ -1,0 +1,16 @@
+{% extends "component.njk" %}
+{% from "footer-site/macro.njk" import footerSite %}
+
+{% block content %}
+{% include 'footer-site/html.njk' %}
+<hr />
+{% include 'footer-site/html--dark.njk' %}
+<hr />
+{% include 'footer-site/html--white.njk' %}
+<hr />
+{{ footerSite( '', true, true, false ) }}
+<hr />
+{{ footerSite( '', false, false, true ) }}
+<hr />
+{{ footerSite( '', false, false, false ) }}
+{%  endblock %} 

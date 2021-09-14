@@ -1,0 +1,113 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-menu-tertiary() {
+    font-family: $wsu-font-family;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+        visibility: inherit;
+    }
+
+    & > li {
+        margin: 0;
+        padding: 0 $wsu-spacing--xxsmall;
+        display: flex;
+        align-items: center;
+        font-size: $wsu-font-size--xsmall;
+        text-transform: uppercase;
+        position: relative;
+
+        & > a {
+            text-decoration: none;
+            position: relative;
+            color: inherit;
+            display: block;
+            outline: none;
+            font-weight: inherit;
+            font-size: inherit;
+            text-transform: inherit;
+
+            @include wsu-menu-item--crimson-bar; 
+        }
+
+        & > button {
+
+            background-color: transparent;
+            display: block;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+            box-shadow: none !important;
+            font-weight: inherit;
+            font-size: inherit;
+            text-transform: inherit;
+
+            @include wsu-menu-item--crimson-bar;
+
+        }
+
+        & > ul {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity $wsu-transition-speed--fast $wsu-easing;
+            position: absolute;
+            top: 100%;
+            padding-top: calc( #{$wsu-spacing--xsmall} + #{$wsu-spacing--xsmall} );
+            padding-left: $wsu-spacing--xsmall;
+            padding-right: $wsu-spacing--xsmall;
+            padding-bottom: $wsu-spacing--xsmall;
+            margin: 0;
+            left: -$wsu-spacing--xxsmall; 
+
+            &::before {
+                content: "";
+                background-color: #fff;
+                position: absolute;
+                width: auto;
+                height: auto; 
+                top: $wsu-spacing--xsmall;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                box-shadow: $wsu-shadow--xlow;
+                border-radius: $wsu-border-radius--medium;
+            }
+
+            &  li {
+                position: relative;
+                padding: 0.5em 0;
+                margin: 0;
+
+                a {
+                    text-decoration: none;
+                    position: relative;
+                    color: inherit;
+                    display: inline-block;
+                    outline: none;
+                    font-weight: inherit;
+                    font-size: inherit;
+                    text-transform: none;
+
+                    @include wsu-menu-item--crimson-bar; 
+                }
+            }
+        }
+
+        &[aria-expanded="true"] > ul {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+}
+
+.wsu-menu-tertiary {
+
+    @include wsu-menu-tertiary();
+
+}

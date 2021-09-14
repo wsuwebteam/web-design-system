@@ -1,0 +1,33 @@
+{% macro menuTertiary( classes='', showChildren=true ) %}
+<ul class="wsu-menu-tertiary{{ classes }}">
+    <li>
+        <a href="#">Menu Item</a>
+    </li>
+    <li>
+        <a href="#">Menu Item</a>
+    </li>
+    <li>
+        <a href="#">Menu Item</a>
+    </li>
+    <li>
+        <a href="#">Menu Item</a>
+    </li>
+    <li aria-expanded="false" aria-haspopup="true">
+        <button class="wsu-submenu--toggle">Button Menu Item</button>
+        {% if showChildren %}<ul>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+            <li>
+                <a href="#">Menu Item</a> 
+            </li>
+            <li>
+                <a href="#">Menu Item</a>
+            </li>
+        </ul>{% endif %}
+    </li>
+</ul>
+{% endmacro %}

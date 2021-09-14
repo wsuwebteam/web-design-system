@@ -25,75 +25,7 @@
             font-weight: 500;
             text-transform: uppercase;
         }
-
-        li {
-        
-            &[aria-expanded] {
-                position: relative;
-
-                & > ul {
-                    @include wsu-modal-box();
-                    background-color: #fff;
-                    top: calc( 100% + #{$wsu-spacing--xsmall} );
-                    position: absolute;
-                    min-width: $wsu-width--navigation-width--modal;
-                    right: 0;
-                    padding: $wsu-spacing--small $wsu-spacing--xxmedium;
-                    transition: opacity $wsu-transition-speed--fast $wsu-easing, top $wsu-transition-speed--medium $wsu-easing;
-                    box-sizing: border-box;
-                } 
-            }
-
-            &[aria-expanded="false"] { 
-
-                & > ul {
-                    opacity: 0;
-                    top: calc( 100% + #{$wsu-spacing--xsmall} + 50px );
-                }
-            }
-
-            &[aria-expanded="false"]:not(.wsu-animating) {
-
-                & > ul {
-                    visibility: hidden;
-                }
-            }
-        }
     
-    }
-
-    .wsu-menu-utility-horizontal {
-         
-        & > li:last-child {
-
-            position: relative;
-            margin-left: $wsu-spacing--xxsmall;
-            padding: 0;
-
-            &::before {
-                content: '';
-                position: absolute;
-                width: 1px;
-                background-color: $wsu-color--gray-15;
-                top: 0;
-                bottom: 0;
-                left: 0;
-            }
-
-            & > button {
-                width: 60px;
-
-                &::after {
-                    max-width: 40%;
-                    left: 30%;
-                }
-            }
-
-        }
-
-        @media screen and (min-width: $wsu-breakpoint--tablet-large) {
-            padding-right: $wsu-spacing--small;
-        }
     }
 
     .wsu-button-ui-close {
@@ -102,9 +34,9 @@
         margin-top: $wsu-spacing--xxsmall;
     }
 
-    @media screen and (max-width: $wsu-breakpoint--tablet-large) {
+   @media screen and (max-width: $wsu-breakpoint--tablet-large) {
 
-        .wsu-menu-utility-horizontal > li:not(.wsu-header-global__site-nav):not(.wsu-header-global__search):not(.wsu-header-global__navigation-menu) {
+        .wsu-menu-tertiary > li:not(.wsu-header-global__site-nav):not(.wsu-header-global__search):not(.wsu-header-global__navigation-menu) {
             display: none;
         }
 

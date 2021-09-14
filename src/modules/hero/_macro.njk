@@ -1,0 +1,21 @@
+{% from "article-title/macros/article-title.macro.njk" import articleTitle %}
+{% from "caption/macros/caption.macro.njk" import caption %}
+{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% from "meta-tags/macros/macro.njk" import metaTags %}
+{% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
+{% from "overlay/_macro.njk" import overlay %}
+
+{% macro hero( classes='', imageSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', titleTag="div" ) %}
+<div class="wsu-hero {{ classes }}">
+    {% if imageSrc %}
+        {{ imageFrame( ' wsu-image-frame--fixed-ratio', '', imageSrc ) }} 
+    {% endif %}
+    {{ overlay() }}
+    <div class="wsu-hero__content">
+        <{{ titleTag }} class="wsu-title">Lorem ipsum dolor sit amet</{{ titleTag }}>
+        {{ caption() }}
+        <a href="#" class="wsu-button">Learn More</a>
+    </div>
+</div>
+{% endmacro %}

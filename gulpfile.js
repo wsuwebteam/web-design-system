@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
 const minify = require('gulp-minify');
 const cleanCSS = require('gulp-clean-css');
+var htmlbeautify = require('gulp-html-beautify');
 
 const components = [
     'components/global-header/'
@@ -17,6 +18,7 @@ gulp.task('buildHtml', function () {
       .pipe(nunjucksRender({
         path: ['_templates/','src/components/','pages/', 'src/elements/','_template-partials/','src/modules/'] // String or Array
       }))
+      .pipe(htmlbeautify({indentSize: 2}))
       .pipe(gulp.dest('dist/'));
       
   });
