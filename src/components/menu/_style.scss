@@ -31,7 +31,7 @@
 
             &:hover,
             &:focus {
-                background-color: $wsu-color--gray-0;
+                background-color: $wsu-color--gray-5;
                 border-left: 5px solid $wsu-color--gray-40;
             } 
 
@@ -68,7 +68,7 @@
 
             &:hover,
             &:focus {
-                background-color: $wsu-color--gray-0;
+                background-color: $wsu-color--gray-5;
             } 
         }
 
@@ -152,7 +152,7 @@
                     right: 0;
                     bottom: 0;
                     display: block;
-                    opacity: 0;
+                    opacity: 0; 
                 }
             }
 
