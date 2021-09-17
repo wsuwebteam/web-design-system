@@ -24,10 +24,11 @@ gulp.task('buildHtml', function () {
   });
 
 gulp.task('styles', () => {
-    return gulp.src('components/src/**/*.scss')
+    return gulp.src('src/**/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('components/dist/'));
+        .pipe(gulp.dest('dist/'));
 });
+
 
 gulp.task('bundleStyle', () => {
     return gulp.src('src/bundles/*.scss')

@@ -5,7 +5,15 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"],
 button {
-    @include wsu-button();
 }
- 
+
+.wsu-content {
+    input[type="reset"],
+    input[type="submit"],
+    input[type="button"],
+    button {
+        @include wsu-button();
+    }
+}
+  
 

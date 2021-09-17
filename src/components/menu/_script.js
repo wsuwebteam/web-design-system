@@ -1,3 +1,5 @@
+import updateAriaElement from "../../../_assets/js/updateAriaElement";
+
 class WsuMenu {
 
     constructor( atts = {} ) {
@@ -42,25 +44,15 @@ class WsuMenu {
 
                     this.close( navElement );
 
+                    updateAriaElement( 'Close', eventElement );
+
                 } else {
 
                     this.open( navElement );
 
+                    updateAriaElement( 'Open', eventElement );
+
                 }
-
-            }
-
-            // Open Action
-            if ( eventElement.classList.contains('wsu-menu--open' ) ) {
-
-                this.open( navElement );
-
-            }
-
-            // Close Action
-            if ( eventElement.classList.contains('wsu-menu--close' ) ) {
-
-                this.close( navElement );
 
             }
 			
@@ -98,7 +90,6 @@ class WsuMenu {
         subMenu.style.maxHeight = ( ( subMenu.scrollHeight + 20 ) + 'px' );
 
         navElement.setAttribute( 'aria-expanded', true );
-
 
         // Remove max height after animation
         this.timer = setTimeout(

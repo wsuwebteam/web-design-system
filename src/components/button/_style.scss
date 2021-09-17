@@ -1,6 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+
 .wsu-button {
     display: inline-block; 
     box-sizing: border-box;
@@ -8,57 +9,6 @@
     margin-right: $wsu-spacing--xmedium;
 
     @include wsu-button();
-
-    &--small {
-        font-size: $wsu-font-size--xsmall;
-    }
-
-    &--large {
-        font-size: $wsu-font-size--xxmedium;
-    }
-
-    &--round {
-        border-radius: 2em;
-    }
-
-    &--full-width {
-        display: block;
-        width: 100%;
-    }
-
-    &--secondary {
-        color: $wsu-color--gray-60;
-        border: 1px solid $wsu-color--gray-30;
-        background-color: #fff;
-
-        &:focus,
-        &:hover {
-            background-color: #fff;
-            color: $wsu-color--crimson-light;
-            border-color: $wsu-color--crimson-light;
-        }
-    }
-
-    &--tertiary {
-        color: $wsu-color--gray-60;
-        border: none;
-        background-color: transparent;
-        padding-left: 0;
-        padding-right: 0;
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        font-weight: 500;
-        
-
-        &:focus,
-        &:hover {
-            color: $wsu-color--gray-60;
-            border-color: transparent;
-            box-shadow: none;
-            background-color: transparent;
-            text-decoration-thickness: 2px;
-        }
-    }
 
     &-menu::before {
         content: '\F12A';
@@ -78,4 +28,65 @@
     &-search::before {
         content: '\F140';
     }
-} 
+}
+
+.wsu-content input[type="reset"],
+.wsu-content input[type="submit"],
+.wsu-content input[type="button"],
+.wsu-content button,
+.wsu-button {
+
+    &.wsu-button {
+        &--small { 
+            font-size: $wsu-font-size--xsmall;
+        }
+
+        &--large {
+            font-size: $wsu-font-size--xxmedium;
+        }
+        
+        &--round {
+            border-radius: 2em;
+        }
+        
+        &--full-width {
+            display: block;
+            width: 100%;
+        }
+        
+        &--secondary {
+            color: $wsu-color--gray-60;
+            border: 1px solid $wsu-color--gray-30;
+            background-color: #fff;
+        
+            &:focus,
+            &:hover {
+                background-color: #fff;
+                color: $wsu-color--crimson-light;
+                border-color: $wsu-color--crimson-light;
+            }
+        }
+        
+        &--tertiary {
+            color: $wsu-color--gray-60;
+            border: none;
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+            
+        
+            &:focus,
+            &:hover {
+                color: $wsu-color--gray-60;
+                border-color: transparent;
+                box-shadow: none;
+                background-color: transparent;
+                text-decoration-thickness: 2px;
+            }
+        }
+    }
+}
+
