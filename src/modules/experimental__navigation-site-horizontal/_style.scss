@@ -92,6 +92,7 @@ $global-header-height: 65px;
         border-radius: 0;
         justify-content: center;
         transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing;
+        cursor: pointer; 
 
         &::before {
             content: '\F12A';
