@@ -1,0 +1,6 @@
+@import '../../_assets/scss/variables';
+@import '../../_assets/scss/mixins';
+
+.wp-block-button__link{
+    @extend .wsu-button;
+}
