@@ -6,7 +6,11 @@
     <button class="wsu-navigation-site-vertical__open-button wsu-navigation-site-vertical--open" aria-label="Open Site Navigation">Menu</button>
     <div class="wsu-navigation-site-vertical__panel">
         <button class="wsu-button-ui-close wsu-navigation-site-vertical--close" aria-label="Close Site Navigation">Close</button>
-        {{ menu() }} 
+        <ul class="wsu-menu{{ classes }}">
+            <li>
+                <a href="/index.html" >Home</a>
+            </li>
+        </ul>
         <button class="wsu-button-ui-close wsu-navigation-site-vertical--close" aria-label="Close Site Navigation">Close</button>
     </div>
 </nav>
