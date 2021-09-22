@@ -9,7 +9,6 @@
 
 .wsu-wrapper-site {
     flex-grow: 1;
-    position: relative;
 }
 
 .wsu-wrapper-content {
@@ -65,4 +64,25 @@
     } 
 
 }
+
+@media screen and (min-width: $wsu-breakpoint--tablet-large) {
+
+    .wsu-wrapper-content--has-sidebar {
+        display: flex;
+        flex-grow: 1;
+    }
+    
+    .wsu-wrapper-content--has-sidebar .wsu-page-content {
+        flex-grow: 1;
+        margin-right: 2rem;
+    }
+    
+    .wsu-page-sidebar {
+        width: 25%;
+        margin-left: 2rem;
+        flex-shrink: 0;
+    }
+
+}
+
 
