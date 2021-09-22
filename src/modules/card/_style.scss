@@ -24,6 +24,47 @@
                     margin-left: $wsu-spacing--small;
                     margin-right: $wsu-spacing--small;
                 }
+
+                @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                    width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) );
+                }
+            }
+
+            &--3 {
+
+                .wsu-card {
+                    width: calc( 33.33% - ( #{ $wsu-spacing--small } * 2 ) );
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin-left: $wsu-spacing--small;
+                    margin-right: $wsu-spacing--small;
+
+                    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                        width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) );
+                    }
+                }
+
+            }
+
+            &--4 {
+
+                .wsu-card {
+
+                    width: calc( 25% - ( #{ $wsu-spacing--small } * 2 ) );
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin-left: $wsu-spacing--small;
+                    margin-right: $wsu-spacing--small;
+
+                    @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                        width: calc( 50% - ( #{ $wsu-spacing--small } * 2 ) );
+                    }
+
+                    @media screen and (max-width: $wsu-breakpoint--phone ) {
+                        width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) );
+                    }
+                }
+
             }
 
         }
