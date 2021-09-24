@@ -1,6 +1,6 @@
 @import '../../_assets/scss/variables';
 @import '../../_assets/scss/mixins';
 
-.wp-block-button__link{
+.wp-block-buttons .wp-block-button__link{
     @include wsu-button();
 }
