@@ -315,6 +315,7 @@ $wsu-spacing--medium:   1.5rem;
 $wsu-spacing--small:    1.125rem;
 $wsu-spacing--xsmall:   0.875rem;
 $wsu-spacing--xxsmall:  0.6875rem;
+$wsu-spacing--sxxsmall: 0.5rem;
 
 $wsu-spacing--em-hero:     6.87em;
 $wsu-spacing--em-xlarge:   5.125em;
@@ -340,6 +341,7 @@ $wsu-spacing-map: (
     'small':    $wsu-spacing--small,
     'xsmall':   $wsu-spacing--xsmall,
     'xxsmall':  $wsu-spacing--xxsmall,
+    'sxxsmall': $wsu-spacing--sxxsmall,
     'none':     0,
 );
 
@@ -360,10 +362,13 @@ $wsu-transition-speed--xxfast:  100ms;
 /* ========================================================
 == Widths ==
 ==========================================================*/
+$wsu-width--button-small:             60px;
 $wsu-width--navigation-open:          280px;
 $wsu-width--navigation-mobile-open:   320px;
 $wsu-width--navigation-closed:        60px;
 $wsu-width--navigation-width--modal:  200px;
+$wsu-width--navigation-narrow:        200px;
+$wsu-width--navigation-xnarrow:       150px;
 $wsu-width--content-narrow:           990px;
 $wsu-width--content:                  1200px;
 $wsu-width--content-wide:             1400px;

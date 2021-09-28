@@ -1,0 +1,21 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-skip-to-main {
+    position: absolute;
+    top: -9999rem;
+    left: $wsu-spacing--xxsmall;
+    z-index: 99999;
+    background-color: #fff;
+    border: 2px solid $wsu-color--crimson;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 3px 3px #FFFFFF; 
+    box-shadow: 0px 0px 3px 3px #FFFFFF;
+    font-weight: 600;
+    display: inline-block;
+    padding: $wsu-spacing--sxxsmall $wsu-spacing--medium;
+
+    &:focus {
+        top: $wsu-spacing--xxsmall; 
+    }
+}

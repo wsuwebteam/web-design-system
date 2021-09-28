@@ -1,4 +1,4 @@
-const updateAria = ( action, selector ) => {
+const ariaUpdate = ( action, selector ) => {
 
     let toggles = document.querySelectorAll( selector );
 
@@ -26,4 +26,20 @@ const updateAria = ( action, selector ) => {
 
 }
 
-export default updateAria;
+const ariaUpdateElement = ( element, action ) => {
+
+    if ( element.hasAttribute( 'aria-label' ) ) {
+
+        let regex = ( 'open' == action ) ? /Open/i : /Close/i;
+
+        let actionLabel = ( 'open' == action ) ? 'Close' : 'Open';
+
+        let label = element.getAttribute( 'aria-label' );
+
+        element.setAttribute( 'aria-label', label.replace( regex, actionLabel ) );
+
+    }
+
+}
+
+export { ariaUpdateElement, ariaUpdate };

@@ -1,0 +1,31 @@
+{% macro headerGlobal(bodyClasses) %}
+<header class="wsu-header-global{{ bodyClasses }}">
+    <div class="wsu-header-global__content">
+        {% include 'wordmark/wordmark.njk' %}
+        <nav class="wsu-header-global__navigation">
+            <ul class="wsu-header-global__menu">
+                <li class="wsu-header-global__navigation-menu">
+                    <button class="wsu-button-ui-more-horizontal wsu-menu-expand--toggle" aria-label="Open Header Menu"></button>
+                    <ul class="wsu-header-global__menu-items">
+                        <li>
+                            <a href="https://foundation.wsu.edu/">Give</a>
+                        </li>
+                        <li>
+                            <a href="https://admission.wsu.edu/apply/as/find-your-application/">Apply</a>
+                        </li>
+                        <li>
+                            <a href="https://wsu.edu/about/statewide/">Locations</a>
+                        </li>
+                        <li>
+                            <a href="https://mywsu.wsu.edu/">My WSU</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="wsu-header-global__search">
+                    <a href="https://search.wsu.edu" class="wsu-button-ui-search" title="Search WSU"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header> 
+{% endmacro %}
