@@ -1,10 +1,10 @@
-{% from "_experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
+{% from "experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
 {% from "caption/macros/caption.macro.njk" import caption %}
 {% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
 {% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
 {% from "meta-tags/macros/macro.njk" import metaTags %}
 {% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
-{% from "_experimental_overlay/_macro.njk" import overlay %}
+{% from "experimental_overlay/_macro.njk" import overlay %}
 
 {% macro hero( classes='', linked=false, titleTag="div", imageSrc='https://source.unsplash.com/collection/895539' ) %}
 <div class="wsu-hero {{ classes }}">

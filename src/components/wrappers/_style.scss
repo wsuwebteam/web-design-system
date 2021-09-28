@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-.wsu-wrapper-site {
+.wsu-wrapper-site { 
     flex-grow: 1;
     transition: transform $wsu-transition-speed--medium $wsu-easing, margin-left $wsu-transition-speed--medium $wsu-easing;
 }
