@@ -1,0 +1,21 @@
+{% extends "component.njk" %}
+{% from "_experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
+{% block content %}
+<div class="wsu-demo-component">
+{{ articleTitle('','h1','#','Lorem ipsum dolor sit amet, consectetur adipiscing elit') }}
+</div>
+<div class="wsu-demo-component">
+{{ articleTitle('','h1','#','Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit') }}
+</div>
+<div class="wsu-demo-component">
+{{ articleTitle('','h1','#','Lorem ipsum dolor sit amet') }}
+</div>
+<style>
+.wsu-demo-component {
+    width: 900px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %} 

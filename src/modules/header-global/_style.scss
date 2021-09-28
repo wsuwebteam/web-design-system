@@ -3,15 +3,16 @@
 
 .wsu-header-global {
     font-family: $wsu-font-family;
-    height: 64px;
+    height: $wsu-height--global-header;
     //border-top: 4px solid $wsu-color--crimson;
     border-top: 4px solid $wsu-color--crimson;
     background-color: $wsu-color--gray-0;
     width: auto;
     max-width: 100%;
     display: flex;
-    z-index: calc( #{$wsu-zindex--navigation} + 1 );
+    z-index: $wsu-zindex--global-header;
     box-sizing: border-box; 
+
 
 
     &__navigation {

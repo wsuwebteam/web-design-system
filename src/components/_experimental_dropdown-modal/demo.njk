@@ -1,0 +1,24 @@
+{% extends "component.njk" %}
+
+{% block content %}
+<div class="wsu-demo-component wsu-demo-dropdown--modal">
+{% include '_experimental_dropdown-modal/dropdown-modal.njk' %}
+</div>
+<div class="wsu-demo-component wsu-demo-dropdown--modal">
+{% include '_experimental_dropdown-modal/dropdown-modal--click.njk' %}
+</div>
+<style>
+.wsu-demo-dropdown--modal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wsu-demo-dropdown--modal li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+</style>
+{%  endblock %}
