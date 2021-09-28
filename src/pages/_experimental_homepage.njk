@@ -4,17 +4,17 @@
 
 
 {% block content %}
-<div class="wsu-wrapper-global"> 
+<div class="wsu-wrapper-global">
+    {% include '_experimental_skip-to-main/html.njk' %}
     {% include 'header-global/html.njk' %}
     {% include '_experimental_navigation-site-vertical/html.njk' %}
     <div class="wsu-wrapper-site">
         <!-- Site Header -->
-        <main class="wsu-wrapper-content">
+        <main id="wsu-content" class="wsu-wrapper-content" tabindex="-1">
             {{ hero() }}
             <h1>Lorem ipsum dolor sit amet</h1>
             {% include 'row/row-thirds.njk' %}
         </main>
-        {{ footerSite() }}
     </div>
     {% include 'footer-global/html.njk' %} 
 </div>

@@ -3,17 +3,19 @@
 
 .wsu-header-global {
     font-family: $wsu-font-family;
-    height: $wsu-height--global-header;
-    //border-top: 4px solid $wsu-color--crimson;
     border-top: 4px solid $wsu-color--crimson;
     background-color: $wsu-color--gray-0;
-    width: auto;
-    max-width: 100%;
-    display: flex;
     z-index: $wsu-zindex--global-header;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    padding-right: $wsu-spacing--small;
 
-
+    &__content {
+        display: flex;
+        box-sizing: border-box;
+        width: auto;
+        max-width: 100%;
+        height: calc( #{$wsu-height--global-header} - 4px );
+    }
 
     &__navigation {
 
@@ -21,38 +23,216 @@
         flex: 1;
         justify-content: flex-end;
     
+    }
+
+    &__menu,
+    &__menu-items {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__menu {
+        display: flex;
+
+        & > li {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
         a {
-            @include wsu-font--xsmall;
+            @include wsu-font--xsmall();
             font-weight: 500;
             text-transform: uppercase;
+            text-decoration: none;
+            color: inherit;
+            padding: 0 $wsu-spacing--sxxsmall;
+            display: flex;
+            position: relative;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: auto;
+                bottom: 0;
+                height: 0;
+                background-color: $wsu-color--crimson-light;
+                transition: height $wsu-transition-speed--fast $wsu-easing;
+            }
+
+            &:hover,
+            &:focus {
+
+                &::after {
+                    height: 5px;
+                    background-color: $wsu-color--crimson-light;
+                }
+
+            }
         }
-    
     }
 
-    .wsu-button-ui-close {
-        margin-left: auto;
-        margin-right: 0;
-        margin-top: $wsu-spacing--xxsmall;
+    &__menu-items {
+        display: flex;
+
+        & > li {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
     }
 
-   @media screen and (max-width: $wsu-breakpoint--tablet-large) {
+    &__menu-close {
+        display: none;
+    }
 
-        .wsu-menu-tertiary > li:not(.wsu-header-global__site-nav):not(.wsu-header-global__search):not(.wsu-header-global__navigation-menu) {
-            display: none;
+    .wsu-button-ui-more-horizontal {
+        display: none;
+        font-size: $wsu-font-size--xmedium;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: $wsu-width--button-small;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: auto;
+            bottom: 0;
+            height: 0;
+            background-color: $wsu-color--crimson-light;
+            transition: height $wsu-transition-speed--fast $wsu-easing;
         }
 
+        &:hover,
+        &:focus {
+
+            &::after {
+                height: 5px;
+                background-color: $wsu-color--crimson-light;
+            }
+
+        }
+    }
+
+}
+
+@media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+    .wsu-header-global {
+        padding-right: $wsu-width--button-small;
+
+        &__search a {
+            font-size: $wsu-font-size--xmedium;
+            width: $wsu-width--button-small;
+            box-sizing: border-box;
+        }
+
+        .wsu-button-ui-more-horizontal {
+            display: flex;
+            
+        }
+
+        &__menu-close {
+            display: block;
+        }
+
+        &__menu-items {
+            position: absolute;
+            width: $wsu-width--navigation-xnarrow;
+            right: 0;
+            top: calc( 100% + 0.1rem);
+            z-index: $wsu-zindex--global-header;
+            display: block;
+            border-radius: 0 0 3px 3px;
+            overflow: hidden;
+            transition: max-height $wsu-transition-speed--fast $wsu-easing, visibility 0s $wsu-easing 0.3s;
+            box-shadow: $wsu-dropshadow--medium;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                display: block;
+            }
+
+            & > li {
+                display: block;
+            }
+
+            a {
+
+                padding: $wsu-spacing--sxxsmall $wsu-spacing--small;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    right: auto;
+                    width: 0;
+                    bottom: 0;
+                    top: 0;
+                    height: 100% !important;
+                    background-color: $wsu-color--gray-40;
+                    transition: width $wsu-transition-speed--fast $wsu-easing;
+                }
+        
+                &:hover,
+                &:focus {
+
+                    background-color: $wsu-color--gray-10;
+        
+                    &::after {
+                        width: 4px;
+                        background-color: $wsu-color--gray-50;
+                        
+                    }
+        
+                }
+            }
+        }
+
+    }
+
+    .wsu-header-global__navigation-menu {
+
+        &:not([aria-expanded="true"]) {
+
+            .wsu-header-global__menu-items {
+                max-height: 0;
+                visibility: hidden;
+            }
+        }
+
+        &[aria-expanded="true"] {
+            .wsu-header-global__menu-items {
+                visibility: visible;
+                transition: max-height $wsu-transition-speed--fast $wsu-easing, visibility 0s $wsu-easing 0s;
+            }
+        }
         
     }
-
-    @media screen and (min-width: $wsu-breakpoint--tablet-large) {
-
-        .wsu-header-global__site-nav,
-        .wsu-header-global__navigation-menu {
-            display: none;
-        }
-        
-    }
-
 
 }
 

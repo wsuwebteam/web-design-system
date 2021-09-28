@@ -1,4 +1,4 @@
-import updateAria from "../../../_assets/js/updateAria"; 
+import { ariaUpdate } from "../../../_assets/js/ariaUpdate"; 
 
 class WsuNavigationSiteVertical {
 
@@ -43,13 +43,13 @@ class WsuNavigationSiteVertical {
 
                     this.close( eventElement );
 
-                    updateAria( 'Close', '.wsu-navigation-site-vertical--toggle' );
+                    ariaUpdate( 'Close', '.wsu-navigation-site-vertical--toggle' );
 
                 } else {
 
                     this.open( eventElement );
 
-                    updateAria( 'Open', '.wsu-navigation-site-vertical--toggle' );
+                    ariaUpdate( 'Open', '.wsu-navigation-site-vertical--toggle' );
 
                 }
 
@@ -107,7 +107,7 @@ class WsuNavigationSiteVertical {
         document.body.classList.add('wsu-navigation-site-vertical--is-open');
         document.body.classList.remove('wsu-navigation-site-vertical--is-closed');
 
-        updateAria( 'Open', '.wsu-navigation-site-vertical--toggle' );
+        ariaUpdate( 'Open', '.wsu-navigation-site-vertical--toggle' );
 
     }
 
@@ -122,7 +122,7 @@ class WsuNavigationSiteVertical {
         document.body.classList.remove('wsu-navigation-site-vertical--is-open');
         document.body.classList.add('wsu-navigation-site-vertical--is-closed');
 
-        updateAria( 'Close', '.wsu-navigation-site-vertical--toggle' );
+        ariaUpdate( 'Close', '.wsu-navigation-site-vertical--toggle' ); 
 
     }
 
