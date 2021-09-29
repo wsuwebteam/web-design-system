@@ -12,9 +12,6 @@
         display: block;
     }
 
-
-    
-
     &.wsu-align {
 
         &--left {
@@ -35,6 +32,18 @@
 
 }
 
+.wsu-image-frame--fill .wsu-image-frame,
+.wsu-image-frame--fill.wsu-image-frame {
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
 
 
 [class*="wsu-image-ratio"] .wsu-image-frame,

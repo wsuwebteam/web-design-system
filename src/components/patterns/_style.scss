@@ -1,0 +1,160 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-pattern:not(.wsu-pattern-before):not(.wsu-pattern-before) {
+  opacity: 0.6;
+}
+
+.wsu-pattern-before::before,
+.wsu-pattern-after::after {
+  content: "";
+  display: block;
+  opacity: 0.6;
+}
+
+.wsu-pattern,
+.wsu-pattern-before::before,
+.wsu-pattern-after::after,
+[class*="wsu-pattern--wsu-light"] .wsu-pattern,
+.wsu-pattern[class*="wsu-pattern--wsu-light"]  {
+  @include wsu-pattern-background--wsu-light();
+}
+
+.wsu-pattern,
+.wsu-pattern-before::before,
+.wsu-pattern-after::after,
+.wsu-pattern--wsu-light-radial .wsu-pattern,
+.wsu-pattern--wsu-light-radial.wsu-pattern {
+  -webkit-mask-image: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+[class*="wsu-pattern--wsu-dark"] .wsu-pattern,
+.wsu-pattern[class*="wsu-pattern--wsu-dark"],
+[class*="wsu-pattern--wsu-dark"] .wsu-pattern-before::before,
+.wsu-pattern-before[class*="wsu-pattern--wsu-dark"]::before,
+[class*="wsu-pattern--wsu-dark"] .wsu-pattern-after::after,
+.wsu-pattern-after[class*="wsu-pattern--wsu-dark"]::after {
+    @include wsu-pattern-background--wsu-dark();
+}
+
+.wsu-pattern--wsu-dark .wsu-pattern,
+.wsu-pattern--wsu-dark.wsu-pattern,
+.wsu-pattern--wsu-dark .wsu-pattern-before::before,
+.wsu-pattern--wsu-dark.wsu-pattern-before::before,
+.wsu-pattern--wsu-dark .wsu-pattern-after::after,
+.wsu-pattern--wsu-dark.wsu-pattern-after::after {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.wsu-pattern--wsu-dark-radial .wsu-pattern,
+.wsu-pattern--wsu-dark-radial.wsu-pattern,
+.wsu-pattern--wsu-dark-radial .wsu-pattern-before::before,
+.wsu-pattern--wsu-dark-radial.wsu-pattern-before::before,
+.wsu-pattern--wsu-dark-radial .wsu-pattern-after::after,
+.wsu-pattern--wsu-dark-radial.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--wsu-dark-radial-left .wsu-pattern,
+.wsu-pattern--wsu-dark-radial-left.wsu-pattern,
+.wsu-pattern--wsu-dark-radial-left .wsu-pattern-before::before,
+.wsu-pattern--wsu-dark-radial-left.wsu-pattern-before::before,
+.wsu-pattern--wsu-dark-radial-left .wsu-pattern-after::after,
+.wsu-pattern--wsu-dark-radial-left.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--wsu-dark-radial-right .wsu-pattern,
+.wsu-pattern--wsu-dark-radial-right.wsu-pattern,
+.wsu-pattern--wsu-dark-radial-right .wsu-pattern-before::before,
+.wsu-pattern--wsu-dark-radial-right.wsu-pattern-before::before,
+.wsu-pattern--wsu-dark-radial-right .wsu-pattern-after::after,
+.wsu-pattern--wsu-dark-radial-right.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--wsu-light .wsu-pattern,
+.wsu-pattern--wsu-light.wsu-pattern,
+.wsu-pattern--wsu-light .wsu-pattern-before::before,
+.wsu-pattern--wsu-light.wsu-pattern-before::before,
+.wsu-pattern--wsu-light .wsu-pattern-after::after,
+.wsu-pattern--wsu-light.wsu-pattern-after::after {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.wsu-pattern--wsu-light-radial-left .wsu-pattern,
+.wsu-pattern--wsu-light-radial-left.wsu-pattern,
+.wsu-pattern--wsu-light-radial-left .wsu-pattern-before::before,
+.wsu-pattern--wsu-light-radial-left.wsu-pattern-before::before,
+.wsu-pattern--wsu-light-radial-left .wsu-pattern-after::after,
+.wsu-pattern--wsu-light-radial-left.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--wsu-light-radial-right .wsu-pattern,
+.wsu-pattern--wsu-light-radial-right.wsu-pattern,
+.wsu-pattern--wsu-light-radial-right .wsu-pattern-before::before,
+.wsu-pattern--wsu-light-radial-right.wsu-pattern-before::before,
+.wsu-pattern--wsu-light-radial-right .wsu-pattern-after::after,
+.wsu-pattern--wsu-light-radial-right.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+[class*="wsu-pattern--lines-light"] .wsu-pattern,
+.wsu-pattern-before[class*="wsu-pattern--lines-light"],
+[class*="wsu-pattern--lines-light"].wsu-pattern-before::before,
+.wsu-pattern-before[class*="wsu-pattern--lines-light"]::before,
+[class*="wsu-pattern--lines-light"].wsu-pattern-after::after,
+.wsu-pattern-after[class*="wsu-pattern--lines-light"]::after {
+  @include wsu-pattern-background--lines-light();
+  background-size: 20px;
+}
+
+.wsu-pattern--lines-light .wsu-pattern,
+.wsu-pattern--lines-light.wsu-pattern,
+.wsu-pattern--lines-light .wsu-pattern-before::before,
+.wsu-pattern--lines-light.wsu-pattern-before::before,
+.wsu-pattern--lines-light .wsu-pattern-after::after,
+.wsu-pattern--lines-light.wsu-pattern-after::after {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.wsu-pattern--lines-light-radial .wsu-pattern,
+.wsu-pattern--lines-light-radial.wsu-pattern,
+.wsu-pattern--lines-light-radial .wsu-pattern-before::before,
+.wsu-pattern--lines-light-radial.wsu-pattern-before::before,
+.wsu-pattern--lines-light-radial .wsu-pattern-after::after,
+.wsu-pattern--lines-light-radial.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--lines-light-radial-left .wsu-pattern,
+.wsu-pattern--lines-light-radial-left.wsu-pattern,
+.wsu-pattern--lines-light-radial-left .wsu-pattern-before::before,
+.wsu-pattern--lines-light-radial-left.wsu-pattern-before::before,
+.wsu-pattern--lines-light-radial-left .wsu-pattern-after::after,
+.wsu-pattern--lines-light-radial-left.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--lines-light-radial-right .wsu-pattern,
+.wsu-pattern--lines-light-radial-right.wsu-pattern,
+.wsu-pattern--lines-light-radial-right .wsu-pattern-before::before,
+.wsu-pattern--lines-light-radial-right.wsu-pattern-before::before,
+.wsu-pattern--lines-light-radial-right .wsu-pattern-after::after,
+.wsu-pattern--lines-light-radial-right.wsu-pattern-after::after {
+  -webkit-mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+  mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+} 
+

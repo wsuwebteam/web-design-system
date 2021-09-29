@@ -26,7 +26,9 @@ $wsu-border-radius--xsmall: 3px;
 /* ========================================================
 == Breakpoints ==
 ==========================================================*/
-$wsu-breakpoint--ultrawide:    1400px;
+$wsu-breakpoint--xxultrawide:  2400px;
+$wsu-breakpoint--xultrawide:   1900px;
+$wsu-breakpoint--ultrawide:    1600px;
 $wsu-breakpoint--desktop:      1260px;
 $wsu-breakpoint--tablet-large: 992px;
 $wsu-breakpoint--tablet-medium: 860px;
@@ -155,9 +157,10 @@ $wsu-font-family: 'Montserrat', sans-serif;
 == Font Sizes ==
 ==========================================================*/
 
-$wsu-font-sizes: 'hero','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
+$wsu-font-sizes: 'hero','sxxlarge','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
 
 $wsu-font-size--hero:     5.125rem;
+$wsu-font-size--sxxlarge: 4.125rem;
 $wsu-font-size--xxlarge:  3.125rem;
 $wsu-font-size--xlarge:   2rem;
 $wsu-font-size--large:    1.5rem;
@@ -170,6 +173,7 @@ $wsu-font-size--xxsmall:  0.6875rem;
 
 $wsu-font-size-map: (
     'hero':     $wsu-font-size--hero,
+    'sxxlarge': $wsu-font-size--sxxlarge,
     'xxlarge':  $wsu-font-size--xxlarge,
     'xlarge':   $wsu-font-size--xlarge,
     'large':    $wsu-font-size--large,
@@ -192,6 +196,9 @@ $wsu-font-weight--medium:     500;
 $wsu-font-weight--semibold:   600;
 $wsu-font-weight--bold:       700;
 $wsu-font-weight--extrabold:  800;
+
+
+$wsu-height--global-header: 64px;
 
 /* ========================================================
 == Image Sizes ==
@@ -228,9 +235,10 @@ $wsu-image-size-map: (
 == Line Heights ==
 ==========================================================*/
 
-$wsu-line-heights: 'hero','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
+$wsu-line-heights: 'hero','sxxlarge','xxlarge','xlarge','large','xxmedium','xmedium','medium','small','xsmall','xxsmall';
 
 $wsu-line-height--hero:     1.15;
+$wsu-line-height--sxxlarge:  1.2;
 $wsu-line-height--xxlarge:  1.2;
 $wsu-line-height--xlarge:   1.2;
 $wsu-line-height--large:    1.3;
@@ -254,6 +262,7 @@ $wsu-line-height--tight-xxsmall:  1.4;
 
 $wsu-line-height-map: (
     'hero':     $wsu-line-height--hero,
+    'sxxlarge': $wsu-line-height--sxxlarge,
     'xxlarge':  $wsu-line-height--xxlarge,
     'xlarge':   $wsu-line-height--xlarge,
     'large':    $wsu-line-height--large,
@@ -306,6 +315,7 @@ $wsu-spacing--medium:   1.5rem;
 $wsu-spacing--small:    1.125rem;
 $wsu-spacing--xsmall:   0.875rem;
 $wsu-spacing--xxsmall:  0.6875rem;
+$wsu-spacing--sxxsmall: 0.5rem;
 
 $wsu-spacing--em-hero:     6.87em;
 $wsu-spacing--em-xlarge:   5.125em;
@@ -331,6 +341,7 @@ $wsu-spacing-map: (
     'small':    $wsu-spacing--small,
     'xsmall':   $wsu-spacing--xsmall,
     'xxsmall':  $wsu-spacing--xxsmall,
+    'sxxsmall': $wsu-spacing--sxxsmall,
     'none':     0,
 );
 
@@ -351,10 +362,13 @@ $wsu-transition-speed--xxfast:  100ms;
 /* ========================================================
 == Widths ==
 ==========================================================*/
+$wsu-width--button-small:             60px;
 $wsu-width--navigation-open:          280px;
 $wsu-width--navigation-mobile-open:   320px;
 $wsu-width--navigation-closed:        60px;
 $wsu-width--navigation-width--modal:  200px;
+$wsu-width--navigation-narrow:        200px;
+$wsu-width--navigation-xnarrow:       150px;
 $wsu-width--content-narrow:           990px;
 $wsu-width--content:                  1200px;
 $wsu-width--content-wide:             1400px;
@@ -385,11 +399,12 @@ $zindex-popover:                    1070;
 $zindex-tooltip:                    1080;
 
 ==========================================================*/
-$wsu-zindex--dropdown:                   1000;
-$wsu-zindex--sticky:                     1020;
-$wsu-zindex--fixed:                      1030;
+$wsu-zindex--background:                 1000;
+$wsu-zindex--content:                    1010;
+$wsu-zindex--global-footer:              1020;
+$wsu-zindex--navigation:                 1030;
+$wsu-zindex--global-header:              1035;
 $wsu-zindex--modal-backdrop:             1040;
-$wsu-zindex--navigation:                 1050;
 $wsu-zindex--modal:                      1060;
 $wsu-zindex--popover:                    1070;
 $wsu-zindex--tooltip:                    1080;

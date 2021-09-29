@@ -5,6 +5,8 @@ p {
     margin-top: 0;
     margin-bottom: $wsu-spacing--component;
     max-width: 900px;
+    font-size: $wsu-font-size--xmedium;
+    position: relative;
 
     & + p {
         margin-top: -0.5rem;

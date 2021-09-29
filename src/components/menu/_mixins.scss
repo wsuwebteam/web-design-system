@@ -25,6 +25,7 @@
             font-weight: 600;
             position: 'relative';
             line-height: 1.5;
+            cursor: pointer;
 
             &:hover,
             &:focus {
@@ -136,6 +137,7 @@
                 left: 0;
                 display: block;
                 opacity: 0;
+                transition: opacity $wsu-transition-speed--fast $wsu-easing;
             }
 
             &[aria-expanded] > a {
@@ -149,13 +151,12 @@
                     right: 0;
                     bottom: 0;
                     display: block;
-                    opacity: 0; 
+                    opacity: 0;
+                    transition: opacity $wsu-transition-speed--fast $wsu-easing;
                 }
             }
 
         }
-
-
 
         li[aria-expanded] {
 

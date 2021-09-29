@@ -13,6 +13,7 @@
     min-height: 60px;
 	box-sizing: border-box;
     padding: 0 $wsu-spacing--medium;
+    z-index: $wsu-zindex--global-footer;
 
     &__copyright {
         margin-right: $wsu-spacing--small;
