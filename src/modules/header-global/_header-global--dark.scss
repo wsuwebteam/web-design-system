@@ -3,6 +3,7 @@
 
 .wsu-header-global--dark {
     background-color: $wsu-color--gray-80;
+    color: #fff;
 
     .wsu-wordmark {
 
@@ -24,4 +25,21 @@
         background-color: $wsu-color--gray-60;
     }
 
+    .wsu-header-global__menu-items a {
+        color: inherit;
+    }
+
+    & ~ .wsu-navigation-site-vertical .wsu-navigation-site-vertical__toggle-button {
+        color: #fff;
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+
+        .wsu-header-global__menu-items a {
+            color: $wsu-color--text;
+        }
+    
+    }
+
 }
+

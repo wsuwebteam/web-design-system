@@ -34,9 +34,9 @@
 
     &__title {
 
-        font-size: $wsu-font-size--large;
+        font-size: $wsu-font-size--xlarge;
         color: $wsu-color--gray-70;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1.3;
 
         a {
@@ -47,6 +47,16 @@
         }
 
     }
+}
+
+@media screen and (max-width: $wsu-breakpoint--phone ) {
+
+    .wsu-header-site__title {
+
+        font-size: $wsu-font-size--xxmedium;
+
+    }
+    
 }
 
 @import 'header-site--dark';

@@ -23,4 +23,15 @@ a {
     &:focus {
         text-decoration: none;
 	}
+
+	&.wsu-link--external {
+		&::after {
+			content: "\F108";
+			display: inline-block;
+			font-family: 'wsu-icons';
+			font-size: 0.6rem;
+			transform: rotate(-45deg);
+			margin-left: 0.2rem;
+		}
+	}
 }

@@ -31,7 +31,11 @@
             &:focus {
                 background-color: $wsu-color--gray-10;
                 border-left: 5px solid $wsu-color--gray-40;
-            } 
+            }
+
+            &[aria-current="page"] {
+                border-left: 5px solid $wsu-color--crimson-light !important;
+            }
 
         }
 

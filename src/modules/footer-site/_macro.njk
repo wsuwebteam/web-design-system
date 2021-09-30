@@ -4,9 +4,19 @@
 {% from "social-icons/macros/social-icons.macro.njk" import socialIcons %}
 {% from "coug-head/_macro.njk" import cougHead %}
 
-{% macro footerSite( classes='', showTitle=true, showContent=true, showMenu=true ) %}
+{% macro footerSite( classes='', showTitle=true, showContent=true, showMenu=true, showOffsite=true ) %}
 <footer class="wsu-footer-site{{classes}}">
     <div class="wsu-footer-site__content">
+    {% if showOffsite %}
+        <h2 class="wsu-footer-site__offsite-title">More Resources</h2>
+        <ul class="wsu-footer-site__offsite-menu" aria-lable="Offsite menu">
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+            <li><a href="" class="wsu-link--external">news.wsu.edu</a></li>
+        </ul>
+    {% endif %}
     {% if showTitle %}<h2 class="wsu-footer-site__title">Lorem ipsum dolor</h2>{% endif %}
     {% if showContent %}{{ caption() }}{% endif %}
     {% if showMenu %}{{ menuUtility(' wsu-menu-utility--horizontal wsu-menu-utility--flat', true, false ) }}{% endif %}

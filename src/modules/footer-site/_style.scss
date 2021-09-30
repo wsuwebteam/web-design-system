@@ -5,7 +5,8 @@
     
     box-sizing: border-box;
     padding: $wsu-spacing--xxmedium $wsu-spacing--large $wsu-spacing--xmedium;
-    background-color: $wsu-color--gray-5;
+    background-color: $wsu-color--gray-80;
+    color: $wsu-color--gray-10;
     position: relative;
 
     &__title {
@@ -26,13 +27,84 @@
         }
     }
 
+    &__offsite-title {
+        @include wsu-font--xsmall();
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &__offsite-menu {
+        margin: 0 0 $wsu-spacing--xmedium;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            margin: 0;
+            padding: 0 $wsu-spacing--xsmall;
+            position: relative;
+
+            &::after {
+                content:"";
+                position: absolute;
+                top: 20%;
+                bottom: 20%;
+                width: 1px;
+                height: auto;
+                display: block;
+                left: 0;
+                background-color: $wsu-color--gray-25;
+            }
+
+            &:first-child {
+                padding-left: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+            
+            a {
+                text-decoration: none;
+                color: inherit;
+                @include wsu-font--medium();
+                position: relative;
+                
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: $wsu-color--crimson-light;
+                    height: 0;
+                    transition: height $wsu-transition-speed--fast $wsu-easing, top $wsu-transition-speed--fast $wsu-easing;
+                }
+
+                &:hover,
+                &:focus {
+
+                    &::before {
+                        top: calc( 100% + 4px );
+                        height: 4px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
     .wsu-caption {
         max-width: 600px;
         @include wsu-font--small();
         margin-bottom: $wsu-spacing--component;
     }
 
-    .wsu-menu-utility {
+    .wsu-menu-utility { 
 
         li {
             text-transform: uppercase;
@@ -65,14 +137,10 @@
     }
 }
 
-.wsu-footer-site--dark {
-    background-color: $wsu-color--gray-85;
-    color: $wsu-color--gray-10;
-}
-
 .wsu-footer-site--white {
     background-color: #fff;
     border-top: 1px solid $wsu-color--gray-30;
+    color: $wsu-color--text;
 
     .wsu-coug-head {
         fill: $wsu-color--crimson;
