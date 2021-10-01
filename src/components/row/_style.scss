@@ -1,6 +1,7 @@
 .wsu-row {
     display: flex;
     box-sizing: border-box;
+    position: relative;
 
     &[class*="wsu-color-background"] {
         padding-top: $wsu-spacing--xmedium;

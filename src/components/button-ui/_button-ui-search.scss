@@ -1,6 +1,16 @@
 .wsu-button-ui-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $wsu-width--button-small;
+    padding: $wsu-spacing--sxxsmall 0;
+    text-decoration: none;
+    font-size: $wsu-font-size--medium;
+    position: relative;
     
     &::before {
         content: '\F140';
+        font-size: inherit;
     }
 }

@@ -1,0 +1,18 @@
+{% macro menuAdmin( classes, arialabel='Menu label here' ) %}
+<ul class="wsu-menu-admin{{ classes }}" aria-label="{{ arialabel }}">
+    <li>
+        <a href="https://foundation.wsu.edu/">Give</a>
+    </li>
+    <li>
+        <a href="https://admission.wsu.edu/apply/as/find-your-application/">Apply</a>
+    </li>
+    <li>
+        <a href="https://wsu.edu/about/statewide/">Locations</a>
+    </li>
+    <li>
+        <a href="https://mywsu.wsu.edu/">My WSU</a>
+    </li>    
+</ul>
+{% endmacro %}
+
+aria-label="WSU header menu"

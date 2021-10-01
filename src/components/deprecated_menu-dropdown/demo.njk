@@ -1,0 +1,13 @@
+{% extends "component.njk" %}
+{% from "deprecated_menu-dropdown/macros/macro.njk" import menuDropdown %}
+
+{% block content %}
+<div class="wsu-demo-component">
+{{ menuDropdown() }}
+</div>
+<style>
+hr {
+    width: 100%;
+}
+</style>
+{%  endblock %}    

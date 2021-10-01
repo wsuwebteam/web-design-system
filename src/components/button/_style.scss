@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin-bottom: $wsu-spacing--component;
     margin-right: $wsu-spacing--xmedium;
+    position: relative;
 
     @include wsu-button();
 

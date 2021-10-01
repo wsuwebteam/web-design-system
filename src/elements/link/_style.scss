@@ -5,9 +5,7 @@ a {
 	
 	&:hover,
 	&:focus {
-        outline-color: $wsu-color--crimson-light;
-        outline-width: thin;
-        text-decoration-thickness: 0.15em;
+
 		img {
 			//-webkit-box-shadow: 0px 0px 0px 3px #000000; 
 			//box-shadow: 0px 0px 0px 3px #000000;
@@ -22,6 +20,7 @@ a {
 
     &:focus {
         text-decoration: none;
+		@include wsu-focus--link(); 
 	}
 
 	&.wsu-link--external {
