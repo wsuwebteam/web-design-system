@@ -46,10 +46,10 @@
 }
 
 
-[class*="wsu-image-ratio"] .wsu-image-frame,
+[class*="wsu-image--ratio"] .wsu-image-frame,
 [class*="wsu-image-frame--fixed-ratio"] .wsu-image-frame,
 .wsu-image-frame[class*="wsu-image-frame--fixed-ratio"],
-.wsu-image-frame[class*="wsu-image-ratio"] {
+.wsu-image-frame[class*="wsu-image--ratio"] {
 
     &::before {
         content: '';

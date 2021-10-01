@@ -9,11 +9,9 @@
         color: inherit;
     }
 
-    &__title,
-    &__phone,
     &__email,
-    &__mail {
-        margin-right: $wsu-spacing--xxsmall;
+    &__phone {
+        margin: 0 0.2rem;
     }
 
 }
