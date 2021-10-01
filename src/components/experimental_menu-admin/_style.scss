@@ -1,0 +1,55 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-menu--to-dropdown {
+    width: $wsu-width--navigation-xnarrow;
+    display: block;
+    background-color: #fff;
+    padding: $wsu-spacing--sxxsmall $wsu-spacing--small;
+}
+
+.wsu-menu-admin {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 $wsu-spacing--sxxsmall;
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+        @include wsu-font--xsmall();
+        padding: $wsu-spacing--sxxsmall 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+
+        @include wsu-hover--border-bottom();
+    }
+}
+
+.wsu-menu-admin--dropdown {
+    @include wsu-menu--to-dropdown();
+}
+
+.wsu-menu-admin--mobile-dropdown {
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+        @include wsu-menu--to-dropdown();
+    }
+}
+
+.wsu-menu-admin--tablet-dropdown {
+    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+        @include wsu-menu--to-dropdown();
+    }
+}

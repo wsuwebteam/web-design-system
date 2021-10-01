@@ -9,56 +9,79 @@
 	font-family: $wsu-font-family;
 	color: inherit;
 	outline: none;
+	position: relative;
+	flex-grow: 0;
 
+	&__title-mobile,
 	&__title {
-		display: block;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		position: relative;
     
         @include wsu-font--xsmall;
         font-weight: 500;
     
-        padding-left: $wsu-spacing--xmedium;
+        padding: 0 $wsu-spacing--xxsmall;
+		margin: 0 $wsu-spacing--xxsmall;
 
 		&::after {
-			content: '';
-			width: 0;
-			height: 3px;
+			content: "";
+			display: inline-block;
+			width: 0px;
+			height: 12px;
+			visibility: hidden;
+			margin-left: $wsu-spacing--sxxsmall;
 			background-color: $wsu-color--crimson-light;
-			position: absolute;
-			bottom: -6px;
-			display: block;
 			transition: width $wsu-transition-speed--fast $wsu-easing;
 		}
 
 		&:visited {
 			color: inherit;
 		}
-
-        @media screen and (max-width: $wsu-breakpoint--phone ) {
-            font-size: 0;
-
-            span {
-                @include wsu-font--medium;
-            }
-        }
 	}
 
-	&:focus,
-	&:focus-within,
-	&:hover {
+	&__title-mobile {
+		display: none;
+	}
 
+	&:hover,
+	&:focus,
+	&:focus-within {
+
+		.wsu-wordmark__title-mobile,
 		.wsu-wordmark__title {
 
-			&::after {
-				width: $wsu-spacing--medium;
-			}
+			color: $wsu-color--crimson;
 
-		}
+			&::after {
+				visibility: visible;
+				width: 5px; 
+			} 
+			
+		} 
 
 		.wsu-coug-head-boxed__icon {
 			width: 42px;
 			height: 42px;
 		}
-			
 	}
+
+	&:focus,
+	&:focus-within {
+		@include wsu-focus--link();
+	}
+
+	@media screen and (max-width: $wsu-breakpoint--tablet ) {
+		&__title {
+			display: none;
+		}
+
+		&__title-mobile {
+			display: block;
+			@include wsu-font--medium;
+		}
+	}
+
 }

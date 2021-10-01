@@ -1,6 +1,6 @@
 <header class="wsu-header-global">
     <div class="wsu-header-global__content">
-        <a class="wsu-wordmark" href="https://wsu.edu" title="WSU Homepage">
+        <a class="wsu-wordmark" href="https://wsu.edu" aria-label="Go to WSU Homepage">
             <span class="wsu-coug-head-boxed">
                 <svg role="img" aria-label="WSU Cougar Head" class="wsu-coug-head-boxed__icon" enable-background="new 0 0 70.2 69.6" version="1.1" viewBox="0 0 70.2 69.6" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                     <title>WSU Cougar Head Logo</title>
@@ -8,32 +8,33 @@
                 </svg>
             </span>
             <span class="wsu-wordmark__title">
-                <span>W</span>ashington <span>S</span>tate <span>U</span>niversity
+                Washington State University
+            </span>
+            <span class="wsu-wordmark__title-mobile">
+                WSU
             </span>
         </a>
         <nav class="wsu-header-global__navigation" aria-label="WSU header menu">
-            <ul class="wsu-header-global__menu">
-                <li class="wsu-header-global__navigation-menu">
-                    <button class="wsu-button-ui-more-horizontal wsu-menu-expand--toggle" aria-label="Open Header Menu"></button>
-                    <ul class="wsu-header-global__menu-items">
-                        <li>
-                            <a href="https://foundation.wsu.edu/">Give</a>
-                        </li>
-                        <li>
-                            <a href="https://admission.wsu.edu/apply/as/find-your-application/">Apply</a>
-                        </li>
-                        <li>
-                            <a href="https://wsu.edu/about/statewide/">Locations</a>
-                        </li>
-                        <li>
-                            <a href="https://mywsu.wsu.edu/">My WSU</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="wsu-header-global__search">
-                    <a href="https://search.wsu.edu" class="wsu-button-ui-search" title="Search WSU"></a>
-                </li>
-            </ul>
+            <div class="wsu-header-global__quick-links">
+                <button class="wsu-button-ui-more-horizontal wsu-menu-expand--toggle" aria-label="Open Header Menu"></button>
+
+                <ul class="wsu-menu-admin wsu-menu-admin--tablet-dropdown" aria-label="WSU header menu">
+                    <li>
+                        <a href="https://foundation.wsu.edu/">Give</a>
+                    </li>
+                    <li>
+                        <a href="https://admission.wsu.edu/apply/as/find-your-application/">Apply</a>
+                    </li>
+                    <li>
+                        <a href="https://wsu.edu/about/statewide/">Locations</a>
+                    </li>
+                    <li>
+                        <a href="https://mywsu.wsu.edu/">My WSU</a>
+                    </li>
+                </ul>
+
+            </div>
+            <a href="https://search.wsu.edu" class="wsu-button-ui-search" title="Search WSU"></a>
         </nav>
     </div>
 </header>
