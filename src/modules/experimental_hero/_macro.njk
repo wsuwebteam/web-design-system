@@ -8,9 +8,9 @@
 
 {% macro hero( classes='', linked=false, titleTag="div", imageSrc='https://source.unsplash.com/collection/895539' ) %}
 <div class="wsu-hero wsu-width--full{{ classes }}">
-    {% if linked %}<a class="wsu-hero__link-slide" href="#" aria-hidden="true" tabindex="-1">{% endif %}
+    {% if linked %}<a class="wsu-hero__link-slide" href="#" aria-hidden="true" tabindex="-1">
             Visit Hero Banner Title
-    {% if linked %}</a>{% endif %}
+    </a>{% endif %}
     {% if imageSrc %}
         {{ imageFrame( ' wsu-image-frame--fill', '', imageSrc ) }} 
     {% endif %}

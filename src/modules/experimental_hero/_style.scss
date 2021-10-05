@@ -57,8 +57,8 @@
     }
 
     &__content {
-        padding-top: $wsu-spacing--hero;
-        padding-bottom: $wsu-spacing--hero;
+        padding-top: calc( #{$wsu-spacing--hero} * 1.5 );
+        padding-bottom: calc( #{$wsu-spacing--hero} * 1.5 );
         padding-left: $wsu-spacing--large;
         padding-right: $wsu-spacing--large;
         position: relative;
@@ -66,6 +66,8 @@
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        min-height: 500px;
+        box-sizing: border-box;
 
         &::before {
             transition: opacity $wsu-transition-speed--slow $wsu-easing;
