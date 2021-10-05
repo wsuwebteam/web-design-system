@@ -90,7 +90,7 @@ $global-header-height: 65px;
 
         &:focus {
             @include wsu-focus--link();
-        }
+        } 
     }
 
     &__open-button {

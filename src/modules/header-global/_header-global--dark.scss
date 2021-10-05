@@ -7,8 +7,9 @@
 
     .wsu-wordmark {
 
+        &__title-mobile,
         &__title {
-            color: $wsu-color--gray-10;
+            color: $wsu-color--gray-10 !important;
         }
 
     }
@@ -29,8 +30,18 @@
         color: inherit;
     }
 
-    & ~ .wsu-navigation-site-vertical .wsu-navigation-site-vertical__toggle-button {
-        color: #fff;
+    .wsu-wordmark {
+
+    }
+
+    
+
+    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+        .wsu-menu-admin a {
+            color: $wsu-color--text;
+        }
+    
     }
 
     @media screen and (max-width: $wsu-breakpoint--phone ) {
