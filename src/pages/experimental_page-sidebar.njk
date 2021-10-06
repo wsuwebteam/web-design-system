@@ -1,0 +1,29 @@
+{% extends "page-template.njk" %}
+{% from "experimental_hero/_macro.njk" import hero %}
+
+
+{% block content %}
+<div class="wsu-wrapper-global">
+    {% include 'skip-to-main/html.njk' %}
+    {% include 'header-global/html.njk' %}
+    {% include 'navigation-site-vertical/html.njk' %}
+    <div class="wsu-wrapper-site">
+        {% include 'header-site/html.njk' %}
+        <div class="wsu-wrapper-content">
+            <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                {% include 'row/row-single.njk' %}
+                {% include 'row/row-halves.njk' %}
+            </main>
+            <aside role="complementary" class="wsu-wrapper-sidebar">
+                <a href="#" class="wsu-button">CTA Button</a>
+                <a href="#" class="wsu-button">CTA Button 2</a>
+                <a href="#" class="wsu-button">CTA Button 3</a>
+                {% include 'news-card/html.njk' %}
+            </aside>
+        </div>
+        {% include 'footer-site/html.njk' %}
+    </div>
+    {% include 'footer-global/html.njk' %} 
+</div>
+{%  endblock %}  
