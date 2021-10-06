@@ -3,16 +3,16 @@
 {% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
 {% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
 {% from "meta-tags/macros/macro.njk" import metaTags %}
-{% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
+{% from "image-frame/_macro.njk" import imageFrame %}
 {% from "experimental_overlay/_macro.njk" import overlay %}
 
 {% macro hero( classes='', linked=false, titleTag="div", imageSrc='https://source.unsplash.com/collection/895539' ) %}
 <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if linked %}<a class="wsu-hero__link-slide" href="#" aria-hidden="true" tabindex="-1">
-            Visit Hero Banner Title
+            Hero Banner Title
     </a>{% endif %}
     {% if imageSrc %}
-        {{ imageFrame( ' wsu-image-frame--fill', '', imageSrc ) }} 
+        {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }} 
     {% endif %}
     {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
     <div class="wsu-hero__content">
@@ -21,7 +21,7 @@
             Hero Banner Title
             </{{ titleTag }}>
             {{ caption() }}
-            {% if linked %}<a class="wsu-hero__read-more" href="#" aria-label="Visit Hero Banner Title">Read More</a>{% endif %}
+            {% if linked %}<a class="wsu-hero__read-more" href="#" aria-label="Read more Hero Banner Title">Read More</a>{% endif %}
         </div>
     </div>
 </div>

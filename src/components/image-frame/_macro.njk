@@ -1,0 +1,7 @@
+{% macro imageFrame(  classes='', link='', ariaHide=false, imageSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg' ) %}
+<div class="wsu-image-frame{{ classes }}">
+    {% if link %}<a href="#"  {% if ariaHide %}tabindex="-1" aria-hidden="true"{% endif %}>{% endif %}
+    <img src="{{ imageSrc }}" />
+    {% if link %}</a>{% endif %}
+</div>
+{% endmacro %}
