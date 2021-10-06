@@ -55,9 +55,9 @@
 }
 
 @mixin wsu-focus--link {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
-    box-shadow: 0px 0px 0px 3px #ca1237;
+    outline: 2px solid #ca1237;
+    //outline-offset: 2px;
+    //box-shadow: 0px 0px 0px 3px #ca1237;
     border-radius: 3px; 
 } 
 

@@ -6,7 +6,7 @@
     display: inline-block; 
     box-sizing: border-box;
     margin-bottom: $wsu-spacing--component;
-    margin-right: $wsu-spacing--xmedium;
+    margin-right: $wsu-spacing--xmedium; 
     position: relative;
 
     @include wsu-button();
@@ -29,6 +29,16 @@
     &-search::before {
         content: '\F140';
     }
+
+    // Tighten up buttons if they are in a vertical group
+    & + .wsu-button {
+        margin-top: calc( #{$wsu-spacing--medium} - #{$wsu-spacing--component} );
+    }
+}
+
+// Buttons in sidebar are full width
+.wsu-wrapper-sidebar .wsu-button {
+    width: 100%;
 }
 
 .wsu-content input[type="reset"],

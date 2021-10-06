@@ -18,12 +18,47 @@
     }
 
     &__link {
+        color: inherit;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: $wsu-color--crimson-light;
+        }
+
+    }
+
+    &__link-slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        text-decoration: none;
+        z-index: $wsu-zindex--content;
+
+        &:hover {
+
+            & ~ .wsu-hero__content .wsu-title {
+                text-decoration: underline;
+                text-decoration-color: $wsu-color--crimson-light;
+            }
+
+            & ~ .wsu-image-frame {
+
+                img {
+                    opacity: 0.8;
+                }
+            }
+        }
     }
 
     &__content {
-        padding-top: $wsu-spacing--hero;
-        padding-bottom: $wsu-spacing--hero;
+        padding-top: calc( #{$wsu-spacing--hero} * 1.5 );
+        padding-bottom: calc( #{$wsu-spacing--hero} * 1.5 );
         padding-left: $wsu-spacing--large;
         padding-right: $wsu-spacing--large;
         position: relative;
@@ -31,6 +66,8 @@
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        min-height: 500px;
+        box-sizing: border-box;
 
         &::before {
             transition: opacity $wsu-transition-speed--slow $wsu-easing;
@@ -66,9 +103,10 @@
         margin-top: $wsu-spacing--medium;
         color: #fff;
         font-weight: 600;
-        border-bottom: 2px solid $wsu-color--crimson-light;
         display: inline-block;
         position: relative;
+        text-decoration: none;
+        border-bottom: 3px solid $wsu-color--crimson-light;
 
         &::after {
             content: '\F107';
@@ -96,6 +134,7 @@
         bottom: -20%;
         left: 0;
         right: 0;
+        background-color: #000;
     }
 
     .wsu-title {
@@ -236,5 +275,3 @@
     }
         
 }
-
-@include wsu-bleed--full( '.wsu-hero' );

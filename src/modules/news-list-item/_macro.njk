@@ -3,7 +3,7 @@
 {% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
 {% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
 {% from "meta-tags/macros/macro.njk" import metaTags %}
-{% from "image-frame/macros/image-frame.macro.njk" import imageFrame %}
+{% from "image-frame/_macro.njk" import imageFrame %}
 
 {% macro newsListItem( imageSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', title='Phasellus pharetra nunc nec rutrum porta', articleCaption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.', classes='', link='#' ) %}
 <article class="wsu-news-list-item{{ classes }}">
