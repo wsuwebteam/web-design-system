@@ -1,0 +1,31 @@
+{% extends "page-template.njk" %}
+
+{% block content %}
+<div class="wsu-wrapper-global">
+    {% include 'skip-to-main/html.njk' %}
+    {% include 'header-global/html.njk' %}
+    {% include 'navigation-site-vertical/html.njk' %}
+    <div class="wsu-wrapper-site">
+        {% include 'header-site/html.njk' %}
+        <div class="wsu-wrapper-content">
+            <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
+                <h1>Page Not Found</h1>
+                <p>
+					We're sorry, but the page you are looking for could not be found. 
+                    Please try our site search or one of the links below.
+				</p>
+                <ul>
+                    <li><a href="https://index.wsu.edu">The A-Z Directory</a> (an alphabetical list of departments, programs, resources, organizations, and more)</li>
+                    <li><a href="https://wsu.edu/academics/">Academic Departments</a> (a list of links to all academic departments)</li>
+                    <li><a href="https://wsu.edu/about/services/">Administrative Offices and Resources</a> (a list of links to all administrative offices and resources)</li>
+                    <li><a href="https://wsu.edu/admission/">Admissions and Aid</a> (information for prospective students about applying, tuition, financial aid, and more)</li>
+                    <li><a href="https://wsu.edu/contact/">Contact Us</a> (phone and email contacts)</li>
+                </ul>
+                {% include 'experimental_search-block/demo.njk' %}
+            </main>
+        </div>
+        {% include 'footer-site/html.njk' %}
+    </div>
+    {% include 'footer-global/html.njk' %} 
+</div>
+{%  endblock %}  
