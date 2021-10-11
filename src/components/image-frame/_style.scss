@@ -10,7 +10,7 @@
         height: auto;
         border-radius: $wsu-border-radius--small;
         display: block;
-        transition: opacity $wsu-transition-speed--fast $wsu-easing;
+        transition: opacity $wsu-transition-speed--medium $wsu-easing;
     }
 
     &.wsu-align {
