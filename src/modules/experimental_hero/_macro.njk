@@ -5,8 +5,9 @@
 {% from "meta-tags/macros/macro.njk" import metaTags %}
 {% from "image-frame/_macro.njk" import imageFrame %}
 {% from "experimental_overlay/_macro.njk" import overlay %}
+{% from "experimental_eyebrow-header/_macro.njk" import eyebrowHeader %}
 
-{% macro hero( classes='', linked=false, titleTag="div", imageSrc='https://source.unsplash.com/collection/895539' ) %}
+{% macro hero( classes='', linked=false, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", imageSrc='https://source.unsplash.com/collection/895539' ) %}
 <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if linked %}<a class="wsu-hero__link-slide" href="#" aria-hidden="true" tabindex="-1">
             Hero Banner Title
@@ -17,6 +18,9 @@
     {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
     <div class="wsu-hero__content">
         <div class="wsu-hero__caption">
+            {% if eyebrowHeaderText %}
+            {{ eyebrowHeader() }}
+            {% endif %}
             <{{ titleTag }} class="wsu-title">
             Hero Banner Title
             </{{ titleTag }}>

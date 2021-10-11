@@ -50,7 +50,7 @@
             & ~ .wsu-image-frame {
 
                 img {
-                    opacity: 0.8;
+                    opacity: 0.7;
                 }
             }
         }
@@ -67,7 +67,7 @@
         justify-content: center;
         overflow: hidden;
         min-height: 500px;
-        box-sizing: border-box;
+        box-sizing: border-box; 
 
         &::before {
             transition: opacity $wsu-transition-speed--slow $wsu-easing;
@@ -82,6 +82,7 @@
         padding-left: $wsu-spacing--xlarge;
         padding-right: $wsu-spacing--xlarge;
         max-width: 800px;
+        color: #fff;
 
         &::before {
             display: block;
@@ -100,8 +101,8 @@
     }
 
     &__read-more {
-        margin-top: $wsu-spacing--medium;
-        color: #fff;
+        margin-top: $wsu-spacing--xxmedium;
+        color: inherit;
         font-weight: 600;
         display: inline-block;
         position: relative;
@@ -113,7 +114,7 @@
             display: inline-block;
             position: absolute;
             left: calc( 100% + 0.2rem);
-            color: #fff;
+            color: inherit;
             font-size: 0.8rem;
             top: 0.2rem;
             font-family: wsu-icons;
@@ -137,17 +138,17 @@
         background-color: #000;
     }
 
+
     .wsu-title {
-        color: #fff;
         @include wsu-font--hero();
-        margin-bottom: $wsu-spacing--xxsmall;
+        margin-bottom: $wsu-spacing--xsmall;
         text-shadow: 0px 0px 8px #000000;
         font-weight: 800;
         position: relative;
     }
 
     .wsu-caption {
-        color: #fff;
+
         @include wsu-font--xxmedium();
         text-shadow: 0px 0px 3px #000000;
         margin-right: $wsu-spacing--large;
@@ -269,7 +270,7 @@
         }
 
         .wsu-caption {
-            @include wsu-font--xxmedium();
+            @include wsu-font--medium();
         }
 
     }
