@@ -17,9 +17,7 @@
 
     &__search-field {
         margin-bottom: $wsu-spacing--xmedium;
-
-    }
-    
+    }    
     
     &__suggested-searches-header {
         margin-bottom: $wsu-spacing--xsmall;
@@ -31,15 +29,11 @@
         list-style: none;
         padding: 0;
         margin: 0;
-
-
     }
 
-    &__suggested-search-term {
-        
+    &__suggested-search-term {        
         padding: 0;
     }
-
 }
 
 
@@ -62,8 +56,7 @@
         
         &__search-field {
             
-        }
-        
+        }        
         
         &__suggested-searches-header {
         }
@@ -74,10 +67,8 @@
         }
         
         &__suggested-search-term {
-            flex-basis: 50%;
-            
-        }
-        
+            flex-basis: 50%;            
+        }        
     }
     
 }
