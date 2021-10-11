@@ -8,6 +8,18 @@ $wsu-card-margin: $wsu-spacing--xsmall;
     flex-wrap: wrap;
     box-sizing: border-box;
 
+    &__title {
+        margin-bottom: $wsu-spacing--small;
+    }
+
+    &__footer,
+    &__title {
+        width: 100%;
+        margin-left: $wsu-card-margin;
+        margin-right: $wsu-card-margin;
+        box-sizing: border-box;
+    }
+
     &--per-row-1 {
         .wsu-card {
             width: 100%;
