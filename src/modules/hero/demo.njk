@@ -1,0 +1,16 @@
+{% extends "component.njk" %}
+{% from "hero/_macro.njk" import hero %}
+
+{% block content %}
+{% include 'hero/html.njk' %}
+{% include 'hero/html--linked.njk' %}
+<style>
+.wsu-hero {
+    margin-bottom: 200px !important;
+}
+
+.wsu-custom-demo {
+    margin: 0 !important;
+}
+</style>
+{%  endblock %}   

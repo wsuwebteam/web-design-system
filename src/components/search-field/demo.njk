@@ -1,11 +1,11 @@
 {% extends "component.njk" %}
-{% from "search-field/macro.njk" import searcField %}
+{% from "search-field/macro.njk" import searchField %}
 
 {% block content %}
 
 <div class="wsu-demo-component" >
-    {{ searcField() }}
-    {{ searcField( ' wsu-search-field--secondary' ) }}
+    {{ searchField() }}
+    {{ searchField( ' wsu-search-field--secondary' ) }}
 </div>
 <style>
 .wsu-demo-component {
