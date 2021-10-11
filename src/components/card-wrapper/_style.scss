@@ -1,0 +1,46 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$wsu-card-margin: $wsu-spacing--xsmall;
+
+.wsu-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    &--per-row-1 {
+        .wsu-card {
+            width: 100%;
+        }
+    }
+
+    &--per-row-2,
+    &--per-row-3,
+    &--per-row-4 {
+        margin-left: -$wsu-card-margin;
+        margin-right: -$wsu-card-margin;
+
+        .wsu-card {
+            margin-left: $wsu-card-margin;
+            margin-right: $wsu-card-margin;
+        }
+    }
+
+    &--per-row-2 {
+
+        .wsu-card {
+            width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
+        }
+    }
+    &--per-row-3 {
+        .wsu-card {
+            width: calc( 33.33% - ( #{$wsu-card-margin} * 2 ) );
+        }
+    }
+
+    &--per-row-4 {
+        .wsu-card {
+            width: calc( 25% - ( #{$wsu-card-margin} * 2 ) );
+        }
+    }
+} 

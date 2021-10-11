@@ -17,6 +17,7 @@
             }
 
             &__button {
+                @include wsu-button();
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -44,8 +45,7 @@
 
                 &:hover,
                 &:focus {
-                    color: $wsu-color--crimson;
-                    text-decoration: underline;
+                    color: $wsu-color--gray-0;
                 }
             }
 
