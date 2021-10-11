@@ -43,16 +43,70 @@ $wsu-card-margin: $wsu-spacing--xsmall;
         .wsu-card {
             width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
         }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            .wsu-card {
+                width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+            }
+        }
+
+        &.wsu-card-wrapper--break-early {
+
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                .wsu-card {
+                    width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+                }
+            }
+
+        }
     }
     &--per-row-3 {
         .wsu-card {
             width: calc( 33.33% - ( #{$wsu-card-margin} * 2 ) );
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            .wsu-card {
+                width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+            }
+        }
+
+        &.wsu-card-wrapper--break-early {
+
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                .wsu-card {
+                    width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+                }
+            }
+
         }
     }
 
     &--per-row-4 {
         .wsu-card {
             width: calc( 25% - ( #{$wsu-card-margin} * 2 ) );
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+            .wsu-card {
+                width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
+            }
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            .wsu-card {
+                width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+            }
+        }
+
+        &.wsu-card-wrapper--break-early {
+
+            @media screen and (max-width: $wsu-breakpoint--desktop ) {
+                .wsu-card {
+                    width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
+                }
+            }
+
         }
     }
 } 
