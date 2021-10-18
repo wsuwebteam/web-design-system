@@ -1,0 +1,70 @@
+@import '../../_assets/scss/variables';
+@import '../../_assets/scss/mixins';
+
+/*=============================================
+=            Events            =
+=============================================*/
+.wsuwp-content-syndicate-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wsuwp-content-syndicate-event {
+    padding: 0;
+    margin-bottom: $wsu-spacing--medium;
+
+    &:last-child {
+        margin-bottom: $wsu-spacing--xxmedium;
+    }
+
+    .content-item-event-date {
+        font-size: $wsu-font-size--medium;
+        color: $wsu-color--gray-0;
+        background-color: $wsu-color--crimson;
+        padding: 0.15em 0.75em;
+    }
+
+    .content-item-event-title {
+        display: block;
+        margin: .15em 0;
+    }
+
+    .content-item-event-title a {
+        text-decoration: none;
+        color: $wsu-color--gray-75;
+        font-size: $wsu-font-size--xxmedium;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+            color: $wsu-color--crimson-light;
+        }
+    }
+
+    .content-item-event-meta {
+        display: block;
+        font-size: $wsu-font-size--small;
+    }
+
+    .content-item-event-venue {}
+
+    .content-item-event-venue:not(:empty)+.content-item-event-city:not(:empty) {
+        &::before {
+            content: '\007C';
+            margin: 0 .3em;
+        }
+    }
+
+    .content-item-event-city {}
+
+    .content-item-event-state {}
+
+    .content-item-event-excerpt {
+        font-size: $wsu-font-size--medium;
+        margin-top: $wsu-spacing--xxsmall;
+
+    }
+}
+
+/*=====  End of Events  ======*/
