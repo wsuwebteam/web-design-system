@@ -19,6 +19,15 @@
 
 }
 
+@each $fontKey, $fontSize in $wsu-font-size-map{
+
+    .wsu-font-size--#{$fontKey} {
+        font-size: $fontSize !important;
+        line-height: map-get( $wsu-line-height-map, $fontKey ) !important;
+    }
+
+}
+
 @each $spaceName, $space in $wsu-spacing-map{
 
     .wsu-spacing-before--#{$spaceName} {
