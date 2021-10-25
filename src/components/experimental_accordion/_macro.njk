@@ -1,7 +1,7 @@
-{% macro accordion( classes, id ) %}
+{% macro accordion( classes, id, title='Lorem ipsum dolor sit amet, consectetur adipiscing elit' ) %}
 <div class="wsu-accordion{{ classes }}">
     <h2 id="unique-id-{{ id }}__title" class="wsu-accordion__title">
-        <button  class="wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="false" aria-controls="unique-id-{{ id }}__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+        <button  class="wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="false" aria-controls="unique-id-{{ id }}__content">{{ title }}</button>
     </h2>
     <div id="unique-id-{{ id }}__content" class="wsu-accordion__content" aria-labelledby="unique-id-{{ id }}__title">
         <div class="wsu-accordion__content-inner">
