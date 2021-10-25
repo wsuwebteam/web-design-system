@@ -1,0 +1,227 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+/*=============================================
+=            People            =
+=============================================*/
+.wsuwp-people-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $wsu-spacing--xxmedium;
+}
+
+.wsuwp-people-filters {
+    grid-column: 1/-1;
+}
+
+.wsuwp-person-container {
+    box-shadow: $wsu-shadow--low;
+    border-radius: $wsu-border-radius--xsmall;
+    overflow: hidden;
+    padding-bottom: $wsu-spacing--medium;
+
+    >div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.wsuwp-person-container .wsuwp-person-photo {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: $wsu-spacing--medium;
+    max-width: 100% !important;
+    background: none !important;
+    position: relative;
+    padding-bottom: 75%;
+
+    a:focus img,
+    a:hover img {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.wsuwp-person-container .wsuwp-person-photo img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.wsuwp-person-container .wsuwp-person-name,
+.wsuwp-person-container .wsuwp-person-position,
+.wsuwp-person-container .wsuwp-person-office,
+.wsuwp-person-container .wsuwp-person-address,
+.wsuwp-person-container .wsuwp-person-email,
+.wsuwp-person-container .wsuwp-person-phone {
+    margin-left: $wsu-spacing--xmedium !important;
+    margin-right: $wsu-spacing--xmedium !important;
+}
+
+.wsuwp-person-container .wsuwp-person-name {
+    font-weight: 600;
+    font-size: $wsu-font-size--medium;
+}
+
+.wsuwp-person-container .wsuwp-person-position {
+    font-size: $wsu-font-size--small;
+    display: block;
+
+    + :not(.wsuwp-person-position) {
+        margin-top: $wsu-spacing--xsmall;
+    }
+}
+
+.wsuwp-person-container .wsuwp-person-email {
+    word-wrap: break-word;
+    font-size: $wsu-font-size--small;
+}
+
+.wsuwp-person-container .wsuwp-person-office,
+.wsuwp-person-container .wsuwp-person-address,
+.wsuwp-person-container .wsuwp-person-phone {
+    font-size: $wsu-font-size--small;
+}
+
+
+/*----------  Filters  ----------*/
+.wsuwp-people-filters {
+    .screen-reader-text {
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        -webkit-clip-path: inset(50%);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        word-wrap: normal !important;
+    }
+}
+
+.wsuwp-people-filter {
+    display: block !important;
+    margin-bottom: $wsu-spacing--sxxsmall !important;
+
+    &:last-child {
+        margin-bottom: 0 !important
+    }
+}
+
+.wsuwp-people-filter.search {}
+
+.wsuwp-people-filters .search input,
+.wsuwp-people-filter-label {
+    height: auto !important;
+}
+
+.wsuwp-people-filter-label {
+    @include wsu-button();
+}
+
+.wsuwp-people-filter.search {
+    position: relative;
+}
+
+.wsuwp-people-filter.search label {
+    position: relative;
+    margin-top: 0;
+}
+
+
+.wsuwp-people-filter.search label span {
+    position: absolute;
+    bottom: 100%;
+    font-size: 0.7rem;
+}
+
+.wsuwp-people-filter.search label input {
+    height: 56px !important;
+    box-sizing: border-box;
+}
+
+.wsuwp-people-filter-terms {
+    list-style-type: none;
+    max-width: 400px;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    padding-top: 1rem !important;
+    padding-right: $wsu-spacing--medium !important;
+    margin-top: $wsu-spacing--sxxsmall;
+    box-shadow: $wsu-dropshadow-rise--medium;
+    background-color: $wsu-color--gray-0;
+    position: absolute !important;
+    z-index: 1;
+}
+
+.wsuwp-people-filter-terms li::before {
+    display: none !important;
+}
+
+.wsuwp-people-filter-terms li label {
+    font-size: 0.8rem;
+    margin-top: 0;
+    display: flex;
+    font-weight: 500;
+}
+
+#wsu-content .wsuwp-people-filter-terms input[type=checkbox] {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: .5rem;
+}
+
+
+/*----------  Filters Overrides  ----------*/
+.wsuwp-people-filters .search input,
+.wsuwp-people-filter-label {
+    white-space: nowrap;
+    height: auto !important;
+    line-height: 1.5 !important;
+}
+
+.wsuwp-people-filter-label {
+    padding: 1em 3em !important;
+}
+
+@media screen and (min-width: $wsu-breakpoint--tablet-medium) {
+    .wsuwp-people-filters {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -$wsu-spacing--sxxsmall;
+    }
+
+    .wsuwp-people-filter {
+        flex-shrink: 0;
+        margin-left: $wsu-spacing--sxxsmall;
+
+        .search {
+            order: 1;
+        }
+
+        &:first-child+.search:last-child {
+            min-width: calc(75% - 1rem);
+        }
+    }
+
+    .wsuwp-people-filters[data-filters*="search"] {
+        .wsuwp-people-filter {
+            flex-grow: 1;
+            flex-basis: 25%;
+        }
+    }
+}
+
+/*=====  End of People  ======*/
