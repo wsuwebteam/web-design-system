@@ -3,74 +3,96 @@
 
 .wsu-accordion {
 
-    margin-bottom: $wsu-spacing--component;
     border-bottom: 1px solid $wsu-color--gray-20;
+    margin-bottom: $wsu-spacing--component;
 
     &__title {
-
-        @include wsu-font--large();
-        font-weight: 300;
-        padding: $wsu-spacing--medium 3em $wsu-spacing--medium 0.3em;
         margin: 0;
-        position: relative;
-        cursor: pointer;
-        box-sizing: border-box;
+        padding: 0;
         border: 1px solid transparent;
+        box-sizing: border-box;
+        background-color: transparent;
+        transition: background-color $wsu-easing $wsu-transition-speed--fast, border-color $wsu-easing $wsu-transition-speed--fast;
 
-        &::after {
+        &::before {
             content: "\F137";
             font-family: "wsu-icons";
             position: absolute;
             top: 50%;
-            right: 2em;
+            right: $wsu-spacing--xmedium;
             transform: translatey(-50%);
-            font-size: 0.6em;
-        }
-
-        &:hover,
-        &:focus {
-            background-color: $wsu-color--gray-5;
-            border: 1px solid $wsu-color--gray-30;
-            outline: 0; 
+            font-size: $wsu-font-size--small;
+            font-weight: 400;
+            width: 18px;
+            text-align: center;
         }
     }
 
-    &__content {
-        padding: $wsu-spacing--small $wsu-spacing--small $wsu-spacing--medium;
+    &__title-button {
+
+        @include wsu-font--large();
+        font-weight: 400;
+        padding: $wsu-spacing--medium calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--medium $wsu-spacing--sxxsmall;
+        margin: 0;
+        position: relative;
+        cursor: pointer;
         box-sizing: border-box;
-        transition: max-height $wsu-easing $wsu-transition-speed--slow;
+        border: none;
+        background-color: transparent;
+        text-align: left;
+        outline: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+
+    }
+
+    &__title:hover,
+    &__title:focus,
+    &__title:focus-within {
+        background-color: $wsu-color--gray-0;
+        border-color: $wsu-color--gray-30;
+        border-color: $wsu-color--crimson-light;
+    }
+
+    &__content {
+        max-height: 0;
+        visibility: hidden;
         overflow: hidden;
+        transition: max-height $wsu-easing $wsu-transition-speed--medium, visibility 0s 400ms;
+    }
+
+    &__content-inner {
+        padding: $wsu-spacing--xmedium $wsu-spacing--small $wsu-spacing--xxmedium;
+        box-sizing: border-box;
     }
 
     & + .wsu-accordion {
         margin-top: -$wsu-spacing--component;
     }
 
-
-    &[aria-expanded="false"] {
-
+    &.wsu-accordion--open {
         .wsu-accordion__content {
-            display: none;
-            max-height: 0;
-        }
-
-    }
-
-    &[aria-expanded="false"] {
-        .wsu-accordion__content.wsu-animating {
-            display: block;
-        }
-
-    }
-
-    &[aria-expanded="true"] {
-
-        .wsu-accordion__content {
-            display: block;
+            visibility: visible;
             max-height: none;
+            transition: max-height $wsu-easing $wsu-transition-speed--medium, visibility 0s 0s;
         }
-
     }
-
 
 }
+
+.wsu-accordion--small .wsu-accordion,
+.wsu-accordion.wsu-accordion--small {
+
+    .wsu-accordion {
+
+        &__title-button {
+
+            @include wsu-font--xmedium();
+            padding: $wsu-spacing--xsmall calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--xsmall $wsu-spacing--sxxsmall;
+        }
+
+    }
+
+}
+

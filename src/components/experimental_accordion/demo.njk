@@ -1,14 +1,19 @@
 {% extends "component.njk" %}
-{% from "experimental_accordion/macro.njk" import accordion %}
+{% from "experimental_accordion/_macro.njk" import accordion %}
 
 {% block content %}
 
 <div class="wsu-demo-component" >
-    {{ accordion() }}
-    {{ accordion() }}
-    {{ accordion() }}
-    {{ accordion() }}
-    {{ accordion() }}
+    {{ accordion('','1') }}
+    {{ accordion('','2') }}
+    {{ accordion('','3') }}
+    {{ accordion('','4') }}
+    {{ accordion('','5') }}
+    <hr />
+    {{ accordion(' wsu-accordion--small','6') }}
+    {{ accordion(' wsu-accordion--small','7') }}
+    {{ accordion(' wsu-accordion--small','8') }}
+    {{ accordion(' wsu-accordion--small','9') }}
 </div>
 <style>
 .wsu-demo-component {

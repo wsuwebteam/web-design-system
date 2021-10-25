@@ -247,7 +247,7 @@ $zindex-tooltip:                    1080;
   margin: 0;
   margin-bottom: 2.25rem;
   display: grid;
-  grid-template-areas: "byline byline" "title title" "excerpt thumbnail" "spacer thumbnail"; }
+  grid-template-areas: "byline byline" "title title" "excerpt thumbnail" "spacer thumbnail"; }
 
 .wsuwp-content-syndicate-wrapper--excerpts .content-item-thumbnail {
   grid-area: thumbnail; }
@@ -301,9 +301,9 @@ $zindex-tooltip:                    1080;
 
 @media screen and (min-width: 860px) {
   .wsuwp-content-syndicate-wrapper--excerpts .wsuwp-content-syndicate-item {
-    grid-template-areas: "byline thumbnail" "title thumbnail" "excerpt thumbnail" "spacer thumbnail"; }
+    grid-template-areas: "byline thumbnail" "title thumbnail" "excerpt thumbnail" "spacer thumbnail"; }
   .wsu-column:not(:only-child) .wsuwp-content-syndicate-wrapper--excerpts .wsuwp-content-syndicate-item {
-    grid-template-areas: "byline byline" "title title" "excerpt thumbnail" "spacer thumbnail"; }
+    grid-template-areas: "byline byline" "title title" "excerpt thumbnail" "spacer thumbnail"; }
   .wsu-column:not(:only-child) .wsuwp-content-syndicate-wrapper--excerpts .content-item-excerpt p {
     max-width: none; } }
 
