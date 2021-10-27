@@ -1,0 +1,7 @@
+{% macro icon( icon='wsu-i-alarm', classes='', isLink=false) %}
+{% if isLink %}
+<a href="#" class="wsu-icon{{ classes }} {{ icon }}" title="Link destination"></a>
+{% else %}
+<i class="wsu-icon{{ classes }} {{ icon }}" aria-label="Icon label"></i>
+{% endif %}
+{% endmacro %}

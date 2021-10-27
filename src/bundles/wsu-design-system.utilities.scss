@@ -2,6 +2,38 @@
 @import '../../_assets/scss/mixins';
 
 
+.wsu-align {
+
+    &--right {
+        margin-left: auto;
+    }
+
+    &--left {
+        margin-right: auto;
+    }
+
+    &--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.wsu-text-align {
+
+    &--right {
+        text-align: right;
+    }
+
+    &--right {
+        text-align: left;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+
 @each $colorName, $color in $wsu-color-map{
 
     .wsu-color-background--#{$colorName} {
@@ -15,6 +47,15 @@
 
     .wsu-color-text--#{$colorName} {
         color: $color !important;
+    }
+
+}
+
+@each $fontKey, $fontSize in $wsu-font-size-map{
+
+    .wsu-font-size--#{$fontKey} {
+        font-size: $fontSize !important;
+        line-height: map-get( $wsu-line-height-map, $fontKey ) !important;
     }
 
 }
