@@ -1,0 +1,40 @@
+{% from "experimental_icon/_macro.njk" import icon %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+{% include 'experimental_icon/html.njk' %}
+<hr />
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--small') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--medium') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xxlarge') }}
+<div style="text-align: center">
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge') }}
+</div>
+<div style="text-align: center">
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge', true) }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge', true) }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xlarge', true) }}
+</div>
+<div style="text-align: center">
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--crimson') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--crimson-light') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--accent-midnight') }}
+</div>
+<div style="text-align: center; background-color: #000">
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--accent-autumn') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--accent-goldfinch') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--accent-vineyard') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--large wsu-color--accent-pacificsky') }}
+</div>
+<hr />
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xxlarge wsu-align--left') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xxlarge wsu-align--center') }}
+{{ icon( 'wsu-i-social-facebook', ' wsu-icon--xxlarge wsu-align--right') }}
+<style>
+</style>
+{%  endblock %}
