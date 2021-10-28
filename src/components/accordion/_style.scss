@@ -91,6 +91,14 @@
 
 }
 
+.wsu-accordion.wsu-accordion--open {
+
+    .wsu-accordion__title::before {
+        content: "\F12C";
+    }
+
+}
+
 .wsu-accordion--small .wsu-accordion,
 .wsu-accordion.wsu-accordion--small {
 
@@ -105,6 +113,8 @@
     }
 
 }
+
+
 
 @media screen and (max-width: $wsu-breakpoint--tablet ) {
 
