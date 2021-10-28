@@ -70,7 +70,7 @@
         visibility: hidden;
         overflow: hidden;
         transition: max-height $wsu-easing $wsu-transition-speed--medium, visibility 0s 400ms;
-    }
+    } 
 
     &__content-inner {
         padding: $wsu-spacing--xmedium $wsu-spacing--small $wsu-spacing--small;
@@ -99,8 +99,8 @@
 
 }
 
-.wsu-accordion--small .wsu-accordion,
-.wsu-accordion.wsu-accordion--small {
+.wsu-accordion--size-small .wsu-accordion,
+.wsu-accordion.wsu-accordion--size-small {
 
     .wsu-accordion {
 
