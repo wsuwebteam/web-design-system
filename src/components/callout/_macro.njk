@@ -1,6 +1,10 @@
-{% macro callout( classes ) %}
+{% macro callout( classes, showHeading=false ) %}
 <aside class="wsu-callout{{ classes }}">
+    {% if showHeading %}
+    <h2 class="wsu-callout__title">Lorem ipsum dolor</h2>
+    {% else %}
     <h2>Lorem ipsum dolor</h2>
+    {% endif %}
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisl enim, feugiat a eleifend ac, varius sed est. 
         Quisque risus lorem, mattis sed diam at, tempor consectetur mi. Donec nec pulvinar sem. Mauris vel ornare leo. Donec 

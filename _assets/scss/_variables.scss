@@ -78,6 +78,7 @@ $wsu-color--gray-100: hsl(0, 0, 3%); // #080808
 $wsu-color--text: $wsu-color--gray-85; // #080808
 
 $wsu-color-map: (
+    'white':        #ffffff,
     'gray-0':        $wsu-color--gray-0,
     'gray-5':        $wsu-color--gray-5,
     'gray-10':       $wsu-color--gray-10,
@@ -104,15 +105,15 @@ $wsu-color-map: (
 );
 
 $wsu-color-background-text-map: (
-    'gray-0':        inherit,
-    'gray-5':        inherit,
-    'gray-10':       inherit,
-    'gray-15':       inherit,
-    'gray-20':       inherit,
-    'gray-25':       inherit,
-    'gray-30':       inherit,
-    'gray-35':       inherit,
-    'gray-40':       inherit,
+    'gray-0':        $wsu-color--text,
+    'gray-5':        $wsu-color--text,
+    'gray-10':       $wsu-color--text,
+    'gray-15':       $wsu-color--text,
+    'gray-20':       $wsu-color--text,
+    'gray-25':       $wsu-color--text,
+    'gray-30':       $wsu-color--text,
+    'gray-35':       $wsu-color--text,
+    'gray-40':       $wsu-color--text,
     'gray-45':       $wsu-color--gray-5,
     'gray-50':       $wsu-color--gray-5,
     'gray-55':       $wsu-color--gray-5,
