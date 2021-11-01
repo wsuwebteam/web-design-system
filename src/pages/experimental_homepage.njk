@@ -1,5 +1,6 @@
 {% extends "page-template.njk" %}
 {% from "hero/_macro.njk" import hero %}
+{% from "header-site/_macro.njk" import headerSite %}
 
 
 {% block content %}
@@ -8,7 +9,7 @@
     {% include 'header-global/html.njk' %}
     {% include 'navigation-site-vertical/html.njk' %}
     <div class="wsu-wrapper-site">
-        {% include 'header-site/html.njk' %}
+        {{ headerSite('','Civil and Environmental Engineering','Voiland College of Engineering and Architecture', true ) }} 
         <div class="wsu-wrapper-content">
             <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
                 {{ hero() }}

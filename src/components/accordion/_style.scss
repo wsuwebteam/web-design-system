@@ -3,8 +3,18 @@
 
 .wsu-accordion {
 
-    border-bottom: 1px solid $wsu-color--gray-20;
     margin-bottom: $wsu-spacing--component;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: auto;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $wsu-color--gray-20;
+    }
 
     &__title {
         margin: 0;
@@ -60,10 +70,10 @@
         visibility: hidden;
         overflow: hidden;
         transition: max-height $wsu-easing $wsu-transition-speed--medium, visibility 0s 400ms;
-    }
+    } 
 
     &__content-inner {
-        padding: $wsu-spacing--xmedium $wsu-spacing--small $wsu-spacing--xxmedium;
+        padding: $wsu-spacing--xmedium $wsu-spacing--small $wsu-spacing--small;
         box-sizing: border-box;
     }
 
@@ -81,8 +91,16 @@
 
 }
 
-.wsu-accordion--small .wsu-accordion,
-.wsu-accordion.wsu-accordion--small {
+.wsu-accordion.wsu-accordion--open {
+
+    .wsu-accordion__title::before {
+        content: "\F12C";
+    }
+
+}
+
+.wsu-accordion--size-small .wsu-accordion,
+.wsu-accordion.wsu-accordion--size-small {
 
     .wsu-accordion {
 
@@ -94,5 +112,21 @@
 
     }
 
+}
+
+
+
+@media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+    .wsu-accordion {
+
+        &__title-button {
+
+            @include wsu-font--xmedium();
+            font-weight: 400;
+            padding: $wsu-spacing--xsmall calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--xsmall $wsu-spacing--sxxsmall;    
+        }
+    }
+    
 }
 

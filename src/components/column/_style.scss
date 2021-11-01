@@ -11,6 +11,7 @@
     padding-left: $wsu-spacing--column;
     padding-right: $wsu-spacing--column;
     box-sizing: border-box;
+    width: 100%;
 
     &[class*="wsu-color-background"] {
         padding-top: $wsu-spacing--xmedium;
