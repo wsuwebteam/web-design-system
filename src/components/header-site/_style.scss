@@ -3,11 +3,12 @@
 
 .wsu-header-site {
 
-    padding: $wsu-spacing--small $wsu-spacing--xmedium;
     min-height: 110px;
     box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
     background-color: #fff;
+    flex-wrap: wrap;
 
     &__subtitle {
 
@@ -30,6 +31,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: $wsu-spacing--small $wsu-spacing--xmedium;
     }
 
     &__title {
@@ -46,6 +48,103 @@
             font-weight: inherit;
         }
 
+    }
+
+    
+}
+
+.wsu-header-site__navigation {
+    display: flex;
+    margin: 0 $wsu-spacing--medium;
+    max-width: 1200px;
+    box-sizing: border-box;
+
+    &-menu {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        & > li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            & > button {
+                background-color: transparent;
+                border: none;
+
+                &::after {
+                    content: "\F103";
+                    font-family: wsu-icons;
+                    margin-left: 0.75em;
+                    color: $wsu-color--gray-85;
+                    font-size: 12px;
+                    //background-color: $wsu-color--gray-15;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+
+            }
+
+            & > button,
+            & > a {
+                @include wsu-font--medium();
+                display: flex;
+                flex-grow: 1;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: inherit;
+                padding: $wsu-spacing--small $wsu-spacing--medium $wsu-spacing--small;
+                font-weight: 500;
+                position: relative;
+                cursor: pointer;
+                
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: auto;
+                bottom: 0;
+            }
+
+            &:hover,
+            &:focus,
+            &:focus-within {
+
+                background-color: $wsu-color--gray-0;
+
+                &::after {
+                    background-color: $wsu-color--gray-65;
+                    height: 5px;
+                }
+
+            }
+
+            &:first-child > a::before {
+                content: '\F122';
+                font-family: wsu-icons;
+                margin-right: 0.4em;
+                font-size: 0.9em;
+                display: inline-block;
+                vertical-align: middle;
+                transform: translateY(-2px);
+            }
+
+            &.wsu-menu-item--parent::after,
+            &.wsu-menu-item--current::after {
+                background-color: $wsu-color--crimson-light;
+                height: 5px;
+            } 
+        }
     }
 }
 

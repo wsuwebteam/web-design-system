@@ -1,0 +1,8 @@
+{% from "header-site/_macro.njk" import headerSite %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+{% include 'header-site/html.njk' %}
+{{ headerSite('','Civil and Environmental Engineering','Voiland College of Engineering and Architecture', true ) }} 
+{%  endblock %}
