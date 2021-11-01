@@ -48,3 +48,23 @@ a img.aligncenter {
     margin-left: auto;
     margin-right: auto;
 }
+
+.admin-bar {
+    .wsu-navigation-site-vertical__toggle-button,
+    .wsu-navigation-site-vertical__panel {
+        top: 32px;
+    }
+
+}
+  
+  @media only screen and (max-width: 782px) {
+    
+    .admin-bar  {
+
+        .wsu-navigation-site-vertical__toggle-button,
+        .wsu-navigation-site-vertical__panel {
+            top: 46px;
+        }
+    }
+    
+  }
