@@ -156,5 +156,15 @@
 .wsu-pattern--lines-light-radial-right.wsu-pattern-after::after {
   -webkit-mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
   mask-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(0,212,255,1) 300%);
+}
+
+.wsu-pattern--none .wsu-pattern,
+.wsu-pattern--none.wsu-pattern,
+.wsu-pattern--none .wsu-pattern-before::before,
+.wsu-pattern--none.wsu-pattern-before::before,
+.wsu-pattern--none .wsu-pattern-after::after,
+.wsu-pattern--none.wsu-pattern-after::after {
+  display: none;
 } 
+
 
