@@ -10,7 +10,7 @@ h6 {
     font-family: $wsu-font-family;
     padding-top: 0.25rem;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     position: relative;
 
     a {
@@ -39,7 +39,7 @@ h1 {
     font-size: $wsu-font-size--xxlarge;
     line-height: 1.2;
     font-weight: 800;
-    margin-bottom: $wsu-spacing--xxmedium;
+    margin-bottom: $wsu-spacing--large;
 
     &::after {
         display: block; 
@@ -88,11 +88,13 @@ h4 {
 h5 {
     font-size: $wsu-font-size--xmedium;
     font-weight: 600;
-    line-height: 1.4; 
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
 }
 
 h6 {
     font-size: $wsu-font-size--medium;
     font-weight: 600;
     line-height: 1.5;
+    margin-bottom: 0.5rem;
 }

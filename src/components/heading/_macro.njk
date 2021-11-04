@@ -1,0 +1,7 @@
+{% macro heading( tag='h1', classes='', title='Lorem ipsum', link='' ) %}
+<{{ tag }} class="{{ classes }}">
+    {% if link %}<a hre="#">{% endif %}
+    {{ title }} {{ tag }}
+    {% if link %}</a>{% endif %}
+</{{ tag }}>
+{% endmacro %}
