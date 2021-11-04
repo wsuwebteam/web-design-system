@@ -1,0 +1,43 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-heading {
+
+    &--style {
+
+        &-callout {
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.75em;
+            margin-bottom: $wsu-spacing--medium;
+            
+            &::after {
+                content:"";
+                width: 1.5em;
+                height: 0.25em;
+                background-color: $wsu-color--crimson;
+                display: block;
+                position: absolute;
+                left: calc( 50% - 0.75em );
+                bottom: 0;
+            }
+        }
+    }
+}
+
+h1.wsu-heading--style-callout {
+    margin-bottom: $wsu-spacing--large;
+
+    &::after {
+        width: $wsu-spacing--hero;
+        height: 0.4rem;
+        left: calc( 50% - ( #{$wsu-spacing--hero} / 2 ) );
+    }
+}
+
+h2.wsu-heading--style-callout {
+
+    &::after {
+        height: 0.4rem;
+    }
+}

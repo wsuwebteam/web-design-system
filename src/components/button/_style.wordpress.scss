@@ -1,0 +1,48 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wp-block-buttons .wp-block-button__link{
+    @include wsu-button();
+    margin-bottom: $wsu-spacing--component;
+    margin-right: $wsu-spacing--xmedium; 
+}
+
+.wsu-button {
+
+    &--style-outline,
+    &--style-outline-round { 
+
+        .wp-block-button__link {
+            color: $wsu-color--gray-60;
+            border: 1px solid $wsu-color--gray-30;
+            background-color: #fff;
+        
+            &:focus,
+            &:hover {
+                background-color: #fff;
+                color: $wsu-color--crimson-light;
+                border-color: $wsu-color--crimson-light;
+            }
+        }
+    }
+
+    &--style-round,
+    &--style-outline-round {
+
+        .wp-block-button__link {
+            border-radius: 2em;
+        }
+    }
+
+    &--size-small {
+        .wp-block-button__link { 
+            font-size: $wsu-font-size--xsmall;
+        }
+    }
+    &--size-large {
+        .wp-block-button__link { 
+            font-size: $wsu-font-size--xxmedium;
+        }
+    }
+
+}

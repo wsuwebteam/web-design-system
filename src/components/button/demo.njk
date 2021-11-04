@@ -1,0 +1,19 @@
+{% from "button/_macro.njk" import button %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+<div class="wsu-demo-component">
+{% include 'button/html.njk' %}
+<hr />
+{{ button( ' wsu-button--size-small') }}{{ button() }}{{ button( ' wsu-button--size-large') }}
+<hr />
+{{ button( ' wsu-button--style-round wsu-button--size-small') }}{{ button( ' wsu-button--style-round') }}{{ button( ' wsu-button--style-round wsu-button--size-large') }}
+<hr />
+{{ button( ' wsu-button--style-outline wsu-button--size-small') }}{{ button(' wsu-button--style-outline') }}{{ button( ' wsu-button--style-outline wsu-button--size-large') }}
+<hr />
+{{ button( ' wsu-button--style-outline-round wsu-button--size-small') }}{{ button( ' wsu-button--style-outline-round') }}{{ button( ' wsu-button--style-outline-round wsu-button--size-large') }}
+</div>
+<style>
+</style>
+{%  endblock %} 

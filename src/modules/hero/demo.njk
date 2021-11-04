@@ -4,6 +4,13 @@
 {% block content %}
 {% include 'hero/html.njk' %}
 {% include 'hero/html--linked.njk' %}
+<hr />
+{{ hero(' wsu-hero--size-full wsu-pattern--wsu-light-radial-left') }}
+{{ hero(' wsu-hero--size-large wsu-pattern--wsu-light-radial-left') }}
+{{ hero(' wsu-hero--size-medium wsu-pattern--wsu-light-radial-left') }}
+{{ hero(' wsu-pattern--wsu-light-radial-left') }}
+{{ hero(' wsu-hero--size-small wsu-pattern--wsu-light-radial-left') }}
+{{ hero(' wsu-hero--size-xsmall wsu-pattern--wsu-light-radial-left', false, false ) }}
 <style>
 .wsu-hero {
     margin-bottom: 200px !important;

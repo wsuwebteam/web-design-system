@@ -1,10 +1,8 @@
 @import '../../_assets/scss/variables';
 @import '../../_assets/scss/mixins';
 
-.wp-block-buttons .wp-block-button__link{
-    @include wsu-button();
-    margin-bottom: $wsu-spacing--component;
-}
+@import '../components/button/style.wordpress';
+
 
 /* =WordPress Core https://codex.wordpress.org/CSS#WordPress_Generated_Classes
 -------------------------------------------------------------- */
