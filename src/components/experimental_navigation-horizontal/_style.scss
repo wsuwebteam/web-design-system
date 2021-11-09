@@ -1,176 +1,351 @@
-.wsu-navigation-horizontal {
-    display: flex;
-    margin: 0 $wsu-spacing--medium;
-    max-width: 1200px;
-    box-sizing: border-box;
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/animations';
 
-    &-menu {
+@media screen and (min-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-navigation-site-horizontal {
         display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        
-        button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            box-sizing: border-box;
-            text-align: left;
+        margin: 0 $wsu-spacing--medium;
+        max-width: 1200px;
+        box-sizing: border-box;
 
-            &::after {
-                content: "\F103";
-                font-family: wsu-icons;
-                margin-left: 0.75em;
-                color: $wsu-color--gray-85;
-                font-size: 12px;
+        &__panel {
+            display: flex;
+        }
+
+        &__menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+            button:not([class*='wsu-button']) {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                box-sizing: border-box;
+                text-align: left;
+
+                &::after {
+                    content: "\F103";
+                    font-family: wsu-icons;
+                    margin-left: 0.75em;
+                    color: $wsu-color--gray-85;
+                    font-size: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                position: relative;
+                box-sizing: border-box;
+            }
+
+            li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                position: relative;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                box-sizing: border-box;
+                display: block;
+            }
+
+            & > li {
+
+                margin: 0;
+                padding: 0;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+                flex-direction: column;
+                position: relative;
+            
+                & > button:not([class*='wsu-button']),
+                & > a {
+                    @include wsu-font--medium();
+                    display: flex;
+                    flex-grow: 1;
+                    align-items: center;
+                    justify-content: center;
+                    padding: $wsu-spacing--small $wsu-spacing--xmedium $wsu-spacing--small;
+                    font-weight: 500;
+                }
+            
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    width: auto;
+                    bottom: 0; 
+                }
+            
+                &:hover,
+                &:focus,
+                &:focus-within {
+            
+                    background-color: $wsu-color--gray-0;
+            
+                    &::after {
+                        background-color: $wsu-color--gray-65;
+                        height: 5px;
+                    }
+            
+                }
+            
+                &:first-child > a::before {
+                    content: '\F122';
+                    font-family: wsu-icons;
+                    margin-right: 0.4em;
+                    font-size: 0.9em;
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: translateY(-2px);
+                }
+            
+                &.wsu-menu-item--parent::after,
+                &.wsu-menu-item--current::after {
+                    background-color: $wsu-color--crimson-light; 
+                    height: 5px; 
+                }
+            
+                @include wsu-animation--submenu-collapsible();
+            
+                & > ul {
+                    position: absolute; 
+                    top: calc(100% + 0.3rem);
+                    width: $wsu-width--navigation;
+                    left: 0;
+                    background-color: #fff;
+                    //border: 1px solid $wsu-color--gray-10;
+                    border-radius: 3px;
+                    z-index: $wsu-zindex--navigation;
+                    box-shadow: $wsu-dropshadow--low;
+                }
+            }
+
+            & > li > ul {
+
+                li {
+                    @include wsu-menu-vertical--item(); 
+                }
+                
+                button:not([class*='wsu-button']),
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    background-color: transparent;
+                    border-left: 5px solid transparent;
+                    border-right: none;
+                    border-bottom: none;
+                    border-top: none;
+                    outline: none;
+                    box-shadow: none;
+                    font-weight: inherit;
+                    margin: 0;
+                    padding: 0.7rem calc( #{$wsu-spacing--medium} - 5px );
+                    flex-grow: 1;
+                    border-radius: 0;
+                    display: block;
+                    box-sizing: border-box;
+                    text-align: left;
+                    font-size: $wsu-font-size--small;
+                    font-weight: 600;
+                    position: 'relative';
+                    line-height: 1.5;  
+                    cursor: pointer;
+
+                    &:hover,
+                    &:focus {
+                        background-color: $wsu-color--gray-10;
+                        border-left: 5px solid $wsu-color--gray-65;
+                    }
+
+                    &[aria-current="page"] {
+                        border-left: 5px solid $wsu-color--crimson-light !important;
+                    }
+                }
+            
+                button:not([class*='wsu-button']):not(:first-child) {
+                    @include wsu-menu-vertical--item-button-split();
+                }
+            
+                button:not([class*='wsu-button']):not([class*='wsu-button']):first-child {
+                    @include wsu-menu-vertical--item-button(); 
+                }
+            
+                ul {
+                    width: 100%;
+                    @include wsu-menu-vertical--submenu();
+                }
+            
+                li[aria-expanded="true"] {
+            
+                    & > ul { 
+                        @include wsu-menu-vertical--submenu-open();
+                    } 
+                }
+            
+            }
+
+            & > li > ul > li > ul > li {  
+
+                button:not([class*='wsu-button']),
+                a {
+                    @include wsu-menu-vertical--secondary-item-link();
+                }
+            
+            }
+
+        }
+
+        &__menu-item-close {
+
+            &::before {
+                content: '';
+                width: auto;
+                left: $wsu-spacing--medium;
+                right: $wsu-spacing--medium;
+                top: 0;
+                bottom: auto;
+                background-color: $wsu-color--gray-10; 
+                height: 1px;
+                position: absolute;
+                display: block;
+            }
+
+            button {
+                margin: $wsu-spacing--xsmall $wsu-spacing--medium;
             }
         }
 
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            position: relative;
+        &__overlay {
+            display: none;
         }
 
-        li {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            position: relative;
+        .wsu-button-ui--close-after {
+            display: none;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            box-sizing: border-box;
-            display: block;
+        .wsu-button-ui--navigation-menu {
+            display: none;
         }
-
     }
+
 }
 
-.wsu-navigation-horizontal-menu > li {
+@media screen and (max-width: $wsu-breakpoint--desktop ) {
 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    & > button,
-    & > a {
-        @include wsu-font--medium();
-        display: flex;
-        flex-grow: 1;
-        align-items: center;
-        justify-content: center;
-        padding: $wsu-spacing--small $wsu-spacing--medium $wsu-spacing--small;
-        font-weight: 500;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        width: auto;
-        bottom: 0;
-    }
-
-    &:hover,
-    &:focus,
-    &:focus-within {
-
-        background-color: $wsu-color--gray-0;
-
-        &::after {
-            background-color: $wsu-color--gray-65;
-            height: 5px;
+    .wsu-navigation-site-horizontal {
+        
+        &__panel {
+            @include wsu-navigation-panel();
+            @include wsu-navigation-panel--mobile();
+            border-left: 1px solid $wsu-color--gray-10; 
         }
 
-    }
-
-    &:first-child > a::before {
-        content: '\F122';
-        font-family: wsu-icons;
-        margin-right: 0.4em;
-        font-size: 0.9em;
-        display: inline-block;
-        vertical-align: middle;
-        transform: translateY(-2px);
-    }
-
-    &.wsu-menu-item--parent::after,
-    &.wsu-menu-item--current::after {
-        background-color: $wsu-color--crimson-light;
-        height: 5px;
-    }
-
-    & > ul {
-        position: absolute;
-        top: 100%;
-        width: $wsu-width--navigation-narrow;
-        left: 0;
-        padding-top: calc( 5px + 0.3rem);
-        padding-bottom: 0.3rem;
-
-        &::before {
-            background-color: #fff;
-            top: 5px;
-            bottom: 0;
+        &__overlay {
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            width: auto;
-            height: auto;
-            content: "";
-            border: 1px solid $wsu-color--gray-30;
-            border-radius: 0 0 3px 3px;
-            display: block;
-            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            z-index: calc( #{$wsu-zindex--navigation} - 10 );
+            cursor: pointer;
+            display: none;
+        }
+
+        &[aria-expanded="true"] {
+            .wsu-navigation-site-horizontal {
+                &__panel {
+                    @include wsu-navigation-panel--open();
+                }
+
+                &__overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: #000;
+                    z-index: calc( #{$wsu-zindex--navigation} - 10 );
+                    cursor: pointer;
+                    display: block;
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        &__menu {
+            @include wsu-navigation-menu();
+            /*margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                @include wsu-menu-vertical--item();
+            }
+
+            a {
+                @include wsu-menu-vertical--link();
+            }
+
+            button:not([class*='wsu-button']) {
+                @include wsu-menu-vertical--button();
+            }
+
+            button:not([class*='wsu-button']):first-child {
+                @include wsu-menu-vertical--item-button();
+            }
+
+            a + button:not([class*='wsu-button']) {
+                @include wsu-menu-vertical--item-button-split();
+            } 
+
+            ul {
+                width: 100%;
+                @include wsu-menu-vertical--submenu();
+            }
+        
+            li[aria-expanded="true"] {
+        
+                & > ul { 
+                    @include wsu-menu-vertical--submenu-open();
+                } 
+            }
+
+            & li > ul > li {
+                button:first-child:not([class*='wsu-button']),
+                a {
+                    @include wsu-menu-vertical--secondary-item-link();
+                }
+            }
+
+            & ul ul > li {
+                button:first-child:not([class*='wsu-button']),
+                a {
+                    @include wsu-menu-vertical--tertiary-item-link();
+                }
+            }*/
+        }
+
+        &__menu-item-close {
+            display: none !important; 
+        }
+
+        .wsu-button-ui--close-after {
+            margin: $wsu-spacing--medium auto $wsu-spacing--medium $wsu-spacing--medium ;
         }
     }
-}
-
-.wsu-navigation-horizontal-menu > li > ul > li {
-    display: block;
-    margin: 0;
-    padding: 0;
-
-    & > button {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    & > button,
-    & > a {
-        @include wsu-font--small();
-        padding: 0.3rem $wsu-spacing--medium 0.3rem;
-        font-weight: 600;
-    }
-
-}
-
-.wsu-navigation-horizontal-menu > li > ul > li > ul > li {
-    display: block;
-    margin: 0;
-    padding: 0;
-
-    & > button {
-        width: 100%;
-        display: block;
-    }
-
-    & > button,
-    & > a {
-        @include wsu-font--small();
-        padding: 0.3rem $wsu-spacing--medium 0.3rem calc( #{$wsu-spacing--medium} + #{$wsu-spacing--small} );
-        font-weight: 500;
-    }
-
 }
