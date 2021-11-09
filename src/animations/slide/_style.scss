@@ -1,0 +1,18 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/animations';
+
+.wsu-animate--slide {
+
+    &-down,
+    &-up {
+        visibility: visible  !important;
+        overflow-y: hidden  !important;
+        transition: max-height $wsu-transition-speed--fast $wsu-easing;
+    }
+
+    &-up {
+        max-height: 0 !important;
+    }
+
+}
