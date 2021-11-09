@@ -5,6 +5,8 @@ import WsuAccordion from "../components/accordion/_script";
 import WsuCollapsable from "../components/experimental_collapsable/script";
 import WsuMenu from "../components/menu/_script";
 import WsuNavigationSiteVertical from "../modules/navigation-site-vertical/_script";
+import WsuAnimateSubmenuSlideVertical from '../animations/slide/_script';
+import WsuNavigationSiteHorizontal from '../components/experimental_navigation-horizontal/_script';
 
 
 
@@ -13,8 +15,12 @@ import WsuNavigationSiteVertical from "../modules/navigation-site-vertical/_scri
 const wsu = {
     verticalNavitation: new WsunavigationSite(),
     navigationSiteVertical: new WsuNavigationSiteVertical(),
+    navigationSiteHorizontal: new WsuNavigationSiteHorizontal(),
     headerGlobal: new WsuHeaderGlobal(),
     accordion: new WsuAccordion(),
     collapsable: new WsuCollapsable(),
     menu: new WsuMenu(),
+    animations: {
+        //submenuSlideVertical: new WsuAnimateSubmenuSlideVertical(),
+    }
 } 

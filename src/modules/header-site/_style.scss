@@ -53,13 +53,13 @@
     
 }
 
-.wsu-header-site__navigation {
+.wsu-navigation-horizontal {
     display: flex;
     margin: 0 $wsu-spacing--medium;
     max-width: 1200px;
     box-sizing: border-box;
 
-    &-menu {
+    /*&-menu {
         display: flex;
         list-style-type: none;
         margin: 0;
@@ -145,14 +145,14 @@
                 height: 5px;
             } 
         }
-    }
+    }*/
 }
 
 @media screen and (max-width: $wsu-breakpoint--phone ) {
 
     .wsu-header-site__title {
 
-        font-size: $wsu-font-size--xxmedium;
+        font-size: $wsu-font-size--xxmedium; 
 
     }
     

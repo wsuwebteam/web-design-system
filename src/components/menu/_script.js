@@ -1,4 +1,5 @@
 import updateAriaElement from "../../../_assets/js/updateAriaElement";
+import { elementGetSiblings } from "../../../_assets/js/partials/element";
 
 class WsuMenu {
 
@@ -35,10 +36,11 @@ class WsuMenu {
 		try {
 
             let eventElement = event.target;
-            let navElement = event.target.parentElement;
-
+            
             // Toggle Action
             if ( eventElement.classList.contains( 'wsu-menu--toggle' ) ) {
+
+                let navElement = event.target.parentElement;
 
                 if ( this.shouldClose( navElement ) ) {
 
@@ -51,6 +53,20 @@ class WsuMenu {
                     this.open( navElement );
 
                     updateAriaElement( 'Open', eventElement );
+
+                }
+
+            }
+
+            if ( eventElement.classList.contains( 'wsu-menu--submenu-close' ) ) {
+
+                let navElement = eventElement.parentElement.parentElement.closest('li');
+
+                if ( this.shouldClose( navElement ) ) {
+
+                    this.close( navElement );
+
+                    updateAriaElement( 'Close', eventElement );
 
                 }
 
@@ -85,9 +101,13 @@ class WsuMenu {
 
     open( navElement ) {
 
+        this.closeSiblings( navElement );
+
         let subMenu = navElement.lastElementChild;
 
         subMenu.style.maxHeight = ( ( subMenu.scrollHeight + 20 ) + 'px' );
+
+        subMenu.classList.add( 'wsu-animate--slide-down' );
 
         navElement.setAttribute( 'aria-expanded', true );
 
@@ -95,6 +115,7 @@ class WsuMenu {
         this.timer = setTimeout(
             function() {
                 subMenu.style.maxHeight = '';
+                subMenu.classList.remove( 'wsu-animate--slide-down' );
             }, 
             500
         );
@@ -107,11 +128,12 @@ class WsuMenu {
 
         subMenu.style.maxHeight = ( ( subMenu.scrollHeight + 20 ) + 'px' );
 
-        //subMenu.style.maxHeight = 0;
-
         /* If this happens too quickly it doesn't work? */
         setTimeout(
             function() {
+                //navElement.setAttribute( 'aria-expanded', false );
+                subMenu.classList.add( 'wsu-animate--slide-up' );
+
                 navElement.setAttribute( 'aria-expanded', false );
             }, 
             15
@@ -122,9 +144,23 @@ class WsuMenu {
         this.timer = setTimeout(
             function() {
                 subMenu.style.maxHeight = '';
+                subMenu.classList.remove( 'wsu-animate--slide-up' );
             }, 
             500
         );
+
+    }
+
+    closeSiblings( navElement ) {
+
+        let siblings = elementGetSiblings( navElement );
+
+        siblings.forEach( element => {
+
+            if ( this.shouldClose( element ) ) {
+                this.close( element );
+            }
+        }); 
 
     }
 

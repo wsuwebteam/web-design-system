@@ -48,4 +48,106 @@
         }
 
     }
-}  
+} 
+
+.wsu-button-ui--close {
+    font-size: $wsu-font-size--xxsmall;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $wsu-color--gray-55;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer; 
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+        content: '\F154';
+		font-family: 'wsu-icons';
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+        color: $wsu-color--gray-75;
+        margin-right: calc( #{$wsu-spacing--xxsmall} / 2 ); 
+    }
+
+    &::after {
+        content: '';
+        width: auto;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        background-color: $wsu-color--gray-65; 
+        height: 3px;
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: opacity $wsu-transition-speed--fast $wsu-easing, bottom $wsu-transition-speed--fast $wsu-easing;
+    }
+
+    &:focus,
+    &:hover {
+
+        &::after {
+            opacity: 1;
+            bottom: -2px;
+        }
+    }
+}
+
+.wsu-button-ui--close-after {
+    font-size: $wsu-font-size--xxsmall;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $wsu-color--gray-55;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer; 
+    position: relative;
+    line-height: 1.5;
+
+    &::after {
+        content: '\F154';
+		font-family: 'wsu-icons';
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+        color: $wsu-color--gray-75;
+        margin-left: calc( #{$wsu-spacing--xxsmall} / 2 ); 
+    }
+
+    &::before {
+        content: '';
+        width: auto;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        background-color: $wsu-color--gray-65; 
+        height: 3px;
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: opacity $wsu-transition-speed--fast $wsu-easing, bottom $wsu-transition-speed--fast $wsu-easing;
+    }
+
+    &:focus,
+    &:hover {
+
+        &::before {
+            opacity: 1;
+            bottom: -2px;
+        }
+    }
+}

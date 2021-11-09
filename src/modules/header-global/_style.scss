@@ -118,6 +118,16 @@
 
 @import 'header-global--dark';
 
+@media screen and (max-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-has-navigation--vertical .wsu-header-global {
+        padding-right: 60px;
+    }
+
+}
+
+
+
 
 
 

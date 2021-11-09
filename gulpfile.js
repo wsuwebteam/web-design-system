@@ -16,7 +16,7 @@ gulp.task('buildHtml', function () {
 
     return gulp.src('src/**/**/*.njk')
       .pipe(nunjucksRender({
-        path: ['_templates/','src/components/','pages/', 'src/elements/','_template-partials/','src/modules/','src/site/'] // String or Array
+        path: ['_templates/','src/components/','pages/', 'src/elements/', 'src/animations/', '_template-partials/','src/modules/','src/site/'] // String or Array
       }))
       .pipe(htmlbeautify({indentSize: 2}))
       .pipe(gulp.dest('dist/'));
@@ -38,21 +38,12 @@ gulp.task('bundleStyle', () => {
         .pipe(gulp.dest('dist/bundles/'));
 });
 
-
 gulp.task('watch', () => {
-    gulp.watch('src/components/**/*.scss', (done) => {
+    gulp.watch('src/**/**/*.scss', (done) => {
         gulp.series(['styles','bundleStyle'])(done);
     });
 
-    gulp.watch('src/elements/**/*.scss', (done) => {
-        gulp.series(['styles','bundleStyle'])(done);
-    });
-
-    gulp.watch('src/modules/**/*.scss', (done) => {
-        gulp.series(['styles','bundleStyle'])(done);
-    });
-
-    gulp.watch('src/components/**/*.njk', (done) => {
+    gulp.watch('src/**/**/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
 
@@ -60,17 +51,10 @@ gulp.task('watch', () => {
         gulp.series(['buildHtml'])(done);
     });
 
-    gulp.watch('src/elements/**/*.njk', (done) => {
-        gulp.series(['buildHtml'])(done);
-    });
-
     gulp.watch('src/pages/*.njk', (done) => {
         gulp.series(['buildHtml'])(done);
     });
 
-    gulp.watch('src/modules/**/*.njk', (done) => {
-        gulp.series(['buildHtml'])(done);
-    });
 });
 
 
