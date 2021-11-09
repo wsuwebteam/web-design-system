@@ -151,6 +151,141 @@
     text-decoration-color: $wsu-color--gray-40;
 }
 
+@mixin wsu-navigation-menu {
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+
+    button:not([class*='wsu-button']):first-child,
+    a {
+        text-decoration: none;
+        color: inherit;
+        background-color: transparent;
+        border-left: 5px solid transparent;
+        border-right: none;
+        border-bottom: none;
+        border-top: none;
+        outline: none;
+        box-shadow: none;
+        font-weight: inherit;
+        margin: 0;
+        padding: 0.7rem calc( #{$wsu-spacing--medium } - 5px );
+        flex-grow: 1;
+        border-radius: 0;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: $wsu-font-size--small;
+        font-weight: 600;
+        position: 'relative';
+        line-height: 1.5; 
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: $wsu-color--gray-10;
+            border-left: 5px solid $wsu-color--gray-65;
+        }
+
+        &[aria-current="page"] {
+            border-left: 5px solid $wsu-color--crimson-light !important;
+        }
+    }
+
+    button:not([class*='wsu-button']):first-child {
+        width: 100%;
+        flex-grow: 0;
+        padding-right: calc( 50px );
+
+        &::after {
+            content: "\F103";
+            font-family: wsu-icons;
+            margin-left: 0;
+            color: $wsu-color--gray-85;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 50px;
+            position: absolute;
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    a + button:not([class*='wsu-button']) {
+        width: 50px;
+        flex-grow: 0;
+        padding: 0;
+
+        &:hover,
+        &:focus {
+            background-color: $wsu-color--gray-10;
+        }
+
+        &::after {
+            content: "\F103";
+            font-family: wsu-icons;
+            margin-left: 0.75em;
+            color: $wsu-color--gray-85;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    } 
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none; 
+        max-height: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: max-height $wsu-transition-speed--fast $wsu-easing;
+    }
+
+    li[aria-expanded="true"] {
+
+        & > ul { 
+            max-height: none;
+            visibility: visible;
+        } 
+    }
+
+    & li > ul > li {
+        button:first-child:not([class*='wsu-button']),
+        a {
+            font-weight: 400;
+            padding-left: calc( #{$wsu-spacing--medium} + #{$wsu-spacing--sxxsmall});
+        }
+    }
+
+    & ul ul > li {
+        button:first-child:not([class*='wsu-button']),
+        a {
+            padding-left: calc( #{$wsu-spacing--medium} + ( #{$wsu-spacing--sxxsmall} * 2 ) );
+        }
+    }
+
+}
+
 /* ========================================================
 == Menu Items ==
 ==========================================================*/
@@ -181,6 +316,188 @@
 
     }
 }
+
+@mixin wsu-menu-vertical--item() {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+@mixin wsu-menu-vertical--button( $menu-padding-vertical: 0.7rem, $menu-padding-horizontal: $wsu-spacing--medium  )  {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    position: relative;
+    color: inherit;
+    margin: 0;
+    padding: $menu-padding-vertical calc( #{$menu-padding-horizontal} - 5px );
+    text-align: left;
+    font-size: $wsu-font-size--small;
+    font-weight: 600;
+    line-height: 1.5; 
+    cursor: pointer;
+}
+
+@mixin wsu-menu-vertical--link( $menu-padding-vertical: 0.7rem, $menu-padding-horizontal: $wsu-spacing--medium  ) {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+    border-left: 5px solid transparent;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    outline: none;
+    box-shadow: none;
+    font-weight: inherit;
+    margin: 0;
+    padding: $menu-padding-vertical calc( #{$menu-padding-horizontal} - 5px );
+    flex-grow: 1;
+    border-radius: 0;
+    display: block;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: $wsu-font-size--small;
+    font-weight: 600;
+    position: 'relative';
+    line-height: 1.5; 
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $wsu-color--gray-10;
+        border-left: 5px solid $wsu-color--gray-65;
+    }
+
+    &[aria-current="page"] {
+        border-left: 5px solid $wsu-color--crimson-light !important;
+    }
+}
+
+@mixin wsu-menu-vertical--item-link( $menu-padding-vertical: 0.7rem, $menu-padding-horizontal: $wsu-spacing--medium  ) {
+    padding: $menu-padding-vertical calc( #{$menu-padding-horizontal} - 5px );
+}
+
+@mixin wsu-menu-vertical--secondary-item-link( $menu-padding-left: calc( #{$wsu-spacing--medium} + #{$wsu-spacing--sxxsmall}) ) {
+    font-weight: 400;
+    padding-left: $menu-padding-left;
+}
+
+@mixin wsu-menu-vertical--tertiary-item-link( $menu-padding-left: calc( #{$wsu-spacing--medium} + ( #{$wsu-spacing--sxxsmall} * 2 ) ) ) {
+    padding-left: $menu-padding-left;
+}
+
+
+
+@mixin wsu-menu-vertical--item-button {
+    width: 100%;
+    flex-grow: 0;
+    padding-right: calc( 50px );
+    border-left: 5px solid transparent;
+
+    &:hover,
+    &:focus {
+        background-color: $wsu-color--gray-10;
+        border-left: 5px solid $wsu-color--gray-65;
+    }
+
+    &::after {
+        content: "\F103";
+        font-family: wsu-icons;
+        margin-left: 0;
+        color: $wsu-color--gray-85;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50px;
+        position: absolute;
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+@mixin wsu-menu-vertical--item-button-split {
+    width: 50px;
+    flex-grow: 0;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+        background-color: $wsu-color--gray-10;
+    }
+
+    &::after {
+        content: "\F103";
+        font-family: wsu-icons;
+        margin-left: 0.75em;
+        color: $wsu-color--gray-85;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@mixin wsu-menu-vertical--submenu() {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height $wsu-transition-speed--fast $wsu-easing, visibility 0s $wsu-easing 300ms;
+}
+
+@mixin wsu-menu-vertical--submenu-open() {
+    max-height: none;
+    visibility: visible;
+    transition: max-height $wsu-transition-speed--fast $wsu-easing, visibility 0s $wsu-easing 0s;
+}
+
+@mixin wsu-navigation-panel() {
+    position: fixed;
+    top: 0;
+    padding-top: calc( 65px + #{$wsu-spacing--medium} );
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid $wsu-color--gray-10;
+    width: $wsu-width--navigation-open;
+    left: 0;
+    transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing;
+    opacity: 1;
+    visibility: hidden;
+    box-sizing: border-box;
+    z-index: $wsu-zindex--navigation;
+    background-color: #fff;
+    transform: translateX( $wsu-width--navigation-open );
+    
+}
+
+@mixin wsu-navigation-panel--open() {
+    visibility: visible;
+    transform: translateX( 0);
+}
+
+@mixin wsu-navigation-panel--mobile() {
+    left: auto;
+    right: 0;
+}
+
+
 
 /* ========================================================
 == Modals ==

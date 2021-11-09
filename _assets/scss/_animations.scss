@@ -1,0 +1,19 @@
+@import './variables';
+@import './mixins';
+
+/* Apply to parent list item of the submenu */
+@mixin wsu-animation--submenu-collapsible() {
+
+    & > ul {
+        max-height: 0;
+        overflow-y: hidden;
+        visibility: hidden;
+    }
+
+    &[aria-expanded="true"] > ul {
+        max-height: none;
+        overflow-y: visible;
+        visibility: visible;
+    }
+
+}
