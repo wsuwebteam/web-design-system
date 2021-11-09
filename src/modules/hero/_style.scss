@@ -132,6 +132,9 @@
     .wsu-button {
         text-transform: uppercase;
         box-shadow: 0 8px 10px 1px rgba(0,0,0,0.03),0 3px 14px 2px rgba(0,0,0,0.03),0 4px 15px 0 rgba(0,0,0,0.02);
+        border: 2px solid #fff;
+        padding-top: $wsu-spacing--small;
+        padding-bottom: $wsu-spacing--small;
 
         &::after {
             content: '\F107';
@@ -140,7 +143,7 @@
             font-size: inherit;
             font-family: wsu-icons;
             vertical-align: middle;
-            margin-left: $wsu-spacing--sxxsmall;
+            margin-left: $wsu-spacing--sxxsmall; 
         }
     }
 
@@ -201,7 +204,7 @@
 .wsu-header-global ~ .wsu-wrapper-site .wsu-header-site ~ .wsu-wrapper-content .wsu-hero--size-full {
 
     .wsu-hero__content {
-        min-height: calc( 100vh - 64px -110px );
+        min-height: calc( 100vh - 64px - 110px );
     }
 
 }
