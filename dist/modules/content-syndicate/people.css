@@ -216,6 +216,7 @@ $zindex-tooltip:                    1080;
   object-fit: cover;
   border-radius: 0; }
 
+.wsuwp-person-container .wsuwp-person-degree,
 .wsuwp-person-container .wsuwp-person-name,
 .wsuwp-person-container .wsuwp-person-position,
 .wsuwp-person-container .wsuwp-person-office,
@@ -239,6 +240,7 @@ $zindex-tooltip:                    1080;
   word-wrap: break-word;
   font-size: 0.875rem; }
 
+.wsuwp-person-container .wsuwp-person-degree,
 .wsuwp-person-container .wsuwp-person-office,
 .wsuwp-person-container .wsuwp-person-address,
 .wsuwp-person-container .wsuwp-person-phone {
