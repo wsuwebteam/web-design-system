@@ -5,6 +5,7 @@
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 
     .wsu-navigation-site-horizontal {
+        color: $wsu-color--gray-85;
         display: flex;
         margin: 0 $wsu-spacing--medium;
         max-width: 1200px;
@@ -31,7 +32,7 @@
                     content: "\F103";
                     font-family: wsu-icons;
                     margin-left: 0.75em;
-                    color: $wsu-color--gray-85;
+                    color: inherit;
                     font-size: 12px;
                     display: flex;
                     justify-content: center;
@@ -238,8 +239,47 @@
         }
 
         .wsu-button-ui--navigation-menu {
-            display: none;
+            display: none; 
         }
+    }
+
+    .wsu-header-site--dark {
+
+        .wsu-navigation-site-horizontal {
+            color: $wsu-color--gray-0;
+
+            button {
+                color: $wsu-color--gray-0;
+            }
+
+            &__menu {
+
+                ul {
+                    color: $wsu-color--gray-85;
+                }
+
+                & > li > button,
+                & > li > a {
+    
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+                
+                        background-color: $wsu-color--gray-75;
+                
+                        &::after {
+                            background-color: $wsu-color--gray-65;
+                            height: 5px;
+                        }
+                
+                    }
+    
+                }
+
+            }
+
+        }
+
     }
 
 }
@@ -348,4 +388,8 @@
             margin: $wsu-spacing--medium auto $wsu-spacing--medium $wsu-spacing--medium ;
         }
     }
+}
+
+.wsu-header-global--dark ~ .wsu-wrapper-site .wsu-button-ui--navigation-menu {
+    color: #fff;
 }
