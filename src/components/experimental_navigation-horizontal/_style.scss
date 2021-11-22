@@ -248,9 +248,9 @@
         .wsu-navigation-site-horizontal {
             color: $wsu-color--gray-0;
 
-            button {
+            /*button {
                 color: $wsu-color--gray-0;
-            }
+            }*/
 
             &__menu {
 
@@ -258,13 +258,29 @@
                     color: $wsu-color--gray-85;
                 }
 
-                & > li > button,
-                & > li > a {
-    
+                & > li {
                     &:hover,
                     &:focus,
                     &:focus-within {
-                
+    
+                        background-color: $wsu-color--gray-75;
+
+                        &::after {
+                            background-color: $wsu-color--gray-40;
+                        }
+            
+                    }
+
+                    
+                }
+
+                & > li > button,
+                & > li > a {
+                    color: $wsu-color--gray-0;
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+    
                         background-color: $wsu-color--gray-75;
                 
                         &::after {

@@ -3,6 +3,18 @@
 {% extends "component.njk" %}
 
 {% block content %}
+{{ headerSite('','Civil and Environmental Engineering','' ) }}
 {% include 'header-site/html.njk' %}
-{{ headerSite('','Civil and Environmental Engineering','Voiland College of Engineering and Architecture', true ) }} 
+{{ headerSite('','Civil and Environmental Engineering','Voiland College of Engineering and Architecture', true ) }}
+{{ headerSite(' wsu-header-site--dark','Civil and Environmental Engineering','' ) }} 
+{{ headerSite(' wsu-header-site--dark','Civil and Environmental Engineering','Voiland College of Engineering and Architecture' ) }}
+{{ headerSite(' wsu-header-site--dark','Civil and Environmental Engineering','Voiland College of Engineering and Architecture', true ) }}
+<style>
+body {
+    background-color: #f1f1f1;
+}
+.wsu-header-site {
+    margin-bottom: 4rem;
+}
+</style>
 {%  endblock %}
