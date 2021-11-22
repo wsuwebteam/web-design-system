@@ -3,6 +3,7 @@
 {% from "caption/macros/caption.macro.njk" import caption %}
 {% from "social-icons/macros/social-icons.macro.njk" import socialIcons %}
 {% from "coug-head/_macro.njk" import cougHead %}
+{% from "experimental_menu-deep-links/_macro.njk" import menuDeepLinks %}
 
 {% macro footerSite( classes='', showTitle=true, showContent=true, showMenu=true, showOffsite=true ) %}
 <footer class="wsu-footer-site{{classes}}">
@@ -19,6 +20,11 @@
     {% endif %}
     {% if showTitle %}<h2 class="wsu-footer-site__title">Lorem ipsum dolor</h2>{% endif %}
     {% if showContent %}{{ caption() }}{% endif %}
+    {% if showMenu %}
+    <nav class="wsu-footer-site__navigation" aria-label="Site footer menu">
+    {{ menuDeepLinks() }}
+    </nav>
+    {% endif %} 
     {{ metaAddress() }}
     {{ socialIcons( ' wsu-social-icons--small' ) }}
     {{ cougHead(' wsu-coug-head--white') }}
