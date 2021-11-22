@@ -1,0 +1,41 @@
+{% extends "component.njk" %}
+{% from "experimental_news-list/_macro.njk" import newsList %}
+
+{% block content %}
+<div class="wsu-demo-component">
+    {% include 'experimental_news-list/html.njk' %}
+    <hr />
+    <div class="wsu-row wsu-row--sidebar-right">   
+        <div class="wsu-column">
+            <h2>News Header</h2>
+            {{ newsList( '', false, true ) }}
+            <h2>News Header</h2>
+            {{ newsList( '' ) }}
+        </div>
+        <div class="wsu-column">
+            <h2>News Header</h2>
+            {{ newsList( '' ) }} 
+        </div>
+    </div>
+</div>
+<hr />
+<div class="wsu-row wsu-row--thirds">
+    <div class="wsu-column">
+        <h2>News Header</h2>
+        {{ newsList( '', false ) }} 
+    </div>
+    <div class="wsu-column">
+        <h2>News Header</h2>
+        {{ newsList() }} 
+    </div>
+    <div class="wsu-column">
+        <h2>News Header</h2>
+        {{ newsList('', true, true ) }} 
+    </div>
+</div>
+<style>
+hr {
+    width: 100%;
+}
+</style>
+{%  endblock %}   
