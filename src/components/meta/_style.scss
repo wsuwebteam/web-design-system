@@ -1,0 +1,101 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-meta-byline,
+.wsu-meta-date,
+.wsu-meta-email,
+.wsu-meta-location,
+.wsu-meta-phone,
+.wsu-meta-tags,
+.wsu-meta-website {
+    font-size: $wsu-font-size--xsmall;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+
+
+    &::before {
+        font-family: 'wsu-icons';
+        color: inherit;
+        font-size: 1.2em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.2em;
+        position: absolute;
+        right: calc( 100% + 0.2rem );
+        top: -0.1rem;
+    }  
+}
+
+.wsu-meta--icon-crimson [class*="wsu-meta-"],
+.wsu-meta--icon-crimson[class*="wsu-meta-"] {
+
+    &::before {
+        color: $wsu-color--crimson;
+    }
+
+}
+
+.wsu-meta-byline::before {
+    content: "\F13C";
+}
+
+.wsu-meta-categories {
+
+    @include wsu-font--small();
+    font-weight: 600;
+
+    a {
+        @include wsu-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $wsu-color--crimson-light; 
+        }
+    }
+}  
+
+
+.wsu-meta-date::before {
+    content: "\F101";
+}
+
+.wsu-meta-email {
+    word-wrap: break-word;
+
+    &::before {
+        content: "\F11A";
+    }
+}
+
+.wsu-meta-location::before {
+    content: "\F127";  
+}
+
+.wsu-meta-phone::before {
+    content: "\F133";
+}
+
+.wsu-meta-tags {
+
+    &::before {
+        content: "\F14C";
+    }
+
+    a {
+        @include wsu-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $wsu-color--crimson-light;
+        }
+    }
+}
+
+.wsu-meta-website::before {
+    content: "\F10D";     
+}

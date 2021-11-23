@@ -309,6 +309,15 @@ $wsu-ratio--4-3:    75%;
 $wsu-ratio--square: 100%;
 $wsu-ratio--3-4:    133%;
 
+$wsu-image-ratio-map: (
+    '2-5':    $wsu-ratio--2-5,
+    '16-9':   $wsu-ratio--16-9,
+    '6-4':    $wsu-ratio--6-4,
+    '4-3':    $wsu-ratio--4-3,
+    'square': $wsu-ratio--square,
+    '3-4':    $wsu-ratio--3-4,
+);
+
 
 /* ========================================================
 == Spacing ==

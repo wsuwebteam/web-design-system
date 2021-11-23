@@ -1,24 +1,47 @@
 {% from "experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
 {% from "caption/macros/caption.macro.njk" import caption %}
-{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
-{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
-{% from "meta-tags/macros/macro.njk" import metaTags %}
 {% from "image-frame/_macro.njk" import imageFrame %}
+{% from "meta/_macro.njk" import metaByline %}
+{% from "meta/_macro.njk" import metaCategories %}
+{% from "meta/_macro.njk" import metaDate %}
+{% from "meta/_macro.njk" import metaEmail %}
+{% from "meta/_macro.njk" import metaLocation %}
+{% from "meta/_macro.njk" import metaPhone %}
+{% from "meta/_macro.njk" import metaTags %}
+{% from "meta/_macro.njk" import metaWebsite %}
 
 {% macro card( classes='', showImage=true, showByline=true, showTags=true, showDate=true, showTitle=true, showCaption=true) %}
-
 <article class="wsu-card{{classes}}">
     {% if showImage %}<div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-        <a href="#">
+        <a href="#" tabindex="-1" aria-hidden="true">
             <img src="https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg">
         </a>
     </div>{% endif %}
     <div class="wsu-card__content">
         {% if showTitle %}<h2 class="wsu-title"><a href="#">Maecenas bibendum volutpat ante et condimentum</a></h2>{% endif %}
-        {% if showDate %}{{ metaDate('June 7,2021') }}{% endif %}
+        {% if showDate %}{{ metaDate() }}{% endif %}
         {% if showCaption %}{{ caption() }}{% endif %}
-        {% if showByline %}{{ metaByline('Butch T. Cougar', 'WSU Maskot', 'By') }}{% endif %}
+        {% if showByline %}{{ metaByline() }}{% endif %}
         {% if showTags %}{{ metaTags() }}{% endif %}
     </div>
 </article>
+{% endmacro %}
+
+{% macro cardPerson( classes='', linked=false, showImage=true, showPositionTitle=true,showCaption=false,showPhone=true,showEmail=true,showOffice=true ) %}
+<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square{{ classes }}">
+    <div class="wsu-image-frame wsu-card__person-image">
+        <img src="https://s3.wp.wsu.edu/uploads/sites/2341/2021/11/Butch-and-Joe-Vandal_9426-e1637609282305.jpg" />
+    </div>
+    <div class="wsu-card__content">
+        <h2 class="wsu-card__person-name">Butch Cougar</h2>
+        <div class="wsu-card__person-title">Mascot, Washington State University</div>
+        {% if showCaption %}
+        {{ caption('', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nunc, facilisis vel lectus nec, mollis laoreet ipsum. Aliquam sed semper justo. Aliquam molestie ligula sit amet lorem viverra, sed pellentesque purus convallis.') }}
+        {% endif %}
+        {{ metaEmail( ' wsu-meta--icon-crimson' ) }}
+        {{ metaLocation( ' wsu-meta--icon-crimson' ) }}
+        {{ metaPhone( ' wsu-meta--icon-crimson' ) }}
+        {{ metaWebsite( ' wsu-meta--icon-crimson' ) }}
+    </div>
+</div>
 {% endmacro %}

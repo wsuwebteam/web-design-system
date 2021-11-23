@@ -1,0 +1,71 @@
+{% macro metaByline( classes='', authorName='Butch Cougar', authorTitle='Mascot, Washington State University', copy='By' ) %}
+<address class="wsu-meta-byline{{ classes }}">
+    {% if copy %}
+    <span class="wsu-meta-byline__text">
+        {{ copy }}
+    </span>
+    {% endif %}
+    {% if authorName %}
+    <span class="wsu-meta-byline__name">
+        {{ authorName }}{% if authorTitle %},{% endif %}
+    </span>
+    {% endif %}
+    {% if authorTitle %}
+    <span class="wsu-meta-byline__title">
+        {{ authorTitle }}
+    </span>
+    {% endif %}
+</address>
+{% endmacro %}
+
+{% macro metaCategories( classes='', prefix='Categorized: ' ) %}
+<div class="wsu-meta-categories{{ classes }}">
+    {{ prefix }}<a href="#">Praesent neque</a>, <a href="#">Aliquam</a>, <a href="#">Elementum</a>, <a href="#">Consectetur</a>, <a href="#">Dignissim</a>
+</div>
+{% endmacro %}
+
+{% macro metaDate( classes='', date='January 1, 2021', copy='' ) %}
+<div class="wsu-meta-date{{ classes }}">
+    <span class="wsu-screen-reader-only">Date</span>
+    {% if copy %}
+    <span class="wsu-meta-date__text">
+        {{ copy }}
+    </span>
+    {% endif %}
+    <time>{{ date }}</time>
+</div>
+{% endmacro %}
+
+{% macro metaEmail( classes='' ) %}
+<div class="wsu-meta-email{{ classes }}">
+    <span class="wsu-screen-reader-only">Email Address</span>
+    <a href="mailto:noreply@wsu.edu">butch.cougar@wsu.edu</a>
+</div>
+{% endmacro %}
+
+{% macro metaLocation( classes='', prefix='' ) %}
+<div class="wsu-meta-location{{ classes }}">
+    <span class="wsu-screen-reader-only">Location</span>
+    <a href="#">Office 12345, ITB</a>
+</div>
+{% endmacro %}
+
+{% macro metaPhone( classes='' ) %}
+<div class="wsu-meta-phone{{ classes }}">
+    <span class="wsu-screen-reader-only">Phone</span>
+    <a href="tel:123-456-7890">123-456-7890</a>
+</div>
+{% endmacro %}
+
+{% macro metaTags( classes='', prefix='' ) %}
+<div class="wsu-meta-tags{{ classes }}">
+    <span class="wsu-screen-reader-only">Tagged</span>
+    {{ prefix }}<a href="#">Praesent neque</a>, <a href="#">Aliquam</a>, <a href="#">Elementum</a>, <a href="#">Consectetur</a>, <a href="#">Dignissim</a>
+</div>
+{% endmacro %}
+
+{% macro metaWebsite( classes='', prefix='' ) %}
+<div class="wsu-meta-website{{ classes }}">
+    <a href="#">Website</a>
+</div>
+{% endmacro %}

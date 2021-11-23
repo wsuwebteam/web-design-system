@@ -4,6 +4,7 @@
 .wsu-card {
 
     margin-bottom: $wsu-spacing--component;
+    box-sizing: border-box;
 
     &__wrapper {
 
@@ -71,6 +72,31 @@
 
     }
 
+    &__content {
+        padding-top: $wsu-spacing--small;
+        padding-bottom: $wsu-spacing--medium;
+    }
+
+    &__person-name {
+        @include wsu-font--medium();
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__person-title {
+        @include wsu-font--xsmall();
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__person-title + [class*="wsu-meta"],
+    &__person-name + [class*="wsu-meta"] {
+        margin-top: $wsu-spacing--small;
+    }
+
+
     .wsu-title {
         margin-bottom: $wsu-spacing--xxsmall;
         padding-top: 0;
@@ -81,7 +107,6 @@
     }
 
     .wsu-image-frame {
-        margin-bottom: $wsu-spacing--xsmall;
 
         &:last-child {
             margin-bottom: 0;
@@ -94,21 +119,20 @@
 
         &:not(:first-child) {
 
-            margin-top: $wsu-spacing--xxsmall;
+            margin-top: $wsu-spacing--small;
 
         }
 
         &:not(:last-child) {
 
-            margin-bottom: $wsu-spacing--xxsmall;
+            margin-bottom: $wsu-spacing--small;
 
         }
     }
 
-    &--boxed {
-        padding: $wsu-spacing--xsmall $wsu-spacing--xsmall $wsu-spacing--small;
-        border: 1px solid $wsu-color--gray-10;
-        border-radius: $wsu-border-radius--xsmall;
+    [class*="wsu-meta"] + [class*="wsu-meta"] {
+        margin-top: $wsu-spacing--sxxsmall;
+        margin-bottom: $wsu-spacing--sxxsmall;
     }
 
     &--horizontal {
@@ -176,6 +200,42 @@
         }
     }
 
+}
+
+.wsu-card--boxed, // Legacy support
+.wsu-card--outline-boxed .wsu-card,
+.wsu-card--outline-boxed.wsu-card {
+
+    border: 1px solid $wsu-color--gray-10;
+    border-radius: $wsu-border-radius--xsmall;
+
+    .wsu-card__content {
+        padding-left: $wsu-spacing--medium;
+        padding-right: $wsu-spacing--medium;
+    }
+
+    .wsu-image-frame img {
+        border-radius: $wsu-border-radius--xsmall $wsu-border-radius--xsmall 0 0;
+    }
+    
+    
+}
+
+.wsu-card--outline-shadow .wsu-card,
+.wsu-card--outline-shadow.wsu-card {
+
+    border-radius: $wsu-border-radius--xsmall;
+    box-shadow: $wsu-dropshadow--xlow;
+    border-radius: 4px;
+
+    .wsu-card__content {
+        padding-left: $wsu-spacing--medium;
+        padding-right: $wsu-spacing--medium;
+    }
+
+    .wsu-image-frame img {
+        border-radius: $wsu-border-radius--xsmall $wsu-border-radius--xsmall 0 0;
+    }
 }
 
 
