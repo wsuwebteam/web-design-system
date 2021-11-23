@@ -1,6 +1,9 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+
+
+
 .wsu-image-frame {
     box-sizing: border-box;
     position: relative;
@@ -8,7 +11,6 @@
     img {
         width: 100%;
         height: auto;
-        border-radius: $wsu-border-radius--small;
         display: block;
         transition: opacity $wsu-transition-speed--medium $wsu-easing;
     }
@@ -154,5 +156,31 @@
         }
 
     } 
+
+}
+
+.wsu-image-frame[class*="wsu-image-frame--ratio"] .wsu-image-frame,
+[class*="wsu-image-frame--ratio"] .wsu-image-frame {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100% !important;
+        width: 100% !important;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+@each $ratio, $padding in $wsu-image-ratio-map{
+
+    .wsu-image-frame.wsu-image-frame--ratio-#{$ratio},
+    .wsu-image-frame--ratio-#{$ratio} .wsu-image-frame {
+        padding-top: $padding;
+    }
 
 }
