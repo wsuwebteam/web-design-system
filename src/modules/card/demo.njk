@@ -1,36 +1,40 @@
 {% extends "component.njk" %}
 {% from "card/_macro-reverse.njk" import cardReversed %}
 {% from "card/_macro.njk" import card %}
+{% from "card/_macro.njk" import cardPerson %}
 
 {% block content %}
 <div class="wsu-demo-component--narrow" >
-{{ card( ) }}
-{{ card(' wsu-image--ratio-16-9' ) }}
-{{ card(' wsu-card--boxed' ) }}
-{{ cardReversed() }}
+    {% include 'card/html.njk' %}
+    <hr />
 </div>
 <div class="wsu-demo-component" >
-<hr />
-{{ card(' wsu-card--horizontal' ) }}
-{{ card(' wsu-card--horizontal' ) }}
-{{ card(' wsu-card--horizontal', false ) }}
-{{ card(' wsu-card--horizontal' ) }}
-<hr />
-{{ cardReversed(' wsu-card--horizontal' ) }}
-{{ cardReversed(' wsu-card--horizontal' ) }}
-{{ cardReversed(' wsu-card--horizontal', false ) }}
-<hr />
+    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-3">
+    {{ card() }}
+    {{ card( ' wsu-card--outline-boxed' ) }}
+    {{ card( ' wsu-card--outline-shadow' ) }}
+    </div>
 </div>
+<hr style="width: 100%" />
 <div class="wsu-demo-component--narrow" >
-{{ card(' wsu-card--small' ) }}
-{{ card(' wsu-card--small', false, false, false ) }}
-{{ card(' wsu-card--small', false, false, false ) }}
-{{ card(' wsu-card--small', false, false, false ) }}
+    {% include 'card/html-person.njk' %}
 </div>
 <div class="wsu-demo-component" >
-<hr />
-{{ card(' wsu-card--large' ) }}
-<hr />
+    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-4">
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    </div>
+    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-3">
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    </div>
+    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-2">
+    {% include 'card/html-person.njk' %}
+    {% include 'card/html-person.njk' %}
+    </div>
 </div>
 <style>
 .wsu-demo-component--narrow {
@@ -39,7 +43,7 @@
     margin-right: auto;
 }
 .wsu-demo-component {
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
