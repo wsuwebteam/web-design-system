@@ -1,0 +1,29 @@
+{% from "meta/_macro.njk" import metaByline %}
+{% from "meta/_macro.njk" import metaCategories %}
+{% from "meta/_macro.njk" import metaDate %}
+{% from "meta/_macro.njk" import metaEmail %}
+{% from "meta/_macro.njk" import metaLocation %}
+{% from "meta/_macro.njk" import metaPhone %}
+{% from "meta/_macro.njk" import metaTags %}
+{% from "meta/_macro.njk" import metaWebsite %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+<div class="wsu-demo-component">
+{% include 'meta/html.njk' %}
+<hr />
+{{ metaByline( ' wsu-meta--icon-crimson' ) }}
+{{ metaDate( ' wsu-meta--icon-crimson' ) }} 
+{{ metaEmail( ' wsu-meta--icon-crimson' ) }}
+{{ metaLocation( ' wsu-meta--icon-crimson' ) }}
+{{ metaPhone( ' wsu-meta--icon-crimson' ) }}
+{{ metaTags( ' wsu-meta--icon-crimson' ) }}
+{{ metaWebsite( ' wsu-meta--icon-crimson' ) }}
+</div>
+<style>
+.wsu-meta-categories {
+    margin-top: 2rem;
+}
+</style>
+{%  endblock %} 
