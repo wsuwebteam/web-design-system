@@ -1,18 +1,21 @@
+const webpack = require('webpack');
 const path = require('path');
+const args = require('./env');
 
 module.exports = env => {
 
-	const DEV = env.NODE_ENV === 'development';
+	const DEV = args.env !== 'production';
 
 	return {
 		context: __dirname,
 		entry: {
-			'dist/bundles/wsu-design-system': './src/bundles/wsu-design-system.js',
-			'dist/bundles/wsu-design-system.init': './src/bundles/wsu-design-system.init.js',
+			'bundles/wsu-design-system': './src/bundles/wsu-design-system.js',
+			'bundles/wsu-design-system.init': './src/bundles/wsu-design-system.init.js',
+			'bundles/standalone/block-people-list/scripts': './src/bundles/standalone/block-people-list/scripts.js',
 		},
 		output: {
 			filename: '[name].js',
-			path: path.resolve(__dirname)
+			path: path.resolve(__dirname) + `/${args.outputDir}`
 		},
 		mode: DEV ? 'development' : 'production',
 		devtool: DEV ? 'inline-source-map' : 'source-map',
@@ -36,6 +39,11 @@ module.exports = env => {
 					}
 				}
 			],
-		}
+		},
+		plugins: [
+			new webpack.DefinePlugin({
+				PEOPLE_API_BASE_URL: DEV ? JSON.stringify('http://wsuwp.local') : JSON.stringify('https://people.wsu.edu')
+			})
+		]
 	}
 };
