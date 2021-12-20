@@ -102,3 +102,88 @@
     }
 }
 
+
+.wsu-button-play {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        //background-color: #fff;
+        background-color: $wsu-color--crimson;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+
+    &::after {
+        content: '\F136';
+        display: block;
+        font-family: 'wsu-icons';
+        font-size: 40px;
+        color: #fff;
+        position: relative;
+    }
+
+    &:focus,
+    &:hover {
+        &::before {
+            background-color: $wsu-color--gray-90;
+        }
+    }
+}
+
+.wsu-button-pause-background {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        //background-color: #fff;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid $wsu-color--gray-60;
+    }
+
+    &::after {
+        content: '\F132';
+        font-family: 'wsu-icons';
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        color: inherit;
+        font-size: $wsu-font-size--xxmedium;
+    }
+
+    &:focus,
+    &:hover {
+        &::before {
+            background-color: $wsu-color--gray-90;
+        }
+
+        &::after {
+            color: #fff;
+        }
+    }
+
+}
+

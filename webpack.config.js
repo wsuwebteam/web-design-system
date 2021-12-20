@@ -11,7 +11,7 @@ module.exports = env => {
 		entry: {
 			'bundles/wsu-design-system': './src/bundles/wsu-design-system.js',
 			'bundles/wsu-design-system.init': './src/bundles/wsu-design-system.init.js',
-			'bundles/standalone/block-people-list/scripts': './src/bundles/standalone/block-people-list/scripts.js',
+			//'bundles/standalone/block-people-list/scripts': './src/bundles/standalone/block-people-list/scripts.js',
 		},
 		output: {
 			filename: '[name].js',

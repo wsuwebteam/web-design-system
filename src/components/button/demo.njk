@@ -1,4 +1,6 @@
 {% from "button/_macro.njk" import button %}
+{% from "button/_macro.njk" import buttonPlay %}
+{% from "button/_macro.njk" import buttonPauseBackground %}
 
 {% extends "component.njk" %}
 
@@ -13,6 +15,10 @@
 {{ button( ' wsu-button--style-outline wsu-button--size-small') }}{{ button(' wsu-button--style-outline') }}{{ button( ' wsu-button--style-outline wsu-button--size-large') }}
 <hr />
 {{ button( ' wsu-button--style-outline-round wsu-button--size-small') }}{{ button( ' wsu-button--style-outline-round') }}{{ button( ' wsu-button--style-outline-round wsu-button--size-large') }}
+<hr />
+{{ buttonPlay() }}
+<hr />
+{{ buttonPauseBackground() }}
 </div>
 <style>
 </style>

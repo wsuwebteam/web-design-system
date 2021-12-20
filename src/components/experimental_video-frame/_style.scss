@@ -1,0 +1,73 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-video-frame {
+    position: relative;
+    padding-top: 56.25%;
+
+    &--position-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 0;
+        overflow: hidden;
+    }
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: #000;
+        transition: width 200ms $wsu-easing, height 200ms $wsu-easing;
+
+        & ~ .wsu-button-play {
+            opacity: 0 !important;
+            transition: opacity $wsu-transition-speed--fast $wsu-easing, left 0s $wsu-transition-speed--fast;
+            left: -9999rem !important;
+        }
+
+        & ~ .wsu-button-pause-background {
+            opacity: 0 !important;
+            transition: opacity $wsu-transition-speed--fast $wsu-easing, left 0s $wsu-transition-speed--fast;
+            left: -9999rem !important;
+        }
+    }
+
+    &__video-background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%,-50%)
+    }
+
+    .wsu-button-play {
+        position: absolute;
+        width: 100%;    
+        height: 100%;
+        left: 0;
+        right: 0;
+        opacity: 1;
+
+        &::before {
+            box-shadow: $wsu-shadow--medium;
+        }
+
+        &:hover {
+
+        }
+    }
+
+    .wsu-button-pause-background {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        opacity: 1;
+    }
+
+}

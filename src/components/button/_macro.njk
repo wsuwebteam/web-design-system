@@ -3,3 +3,18 @@
     {{ title }}
 </button>
 {% endmacro %}
+
+{% macro buttonPlay( classes='', title='Play Video' ) %}
+<button class="wsu-button-play{{ classes }}">
+    {{ title }}
+</button>
+{% endmacro %}
+
+{% macro buttonPauseBackground( classes='', title='Pause Background' ) %}
+<button class="wsu-button-pause-background{{ classes }}">
+    {{ title }}
+</button>
+{% endmacro %} 
+
+
+

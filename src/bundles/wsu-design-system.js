@@ -7,6 +7,7 @@ import WsuMenu from "../components/menu/_script";
 import WsuNavigationSiteVertical from "../modules/navigation-site-vertical/_script";
 import WsuAnimateSubmenuSlideVertical from '../animations/slide/_script';
 import WsuNavigationSiteHorizontal from '../components/experimental_navigation-horizontal/_script';
+import WsuVideoFrame from '../components/experimental_video-frame/_script';
 
 
 
@@ -22,5 +23,7 @@ const wsu = {
     menu: new WsuMenu(),
     animations: {
         //submenuSlideVertical: new WsuAnimateSubmenuSlideVertical(),
-    }
+    },
+    videoFrame: new WsuVideoFrame(),
+
 } 
