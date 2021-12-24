@@ -1,0 +1,31 @@
+{% extends "page-template.njk" %}
+{% from "hero/_macro.njk" import hero %}
+
+{% block content %}
+    <div class="wsu-wrapper-global">
+        {% include 'skip-to-main/html.njk' %}
+        {% include 'header-global/html.njk' %}
+        {% include 'navigation-site-vertical/html.njk' %}
+        <div class="wsu-wrapper-site">
+            {% include 'header-site/html.njk' %}
+            <div class="wsu-wrapper-content">
+                <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
+                    <h1>Meet the Team</h1>
+
+                    {% include 'people-list/html.njk' %}
+
+                </main>
+            </div>
+            {% include 'footer-site/html.njk' %}
+        </div>
+        {% include 'footer-global/html.njk' %}
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="../bundles/standalone/people-list/styles.css" media='all'/>
+{% endblock %}
+
+{% block scripts %}
+    <script src="../bundles/standalone/people-list/scripts.js"></script>
+{% endblock %}
