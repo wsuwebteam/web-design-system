@@ -155,7 +155,7 @@
     width: 2.5em;
     height: 2.5em;
     border-radius: 50%;
-    border: none;
+    border: 2px solid #fff;
 
     &::before {
         content: '\F132';
@@ -175,14 +175,15 @@
 
     }
 
-    &:focus,
+    &:focus {
+        outline: 2px solid $wsu-color--crimson;
+        background-color: $wsu-color--crimson;
+        box-shadow: 0px 0px 0px 4px #FFFFFF;
+    }
+
     &:hover {
         border: 2px solid #fff;
         background-color: $wsu-color--crimson;
-
-        &::before {
-            color: #fff;
-        }
     }
 
 }
