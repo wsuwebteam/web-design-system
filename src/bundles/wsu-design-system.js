@@ -8,6 +8,7 @@ import WsuNavigationSiteVertical from "../modules/navigation-site-vertical/_scri
 import WsuAnimateSubmenuSlideVertical from '../animations/slide/_script';
 import WsuNavigationSiteHorizontal from '../components/experimental_navigation-horizontal/_script';
 import WsuVideoFrame from '../components/experimental_video-frame/_script';
+import WsuButton from '../components/button/_script';
 
 
 
@@ -21,6 +22,7 @@ const wsu = {
     accordion: new WsuAccordion(),
     collapsable: new WsuCollapsable(),
     menu: new WsuMenu(),
+    button: new WsuButton(),
     animations: {
         //submenuSlideVertical: new WsuAnimateSubmenuSlideVertical(),
     },

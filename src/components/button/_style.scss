@@ -143,44 +143,44 @@
 }
 
 .wsu-button-pause-background {
-    background-color: transparent;
     outline: none;
-    border: none;
-    font-size: 0;
     cursor: pointer;
     position: relative;
+    font-size: $wsu-font-size--medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $wsu-color--gray-85;
+    color: #fff;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: none;
 
     &::before {
-        content: '';
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        //background-color: #fff;
-        background-color: #fff;
-        border-radius: 50%;
-        border: 1px solid $wsu-color--gray-60;
-    }
-
-    &::after {
         content: '\F132';
         font-family: 'wsu-icons';
         position: relative;
         display: inline-block;
         vertical-align: middle;
         color: inherit;
-        font-size: $wsu-font-size--xxmedium;
+        font-size: inherit;
+    }
+
+    &--active {
+
+        &::before {
+            content: '\F136';
+        }
+
     }
 
     &:focus,
     &:hover {
-        &::before {
-            background-color: $wsu-color--gray-90;
-        }
+        border: 2px solid #fff;
+        background-color: $wsu-color--crimson;
 
-        &::after {
+        &::before {
             color: #fff;
         }
     }

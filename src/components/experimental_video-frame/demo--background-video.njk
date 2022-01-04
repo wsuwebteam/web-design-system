@@ -2,9 +2,6 @@
 {% from "experimental_video-frame/_macro.njk" import videoFrame %}
 
 {% block content %}
-<div class="wsu-demo-component">
-    {% include 'experimental_video-frame/html.njk' %}
-</div>
 <div class="wsu-demo-component" style="height: 500px; position: relative">
     {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
 </div>

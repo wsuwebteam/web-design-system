@@ -2,6 +2,8 @@ class WsuVideoFrame {
 
     constructor( atts = {} ) {
 
+        this.bassClass = 'wsu-video-frame';
+
         this.init();
         
     }
@@ -49,7 +51,12 @@ class WsuVideoFrame {
                 this.playVideo( event.target.parentElement );
             }
 
-            if ( event.target.classList.contains( 'wsu-video-frame--action-pause-background' ) ) {
+            if ( event.target.classList.contains( this.bassClass + '--action-pause-background' ) || event.target.classList.contains( this.bassClass + '--action-play-background' ) ) {
+
+                this.toggleBackgroundVideo( event.target );
+            }
+
+            if ( event.target.classList.contains( 'wsu-video-frame--action-toggle-background' ) ) {
 
                 this.pauseBackgroundVideo( event.target.parentElement );
             }
@@ -98,6 +105,42 @@ class WsuVideoFrame {
             player.pause();
 
         }
+    }
+
+    toggleBackgroundVideo( element ) {
+
+        let videoWrapper = element.parentElement;
+
+        let video = videoWrapper.getElementsByClassName( this.bassClass + '__video-background' );
+
+        if ( ! video.length ) {
+            
+            console.log('WSU Video Frame: Video Not Found');
+
+            return;
+
+        }
+
+        let player = new Vimeo.Player( video[0] );
+
+        if ( element.classList.contains( this.bassClass + '--action-pause-background') ) {
+
+            element.classList.remove( this.bassClass + '--action-pause-background');
+
+            element.classList.add( this.bassClass + '--action-play-background');
+
+            player.pause();
+
+        } else {
+
+            element.classList.add( this.bassClass + '--action-pause-background');
+
+            element.classList.remove( this.bassClass + '--action-play-background');
+
+            player.play();
+
+        }
+
     }
 
 
