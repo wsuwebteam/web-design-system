@@ -177,13 +177,11 @@
 
     &:focus {
         outline: 2px solid $wsu-color--crimson;
-        background-color: $wsu-color--crimson;
         box-shadow: 0px 0px 0px 4px #FFFFFF;
     }
 
     &:hover {
-        border: 2px solid #fff;
-        background-color: $wsu-color--crimson;
+        background-color: $wsu-color--crimson-light;
     }
 
 }

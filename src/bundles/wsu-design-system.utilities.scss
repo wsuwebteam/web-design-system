@@ -81,12 +81,23 @@
 }
 
 /** ================ .wsu-width-- ====================== **/
-.wsu-wrapper-site .wsu-width--full {
+.wsu-wrapper-site {
 
-    margin-left: calc( (100vw - 100% ) / -2 );
-    margin-right: calc( (100vw - 100% ) / -2 );
+    .wsu-width--full {
+        margin-left: calc( (100vw - 100% ) / -2 );
+        margin-right: calc( (100vw - 100% ) / -2 );
+        width: auto;
+    }
+
+    .wsu-width--full-content {
+        margin-left: calc( (100vw - 100% ) / -2 ) !important;
+        margin-right: calc( (100vw - 100% ) / -2 ) !important;
+        padding-left: calc( (100vw - 100% ) / 2 ) !important;
+        padding-right: calc( (100vw - 100% ) / 2 ) !important; 
+    }
 
 }
+
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 

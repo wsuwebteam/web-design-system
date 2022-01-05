@@ -157,7 +157,7 @@ class WsuVideoFrame {
                 if ( this.isWideVideo( videoWrapper ) ) {
 
                     video.style.width = '100%';
-                    video.style.height = ( videoWrapper.offsetWidth * 0.5625 ) + 'px';
+                    video.style.height = ( ( videoWrapper.offsetWidth + 260 ) * 0.5625 ) + 'px';
 
                 } else {
 

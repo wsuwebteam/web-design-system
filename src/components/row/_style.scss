@@ -2,6 +2,7 @@
     display: flex;
     box-sizing: border-box;
     position: relative;
+    width: 100%;
 
     &[class*="wsu-color-background"] {
         padding-top: $wsu-spacing--xmedium;
@@ -11,5 +12,5 @@
 
 .wsu-wrapper-content .wsu-row {
     margin-left: -$wsu-spacing--column;
-    margin-right: -$wsu-spacing--column;
+    margin-right: -$wsu-spacing--column; 
 }  

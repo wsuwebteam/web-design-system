@@ -6,11 +6,16 @@
 {% from "image-frame/_macro.njk" import imageFrame %}
 {% from "overlay/_macro.njk" import overlay %}
 {% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
+{% from "experimental_video-frame/_macro.njk" import videoFrame %}
 
-{% macro hero( classes='', linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", imageSrc='https://source.unsplash.com/collection/895539' ) %}
+
+{% macro hero( classes='', linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", isVideo=false, imageSrc='https://source.unsplash.com/collection/895539' ) %}
 <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if imageSrc %}
         {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
+    {% endif %}
+    {% if isVideo %}
+        {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
     {% endif %}
     {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
     <div class="wsu-hero__content">

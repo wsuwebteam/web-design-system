@@ -1,5 +1,9 @@
 @import '../variables';
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	margin: 0;
 	overflow-x: hidden;

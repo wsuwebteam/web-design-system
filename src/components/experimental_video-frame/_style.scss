@@ -4,6 +4,7 @@
 .wsu-video-frame {
     position: relative;
     padding-top: 56.25%;
+    background-color: $wsu-color--gray-85;
 
     &--position-fill {
         position: absolute;
@@ -65,8 +66,8 @@
 
     .wsu-button-pause-background {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 20px;
+        right: 20px;
         opacity: 1;
     }
 
