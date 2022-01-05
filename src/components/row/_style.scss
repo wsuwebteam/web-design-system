@@ -2,7 +2,6 @@
     display: flex;
     box-sizing: border-box;
     position: relative;
-    width: 100%;
 
     &[class*="wsu-color-background"] {
         padding-top: $wsu-spacing--xmedium;

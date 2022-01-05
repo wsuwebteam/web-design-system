@@ -1,0 +1,8 @@
+.wsu-section {
+
+    &[class*="wsu-color-background"] {
+        padding-top: $wsu-spacing--large;
+        padding-bottom: $wsu-spacing--medium;
+    }
+
+}

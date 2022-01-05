@@ -98,6 +98,16 @@
 
 }
 
+.wsu-width--content {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 0 $wsu-spacing--xlarge 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $wsu-width--content;
+}
+
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 
