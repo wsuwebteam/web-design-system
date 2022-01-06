@@ -19,7 +19,7 @@ $people-list-filters-gap: $wsu-spacing--xsmall;
   }
 
   &.has-no-results::after {
-    content: "No results found for existing search.";
+    content: "No results found for current search.";
   }
 }
 /*=====  End of Container  ======*/

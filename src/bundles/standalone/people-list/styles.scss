@@ -1,1 +1,13 @@
-@import '../../../modules/people-list/style';
+@import "../../../../_assets/scss/variables";
+@import "../../../../_assets/scss/mixins";
+
+@import url("https://cdn.web.wsu.edu/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css");
+
+// @import "../../../components/button/style";
+@import "../../../components/meta/style";
+@import "../../../components/image-frame/style";
+@import "../../../components/screen-reader-only/style";
+
+@import "../../../modules/card-wrapper/style";
+@import "../../../modules/card/style";
+@import "../../../modules/people-list/style";

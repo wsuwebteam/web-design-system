@@ -15,6 +15,7 @@ const PeopleList = function (el) {
     "university-location",
     "university-organization",
     "photo-size",
+    "profile-order",
   ];
   const filterAttributeMap = {
     location: "university_location",
