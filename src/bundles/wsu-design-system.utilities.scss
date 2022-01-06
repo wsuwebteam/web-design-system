@@ -16,6 +16,14 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    
+}
+
+.wsu-align-item {
+    &--flex-bottom {
+        margin-top: auto !important;
+    }
 }
 
 .wsu-text-align {
@@ -32,6 +40,17 @@
         text-align: center;
     }
 }
+
+
+.wsu-item-layout {
+
+    &--flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 
 
 @each $colorName, $color in $wsu-color-map{

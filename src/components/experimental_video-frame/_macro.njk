@@ -1,6 +1,6 @@
 {% macro videoFrame(  classes='', isBackground=false, playVideo=false ) %}
 <div class="wsu-video-frame{{ classes }}" {% if playVideo %}data-play="{{ playVideo }}"{% endif %}>
-    <iframe class="wsu-video-frame__video{% if isBackground %}-background{% endif %}" src="https://player.vimeo.com/video/76979871{% if isBackground %}?background=1{% endif %}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <iframe class="wsu-video-frame__video{% if isBackground %}-background{% endif %}" src="https://player.vimeo.com/video/76979871{% if isBackground %}?background=1{% endif %}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Description of the Video"></iframe>
     {% if playVideo %}<button class="wsu-button-play wsu-video-frame--action-play">play Video</button>{% endif %}
     {% if isBackground %}<button class="wsu-button-pause-background wsu-video-frame--action-pause-background" aria-label="Pause Animation"></button>{% endif %}
 </div>
