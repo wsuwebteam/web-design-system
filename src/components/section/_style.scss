@@ -1,0 +1,22 @@
+.wsu-section {
+    margin-top: $wsu-spacing--large;
+    background-color: $wsu-color--gray-5;
+    padding-top: $wsu-spacing--large;
+    padding-bottom: $wsu-spacing--medium;
+}
+
+.wsu-row + .wsu-section {
+    margin-top: calc( #{$wsu-spacing--large} - #{$wsu-spacing--component} );
+}
+
+.wsu-section + .wsu-section {
+    margin-top: 0;
+}
+
+
+.wsu-wrapper-content .wsu-section {
+    margin-left: -$wsu-spacing--column;
+    margin-right: -$wsu-spacing--column;
+    padding-left: $wsu-spacing--column;
+    padding-right: $wsu-spacing--column; 
+}  

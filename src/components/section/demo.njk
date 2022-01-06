@@ -1,0 +1,36 @@
+{% extends "component.njk" %}
+
+{% from "row/_macro.njk" import row %}
+
+{% block content %}
+<div class="wsu-wrapper-site">
+    <div class="wsu-wrapper-content">
+        <main class="wsu-wrapper-main">
+        
+        <section class="wsu-section">
+        {{ row( 'wsu-row--halves', 'wsu-color-background--gray-85' ) }}
+        </section>
+        <section class="wsu-section wsu-width--full">
+            <div class="wsu-section__inner wsu-width--content">
+                <h2>Heading Here</h2>
+                {{ row( 'wsu-row--halves' ) }}
+            </div>
+        </section>
+        <section class="wsu-section wsu-width--full wsu-color-background--gray-10">
+            <div class="wsu-section__inner wsu-width--content">
+                <h2>Heading Here</h2>
+                {{ row( 'wsu-row--halves' ) }}
+            </div>
+        </section>
+        <section class="wsu-section wsu-width--full wsu-color-background--gray-85">
+            <div class="wsu-section__inner wsu-width--content">
+                <h2>Heading Here</h2>
+                {{ row( 'wsu-row--halves' ) }}
+            </div>
+        </section>
+        </main>
+    </div>
+</div>
+<style>
+</style>
+{%  endblock %}   
