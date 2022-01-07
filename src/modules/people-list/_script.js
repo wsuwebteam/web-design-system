@@ -56,16 +56,21 @@ const PeopleList = function (el) {
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
     }">
-        <div class="wsu-image-frame wsu-card__person-image wsu-people-list__person-image">
-            ${
-              displayFields.includes("photo") && person.photo
-                ? `
-                <img src="${person.photo}"
-                    srcset="${person.photo_srcset}"
-                    sizes="(min-width: 768px) 33.3vw, 100vw">`
-                : ""
-            }
-        </div>
+        ${
+          displayFields.includes("photo")
+            ? `
+            <div class="wsu-image-frame wsu-card__person-image wsu-people-list__person-image">
+                ${
+                  person.photo
+                    ? `
+                    <img src="${person.photo}"
+                        srcset="${person.photo_srcset}"
+                        sizes="(min-width: 768px) 33.3vw, 100vw">`
+                    : ""
+                }
+            </div>`
+            : ""
+        }
 
         <div class="wsu-card__content">
             ${
