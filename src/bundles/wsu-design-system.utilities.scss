@@ -16,6 +16,14 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    
+}
+
+.wsu-align-item {
+    &--flex-bottom {
+        margin-top: auto !important;
+    }
 }
 
 .wsu-text-align {
@@ -32,6 +40,17 @@
         text-align: center;
     }
 }
+
+
+.wsu-item-layout {
+
+    &--flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 
 
 @each $colorName, $color in $wsu-color-map{
@@ -81,12 +100,33 @@
 }
 
 /** ================ .wsu-width-- ====================== **/
-.wsu-wrapper-site .wsu-width--full {
+.wsu-wrapper-site {
 
-    margin-left: calc( (100vw - 100% ) / -2 );
-    margin-right: calc( (100vw - 100% ) / -2 );
+    .wsu-width--full {
+        margin-left: calc( (100vw - 100% ) / -2 );
+        margin-right: calc( (100vw - 100% ) / -2 );
+        width: auto;
+    }
+
+    .wsu-width--full-content {
+        margin-left: calc( (100vw - 100% ) / -2 ) !important;
+        margin-right: calc( (100vw - 100% ) / -2 ) !important;
+        padding-left: calc( (100vw - 100% ) / 2 ) !important;
+        padding-right: calc( (100vw - 100% ) / 2 ) !important; 
+    }
 
 }
+
+.wsu-width--content {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 0 $wsu-spacing--xlarge 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $wsu-width--content;
+}
+
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 

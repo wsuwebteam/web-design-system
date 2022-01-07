@@ -1,12 +1,13 @@
 {
     "name": "@wsuwebteam/wsu-web-design-system",
     "description": "Web design system for Washington State University",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "devDependencies": {
         "@babel/core": "^7.14.6",
         "@babel/preset-env": "^7.14.7",
         "@wordpress/scripts": "^17.0.0",
         "babel-loader": "^8.2.2",
+        "del-cli": "^4.0.1",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
         "gulp-clean-css": "^4.3.0",
@@ -15,13 +16,20 @@
         "gulp-nunjucks": "^5.1.0",
         "gulp-nunjucks-render": "^2.2.3",
         "gulp-sass": "^4.1.0",
+        "minimist": "^1.2.5",
+        "npm-run-all": "^4.1.5",
         "swiper": "^6.7.5",
         "webpack": "^5.41.0",
         "webpack-cli": "^4.7.2"
     },
     "scripts": {
-        "start": "webpack --config webpack.config.js --watch",
-        "build": "webpack --config webpack.config.js"
+        "clean": "del-cli dist/** --force",
+        "watch:gulp": "gulp watch",
+        "watch:js": "webpack --config webpack.config.js --watch",
+        "build:gulp": "gulp build",
+        "build:js": "webpack --config webpack.config.js",
+        "start": "run-p watch:*",
+        "build": "run-s clean \"build:* -- --env=production\""
     },
     "repository": {
         "type": "git",
@@ -35,5 +43,8 @@
     "homepage": "https://github.com/wsuwebteam/web-design-system#readme",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
+    },
+    "dependencies": {
+        "fuse.js": "^6.4.6"
     }
 }

@@ -1,9 +1,22 @@
 {% extends "component.njk" %}
 
+{% from "row/_macro.njk" import row %}
+
 {% block content %}
-<div class="wsu-demo-component">
-{% include 'row/row-single.njk' %}
-{% include 'row/row-halves.njk' %}
+<div class="wsu-wrapper-site">
+    <div class="wsu-wrapper-content">
+        <main class="wsu-wrapper-main">
+        {% include 'row/html--single.njk' %}
+        {% include 'row/html--halves.njk' %}
+        {% include 'row/html--sidebar-left.njk' %}
+        {% include 'row/html--sidebar-right.njk' %}
+        {% include 'row/html--thirds.njk' %}
+        {% include 'row/html--quarters.njk' %}
+        <hr />
+        {{ row( 'wsu-row--halves', 'wsu-color-background--gray-85' ) }}
+        {{ row( 'wsu-row--halves', 'wsu-color-background--gray-85 wsu-width--full' ) }}
+        </main>
+    </div>
 </div>
 <style>
 </style>

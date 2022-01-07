@@ -122,7 +122,13 @@ class WsuNavigationSiteVertical {
         document.body.classList.remove('wsu-navigation-site-vertical--is-open');
         document.body.classList.add('wsu-navigation-site-vertical--is-closed');
 
-        ariaUpdate( 'Close', '.wsu-navigation-site-vertical--toggle' ); 
+        ariaUpdate( 'Close', '.wsu-navigation-site-vertical--toggle' );
+
+        const myTimeout = setTimeout(
+            function() {
+                window.dispatchEvent(new Event('resize'));
+            }, 300
+        );
 
     }
 

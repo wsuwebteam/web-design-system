@@ -1,0 +1,32 @@
+{% from "column/_macro.njk" import column %}
+
+{% macro row(  layout='', classes='', content=false, contentBefore=false, contentAfter=false ) %}
+<div class="wsu-row {{ layout }} {{ classes }}" >
+    {% if layout == '' %}
+        {{ column() }}
+    {% endif %}
+    {% if layout == 'wsu-row--sidebar-right' %}
+        {{ column() }}
+        {{ column() }}
+    {% endif %}
+    {% if layout == 'wsu-row--sidebar-left' %}
+        {{ column() }}
+        {{ column() }}
+    {% endif %}
+    {% if layout == 'wsu-row--thirds' %}
+        {{ column() }}
+        {{ column() }}
+        {{ column() }}
+    {% endif %}
+    {% if layout == 'wsu-row--halves' %}
+        {{ column() }}
+        {{ column() }}
+    {% endif %}
+    {% if layout == 'wsu-row--quarters' %}
+        {{ column() }}
+        {{ column() }}
+        {{ column() }}
+        {{ column() }}
+    {% endif %}
+</div>
+{% endmacro %}
