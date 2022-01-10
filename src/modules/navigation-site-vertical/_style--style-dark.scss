@@ -1,13 +1,15 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-navigation-site-vertical {
 
-    &__panel {
-        border-right: 1px solid $wsu-color--gray-60
+
+.wsu-navigation-site-vertical--color-dark {
+
+    .wsu-navigation-site-vertical__panel {
+        border-right: 1px solid $wsu-color--gray-60;
     }
 
-    &__panel,
+    .wsu-navigation-site-vertical__panel,
     .wsu-navigation-site-vertical__open-button,
     .wsu-button-ui-close,
     .wsu-button-ui-close::before,
@@ -15,7 +17,7 @@
         color: $wsu-color--gray-5;
     }
 
-    &__panel,
+    .wsu-navigation-site-vertical__panel,
     .wsu-navigation-site-vertical__open-button {
         background-color: $wsu-color--gray-95;
     }
@@ -31,7 +33,7 @@
     .wsu-menu button:first-child:hover,
     .wsu-menu a:focus,
     .wsu-menu a:hover {
-        background-color: $wsu-color--gray-85;
+        background-color: $wsu-color--gray-85; 
     }
 
 }
