@@ -6,22 +6,22 @@
 .wsu-table {
     @extend %table;
 
-    &--style-minimal { 
+    &--style-striped { 
         th,
         td {
-            border-left: none;
-            border-right: none;
+            border-left: none !important;
+            border-right: none !important;
         }
 
         tr:nth-child(even) {
-            background-color: $wsu-color--gray-5;
+            background-color: $wsu-color--gray-5 !important;
         }
     }
 
     &--style-none { 
         th,
         td {
-            border: none;
+            border: none !important;
         }
     }
 }
