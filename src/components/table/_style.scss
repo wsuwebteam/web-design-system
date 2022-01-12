@@ -1,0 +1,27 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+
+.wsu-table {
+    @extend %table;
+
+    &--style-striped { 
+        th,
+        td {
+            border-left: none !important;
+            border-right: none !important;
+        }
+
+        tr:nth-child(even) {
+            background-color: $wsu-color--gray-5 !important;
+        }
+    }
+
+    &--style-none { 
+        th,
+        td {
+            border: none !important;
+        }
+    }
+}
