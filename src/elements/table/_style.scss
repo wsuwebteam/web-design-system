@@ -1,0 +1,7 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+table {
+    @extend %table;
+}
