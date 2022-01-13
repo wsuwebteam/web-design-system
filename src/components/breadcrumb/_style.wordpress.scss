@@ -1,0 +1,31 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.breadcrumbs {
+    @extend %breadcrumb;
+    font-size: 0;
+
+    span[typeof="ListItem"] {
+
+        @extend %breadcrumb__list__item;
+    
+        &:not(:last-child) {
+
+            &::after {
+                @extend %breadcrumb__separator;
+            }
+
+        }
+
+    } 
+
+    a {
+        @extend %breadcrumb__link; 
+    }
+
+    .current-item {
+        @extend %breadcrumb__current;
+    }
+    
+}
