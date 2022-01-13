@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 
 %table {
     border-top: 4px solid $wsu-color--crimson;
@@ -16,5 +17,44 @@
     th {   
         font-weight: 600;
     }
+}
+
+%breadcrumb {
+    margin-bottom: $wsu-spacing--component;
+    position: relative;
+}
+
+%breadcrumb__separator {
+    content:"/";
+    @include wsu-font--small();
+    color: $wsu-color--gray-40;
+    margin-left: 0.5em;
+    margin-right: 0.4em;
+    display: inline-block;
+}
+
+%breadcrumb__link {
+    @include wsu-font--small();
+}
+
+%breadcrumb__list {
+    list-style-type: none;
+    font-size: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0; 
+}
+
+%breadcrumb__list__item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include wsu-font--small();
+}
+
+%breadcrumb__current {
+    font-weight: bold;
+    color: $wsu-color--gray-75;
 }
 
