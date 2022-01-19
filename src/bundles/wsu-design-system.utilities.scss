@@ -79,6 +79,42 @@
 
 }
 
+.wsu-shape--em-notch-large {
+    -webkit-clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0);
+    clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0);
+}
+
+.wsu-position {
+
+    &--pull-up-large {
+        margin-top: -90px;
+    }
+
+    &--pull-up-medium {
+        margin-top: -70px;
+    }
+
+    &--pull-up-small {
+        margin-top: -40px;
+    }
+
+    &--pull-down-large {
+        margin-top: -90px !important;
+        z-index: 1;
+    }
+
+    &--pull-down-medium {
+        margin-top: -70px !important;
+        z-index: 1;
+    }
+
+    &--pull-down-small {
+        margin-bottom: -40px !important;
+        z-index: 1;
+    }
+}
+
+
 @each $spaceName, $space in $wsu-spacing-map{
 
     .wsu-spacing-before--#{$spaceName} {
