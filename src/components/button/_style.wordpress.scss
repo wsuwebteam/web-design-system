@@ -3,8 +3,10 @@
 
 .wp-block-buttons .wp-block-button__link{
     @include wsu-button();
+}
+
+.wp-block-button {
     margin-bottom: $wsu-spacing--component;
-    margin-right: $wsu-spacing--xmedium; 
 }
 
 .wp-block-buttons .wsu-button {
