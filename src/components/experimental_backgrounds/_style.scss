@@ -1,0 +1,15 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.wsu-background {
+
+    &--style {
+
+        &-crimson {
+            background: $wsu-color--crimson radial-gradient(circle at 40% 60%, $wsu-color--crimson-light 18%, $wsu-color--crimson-dark 81%);
+        }
+ 
+    } 
+
+}
