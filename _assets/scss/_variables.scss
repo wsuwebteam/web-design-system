@@ -51,6 +51,7 @@ $wsu-color--accent-midnight: #002D61;
 $wsu-color--crimson:        #A60F2D;
 $wsu-color--crimson-light:  #CA1237;
 $wsu-color--crimson-accent: #FAE6EA;
+$wsu-color--crimson-dark:   #78001e;
 
 /* WSU Grays */
 $wsu-color--gray-0:   hsl(0, 0, 97%); // #f7f7f7
@@ -75,7 +76,7 @@ $wsu-color--gray-90:  hsl(0, 0, 10%); // #1a1a1a
 $wsu-color--gray-95:  hsl(0, 0, 3%); // #080808 - 5% and 3% are nearly indistinguishable, so treat them the same and leave the value to maintain consistency
 $wsu-color--gray-100: hsl(0, 0, 3%); // #080808
 
-$wsu-color--text: $wsu-color--gray-85; // #080808
+$wsu-color--text: $wsu-color--gray-85; // #080808 
 
 $wsu-color-map: (
     'white':        #ffffff,
@@ -105,6 +106,7 @@ $wsu-color-map: (
 );
 
 $wsu-color-background-text-map: (
+    'white':         $wsu-color--text,
     'gray-0':        $wsu-color--text,
     'gray-5':        $wsu-color--text,
     'gray-10':       $wsu-color--text,
@@ -379,6 +381,9 @@ $wsu-transition-speed--xxfast:  100ms;
 /* ========================================================
 == Widths ==
 ==========================================================*/
+
+$wsu-width--copy:                     900px;
+
 $wsu-width--button-small:             60px;
 $wsu-width--navigation:               230px;
 $wsu-width--navigation-veritcal:      280px;

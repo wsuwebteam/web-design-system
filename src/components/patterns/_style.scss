@@ -1,6 +1,51 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+.wsu-pattern {
+
+	&--style {
+
+		&-wsu {
+			position: relative;
+
+			&::before {
+				@extend %wsu-pattern-before;
+				@extend %wsu-pattern-background--wsu-dark;
+			}
+			
+		}
+
+	}
+
+	&--opacity {
+
+		&-xlight {
+			&::before {
+				opacity: 0.3;
+			}
+		}
+		
+		&-light {
+			&::before {
+				opacity: 0.3;
+			}
+		}
+
+		&-medium {
+			&::before {
+				opacity: 0.5;
+			}
+		}
+
+		&-dark {
+			&::before {
+				opacity: 0.7;
+			}
+		}
+	}
+
+}
+
 .wsu-pattern:not(.wsu-pattern-before):not(.wsu-pattern-before) {
   opacity: 0.6;
 }

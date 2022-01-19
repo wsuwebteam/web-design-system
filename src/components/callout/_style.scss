@@ -7,13 +7,17 @@
     padding: $wsu-spacing--medium $wsu-spacing--medium 0;
     box-sizing: border-box;
     border: 1px solid $wsu-color--gray-10;
-    border-radius: $wsu-border-radius--medium;
+    border-radius: 3px;
     margin-bottom: $wsu-spacing--component;
 
     &__title {
         @include wsu-font--xxmedium();
         font-weight: 700;
         margin-bottom: $wsu-spacing--medium;
+    }
+
+    &--color-white {
+        border: 1px solid #fff;
     }
 
     &--color-crimson,

@@ -1,0 +1,38 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+blockquote {
+    position: relative;
+    font-size: $wsu-font-size--xmedium;
+    //margin-left: $wsu-spacing--xxmedium;
+    //margin-right: $wsu-spacing--xxmedium;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: $wsu-spacing--component;
+    max-width: calc( #{$wsu-width--copy} - 8% );
+
+    &::before{
+        content:'';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52.884' height='41.652' viewBox='0 0 52.884 41.652'%3E%3Cpath d='M22.776-96.1a10.877,10.877,0,0,1,5.148,9.828,11.834,11.834,0,0,1-3.432,8.736,11.641,11.641,0,0,1-8.58,3.432,11.545,11.545,0,0,1-8.268-3.276,11.711,11.711,0,0,1-3.432-8.892,13.153,13.153,0,0,1,.78-4.6,44.321,44.321,0,0,1,2.34-5.07l11.076-19.812h11.7Zm26.988,0a10.877,10.877,0,0,1,5.148,9.828,11.834,11.834,0,0,1-3.432,8.736A11.641,11.641,0,0,1,42.9-74.1a11.545,11.545,0,0,1-8.268-3.276A11.711,11.711,0,0,1,31.2-86.268a13.153,13.153,0,0,1,.78-4.6,44.32,44.32,0,0,1,2.34-5.07L45.4-115.752H57.1Z' transform='translate(-4.212 115.752)' fill='%23ca1237'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        width: 1.5em;
+        height: 1.5em;
+        background-size: contain;
+        display: block;
+    }
+
+    cite {
+        font-size: $wsu-font-size--xsmall;
+        font-weight: 600;
+
+        &::before {
+            content:'\2014';
+        }
+    }
+
+    p + cite {
+        margin-top: -0.5rem;
+        display: block;
+    }
+    
+}
