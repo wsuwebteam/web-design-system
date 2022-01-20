@@ -59,13 +59,23 @@ const PeopleList = function (el) {
         ${
           displayFields.includes("photo")
             ? `
-            <div class="wsu-image-frame wsu-card__person-image wsu-people-list__person-image">
+            <div class="wsu-image-frame wsu-card__person-image wsu-people-list__person-image${
+              person.photo ? " has-photo" : ""
+            }">
                 ${
                   person.photo
                     ? `
                     <img src="${person.photo}"
-                        srcset="${person.photo_srcset}"
-                        sizes="(min-width: 768px) 33.3vw, 100vw">`
+                        ${
+                          person.photo_srcset
+                            ? `srcset="${person.photo_srcset}"`
+                            : ""
+                        }
+                        ${
+                          person.photo_srcset
+                            ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
+                            : ""
+                        }>`
                     : ""
                 }
             </div>`
