@@ -73,11 +73,11 @@
 @each $borderColorName, $borderColor in $wsu-color-border-map {
 
     .wsu-border-top--color-#{$borderColorName} {
-        border-top: 5px solid $borderColor;
+        border-top: 4px solid $borderColor;
     }
 
     .wsu-border-bottom--color-#{$borderColorName} {
-        border-bottom: 5px solid $borderColor;
+        border-bottom: 4px solid $borderColor;
     }
 
 }
@@ -89,7 +89,7 @@
     }
 
     &-medium {
-        border-bottom-width: 5px !important;
+        border-bottom-width: 4px !important;
     }
 
     &-thin {
