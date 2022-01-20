@@ -15,7 +15,7 @@
 }
 
 
-.wsu-wrapper-content .wsu-section {
+.wsu-wrapper-content .wsu-section:not(.wsu-width--full) {
     margin-left: -$wsu-spacing--column;
     margin-right: -$wsu-spacing--column;
     padding-left: $wsu-spacing--column;

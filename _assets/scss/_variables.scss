@@ -132,6 +132,21 @@ $wsu-color-background-text-map: (
     'crimson-light': #fff,
 );
 
+$wsu-color-border-map: (
+    'white':         #ffffff,
+    'lighter':       $wsu-color--gray-5,
+    'light':         $wsu-color--gray-10,
+    'dark':          $wsu-color--gray-75,
+    'darker':        $wsu-color--gray-95,
+    'crimson':       $wsu-color--crimson,
+    'crimson-light': $wsu-color--crimson-light,
+    'autumn':        $wsu-color--accent-autumn,
+    'goldfinch':     $wsu-color--accent-goldfinch,
+    'vineyard':      $wsu-color--accent-vineyard,
+    'pacificsky':    $wsu-color--accent-pacificsky,
+    'midnight':      $wsu-color--accent-midnight,
+);
+
 
 /* ========================================================
 == Dropshadows ==
