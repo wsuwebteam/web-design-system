@@ -3,7 +3,8 @@
 
 .wsu-list {
 
-    &--arrow {
+    &--arrow,
+    &--style-arrow {
         li::marker {
             font-family: 'wsu-icons';
             content:'\F107';
@@ -13,7 +14,8 @@
     
     }
     
-    &--checkbox {
+    &--checkbox,
+    &--style-checkbox {
         li {
             list-style-type: none;
             position: relative;
@@ -32,7 +34,8 @@
         }
     }
     
-    &--checkmark {
+    &--checkmark,
+    &--style-checkmark {
         li {
             
             list-style-type: none;
