@@ -9,6 +9,7 @@ ul {
 	padding-left: 0; 
 	margin-right: 0;
     font-size: $wsu-font-size--xmedium;
+    //max-width: calc( #{$wsu-width--copy} - #{$wsu-spacing--em-xxmedium});
 
     li {
         padding-top: 0;

@@ -1,0 +1,39 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+
+.wsu-navigation-site-vertical--color-dark {
+
+    .wsu-navigation-site-vertical__panel {
+        border-right: 1px solid $wsu-color--gray-60;
+    }
+
+    .wsu-navigation-site-vertical__panel,
+    .wsu-navigation-site-vertical__open-button,
+    .wsu-button-ui-close,
+    .wsu-button-ui-close::before,
+    .wsu-button-ui-close::after {
+        color: $wsu-color--gray-5;
+    }
+
+    .wsu-navigation-site-vertical__panel,
+    .wsu-navigation-site-vertical__open-button {
+        background-color: $wsu-color--gray-95;
+    }
+
+    .wsu-menu > li[aria-expanded] > a::after,
+    .wsu-menu > li::after {
+        background-color: $wsu-color--gray-80;
+    }
+
+    .wsu-menu a + button:focus,
+    .wsu-menu a + button:hover,
+    .wsu-menu button:first-child:focus,
+    .wsu-menu button:first-child:hover,
+    .wsu-menu a:focus,
+    .wsu-menu a:hover {
+        background-color: $wsu-color--gray-85; 
+    }
+
+}

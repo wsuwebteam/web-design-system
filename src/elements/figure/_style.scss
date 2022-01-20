@@ -53,11 +53,14 @@ figure {
         }
     }
 
-    img {
-        width: 100%;
-        height: auto;
-        border-radius: $wsu-border-radius--small;
+    &:not(.is-resized){
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $wsu-border-radius--small;
+        }
     }
+
 }
 
 figcaption {

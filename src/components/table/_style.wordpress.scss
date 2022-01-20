@@ -1,0 +1,49 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+
+.wp-block-table {
+    margin-bottom: $wsu-spacing--component;
+    overflow-x: visible !important;
+    table {
+        @extend %table;
+        margin-bottom: 0;
+    
+    }
+}
+
+.tablepress-scroll-wrapper,
+.dataTables_wrapper {
+
+    .tablepress {
+        border-top: 4px solid $wsu-color--crimson !important;
+        border-collapse: collapse !important;
+        margin-bottom: $wsu-spacing--component !important;
+
+        th {
+            background-color: transparent !important;
+
+            &:hover {
+                background-color: $wsu-color--gray-85 !important;
+                color: #fff !important;
+            }
+        }
+    }
+
+    & + .tablepress-table-description {
+        margin-top: -$wsu-spacing--component;
+        margin-bottom: $wsu-spacing--component;
+    }
+
+}
+
+.dataTables_length,
+.dataTables_filter {
+    margin-bottom: $wsu-spacing--xsmall !important;
+}
+
+.dataTables_info {
+    font-size: $wsu-font-size--xxsmall !important;
+}
+
