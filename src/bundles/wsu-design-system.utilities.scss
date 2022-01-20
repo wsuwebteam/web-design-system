@@ -70,6 +70,49 @@
 
 }
 
+@each $borderColorName, $borderColor in $wsu-color-border-map {
+
+    .wsu-border-top--color-#{$borderColorName} {
+        border-top: 5px solid $borderColor;
+    }
+
+    .wsu-border-bottom--color-#{$borderColorName} {
+        border-bottom: 5px solid $borderColor;
+    }
+
+}
+
+.wsu-border-bottom--style {
+
+    &-thick {
+        border-bottom-width: 8px !important; 
+    }
+
+    &-medium {
+        border-bottom-width: 5px !important;
+    }
+
+    &-thin {
+        border-bottom-width: 2px !important;
+    }
+}
+
+.wsu-border-top--style {
+
+    &-thick {
+        border-top-width: 8px !important;
+    }
+
+    &-medium {
+        border-top-width: 5px !important;
+    }
+
+    &-thin {
+        border-top-width: 2px !important;
+    }
+}
+
+
 @each $fontKey, $fontSize in $wsu-font-size-map{
 
     .wsu-font-size--#{$fontKey} {
@@ -77,6 +120,16 @@
         line-height: map-get( $wsu-line-height-map, $fontKey ) !important;
     }
 
+}
+
+.wsu-shape--em-notch-small {
+    -webkit-clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+    clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+}
+
+.wsu-shape--em-notch-medium {
+    -webkit-clip-path: polygon(100% 0,100% calc(100% - 70px),calc(100% - 70px) 100%,0 100%,0 0);
+    clip-path: polygon(100% 0,100% calc(100% - 70px),calc(100% - 70px) 100%,0 100%,0 0);
 }
 
 .wsu-shape--em-notch-large {
