@@ -187,6 +187,11 @@ $people-list-filters-gap: $wsu-spacing--xsmall;
   background-size: 66%;
   background-repeat: no-repeat;
   background-position: center center;
+
+  &.has-photo {
+    background-image: none;
+    background-color: $wsu-color--gray-5;
+  }
 }
 /*=====  End of People List  ======*/
 

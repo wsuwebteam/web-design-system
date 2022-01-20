@@ -59,13 +59,23 @@ const PeopleList = function (el) {
         ${
           displayFields.includes("photo")
             ? `
-            <div class="wsu-image-frame wsu-card__person-image wsu-people-list__person-image">
+            <div class="wsu-image-frame wsu-card__person-image wsu-people-list__person-image${
+              person.photo ? " has-photo" : ""
+            }">
                 ${
                   person.photo
                     ? `
                     <img src="${person.photo}"
-                        srcset="${person.photo_srcset}"
-                        sizes="(min-width: 768px) 33.3vw, 100vw">`
+                        ${
+                          person.photo_srcset
+                            ? `srcset="${person.photo_srcset}"`
+                            : ""
+                        }
+                        ${
+                          person.photo_srcset
+                            ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
+                            : ""
+                        }>`
                     : ""
                 }
             </div>`
@@ -344,10 +354,9 @@ const PeopleList = function (el) {
       }
     });
 
-    // fitler on search
+    // filter on search
     searchInput?.addEventListener("input", function (e) {
-      // consider debouncing
-      processPeopleFilters();
+      processPeopleFilters(); // should consider debouncing?
     });
 
     // remove selected filter on toggle click
@@ -371,24 +380,38 @@ const PeopleList = function (el) {
     document.addEventListener(
       "click",
       function (e) {
-        const toggle = e.target.closest(".wsu-people-list__filter-toggle");
-        const insideSelectFilter = e.target.closest(
-          ".wsu-people-list__select-filter"
+        const clickedFiltersContainer = e.target.closest(
+          ".wsu-people-list__filters-container"
         );
+        const toggle = e.target.closest(".wsu-people-list__filter-toggle");
+        const insideSelectFilter =
+          e.target.closest(".wsu-people-list__select-filter") !== null;
 
-        if (toggle) {
-          // close other open menus
-          filterToggles.forEach((t) => {
-            if (t !== toggle) {
+        // handle clicks inside clicked filtersContainer
+        if (clickedFiltersContainer === filtersContainer) {
+          if (toggle) {
+            // close other open menus
+            filterToggles.forEach((t) => {
+              if (t !== toggle) {
+                wsuAriaExpanded(t, false);
+              }
+            });
+
+            wsuAriaExpanded(toggle, !wsuAriaIsExpanded(toggle));
+
+            // close all menus in filterContainer if click was not in a toggle or select menu
+          } else if (!insideSelectFilter) {
+            filterToggles.forEach((t) => {
               wsuAriaExpanded(t, false);
-            }
-          });
-
-          wsuAriaExpanded(toggle, !wsuAriaIsExpanded(toggle));
+            });
+          }
         }
 
-        // // close all if outside click
-        if (!insideSelectFilter) {
+        // close all if click was outside current filtersContainer
+        if (
+          clickedFiltersContainer === null ||
+          clickedFiltersContainer !== filtersContainer
+        ) {
           filterToggles.forEach((t) => {
             wsuAriaExpanded(t, false);
           });
