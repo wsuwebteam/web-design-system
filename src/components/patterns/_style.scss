@@ -11,6 +11,7 @@
 			&::before {
 				@extend %wsu-pattern-before;
 				@extend %wsu-pattern-background--wsu-dark;
+        opacity: 0.3;
 			}
 			
 		}
@@ -21,7 +22,7 @@
 
 		&-xlight {
 			&::before {
-				opacity: 0.3;
+				opacity: 0.1;
 			}
 		}
 		
