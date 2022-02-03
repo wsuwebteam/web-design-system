@@ -8,6 +8,7 @@
     z-index: $wsu-zindex--global-header;
     box-sizing: border-box;
     padding-right: $wsu-spacing--small;
+    position: relative;
 
     &__content {
         display: flex;
