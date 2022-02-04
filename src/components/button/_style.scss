@@ -28,10 +28,6 @@
         content: '\F140';
     }
 
-    // Tighten up buttons if they are in a vertical group
-    & + .wsu-button {
-        margin-top: calc( #{$wsu-spacing--medium} - #{$wsu-spacing--component} );
-    }
 }
 
 // Buttons in sidebar are full width
