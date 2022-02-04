@@ -1,0 +1,8 @@
+{% from "pagination/_macro.njk" import pagination %}
+
+{{ pagination() }}
+
+{{ pagination( '', 'paged' ) }}
+
+{{ pagination( '', 'paged', ' wsu-button--style-outline' ) }}
+{{ pagination( '', 'paged', ' wsu-button--style-round' ) }}

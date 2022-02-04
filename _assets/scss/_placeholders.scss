@@ -1,6 +1,30 @@
 @import './variables';
 @import './mixins';
 
+%wsu_button {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    font-family: $wsu-font-family;
+    background-color: $wsu-color--crimson;
+    color: #fff;
+    border-radius: $wsu-border-radius--large;
+    border: none;
+    padding: 1em 3em;
+    font-size: $wsu-font-size--medium;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: box-shadow $wsu-transition-speed--fast $wsu-easing;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        box-shadow: $wsu-dropshadow-rise--medium;
+        background-color: $wsu-color--crimson-light;
+    }
+}
+
 %table {
     border-top: 4px solid $wsu-color--crimson;
     border-collapse: collapse;
