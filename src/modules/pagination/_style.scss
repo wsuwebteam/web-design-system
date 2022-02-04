@@ -1,0 +1,72 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-pagination {
+    border-top: 1px solid $wsu-color--gray-15;
+    margin-top: $wsu-spacing--large;
+    padding-top: $wsu-spacing--xmedium;
+
+    &__menu {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__menu-previous,
+    &__menu-next,
+    &__menu-page {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    &__menu-previous {
+        margin-right: 0.75rem;
+    }
+
+    &__menu-next {
+        margin-left: 0.75rem;
+    }
+
+    &__menu-page a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.5rem;
+        font-size: $wsu-font-size--small;
+        font-weight: 500;
+
+        &[aria-current="true"] {
+            font-weight: 600;
+            color: $wsu-color--gray-85;
+            text-decoration: none;
+        }
+    }
+
+    .wsu-button {
+        font-size: $wsu-font-size--small;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    &__menu-previous .wsu-button::before,
+    &__menu-next .wsu-button::after {
+        font-family: 'wsu-icons';
+        font-size: $wsu-font-size--small;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: $wsu-font-size--xsmall;
+    }
+
+    &__menu-previous .wsu-button::before {
+        content: '\F105';
+        margin-right: 0.5rem;
+    }
+
+    &__menu-next .wsu-button::after {
+        content: '\F107';
+        margin-left: 0.5rem;
+    }
+}

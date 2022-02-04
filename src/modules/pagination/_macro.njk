@@ -1,0 +1,16 @@
+{% macro pagination( classes='', style='default', buttonClass='' ) %}
+<nav class="wsu-pagination" role="navigation" aria-label="Pagination Navigation">
+    <ul class="wsu-pagination__menu">
+        <li class="wsu-pagination__menu-previous"><a class="wsu-button{{ buttonClass }}" href="#" aria-label="Goto Previous Page">Previous</a></li>
+        {% if style == 'paged' %}
+        <li class="wsu-pagination__menu-page"><a href="#" aria-label="Goto Page 1">1</a></li>
+        <li class="wsu-pagination__menu-page"><a href="#" aria-label="Goto Page 2" aria-current="true">2</a></li>
+        <li class="wsu-pagination__menu-page"><a href="#" aria-label="Goto Page 3">3</a></li>
+        <li class="wsu-pagination__menu-page"><a href="#" aria-label="Goto Page 4">4</a></li>
+        <li class="wsu-pagination__menu-page"><a href="#" aria-label="Goto Page 5">5</a></li>
+        {% endif %}
+        <li class="wsu-pagination__menu-next"><a class="wsu-button{{ buttonClass }}" href="#" aria-label="Goto Next Page">Next</a></li>
+
+    </ul>
+</nav> 
+{% endmacro %}
