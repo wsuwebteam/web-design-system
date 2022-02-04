@@ -1,0 +1,59 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.wp-block-search {
+    margin-bottom: $wsu-spacing--component;
+
+    button {
+        @extend %wsu_button;
+        padding-left: $wsu-spacing--xmedium;
+        padding-right: $wsu-spacing--xmedium;
+    }
+
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: $wsu-spacing--component;
+
+    label {
+        flex-grow: 1;
+
+        .screen-reader-text {
+            font-size: 0;
+            position: absolute;
+            top: -9999rem;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    input[type="submit"] {
+        @extend %wsu_button;
+        padding-left: $wsu-spacing--xmedium;
+        padding-right: $wsu-spacing--xmedium;
+        margin-left: 0.5rem;
+        
+    }
+
+}
+
+.wsu-wrapper-sidebar {
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    ul {
+        font-size: 1rem;
+        
+        li {
+            margin-bottom: 0.4em;
+            padding-left: 0.2em; 
+        }
+    }
+
+} 
