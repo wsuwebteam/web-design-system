@@ -1,0 +1,5 @@
+{% macro cta( classes='', buttonClasses='', buttonText='Button Text', buttonLink='#' ) %}
+<div class="wsu-cta{{ classes }}">
+    <a class="wsu-button{{ buttonClasses }}" href="{{ buttonLink }}">{{ buttonText }}</a>
+</div>
+{% endmacro %}

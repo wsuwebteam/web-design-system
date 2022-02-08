@@ -1,0 +1,21 @@
+{% extends "component.njk" %}
+{% from "cta/_macro.njk" import cta %}
+
+
+{% block content %}
+<div class="wsu-component-demo">
+{% include 'cta/html.njk' %}
+<hr />
+{{ cta( ) }}
+{{ cta( ) }}
+{{ cta( ) }}
+<hr />
+{{ cta( ' wsu-cta--width-inline' ) }}
+{{ cta( ' wsu-cta--width-inline' ) }}
+{{ cta( ' wsu-cta--width-inline' ) }}
+<hr />
+{{ cta( ' wsu-cta--width-full' ) }}
+<hr />
+{{ cta( ' wsu-text-align--center' ) }}
+</div>
+{%  endblock %} 
