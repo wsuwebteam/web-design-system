@@ -8,13 +8,15 @@
 
     li {
         margin: 0;
-        padding: $wsu-spacing--medium 0;
+        padding: $wsu-spacing--small 0;
         border-bottom: 1px solid $wsu-color--gray-10;
     }
 
     a {
         font-weight: 600;
-        text-decoration: none;
+        font-size: $wsu-font-size--medium;
+        margin-bottom: 0.3rem;
+        display: block;
 
         &:hover {
             text-decoration: underline;
@@ -22,16 +24,12 @@
     }
 
     .wsu-caption {
-        margin-top: $wsu-spacing--sxxsmall;
-        @include wsu-font--small();
+        @include wsu-font--xsmall();
     }
 
+    .wsu-caption,
     .wsu-meta-date {
-        margin-top: $wsu-spacing--sxxsmall;
-    }
-
-    .wsu-caption + .wsu-meta-date {
-        margin-top: $wsu-spacing--xsmall;
+        margin-bottom: 0.3rem;
     }
     
 }
