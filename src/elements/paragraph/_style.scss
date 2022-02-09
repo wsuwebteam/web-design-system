@@ -18,3 +18,15 @@ p {
 p.wsu-paragraph--full {
     max-width: none;
 }
+
+p.wsu-text-align {
+    &--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &--right {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
