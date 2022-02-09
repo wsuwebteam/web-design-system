@@ -4,9 +4,9 @@
 ol,
 ul {
 	margin-top: 0;
-	margin-left: $wsu-spacing--em-xxmedium;
+	margin-left: 0;
 	margin-bottom: $wsu-spacing--component;
-	padding-left: 0; 
+	padding-left: $wsu-spacing--xmedium; 
 	margin-right: 0;
     font-size: $wsu-font-size--xmedium;
     //max-width: calc( #{$wsu-width--copy} - #{$wsu-spacing--em-xxmedium});
@@ -15,10 +15,8 @@ ul {
         padding-top: 0;
         margin-bottom: $wsu-spacing--em-xsmall;
         margin-top: 0;
-        padding-left: $wsu-spacing--em-xxsmall;
         padding-right: 0;
         padding-bottom: 0;
-        line-height: 1.4;
         box-sizing: border-box;
 
         &::marker {
@@ -30,6 +28,7 @@ ul {
 	ul {
 		margin-bottom: $wsu-spacing--em-small;
 		margin-top: $wsu-spacing--em-xsmall;
+        padding-left: $wsu-spacing--xxmedium; 
 	}
 
 }

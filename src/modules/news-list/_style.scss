@@ -4,6 +4,7 @@
 
 .wsu-news-list {
     list-style-type: none;
+    padding-left: 1.25rem;
 
     li {
         padding-bottom: 0.5rem;
@@ -12,7 +13,7 @@
 
         &::marker {
             font-family: 'wsu-icons';
-            content:'\F107';
+            content:'\F107\00A0\00A0\00A0';
             font-size: 0.9em;
             font-weight: 800;
         }
@@ -23,10 +24,10 @@
         font-size: $wsu-font-size--medium;
         display: block;
         font-weight: 600;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.2rem;
     }
 
     .wsu-meta-date {
-        margin-top: 0.4rem;
+        margin-top: 0.3rem;
     }
 }
