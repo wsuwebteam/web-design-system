@@ -1,35 +1,32 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+
 .wsu-news-list {
     list-style-type: none;
-    margin: 0 0 $wsu-spacing--component 0;
-    padding: 0;
 
     li {
-        margin: 0;
-        padding: $wsu-spacing--small 0;
-        border-bottom: 1px solid $wsu-color--gray-10;
+        padding-bottom: 0.5rem;
+        font-size: $wsu-font-size--xsmall;
+        line-height: 1.5;
+
+        &::marker {
+            font-family: 'wsu-icons';
+            content:'\F107';
+            font-size: 0.9em;
+            font-weight: 800;
+        }
+
     }
 
     a {
-        font-weight: 600;
         font-size: $wsu-font-size--medium;
-        margin-bottom: 0.3rem;
         display: block;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        font-weight: 600;
+        margin-bottom: 0.4rem;
     }
 
-    .wsu-caption {
-        @include wsu-font--xsmall();
-    }
-
-    .wsu-caption,
     .wsu-meta-date {
-        margin-bottom: 0.3rem;
+        margin-top: 0.4rem;
     }
-    
 }
