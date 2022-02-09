@@ -7,12 +7,13 @@
     &--style-arrow {
         li::marker {
             font-family: 'wsu-icons';
-            content:'\F107';
+            content:'\F107\00A0\00A0\00A0';
             font-size: 0.7em;
             font-weight: 600;
         }
     
     }
+
     
     &--checkbox,
     &--style-checkbox {
@@ -25,10 +26,11 @@
                 content:'\F14B';
                 color: $wsu-color--crimson-light;
                 font-weight: 400;
-                font-size: 1.5em;
+                font-size: 1.3em;
                 line-height: 1em;
                 position: absolute;
-                left: -1.1em;
+                left: -1.5em;
+                top: 0.1em;
             } 
             
         }
@@ -43,13 +45,14 @@
     
             &::before {
                 font-family: 'wsu-icons';
-                content:'\F110';
+                content:'\F110\00A0\00A0\00A0';
                 color: $wsu-color--crimson-light;
                 font-weight: 400;
-                font-size: 1.2em;
+                font-size: 1em;
                 line-height: 1em;
                 position: absolute;
-                left: -1.2em;
+                left: -1.75em;
+                top: 0.1em;
             }
         }
     }
