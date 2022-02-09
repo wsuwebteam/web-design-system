@@ -6,7 +6,7 @@ ul {
 	margin-top: 0;
 	margin-left: 0;
 	margin-bottom: $wsu-spacing--component;
-	padding-left: $wsu-spacing--xmedium; 
+	padding-left: $wsu-spacing--em-medium; 
 	margin-right: 0;
     font-size: $wsu-font-size--xmedium;
     //max-width: calc( #{$wsu-width--copy} - #{$wsu-spacing--em-xxmedium});
@@ -28,7 +28,7 @@ ul {
 	ul {
 		margin-bottom: $wsu-spacing--em-small;
 		margin-top: $wsu-spacing--em-xsmall;
-        padding-left: $wsu-spacing--xxmedium; 
+        padding-left: $wsu-spacing--em-xxmedium; 
 	}
 
 }
