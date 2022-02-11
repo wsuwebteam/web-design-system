@@ -1,0 +1,33 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-news-list {
+    list-style-type: none;
+    padding-left: 1.4em;
+
+    li {
+        padding-bottom: 0.5em;
+        font-size: 0.75em;
+        line-height: 1.5;
+
+        &::marker {
+            font-family: 'wsu-icons';
+            content:'\F107\00A0\00A0\00A0';
+            font-size: 0.9em;
+            font-weight: 800;
+        }
+
+    }
+
+    a {
+        font-size: 1.3em;
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.2em;
+    }
+
+    .wsu-meta-date {
+        margin-top: 0.5em;
+    }
+}
