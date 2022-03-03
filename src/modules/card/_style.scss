@@ -117,6 +117,10 @@
         & + .wsu-meta-date {
             margin-top: -0.4rem;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     .wsu-image-frame {
