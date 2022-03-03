@@ -9,10 +9,17 @@
     <hr />
 </div>
 <div class="wsu-demo-component" >
-    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-3">
+    <div class="wsu-card-group wsu-card-group--per-row-3">
     {{ card() }}
     {{ card( ' wsu-card--outline-boxed' ) }}
     {{ card( ' wsu-card--outline-shadow' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component" >
+    <div class="wsu-card-group wsu-card-group--per-row-3">
+    {{ card( ' wsu-color-background--gray-85' ) }}
+    {{ card( ' wsu-card--outline-boxed wsu-color-background--gray-85' ) }}
+    {{ card( ' wsu-card--outline-shadow wsu-color-background--gray-85' ) }}
     </div>
 </div>
 <hr style="width: 100%" />
@@ -20,18 +27,18 @@
     {% include 'card/html-person.njk' %}
 </div>
 <div class="wsu-demo-component" >
-    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-4">
+    <div class="wsu-card-group wsu-card-group--per-row-4">
     {% include 'card/html-person.njk' %}
     {% include 'card/html-person.njk' %}
     {% include 'card/html-person.njk' %}
     {% include 'card/html-person.njk' %}
     </div>
-    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-3">
+    <div class="wsu-card-group wsu-card-group--per-row-3">
     {% include 'card/html-person.njk' %}
     {% include 'card/html-person.njk' %}
     {% include 'card/html-person.njk' %}
     </div>
-    <div class="wsu-card-wrapper wsu-card-wrapper--per-row-2">
+    <div class="wsu-card-group wsu-card-group--per-row-2">
     {% include 'card/html-person.njk' %}
     {% include 'card/html-person.njk' %}
     </div>
