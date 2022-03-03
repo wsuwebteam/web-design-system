@@ -3,6 +3,7 @@
 
 $wsu-card-margin: $wsu-spacing--xsmall;
 
+.wsu-card-group,
 .wsu-card-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -26,9 +27,9 @@ $wsu-card-margin: $wsu-spacing--xsmall;
         }
     }
 
-    &--per-row-2,
-    &--per-row-3,
-    &--per-row-4 {
+    &--per-row-2:not(.wsu-card-group--spacing-none),
+    &--per-row-3:not(.wsu-card-group--spacing-none),
+    &--per-row-4:not(.wsu-card-group--spacing-none) {
         margin-left: -$wsu-card-margin;
         margin-right: -$wsu-card-margin;
 
@@ -59,6 +60,7 @@ $wsu-card-margin: $wsu-spacing--xsmall;
             }
 
         }
+
     }
     &--per-row-3 {
         .wsu-card {
@@ -80,6 +82,7 @@ $wsu-card-margin: $wsu-spacing--xsmall;
             }
 
         }
+
     }
 
     &--per-row-4 {
@@ -109,4 +112,99 @@ $wsu-card-margin: $wsu-spacing--xsmall;
 
         }
     }
-} 
+}
+
+.wsu-card-group {
+
+    &--spacing-none { 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    &--per-row-2 {
+
+        &.wsu-card-group--spacing-none {
+            .wsu-card {
+                width: 50%;
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                .wsu-card {
+                    width: 100%;
+                }
+            }
+    
+            &.wsu-card-wrapper--break-early {
+    
+                @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                    .wsu-card {
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    &--per-row-3 {
+        &.wsu-card-group--spacing-none {
+
+            .wsu-card {
+                width: 33.33%;
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                .wsu-card {
+                    width: 100%;
+                }
+            }
+    
+            &.wsu-card-wrapper--break-early {
+    
+                @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                    .wsu-card {
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    &--per-row-4 {
+
+        &.wsu-card-group--spacing-none {
+
+            .wsu-card {
+                width: 25%;
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                .wsu-card {
+                    width: 50%;
+                }
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                .wsu-card {
+                    width: 100%;
+                }
+            }
+    
+            &.wsu-card-wrapper--break-early {
+    
+                @media screen and (max-width: $wsu-breakpoint--desktop ) {
+                    .wsu-card {
+                        width: 50%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    
+
+
+
+}
