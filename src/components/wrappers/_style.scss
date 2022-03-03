@@ -56,7 +56,7 @@
 @media screen and (max-width: $wsu-breakpoint--tablet-large) {
 
     .wsu-wrapper-content {
-        flex-wrap: wrap;
+        display: block;
     }
 
     .wsu-wrapper-sidebar {

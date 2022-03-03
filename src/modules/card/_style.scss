@@ -6,6 +6,19 @@
     margin-bottom: $wsu-spacing--component;
     box-sizing: border-box;
 
+    &[class*="wsu-color-background"] {
+
+        border-radius: 3px; 
+
+        .wsu-card__content {
+            padding-left: $wsu-spacing--medium;
+            padding-right: $wsu-spacing--medium;
+            
+        }
+       
+    }
+
+    // Legacy Code
     &__wrapper {
 
         margin-left: -$wsu-spacing--small;
@@ -104,6 +117,10 @@
         & + .wsu-meta-date {
             margin-top: -0.4rem;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     .wsu-image-frame {
@@ -116,6 +133,12 @@
 
     .wsu-caption {
         @include wsu-font--small();
+
+        p {
+            @include wsu-font--small();
+        }
+
+
 
         &:not(:first-child) {
 
