@@ -20,6 +20,16 @@
     }
 }
 
+#mc_embed_signup {
+    input.button {
+        width: auto !important;
+    }
+
+    .button {
+        height: auto !important;
+    }
+}
+
 .wp-block-search {
     margin-bottom: $wsu-spacing--component;
 
