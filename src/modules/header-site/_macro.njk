@@ -1,6 +1,6 @@
 {% from "experimental_navigation-horizontal/_macro.njk" import navigationHorizontal %}
 
-{% macro headerSite(bodyClasses, siteTitle, siteSubtitle, displayNav=false ) %}
+{% macro headerSite(bodyClasses, siteTitle='Example Site Title', siteSubtitle='', displayNav=false ) %}
 <header class="wsu-header-site{{ bodyClasses }}">
     <div class="wsu-header-site__label">
         {% if siteSubtitle %}
@@ -11,6 +11,23 @@
         <div class="wsu-header-site__title">
             <a class="wsu-header-site__title-link" href="#">{{ siteTitle }}</a>
         </div>
+    </div>
+    {% if displayNav %}
+    {{ navigationHorizontal() }} 
+    {% endif %}
+</header>
+<header class="wsu-header-site{{ bodyClasses }}">
+    <div class="wsu-header-site__label">
+        <a class="wsu-header-site__title-link" href="#">
+            {% if siteSubtitle %}
+            <div class="wsu-header-site__subtitle">
+                {{ siteSubtitle }}
+            </div>
+            {% endif %}
+            <div class="wsu-header-site__title">
+                {{ siteTitle }}
+            </div>
+        </a>
     </div>
     {% if displayNav %}
     {{ navigationHorizontal() }} 
