@@ -44,9 +44,9 @@
     &.wsu-button {
         &--size-small,
         &--small { 
-            font-size: $wsu-font-size--xsmall;
+            font-size: 0.82rem;
         }
-        &--size-large,
+        &--size-large, 
         &--large {
             font-size: $wsu-font-size--xxmedium;
         }
