@@ -1,0 +1,25 @@
+{% extends "component.njk" %}
+{% from "hero-slider/_macro.njk" import heroSlider %}
+
+{% block content %}
+{% include 'hero-slider/html.njk' %}
+{% include 'hero-slider/html--linked.njk' %}
+<hr />
+{{ heroSlider(' wsu-hero-slider--size-full wsu-pattern--wsu-light-radial-left', 1) }}
+<hr />
+{{ heroSlider(' wsu-hero-slider--size-full wsu-pattern--wsu-light-radial-left') }}
+{{ heroSlider(' wsu-hero-slider--size-large wsu-pattern--wsu-light-radial-left') }}
+{{ heroSlider(' wsu-hero-slider--size-medium wsu-pattern--wsu-light-radial-left') }}
+{{ heroSlider(' wsu-pattern--wsu-light-radial-left') }}
+{{ heroSlider(' wsu-hero-slider--size-small wsu-pattern--wsu-light-radial-left') }}
+{{ heroSlider(' wsu-hero-slider--size-xsmall wsu-pattern--wsu-light-radial-left', false, false ) }}
+<style>
+.wsu-hero-slider {
+    margin-bottom: 200px !important;
+}
+
+.wsu-custom-demo {
+    margin: 0 !important;
+}
+</style>
+{%  endblock %}

@@ -662,7 +662,7 @@ var WsuAnimateSubmenuSlideVertical = /*#__PURE__*/function () {
     value: function bindEvents() {
       document.addEventListener('click', this.clickEvents.bind(this), false);
       /*document.addEventListener(
-      'keydown', 
+      'keydown',
       this.keyDownEvents.bind( this ),
       false
       );*/
@@ -730,7 +730,7 @@ var WsuAccordion = /*#__PURE__*/function () {
     value: function bindEvents() {
       document.addEventListener('click', this.clickEvents.bind(this), false);
       /*document.addEventListener(
-      'keydown', 
+      'keydown',
       this.keyDownEvents.bind( this ),
       false
       );*/
@@ -1745,7 +1745,7 @@ var WsuNavigationSiteVertical = /*#__PURE__*/function () {
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -1759,14 +1759,14 @@ var WsuNavigationSiteVertical = /*#__PURE__*/function () {
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
@@ -1779,12 +1779,12 @@ var WsuNavigationSiteVertical = /*#__PURE__*/function () {
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -1795,7 +1795,7 @@ var WsuNavigationSiteVertical = /*#__PURE__*/function () {
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -1824,6 +1824,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ //import heroSlider from '../modules/hero-slider/_script';
 
 var wsu = {
   verticalNavitation: new _modules_deprecated_navigation_site_navigation_site__WEBPACK_IMPORTED_MODULE_0__["default"](),
@@ -1836,7 +1837,8 @@ var wsu = {
   button: new _components_button_script__WEBPACK_IMPORTED_MODULE_9__["default"](),
   animations: {//submenuSlideVertical: new WsuAnimateSubmenuSlideVertical(),
   },
-  videoFrame: new _components_experimental_video_frame_script__WEBPACK_IMPORTED_MODULE_8__["default"]()
+  videoFrame: new _components_experimental_video_frame_script__WEBPACK_IMPORTED_MODULE_8__.default() //heroSlider: new HeroSlider(),
+
 };
 })();
 
