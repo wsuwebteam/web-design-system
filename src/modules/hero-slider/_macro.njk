@@ -1,67 +1,26 @@
-{% from "experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
-{% from "caption/macros/caption.macro.njk" import caption %}
-{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
-{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
-{% from "meta-tags/macros/macro.njk" import metaTags %}
-{% from "image-frame/_macro.njk" import imageFrame %}
-{% from "overlay/_macro.njk" import overlay %}
-{% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
-{% from "experimental_video-frame/_macro.njk" import videoFrame %}
+{% from "hero/_macro.njk" import hero %}
 
 
-{% macro heroSlider( classes='', slides, linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", isVideo=false, imageSrc='https://source.unsplash.com/collection/895539' ) %}
-{% if slides = 1 %}
+{% macro heroSlider( slides='' ) %}
+{% if slides == 1 %}
 <div class="wsu-hero-slider wsu-hero-slider--single wsu-width--full{{ classes }}">
-	<div class="wsu-hero-slider__slide">
-		{% if imageSrc %}
-			{{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
-		{% endif %}
-		{% if isVideo %}
-			{{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
-		{% endif %}
-		{{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
-		<div class="wsu-hero-slider__content">
-			<div class="wsu-hero-slider__caption">
-				{% if eyebrowHeaderText %}
-				{{ eyebrowHeader() }}
-				{% endif %}
-				<{{ titleTag }} class="wsu-title" id="unique-id-hero-slider-banner-title">
-				Hero Banner Title
-				</{{ titleTag }}>
-				{% if showCaption %}{{ caption() }}{% endif %}
-				{% if linked %}<a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-slider-banner-title">Read More</a>{% endif %}
-			</div>
-			<div class="wsu-hero-slider__image-caption">Image caption <a href="#">linked</a> here.</div>
-		</div>
-	</div>
+		{{ hero('') }}
 </div>
 {% else %}
-<div class="wsu-hero-slider wsu-width--full{{ classes }}">
-	<!-- for -->
-	<div class="wsu-hero-slider__slide">
-		{% if imageSrc %}
-			{{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
-		{% endif %}
-		{% if isVideo %}
-			{{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
-		{% endif %}
-		{{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
-		<div class="wsu-hero-slider__content">
-			<div class="wsu-hero-slider__caption">
-				{% if eyebrowHeaderText %}
-				{{ eyebrowHeader() }}
-				{% endif %}
-				<{{ titleTag }} class="wsu-title" id="unique-id-hero-slider-banner-title">
-				Hero Banner Title
-				</{{ titleTag }}>
-				{% if showCaption %}{{ caption() }}{% endif %}
-				{% if linked %}<a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-slider-banner-title">Read More</a>{% endif %}
-			</div>
-			<div class="wsu-hero-slider__image-caption">Image caption <a href="#">linked</a> here.</div>
-		</div>
-	</div>
+<div class="wsu-hero-slider wsu-width--full swiper">
+  <div class="wsu-hero-slider__wrapper swiper-wrapper">
+			{{ hero(' swiper-slide wsu-hero-slider__slide') }}
+			{{ hero(' swiper-slide') }}
+			{{ hero(' swiper-slide') }}
+			{{ hero(' swiper-slide') }}
+		<!--<div class="swiper-slide swiper1">SLIDE 1</div>
+		<div class="swiper-slide swiper2">SLIDE 2</div>
+		<div class="swiper-slide swiper3">SLIDE 3</div>-->
+  </div>
+	<div class="swiper-scrollbar"></div>
 </div>
 {% endif %}
 {% endmacro %}
+
 
 <!-- Don't forget aria labels for slider navs -->
