@@ -9,7 +9,9 @@
 <h2>One Slide</h2>
 {{ heroSlider(1) }}
 <hr />
-{{ heroSlider(2) }}
+<h2>Change the # of Slides</h2>
+{{ heroSlider(3) }}
+
 <style>
 .wsu-hero-slider {
     margin-bottom: 200px !important;
@@ -18,20 +20,9 @@
 .wsu-custom-demo {
     margin: 0 !important;
 }
-
-.swiper-slide {
-  background-color: #000;
-}
-.swiper-slide.swiper2 {
-  background-color: red;
-}
-.swiper-slide.swiper3 {
-  background-color: blue;
-}
 </style>
 {%  endblock %}
 
 {% block scripts %}
-    <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
-
+  <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
 {% endblock %}

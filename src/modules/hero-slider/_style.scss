@@ -2,7 +2,7 @@
 @import '../../../_assets/scss/mixins';
 @import '../hero/_style.scss';
 @import "../../../node_modules/swiper/swiper.scss";
-@import "../../../node_modules/swiper/swiper-bundle.min.css";
+@import "../../node_modules/swiper/swiper-bundle.min.css";
 
 .wsu-hero-slider {
 	position: relative;
@@ -213,10 +213,18 @@
 	}
 
 	.swiper-scrollbar {
+    min-width: 550px;
 		height: 20px;
 		position: absolute;
-		bottom: 0;
+		bottom: 100px;
 		z-index: 1;
+    background-color: #000;
+    left: $wsu-spacing--large + $wsu-spacing--xlarge;
+	}
+
+  .swiper-scrollbar-drag {
+    background-color: #fff;
+    height: 100%;
 	}
 
 

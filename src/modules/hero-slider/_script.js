@@ -3,41 +3,35 @@
 
 //??
 //import { ariaUpdate } from "../../../_assets/js/ariaUpdate";
-import Swiper, { Navigation, Scrollbar } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 //import 'swiper/swiper-bundle.css';
 
-Swiper.use( [ Navigation, Scrollbar ] );
+Swiper.use( [ Navigation, Pagination ] );
 
 const initSwiper = () => {
-  console.log('initSwiper');
   let slider = document.getElementsByClassName('swiper');
 
   if ( slider.length > 0 ) {
-    console.log('inside if');
+    //let sliderTitle = document.getElementsByClassName('wsu-title');
+
     const swiper = new Swiper('.swiper', {
       loop: true,
-      direction: 'horizontal',
-      slidesPerView: 1,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: false,
-      },
       effect: 'fade',
+      slidesPerView: 1,
+      /*scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },*/
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + ( (index + 1) ) + "</span>"; //demo
+        },
+      }
     });
   }
 }
-
-/*class WsuHeroSlider {
-  constructor( atts = {} ) {
-    this.timer = false;
-
-    this.init();
-  }
-
-  init() {
-
-  }
-}*/
 
 export default () => {
 	initSwiper();

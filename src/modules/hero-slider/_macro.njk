@@ -1,26 +1,22 @@
 {% from "hero/_macro.njk" import hero %}
 
 
-{% macro heroSlider( slides='' ) %}
+{% macro heroSlider( slides='', classes='' ) %}
 {% if slides == 1 %}
 <div class="wsu-hero-slider wsu-hero-slider--single wsu-width--full{{ classes }}">
 		{{ hero('') }}
 </div>
 {% else %}
-<div class="wsu-hero-slider wsu-width--full swiper">
+<div class="wsu-hero-slider wsu-width--full{{ classes }} swiper">
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
-			{{ hero(' swiper-slide wsu-hero-slider__slide') }}
-			{{ hero(' swiper-slide') }}
-			{{ hero(' swiper-slide') }}
-			{{ hero(' swiper-slide') }}
-		<!--<div class="swiper-slide swiper1">SLIDE 1</div>
-		<div class="swiper-slide swiper2">SLIDE 2</div>
-		<div class="swiper-slide swiper3">SLIDE 3</div>-->
+    {% for i in range(0, slides) %}
+			{{ hero(' wsu-hero-slider__slide swiper-slide') }}
+    {% endfor %}
   </div>
-	<div class="swiper-scrollbar"></div>
+	<!--<div class="swiper-scrollbar"></div>-->
+  <div class="swiper-pagination"></div>
 </div>
 {% endif %}
 {% endmacro %}
-
 
 <!-- Don't forget aria labels for slider navs -->
