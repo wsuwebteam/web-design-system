@@ -1,32 +1,34 @@
 //load swiper css through js
-//populate slider nav text based on slide title -- use data attribute
 
-//??
 //import { ariaUpdate } from "../../../_assets/js/ariaUpdate";
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Scrollbar, EffectFade } from 'swiper';
 //import 'swiper/swiper-bundle.css';
 
-Swiper.use( [ Navigation, Pagination ] );
+Swiper.use( [ Navigation, Pagination, Scrollbar, EffectFade ] );
 
 const initSwiper = () => {
   let slider = document.getElementsByClassName('swiper');
 
   if ( slider.length > 0 ) {
-    //let sliderTitle = document.getElementsByClassName('wsu-title');
+    let slideTitles = document.querySelectorAll('.swiper-slide .wsu-title');
+    console.log(slideTitles);
 
     const swiper = new Swiper('.swiper', {
-      loop: true,
+      //loop: true,
       effect: 'fade',
       slidesPerView: 1,
-      /*scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: true,
-      },*/
+      scrollbar: {
+        el: ".swiper-scrollbar", //doesn't work with loop
+      },
+      navigation: {
+        nextEl: ".wsu-i-arrow-right-carrot",
+        prevEl: ".wsu-i-arrow-left-carrot",
+      },
       pagination: {
-        el: ".swiper-pagination",
+        el: ".wsu-hero-slider__pagination",
         clickable: true,
         renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + ( (index + 1) ) + "</span>"; //demo
+          return '<span class="' + className + '">' + ( slideTitles[index].innerText )  + "</span>";
         },
       }
     });

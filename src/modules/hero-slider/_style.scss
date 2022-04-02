@@ -28,7 +28,7 @@
 			position: relative;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: flex-start;
 			overflow: hidden;
 			min-height: 650px;
 			box-sizing: border-box;
@@ -65,7 +65,6 @@
 			& > *:last-child {
 					margin-bottom: 0;
 			}
-
 	}
 
 	&__image-caption {
@@ -93,6 +92,44 @@
 			}
 	}
 
+  &__navigation {
+    position: absolute;
+    //right: $wsu-spacing--large + $wsu-spacing--xlarge;
+    left: $wsu-spacing--large + $wsu-spacing--xlarge;
+    bottom: $wsu-spacing--hero + $wsu-spacing--xxlarge;
+    //padding-bottom: $wsu-spacing--medium;
+    z-index: 1;
+  }
+
+  &__icon {
+    display: inline-block;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    font-size: $wsu-font-size--xxmedium !important;
+    cursor: pointer;
+
+    &::before {
+      font-family: wsu-icons !important;
+      font-style: normal;
+      font-weight: normal !important;
+      vertical-align: middle;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: $wsu-spacing--hero + $wsu-spacing--large !important;
+    left: $wsu-spacing--large + $wsu-spacing--xlarge !important;
+    text-align: left;
+    max-width: 800px;
+    display: flex;
+  }
+
+  .wsu-i-arrow-right-carrot {
+    margin-left: $wsu-spacing--xmedium;
+  }
+
 	.wsu-pattern-after::after{
 			position: absolute;
 			top: 0;
@@ -109,7 +146,6 @@
 			right: 0;
 			background-color: #000;
 	}
-
 
 	.wsu-title {
 			@include wsu-font--hero();
@@ -156,37 +192,29 @@
 	}
 
 	&--size-full {
-
 			.wsu-hero-slider__content {
 					min-height: 100vh;
 			}
-
 	}
 
 	&--size-large {
-
 			.wsu-hero-slider__content {
 					min-height: 950px;
 			}
-
 	}
 
 	&--size-medium {
-
 			.wsu-hero-slider__content {
 					min-height: 800px;
 			}
-
 	}
 
 	&--size-small {
-
 			.wsu-hero-slider__content {
 					min-height: 500px;
 					padding-top: $wsu-spacing--large;
 					padding-bottom: $wsu-spacing--large;
 			}
-
 	}
 
 	&--size-xsmall {
@@ -198,41 +226,71 @@
 	}
 }
 
+  .swiper-wrapper {
+    position: relative;
+  }
+
+  .swiper-pagination-bullet {
+    color: #fff;
+    font-size: $wsu-font-size--medium;
+    background: transparent;
+    //border-top: solid 2px rgba(255,255,255,0.3);
+    border-radius: 0;
+    width: 100%;
+    opacity: 1;
+    margin: 0 !important;
+    padding-right: 32px;
+
+    &::before {
+      content: '';
+      display: block;
+      margin: 0 0 18px;
+      border-top: solid 2px rgba(255,255,255,0.3);
+      width: 119%;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    //border-top: solid 2px #fff;
+    &::before {
+      border-top: solid 2px #fff;
+    }
+  }
+
+  .swiper-container-horizontal>.swiper-scrollbar {
+    height: 2px;
+    position: absolute;
+    bottom: 150px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    left: $wsu-spacing--large + $wsu-spacing--xlarge !important;
+    border-radius: 0;
+    max-width: 800px;
+    overflow: hidden;
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: #fff;
+    height: 100%;
+    border-radius: 0;
+  }
+
 	.wsu-header-global ~ .wsu-wrapper-site .wsu-hero-slider--size-full {
 		.wsu-hero-slider__content {
 			min-height: calc( 100vh - 64px );
 		}
-
 	}
 
 	.wsu-header-global ~ .wsu-wrapper-site .wsu-header-site ~ .wsu-wrapper-content .wsu-hero-slider--size-full {
 		.wsu-hero-slider__content {
 			min-height: calc( 100vh - 64px - 110px );
 		}
-
 	}
-
-	.swiper-scrollbar {
-    min-width: 550px;
-		height: 20px;
-		position: absolute;
-		bottom: 100px;
-		z-index: 1;
-    background-color: #000;
-    left: $wsu-spacing--large + $wsu-spacing--xlarge;
-	}
-
-  .swiper-scrollbar-drag {
-    background-color: #fff;
-    height: 100%;
-	}
-
 
 
 @media screen and (min-width: $wsu-breakpoint--xultrawide ) {
 
 	.wsu-hero-slider {
-
 			&__content {
 					padding-top: calc( #{$wsu-spacing--hero} * 1.5 );
 					padding-bottom: calc( #{$wsu-spacing--hero} * 1.5 );
@@ -259,11 +317,15 @@
 @media screen and (max-width: $wsu-breakpoint--desktop ) {
 
 	.wsu-hero-slider {
-
 			&__content {
 					padding-left: $wsu-spacing--xmedium;
 					padding-right: $wsu-spacing--xmedium;
 			}
+
+      &__navigation,
+      &__pagination {
+        left: $wsu-spacing--xmedium + $wsu-spacing--xlarge !important;
+      }
 
 	}
 

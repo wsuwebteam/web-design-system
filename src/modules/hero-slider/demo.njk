@@ -5,13 +5,21 @@
 {% block content %}
 {# {% include 'hero-slider/html.njk' %} #}
 {# {% include 'hero-slider/html--linked.njk' %} #}
+{#
+  {% set slides = [
+    { eyebrowHeader: 'eybrowHeader Slide 1', title: 'Title Slide 1', caption: 'Caption Slide 1', img: 'https://source.unsplash.com/collection/895539' },
+    { eyebrowHeader: 'eybrowHeader Slide 2', title: 'Title Slide 2', caption: 'Caption Slide 2', img: 'https://source.unsplash.com/collection/895539' },
+    { eyebrowHeader: 'eybrowHeader Slide 3', title: 'Title Slide 3', caption: 'Caption Slide 3', img: 'https://source.unsplash.com/collection/895539' }
+  ] %}
+#}
 <hr />
-<h2>One Slide</h2>
-{{ heroSlider(1) }}
+{{ heroSlider( ) }}
 <hr />
-<h2>Change the # of Slides</h2>
-{{ heroSlider(3) }}
-
+  {% set single = [
+    { eyebrowHeader: 'eybrowHeader Slide 1', title: 'Title Slide 1', caption: 'Caption Slide 1', img: 'https://source.unsplash.com/collection/895539' }
+  ] %}
+<hr />
+{{ heroSlider( single ) }}
 <style>
 .wsu-hero-slider {
     margin-bottom: 200px !important;

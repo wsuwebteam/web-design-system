@@ -1,22 +1,60 @@
+{% from "experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
+{% from "caption/macros/caption.macro.njk" import caption %}
+{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% from "meta-tags/macros/macro.njk" import metaTags %}
+{% from "image-frame/_macro.njk" import imageFrame %}
+{% from "overlay/_macro.njk" import overlay %}
+{% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
+{% from "experimental_video-frame/_macro.njk" import videoFrame %}
 {% from "hero/_macro.njk" import hero %}
 
+{% set slides = [
+  { eyebrowHeader: 'eybrowHeader Slide 1', title: 'Hero Slider Title Slide 1', caption: '1 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'eybrowHeader Slide 2', title: 'Hero Slider Title Slide 2', caption: '2 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'eybrowHeader Slide 3', title: 'Hero Slider Title Slide 3', caption: '3 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'eybrowHeader Slide 4', title: 'Hero Slider Title Slide 4', caption: '4 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' }
+] %}
 
-{% macro heroSlider( slides='', classes='' ) %}
-{% if slides == 1 %}
-<div class="wsu-hero-slider wsu-hero-slider--single wsu-width--full{{ classes }}">
-		{{ hero('') }}
-</div>
-{% else %}
+{% macro heroSlider( content=slides ) %}
+{% if content.length > 1 %}
 <div class="wsu-hero-slider wsu-width--full{{ classes }} swiper">
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
-    {% for i in range(0, slides) %}
-			{{ hero(' wsu-hero-slider__slide swiper-slide') }}
-    {% endfor %}
+	  {% for slide in slides %}
+    <div class="wsu-hero wsu-width--full{{ classes }} swiper-slide" data-title="{{ slide.title }}">
+      {% if slide.img %}
+        {{ imageFrame( ' wsu-image-frame--fill', '', false, slide.img ) }}
+      {% endif %}
+      {% if isVideo %}
+        {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
+      {% endif %}
+      {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
+      <div class="wsu-hero-slider__content">
+        <div class="wsu-hero-slider__caption">
+          {% if slide.eyebrowHeader %}
+          {{ eyebrowHeader(text=slide.eyebrowHeader) }}
+          {% endif %}
+          <div class="wsu-title" id="unique-id-hero-banner-title">
+          {{ slide.title }}
+          </div>
+          {% if slide.caption %}{{ caption(copy=slide.caption) }}{% endif %}
+          {% if linked %}<a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>{% endif %}
+        </div>
+        <div class="wsu-hero-slider__image-caption">Image caption <a href="#">linked</a> here.</div>
+      </div>
+    </div>
+	  {% endfor %}
   </div>
+  <div class="wsu-hero-slider__navigation">
+      <div class="wsu-hero-slider__icon wsu-i-arrow-left-carrot"></div><!-- Aria labels? -->
+      <div class="wsu-hero-slider__icon wsu-i-arrow-right-carrot"></div>
+  </div>
+  <div class="wsu-hero-slider__pagination swiper-pagination"></div>
 	<!--<div class="swiper-scrollbar"></div>-->
-  <div class="swiper-pagination"></div>
+</div>
+{% else %}
+<div class="wsu-hero-slider wsu-hero-slider--single wsu-width--full{{ classes }}">
+  {{ hero() }}
 </div>
 {% endif %}
 {% endmacro %}
-
-<!-- Don't forget aria labels for slider navs -->
