@@ -107,14 +107,18 @@
         background-color: #000;
     }
 
-
     .wsu-title {
         @include wsu-font--hero();
-        margin-bottom: $wsu-spacing--xsmall;
+        margin: 0 0 $wsu-spacing--xsmall;
+        padding: 0;
         text-shadow: 0px 0px 8px #000000;
         font-weight: 800;
         position: relative;
         word-break: break-word; 
+    }
+
+    h1::after {
+        display: none;
     }
 
     .wsu-caption {
