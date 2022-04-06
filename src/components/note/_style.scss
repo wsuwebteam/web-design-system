@@ -35,13 +35,13 @@
     > p,
     ul,
     ol {
-      font-size: $wsu-font-size--small;
+      font-size: $wsu-font-size--medium;
       margin-bottom: $wsu-spacing--sxxsmall;
     }
 
     &--size-small {
         > p {
-          font-size: $wsu-font-size--xsmall;
+          font-size: $wsu-font-size--small;
         }
     }
 
