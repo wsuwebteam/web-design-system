@@ -2,10 +2,11 @@
 
 {# Slider content #}
 {% set slides = [
-  { eyebrowHeader: 'Slide 1', title: 'Hero Slider Title Slide 1', caption: '1 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'eybrowHeader Slide 2', title: 'Hero Slider Title Slide 2', caption: '2 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'eybrowHeader Slide 3', title: 'Hero Slider Title Slide 3', caption: '3 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'eybrowHeader Slide 4', title: 'Hero Slider Title Slide 4', caption: '4 Maecenas ut congue elit. In ultricies tortor enim, vitae blandit justo euismod nec. Phasellus condimentum nunc augue, nec mattis neque suscipit vel.', img: 'https://source.unsplash.com/collection/895539' }
+  { eyebrowHeader: 'Slide 1', title: 'Hero Slider Title Slide 1', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'Slide 2', title: 'Hero Slider Title Slide 2', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'Slide 3', title: 'Hero Slider Title Slide 3', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'Slide 4', title: 'Hero Slider Title Slide 4', img: 'https://source.unsplash.com/collection/895539' },
+  { eyebrowHeader: 'Slide 5', title: 'Hero Slider Title Slide 5', img: 'https://source.unsplash.com/collection/895539' }
 ] %}
 
 {% macro heroSlider( classes, content=slides ) %}
@@ -13,7 +14,11 @@
 <div class="wsu-hero-slider wsu-width--full{{ classes }} swiper">
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
 	  {% for item in content %}
-      {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title ) }}
+      {% if item.video %}
+        {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, true, item.img, item.title ) }}
+      {% else %}
+        {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title ) }}
+      {% endif %}
 	  {% endfor %}
   </div>
   <div class="wsu-hero-slider__slider-elements">

@@ -4,14 +4,11 @@ Swiper.use( [ Navigation, Pagination, EffectFade ] );
 
 const initSwiper = () => {
   let slider = document.getElementsByClassName('swiper');
-  console.log('initSwiper');
 
   if ( slider.length > 0 ) {
     let slideTitles = document.querySelectorAll('.swiper-slide .wsu-title');
-    console.log(slideTitles);
 
     const swiper = new Swiper('.swiper', {
-      //loop: true,
       effect: 'fade',
       slidesPerView: 1,
       navigation: {
@@ -22,7 +19,7 @@ const initSwiper = () => {
         el: ".wsu-hero-slider__pagination",
         clickable: true,
         renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + ( slideTitles[index].innerText )  + "</span>";
+          return '<span class="' + className + '">' + slideTitles[index].innerText + "</span>";
         },
       }
     });

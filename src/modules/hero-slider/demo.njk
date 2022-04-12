@@ -1,7 +1,6 @@
 {% extends "component.njk" %}
 {% from "hero-slider/_macro.njk" import heroSlider %}
 
-
 {% block content %}
 {{ heroSlider() }}
 <hr />
@@ -21,9 +20,10 @@
 {%  endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles.css" media='all'/>
+  <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles.css" media='all'/>
 {% endblock %}
 
 {% block scripts %}
   <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
 {% endblock %}
