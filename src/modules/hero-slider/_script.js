@@ -1,13 +1,10 @@
-//load swiper css through js
+import Swiper, { Navigation, Pagination, EffectFade } from 'swiper';
 
-//import { ariaUpdate } from "../../../_assets/js/ariaUpdate";
-import Swiper, { Navigation, Pagination, Scrollbar, EffectFade } from 'swiper';
-//import 'swiper/swiper-bundle.css';
-
-Swiper.use( [ Navigation, Pagination, Scrollbar, EffectFade ] );
+Swiper.use( [ Navigation, Pagination, EffectFade ] );
 
 const initSwiper = () => {
   let slider = document.getElementsByClassName('swiper');
+  console.log('initSwiper');
 
   if ( slider.length > 0 ) {
     let slideTitles = document.querySelectorAll('.swiper-slide .wsu-title');
@@ -17,9 +14,6 @@ const initSwiper = () => {
       //loop: true,
       effect: 'fade',
       slidesPerView: 1,
-      scrollbar: {
-        el: ".swiper-scrollbar", //doesn't work with loop
-      },
       navigation: {
         nextEl: ".wsu-i-arrow-right-carrot",
         prevEl: ".wsu-i-arrow-left-carrot",
