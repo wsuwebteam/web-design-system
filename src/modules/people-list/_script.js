@@ -41,7 +41,13 @@ const PeopleList = function (el) {
   });
   const componentId = el.dataset.componentId;
   const displayFields = el.dataset.displayFields.split(",");
-  const excludedTerms = el.dataset.excludeTermValues.split(",");
+  const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
+  const excludedTerms = el.dataset.excludeTermValues
+    .split(",")
+    .filter((r) => r !== "");
+  const includedTerms = el.dataset.includeTermValues
+    .split(",")
+    .filter((r) => r !== "");
   const activeFilters = [];
   let selectedFiltersList = [];
   let allPeopleString = "";
@@ -75,7 +81,7 @@ const PeopleList = function (el) {
                           person.photo_srcset
                             ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
                             : ""
-                        }>`
+                        } loading="lazy">`
                     : ""
                 }
             </div>`
@@ -141,6 +147,19 @@ const PeopleList = function (el) {
     </div>`;
   }
 
+  function shouldIncludeTermValue(slug) {
+    if (onlyShowSelectedTermValues === "true" && includedTerms.length > 0) {
+      return includedTerms.includes(slug);
+    } else if (
+      onlyShowSelectedTermValues === "false" &&
+      excludedTerms.length > 0
+    ) {
+      return !excludedTerms.includes(slug);
+    }
+
+    return true;
+  }
+
   function createSelectFilterHTML(filter, people) {
     let options = [];
 
@@ -155,7 +174,7 @@ const PeopleList = function (el) {
 
         filterOptions.forEach((v) => {
           if (
-            !excludedTerms.includes(v.slug) &&
+            shouldIncludeTermValue(v.slug) &&
             options.findIndex((o) => o.slug === v.slug) === -1
           ) {
             options.push(v);
@@ -304,9 +323,15 @@ const PeopleList = function (el) {
     let filteredPeople = JSON.parse(allPeopleString);
 
     activeFilters.forEach((f) => {
-      const selectedInputs = Array.from(
-        filtersContainer.elements[`${f}[]`]
-      ).filter((f) => f.checked);
+      const checkboxInputs = filtersContainer.elements[`${f}[]`];
+
+      if (!checkboxInputs) {
+        return;
+      }
+
+      const selectedInputs = Array.from(checkboxInputs).filter(
+        (f) => f.checked
+      );
 
       if (selectedInputs.length > 0) {
         selectedFilterInputs = selectedFilterInputs.concat(selectedInputs);
