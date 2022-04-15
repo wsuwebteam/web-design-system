@@ -2,11 +2,11 @@
 
 {# Slider content #}
 {% set slides = [
-  { eyebrowHeader: 'Slide 1', title: 'Hero Slider Title Slide 1', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'Slide 2', title: 'Hero Slider Title Slide 2', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'Slide 3', title: 'Hero Slider Title Slide 3', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'Slide 4', title: 'Hero Slider Title Slide 4', img: 'https://source.unsplash.com/collection/895539' },
-  { eyebrowHeader: 'Slide 5', title: 'Hero Slider Title Slide 5', img: 'https://source.unsplash.com/collection/895539' }
+  { eyebrowHeader: 'Slide 1', title: 'Hero Slider Title Slide 1', img: 'https://source.unsplash.com/collection/895539', autoplay: 2000 },
+  { eyebrowHeader: 'Slide 2', title: 'Hero Slider Title Slide 2', img: 'https://source.unsplash.com/collection/895539', autoplay: 3000 },
+  { eyebrowHeader: 'Slide 3', title: 'Hero Slider Title Slide 3', img: 'https://source.unsplash.com/collection/895539', autoplay: 3000 },
+  { eyebrowHeader: 'Slide 4', title: 'Hero Slider Title Slide 4', img: 'https://source.unsplash.com/collection/895539', autoplay: 3000 },
+  { eyebrowHeader: 'Slide 5', title: 'Hero Slider Title Slide 5', img: 'https://source.unsplash.com/collection/895539', autoplay: 3000 }
 ] %}
 
 {% macro heroSlider( classes, content=slides ) %}
@@ -14,24 +14,27 @@
 <div class="wsu-hero-slider wsu-width--full{{ classes }} swiper">
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
 	  {% for item in content %}
-      {% if item.video %}
-        {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, true, item.img, item.title ) }}
-      {% else %}
-        {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title ) }}
+      {% if item.autoplay %}
+        {% if item.video %}
+          {{ hero( ' swiper-slide wsu-hero--size-full wsu-pattern--wsu-light-radial-left', true, true, 'h2', item.eyebrowHeader, true, item.img, item.title, true, item.autoplay ) }}
+        {% else %}
+          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, false ) }}
+        {% endif %}
+        {% else %}
+          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, false ) }}
       {% endif %}
 	  {% endfor %}
   </div>
   <div class="wsu-hero-slider__slider-elements">
 		<nav class="wsu-hero-slider__navigation">
-			<i class="wsu-hero-slider__icon wsu-i-arrow-left-carrot" aria-label="Previous"></i>
-			<i class="wsu-hero-slider__icon wsu-i-arrow-right-carrot" aria-label="Next"></i>
+			<button class="wsu-hero-slider__icon wsu-i-arrow-left-carrot" aria-label="Previous"></button>
+			<button class="wsu-hero-slider__icon wsu-i-pause play" id="slider-pause" aria-label="Pause"></button>
+      <button class="wsu-hero-slider__icon wsu-i-arrow-right-carrot" aria-label="Next"></button>
 		</nav>
     <div class="wsu-hero-slider__pagination"></div>
   </div>
 </div>
 {% else %}
-<div class="wsu-hero-slider wsu-hero-slider--single wsu-width--full{{ classes }}">
   {{ hero() }}
-</div>
 {% endif %}
 {% endmacro %}
