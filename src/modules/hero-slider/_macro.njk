@@ -10,19 +10,14 @@
 ] %}
 
 {% macro heroSlider( classes, content=slides ) %}
-{% if content.length > 1 %}
 <div class="wsu-hero-slider wsu-width--full{{ classes }} swiper">
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
 	  {% for item in content %}
-      {% if item.autoplay %}
-        {% if item.video %}
-          {{ hero( ' swiper-slide wsu-hero--size-full wsu-pattern--wsu-light-radial-left', true, true, 'h2', item.eyebrowHeader, true, item.img, item.title, true, item.autoplay ) }}
+        {% if item.autoplay %}
+          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, true, item.img, item.title, true, item.autoplay ) }}
         {% else %}
           {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, false ) }}
         {% endif %}
-        {% else %}
-          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, false ) }}
-      {% endif %}
 	  {% endfor %}
   </div>
   <div class="wsu-hero-slider__slider-elements">
@@ -34,7 +29,4 @@
     <div class="wsu-hero-slider__pagination"></div>
   </div>
 </div>
-{% else %}
-  {{ hero() }}
-{% endif %}
 {% endmacro %}
