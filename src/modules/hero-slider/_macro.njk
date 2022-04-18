@@ -14,7 +14,7 @@
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
 	  {% for item in content %}
         {% if item.autoplay %}
-          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, true, item.img, item.title, true, item.autoplay ) }}
+          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, true, item.autoplay ) }}
         {% else %}
           {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, false ) }}
         {% endif %}
