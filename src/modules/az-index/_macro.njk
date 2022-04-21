@@ -1,0 +1,97 @@
+{% set alphabet = [
+    "#",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+] %}
+
+{% set links = [
+    "About WSU",
+    "Academic Advising Association",
+    "Academic Advising at WSU",
+    "Academic Integrity Education",
+    "Academic Majors",
+    "Academic Media Services",
+    "Academic Regulations",
+    "Academic Success and Career Center",
+    "Access Center",
+    "Accessibility at Washington State University",
+    "Accounting Office, General",
+    "Accounting, College of Business",
+    "Accounts Payable",
+    "Accounts Receivable",
+    "Accreditation & Associations",
+    "Accreditation, Accountability, and Assessment",
+    "Address Change",
+    "Administration",
+    "Administrative Professional Handbook",
+    "Administrative/Professional Advisory Council",
+    "Admission",
+    "ADVANCE, WSU",
+    "Advising and Career Development, Center for",
+    "Aerospace Club (AIAA)",
+    "African American Student Center",
+    "Agricultural and Food Systems",
+    "Agricultural Education",
+    "Agricultural News",
+    "Agricultural Research Center",
+    "Agricultural, Human, and Natural Resource Sciences, College of",
+    "AgWeatherNet",
+    "Alcohol & Drug Abuse Research Program",
+    "Alert, WSU"
+] %}
+
+{% macro azIndex(classes = "", showControls = true) %}
+    <div class="wsu-az-index {{ classes }}">
+        {% if showControls %}
+            <div class="wsu-az-index__controls">
+                <nav class="wsu-az-index__nav" role="navigation" aria-label="A-Z Index Navigation">
+                    <ol class="wsu-az-index__nav-list">
+                        {% for letter in alphabet %}
+                            <li class="wsu-az-index__nav-item">
+                                <a href="?c={{ letter }}" class="wsu-az-index__nav-link wsu-button">{{ letter }}</a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </nav>
+                <form action="" method="GET" class="wsu-az-index__search-form">
+                    <input type="text" class="wsu-az-index__search-input" name="search" placeholder="Search">
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="wsu-az-index__link-list-group">
+            <h2 class="wsu-az-index__link-list-heading">A</h2>
+            <ol class="wsu-az-index__link-list">
+                {% for l in links %}
+                    <li class="wsu-az-index__link-list-item">
+                        <a href="#" class="wsu-az-index__link-list-link">{{ l }}</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+{% endmacro %}
