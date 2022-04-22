@@ -71,8 +71,9 @@
                 <nav class="wsu-az-index__nav" role="navigation" aria-label="A-Z Index Navigation">
                     <ol class="wsu-az-index__nav-list">
                         {% for letter in alphabet %}
+                            {% set r = range(0, 100) | random % 3 === 0 %}
                             <li class="wsu-az-index__nav-item">
-                                <a href="?c={{ letter }}" class="wsu-az-index__nav-link wsu-button">{{ letter }}</a>
+                                <a href="?c={{ letter }}" class="wsu-az-index__nav-link wsu-button {{"is-disabled" if r}}">{{ letter }}</a>
                             </li>
                         {% endfor %}
                     </ol>
