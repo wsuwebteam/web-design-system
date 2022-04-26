@@ -2,19 +2,20 @@
 
 {# Slider content #}
 {% set slides = [
-  { eyebrowHeader: 'Slide 1', title: 'Measuring Flying Baseballs', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/baseballs.jpg', autoplay: 2000 },
-  { eyebrowHeader: 'Slide 2', title: 'Brain-like Computer Chips from Honey', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/honey-jar.jpg', autoplay: 3000 },
+  { eyebrowHeader: 'Slide 1', title: 'Measuring Flying Baseballs', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/baseballs.jpg', autoplay: 5000 },
+  { eyebrowHeader: 'Slide 2', title: 'Brain-like Computer Chips from Honey', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/honey-jar.jpg', autoplay: 5000 },
   { eyebrowHeader: 'Slide 3', title: 'The Mystery and Beauty of PI', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/mystery-of-pi-charles-moore.jpg', autoplay: 3000 },
   { eyebrowHeader: 'Slide 4', title: 'Study of Fast-Changing Greenland', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/greenlandphoto1.jpg', autoplay: 3000 },
-  { eyebrowHeader: 'Slide 5', title: 'Cougs in Space', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/space.jpg', autoplay: 3000 } 
+  { eyebrowHeader: 'Slide 5', title: 'Cougs in Space', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/space.jpg', autoplay: 3000 }
 ] %}
 
 {% macro heroSlider( classes, content=slides ) %}
+{% if content.length > 1 %}
 <div class="wsu-hero-slider wsu-width--full{{ classes }} swiper">
   <div class="wsu-hero-slider__wrapper swiper-wrapper">
 	  {% for item in content %}
         {% if item.autoplay %}
-          {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, true, item.autoplay ) }}
+          {{ hero( ' swiper-slide swiper-autoplay', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, true, item.autoplay ) }}
         {% else %}
           {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title, false ) }}
         {% endif %}
@@ -29,4 +30,7 @@
     <div class="wsu-hero-slider__pagination"></div>
   </div>
 </div>
+{% else %}
+  {{ hero() }}
+{% endif %}
 {% endmacro %}
