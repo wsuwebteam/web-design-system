@@ -106,6 +106,9 @@
     &__link-list-heading{
         font-size: $wsu-font-size--xxmedium;
         font-weight: $wsu-font-weight--semibold;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: $wsu-spacing--xxsmall;
     }
     
     &__link-list, &__link-list-item {
