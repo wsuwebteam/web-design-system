@@ -11,10 +11,7 @@
 
     &--width-inline {
         display: inline-block;
-
-        & + .wsu-cta--width-inline {
-            margin-left: $wsu-spacing--xxsmall;
-        }
+        margin-right: $wsu-spacing--xxsmall;
     }
 
     &--width-full .wsu-button {

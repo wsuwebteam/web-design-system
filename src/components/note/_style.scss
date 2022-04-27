@@ -6,7 +6,9 @@
     box-sizing: border-box;
     margin: -$wsu-spacing--xsmall 0 $wsu-spacing--component $wsu-spacing--medium;
     padding-left: $wsu-spacing--small;
+    padding-right: 10%;
     border-left: 3px solid $wsu-color--crimson;
+    max-width: $wsu-width--copy;
 
     &__icon {
       display: inline-block;
@@ -15,6 +17,7 @@
       text-decoration: none;
       font-size: $wsu-font-size--xxmedium !important;
       margin: 0 $wsu-spacing--sxxsmall $wsu-spacing--sxxsmall 0;
+      vertical-align: middle;
 
       &::before {
         font-family: wsu-icons !important;
@@ -25,9 +28,8 @@
     }
 
     &__title {
-        @include wsu-font--xxmedium();
+        @include wsu-font--xmedium();
         display: inline-block;
-        font-size: $wsu-font-size--small;
         font-weight: $wsu-font-weight--semibold;
         margin-bottom: $wsu-spacing--sxxsmall;
     }
