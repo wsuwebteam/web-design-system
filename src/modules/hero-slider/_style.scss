@@ -4,11 +4,13 @@
 
 .wsu-hero-slider {
 	position: relative;
-	//transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
+	transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
 	margin-bottom: $wsu-spacing--xlarge;
 
   .wsu-hero {
-    transition: opacity;
+    transition: opacity 300ms ease-in, visibility 300ms ease-out;
+    padding-bottom: 150px; //for swiper nav/pagination height
+    margin-bottom: $wsu-spacing--xxlarge * 2;
   }
 
 	.wsu-hero::after {
@@ -24,15 +26,13 @@
 
 	.wsu-hero__content {
 		padding-top: $wsu-spacing--large;
-		//padding-bottom: $wsu-spacing--hero * 2;
     padding-bottom: $wsu-spacing--large;
 		padding-left: $wsu-spacing--large;
 		padding-right: $wsu-spacing--large;
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		//overflow-x: hidden;
+		justify-content: flex-end;
 		min-height: 650px;
 		box-sizing: border-box;
 
@@ -46,7 +46,6 @@
 		position: relative;
 		padding-top: $wsu-spacing--large;
 		padding-bottom: $wsu-spacing--large;
-    //padding-bottom: $wsu-spacing--hero * 2;
 		padding-left: $wsu-spacing--xlarge;
 		padding-right: $wsu-spacing--xlarge;
 		max-width: 800px;
@@ -72,7 +71,7 @@
 	}
 
 	.wsu-hero__image-caption {
-		position: absolute;
+	  position: fixed;
 		bottom: $wsu-spacing--sxxsmall;
 		right: 0;
 		@include wsu-font--xxsmall();
@@ -100,7 +99,7 @@
     position: absolute;
     width: 100%;
 		max-width: 100%;
-    bottom: $wsu-spacing--hero + $wsu-spacing--medium;
+    bottom: $wsu-spacing--xlarge * 3;
 		left: $wsu-spacing--large + $wsu-spacing--xlarge;
   }
 
@@ -116,6 +115,7 @@
     text-align: left;
     max-width: 900px;
     display: flex;
+    align-items: flex-start;
     z-index: 1;
   }
 
@@ -155,6 +155,7 @@
     padding-right: 15px;
     cursor: pointer;
     text-align: left;
+    height: auto;
 
     &::before {
       content: '';
@@ -278,22 +279,22 @@
 
 .swiper {
 	width: 100%;
-  //overflow-x: hidden;
-  //overflow-y: visible;
+  height: 100%;
 }
 
 .swiper-wrapper {
 	position: relative;
-	overflow-y: visible;
 }
 
 .swiper-slide {
   opacity: 0;
-  //height: auto;
-}
+  height: auto;
+  visibility: hidden;
 
-.swiper-slide.swiper-slide-active {
-  opacity: 1;
+  &.swiper-slide-active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .wsu-header-global ~ .wsu-wrapper-site .wsu-hero-slider--size-full {
@@ -340,12 +341,17 @@
 
     &__pagination {
 			max-width: 70%;
+      padding-left: 6px;
 		}
 	}
 }
 
 @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
 	.wsu-hero-slider {
+    .wsu-hero {
+      padding-bottom: 10%;
+    }
+
 		.wsu-title {
 			@include wsu-font--sxxlarge();
 		}
@@ -355,7 +361,7 @@
 		}
 
 		&__slider-elements {
-			bottom: $wsu-spacing--hero;
+      bottom: calc( #{$wsu-spacing--xlarge} * 3 );
 		}
 
     button.swiper-pagination-bullet {
@@ -389,6 +395,7 @@
 			padding-left: $wsu-spacing--medium;
 			padding-right: $wsu-spacing--medium;
 			padding-bottom: $wsu-spacing--large;
+      justify-content: center;
 		}
 
 		.wsu-hero__caption {

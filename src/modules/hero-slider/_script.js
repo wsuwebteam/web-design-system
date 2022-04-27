@@ -36,7 +36,7 @@ const initSwiper = () => {
               el: ".wsu-hero-slider__pagination",
               clickable: true,
               renderBullet: function (index, className) {
-                return '<button class="' + className + '">' + slideTitles[index].innerText + "</button>";
+                return '<button class="' + className + '">' + slideTitles[index].textContent + "</button>";
               },
             },
           });
@@ -65,7 +65,7 @@ const initSwiper = () => {
               el: ".wsu-hero-slider__pagination",
               clickable: true,
               renderBullet: function (index, className) {
-                return '<button class="' + className + '">' + slideTitles[index].innerText + "</button>";
+                return '<button class="' + className + '">' + slideTitles[index].textContent + "</button>";
               },
             },
           });
