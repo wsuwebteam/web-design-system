@@ -9,8 +9,12 @@
 {% from "experimental_video-frame/_macro.njk" import videoFrame %}
 
 
-{% macro hero( classes='', linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", isVideo=false, imageSrc='https://source.unsplash.com/collection/895539' ) %}
-<div class="wsu-hero wsu-width--full{{ classes }}">
+{% macro hero( classes='', linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", isVideo=false, imageSrc='https://source.unsplash.com/collection/895539', heroTitle='Hero Banner Title', isAutoplay=false, autoplay='3000' ) %}
+  {% if isAutoplay %}
+    <div class="wsu-hero wsu-width--full{{ classes }}" data-swiper-autoplay="{{ autoplay }}">
+  {% else %}
+    <div class="wsu-hero wsu-width--full{{ classes }}">
+  {% endif %}
     {% if imageSrc %}
         {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
     {% endif %}
@@ -21,10 +25,10 @@
     <div class="wsu-hero__content">
         <div class="wsu-hero__caption">
             {% if eyebrowHeaderText %}
-            {{ eyebrowHeader() }}
+            {{ eyebrowHeader('', eyebrowHeaderText) }}
             {% endif %}
-            <{{ titleTag }} class="wsu-title" id=""unique-id-hero-banner-title">
-            Hero Banner Title
+            <{{ titleTag }} class="wsu-title" id="unique-id-hero-banner-title">
+            {{ heroTitle }}
             </{{ titleTag }}>
             {% if showCaption %}{{ caption() }}{% endif %}
             {% if linked %}<a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>{% endif %}

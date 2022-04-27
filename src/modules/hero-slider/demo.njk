@@ -1,0 +1,36 @@
+{% extends "component.njk" %}
+{% from "hero-slider/_macro.njk" import heroSlider %}
+
+{% block content %}
+{{ heroSlider() }}
+<hr />
+{% set thirds = [
+  { eyebrowHeader: 'Slide 1', title: 'Measuring Flying Baseballs', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/baseballs.jpg'},
+  { eyebrowHeader: 'Slide 2', title: 'Brain-like Computer Chips from Honey', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/honey-jar.jpg'},
+  { eyebrowHeader: 'Slide 3', title: 'The Mystery and Beauty of PI', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/mystery-of-pi-charles-moore.jpg'}
+] %}
+{{ heroSlider( '', thirds ) }}
+<hr />
+{% set single = [
+  { eyebrowHeader: 'eybrowHeader Single 1', title: 'Title Slide 1', caption: 'Caption Slide 1', img: 'https://source.unsplash.com/collection/895539' }
+] %}
+{{ heroSlider( '', single ) }}
+<style>
+.wsu-hero-slider {
+    margin-bottom: 200px !important;
+}
+
+.wsu-custom-demo {
+    margin: 0 !important;
+}
+</style>
+{%  endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles.css" media='all'/>
+{% endblock %}
+
+{% block scripts %}
+  <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+{% endblock %}
