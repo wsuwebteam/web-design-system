@@ -30,7 +30,7 @@ const PeopleList = function (el) {
     threshold: 0.3,
     keys: [
       {
-        name: "name",
+        name: "name", 
         weight: 3,
       },
       "title",
@@ -45,10 +45,24 @@ const PeopleList = function (el) {
   const excludedTerms = el.dataset.excludeTermValues
     .split(",")
     .filter((r) => r !== "");
-  const includedTerms = el.dataset.includeTermValues
-    .split(",")
-    .filter((r) => r !== "");
   const activeFilters = [];
+  const categoryTerms = el.dataset.categoryFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const tagTerms = el.dataset.tagFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const locationTerms = el.dataset.locationFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const organizationTerms = el.dataset.organizationFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const classificationTerms = el.dataset.classificationFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  
+  const includedTerms = [];
   let selectedFiltersList = [];
   let allPeopleString = "";
   let people;
@@ -163,6 +177,26 @@ const PeopleList = function (el) {
   function createSelectFilterHTML(filter, people) {
     let options = [];
 
+    let includeTerms = [];
+
+    switch ( filter ) {
+      case 'organization':
+        includeTerms = organizationTerms;
+        break;
+      case 'tag':
+        includeTerms = tagTerms;
+        break;
+      case 'location':
+        includeTerms = locationTerms;
+        break;
+      case 'classification':
+        includeTerms = classificationTerms;
+        break;
+      case 'category':
+        includeTerms = categoryTerms;
+        break;
+    }
+
     // set filter options
     people.forEach((person) => {
       const filterOptions = person[filterAttributeMap[filter]];
@@ -173,12 +207,24 @@ const PeopleList = function (el) {
         }
 
         filterOptions.forEach((v) => {
-          if (
+
+          if ( includeTerms.length > 0 ) {
+
+            if ( includeTerms.includes( v.slug ) && options.findIndex((o) => o.slug === v.slug) === -1 )  {
+  
+                options.push(v);
+              
+            }
+
+          } else if ( options.findIndex((o) => o.slug === v.slug) === -1 ) {
+            options.push(v);
+          }
+          /*if (
             shouldIncludeTermValue(v.slug) &&
             options.findIndex((o) => o.slug === v.slug) === -1
           ) {
             options.push(v);
-          }
+          }*/
         });
       }
     });
