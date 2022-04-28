@@ -21,6 +21,21 @@
                 left: calc( 50% - 0.75em );
                 bottom: 0;
             }
+
+            &.wsu-text-align--left,
+            &.has-text-align-left {
+                &::after {
+                    left: 0;
+                }
+            }
+
+            &.wsu-text-align--right,
+            &.has-text-align-right {
+                &::after {
+                    left: auto; 
+                    right: 0;
+                }
+            }
         }
     }
 }
@@ -33,6 +48,7 @@ h1.wsu-heading--style-callout {
         height: 0.4rem;
         left: calc( 50% - ( #{$wsu-spacing--hero} / 2 ) );
     }
+    
 }
 
 h2.wsu-heading--style-callout {
