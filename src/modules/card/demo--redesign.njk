@@ -1,0 +1,29 @@
+{% extends "component.njk" %}
+{% from "card/_macro-reverse.njk" import cardReversed %}
+{% from "card/_macro.njk" import card %}
+{% from "card/_macro.njk" import cardPerson %}
+
+{% block content %}
+<div class="wsu-demo-component">
+    <div class="wsu-card-group wsu-card-group--spacing-none wsu-card-group--per-row-3">
+    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true ) }}
+    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true ) }}
+    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true ) }}
+    </div>
+</div>
+
+<style>
+.wsu-demo-component {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wsu-card--framed .wsu-caption {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+</style>
+{%  endblock %}
