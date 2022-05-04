@@ -6,9 +6,9 @@
 {% block content %}
 <div class="wsu-demo-component">
     <div class="wsu-card-group wsu-card-group--spacing-none wsu-card-group--per-row-3">
-    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true ) }}
-    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true ) }}
-    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true ) }}
+    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true, 'A new approach to climate change adaptation', 'Communities on the frontlines of climate change should take the lead on strategies.', 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/Namonte-Basin.jpg' ) }}
+    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true, 'Medical mythbuster', 'WSU medical student uses TikTok to highlight racial disparities in medicine.', 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/02/Joel-Bervell.jpg' ) }}
+    {{ card( ' wsu-card--framed', false, false, false, false, true, true, true, 'Murrow Symposium returns', 'Featuring award-winning journalist Ann Curry.', 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/annc.jpg' ) }}
     </div>
 </div>
 
@@ -17,13 +17,6 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.wsu-card--framed .wsu-caption {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 }
 </style>
 {%  endblock %}

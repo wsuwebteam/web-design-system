@@ -272,59 +272,72 @@
     width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) ) !important;
 }
 
-//Redesign
-
-//codepen
-@mixin magic-border( $width, $color, $duration ) {
-	//position: relative;
-	  &::before {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      //width: calc(100% + #{$width * 2});
-      //height:calc(100% + #{$width * 2});
-      top: 0;
-      left: 0;
-      background:
-        linear-gradient(to right, $color 0%, $color 100%), //bottom
-        linear-gradient(to top, $color 50%, transparent 50%), //left
-        linear-gradient(to top, $color 50%, transparent 50%), //right
-        linear-gradient(to right, $color 0%, $color 100%), //top right
-        linear-gradient(to left, $color 0%, $color 100%); //top left
-      background-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
-      background-position: 100% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
-      background-repeat: no-repeat, no-repeat;
-      transition: transform $duration ease-in-out, background-position $duration ease-in-out, background-size $duration ease-in-out;
-      transform: scaleY(0) rotate(90deg);
-      //transform: scaleX(0);
-      transition-delay: $duration*2, $duration, 0s;
-	  }
-	  &:hover{
-      &::before{
-        background-size: 200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
-        background-position: 100% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
-        transform: scaleY(1) rotate(90deg);
-        //transform: scaleX(1);
-        transition-delay: 0s, $duration, $duration*2;
-      }
-	  }
-  }
-
 .wsu-card--framed {
 	position: relative;
-	min-height: 500px;
+	min-height: 765px;
 	transition: all .5s ease;
 	margin: 0;
 	padding: $wsu-spacing--medium;
   display: flex;
   align-items: flex-end;
-	@include magic-border(26px, $wsu-color--crimson-light, 0.4s);
+
+  &::before {
+    content: '';
+    position: absolute;
+    border-top: solid 26px $wsu-color--crimson-light;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease-in;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-bottom: solid 26px $wsu-color--crimson-light;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    transition-property: width;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease-in;
+  }
 
 	&:hover {
 		transform: translateY(-15px);
-		transition: all .5s ease;
+		transition: all 0.5s ease;
+
+    &::before { //top
+      width: 100%;
+      transition-delay: 0.5s;
+    }
+
+    &::after { //right-top
+      width: 100%;
+      transition-delay: 0.5s;
+    }
+
+    .wsu-card__custom-border::before { //left
+      bottom: 0;
+      height: 100%;
+      transition-delay: 0s;
+    }
+
+    .wsu-card__custom-border::after { //right
+      height: 50%;
+      transition-delay: 1s;
+    }
+
+    .wsu-card__custom-border-secondary::before {
+      height: 50%;
+      transition-delay: 1s;
+    }
 	}
 
 	.wsu-image-frame {
@@ -336,14 +349,13 @@
 
 		&::after {
 			content: '';
-			background: linear-gradient(0deg, black 25%, transparent);
-			width: 100%;
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000000 88.54%);
+      width: 100%;
 			height: 100%;
 			display: block;
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			opacity: 80%;
 			z-index: 0;
 		}
 	}
@@ -368,21 +380,22 @@
 	}
 
   .wsu-title {
-    font-size: $wsu-font-size--large;
+    font-size: $wsu-font-size--xlarge;
+    margin-bottom: $wsu-spacing--medium;
   }
 
   .wsu-caption {
     font-weight: $wsu-font-weight--medium;
   }
 
-	.wsu-card__button {
+	.wsu-card__custom-button {
 		position: absolute;
 		right: 5px;
 		bottom: 5px;
 		z-index: 2;
 	}
 
-	button {
+	.wsu-card__button {
 		width: 35px;
 		height: 35px;
 		padding: 6px 3px;
@@ -419,20 +432,97 @@
 			content: '';
 			position: absolute;
 			left: 0;
-			bottom: 22%;
-			height: 14%;
+			bottom: 17%;
+			height: 82px;
 			border-left: 26px solid $wsu-color--crimson-light;
 			z-index: -1;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-delay: 1s;
+      transition-timing-function: ease-in;
 		}
+
+    &::after { //right-bottom
+      content: '';
+      position: absolute;
+      border-right: 26px solid $wsu-color--crimson-light;
+      height: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-delay: 0s;
+      transition-timing-function: ease-in;
+    }
 	}
+
+  .wsu-card__custom-border-secondary {
+    &::before { //right-top
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 0;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      background: $wsu-color--crimson-light;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-delay: 0s;
+      transition-timing-function: ease-in;
+    }
+  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
   .wsu-card--framed {
-    @include magic-border(0px, $wsu-color--crimson-light, 0.3s);
+    &::before,
+    &::after {
+      opacity: 0;
+    }
 
     &:hover {
-      transition: all 1s ease;
+      transform: none;
+
+      .wsu-card__custom-border::before {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .wsu-card__custom-border-secondary::before {
+        height: 0;
+      }
+
+      .wsu-card__custom-border-secondary {
+        opacity: 1;
+        transition: opacity 0.5s ease 0s;
+      }
+    }
+
+    .wsu-card__custom-border {
+
+      &::before {
+        transition: opacity 0.5s ease;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    .wsu-card__custom-border-secondary {
+      opacity: 0;
+      border: 26px solid $wsu-color--crimson-light;
+      width: calc(100% - 52px);
+      height: calc(100% - 52px);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transition: opacity 0.5s ease 0s;
     }
   }
+
+
 }
