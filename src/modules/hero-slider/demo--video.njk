@@ -1,14 +1,14 @@
 {% extends "component.njk" %}
 
 {% block content %}
-{% include 'hero-slider/html--video.njk' %}
+  {% include 'hero-slider/html--video.njk' %}
 {% endblock %}
 
 {% block styles %}
-  <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles.css" media='all'/>
+  <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles-wds.css" media='all'/>
 {% endblock %}
 
 {% block scripts %}
-<script src="../../bundles/standalone/hero-slider/scripts.js"></script>
-<script src="https://player.vimeo.com/api/player.js"></script>
-{%  endblock %}
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
+{% endblock %}
