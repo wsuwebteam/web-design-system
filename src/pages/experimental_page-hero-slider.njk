@@ -10,11 +10,18 @@
             {% include 'header-site/html.njk' %}
             <div class="wsu-wrapper-content">
                 <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
-                    <h1>Meet the Team</h1>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
 
                     {% include 'hero-slider/html.njk' %}
+                    <h1>Meet the Team</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
+                    {% include 'hero-slider/html--video.njk' %}
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
+                    {{ hero() }}
+                    <h1>Meet the Team</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic possimus ut porro, iste error, libero amet placeat repellat deserunt animi consequatur incidunt praesentium, unde cumque sed nulla! Eos, autem mollitia?</p>
 
                 </main>
             </div>
@@ -24,6 +31,10 @@
     </div>
 {% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="../bundles/standalone/hero-slider/styles-wds.css" media='all'/>
+{% endblock %}
+
 {% block scripts %}
-    {# <script src="../bundles/standalone/hero-slider/scripts.js"></script> #}
+    <script src="../bundles/standalone/hero-slider/scripts.js"></script>
 {% endblock %}
