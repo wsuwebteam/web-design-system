@@ -224,6 +224,214 @@
         }
     }
 
+    &--framed {
+      position: relative;
+      min-height: 765px;
+      transition: all .5s ease;
+      margin: 0;
+      padding: $wsu-spacing--medium;
+      display: flex;
+      align-items: flex-end;
+
+      &::before {
+        content: '';
+        position: absolute;
+        border-top: solid 26px $wsu-color--crimson-light;
+        width: 0;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-delay: 0.5s;
+        transition-timing-function: ease-in;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        border-bottom: solid 26px $wsu-color--crimson-light;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        transition-property: width;
+        transition-duration: 0.5s;
+        transition-delay: 0.5s;
+        transition-timing-function: ease-in;
+      }
+
+      &:hover {
+        transform: translateY(-15px);
+        transition: all 0.5s ease;
+
+        &::before { //top
+          width: 100%;
+          transition-delay: 0.5s;
+        }
+
+        &::after { //right-top
+          width: 100%;
+          transition-delay: 0.5s;
+        }
+
+        .wsu-card__custom-border::before { //left
+          bottom: 0;
+          height: 100%;
+          transition-delay: 0s;
+        }
+
+        .wsu-card__custom-border::after { //right
+          height: 50%;
+          transition-delay: 1s;
+        }
+
+        .wsu-card__custom-border-secondary::before {
+          height: 50%;
+          transition-delay: 1s;
+        }
+
+        .wsu-card__custom-button .wsu-card__button {
+          background: $wsu-color--crimson-light;
+          transition-delay: 1s;
+        }
+      }
+
+      .wsu-image-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        &::after {
+          content: '';
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000000 88.54%);
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 0;
+        }
+      }
+
+      .wsu-card__framed-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-decoration: none;
+        font-size: 0;
+        z-index: 2;
+      }
+
+      .wsu-card__content {
+        position: relative;
+        color: #fff;
+        padding: $wsu-spacing--large $wsu-spacing--xsmall;
+        z-index: 2;
+      }
+
+      .wsu-title {
+        font-size: $wsu-font-size--xlarge;
+        margin-bottom: $wsu-spacing--medium;
+      }
+
+      .wsu-caption {
+        font-weight: $wsu-font-weight--medium;
+      }
+
+      .wsu-card__custom-button {
+        position: absolute;
+        right: 2px;
+        bottom: 4px;
+        z-index: 2;
+      }
+
+      .wsu-card__button {
+        width: 35px;
+        height: 35px;
+        transform: rotate(-45deg);
+        background: rgba(0,0,0,0.9);
+        border-radius: 50%;
+        border: 0;
+        cursor: pointer;
+        transition-delay: 0.5s;
+      }
+
+      i {
+        color: #fff;
+      }
+
+      i::before {
+        font-family: wsu-icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-size: $wsu-font-size--xmedium;
+      }
+
+      .wsu-card__custom-border {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        outline: 1px solid #fff9;
+        outline-offset: -14px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 17%;
+          height: 82px;
+          border-left: 26px solid $wsu-color--crimson-light;
+          z-index: -1;
+          transition-property: all;
+          transition-duration: 0.5s;
+          transition-delay: 1s;
+          transition-timing-function: ease-in;
+        }
+
+        &::after { //right-bottom
+          content: '';
+          position: absolute;
+          border-right: 26px solid $wsu-color--crimson-light;
+          height: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          transition-property: all;
+          transition-duration: 0.5s;
+          transition-delay: 0s;
+          transition-timing-function: ease-in;
+        }
+      }
+
+      .wsu-card__custom-border-secondary {
+        &::before { //right-top
+          content: '';
+          position: absolute;
+          width: 26px;
+          height: 0;
+          right: 0;
+          top: 0;
+          z-index: -1;
+          background: $wsu-color--crimson-light;
+          transition-property: all;
+          transition-duration: 0.5s;
+          transition-delay: 0s;
+          transition-timing-function: ease-in;
+        }
+      }
+    }
+
 }
 
 .wsu-card--boxed, // Legacy support
@@ -270,209 +478,6 @@
 .wsu-row--thirds .wsu-card__wrapper .wsu-card,
 .wsu-row--quarters .wsu-card__wrapper .wsu-card {
     width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) ) !important;
-}
-
-.wsu-card--framed {
-	position: relative;
-	min-height: 765px;
-	transition: all .5s ease;
-	margin: 0;
-	padding: $wsu-spacing--medium;
-  display: flex;
-  align-items: flex-end;
-
-  &::before {
-    content: '';
-    position: absolute;
-    border-top: solid 26px $wsu-color--crimson-light;
-    width: 0;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition-property: all;
-    transition-duration: 0.5s;
-    transition-delay: 0.5s;
-    transition-timing-function: ease-in;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    border-bottom: solid 26px $wsu-color--crimson-light;
-    width: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    transition-property: width;
-    transition-duration: 0.5s;
-    transition-delay: 0.5s;
-    transition-timing-function: ease-in;
-  }
-
-	&:hover {
-		transform: translateY(-15px);
-		transition: all 0.5s ease;
-
-    &::before { //top
-      width: 100%;
-      transition-delay: 0.5s;
-    }
-
-    &::after { //right-top
-      width: 100%;
-      transition-delay: 0.5s;
-    }
-
-    .wsu-card__custom-border::before { //left
-      bottom: 0;
-      height: 100%;
-      transition-delay: 0s;
-    }
-
-    .wsu-card__custom-border::after { //right
-      height: 50%;
-      transition-delay: 1s;
-    }
-
-    .wsu-card__custom-border-secondary::before {
-      height: 50%;
-      transition-delay: 1s;
-    }
-	}
-
-	.wsu-image-frame {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-
-		&::after {
-			content: '';
-			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000000 88.54%);
-      width: 100%;
-			height: 100%;
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			z-index: 0;
-		}
-	}
-
-	.wsu-card__framed-link {
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		text-decoration: none;
-    font-size: 0;
-    z-index: 2;
-	}
-
-	.wsu-card__content {
-		position: relative;
-		color: #fff;
-		padding: $wsu-spacing--xsmall;
-		z-index: 2;
-	}
-
-  .wsu-title {
-    font-size: $wsu-font-size--xlarge;
-    margin-bottom: $wsu-spacing--medium;
-  }
-
-  .wsu-caption {
-    font-weight: $wsu-font-weight--medium;
-  }
-
-	.wsu-card__custom-button {
-		position: absolute;
-		right: 5px;
-		bottom: 5px;
-		z-index: 2;
-	}
-
-	.wsu-card__button {
-		width: 35px;
-		height: 35px;
-		padding: 6px 3px;
-		transform: rotate(-45deg);
-		background: rgba(0,0,0,0.9);
-		border-radius: 50%;
-		border: 0;
-		cursor: pointer;
-	}
-
-	i {
-		color: #fff;
-	}
-
-	i::before {
-		font-family: wsu-icons !important;
-		font-style: normal;
-		font-weight: normal !important;
-		font-size: $wsu-font-size--xmedium;
-	}
-
-	.wsu-card__custom-border {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-		outline: 1px solid #fff9;
-		outline-offset: -14px;
-		top: 0;
-		left: 0;
-		z-index: 1;
-
-		&::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			bottom: 17%;
-			height: 82px;
-			border-left: 26px solid $wsu-color--crimson-light;
-			z-index: -1;
-      transition-property: all;
-      transition-duration: 0.5s;
-      transition-delay: 1s;
-      transition-timing-function: ease-in;
-		}
-
-    &::after { //right-bottom
-      content: '';
-      position: absolute;
-      border-right: 26px solid $wsu-color--crimson-light;
-      height: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      transition-property: all;
-      transition-duration: 0.5s;
-      transition-delay: 0s;
-      transition-timing-function: ease-in;
-    }
-	}
-
-  .wsu-card__custom-border-secondary {
-    &::before { //right-top
-      content: '';
-      position: absolute;
-      width: 26px;
-      height: 0;
-      right: 0;
-      top: 0;
-      z-index: -1;
-      background: $wsu-color--crimson-light;
-      transition-property: all;
-      transition-duration: 0.5s;
-      transition-delay: 0s;
-      transition-timing-function: ease-in;
-    }
-  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
