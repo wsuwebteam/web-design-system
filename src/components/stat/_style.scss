@@ -1,0 +1,30 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-stat {
+
+    box-sizing: border-box;
+    max-width: $wsu-width--large;
+    padding: $wsu-spacing--xsmall;
+
+    &__number {
+        display: block;
+        font-size: $wsu-font-size--sxxlarge;
+        font-weight: $wsu-font-weight--xextrabold;
+        background: linear-gradient(0deg, #B12D47 0%, $wsu-color--crimson-light 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0;
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+          font-size: $wsu-font-size--xxlarge;
+        }
+    }
+
+    &__label {
+      font-size: $wsu-font-size--xsmall;
+      font-weight: $wsu-font-weight--semibold;
+      color: $wsu-color--gray-50;
+      margin-bottom: 0;
+    }
+}
