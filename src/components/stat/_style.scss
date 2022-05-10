@@ -5,7 +5,7 @@
 
     box-sizing: border-box;
     max-width: $wsu-width--large;
-    padding: $wsu-spacing--xsmall;
+    margin-bottom: $wsu-spacing--component;
 
     &__number {
         display: block;
@@ -14,7 +14,8 @@
         background: linear-gradient(0deg, #B12D47 0%, $wsu-color--crimson-light 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 0;
+        line-height: 1;
+        margin-bottom: 0.25rem;
 
         @media screen and (max-width: $wsu-breakpoint--tablet ) {
           font-size: $wsu-font-size--xxlarge;
@@ -22,7 +23,7 @@
     }
 
     &__label {
-      font-size: $wsu-font-size--xsmall;
+      font-size: $wsu-font-size--medium;
       font-weight: $wsu-font-weight--semibold;
       color: $wsu-color--gray-50;
       margin-bottom: 0;
