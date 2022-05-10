@@ -1,0 +1,195 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.wsu-card--style-framed {
+    position: relative;
+    box-sizing: border-box;
+    transition: transform 200ms;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: auto;
+        width: 0;
+        height: 100%;
+        display: block;
+        border-top: 23px solid $wsu-color--crimson-light;
+        border-bottom: 23px solid $wsu-color--crimson-light;
+        box-sizing: border-box;
+        transition: width 150ms linear 0ms;
+        z-index: 2;
+    }
+
+    &::before {
+        width: 23px;
+        background-color: $wsu-color--crimson-light;
+        position: absolute;
+        bottom: 20%;
+        height: 0%;
+        left: 0;
+        content: "";
+        display: block;
+        z-index: 2;
+        transition: bottom 150ms linear 150ms, height 150ms linear 150ms;
+    }
+    
+
+    .wsu-card {
+
+        &__content {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: $wsu-spacing--large $wsu-spacing--large;
+
+            &::before {
+                width: 23px;
+                background-color: $wsu-color--crimson-light;
+                position: absolute;
+                bottom: auto;
+                top: 0;
+                height: 0%;
+                right: 0;
+                left: auto;
+                content: "";
+                display: block;
+                transition: height 150ms linear 0ms;
+                z-index: 2;
+            }
+
+            &::after {
+                width: 23px;
+                background-color: $wsu-color--crimson-light;
+                position: absolute;
+                bottom: 0;
+                top: auto;
+                height: 0%;
+                right: 0;
+                left: auto;
+                content: "";
+                display: block;
+                transition: height 150ms linear 0ms;
+                z-index: 2;
+            }
+        }
+
+        &__link {
+            @extend %ph_absolute_fill;
+            z-index: 4;
+            font-size: 0;
+
+            &::after {
+                position: absolute;
+                bottom: 8px;
+                top: auto;
+                height: 30px;
+                width: 30px;
+                background-color: rgba(0,0,0,0.7);
+                right: 8px;
+                left: auto;
+                content: "\F108";
+                color: #fff;
+                display: block;
+                border-radius: 50%;
+                font-family: 'wsu-icons';
+                border: 3px solid rgba(0,0,0,0.3);
+                font-size: $wsu-font-size--xmedium;
+                line-height: 30px;
+                text-align: center;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .wsu-image-frame {
+        @extend %ph_absolute_fill;
+
+        img {
+            @extend %ph_absolute_fill;
+            object-fit: cover;
+        }
+
+        &:before {
+            @extend %ph_absolute_fill;
+            display: block;
+            content: "";
+            background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 59%, rgba(0,0,0,0.7) 100%);
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.7) 59%,rgba(0,0,0,0.7) 100%);
+background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.7) 59%,rgba(0,0,0,0.7) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#b3000000',GradientType=0 );
+            z-index: 1;
+        }
+
+        &:after {
+            position: absolute;
+            top: 13px;
+            bottom: 13px;
+            left: 13px;
+            right: 13px;
+            border: 1px solid #fff;
+            display: block;
+            content: "";
+            z-index: 3;
+            clip-path: polygon(0% 0%, 0% 100%, calc(100% - 35px) 100%, calc(100% - 35px) calc(100% - 35px), 100% calc(100% - 35px), 100% 0% );
+        }
+    }
+
+    .wsu-title {
+        @include wsu-font--large();
+        color: #fff;
+        z-index: 2;
+        position: relative;
+
+        &::before {
+            height: 120%;
+            position: absolute;
+            top: -10%;
+            width: 23px;
+            left: -$wsu-spacing--large;
+            background-color: $wsu-color--crimson-light;
+            display: block;
+            content: "";
+        }
+    }
+
+    .wsu-caption {
+        @include wsu-font--small();
+        color: #fff;
+        z-index: 2;
+    }
+
+    &:focus-within,
+    &:hover {
+        transform: translateY(-13px);
+
+        &::before {
+            bottom: 0%;
+            height: 100%;
+            transition: bottom 150ms linear 0ms, height 150ms linear 0ms;
+        }
+
+        &::after {
+            width: 100%;
+            transition: width 150ms linear 150ms;
+        }
+
+        .wsu-card__content {
+
+            &::after,
+            &::before {
+                height: 50%;
+                transition: height 150ms linear 300ms;
+            }
+
+        }
+
+    }
+ 
+
+
+}
