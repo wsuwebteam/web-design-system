@@ -2,12 +2,11 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-stat {
-
+    display: block;
     box-sizing: border-box;
-    max-width: $wsu-width--large;
     margin-bottom: $wsu-spacing--component;
 
-    &__number {
+    &__value {
         display: block;
         font-size: $wsu-font-size--sxxlarge;
         font-weight: $wsu-font-weight--xextrabold;
@@ -22,10 +21,15 @@
         }
     }
 
-    &__label {
+    &__caption {
       font-size: $wsu-font-size--medium;
       font-weight: $wsu-font-weight--semibold;
       color: $wsu-color--gray-50;
       margin-bottom: 0;
-    } 
+    }
+
+    &--position-inline {
+      display: inline-block;
+      margin-right: $wsu-spacing--xxlarge;
+    }
 }
