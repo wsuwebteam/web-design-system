@@ -1,0 +1,24 @@
+{% extends "component.njk" %}
+{% from "stat/_macro.njk" import stat %}
+{% block content %}
+<div class="wsu-demo-component">
+    {{ stat('', '31%', 'students who are first in their family to attend college') }}
+    {{ stat('', '$345 million', 'annual research funding, fy 2019') }}
+    {{ stat('', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+</div>
+<hr />
+<div>
+    {{ stat(' wsu-stat--position-inline', '31%', 'students who are first in their family to attend college') }}
+    {{ stat(' wsu-stat--position-inline', '$345 million', 'annual research funding, fy 2019') }}
+    {{ stat(' wsu-stat--position-inline', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+</div>
+<style>
+.wsu-demo-component {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+    width: 100%;
+}
+</style>
+{%  endblock %} 

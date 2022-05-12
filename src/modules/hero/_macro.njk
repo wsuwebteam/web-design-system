@@ -8,32 +8,30 @@
 {% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
 {% from "experimental_video-frame/_macro.njk" import videoFrame %}
 
-
-{% macro hero( classes='', linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", isVideo=false, imageSrc='https://source.unsplash.com/collection/895539', heroTitle='Hero Banner Title', isAutoplay=false, autoplay='3000' ) %}
-  {% if isAutoplay %}
-    <div class="wsu-hero wsu-width--full{{ classes }}" data-swiper-autoplay="{{ autoplay }}">
-  {% else %}
-    <div class="wsu-hero wsu-width--full{{ classes }}">
-  {% endif %}
+{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title') %}
+  <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if imageSrc %}
-        {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
+      {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
     {% endif %}
     {% if isVideo %}
-        {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
+      {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
     {% endif %}
     {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
     <div class="wsu-hero__content">
-        <div class="wsu-hero__caption">
-            {% if eyebrowHeaderText %}
-            {{ eyebrowHeader('', eyebrowHeaderText) }}
-            {% endif %}
-            <{{ titleTag }} class="wsu-title" id="unique-id-hero-banner-title">
-            {{ heroTitle }}
-            </{{ titleTag }}>
-            {% if showCaption %}{{ caption() }}{% endif %}
-            {% if linked %}<a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>{% endif %}
-        </div>
-        <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
+      <div class="wsu-hero__caption">
+        {% if eyebrowHeaderText %}
+          {{ eyebrowHeader('', eyebrowHeaderText) }}
+        {% endif %}
+        <{{ titleTag }} class="wsu-title" id="unique-id-hero-banner-title">
+          {{ heroTitle }}
+        </{{ titleTag }}>
+        {% if showCaption %}{{ caption() }}
+        {% endif %}
+        {% if linked %}
+          <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>
+        {% endif %}
+      </div>
+      <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
     </div>
-</div>
+  </div>
 {% endmacro %}

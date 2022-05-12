@@ -1,0 +1,6 @@
+{% macro stat( classes, number='$345 million', label='annual research funding, fy 2019' ) %}
+<div class="wsu-stat{{ classes }}" role="statistic">
+	<span class="wsu-stat__value">{{ number }}</span>
+    <span class="wsu-stat__caption">{{ label }}</span>
+</div>
+{% endmacro %}

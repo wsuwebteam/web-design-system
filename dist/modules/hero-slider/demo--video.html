@@ -21,7 +21,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles.css" media='all' />
+    <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles-wds.css" media='all' />
 
     <script src="../../bundles/wsu-design-system.init.js"></script>
 </head>
@@ -35,22 +35,28 @@
 
 
 
-        <div class="wsu-hero-slider wsu-width--full swiper">
+        <div class="wsu-hero-slider wsu-width--full swiper" data-autoplay="true" data-autoplay-delay="3000">
             <div class="wsu-hero-slider__wrapper swiper-wrapper">
-
 
 
 
                 <div class="wsu-hero wsu-width--full swiper-slide">
 
 
-
                     <div class="wsu-image-frame wsu-image-frame--fill">
 
-                        <img src="https://source.unsplash.com/collection/895539" />
+                        <img src="src=&quot;https://player.vimeo.com/video/76979871" />
 
                     </div>
 
+
+
+
+                    <div class="wsu-video-frame wsu-video-frame--position-fill">
+                        <iframe class="wsu-video-frame__video-background" src="https://player.vimeo.com/video/76979871?background=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Description of the Video"></iframe>
+
+                        <button class="wsu-button-pause-background wsu-video-frame--action-pause-background" aria-label="Pause Animation"></button>
+                    </div>
 
 
 
@@ -74,7 +80,10 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.
                             </div>
 
+
+
                             <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>
+
                         </div>
                         <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
                     </div>
@@ -84,9 +93,7 @@
 
 
 
-
                 <div class="wsu-hero wsu-width--full swiper-slide">
-
 
 
                     <div class="wsu-image-frame wsu-image-frame--fill">
@@ -118,7 +125,10 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.
                             </div>
 
+
+
                             <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>
+
                         </div>
                         <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
                     </div>
@@ -128,17 +138,23 @@
 
 
 
-
                 <div class="wsu-hero wsu-width--full swiper-slide">
-
 
 
                     <div class="wsu-image-frame wsu-image-frame--fill">
 
-                        <img src="https://source.unsplash.com/collection/895539" />
+                        <img src="src=&quot;https://player.vimeo.com/video/76979871" />
 
                     </div>
 
+
+
+
+                    <div class="wsu-video-frame wsu-video-frame--position-fill">
+                        <iframe class="wsu-video-frame__video-background" src="https://player.vimeo.com/video/76979871?background=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Description of the Video"></iframe>
+
+                        <button class="wsu-button-pause-background wsu-video-frame--action-pause-background" aria-label="Pause Animation"></button>
+                    </div>
 
 
 
@@ -162,7 +178,10 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.
                             </div>
 
+
+
                             <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>
+
                         </div>
                         <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
                     </div>
@@ -174,7 +193,7 @@
             <div class="wsu-hero-slider__slider-elements">
                 <nav class="wsu-hero-slider__navigation">
                     <button class="wsu-hero-slider__icon wsu-i-arrow-left-carrot" aria-label="Previous"></button>
-                    <button class="wsu-hero-slider__icon wsu-i-pause play" id="slider-pause" aria-label="Pause"></button>
+                    <button class="wsu-hero-slider__pause-btn wsu-hero-slider__icon wsu-i-pause play" aria-label="Pause"></button>
                     <button class="wsu-hero-slider__icon wsu-i-arrow-right-carrot" aria-label="Next"></button>
                 </nav>
                 <div class="wsu-hero-slider__pagination"></div>
@@ -184,18 +203,10 @@
 
 
 
-        <link rel="stylesheet" href="../../bundles/standalone/hero-slider/styles.css" media='all' />
-
-
-
-        <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
-
-
-
     </div>
 
-    <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="../../bundles/standalone/hero-slider/scripts.js"></script>
 
     <script defer src="../../bundles/wsu-design-system.js"></script>
 </body>
