@@ -71,6 +71,12 @@
     }
 }
 
+.wsu-meta-location {
+    &::before {
+        content: "\F127"; 
+    } 
+}
+
 .wsu-meta-location::before {
     content: "\F127";  
 }
@@ -98,4 +104,16 @@
 
 .wsu-meta-website::before {
     content: "\F10D";     
+}
+
+.wsu-meta--secondary {
+    a {
+        @include wsu-link--secondary();
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-color: $wsu-color--crimson-light; 
+        }
+    }
 }
