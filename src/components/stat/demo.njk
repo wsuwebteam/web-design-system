@@ -2,9 +2,16 @@
 {% from "stat/_macro.njk" import stat %}
 {% block content %}
 <div class="wsu-demo-component">
-    {{ stat('', '31%', 'students who are first in their family to attend college') }}
-    {{ stat('', '$345 million', 'annual research funding, fy 2019') }}
-    {{ stat('', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+    {{ stat('', '31%', 'students who are first in their family to attend college', false, '') }}
+    {{ stat('', '$345 million', 'annual research funding, fy 2019', false, '') }}
+    {{ stat('', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)', false, '') }}
+</div>
+<div class="wsu-demo-component">
+  <div class="wsu-stat--per-row-3">
+    {{ stat(' wsu-stat--circles wsu-stat--alternate', '345', 'annual research funding, FY 2019', true, 'wsu-i-light-bulb', true, 'Million') }}
+    {{ stat(' wsu-stat--circles wsu-stat--number-bottom', '565', 'study abroad programs', true, 'wsu-i-location') }}
+    {{ stat(' wsu-stat--circles wsu-stat--number-top', '66,558', 'Annual student volunteer hours', true, 'wsu-i-time') }}
+  </div>
 </div>
 <hr />
 <div>
@@ -14,11 +21,12 @@
 </div>
 <style>
 .wsu-demo-component {
-    max-width: 900px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
     flex-shrink: 0;
     width: 100%;
 }
 </style>
-{%  endblock %} 
+{%  endblock %}
