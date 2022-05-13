@@ -8,7 +8,6 @@ $wsu-card-margin: $wsu-spacing--xsmall;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin-bottom: $wsu-spacing--component;
 
     &__title {
         margin-bottom: $wsu-spacing--small;
@@ -49,10 +48,6 @@ $wsu-card-margin: $wsu-spacing--xsmall;
         .wsu-card {
             width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
 
-            &:nth-last-child(2),
-            &:nth-last-child(1) {
-                margin-bottom: 0;
-            }
         }
 
         @media screen and (max-width: $wsu-breakpoint--tablet ) {
@@ -80,21 +75,12 @@ $wsu-card-margin: $wsu-spacing--xsmall;
         .wsu-card {
             width: calc( 33.33% - ( #{$wsu-card-margin} * 2 ) );
 
-            &:nth-last-child(3),
-            &:nth-last-child(2),
-            &:nth-last-child(1) {
-                margin-bottom: 0;
-            }
         }
 
         @media screen and (max-width: $wsu-breakpoint--tablet ) {
             .wsu-card {
                 width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
 
-                &:nth-last-child(3),
-                &:nth-last-child(2) {
-                    margin-bottom: $wsu-spacing--component;
-                }
             }
         }
 
@@ -114,22 +100,13 @@ $wsu-card-margin: $wsu-spacing--xsmall;
         .wsu-card {
             width: calc( 25% - ( #{$wsu-card-margin} * 2 ) );
 
-            &:nth-last-child(4),
-            &:nth-last-child(3),
-            &:nth-last-child(2),
-            &:nth-last-child(1) {
-                margin-bottom: 0;
-            }
         }
 
         @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
             .wsu-card {
                 width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
 
-                &:nth-last-child(4),
-                &:nth-last-child(3) {
-                    margin-bottom: $wsu-spacing--component;
-                }
+                
             }
         }
 
@@ -137,9 +114,7 @@ $wsu-card-margin: $wsu-spacing--xsmall;
             .wsu-card {
                 width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
 
-                &:nth-last-child(2) {
-                    margin-bottom: $wsu-spacing--component;
-                }
+
             }
         }
 
