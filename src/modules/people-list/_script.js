@@ -72,19 +72,11 @@ const PeopleList = function (el) {
   let filtersContainer;
   let filterToggles;
   let searchInput;
+  
 
   function getPersonHTML(person) {
 
-    console.log( profileLink );
-
-    console.log( person.bio );
-
-
-    if ( profileLink && person.bio ) {
-
-      person.name = `<a href="${profileLink}">${person.name}</a>`;
-
-    }
+    let linkProfile = ( profileLink && person.bio ) ? true : false;
 
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
@@ -98,7 +90,7 @@ const PeopleList = function (el) {
                 ${
                   person.photo
                     ? `
-                    <img src="${person.photo}"
+                    ${ linkProfile ? `<a href="${profileLink}?nid=${person.nid}">`:''}<img src="${person.photo}"
                         ${
                           person.photo_srcset
                             ? `srcset="${person.photo_srcset}"`
@@ -108,7 +100,7 @@ const PeopleList = function (el) {
                           person.photo_srcset
                             ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
                             : ""
-                        } loading="lazy">`
+                        } loading="lazy">${ linkProfile ? `</a>`:''}`
                     : ""
                 }
             </div>`
@@ -170,6 +162,7 @@ const PeopleList = function (el) {
                 </div>`
                 : ""
             }
+            ${ linkProfile ? `<div class="wsu-people-list__view-profile"><a class="wsu-button--style-arrow" href="${profileLink}?nid=${person.nid}">View Profile</a></div>`:''}
         </div>
     </div>`;
   }
@@ -534,9 +527,6 @@ const PeopleList = function (el) {
         return acc;
       }, [])
       .join("&");
-
-
-      console.log( apiEndpoint + params );
 
     // make request
     return fetch(apiEndpoint + params)
