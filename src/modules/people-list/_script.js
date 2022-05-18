@@ -40,6 +40,7 @@ const PeopleList = function (el) {
     ],
   });
   const componentId = el.dataset.componentId;
+  const profileLink = el.dataset.profileLink ?? '';
   const displayFields = el.dataset.displayFields.split(",");
   const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
   const excludedTerms = el.dataset.excludeTermValues
@@ -73,6 +74,14 @@ const PeopleList = function (el) {
   let searchInput;
 
   function getPersonHTML(person) {
+
+
+    if ( profileLink && person.bio ) {
+
+      person.name = `<a href="${profileLink}">${person.name}</a>`;
+
+    }
+
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
     }">
