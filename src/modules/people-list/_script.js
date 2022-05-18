@@ -75,6 +75,8 @@ const PeopleList = function (el) {
 
   function getPersonHTML(person) {
 
+    console.log( profileLink );
+
 
     if ( profileLink && person.bio ) {
 
@@ -530,6 +532,9 @@ const PeopleList = function (el) {
         return acc;
       }, [])
       .join("&");
+
+
+      console.log( apiEndpoint + params );
 
     // make request
     return fetch(apiEndpoint + params)
