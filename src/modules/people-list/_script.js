@@ -77,6 +77,8 @@ const PeopleList = function (el) {
 
     console.log( profileLink );
 
+    console.log( person.bio );
+
 
     if ( profileLink && person.bio ) {
 
