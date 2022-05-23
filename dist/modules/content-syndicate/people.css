@@ -358,4 +358,32 @@ $zindex-tooltip:                    1080;
     flex-grow: 1;
     flex-basis: 25%; } }
 
+.wsuwp-person-profile .wsuwp-people-wrapper {
+  display: block; }
+
+.wsuwp-person-profile .card {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2.5rem; }
+
+@media screen and (max-width: 800px) {
+  .wsuwp-person-profile .card {
+    display: block; }
+  .wsuwp-person-profile .photo {
+    width: 100%; } }
+
+.wsuwp-person-profile .photo {
+  width: 350px;
+  margin-right: 2rem; }
+
+.wsuwp-person-profile .contact {
+  flex-grow: 1; }
+
+.wsuwp-person-profile .contact h2 {
+  font-size: 2.5rem; }
+
+.wsuwp-person-profile .contact span {
+  display: block;
+  font-size: 0.9rem; }
+
 /*=====  End of People  ======*/

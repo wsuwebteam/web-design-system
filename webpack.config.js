@@ -44,7 +44,8 @@ module.exports = env => {
 		},
 		plugins: [
 			new webpack.DefinePlugin({
-				PEOPLE_API_BASE_URL: DEV ? JSON.stringify('http://wsuwp.local') : JSON.stringify('https://people.wsu.edu')
+				//PEOPLE_API_BASE_URL: DEV ? JSON.stringify('http://wsuwp.local') : JSON.stringify('https://people.wsu.edu')
+				PEOPLE_API_BASE_URL: JSON.stringify('https://people.wsu.edu')
 			})
 		]
 	}
