@@ -8,6 +8,8 @@ const cleanCSS = require("gulp-clean-css");
 const del = require("del");
 var htmlbeautify = require("gulp-html-beautify");
 const minimist = require("minimist");
+const nunjucksEnv = require("./nunjucks");
+const data = require("./data");
 const args = require("./env");
 
 const components = ["components/global-header/"];
@@ -17,6 +19,10 @@ gulp.task("buildHtml", function () {
     .src("src/**/*.njk")
     .pipe(
       nunjucksRender({
+        manageEnv: nunjucksEnv,
+        data: {
+          ...data,
+        },
         path: [
           "_templates/",
           "src/components/",
