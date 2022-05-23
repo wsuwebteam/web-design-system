@@ -1,0 +1,41 @@
+{% set tabsContent = [
+{ tabTitle: 'Our Community', panel: 'Tab 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis. In at velit sit amet diam ullamcorper viverra at pulvinar ex. Vivamus et quam eu erat pretium suscipit. Fusce eget aliquam augue.' },
+{ tabTitle: 'The WSU Difference', panel: 'Tab 2 Content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis.' },
+{ tabTitle: 'Go Cougs!', panel: 'Tab 3 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum. Nam non placerat ipsum. Etiam et porta leo, vel malesuada nisi. Integer faucibus est leo, ac aliquam velit tempus a.' }
+]
+%}
+
+{% macro tabs( classes, content = tabsContent, tabIndex = 0 ) %}
+<div class="wsu-tabs{{ classes }}">
+  <div role="tablist" aria-label="Tabs" class="wsu-tabs__tablist">
+    {% for item in content %}
+      {% if loop.first %}
+        <button type="button" role="tab" aria-selected="true" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}" id="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__button wsu-tabs__button-desktop">{{ item.tabTitle }}</button>
+      {% else %}
+        <button type="button" role="tab" aria-selected="false" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}" id="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__button wsu-tabs__button-desktop">{{ item.tabTitle }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="wsu-tabs__panel-wrapper">
+    {% for item in content %}
+		<div class="wsu-tabs__panel-inner">
+      {% if loop.first %}
+        <h2 id="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-accordion__title">
+          <button class="wsu-tabs__button wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="false" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}">{{ item.tabTitle }}</button>
+        </h2>
+        <div tabindex="0" role="tabpanel" id="tab-{{ loop.index }}-{{ tabIndex }}" aria-labelledby="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__content show-desktop">
+          <p>{{ item.panel }}</p>
+        </div>
+      {% else %}
+			  <h2 id="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-accordion__title">
+          <button class="wsu-tabs__button wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="false" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}">{{ item.tabTitle }}</button>
+        </h2>
+        <div tabindex="0" role="tabpanel" id="tab-{{ loop.index }}-{{ tabIndex }}" aria-labelledby="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__content hidden">
+          <p>{{ item.panel }}</p>
+        </div>
+      {% endif %}
+		</div>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
