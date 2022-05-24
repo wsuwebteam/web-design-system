@@ -18,12 +18,12 @@
   </div>
   <div class="wsu-tabs__panel-wrapper">
     {% for item in content %}
-		<div class="wsu-tabs__panel-inner">
+		<div {% if loop.first %} class="wsu-tabs__panel-inner wsu-tabs--open" {% else %} class="wsu-tabs__panel-inner" {% endif %}>
       {% if loop.first %}
         <h2 id="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-accordion__title">
-          <button class="wsu-tabs__button wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="false" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}">{{ item.tabTitle }}</button>
+          <button class="wsu-tabs__button wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="true" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}">{{ item.tabTitle }}</button>
         </h2>
-        <div tabindex="0" role="tabpanel" id="tab-{{ loop.index }}-{{ tabIndex }}" aria-labelledby="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__content show-desktop">
+        <div tabindex="0" role="tabpanel" id="tab-{{ loop.index }}-{{ tabIndex }}" aria-labelledby="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__content">
           <p>{{ item.panel }}</p>
         </div>
       {% else %}

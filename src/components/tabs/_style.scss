@@ -13,12 +13,10 @@
   }
 
   &__panel-wrapper {
-    //padding: $wsu-spacing--xsmall;
     padding: $wsu-spacing--component;
     border-left: solid 1px $wsu-color--gray-10;
     border-right: solid 1px $wsu-color--gray-10;
     border-bottom: solid 1px $wsu-color--gray-10;
-    //border-top: solid 1px $wsu-color--gray-35;
 
     .wsu-accordion__title {
       display: none;
@@ -32,7 +30,7 @@
       display: none;
     }
 
-    .wsu-tabs__content { //hide on mobile initial
+    .wsu-tabs__content {
       &.show-desktop {
         display: block;
       }
@@ -65,7 +63,7 @@
     font-weight: $wsu-font-weight--semibold;
     font-size: $wsu-font-size--xmedium;
     color: $wsu-color--crimson;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     background: $wsu-color--gray-5;
 
     @media screen and (max-width: $wsu-breakpoint--tablet-medium) {
@@ -152,6 +150,10 @@
           &::before {
             content: "\F12C";
           }
+        }
+
+        .wsu-tabs__button {
+          color: $wsu-color--gray-70;
         }
 
         .wsu-tabs__content {

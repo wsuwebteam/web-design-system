@@ -48,11 +48,11 @@ class WsuTabs {
 			false
 		);
 
-    /*document.addEventListener(
+    document.addEventListener(
       'keydown',
-      this.keyDownEvents.bind( this ),
+      this.accKeyEvents.bind( this ),
       false
-    );*/
+    );
 	}
 
   accordionClicks ( event ) {
@@ -120,6 +120,84 @@ class WsuTabs {
 
   }
 
+  // Arrow keys (up/down) navigation on mobile only
+  accKeyEvents() {
+    var wsuTabs = document.querySelectorAll(".wsu-tabs");
+
+    if ( wsuTabs.length > 0 ) {
+      wsuTabs.forEach((accTab) => {
+        var accButtons = accTab.querySelectorAll(".wsu-accordion__title-button");
+
+        var keys = {
+          end: 35,
+          home: 36,
+          up: 38,
+          down: 40,
+        };
+
+        var direction = {
+          37: -1,
+          38: -1,
+          39: 1,
+          40: 1,
+        };
+
+        // Bind listeners
+        for (var i = 0; i < accButtons.length; ++i) {
+          addListeners(i);
+        }
+
+        function addListeners(index) {
+          accButtons[index].addEventListener('keydown', keydownEventListener);
+          accButtons[index].addEventListener('keyup', keyupEventListener);
+
+          // Build an array with all tabs (<button>s) in it
+          accButtons[index].index = index;
+        }
+
+        function keydownEventListener(eventElement) {
+          var key = eventElement.keyCode;
+
+          switch (key) {
+            case keys.up:
+            case keys.down:
+              eventElement.preventDefault();
+              break;
+          }
+        }
+
+        function keyupEventListener(event) {
+          var key = event.keyCode;
+
+          switch (key) {
+            case keys.up:
+            case keys.down:
+              switchTabOnArrowPress(event);
+              break;
+          }
+        }
+
+        function switchTabOnArrowPress(event) {
+          var pressed = event.keyCode;
+
+          if (direction[pressed]) {
+            var target = event.target;
+            if (target.index !== undefined) {
+              if (accButtons[target.index + direction[pressed]]) {
+                accButtons[target.index + direction[pressed]].focus();
+              } else if (pressed === keys.left || pressed === keys.up) {
+                accButtons[accButtons.length - 1].focus();
+              } else if (pressed === keys.right || pressed == keys.down) {
+                accButtons[0].focus();
+              }
+            }
+          }
+        }
+      });
+
+    }
+  }
+
   tabsDesktop() {
     var wsuTabs = document.querySelectorAll(".wsu-tabs");
 
@@ -157,7 +235,7 @@ class WsuTabs {
           function addListeners(index) {
             tabButtons[index].addEventListener('click', clickEventListener);
             tabButtons[index].addEventListener('keydown', keydownEventListener);
-            tabButtons[index].addEventListener('keyup', keyupEventListener); //Needed??
+            tabButtons[index].addEventListener('keyup', keyupEventListener);
 
             // Build an array with all tabs (<button>s) in it
             tabButtons[index].index = index;
@@ -176,18 +254,12 @@ class WsuTabs {
             switch (key) {
               case keys.end:
                 eventElement.preventDefault();
-                // Activate last tab
                 activateTab(tabButtons[tabButtons.length - 1]);
                 break;
               case keys.home:
                 eventElement.preventDefault();
-                // Activate first tab
                 activateTab(tabButtons[0]);
                 break;
-                case keys.up:
-                case keys.down:
-                  eventElement.preventDefault();
-                  break;
             }
           }
 
@@ -296,22 +368,12 @@ class WsuTabs {
     }
   }
 
-	hidePanels() {
-    let tabContent = document.querySelectorAll(".wsu-tabs__content");
-
-		for ( let i = 0; i < tabContent.length; i++ ) {
-			tabContent[i].classList.add("hidden");
-		}
-	}
-
   checkMobile() {
     let tablist = document.querySelector(".wsu-tabs__tablist");
 
 		let tablistDisplay = window.getComputedStyle(tablist);
 
-    if ( tablistDisplay.getPropertyValue('display') === "none" ) {
-			this.hidePanels();
-    } else {
+    if ( !tablistDisplay.getPropertyValue('display') === "none" ) {
 			this.tabsDesktop();
 		}
   }

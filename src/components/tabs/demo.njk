@@ -4,9 +4,6 @@
 {% block content %}
 
 <div class="wsu-demo-component">
-    {{ tabs() }}
-
-    <hr />
 
     {% set two = [
       { tabTitle: 'Washington State', panel: 'Tab 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis. In at velit sit amet diam ullamcorper viverra at pulvinar ex. Vivamus et quam eu erat pretium suscipit. Fusce eget aliquam augue.' },
@@ -17,16 +14,32 @@
     {{ tabs( '', two, 1 )}}
 
     <hr />
+        {{ tabs() }}
+
+    <hr />
 
     {% set four = [
       { tabTitle: 'Our Stats', panel: 'Tab 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis. In at velit sit amet diam ullamcorper viverra at pulvinar ex. Vivamus et quam eu erat pretium suscipit. Fusce eget aliquam augue.' },
-      { tabTitle: 'Cougs News', panel: 'Tab 2 Content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis.' },
-      { tabTitle: 'Go Cougs!', panel: 'Tab 3 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum. Nam non placerat ipsum. Etiam et porta leo, vel malesuada nisi. Integer faucibus est leo, ac aliquam velit tempus a.' },
+      { tabTitle: 'Coug Connection', panel: 'Tab 2 Content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis.' },
+      { tabTitle: 'Public Good', panel: 'Tab 3 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum. Nam non placerat ipsum. Etiam et porta leo, vel malesuada nisi. Integer faucibus est leo, ac aliquam velit tempus a.' },
       { tabTitle: 'The WSU Difference', panel: 'Tab 4 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum. Nam non placerat ipsum. Etiam et porta leo, vel malesuada nisi. Integer faucibus est leo, ac aliquam velit tempus a. Praesent venenatis mauris sit amet semper venenatis.' }
     ]
     %}
 
     {{ tabs( '', four, 2 )}}
+
+    <hr />
+
+    {% set five = [
+      { tabTitle: 'Our Stats', panel: 'Tab 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis. In at velit sit amet diam ullamcorper viverra at pulvinar ex. Vivamus et quam eu erat pretium suscipit. Fusce eget aliquam augue.' },
+      { tabTitle: 'The WSU Difference', panel: 'Tab 2 Content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget convallis nunc, sed hendrerit sapien. Fusce volutpat commodo dui. Proin cursus nunc ut congue posuere. Praesent venenatis mauris sit amet semper venenatis.' },
+      { tabTitle: 'Go Cougs!', panel: 'Tab 3 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum. Nam non placerat ipsum. Etiam et porta leo, vel malesuada nisi. Integer faucibus est leo, ac aliquam velit tempus a.' },
+      { tabTitle: 'Cougs News', panel: 'Tab 4 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum. Nam non placerat ipsum. Etiam et porta leo, vel malesuada nisi. Integer faucibus est leo, ac aliquam velit tempus a. Praesent venenatis mauris sit amet semper venenatis.' },
+      { tabTitle: 'The WSU Community', panel: 'Tab 5 Content. Maecenas sed malesuada urna, ac varius felis. Fusce interdum vehicula mauris, at fermentum tellus. Suspendisse eget dui sed diam tincidunt condimentum.' }
+    ]
+    %}
+
+    {{ tabs( '', five, 3 )}}
 </div>
 <style>
 .wsu-demo-component {
