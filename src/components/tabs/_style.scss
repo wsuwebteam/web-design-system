@@ -31,6 +31,8 @@
     }
 
     .wsu-tabs__content {
+      //display: none;
+
       &.show-desktop {
         display: block;
       }
@@ -158,7 +160,8 @@
 
         .wsu-tabs__content {
           &.show-desktop {
-            display: none;
+            //display: none;
+            display: block;
           }
           &.hidden {
             display: none;

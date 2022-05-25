@@ -286,6 +286,7 @@ class WsuTabs {
             var panelId = tab.getAttribute("aria-controls");
             let panel = document.getElementById(panelId);
             panel.classList.remove("hidden");
+            panel.classList.add("show-desktop");
 
             var accTitle = panel.closest(".wsu-tabs__panel-inner");
             accTitle.classList.add("wsu-tabs--open");

@@ -23,7 +23,7 @@
         <h2 id="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-accordion__title">
           <button class="wsu-tabs__button wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="true" aria-controls="tab-{{ loop.index }}-{{ tabIndex }}">{{ item.tabTitle }}</button>
         </h2>
-        <div tabindex="0" role="tabpanel" id="tab-{{ loop.index }}-{{ tabIndex }}" aria-labelledby="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__content">
+        <div tabindex="0" role="tabpanel" id="tab-{{ loop.index }}-{{ tabIndex }}" aria-labelledby="tab{{ loop.index }}-set{{ tabIndex }}" class="wsu-tabs__content show-desktop">
           <p>{{ item.panel }}</p>
         </div>
       {% else %}
