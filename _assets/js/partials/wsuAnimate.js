@@ -1,5 +1,4 @@
 const wsuAnimateSlideDown = ( element, args ) => {
-
     let {
         duration = 300,
         extra = '20',
@@ -18,7 +17,6 @@ const wsuAnimateSlideDown = ( element, args ) => {
 }
 
 const wsuAnimateSlideUp = ( element, args ) => {
-
     let {
         duration = 300,
         extra = '20',
