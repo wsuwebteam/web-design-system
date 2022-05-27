@@ -1,0 +1,112 @@
+{% macro programsList(classes = "", showControls = true) %}
+    <div class="wsu-programs-list {{ classes }}">
+        {% if showControls %}
+            <div class="wsu-programs-list__controls">
+                <div class="wsu-programs-list__control--search">
+                    <input class="wsu-programs-list__search-input" type="text" placeholder="Search Degree Programs">
+                </div>
+
+                <div class="wsu-programs-list__control-group js-programs-list__select-controls">
+                    <div class="wsu-programs-list__control--select">
+                        <button class="wsu-button wsu-button--tertiary wsu-button--size-small wsu-programs-list__control-button" aria-expanded="false">
+                            <span class="wsu-programs-list__button-text">Area of Interest</span>
+                            <i class="wsu-icon wsu-i-arrow-down-carrot wsu-programs-list__button-icon"></i>
+                        </button>
+                        <div class="wsu-programs-list__filter-options">
+                            {% for a in programData.areas %}
+                                <div class="wsu-programs-list__filter-option">
+                                    <input class="js-programs-list__filter-option-input" type="checkbox" id="{{ a | slug }}" name="area" value="{{ a | slug }}">
+                                    <label for="{{ a | slug }}">{{ a }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="wsu-programs-list__control--select">
+                        <button class="wsu-button wsu-button--tertiary wsu-button--size-small wsu-programs-list__control-button" aria-expanded="false">
+                            <span class="wsu-programs-list__button-text">Degree Type</span>
+                            <i class="wsu-icon wsu-i-arrow-down-carrot wsu-programs-list__button-icon"></i>
+                        </button>
+                        <div class="wsu-programs-list__filter-options">
+                            {% for o in programData.degreeTypes %}
+                                <div class="wsu-programs-list__filter-option">
+                                    <input class="js-programs-list__filter-option-input" type="checkbox" id="{{ o | slug }}" name="degreeType" value="{{ o | slug }}">
+                                    <label for="{{ o | slug }}">{{ o }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="wsu-programs-list__control--select">
+                        <button class="wsu-button wsu-button--tertiary wsu-button--size-small wsu-programs-list__control-button" aria-expanded="false">
+                            <span class="wsu-programs-list__button-text">Campus</span>
+                            <i class="wsu-icon wsu-i-arrow-down-carrot wsu-programs-list__button-icon"></i>
+                        </button>
+                        <div class="wsu-programs-list__filter-options">
+                            {% for c in programData.campuses %}
+                                <div class="wsu-programs-list__filter-option">
+                                    <input class="js-programs-list__filter-option-input" type="checkbox" id="{{ c | slug }}" name="campus" value="{{ c | slug }}">
+                                    <label for="{{ c | slug }}">{{ c }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="js-programs-list__list-groups">
+            {% for d in programData.programs %}
+                {% set groupId = loop.index0 %}
+                <div id="program-group-{{ d.group | lower }}" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">{{ d.group }}</h2>
+                    <ol class="wsu-programs-list__list">
+                        {% for i in d.items %}
+                            {% set areas = programData.areas | shuffle | take(range(1, 5) | random) | each('slug') | join('|') %}
+                            {% set degreeTypes = programData.degreeTypes | shuffle | take(range(1, programData.degreeTypes | length) | random) %}
+                            {% set campuses = programData.campuses | shuffle | take(range(1, programData.campuses | length) | random) %}
+                            {% set campusDegrees = [] %}
+                            {% set campusDegreesString = '' %}
+
+                            {% for t in degreeTypes %}
+                                {% set degreeTypeSlug = t | slug %}
+                                {% set take = ((campuses | length) / (degreeTypes | length)) | round %}
+                                {% set skip = loop.index0 * take %}
+                                {% set campusesForDegree = campuses | skip(skip) | take(take) %}
+
+                                {% if campusesForDegree | length === 0 %}
+                                    {% set campusesForDegree = campuses %}
+                                {% endif %}
+
+                                {% set campusDegrees = (campusDegrees.push({'degreeType': t, 'campuses': campusesForDegree}), campusDegrees) %}
+
+                                {% for c in campusesForDegree %}
+                                    {% set campusDegreesString = campusDegreesString + c | slug + '--' + degreeTypeSlug + '|' %}
+                                {% endfor %}
+                            {% endfor %}
+
+                            <li 
+                            id="program-{{groupId}}{{loop.index0}}" 
+                            class="wsu-programs-list__list-item" 
+                            data-title="{{ i.title }}" 
+                            data-areas="{{ areas }}" 
+                            data-campus-degrees="{{ campusDegreesString.slice(0, -1) }}">
+                                {% if (range(0, 100) | random % 3 === 0) %}
+                                    <span class="wsu-programs-list__list-link">{{ i.title }}</span>
+                                {% else %}
+                                    <a href="#" class="wsu-programs-list__list-link">{{ i.title }}</a>
+                                {% endif %}
+
+                                <div class="wsu-programs-list__degree-types">
+                                    {% for t in degreeTypes %}
+                                        {% set campuses = (campusDegrees | findObjByKeyValue('degreeType', t)).campuses %}
+                                        <span class="wsu-programs-list__degree-type" data-campuses="{{ campuses | each('slug') | join('|') }}">{{ t }}</span>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
