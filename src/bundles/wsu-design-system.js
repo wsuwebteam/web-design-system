@@ -11,6 +11,7 @@ import WsuVideoFrame from '../components/experimental_video-frame/_script';
 import WsuButton from '../components/button/_script';
 import WsuStickyBox from '../components/sticky-box/_script';
 import WsuAnchorMenu from '../components/anchor-menu/_script';
+import WsuModal from '../modules/modal/_script';
 
 
 
@@ -31,4 +32,5 @@ const wsu = {
     videoFrame: new WsuVideoFrame(),
     stickyBox: new WsuStickyBox(),
     wsuAnchorMenu: new WsuAnchorMenu(),
+    modal: new WsuModal(),
 }

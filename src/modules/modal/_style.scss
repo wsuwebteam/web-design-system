@@ -1,0 +1,153 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	z-index: 1037;
+	transition: opacity 0.4s;
+	opacity: 1;
+  visibility: visible;
+
+	&--hidden {
+		opacity: 0;
+    visibility: hidden;
+		transition: opacity 0.4s;
+	}
+
+	&--full {
+		.wsu-modal__content {
+      width: 90vw;
+      min-height: 70vh;
+			max-height: 90vh;
+		}
+	}
+
+	&--large {
+    .wsu-modal__content {
+      width: 80vw;
+      max-width: 1200px;
+			min-height: 50vh;
+      max-height: 80vh;
+    }
+	}
+
+	&--medium {
+    .wsu-modal__content {
+      width: 70vw;
+      max-width: 900px;
+			min-height: 30vh;
+      //max-height: 70vh;
+    }
+	}
+
+	&--small {
+		.wsu-modal__content {
+			width: 50vw;
+			height: 30vh;
+      max-width: 600px;
+
+      @media screen and (max-width: $wsu-breakpoint--tablet) {
+        max-width: 90vw;
+        max-height: 40vh;
+      }
+		}
+	}
+
+  &--centered {
+    .wsu-button {
+      display: block;
+      margin: auto;
+    }
+
+    .wsu-modal__close:last-child {
+      position: relative;
+      right: unset;
+      bottom: $wsu-spacing--xxmedium;
+      margin-left: auto;
+      margin-right: auto;
+      //margin-top: $wsu-spacing--xsmall;
+      margin-top: $wsu-spacing--small;
+    }
+  }
+
+  &--columns {
+    .wsu-modal__content-wrapper {
+      display: flex;
+      align-items: flex-start;
+      column-gap: $wsu-spacing--small;
+
+      @media screen and (max-width: $wsu-breakpoint--tablet-large) {
+        flex-wrap: wrap;
+        row-gap: $wsu-spacing--medium;
+      }
+    }
+  }
+
+	&__overlay {
+		display: none;
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0,0,0,.5);
+		border: none;
+		cursor: pointer;
+	}
+
+	&__content {
+		position: relative;
+		background-color: white;
+		margin: auto;
+		box-shadow: $wsu-dropshadow--high;
+    overflow-y: scroll;
+    //?
+    display: flex;
+	}
+
+	&__inner-wrapper {
+		padding: $wsu-spacing--xxmedium $wsu-spacing--large;
+    width: 100%;
+    position: relative;
+	}
+
+  &__content-wrapper {
+    padding: $wsu-spacing--medium 0;
+  }
+
+	&__title {
+		text-align: center;
+		margin-top: $wsu-spacing--xxmedium;
+	}
+
+	&__caption {
+    max-width: 100%;
+	}
+
+	&__close {
+		right: 0;
+		top: 0;
+
+		&:last-child { //second close modal button
+      position: relative;
+      bottom: 0;
+      //position: absolute;
+      //bottom: 0;
+			//bottom: $wsu-spacing--xxmedium;
+      //right: $wsu-spacing--large;
+      top: unset;
+		}
+	}
+
+}

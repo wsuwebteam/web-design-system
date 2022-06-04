@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?ver=0.15.2.1" media='all' />
+    <link rel="stylesheet" href="../../bundles/wsu-design-system.css" media='all' />
+    <style>
+        .wsu-custom-demo {
+            margin: 0 80px;
+            padding: 80px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+    </style>
+
+    <script src="../../bundles/wsu-design-system.init.js"></script>
+</head>
+
+<body>
+    <div class="wsu-custom-demo">
+
+        <div class="wsu-demo--modal">
+
+            <div class="wsu-modal wsu-modal--full wsu-modal--hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
+                <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
+                <div class="wsu-modal__content">
+                    <div class="wsu-modal__inner-wrapper">
+                        <button class="wsu-button-ui-close wsu-modal__close" aria-label="Close site menu">Close</button>
+                        <div class="wsu-modal__content-wrapper">
+
+
+
+
+                            <h3 class="wsu-modal__title" id="dialog_label">Title of Modal</h3>
+
+
+                            <p class="wsu-modal__caption" id="dialog_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.</p>
+
+
+
+
+
+
+                            <button class="wsu-button " data-open="">
+                                Click me!
+                            </button>
+
+
+
+                        </div>
+                        <button class="wsu-button-ui-close wsu-modal__close" aria-label="Close site menu">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--
+<div class="wsu-demo--modal">
+    <div class="wsu-modal wsu-modal--dark-left wsu-modal--light"></div>
+</div>-->
+        <hr />
+        <style>
+            .wsu-demo--modal {
+                width: 100vw;
+                height: 100vh;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+    </div>
+
+    <script defer src="../../bundles/wsu-design-system.js"></script>
+</body>
+
+</html>

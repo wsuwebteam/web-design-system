@@ -1,0 +1,21 @@
+{% extends "component.njk" %}
+{% from "modal/_macro.njk" import modal %}
+
+{% block content %}
+<div class="wsu-demo--modal">
+  {{ modal( ' wsu-modal--full') }}
+</div>
+<!--
+<div class="wsu-demo--modal">
+    <div class="wsu-modal wsu-modal--dark-left wsu-modal--light"></div>
+</div>-->
+<hr />
+<style>
+.wsu-demo--modal {
+    width: 100vw;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %}

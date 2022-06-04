@@ -1,0 +1,12 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-modal {
+
+  &__column {
+    .wsu-button {
+      display: block;
+      margin: auto;
+    }
+  }
+}
