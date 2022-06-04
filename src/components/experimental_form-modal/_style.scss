@@ -1,0 +1,142 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-input-field {
+    border-radius: $wsu-border-radius--medium;
+    background-color: #fff;
+    border: 1px solid $wsu-color--gray-30;
+    outline: none;
+    transition: box-shadow $wsu-transition-speed--medium $wsu-easing;
+    font-size: inherit;
+}
+
+@mixin wsu-input-spacing {
+    padding: $wsu-spacing--small $wsu-spacing--small;
+    box-sizing: border-box;
+}
+
+@mixin wsu-label {
+    font-size: $wsu-font-size--small;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 0.1em;
+}
+
+@mixin wsu-label-block {
+    display: block;
+}
+
+@mixin wsu-form-input-focus {
+
+    &:focus {
+        box-shadow: $wsu-dropshadow--low;
+        border-color: $wsu-color--gray-80;
+    }
+
+}
+
+fieldset {
+    border: 1px solid $wsu-color--gray-20;
+    border-radius: $wsu-border-radius--medium;
+    padding: $wsu-spacing--small $wsu-spacing--medium;
+    margin-bottom: $wsu-spacing--component;
+    margin-top: 0;
+
+    & > legend {
+        padding-left: $wsu-spacing--xxsmall;
+        padding-right: $wsu-spacing--xxsmall;
+    }
+}
+
+input {
+
+    &[type="file"],
+    &[type="time"],
+    &[type="week"],
+    &[type="month"],
+    &[type="datetime-local"],
+    &[type="datetime"],
+    &[type="date"],
+    &[type="url"],
+    &[type="tel"],
+    &[type="search"],
+    &[type="email"],
+    &[type="number"],
+    &[type="password"],
+    &[type="text"] {
+        @include wsu-input-field();
+        @include wsu-input-spacing();
+        @include wsu-form-input-focus();
+        /*margin-bottom: $wsu-spacing--xxsmall;*/
+    }
+
+    &[type="color"] {
+        width: $wsu-spacing--large;
+        height: $wsu-spacing--xxmedium;
+    }
+
+
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    color: $wsu-color--crimson;
+
+    & + label {
+        display: inline;
+        vertical-align: middle;
+        margin-left: 0.3em;
+        margin-right: 1.5em;
+        cursor: pointer;
+    }
+    
+}
+
+label {
+    @include wsu-label();
+    @include wsu-label-block();
+}
+
+legend {
+    @include wsu-label();
+    @include wsu-label-block();
+}
+
+select {
+    @include wsu-input-field();
+    padding: $wsu-spacing--small;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:not([multiple]) {
+        appearance:none;
+        padding-right: 50px;
+    
+    
+        background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            radial-gradient(#eee 70%, transparent 72%);
+        background-position:
+            calc(100% - 20px) calc( #{$wsu-spacing--small} + 0.5em),
+            calc(100% - 15px) calc( #{$wsu-spacing--small} + 0.5em),
+            calc(100% - 8px) calc(#{$wsu-spacing--small} - 2px );
+        background-size:
+            5px 5px,
+            5px 5px,
+            1.5em 1.5em;
+        background-repeat: no-repeat;
+    }
+
+    @include wsu-form-input-focus();
+
+}
+
+textarea {
+    width: 100%;
+    @include wsu-input-field();
+    @include wsu-input-spacing();
+    @include wsu-form-input-focus();
+}

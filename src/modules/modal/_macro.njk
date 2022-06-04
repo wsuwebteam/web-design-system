@@ -1,0 +1,42 @@
+{% from "button/_macro.njk" import button %}
+
+{% macro modal( classes='', id='modal', modalTitle='', caption='', cta="Click me!", form=false, img=false, columns=false ) %}
+<div class="wsu-modal{{ classes }} wsu-modal--hidden" id="{{ id }}" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
+  <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
+  <div class="wsu-modal__content">
+    <div class="wsu-modal__inner-wrapper">
+      <button class="wsu-button-ui-close wsu-modal__close" aria-label="Close site menu">Close</button>
+        <div class="wsu-modal__content-wrapper">
+          {% if columns %}
+            {% include 'experimental_modal-columns/modal.njk' %}
+
+          {% else %}
+            {% if img %}
+              <img src="https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/space.jpg" alt="" />
+            {% endif %}
+
+            {% if modalTitle %}
+              <h3 class="wsu-modal__title" id="dialog_label">{{ modalTitle }}</h3>
+            {% else %}
+              <h3 class="wsu-modal__title" id="dialog_label">Title of Modal</h3>
+            {% endif %}
+            {% if caption %}
+              <p class="wsu-modal__caption" id="dialog_description">{{ caption }}</p>
+            {% else %}
+              <p class="wsu-modal__caption" id="dialog_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.</p>
+            {% endif %}
+
+            {% if form %}
+              {% include 'experimental_form-modal/form.njk' %}
+            {% endif %}
+
+            {% if cta %}
+              {{ button( ' ', cta, '' ) }}
+            {% endif %}
+          {% endif %}
+        </div>
+      <button class="wsu-button-ui-close wsu-modal__close" aria-label="Close site menu">Close</button>
+    </div>
+  </div>
+</div>
+{% endmacro %}
