@@ -9,6 +9,7 @@ import WsuAnimateSubmenuSlideVertical from '../animations/slide/_script';
 import WsuNavigationSiteHorizontal from '../components/experimental_navigation-horizontal/_script';
 import WsuVideoFrame from '../components/experimental_video-frame/_script';
 import WsuButton from '../components/button/_script';
+import WsuStickyBox from '../components/sticky-box/_script';
 
 
 
@@ -27,4 +28,5 @@ const wsu = {
         //submenuSlideVertical: new WsuAnimateSubmenuSlideVertical(),
     },
     videoFrame: new WsuVideoFrame(),
+    stickyBox: new WsuStickyBox(),
 }
