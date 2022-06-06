@@ -75,8 +75,6 @@ input {
         height: $wsu-spacing--xxmedium;
     }
 
-
-
 }
 
 input[type="checkbox"],
@@ -91,7 +89,7 @@ input[type="radio"] {
         margin-right: 1.5em;
         cursor: pointer;
     }
-    
+
 }
 
 label {
@@ -113,8 +111,8 @@ select {
     &:not([multiple]) {
         appearance:none;
         padding-right: 50px;
-    
-    
+
+
         background-image:
             linear-gradient(45deg, transparent 50%, gray 50%),
             linear-gradient(135deg, gray 50%, transparent 50%),

@@ -17,7 +17,7 @@
 
     <div class="wsu-wrapper-global">
 
-        <div class="wsu-modal wsu-modal--small wsu-modal--centered wsu-modal--hidden" id="modal-small" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
+        <div class="wsu-modal wsu-modal--size-small wsu-modal--style-centered wsu-modal--hidden" id="modal-small" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
             <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
             <div class="wsu-modal__content">
                 <div class="wsu-modal__inner-wrapper">
@@ -37,9 +37,11 @@
 
 
 
-                        <button class="wsu-button " data-open="">
+
+                        <button class="wsu-button">
                             Sounds Good
                         </button>
+
 
 
 
@@ -50,7 +52,7 @@
         </div>
 
 
-        <div class="wsu-modal wsu-modal--medium wsu-modal--centered wsu-modal--hidden" id="modal-medium" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
+        <div class="wsu-modal wsu-modal--size-medium wsu-modal--style-centered wsu-modal--hidden" id="modal-medium" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
             <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
             <div class="wsu-modal__content">
                 <div class="wsu-modal__inner-wrapper">
@@ -72,9 +74,11 @@
 
 
 
-                        <button class="wsu-button " data-open="">
+
+                        <button class="wsu-button">
                             This is cool
                         </button>
+
 
 
 
@@ -85,7 +89,7 @@
         </div>
 
 
-        <div class="wsu-modal wsu-modal--large wsu-modal--columns wsu-modal--hidden" id="modal-large" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
+        <div class="wsu-modal wsu-modal--size-large wsu-modal--style-columns wsu-modal--hidden" id="modal-large" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
             <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
             <div class="wsu-modal__content">
                 <div class="wsu-modal__inner-wrapper">
@@ -116,7 +120,7 @@
         </div>
 
 
-        <div class="wsu-modal wsu-modal--full wsu-modal--hidden" id="modal-full" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
+        <div class="wsu-modal wsu-modal--size-full wsu-modal--hidden" id="modal-full" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
             <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
             <div class="wsu-modal__content">
                 <div class="wsu-modal__inner-wrapper">
@@ -165,8 +169,8 @@
                                 <textarea id="example-textarea" rows="3"></textarea>
                             </p>
                             <p>
-                                <input type="submit" name="submit" value="Submit Button">
-                                <input type="reset" name="reset" value="Reset Button">
+                                <input type="reset" name="reset" value="Cancel" class="wsu-button wsu-button--style-outline">
+                                <input type="submit" name="submit" value="Submit" class="wsu-button">
                             </p>
                         </form>
 
@@ -455,14 +459,18 @@
 
                     <div>
 
+
                         <button class="wsu-button" data-open="modal-small">
                             Small modal example
                         </button>
 
 
+
+
                         <button class="wsu-button" data-open="modal-medium">
                             Medium modal example
                         </button>
+
 
                     </div>
                     <hr />
@@ -505,14 +513,18 @@
 
                         <div>
 
+
                             <button class="wsu-button" data-open="modal-large">
                                 Large modal example
                             </button>
 
 
+
+
                             <button class="wsu-button" data-open="modal-full">
                                 Click me for a full modal
                             </button>
+
 
                         </div>
                     </div>

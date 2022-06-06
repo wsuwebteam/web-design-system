@@ -22,15 +22,15 @@
 		transition: opacity 0.4s;
 	}
 
-	&--full {
+	&--size-full {
 		.wsu-modal__content {
-      width: 90vw;
+      width: 95vw;
       min-height: 70vh;
-			max-height: 90vh;
+			max-height: 95vh;
 		}
 	}
 
-	&--large {
+	&--size-large {
     .wsu-modal__content {
       width: 80vw;
       max-width: 1200px;
@@ -39,46 +39,36 @@
     }
 	}
 
-	&--medium {
+	&--size-medium {
     .wsu-modal__content {
       width: 70vw;
       max-width: 900px;
 			min-height: 30vh;
-      //max-height: 70vh;
+      max-height: 90vh;
     }
 	}
 
-	&--small {
+	&--size-small {
 		.wsu-modal__content {
 			width: 50vw;
-			height: 30vh;
+			min-height: 30vh;
       max-width: 600px;
 
       @media screen and (max-width: $wsu-breakpoint--tablet) {
         max-width: 90vw;
-        max-height: 40vh;
+        min-height: 40vh;
       }
 		}
 	}
 
-  &--centered {
+  &--style-centered {
     .wsu-button {
       display: block;
       margin: auto;
     }
-
-    .wsu-modal__close:last-child {
-      position: relative;
-      right: unset;
-      bottom: $wsu-spacing--xxmedium;
-      margin-left: auto;
-      margin-right: auto;
-      //margin-top: $wsu-spacing--xsmall;
-      margin-top: $wsu-spacing--small;
-    }
   }
 
-  &--columns {
+  &--style-columns {
     .wsu-modal__content-wrapper {
       display: flex;
       align-items: flex-start;
@@ -112,14 +102,16 @@
 		margin: auto;
 		box-shadow: $wsu-dropshadow--high;
     overflow-y: scroll;
-    //?
     display: flex;
+    border-radius: $wsu-border-radius--large;
 	}
 
 	&__inner-wrapper {
+    position: relative;
 		padding: $wsu-spacing--xxmedium $wsu-spacing--large;
     width: 100%;
-    position: relative;
+    height: 100%;
+    top: 0;
 	}
 
   &__content-wrapper {
@@ -139,13 +131,9 @@
 		right: 0;
 		top: 0;
 
-		&:last-child { //second close modal button
+		&:last-child {
       position: relative;
       bottom: 0;
-      //position: absolute;
-      //bottom: 0;
-			//bottom: $wsu-spacing--xxmedium;
-      //right: $wsu-spacing--large;
       top: unset;
 		}
 	}
