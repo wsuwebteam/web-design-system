@@ -45,14 +45,11 @@ class WsuModal {
 				if ( ! eventElement.classList.contains( 'return-focus' ) ) {
 					this.returnFocus( eventElement );
 				}
-
-
             }
 
             // Close Action
             if ( eventElement.classList.contains('wsu-modal__overlay' ) || eventElement.classList.contains('wsu-modal__close' ) ) {
                 this.close( eventElement );
-
             }
 
 		} catch (error) {
@@ -70,7 +67,6 @@ class WsuModal {
 			modalList.forEach( (modal) => {
 
 				if ( event.key === 'Escape' ) {
-					console.log('Escape pressed');
 					this.close( event.target );
 				}
 
@@ -136,7 +132,7 @@ class WsuModal {
 
         if ( ! modal ) false;
 
-        var focusableEls = modal.querySelectorAll('a[href]:not([disabled]), button:not([disabled]):not(.wsu-modal__overlay)');
+		var focusableEls = modal.querySelectorAll('a[href]:not([disabled]), button:not([disabled]):not(.wsu-modal__overlay), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
 		var firstEl = focusableEls[0];
 		firstEl.focus();
 

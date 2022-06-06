@@ -7,10 +7,10 @@
 
 {% block content %}
 <div class="wsu-wrapper-global">
-	  {{ modal( ' wsu-modal--small wsu-modal--centered', 'modal-small', 'This is a Small Modal', 'Here is a typical warning or alert message we need you to acknolwedge.', 'Sounds Good', false ) }}
-    {{ modal( ' wsu-modal--medium wsu-modal--centered', 'modal-medium', 'This is a Medium Modal', '', 'This is cool', false, true ) }}
-    {{ modal( ' wsu-modal--large wsu-modal--columns', 'modal-large', 'This is a Large Modal', ' ', '', false, false, true ) }}
-    {{ modal( ' wsu-modal--full', 'modal-full', 'This is a Full Modal with a Form', 'Tell us more about yourself and sign up to get updates from us!', '', true ) }}
+	  {{ modal( ' wsu-modal--size-small wsu-modal--style-centered', 'modal-small', 'This is a Small Modal', 'Here is a typical warning or alert message we need you to acknolwedge.', 'Sounds Good', false, false, false ) }}
+    {{ modal( ' wsu-modal--size-medium wsu-modal--style-centered', 'modal-medium', 'This is a Medium Modal', '', 'This is cool', false, true ) }}
+    {{ modal( ' wsu-modal--size-large wsu-modal--style-columns', 'modal-large', 'This is a Large Modal', '', '', false, false, true ) }}
+    {{ modal( ' wsu-modal--size-full', 'modal-full', 'This is a Full Modal with a Form', 'Tell us more about yourself and sign up to get updates from us!', '', true ) }}
 
     {% include 'skip-to-main/html.njk' %}
     {% include 'header-global/html.njk' %}

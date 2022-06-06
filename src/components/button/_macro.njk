@@ -1,7 +1,13 @@
-{% macro button( classes, title='Lorem ipsum', id='modal' ) %}
+{% macro button( classes, title='Lorem ipsum', id ) %}
+{% if id %}
 <button class="wsu-button{{ classes }}" data-open="{{ id }}">
     {{ title }}
 </button>
+{% else %}
+<button class="wsu-button{{ classes }}">
+    {{ title }}
+</button>
+{% endif %}
 {% endmacro %}
 
 {% macro buttonPlay( classes='', title='Play Video' ) %}
