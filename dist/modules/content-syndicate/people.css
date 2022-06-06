@@ -280,7 +280,7 @@ $zindex-tooltip:                    1080;
   color: #fff;
   border-radius: 6px;
   border: none;
-  padding: 1em calc(2.25rem + 0.25rem);
+  padding: 1em calc( 2.25rem + 0.25rem);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
