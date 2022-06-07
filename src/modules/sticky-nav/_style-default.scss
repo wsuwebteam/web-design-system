@@ -1,0 +1,45 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-sticky-nav:not([class*="sticky-nav--style-"]) {
+
+    .wsu-sticky-nav__top-btn {
+        text-transform: uppercase;
+        @include wsu-font--xxsmall();
+        text-decoration: none;
+        font-weight: 500;
+        display: none;
+        text-align: center;
+        flex-shrink: 0;
+        flex-direction: column;
+        /* justify-content: center; */
+
+        &::before {
+            content: "\F10A";
+            display: block;
+            font-family: 'wsu-icons';
+        }
+    }
+
+    .wsu-sticky-box__content {
+        border-top: 1px solid $wsu-color--gray-15;
+        border-bottom: 1px solid $wsu-color--gray-15;
+        padding: $wsu-spacing--xxsmall 0;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .wsu-sticky-box {
+
+        &.wsu-sticky-box--stuck {
+
+            .wsu-sticky-nav__top-btn {
+                display: flex;
+            }
+
+        }
+        
+    }
+    
+}

@@ -1,0 +1,19 @@
+{% from "sticky-box/_macro.njk" import stickyBoxStart %}
+{% from "sticky-box/_macro.njk" import stickyBoxEnd %}
+{% from "anchor-menu/_macro.njk" import anchorMenuStart %}
+{% from "anchor-menu/_macro.njk" import anchorMenuEnd %}
+
+{% macro stickyNavStart( classes='', tag='nav', stickyBoxClasses='', anchorMenuClasses=' wsu-menu--style-inline' ) %}
+<{{ tag }} class="wsu-sticky-nav{{ classes }}">
+    <div class="wsu-sticky-nav__content">
+        {{ stickyBoxStart( stickyBoxClasses ) }}
+            {{ anchorMenuStart( anchorMenuClasses ) }}
+{% endmacro %}
+
+{% macro stickyNavEnd( tag='nav' ) %}
+            {{ anchorMenuEnd() }}
+            <a class="wsu-sticky-nav__top-btn" aria-role="button" href="#top">Back to Top</a>
+        {{ stickyBoxEnd() }}
+    </div>
+</{{ tag }}>
+{% endmacro %}

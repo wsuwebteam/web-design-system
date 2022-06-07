@@ -1,0 +1,33 @@
+{% extends "component.njk" %}
+
+{% from "anchor-menu/_macro.njk" import anchorMenuStart %}
+{% from "anchor-menu/_macro.njk" import anchorMenuEnd %}
+
+
+{% block styles %}
+<style>
+body {
+    min-height: 200vh;
+}
+</style>
+{%  endblock %}
+
+{% block content %}
+<div class="wsu-wrapper-site">
+{% include 'anchor-menu/html.njk' %}
+<h2 id="anchor1">Anchor 1</h2>
+<div style="height:400px"></div>
+<h2 id="anchor2">Anchor 2</h2>
+<div style="height:700px"></div>
+<h2 id="anchor3">Anchor 3</h2>
+<div style="height:700px"></div>
+<h2 id="anchor4">Anchor 4</h2>
+<div style="height:700px"></div>
+<h2 id="anchor5">Anchor 5</h2>
+<div style="height:700px"></div>
+<h2 id="anchor6">Anchor 6</h2>
+<div style="height:700px"></div>
+</div>
+
+</div>
+{%  endblock %} 
