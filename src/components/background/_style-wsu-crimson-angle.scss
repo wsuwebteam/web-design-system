@@ -1,0 +1,21 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-background--style-wsu-crimson-angle-left {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: auto;
+        right: 80%;
+        background-color: #000;
+        display: block;
+        width: 100%;
+        -webkit-clip-path: polygon(100% 0,100% 0,calc(100% - 20%) 100%,0 100%,0 0);
+        clip-path: polygon(100% 0,100% 0,calc(100% - 20%) 100%,0 100%,0 0);
+    }
+
+}
