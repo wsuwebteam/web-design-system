@@ -1,7 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-stat {
+/*.wsu-stat {
     display: block;
     box-sizing: border-box;
     margin-bottom: $wsu-spacing--component;
@@ -325,4 +325,7 @@
             }
         }
 	}
-}
+}*/
+
+@import './style-default';
+@import './style-circles';
