@@ -1,0 +1,15 @@
+{% from "anchor-menu/_macro.njk" import anchorMenuStart %}
+{% from "anchor-menu/_macro.njk" import anchorMenuEnd %}
+
+
+{{ anchorMenuStart() }}
+    <li><a href="#anchor1">Anchor 1</a>
+        <ul>
+            <li><a href="#anchor2">Anchor 2</a></li>
+            <li><a href="#anchor3">Anchor 3</a></li>
+        </ul>
+    </li>
+    <li><a href="#anchor4">Anchor 4</a></li>
+    <li><a href="#anchor5">Anchor 5</a></li>
+    <li><a href="#anchor6">Anchor 6</a></li>
+{{ anchorMenuEnd() }}
