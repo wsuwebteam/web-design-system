@@ -18,8 +18,8 @@
             font-weight: 600;
             color: $wsu-color--crimson;
             text-decoration: none;
-            @include wsu-font--xmedium();
-            padding: $wsu-font-size--xmedium $wsu-spacing--large;
+            @include wsu-font--medium();
+            padding: $wsu-font-size--xmedium $wsu-font-size--xmedium;
             position: relative;
             display: block;
 

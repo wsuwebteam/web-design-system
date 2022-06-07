@@ -1,0 +1,59 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-stat:not([class*="-stat--style-"]) {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: $wsu-spacing--component;
+    position: relative;
+
+    .wsu-stat {
+
+        &__value {
+            display: block;
+            font-size: $wsu-font-size--sxxlarge;
+            font-weight: $wsu-font-weight--xextrabold;
+            background: linear-gradient(0deg, #B12D47 0%, $wsu-color--crimson-light 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+
+            @media screen and ( max-width: $wsu-breakpoint--tablet ) {
+            font-size: $wsu-font-size--xxlarge;
+            }
+        }
+
+        &__caption {
+        font-size: $wsu-font-size--medium;
+        font-weight: $wsu-font-weight--semibold;
+        color: $wsu-color--gray-75;
+        margin-bottom: 0;
+        }
+
+        &__unit {
+            color: $wsu-color--crimson-light;
+            font-size: $wsu-font-size--large;
+            font-weight: $wsu-font-weight--bold;
+        }
+
+    }
+
+    &.wsu-stat--size-small {
+
+        .wsu-stat {
+
+            &__value {
+                font-size: $wsu-font-size--xlarge;
+            }
+    
+            &__caption {
+                font-size: $wsu-font-size--medium;
+            }
+    
+        }
+
+    }
+
+}
+
