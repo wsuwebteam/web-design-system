@@ -1,13 +1,13 @@
 {% from "column/_macro.njk" import column %}
 
-{% macro row(  layout='', classes='', content=false, contentBefore=false, contentAfter=false ) %}
+{% macro row(  layout='', classes='', content=false, contentBefore=false, contentAfter=false, columnClass='' ) %}
 <div class="wsu-row {{ layout }} {{ classes }}" >
     {% if layout == '' %}
         {{ column() }}
     {% endif %}
     {% if layout == 'wsu-row--sidebar-right' %}
         {{ column() }}
-        {{ column() }}
+        {{ column( columnClass ) }}
     {% endif %}
     {% if layout == 'wsu-row--sidebar-left' %}
         {{ column() }}
@@ -16,7 +16,7 @@
     {% if layout == 'wsu-row--thirds' %}
         {{ column() }}
         {{ column() }}
-        {{ column() }}
+        {{ column( ) }}
     {% endif %}
     {% if layout == 'wsu-row--halves' %}
         {{ column() }}
