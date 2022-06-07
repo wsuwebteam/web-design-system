@@ -110,7 +110,7 @@ class WsuAnchorMenu {
 
                 } else {
 
-                    activeChild = children[0].classList.add('wsu-active');
+                    //activeChild = children[0].classList.add('wsu-active');
 
                 }
 
@@ -120,7 +120,7 @@ class WsuAnchorMenu {
 
                 } else {
 
-                    children[0].classList.add('wsu-active');
+                    //children[0].classList.add('wsu-active');
 
                 }
 
