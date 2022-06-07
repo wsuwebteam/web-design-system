@@ -15,3 +15,6 @@
 } 
 
 @include wsu-menu--primary-vertical();
+
+@import './style-inline';
+@import './style-inline-split';
