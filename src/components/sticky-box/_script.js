@@ -8,6 +8,8 @@ class WsuStickyBox {
 
         this.boxSelector = '.wsu-sticky-box';
 
+        this.timer = false;
+
         this.init();
         
     }
@@ -17,8 +19,6 @@ class WsuStickyBox {
         this.initialize();
 
         this.bindEvents();
-
-        this.stickBoxes();
 
     }
 
@@ -41,19 +41,31 @@ class WsuStickyBox {
 
     bindEvents() {
 
-        window.addEventListener( 
-            'scroll', ( event ) => { this.stickBoxes() }, false);
+        try {
 
-        window.addEventListener( 
-            'resize', ( event ) => { this.stickBoxes() }, false);
+            window.addEventListener( 
+                'scroll', ( event ) => { this.stickBoxes() }, false);
+
+            window.addEventListener( 
+                'resize', ( event ) => { this.stickBoxes() }, false);
+
+            this.stickBoxes( false );
+
+        } catch (error) {
+            console.error(error);
+        }
 		
 	}
 
-    stickBoxes() {
+    stickBoxes( isEvent = true ) {
+
+        if ( isEvent ) {
+
+            this.addActiveClass();
+
+        }
 
         this.boxes.forEach( element => {
-
-            console.log( element.getBoundingClientRect().top );
 
             let child = element.firstElementChild;
 
@@ -75,6 +87,27 @@ class WsuStickyBox {
             
         });
 
+    }
+
+
+    addActiveClass() {
+
+        clearTimeout( this.timer );
+
+        this.boxes.forEach( element => {
+            element.classList.add('wsu-active');
+        } );
+
+        this.timer = setTimeout( () => {
+            this.removeActiveClass();
+        }, 2000 );
+
+    }
+
+    removeActiveClass() {
+        this.boxes.forEach( element => {
+            element.classList.remove('wsu-active');
+        } );
     }
 
 }

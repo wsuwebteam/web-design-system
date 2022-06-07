@@ -7,7 +7,7 @@
     &--stuck {
 
         .wsu-sticky-box__content {
-            position: fixed;
+            position: fixed !important;
             top: 0;
         }
 
