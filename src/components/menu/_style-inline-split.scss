@@ -19,7 +19,7 @@
             color: $wsu-color--crimson;
             text-decoration: none;
             @include wsu-font--medium();
-            padding: $wsu-font-size--xmedium $wsu-font-size--xmedium;
+            padding: $wsu-spacing--small $wsu-spacing--xmedium;
             position: relative;
             display: block;
 
