@@ -1,7 +1,22 @@
 @import '../../_assets/scss/variables';
 @import '../../_assets/scss/mixins';
 
-
+/*----------  Display  ----------*/
+.wsu-display {
+    &--block {
+      display: block;
+    }
+  
+    &--inline {
+      display: inline;
+    }
+  
+    &--inline-block {
+      display: inline-block;
+    }
+  }
+  
+  /*----------  Alignment  ----------*/
 .wsu-align {
 
     &--right {
