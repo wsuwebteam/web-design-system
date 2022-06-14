@@ -1,8 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-decorator--style-triangle-crimson-left,
-.wsu-decorator--style-triangle-crimson-right {
+span[class*="decorator--style-triangle"] {
     content: '';
 	display: block;
 	position: absolute;
@@ -10,14 +9,14 @@
 	width: 200vw !important;
 }
 
-.wsu-decorator--style-triangle-crimson-left,
-.wsu-decorator--style-triangle-crimson-right {
+
+span[class*="decorator--style-triangle-crimson"] {
 	background-color: $wsu-color--crimson;
 }
 
 .wsu-decorator--style-triangle-gray-left,
 .wsu-decorator--style-triangle-gray-right {
-	background-color: $wsu-color--gray-10;
+	background-color: $wsu-color--gray-5;
 }
 
 .wsu-decorator--style-triangle-gray-right,
@@ -28,4 +27,20 @@
 .wsu-decorator--style-triangle-gray-left,
 .wsu-decorator--style-triangle-crimson-left {
 	clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+}
+
+.wsu-decorator--style-triangle-crimson-wsu-steep-right {
+	clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.wsu-decorator--style-triangle-crimson-wsu-steep-left {
+	clip-path: polygon(0 0, 70% 0%, 100% 100%, 0% 100%);
+}
+
+.wsu-decorator--style-triangle-crimson-wsu-steep-top-right {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
+
+.wsu-decorator--style-triangle-crimson-wsu-steep-top-left {
+	clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
 }

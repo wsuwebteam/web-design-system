@@ -1,0 +1,17 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-list--style-lined {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+        border-bottom: 1px solid $wsu-color--gray-10;
+        margin: 0;
+        padding: 0.75rem 3rem;
+        font-weight: 500;
+        position: relative;
+        font-size: 1.35rem;
+    }
+}
