@@ -1,15 +1,18 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+.wsu-decorator--style-block-gray-wsu,
+.wsu-decorator--style-block-crimson-wsu,
+.wsu-decorator--style-block-wsu,
 .wsu-decorator--style-block-gray-dark,
 .wsu-decorator--style-block-crimson-light,
 .wsu-decorator--style-block-crimson,
 .wsu-decorator--style-block-gray {
-    content: '';
 	display: block;
 	position: absolute;
 }
 
+.wsu-decorator--style-block-crimson-wsu,
 .wsu-decorator--style-block-crimson {
     background-color: $wsu-color--crimson;
 }

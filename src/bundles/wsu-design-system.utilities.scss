@@ -166,6 +166,10 @@
 
 .wsu-position {
 
+    &--relative {
+        position: relative;
+    }
+
     &--pull-up-large {
         margin-top: -90px;
     }
@@ -194,45 +198,107 @@
     }
 }
 
+.wsu-overflow {
+
+    &--hidden {
+        overflow: hidden;
+    }
+
+    &-x--hidden {
+        overflow-x: hidden;
+    }
+
+    &-y--hidden {
+        overflow-y: hidden;
+    }
+
+}
+
+.wsu-z-index {
+
+    &--content-1 {
+        z-index: 1;
+    }
+
+    &--content-2 {
+        z-index: 2;
+    }
+
+    &--content-3 {
+        z-index: 3;
+    }
+
+    &--content-4 {
+        z-index: 4;
+    }
+
+    &--content-5 {
+        z-index: 5;
+    }
+}
+
 
 @each $spaceName, $space in $wsu-spacing-map{
 
-    .wsu-spacing-margin-top-#{$spaceName},
+    .wsu-spacing-negative-margin-top--#{$spaceName} {
+        margin-top: -$space !important;
+    }
+
+    .wsu-spacing-margin-top--#{$spaceName},
     .wsu-spacing-before--#{$spaceName} {
         margin-top: $space !important;
     }
 
-    .wsu-spacing-margin-bottom-#{$spaceName},
+    .wsu-spacing-negative-margin-bottom--#{$spaceName} {
+        margin-bottom: -$space !important;
+    }
+
+    .wsu-spacing-margin-bottom--#{$spaceName},
     .wsu-spacing-after--#{$spaceName} {
         margin-bottom: $space !important;
     }
 
-    .wsu-spacing-margin-left-#{$spaceName} {
+    .wsu-spacing-negative-margin-left--#{$spaceName} {
+        margin-left: -$space !important;
+    }
+
+    .wsu-spacing-margin-left--#{$spaceName} {
         margin-left: $space !important;
     }
 
-    .wsu-spacing-margin-right-#{$spaceName} {
+    .wsu-spacing-negative-margin-right--#{$spaceName} {
+        margin-right: -$space !important;
+    }
+    .wsu-spacing-margin-right--#{$spaceName} {
         margin-right: $space !important;
     }
 
-    .wsu-spacing-padding-left-#{$spaceName} {
-        margin-top: $space !important;
+    .wsu-spacing-padding-left--#{$spaceName} {
+        padding-left: $space !important;
     }
 
-    .wsu-spacing-padding-right-#{$spaceName} {
-        margin-top: $space !important;
+    .wsu-spacing-padding-right--#{$spaceName} {
+        padding-right: $space !important;
     }
 
-    .wsu-spacing-padding-top-#{$spaceName},
+    .wsu-spacing-padding-top--#{$spaceName},
     .wsu-spacing-top--#{$spaceName} {
         padding-top: $space !important;
     }
 
-    .wsu-spacing-padding-bottom-#{$spaceName},
+    .wsu-spacing-padding-bottom--#{$spaceName},
     .wsu-spacing-bottom--#{$spaceName} {
         padding-bottom: $space !important;
     }
 
+}
+
+.wsu-spacing-margin-left--auto {
+    margin-left: auto !important;
+}
+
+.wsu-spacing-margin-right--auto {
+    margin-right: auto !important;
 }
 
 /** ================ .wsu-width-- ====================== **/
@@ -260,6 +326,54 @@
     box-sizing: border-box;
     width: 100%;
     max-width: $wsu-width--content;
+}
+
+.wsu-max-width {
+
+    &--hero {
+        max-width: 1200px !important;
+    }
+
+    &--xxlarge {
+        max-width: 1000px !important;
+    }
+
+    &--xlarge {
+        max-width: 900px !important;
+    }
+
+    &--large {
+        max-width: 800px !important;
+    }
+
+    &--xxmedium {
+        max-width: 700px !important;
+    }
+
+    &--xmedium {
+        max-width: 600px !important;
+    }
+
+    &--medium {
+        max-width: 500px !important;
+    }
+
+    &--small {
+        max-width: 400px !important;
+    }
+
+    &--xsmall {
+        max-width: 300px !important;
+    }
+
+    &--xxsmall {
+        max-width: 200px !important;
+    }
+
+    &--sxxsmall {
+        max-width: 150px !important;
+    }
+
 }
 
 
