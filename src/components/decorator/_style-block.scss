@@ -1,0 +1,28 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-decorator--style-block-gray-dark,
+.wsu-decorator--style-block-crimson-light,
+.wsu-decorator--style-block-crimson,
+.wsu-decorator--style-block-gray {
+    content: '';
+	display: block;
+	position: absolute;
+}
+
+.wsu-decorator--style-block-crimson {
+    background-color: $wsu-color--crimson;
+}
+
+.wsu-decorator--style-block-crimson-light {
+    background-color: $wsu-color--crimson-light;
+}
+
+.wsu-decorator--style-block-gray {
+    background-color: $wsu-color--gray-10;
+}
+
+.wsu-decorator--style-block-gray-dark {
+    background-color: $wsu-color--gray-40;
+}
+
