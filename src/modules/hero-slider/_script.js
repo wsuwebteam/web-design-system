@@ -3,7 +3,7 @@ import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from "swiper";
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 const initSwiper = () => {
-  const sliderName = ".swiper";
+  const sliderName = ".wsu-hero-slider";
   let heroSliders = document.querySelectorAll(sliderName);
 
   if (heroSliders.length > 0) {
@@ -17,7 +17,7 @@ const initSwiper = () => {
       let pauseButton = slider.querySelector(".wsu-hero-slider__pause-btn");
 
       if (slides.length > 1) {
-        slider.classList.add(`swiper-${index}`);
+        slider.classList.add(`wsu-hero-slider-${index}`);
 
         const swiperSettings = {
           effect: "fade",
@@ -49,7 +49,7 @@ const initSwiper = () => {
           };
         }
 
-        const swiper = new Swiper(`.swiper-${index}`, swiperSettings);
+        const swiper = new Swiper(`.wsu-hero-slider-${index}`, swiperSettings);
 
         if (autoplay) {
           pauseButton.addEventListener("click", function () {
