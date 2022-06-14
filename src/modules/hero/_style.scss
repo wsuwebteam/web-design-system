@@ -103,7 +103,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-    }
+    }    
 
     .wsu-image-frame, .wsu-slider-frame {
         position: absolute;
@@ -112,7 +112,7 @@
         left: 0;
         right: 0;
         background-color: #000;
-        z-index: 1;
+        // z-index: 1;
     }    
 
     .wsu-slider-frame {
@@ -166,7 +166,7 @@
 
     .wsu-button-video-pause,
     .wsu-button-pause-background {
-        z-index: 1;
+        z-index: 5;
     }
 
     &--size-full {
