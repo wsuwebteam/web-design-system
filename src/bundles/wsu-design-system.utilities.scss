@@ -182,18 +182,38 @@
 
 @each $spaceName, $space in $wsu-spacing-map{
 
+    .wsu-spacing-margin-top-#{$spaceName},
     .wsu-spacing-before--#{$spaceName} {
         margin-top: $space !important;
     }
 
+    .wsu-spacing-margin-bottom-#{$spaceName},
     .wsu-spacing-after--#{$spaceName} {
         margin-bottom: $space !important;
     }
 
+    .wsu-spacing-margin-left-#{$spaceName} {
+        margin-left: $space !important;
+    }
+
+    .wsu-spacing-margin-right-#{$spaceName} {
+        margin-right: $space !important;
+    }
+
+    .wsu-spacing-padding-left-#{$spaceName} {
+        margin-top: $space !important;
+    }
+
+    .wsu-spacing-padding-right-#{$spaceName} {
+        margin-top: $space !important;
+    }
+
+    .wsu-spacing-padding-top-#{$spaceName},
     .wsu-spacing-top--#{$spaceName} {
         padding-top: $space !important;
     }
 
+    .wsu-spacing-padding-bottom-#{$spaceName},
     .wsu-spacing-bottom--#{$spaceName} {
         padding-bottom: $space !important;
     }
@@ -219,7 +239,6 @@
 }
 
 .wsu-width--content {
-    position: relative;
     flex-grow: 1;
     margin: 0 auto;
     padding: 0 $wsu-spacing--xlarge 0;
