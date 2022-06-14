@@ -1,0 +1,31 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-decorator--style-triangle-crimson-left,
+.wsu-decorator--style-triangle-crimson-right {
+    content: '';
+	display: block;
+	position: absolute;
+	height: 100vw !important;
+	width: 200vw !important;
+}
+
+.wsu-decorator--style-triangle-crimson-left,
+.wsu-decorator--style-triangle-crimson-right {
+	background-color: $wsu-color--crimson;
+}
+
+.wsu-decorator--style-triangle-gray-left,
+.wsu-decorator--style-triangle-gray-right {
+	background-color: $wsu-color--gray-10;
+}
+
+.wsu-decorator--style-triangle-gray-right,
+.wsu-decorator--style-triangle-crimson-right {
+	clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.wsu-decorator--style-triangle-gray-left,
+.wsu-decorator--style-triangle-crimson-left {
+	clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+}
