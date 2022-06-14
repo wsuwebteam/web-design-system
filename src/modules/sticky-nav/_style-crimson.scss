@@ -32,6 +32,80 @@
         flex-grow: 1;
         position: relative;
         background-color: #fff;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    
+        li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            
+            a {
+                font-weight: 600;
+                color: $wsu-color--crimson;
+                text-decoration: none;
+                @include wsu-font--medium();
+                padding: $wsu-spacing--small $wsu-spacing--xmedium;
+                position: relative;
+                display: block;
+    
+                &::after,
+                &::before {
+                    content: '';
+                    background-color: $wsu-color--gray-15;
+                    position: absolute;
+                    bottom: $wsu-font-size--medium;
+                    top: $wsu-font-size--medium;
+                    width: 2px;
+                    height: auto;
+                    transition: height $wsu-easing 150ms;
+                }
+    
+                &::after {
+                    display: none;
+                    right: -1px;
+                }
+    
+                &::before {
+                    display: block;
+                    left: -1px;
+                }
+            }
+    
+            &:last-child a::after {
+                display: block;
+            }
+    
+            &::after {
+                content: '';
+                background-color: $wsu-color--crimson-light;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: auto;
+                height: 0;
+                transition: height $wsu-easing 150ms;
+            }
+            
+            &:hover,
+            &:focus,
+            &.wsu-active {
+    
+                &::after {
+                    height: 6px;
+                }
+    
+            }
+        }
+
+        li:first-child a::before {
+            display: none;
+        }
+        
     }
 
     .wsu-sticky-nav__top-btn {
