@@ -1,0 +1,23 @@
+{# Quick Links #}
+{% set links = [
+  { img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/baseballs.jpg', title: 'Link Name' },
+  { img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/space.jpg', title: 'Cougs in Space' },
+  { img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/honey-jar.jpg', title: 'WSU News' },
+  { img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/mystery-of-pi-charles-moore.jpg', title: 'Join the Community' },
+  { img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/greenlandphoto1.jpg', title: 'Canvas' },
+  { img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/baseballs.jpg', title: 'Measuring Flying Baseballs' }
+] %}
+
+{% macro quickLinks( classes='', content = links ) %}
+<div class="wsu-quick-links{{ classes }}">
+  <h3 class="wsu-quick-links__title" id="quick-links">Quick Links</h3>
+  <div class="wsu-quick-links__wrapper">
+    {% for link in content %}
+	  <a class="wsu-quick-links__link">
+      <img src="{{ link.img }}" alt="" class="wsu-quick-links__icon" />
+      <h5 class="wsu-quick-links__name">{{ link.title }}</h5>
+    </a>
+    {% endfor %}
+	</div>
+</div>
+{% endmacro %}

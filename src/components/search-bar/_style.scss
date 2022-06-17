@@ -1,0 +1,142 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-search-bar {
+  &__title {
+    font-weight: $wsu-font-weight--semibold;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: $wsu-spacing--small 0 $wsu-spacing--xsmall;
+  }
+
+  &__form {
+    flex: 1 1 auto;
+  }
+
+  &__input {
+    width: 98%;
+
+    @media screen and (max-width: $wsu-breakpoint--phone) {
+      margin-bottom: $wsu-spacing--xsmall;
+    }
+  }
+
+  &__scope {
+    border: none;
+    padding: 0;
+  }
+
+	&__scope-option {
+    display: inline-block;
+    margin-right: $wsu-spacing--medium;
+
+    &[aria-checked="true"] {
+      .wsu-search-bar__radio {
+        &::before {
+          background: $wsu-color--crimson;
+        }
+      }
+    }
+  }
+
+  &__scope-label {
+    cursor: pointer;
+  }
+
+  &__radio {
+    -webkit-appearance: none;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: transparent;
+      display: block;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      top: 7px;
+      left: 7px;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: solid 3px $wsu-color--gray-55;
+      width: 22px;
+      height: 22px;
+      background: transparent;
+      margin-right: $wsu-spacing--sxxsmall;
+    }
+  }
+
+  .gsc-control {
+    width: 100%;
+  }
+
+  table.gsc-search-box td,
+  table.gsc-search-box td.gsc-input,
+  table.gsc-search-box td.gsc-search-button {
+    border: none;
+    padding: 0;
+  }
+
+  .gsc-input-box {
+    border: none;
+
+    > table {
+      border: none;
+    }
+  }
+
+  input.gsc-input {
+    font-size: $wsu-font-size--xmedium;
+    border-radius: $wsu-border-radius--medium;
+    border: 1px solid #b3b3b3 !important;
+    height: 3rem !important;
+    padding: $wsu-spacing--small $wsu-spacing--small !important;
+  }
+
+  .gsc-input-box > table {
+    margin-bottom: 0;
+    border-top: none;
+  }
+
+  td.gsib_b {
+    border: none;
+  }
+
+  .gsc-search-button-v2 {
+    border-color: $wsu-color--crimson;
+    background-color: $wsu-color--crimson;
+    border-radius: $wsu-border-radius--large;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    cursor: pointer;
+
+    svg {
+      display: none;
+    }
+
+    &::before {
+      content: "Search";
+      font-size: $wsu-font-size--medium;
+      color: #ffffff;
+      font-weight: $wsu-font-weight--semibold;
+    }
+
+    &:hover {
+      box-shadow: 0px 5px 14px $wsu-dropshadow--medium;
+      border-color: $wsu-color--crimson-light;
+      background-color: $wsu-color--crimson-light;
+    }
+  }
+
+}

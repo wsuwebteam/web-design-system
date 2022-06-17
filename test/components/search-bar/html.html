@@ -1,0 +1,30 @@
+<div class="wsu-search-bar">
+
+    <h2 class="wsu-search-bar__title" id="site-search">Search WSU</h2>
+    <!--<div class="gcse-search" data-as_sitesearch="https://wsu.edu/" data-queryParameterName="q"></div>-->
+    <!--<div class="gcse-search"></div>-->
+    <div class="wsu-search-bar__wrapper">
+        <!-- <form method="get" class="wsu-search-bar__form"> -->
+        <form method="get" class="gcse-searchbox">
+            <form method="get" action="https://search.wsu.edu/Default.aspx" class="wsu-search-bar__form">
+                <input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
+                <input name="cof" value="FORID:11" type="hidden">
+                <input name="sa" value="Search" type="hidden">
+                <input type="text" value="" name="q" placeholder="Search" class="wsu-search-bar__input">
+            </form>
+            <button class="wsu-button">Search</button>
+    </div>
+    <div class="gcse-searchresults"></div>
+    <fieldset class="wsu-search-bar__scope" role="radiogroup" aria-labelledby="site-search">
+        <div class="wsu-search-bar__scope-option" role="radio" aria-checked="true">
+            <label class="wsu-search-bar__scope-label">
+                <input type="radio" name="search-type" id="single" value="single" class="wsu-search-bar__radio">This Site
+            </label>
+        </div>
+        <div class="wsu-search-bar__scope-option" role="radio" aria-checked="false">
+            <label class="wsu-search-bar__scope-label">
+                <input type="radio" name="search-type" id="all" value="all" class="wsu-search-bar__radio">All WSU
+            </label>
+        </div>
+    </fieldset>
+</div>
