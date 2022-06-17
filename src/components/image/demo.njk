@@ -1,0 +1,26 @@
+{% extends "component.njk" %}
+
+{% from "sticky-box/_macro.njk" import stickyBoxStart %}
+{% from "sticky-box/_macro.njk" import stickyBoxEnd %}
+
+
+{% block styles %}
+<style>
+body {
+    min-height: 200vh;
+}
+</style>
+{%  endblock %}
+
+{% block content %}
+{% include 'image/html.njk' %}
+<hr />
+<img class="wsu-image--style-inset-outline" width="700" height="393" src="https://s3.wp.wsu.edu/uploads/sites/2796/2022/05/COVID-19.jpg">
+<hr />
+<figure class="wp-block-image size-large wsu-image--style-inset-outline">
+    <img width="700" height="393" src="https://s3.wp.wsu.edu/uploads/sites/2796/2022/05/COVID-19.jpg">
+</figure>
+{%  endblock %} 
+
+
+
