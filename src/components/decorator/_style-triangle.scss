@@ -1,7 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-span[class*="decorator--style-triangle"] {
+div[class*="decorator--style-triangle"] {
     content: '';
 	display: block;
 	position: absolute;
@@ -10,7 +10,7 @@ span[class*="decorator--style-triangle"] {
 }
 
 
-span[class*="decorator--style-triangle-crimson"] {
+div[class*="decorator--style-triangle-crimson"] {
 	background-color: $wsu-color--crimson;
 }
 
