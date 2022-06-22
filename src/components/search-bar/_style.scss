@@ -2,17 +2,31 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-search-bar {
+
+  &--single,
+  &--all {
+    display: block;
+    visibility: visible;
+
+    &[aria-hidden="true"] {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
   &__title {
     font-weight: $wsu-font-weight--semibold;
   }
 
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    //display: flex;
+    //flex-wrap: wrap;
     width: 100%;
     margin: $wsu-spacing--small 0 $wsu-spacing--xsmall;
   }
 
+  //Custom Search box
+  /*
   &__form {
     flex: 1 1 auto;
   }
@@ -24,6 +38,7 @@
       margin-bottom: $wsu-spacing--xsmall;
     }
   }
+  */
 
   &__scope {
     border: none;
@@ -77,6 +92,7 @@
     }
   }
 
+  //Google Search Box
   .gsc-control {
     width: 100%;
   }
@@ -102,15 +118,12 @@
     border: 1px solid #b3b3b3 !important;
     height: 3rem !important;
     padding: $wsu-spacing--small $wsu-spacing--small !important;
+    background-position: 12px center !important;
   }
 
   .gsc-input-box > table {
     margin-bottom: 0;
     border-top: none;
-  }
-
-  td.gsib_b {
-    border: none;
   }
 
   .gsc-search-button-v2 {
@@ -137,6 +150,14 @@
       border-color: $wsu-color--crimson-light;
       background-color: $wsu-color--crimson-light;
     }
+  }
+
+  .gsst_a .gscb_a {
+    color: $wsu-color--gray-45;
+  }
+
+  .gsc-clear-button {
+    display: none;
   }
 
 }

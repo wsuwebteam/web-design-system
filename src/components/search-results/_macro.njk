@@ -1,0 +1,10 @@
+{% macro searchResults( classes='' ) %}
+<div class="wsu-search-results{{ classes }}" >
+  <div class="wsu-search-results--single" aria-hidden="false">
+    <div class="gcse-searchresults" data-gname="single-site"></div>
+  </div>
+  <div class="wsu-search-results--all" aria-hidden="true">
+    <div class="gcse-searchresults" data-gname="wsu-site"></div>
+  </div>
+</div>
+{% endmacro %}

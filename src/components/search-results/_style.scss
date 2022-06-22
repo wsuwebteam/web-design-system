@@ -1,0 +1,35 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-search-results {
+  &--single,
+  &--all {
+    display: block;
+    visibility: visible;
+
+    &[aria-hidden="true"] {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .gs-webResult .gs-snippet,
+  .gs-fileFormatType,
+  .gsc-result-info,
+  .gsc-orderby-container,
+  .gsc-cursor {
+    font-family: $wsu-font-family, sans-serif;
+    font-weight: $wsu-font-weight--regular;
+  }
+
+  .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {
+    color: $wsu-color--crimson;
+    font-family: $wsu-font-family, sans-serif;
+    font-weight: $wsu-font-weight--semibold;
+  }
+
+  .gs-promotion .gs-visibleUrl, .gs-webResult .gs-visibleUrl {
+    color: $wsu-color--accent-pacificsky;
+  }
+
+}

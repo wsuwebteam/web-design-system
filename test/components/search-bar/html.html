@@ -1,30 +1,33 @@
 <div class="wsu-search-bar">
-
     <h2 class="wsu-search-bar__title" id="site-search">Search WSU</h2>
-    <!--<div class="gcse-search" data-as_sitesearch="https://wsu.edu/" data-queryParameterName="q"></div>-->
-    <!--<div class="gcse-search"></div>-->
     <div class="wsu-search-bar__wrapper">
-        <!-- <form method="get" class="wsu-search-bar__form"> -->
-        <form method="get" class="gcse-searchbox">
-            <form method="get" action="https://search.wsu.edu/Default.aspx" class="wsu-search-bar__form">
-                <input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
-                <input name="cof" value="FORID:11" type="hidden">
-                <input name="sa" value="Search" type="hidden">
-                <input type="text" value="" name="q" placeholder="Search" class="wsu-search-bar__input">
-            </form>
-            <button class="wsu-button">Search</button>
+        <div class="wsu-search-bar--single" aria-hidden="false">
+            <div class="gcse-searchbox" data-gname="single-site" data-as_sitesearch="brand.wsu.edu"></div>
+        </div>
+        <div class="wsu-search-bar--all" aria-hidden="true">
+            <div class="gcse-searchbox" data-gname="wsu-site" data-as_sitesearch="wsu.edu"></div>
+        </div>
     </div>
-    <div class="gcse-searchresults"></div>
     <fieldset class="wsu-search-bar__scope" role="radiogroup" aria-labelledby="site-search">
-        <div class="wsu-search-bar__scope-option" role="radio" aria-checked="true">
+        <div class="wsu-search-bar__scope-option" role="radio" aria-checked="true" id="single">
             <label class="wsu-search-bar__scope-label">
                 <input type="radio" name="search-type" id="single" value="single" class="wsu-search-bar__radio">This Site
             </label>
         </div>
-        <div class="wsu-search-bar__scope-option" role="radio" aria-checked="false">
+        <div class="wsu-search-bar__scope-option" role="radio" aria-checked="false" id="all">
             <label class="wsu-search-bar__scope-label">
                 <input type="radio" name="search-type" id="all" value="all" class="wsu-search-bar__radio">All WSU
             </label>
         </div>
     </fieldset>
+
+    <div class="wsu-search-results">
+        <div class="wsu-search-results--single" aria-hidden="false">
+            <div class="gcse-searchresults" data-gname="single-site"></div>
+        </div>
+        <div class="wsu-search-results--all" aria-hidden="true">
+            <div class="gcse-searchresults" data-gname="wsu-site"></div>
+        </div>
+    </div>
+
 </div>
