@@ -1,0 +1,10 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-page-banner--style-framed {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-offset: -$wsu-spacing--xmedium;
+    outline-color: #fff;
+}
+
