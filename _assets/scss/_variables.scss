@@ -352,8 +352,8 @@ $wsu-spacing--small:    1.125rem;
 $wsu-spacing--xsmall:   0.875rem;
 $wsu-spacing--xxsmall:  0.6875rem;
 $wsu-spacing--sxxsmall: 0.5rem;
-$wsu-spacing--xxhero:   ( #{$wsu-spacing--hero} + #{$wsu-spacing--xlarge} );
-$wsu-spacing--xhero:    ( #{$wsu-spacing--hero} + #{$wsu-spacing--xmedium} );
+$wsu-spacing--xxhero:   ( $wsu-spacing--hero + $wsu-spacing--xlarge );
+$wsu-spacing--xhero:    ( $wsu-spacing--hero + $wsu-spacing--xmedium );
 
 $wsu-spacing--em-hero:     6.87em;
 $wsu-spacing--em-xlarge:   5.125em;
