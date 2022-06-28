@@ -1,0 +1,30 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-page-banner {
+    position: relative;
+    min-height: 550px;
+    margin-bottom: $wsu-spacing--component;
+
+    &--size-xsmall{
+        min-height: 300px;
+    }
+    &--size-small{
+        min-height: 450px;
+    }
+    &--size-large{
+        min-height: 725px;
+    }
+    &--size-xlarge{
+        min-height: 800px;
+    }
+    &--size-xxlarge{
+        min-height: 900px;
+    }
+    &--size-full{
+        min-height: 100vh;
+    }
+}
+
+@import './style-framed';
+

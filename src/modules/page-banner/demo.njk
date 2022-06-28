@@ -1,0 +1,15 @@
+{% extends "component.njk" %}
+{% from "page-banner/_macro.njk" import pageBanner %}
+
+{% block content %}
+{% include 'page-banner/html.njk' %}
+<hr />
+{{ pageBanner(' wsu-width--full') }}
+<hr />
+{{ pageBanner(' wsu-page-banner--size-xsmall') }}
+{{ pageBanner(' wsu-page-banner--size-small') }}
+{{ pageBanner(' wsu-page-banner--size-large') }}
+{{ pageBanner(' wsu-page-banner--size-xlarge') }}
+{{ pageBanner(' wsu-page-banner--size-xxlarge') }}
+
+{%  endblock %}   
