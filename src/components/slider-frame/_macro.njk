@@ -1,7 +1,6 @@
 {% macro sliderFrame(classes = '', delay = 3000, numberOfSlides = 5, effect = 'slide') %}
     <div class="wsu-slider-frame swiper swiper-no-swiping {{ classes }}" 
-        data-delay="{{delay}}" 
-        data-number-slides-slides="{{numberOfSlides}}" 
+        data-delay="{{delay}}"          
         data-effect="{{effect}}">
         <div class="swiper-wrapper">
             {% for i in range(0, numberOfSlides) %}
