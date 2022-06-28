@@ -149,25 +149,37 @@
     border: 0;
 }
 
+.wsu-notch--small,
 .wsu-shape--em-notch-small {
     -webkit-clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
     clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
 }
 
+.wsu-notch--medium,
 .wsu-shape--em-notch-medium {
     -webkit-clip-path: polygon(100% 0,100% calc(100% - 70px),calc(100% - 70px) 100%,0 100%,0 0);
     clip-path: polygon(100% 0,100% calc(100% - 70px),calc(100% - 70px) 100%,0 100%,0 0);
 }
 
+.wsu-notch--large,
 .wsu-shape--em-notch-large {
     -webkit-clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0);
     clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0);
+}
+
+.wsu-notch-top--small {
+    -webkit-clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
 }
 
 .wsu-position {
 
     &--relative {
         position: relative;
+    }
+
+    &--absolute {
+        position: absolute;
     }
 
     &--pull-up-large {
