@@ -50,12 +50,12 @@ class WsuSearchBar {
 	}
 
   searchParam() {
-    var searchbox = document.getElementsByClassName('gcse-searbox')[0];
+    //var siteUrl = window.location.hostname;
+    var siteUrl = 'brand.wsu.edu'; //temporary
+    var searchbox = document.getElementById('single-box');
     console.log(searchbox);
 
-    var site = window.location.hostname;
-    console.log(site);
-
+    searchbox.setAttribute('data-as_sitesearch', siteUrl);
   }
 
   displayElements( div ) {
