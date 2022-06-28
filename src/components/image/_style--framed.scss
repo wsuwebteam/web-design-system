@@ -1,7 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-image--style-inset-outline {
+.wsu-image--style-framed {
     outline-style: inset;
     outline-width: 1px;
     outline-offset: -$wsu-spacing--xmedium;
