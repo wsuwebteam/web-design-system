@@ -1,0 +1,41 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-header-utility-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    &__quicklinks{
+        background-color: $wsu-color--gray-75;
+        color: white;
+        border: none;
+        border-bottom: 5px solid $wsu-color--crimson-light;
+        box-shadow: none;
+        padding: 1em 2em;
+        cursor: pointer;
+        transition: ease-in-out 100ms;
+    }
+    &__quicklinks:hover{
+        background-color: $wsu-color--gray-85;
+    }
+    &__quicklinks::after{
+        content: '\F140';
+        font-size: inherit;
+    }
+    &__cta{
+        background-color: $wsu-color--crimson-light;
+        color: white;
+        border: none;
+        border-bottom: 5px solid $wsu-color--crimson-light;
+        box-shadow: none;
+        padding: 1em 2em;
+        cursor: pointer;
+        transition: ease-in-out 100ms;
+        font-weight: $wsu-font-weight--bold;
+    }
+    &__cta:hover{
+        background-color: $wsu-color--crimson-dark;
+        border-bottom: 5px solid $wsu-color--crimson-dark;
+    }
+}

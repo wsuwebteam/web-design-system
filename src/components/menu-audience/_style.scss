@@ -1,0 +1,15 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-menu-audience{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    &__link{
+        padding: 0.5em 2em;
+    }
+    &__link:not(:last-child){
+        border-right: 2px solid $wsu-color--gray-30;
+    }
+}
