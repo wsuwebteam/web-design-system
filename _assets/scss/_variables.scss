@@ -340,6 +340,7 @@ $wsu-image-ratio-map: (
 /* ========================================================
 == Spacing ==
 ==========================================================*/
+
 $wsu-spacing--hero:     6.87rem;
 $wsu-spacing--xxlarge:  5.125rem;
 $wsu-spacing--xlarge:   4.125rem;
@@ -351,6 +352,8 @@ $wsu-spacing--small:    1.125rem;
 $wsu-spacing--xsmall:   0.875rem;
 $wsu-spacing--xxsmall:  0.6875rem;
 $wsu-spacing--sxxsmall: 0.5rem;
+$wsu-spacing--xxhero:   ( $wsu-spacing--hero + $wsu-spacing--xlarge );
+$wsu-spacing--xhero:    ( $wsu-spacing--hero + $wsu-spacing--xmedium );
 
 $wsu-spacing--em-hero:     6.87em;
 $wsu-spacing--em-xlarge:   5.125em;
@@ -366,6 +369,8 @@ $wsu-spacing--component: $wsu-spacing--xxmedium;
 $wsu-spacing--column:    $wsu-spacing--xmedium;
 
 $wsu-spacing-map: (
+    'xxhero':   $wsu-spacing--xxhero,
+    'xhero':    $wsu-spacing--xhero,
     'hero':     $wsu-spacing--hero,
     'xxlarge':  $wsu-spacing--xxlarge,
     'xlarge':   $wsu-spacing--xlarge,

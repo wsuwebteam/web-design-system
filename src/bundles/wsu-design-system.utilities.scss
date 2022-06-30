@@ -1,6 +1,103 @@
 @import '../../_assets/scss/variables';
 @import '../../_assets/scss/mixins';
 
+
+.wsu-flex {
+
+    &--wrap {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    &--columns-2 > * {
+        width: 50%;
+        flex-basis: 1 0 auto;
+    }
+
+    &--columns-3 > * {
+        width: 33%;
+        flex-basis: 1 0 auto;
+    }
+
+    &--columns-4 > * {
+        width: 25%;
+        flex-basis: 1 0 auto;
+    }
+
+    &--breakpoint-desktop {
+
+        @media screen and ( max-width: #{$wsu-breakpoint--desktop} ) {
+            display: block !important;
+
+            & > * {
+                width: auto;
+            }
+        }
+
+    }
+
+    &--breakpoint-tablet-large {
+
+        @media screen and ( max-width: #{$wsu-breakpoint--tablet-large } ) {
+            display: block !important;
+
+            & > * {
+                width: auto;
+            }
+        }
+
+    }
+
+    &--breakpoint-tablet-medium {
+
+        @media screen and ( max-width: #{$wsu-breakpoint--tablet-medium } ) {
+            display: block !important;
+
+            & > * {
+                width: auto;
+            }
+        }
+
+    }
+
+    &--breakpoint-tablet {
+
+        @media screen and ( max-width: #{$wsu-breakpoint--tablet } ) {
+            display: block !important;
+
+            & > * {
+                width: auto;
+            }
+        }
+
+    }
+
+    &--breakpoint-phone {
+
+        @media screen and ( max-width: #{$wsu-breakpoint--phone } ) {
+            display: block !important;
+
+            & > * {
+                width: auto;
+            }
+        }
+
+    }
+
+    &--breakpoint-phone-small {
+        @media screen and ( max-width: #{$wsu-breakpoint--phone-small } ) {
+            display: block !important;
+
+            & > * {
+                width: auto;
+            }
+        }
+
+    }
+
+}
+
+
 /*----------  Display  ----------*/
 .wsu-display {
     &--block {
@@ -110,6 +207,10 @@
     &-thin {
         border-bottom-width: 2px !important;
     }
+
+    &-xthin {
+        border-bottom-width: 1px !important;
+    }
 }
 
 .wsu-border-top--style {
@@ -124,6 +225,10 @@
 
     &-thin {
         border-top-width: 2px !important;
+    }
+
+    &-xthin {
+        border-top-width: 1px !important;
     }
 }
 
@@ -149,25 +254,49 @@
     border: 0;
 }
 
+.wsu-notch--small,
 .wsu-shape--em-notch-small {
     -webkit-clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
     clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
 }
 
+.wsu-notch--medium,
 .wsu-shape--em-notch-medium {
     -webkit-clip-path: polygon(100% 0,100% calc(100% - 70px),calc(100% - 70px) 100%,0 100%,0 0);
     clip-path: polygon(100% 0,100% calc(100% - 70px),calc(100% - 70px) 100%,0 100%,0 0);
 }
 
+.wsu-notch--large,
 .wsu-shape--em-notch-large {
     -webkit-clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0);
     clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0);
+}
+
+.wsu-notch-top--small {
+    -webkit-clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
 }
 
 .wsu-position {
 
     &--relative {
         position: relative;
+    }
+
+    &--absolute {
+        position: absolute;
+    }
+
+    &--pull-up-hero {
+        margin-top: -250px;
+    }
+
+    &--pull-up-xxlarge {
+        margin-top: -175px;
+    }
+
+    &--pull-up-xlarge {
+        margin-top: -120px;
     }
 
     &--pull-up-large {
@@ -214,25 +343,25 @@
 
 }
 
-.wsu-z-index {
+.wsu-zindex {
 
-    &--content-1 {
+    &--level-1 {
         z-index: 1;
     }
 
-    &--content-2 {
+    &--level-2 {
         z-index: 2;
     }
 
-    &--content-3 {
+    &--level-3 {
         z-index: 3;
     }
 
-    &--content-4 {
+    &--level-4 {
         z-index: 4;
     }
 
-    &--content-5 {
+    &--level-5 {
         z-index: 5;
     }
 }
