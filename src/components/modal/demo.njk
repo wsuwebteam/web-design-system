@@ -1,0 +1,26 @@
+{% extends "component.njk" %}
+{% from "modal/_macro.njk" import modal %}
+{% from "button/_macro.njk" import button %}
+
+{% block content %}
+<div class="wsu-demo--modal">
+  {{ modal( ' wsu-modal--size-small wsu-modal--style-centered', 'modal-small', 'This is a Small Modal', 'Here is a typical warning or alert message we need you to acknolwedge.', 'Sounds Good', false, false, false ) }}
+    {{ modal( ' wsu-modal--size-medium wsu-modal--style-centered', 'modal-medium', 'This is a Medium Modal', '', 'This is Cool', false, true ) }}
+    {{ modal( ' wsu-modal--size-large wsu-modal--style-columns', 'modal-large', 'This is a Large Modal', '', '', false, false, true ) }}
+    {{ modal( ' wsu-modal--size-full', 'modal-full', 'Full Modal with a Form', 'Tell us more about yourself and sign up to get updates from us!', '', true ) }}
+
+  <div class="">
+    {{ button( '', title='Small Modal', id='modal-small' ) }}
+    {{ button( '', title='Medium Modal', id='modal-medium' ) }}
+    {{ button( '', title='Large Modal', id='modal-large' ) }}
+    {{ button( '', title='Full Modal', id='modal-full' ) }}
+  </div>
+</div>
+<hr />
+<style>
+  button.wsu-button {
+    display: block;
+    margin-bottom: 30px;
+  }
+</style>
+{%  endblock %}
