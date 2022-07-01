@@ -11,6 +11,7 @@
     {{ modal( ' wsu-modal--size-medium wsu-modal--style-centered', 'modal-medium', 'This is a Medium Modal', '', 'This is cool', false, true ) }}
     {{ modal( ' wsu-modal--size-large wsu-modal--style-columns', 'modal-large', 'This is a Large Modal', '', '', false, false, true ) }}
     {{ modal( ' wsu-modal--size-full', 'modal-full', 'This is a Full Modal with a Form', 'Tell us more about yourself and sign up to get updates from us!', '', true ) }}
+    {{ modal( ' wsu-modal--size-full', 'modal-search', 'Search Modal', '', '', false, false, false, true ) }}
 
     {% include 'skip-to-main/html.njk' %}
     {% include 'header-global/html.njk' %}
@@ -33,6 +34,14 @@
                   <div>
                     {{ button( '', title='Large modal example', id='modal-large' ) }}
                     {{ button( '', title='Click me for a full modal', id='modal-full' ) }}
+                  </div>
+                </div>
+                <hr />
+                <div>
+                  <h2>Search Modal Test</h2>
+                  {% include 'row/html--halves.njk' %}
+                  <div>
+                    {{ button( '', title='Search modal example', id='modal-search' ) }}
                   </div>
                 </div>
             </main>

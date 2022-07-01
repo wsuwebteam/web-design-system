@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?ver=0.15.2.1" media='all' />
+    <link rel="stylesheet" href="../../bundles/wsu-design-system.css" media='all' />
+    <style>
+        .wsu-custom-demo {
+            margin: 0 80px;
+            padding: 80px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+    </style>
+
+    <script src="../../bundles/wsu-design-system.init.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=54e8a42262bb5e5f2"></script>
+</head>
+
+<body>
+    <div class="wsu-custom-demo">
+
+
+
+        <div class="wsu-search-bar">
+            <h2 class="wsu-search-bar__title" id="site-search">Search WSU</h2>
+            <div class="wsu-search-bar__wrapper">
+                <div class="wsu-search-bar--single" aria-hidden="false">
+                    <div id="single-box" class="gcse-searchbox" data-gname="single-site" data-as_sitesearch="brand.wsu.edu"></div>
+                </div>
+                <div class="wsu-search-bar--all" aria-hidden="true">
+                    <div class="gcse-searchbox" data-gname="wsu-site" data-as_sitesearch="wsu.edu"></div>
+                </div>
+            </div>
+            <fieldset class="wsu-search-bar__scope" role="radiogroup" aria-labelledby="site-search">
+                <div class="wsu-search-bar__scope-option" role="radio" aria-checked="true" id="single">
+                    <label class="wsu-search-bar__scope-label">
+                        <input type="radio" name="search-type" id="single" value="single" class="wsu-search-bar__radio">This Site
+                    </label>
+                </div>
+                <div class="wsu-search-bar__scope-option" role="radio" aria-checked="false" id="all">
+                    <label class="wsu-search-bar__scope-label">
+                        <input type="radio" name="search-type" id="all" value="all" class="wsu-search-bar__radio">All WSU
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="wsu-search-results">
+                <div class="wsu-search-results--single" aria-hidden="false">
+                    <div class="gcse-searchresults" data-gname="single-site"></div>
+                </div>
+                <div class="wsu-search-results--all" aria-hidden="true">
+                    <div class="gcse-searchresults" data-gname="wsu-site"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <script defer src="../../bundles/wsu-design-system.js"></script>
+</body>
+
+</html>

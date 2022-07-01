@@ -1,6 +1,6 @@
 {% from "button/_macro.njk" import button %}
 
-{% macro modal( classes='', id='modal', modalTitle='', caption='', cta="Click me!", form=false, img=false, columns=false ) %}
+{% macro modal( classes='', id='modal', modalTitle='', caption='', cta="Click me!", form=false, img=false, columns=false, search=false ) %}
 <div class="wsu-modal{{ classes }} wsu-modal--hidden" id="{{ id }}" role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_description">
   <button class="wsu-modal__overlay" aria-label="Close site menu" tabindex="-1"></button>
   <div class="wsu-modal__content">
@@ -9,8 +9,10 @@
         <div class="wsu-modal__content-wrapper">
           {% if columns %}
             {% include 'experimental_modal-columns/modal.njk' %}
-
+          {% elseif search %}
+            {% include 'experimental_modal-search/modal.njk' %}
           {% else %}
+
             {% if img %}
               <img src="https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/space.jpg" alt="" />
             {% endif %}

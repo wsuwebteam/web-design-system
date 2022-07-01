@@ -12,6 +12,7 @@ import WsuButton from '../components/button/_script';
 import WsuStickyBox from '../components/sticky-box/_script';
 import WsuAnchorMenu from '../components/anchor-menu/_script';
 import WsuModal from '../components/modal/_script';
+import WsuSearchBar from '../components/search-bar/_script';
 
 
 
@@ -33,4 +34,5 @@ const wsu = {
     stickyBox: new WsuStickyBox(),
     wsuAnchorMenu: new WsuAnchorMenu(),
     modal: new WsuModal(),
+    searchBar: new WsuSearchBar(),
 }

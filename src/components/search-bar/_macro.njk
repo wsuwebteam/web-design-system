@@ -1,0 +1,28 @@
+{% from "search-results/_macro.njk" import searchResults %}
+
+{% macro searchBar( classes='' ) %}
+<div class="wsu-search-bar{{ classes }}" >
+  <h2 class="wsu-search-bar__title" id="site-search">Search WSU</h2>
+  <div class="wsu-search-bar__wrapper">
+    <div class="wsu-search-bar--single" aria-hidden="false">
+      <div id="single-box" class="gcse-searchbox" data-gname="single-site" data-as_sitesearch="brand.wsu.edu"></div>
+    </div>
+    <div class="wsu-search-bar--all" aria-hidden="true">
+      <div class="gcse-searchbox" data-gname="wsu-site" data-as_sitesearch="wsu.edu"></div>
+    </div>
+	</div>
+	<fieldset class="wsu-search-bar__scope" role="radiogroup" aria-labelledby="site-search">
+    <div class="wsu-search-bar__scope-option" role="radio" aria-checked="true" id="single">
+      <label class="wsu-search-bar__scope-label">
+        <input type="radio" name="search-type" id="single" value="single" class="wsu-search-bar__radio">This Site
+      </label>
+    </div>
+    <div class="wsu-search-bar__scope-option" role="radio" aria-checked="false" id="all">
+      <label class="wsu-search-bar__scope-label">
+        <input type="radio" name="search-type" id="all" value="all" class="wsu-search-bar__radio">All WSU
+      </label>
+    </div>
+	</fieldset>
+  {{ searchResults() }}
+</div>
+{% endmacro %}
