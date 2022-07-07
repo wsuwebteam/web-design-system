@@ -6,7 +6,6 @@
   transition: margin-left $wsu-transition-speed--medium $wsu-easing,
     margin-right $wsu-transition-speed--fast $wsu-easing;
   margin-bottom: -($wsu-spacing--hero - $wsu-spacing--xxsmall);
-  z-index: 0;
 
   .wsu-hero {
     transition: opacity 300ms ease-in, visibility 300ms ease-out;
@@ -125,10 +124,6 @@
 .wsu-wrapper-content {
   .wsu-hero-slider:first-child {
     margin-top: -5.125rem;
-  }
-
-  .wsu-hero:first-child {
-    margin-top: 0;
   }
 
   .swiper-wrapper {
