@@ -271,42 +271,58 @@
 
 }
 
-.wsu-border-bottom--style {
+.wsu-border-bottom {
 
-    &-thick {
-        border-bottom-width: 8px !important; 
+    &--none {
+        border-bottom: none !important;
     }
 
-    &-medium {
-        border-bottom-width: 4px !important;
-    }
+    &--width {
 
-    &-thin {
-        border-bottom-width: 2px !important;
-    }
-
-    &-xthin {
-        border-bottom-width: 1px !important;
+        &-thick {
+            border-bottom-width: 8px !important; 
+        }
+    
+        &-medium {
+            border-bottom-width: 4px !important;
+        }
+    
+        &-thin {
+            border-bottom-width: 2px !important;
+        }
+    
+        &-xthin {
+            border-bottom-width: 1px !important;
+        }
     }
 }
 
-.wsu-border-top--style {
 
-    &-thick {
-        border-top-width: 8px !important;
+.wsu-border-top {
+
+    &--none {
+        border-top: none !important;
     }
 
-    &-medium {
-        border-top-width: 5px !important;
+    &--width {
+
+        &-thick {
+            border-top-width: 8px !important;
+        }
+    
+        &-medium {
+            border-top-width: 5px !important;
+        }
+    
+        &-thin {
+            border-top-width: 2px !important;
+        }
+    
+        &-xthin {
+            border-top-width: 1px !important;
+        }
     }
 
-    &-thin {
-        border-top-width: 2px !important;
-    }
-
-    &-xthin {
-        border-top-width: 1px !important;
-    }
 }
 
 
