@@ -9,20 +9,97 @@
         flex-wrap: wrap !important;
     }
 
-    &--columns-2 > * {
-        width: 50%;
-        flex-basis: 1 0 auto;
+    &--columns-2 {
+
+        justify-content: space-between;
+
+        & > * {
+            width: 50%;
+            flex-basis: 1 0 auto;
+        }
+
+        .wsu-flex--spacing {
+
+            &-medium {
+                width: calc( 50% - ( #{$wsu-spacing--medium}/ 2 ) );
+            }
+
+            &-xmedium {
+                width: calc( 50% - ( #{$wsu-spacing--xmedium}/ 2 ) );
+            }
+
+            &-large {
+                width: calc( 50% - ( #{$wsu-spacing--large}/ 2 ) );
+            }
+
+            &-xlarge {
+                width: calc( 50% - ( #{$wsu-spacing--xlarge}/ 2 ) );
+            }
+
+        }
     }
 
-    &--columns-3 > * {
-        width: 33%;
-        flex-basis: 1 0 auto;
+
+    &--columns-3 {
+
+        justify-content: space-between;
+
+        & > * {
+            width: 33.33%;
+            flex-basis: 1 0 auto;
+        }
+
+        .wsu-flex--spacing {
+
+            &-medium {
+                width: calc( 33.33% - ( #{$wsu-spacing--medium}/ 2 ) );
+            }
+
+            &-xmedium {
+                width: calc( 33.33% - ( #{$wsu-spacing--xmedium}/ 2 ) );
+            }
+
+            &-large {
+                width: calc( 33.33% - ( #{$wsu-spacing--large}/ 2 ) );
+            }
+
+            &-xlarge {
+                width: calc( 33.33% - ( #{$wsu-spacing--xlarge}/ 2 ) );
+            }
+
+        }
     }
 
-    &--columns-4 > * {
-        width: 25%;
-        flex-basis: 1 0 auto;
+    &--columns-4 {
+
+        justify-content: space-between;
+
+        & > * {
+            width: 25%;
+            flex-basis: 1 0 auto;
+        }
+
+        .wsu-flex--spacing {
+
+            &-medium {
+                width: calc( 25% - ( #{$wsu-spacing--medium}/ 2 ) );
+            }
+
+            &-xmedium {
+                width: calc( 25% - ( #{$wsu-spacing--xmedium}/ 2 ) );
+            }
+
+            &-large {
+                width: calc( 25% - ( #{$wsu-spacing--large}/ 2 ) );
+            }
+
+            &-xlarge {
+                width: calc( 25% - ( #{$wsu-spacing--xlarge}/ 2 ) );
+            }
+
+        }
     }
+    
 
     &--breakpoint-desktop {
 
@@ -30,7 +107,7 @@
             display: block !important;
 
             & > * {
-                width: auto;
+                width: auto !important;
             }
         }
 
