@@ -1,0 +1,24 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-table--style-lines {
+    border-top: 1px solid $wsu-color--gray-15;
+    border-collapse: collapse;
+    margin-bottom: $wsu-spacing--component;
+    
+    th,
+    td {
+        padding: $wsu-spacing--xxsmall;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid $wsu-color--gray-15;
+        border-collapse: collapse;
+    }
+
+    th {
+        text-align: left;
+    }
+
+}
+
