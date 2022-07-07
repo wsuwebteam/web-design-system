@@ -18,7 +18,7 @@
             flex-basis: 1 0 auto;
         }
 
-        .wsu-flex--spacing {
+        &.wsu-flex--spacing {
 
             &-medium {
                 width: calc( 50% - ( #{$wsu-spacing--medium}/ 2 ) );
