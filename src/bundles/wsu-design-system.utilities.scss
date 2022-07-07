@@ -20,19 +20,19 @@
 
         &.wsu-flex--spacing {
 
-            &-medium {
+            &-medium > * {
                 width: calc( 50% - ( #{$wsu-spacing--medium}/ 2 ) );
             }
 
-            &-xmedium {
+            &-xmedium > * {
                 width: calc( 50% - ( #{$wsu-spacing--xmedium}/ 2 ) );
             }
 
-            &-large {
+            &-large > * {
                 width: calc( 50% - ( #{$wsu-spacing--large}/ 2 ) );
             }
 
-            &-xlarge {
+            &-xlarge > * {
                 width: calc( 50% - ( #{$wsu-spacing--xlarge}/ 2 ) );
             }
 
@@ -51,19 +51,19 @@
 
         .wsu-flex--spacing {
 
-            &-medium {
+            &-medium > * {
                 width: calc( 33.33% - ( #{$wsu-spacing--medium}/ 2 ) );
             }
 
-            &-xmedium {
+            &-xmedium > * {
                 width: calc( 33.33% - ( #{$wsu-spacing--xmedium}/ 2 ) );
             }
 
-            &-large {
+            &-large > * {
                 width: calc( 33.33% - ( #{$wsu-spacing--large}/ 2 ) );
             }
 
-            &-xlarge {
+            &-xlarge > * {
                 width: calc( 33.33% - ( #{$wsu-spacing--xlarge}/ 2 ) );
             }
 
@@ -81,19 +81,19 @@
 
         .wsu-flex--spacing {
 
-            &-medium {
+            &-medium > * {
                 width: calc( 25% - ( #{$wsu-spacing--medium}/ 2 ) );
             }
 
-            &-xmedium {
+            &-xmedium > * {
                 width: calc( 25% - ( #{$wsu-spacing--xmedium}/ 2 ) );
             }
 
-            &-large {
+            &-large > * {
                 width: calc( 25% - ( #{$wsu-spacing--large}/ 2 ) );
             }
 
-            &-xlarge {
+            &-xlarge > * {
                 width: calc( 25% - ( #{$wsu-spacing--xlarge}/ 2 ) );
             }
 
