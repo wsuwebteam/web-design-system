@@ -5,7 +5,6 @@
     position: relative;
     transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
     margin-bottom: $wsu-spacing--xlarge;
-    z-index: 0;
 
     &::after {
         display: block;

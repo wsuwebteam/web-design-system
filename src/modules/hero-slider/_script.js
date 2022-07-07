@@ -69,4 +69,4 @@ const initSwiper = () => {
   }
 };
 
-initSwiper();
+initSwiper(); 
