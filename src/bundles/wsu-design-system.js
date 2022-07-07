@@ -12,6 +12,9 @@ import WsuButton from '../components/button/_script';
 import WsuStickyBox from '../components/sticky-box/_script';
 import WsuAnchorMenu from '../components/anchor-menu/_script';
 
+import '../components/slider-frame/_script';
+import '../modules/hero-slider/_script';
+
 
 
 

@@ -7,14 +7,18 @@
 {% from "overlay/_macro.njk" import overlay %}
 {% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
 {% from "experimental_video-frame/_macro.njk" import videoFrame %}
+{% from "slider-frame/_macro.njk" import sliderFrame %}
 
-{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title') %}
+{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title', isSlider = false) %}
   <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if imageSrc %}
       {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
     {% endif %}
     {% if isVideo %}
       {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
+    {% endif %}
+    {% if isSlider %}
+      {{ sliderFrame( delay = 3000, effect = 'fade' ) }}
     {% endif %}
     {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
     <div class="wsu-hero__content">
