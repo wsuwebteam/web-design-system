@@ -15,7 +15,6 @@
         left: 0;
         right: 0;
         background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 100%);
-        z-index: 3;
     }
 
     &__content {
@@ -30,7 +29,7 @@
         overflow: hidden;
         min-height: 650px;
         box-sizing: border-box; 
-        z-index: 4;
+
 
         &::before {
             transition: opacity $wsu-transition-speed--slow $wsu-easing;
@@ -92,10 +91,6 @@
         }
     }
 
-    .wsu-overlay {
-        z-index: 2;
-    }
-
     .wsu-pattern-after::after{
         position: absolute;
         top: 0;
@@ -111,7 +106,6 @@
         left: 0;
         right: 0;
         background-color: #000;
-        // z-index: 1;
     }    
 
     .wsu-slider-frame {
