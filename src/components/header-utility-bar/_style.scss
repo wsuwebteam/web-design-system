@@ -7,7 +7,7 @@
     justify-content: flex-end;
     
     &__quicklinks{
-        background-color: $wsu-color--gray-75;
+        background-color: $wsu-color--gray-65;
         color: white;
         border: none;
         border-bottom: 5px solid $wsu-color--crimson-light;
@@ -15,27 +15,36 @@
         padding: 1em 2em;
         cursor: pointer;
         transition: ease-in-out 100ms;
+        min-height: 56px;
+        max-height: 56px;
     }
     &__quicklinks:hover{
-        background-color: $wsu-color--gray-85;
+        background-color: $wsu-color--gray-75;
+        border-bottom: 5px solid $wsu-color--crimson-dark;
     }
     &__quicklinks::after{
         content: '\F140';
-        font-size: inherit;
+        font-family:'wsu-icons';
+        font-size: $wsu-font-size--small;
+        flex: none;
+        vertical-align: text-bottom;
     }
     &__cta{
         background-color: $wsu-color--crimson-light;
         color: white;
         border: none;
-        border-bottom: 5px solid $wsu-color--crimson-light;
+        text-decoration-color: transparent;
+        max-height: 56px;
         box-shadow: none;
         padding: 1em 2em;
         cursor: pointer;
         transition: ease-in-out 100ms;
         font-weight: $wsu-font-weight--bold;
+        -webkit-clip-path: polygon(100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 0);
+        clip-path: polygon(100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 0);
     }
     &__cta:hover{
         background-color: $wsu-color--crimson-dark;
-        border-bottom: 5px solid $wsu-color--crimson-dark;
     }
+
 }
