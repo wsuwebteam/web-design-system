@@ -5,9 +5,18 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 10px;
 
     &__link{
         padding: 0.5em 2em;
+        color: $wsu-color--gray-85;
+        text-decoration: none;
+    }
+    &__link:hover, &__link:focus, &__link:active{
+        padding: 0.5em 2em;
+        color: $wsu-color--crimson-dark;
+        text-decoration: underline;
     }
     &__link:not(:last-child){
         border-right: 2px solid $wsu-color--gray-30;
