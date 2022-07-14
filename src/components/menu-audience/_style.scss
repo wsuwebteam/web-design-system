@@ -13,6 +13,9 @@
         color: $wsu-color--gray-85;
         text-decoration: none;
     }
+    &__mobile-separator{
+        display:none;
+    }
     &__link:hover, &__link:focus, &__link:active{
         padding: 0.5em 2em;
         color: $wsu-color--crimson-dark;
