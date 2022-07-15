@@ -17,12 +17,10 @@
 
 .wsu-wrapper-content {
     position: relative;
-    display: flex;
     flex: 1 1;
     margin: 0 auto;
     padding: $wsu-spacing--xxlarge $wsu-spacing--xlarge $wsu-spacing--xlarge;
     box-sizing: border-box;
-    width: 100%;
     max-width: $wsu-width--content;
 
     &::before {
@@ -35,6 +33,17 @@
         width: auto;
         height: 3px;
         background-color: $wsu-color--gray-10;
+    }
+}
+
+.wsu-wrapper-content--layout-sidebar-right {
+    width: 100%;
+    display: flex;
+}
+
+.wsu-wrapper-content--layout-sidebar-right {
+    .wsu-wrapper-main {
+        width: 60%;
     }
 }
 
