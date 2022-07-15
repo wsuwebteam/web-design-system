@@ -14,6 +14,7 @@ const PeopleList = function (el) {
     "university-category",
     "university-location",
     "university-organization",
+    "tag",
     "photo-size",
     "profile-order",
   ];
@@ -76,6 +77,8 @@ const PeopleList = function (el) {
 
   function getPersonHTML(person) {
 
+    console.log( person );
+
     let linkProfile = ( profileLink && person.bio ) ? true : false;
 
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
@@ -121,6 +124,23 @@ const PeopleList = function (el) {
                       (t) => `<div class="wsu-card__person-title">${t}</div>`
                     )
                     .join("")
+                : ""
+            }
+
+            ${
+              displayFields.includes("focus-area") && Array.isArray(person.focus_area) && (person.focus_area.length > 0 )
+                ? `
+                <div class="wsu-card__focus-area">
+                    <div class="wsu-card__focus-area-title">Focus Area</div>
+                    <ul class="wsu-card__focus-area-list">` +
+                        person.focus_area
+                        .map(
+                          (f) => `<li>${f.name}</li>`
+                        )
+                        .join("") +
+                        `
+                    </ul>
+                </div>`
                 : ""
             }
             
