@@ -36,6 +36,18 @@ $wsu-breakpoint--tablet:       768px;
 $wsu-breakpoint--phone:        576px;
 $wsu-breakpoint--phone-small:  450px;
 
+$wsu-breakpoint-map: (
+    'xxultrawide':  2400px,
+    'xultrawide':   1900px,
+    'ultrawide':    1600px,
+    'desktop':      1260px,
+    'tablet-large': 992px,
+    'tablet-medium': 860px,
+    'tablet':       768px,
+    'phone':        576px,
+    'phone-small':  450px,
+);
+
 /* ========================================================
 == Colors ==
 ==========================================================*/

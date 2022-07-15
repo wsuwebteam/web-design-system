@@ -109,6 +109,43 @@
         margin-top: $wsu-spacing--small;
     }
 
+    &__focus-area {
+
+        margin-bottom: $wsu-spacing--xsmall;
+        margin-top: $wsu-spacing--xsmall;
+
+        &-title {
+            @include wsu-font--small();
+            font-weight: 600;
+        }
+
+        &-list {
+            padding: 0 0;
+            margin: 0;
+
+            li {
+                list-style-type: none;
+                font-size: $wsu-font-size--small;
+                line-height: 1.5;
+                padding: 0 0 0 1.25rem;
+                margin: 0;
+                position: relative;
+            }
+
+            li::before {
+                content: "";
+                width: 0.5rem;
+                height: 1px;
+                background-color: $wsu-color--crimson-light;
+                top: 0.6em;
+                position: absolute;
+                display: block;
+                left: 0;
+            }
+            
+        }
+    }
+
 
     .wsu-title {
         margin-bottom: $wsu-spacing--xxsmall;
