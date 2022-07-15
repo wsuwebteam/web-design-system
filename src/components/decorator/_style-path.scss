@@ -1,0 +1,15 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-decorator--style-path {
+
+    &-crimson-left {
+        border-left: 1px solid $wsu-color--crimson-light;
+        border-bottom: 1px solid $wsu-color--crimson-light;
+    }
+
+    &-crimson-right {
+        border-right: 1px solid $wsu-color--crimson-light;
+        border-bottom: 1px solid $wsu-color--crimson-light;
+    }
+}

@@ -5,7 +5,9 @@
 @import './style-triangle';
 @import './style-lines';
 @import './style-shadow';
+@import './style-path';
 
+div[class*="decorator--style-path"],
 .wsu-decorator--style-wsu,
 .wsu-decorator--style-block-wsu,
 .wsu-decorator--style-triangle-crimson-wsu-steep-left,
