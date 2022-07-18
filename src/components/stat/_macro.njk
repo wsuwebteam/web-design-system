@@ -1,12 +1,12 @@
-{% macro stat( classes, value='$345 million', caption='annual research funding, fy 2019', hasIcon=false, icon='wsu-i-time', hasUnit=false, unit='million' ) %}
+{% macro stat( classes, value='$345', unit='Million', caption='annual research funding', icon=''  ) %}
 <div class="wsu-stat{{ classes }}" role="statistic">
-	<span class="wsu-stat__value">{{ value }}</span>
-  {% if hasUnit %}
-	<span class="wsu-stat__unit">{{ unit }}</span>
-	{% endif %}
-  <span class="wsu-stat__caption">{{ caption }}</span>
-	{% if hasIcon %}
+	{% if icon %}
 	<i class="wsu-stat__icon {{ icon }}"></i>
 	{% endif %}
+	<span class="wsu-stat__value-wrapper">
+		<span class="wsu-stat__value">{{ value }}</span>
+		{% if unit %}<span class="wsu-stat__unit">{{ unit }}</span>{% endif %}
+	</span>
+  	<span class="wsu-stat__caption">{{ caption }}</span>
 </div>
 {% endmacro %}
