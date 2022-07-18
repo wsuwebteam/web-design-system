@@ -1,9 +1,10 @@
 {% macro headerUtilityBar(  classes='', link='#', title='Give' ) %}
 <div class="wsu-header-utility-bar {{ classes }}" >
-    <button class="wsu-header-utility-bar__quicklinks">
+    <button class="wsu-header-utility-bar__quicklinks" id="modal-open">
         Quicklinks / Search
         <i class="wsu-header-utility-bar__icon"></i>
     </button>
     <a href="{{link}}" class="wsu-header-utility-bar__cta">{{title}}</a>
+
 </div>
 {% endmacro %}
