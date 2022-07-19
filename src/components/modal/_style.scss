@@ -2,7 +2,7 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-modal{
-    display: none;
+    display: block;
     position: fixed; 
     padding-top: 50px;
     left: 0; 
@@ -12,10 +12,14 @@
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.5);
 
+    &__closed{
+        display: none;
+    }
+
     &__content{
-        position: relative; 
+        position: relative;
         background-color: white;
-        padding: 20px; 
+        padding: 2rem;
         border-radius: 15px;
         margin: auto; 
         width: 60%;
@@ -31,9 +35,15 @@
         justify-content: space-between;
     }
     &__bottom{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        position: relative;
+        height: 500px;
+        overflow: auto;
+    }
+    &__search-bar{
+        background: gray;
+        height: 200px;
+        width: 100%;
+        margin: 20px 0;
     }
     &__bottom-heading{
         font-size: $wsu-font-size--xmedium;
@@ -70,6 +80,11 @@
         text-decoration-color: $wsu-color--gray-75;
         text-decoration-thickness: 4px;
     }
+}
+
+.modal-open{
+    overflow: hidden;
+    position: fixed;
 }
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
