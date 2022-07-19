@@ -1,0 +1,15 @@
+{% extends "component.njk" %}
+{% from "background-slider/_macro.njk" import backgroundSlider %}
+
+
+{% block content %}
+    <div class="wsu-demo-component" style="position: relative; max-width: 100%; width: 900px; min-height: 500px; margin: 0 auto 0">
+        {{ backgroundSlider(' wsu-background-slider--effect-fade') }}
+    </div>
+    <div class="wsu-demo-component" style="position: relative; max-width: 100%; width: 900px; min-height: 500px; margin: 0 auto 0">
+        {{ backgroundSlider(' wsu-background-slider--effect-slide') }}
+    </div>
+    <div class="wsu-demo-component" style="position: relative; max-width: 100%; width: 900px; min-height: 500px; margin: 0 auto 0">
+        {{ backgroundSlider(' wsu-background-slider--effect-stacked') }}
+    </div>
+{% endblock %}
