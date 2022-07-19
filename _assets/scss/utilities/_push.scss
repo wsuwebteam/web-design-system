@@ -29,19 +29,19 @@ $wsu-breakpoint-map: (
         @each $pushName, $pushValue in $wsu-push-map {
 
             .wsu-push-up--#{$breakpointName}-#{$pushName} {
-                margin-top: -$pushValue !important;
+                margin-bottom: $pushValue !important;
             }
 
             .wsu-push-down--#{$breakpointName}-#{$pushName} {
-                margin-bottom: -$pushValue !important;
+                margin-top: $pushValue !important;
             }
 
             .wsu-push-left--#{$breakpointName}-#{$pushName} {
-                margin-left: -$pushValue !important;
+                margin-right: $pushValue !important;
             }
 
             .wsu-push-right--#{$breakpointName}-#{$pushName} {
-                margin-right: -$pushValue !important;
+                margin-left: $pushValue !important;
             }
 
         }
@@ -53,19 +53,19 @@ $wsu-breakpoint-map: (
 @each $pushName, $pushValue in $wsu-push-map {
 
     .wsu-push-up--#{$pushName} {
-        margin-top: -$pushValue !important;
+        margin-bottom: $pushValue !important;
     }
 
     .wsu-push-down--#{$pushName} {
-        margin-bottom: -$pushValue !important;
+        margin-top: $pushValue !important;
     }
 
     .wsu-push-left--#{$pushName} {
-        margin-left: -$pushValue !important;
+        margin-right: $pushValue !important;
     }
 
     .wsu-push-right--#{$pushName} {
-        margin-right: -$pushValue !important;
+        margin-left: $pushValue !important;
     }
 
 }
