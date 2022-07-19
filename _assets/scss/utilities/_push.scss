@@ -1,0 +1,71 @@
+@import '../variables';
+
+$wsu-push-map: (
+    'xxhero':   $wsu-spacing--xxhero,
+    'xhero':    $wsu-spacing--xhero,
+    'hero':     $wsu-spacing--hero,
+    'xxlarge':  $wsu-spacing--xxlarge,
+    'xlarge':   $wsu-spacing--xlarge,
+    'large':    $wsu-spacing--xlarge,
+    'xxmedium': $wsu-spacing--xxmedium,
+    'xmedium':  $wsu-spacing--xmedium,
+    'medium':   $wsu-spacing--medium,
+);
+
+$wsu-breakpoint-map: (
+    'desktop':      $wsu-breakpoint--desktop,
+    'tablet-large': $wsu-breakpoint--tablet-large,
+    'tablet-medium': $wsu-breakpoint--tablet-medium,
+    'tablet':       $wsu-breakpoint--tablet,
+    'phone':        $wsu-breakpoint--phone,
+);
+
+
+
+@each $breakpointName, $breakpointValue in $wsu-breakpoint-map {
+
+    @media screen and ( min-width: $breakpointValue ) {
+
+        @each $pushName, $pushValue in $wsu-push-map {
+
+            .wsu-push-up--#{$breakpointName}-#{$pushName} {
+                margin-top: -$pushValue !important;
+            }
+
+            .wsu-push-down--#{$breakpointName}-#{$pushName} {
+                margin-bottom: -$pushValue !important;
+            }
+
+            .wsu-push-left--#{$breakpointName}-#{$pushName} {
+                margin-left: -$pushValue !important;
+            }
+
+            .wsu-push-right--#{$breakpointName}-#{$pushName} {
+                margin-right: -$pushValue !important;
+            }
+
+        }
+
+    }
+
+}
+
+@each $pushName, $pushValue in $wsu-push-map {
+
+    .wsu-push-up--#{$pushName} {
+        margin-top: -$pushValue !important;
+    }
+
+    .wsu-push-down--#{$pushName} {
+        margin-bottom: -$pushValue !important;
+    }
+
+    .wsu-push-left--#{$pushName} {
+        margin-left: -$pushValue !important;
+    }
+
+    .wsu-push-right--#{$pushName} {
+        margin-right: -$pushValue !important;
+    }
+
+}
