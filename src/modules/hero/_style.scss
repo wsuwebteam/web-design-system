@@ -4,6 +4,10 @@
 .wsu-hero {
     position: relative;
     transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
+}
+
+.wsu-hero:not([class*="-hero--style-"]) {
+
     margin-bottom: $wsu-spacing--xlarge;
 
     &::after {
@@ -17,77 +21,82 @@
         background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 100%);
     }
 
-    &__content {
-        padding-top: $wsu-spacing--hero;
-        padding-bottom: $wsu-spacing--hero;
-        padding-left: $wsu-spacing--large;
-        padding-right: $wsu-spacing--large;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        overflow: hidden;
-        min-height: 650px;
-        box-sizing: border-box; 
+    .wsu-hero {
 
-        &::before {
-            transition: opacity $wsu-transition-speed--slow $wsu-easing;
-            opacity: 0;
-        }
-    }
+        &__content {
+            padding-top: $wsu-spacing--hero;
+            padding-bottom: $wsu-spacing--hero;
+            padding-left: $wsu-spacing--large;
+            padding-right: $wsu-spacing--large;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            min-height: 650px;
+            box-sizing: border-box; 
 
-    &__caption {
-        position: relative;
-        padding-top: $wsu-spacing--large;
-        padding-bottom: $wsu-spacing--large;
-        padding-left: $wsu-spacing--xlarge;
-        padding-right: $wsu-spacing--xlarge;
-        max-width: 800px;
-        color: #fff;
 
-        &::before {
-            display: block;
-            content:'';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: auto;
-            width: auto;
-            -webkit-clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 80px) 100%,0 100%,0 0);
-            clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 80px) 100%,0 100%,0 0);
+            &::before {
+                transition: opacity $wsu-transition-speed--slow $wsu-easing;
+                opacity: 0;
+            }
         }
 
-        & > *:last-child {
-            margin-bottom: 0;
-        }
-
-    }
-
-    &__image-caption {
-        position: absolute;
-        bottom: $wsu-spacing--sxxsmall;
-        right: 0;
-        @include wsu-font--xxsmall();
-        color: #fff;
-        background-color: $wsu-color--gray-85;
-        padding: $wsu-spacing--sxxsmall $wsu-spacing--xxsmall;
-        border-radius: 2px 0 0 2px;
-
-        a {
+        &__caption {
+            position: relative;
+            padding-top: $wsu-spacing--large;
+            padding-bottom: $wsu-spacing--large;
+            padding-left: $wsu-spacing--xlarge;
+            padding-right: $wsu-spacing--xlarge;
+            max-width: 800px;
             color: #fff;
-            text-decoration-color: $wsu-color--crimson-light;
+
+            &::before {
+                display: block;
+                content:'';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: auto;
+                width: auto;
+                -webkit-clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 80px) 100%,0 100%,0 0);
+                clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 80px) 100%,0 100%,0 0);
+            }
+
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+
         }
 
-        &::before {
-            content: "\F134";
-            font-family: 'wsu-icons';
-            display: inline-block;
-            font-size: $wsu-font-size--xsmall;
-            vertical-align: middle;
-            margin-right: 0.5rem;
+        &__image-caption {
+            position: absolute;
+            bottom: $wsu-spacing--sxxsmall;
+            right: 0;
+            @include wsu-font--xxsmall();
+            color: #fff;
+            background-color: $wsu-color--gray-85;
+            padding: $wsu-spacing--sxxsmall $wsu-spacing--xxsmall;
+            border-radius: 2px 0 0 2px;
+
+            a {
+                color: #fff;
+                text-decoration-color: $wsu-color--crimson-light;
+            }
+
+            &::before {
+                content: "\F134";
+                font-family: 'wsu-icons';
+                display: inline-block;
+                font-size: $wsu-font-size--xsmall;
+                vertical-align: middle;
+                margin-right: 0.5rem;
+            }
         }
+
     }
 
     .wsu-pattern-after::after{
@@ -96,15 +105,19 @@
         bottom: 0;
         left: 0;
         right: 0;
-    }
+    }    
 
-    .wsu-image-frame {
+    .wsu-image-frame, .wsu-slider-frame {
         position: absolute;
         top: 0;
         bottom: -20%;
         left: 0;
         right: 0;
         background-color: #000;
+    }    
+
+    .wsu-slider-frame {
+        overflow: hidden;
     }
 
     .wsu-title {
@@ -154,53 +167,84 @@
 
     .wsu-button-video-pause,
     .wsu-button-pause-background {
-        z-index: 1;
+        z-index: 5;
     }
 
-    &--size-full {
+    .wsu-hero {
 
-        .wsu-hero__content {
-            min-height: 100vh;
+        &--size-full {
+
+            .wsu-hero__content {
+                min-height: 100vh;
+            }
+
+        }
+
+        &--size-large {
+
+            .wsu-hero__content {
+                min-height: 950px;
+            }
+
+        }
+
+        &--size-medium {
+
+            .wsu-hero__content {
+                min-height: 800px;
+            }
+
+        }
+
+        &--size-small {
+
+            .wsu-hero__content {
+                min-height: 500px;
+                padding-top: $wsu-spacing--large;
+                padding-bottom: $wsu-spacing--large;
+            }
+
+        }
+
+        &--size-xsmall {
+
+            .wsu-hero__content {
+                min-height: 300px;
+                padding-top: $wsu-spacing--large;
+                padding-bottom: $wsu-spacing--large;
+
+            }
+
         }
 
     }
 
-    &--size-large {
-
-        .wsu-hero__content {
-            min-height: 950px;
-        }
-
+    .wsu-background-slider {
+        bottom: -$wsu-spacing--xlarge;
+        height: auto;
+        width: auto;
     }
 
-    &--size-medium {
-
-        .wsu-hero__content {
-            min-height: 800px;
-        }
-
+    .wsu-background-slider ~ .wsu-hero__content,
+    .wsu-background-slider ~ .wsu-overlay {
+        z-index: 4;
     }
+    .wsu-background-slider ~ .wsu-hero__content {
+        overflow: visible;
 
-    &--size-small {
-
-        .wsu-hero__content {
-            min-height: 500px;
-            padding-top: $wsu-spacing--large;
-            padding-bottom: $wsu-spacing--large;
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            height: $wsu-spacing--xlarge;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg,#fff 0,rgba(255,255,255,.8) 100%);
+            z-index: 4;
         }
-
     }
-
-    &--size-xsmall {
-
-        .wsu-hero__content {
-            min-height: 300px;
-            padding-top: $wsu-spacing--large;
-            padding-bottom: $wsu-spacing--large;
-        }
-
-    }
-
+    
 }
 
 .wsu-header-global ~ .wsu-wrapper-site .wsu-hero--size-full {
@@ -319,3 +363,5 @@
     }
         
 }
+
+@import './style-caption';

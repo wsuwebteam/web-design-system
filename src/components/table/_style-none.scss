@@ -1,0 +1,13 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-table--style-none {  
+    border-top: 4px solid $wsu-color--crimson;
+    border-collapse: collapse;
+    margin-bottom: $wsu-spacing--component;
+
+    th,
+    td {
+        border: none !important;
+    }
+}

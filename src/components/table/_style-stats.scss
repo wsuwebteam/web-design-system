@@ -1,0 +1,31 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-table--style-stats {
+    border-collapse: collapse;
+    margin-bottom: $wsu-spacing--component;
+    
+    th,
+    td {
+        padding: $wsu-spacing--xxsmall;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid $wsu-color--gray-30;
+        font-weight: 500;
+    }
+
+    th {
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td:last-child {
+        font-size: $wsu-font-size--large;
+        font-weight: $wsu-font-weight--xextrabold;
+        background: linear-gradient(0deg, #B12D47 0%, $wsu-color--crimson-light 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+}

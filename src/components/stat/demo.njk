@@ -1,27 +1,45 @@
 {% extends "component.njk" %}
 {% from "stat/_macro.njk" import stat %}
 {% block content %}
+<h2>Default</h2>
 <div>
-    {{ stat('', '31%', 'students who are first in their family to attend college', false, '') }}
-    {{ stat('', '$345 million', 'annual research funding, fy 2019', false, '') }}
-    {{ stat('', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)', false, '') }}
+    {{ stat('', '31%', '', 'students who are first in their family to attend college' ) }}
+    {{ stat('', '$345', 'Million', 'annual research funding, fy 2019', false, '') }}
+    {{ stat('', '66,558', 'Hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
 </div>
 <hr />
+<h2>Default | wsu-stat--size-medium</h2>
 <div>
-    {{ stat(' wsu-stat--size-small', '31%', 'students who are first in their family to attend college', false, '') }}
-    {{ stat(' wsu-stat--size-small', '$345 million', 'annual research funding, fy 2019', false, '') }}
-    {{ stat(' wsu-stat--size-small', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)', false, '') }}
+    {{ stat(' wsu-stat--size-medium', '31%', '', 'students who are first in their family to attend college') }}
+    {{ stat(' wsu-stat--size-medium', '$345', 'Million', 'annual research funding, fy 2019') }}
+    {{ stat(' wsu-stat--size-medium', '66,558', 'hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
 </div>
 <hr />
+<h2>Default | wsu-stat--size-small</h2>
 <div>
-    {{ stat(' wsu-stat--position-inline', '31%', 'students who are first in their family to attend college') }}
-    {{ stat(' wsu-stat--position-inline', '$345 million', 'annual research funding, fy 2019') }}
-    {{ stat(' wsu-stat--position-inline', '66,558 hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+    {{ stat(' wsu-stat--size-small', '31%', '', 'students who are first in their family to attend college') }}
+    {{ stat(' wsu-stat--size-small', '$345', 'Million', 'annual research funding, fy 2019') }}
+    {{ stat(' wsu-stat--size-small', '66,558', 'hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
 </div>
 <hr />
-<div class="wsu-stat__wrapper-per-row-3">
-    {{ stat(' wsu-stat--style-circles wsu-stat--style-circles-unit', '345', 'annual research funding, FY 2019', true, 'wsu-i-light-bulb', true, 'Million') }}
-    {{ stat(' wsu-stat--style-circles wsu-stat--style-circles-bottom', '565', 'study abroad programs', true, 'wsu-i-location') }}
-    {{ stat(' wsu-stat--style-circles wsu-stat--style-circles-top', '66,558', 'Annual student volunteer hours', true, 'wsu-i-time') }}
+<h2>Default | wsu-stat--layout-inline wsu-stat--width-small</h2>
+<div>
+    {{ stat(' wsu-stat--size-small wsu-stat--layout-inline wsu-stat--width-medium', '31%', '', 'First Generation') }}
+    {{ stat(' wsu-stat--size-small wsu-stat--layout-inline wsu-stat--width-medium', '$345', 'Million', 'Annual research funding, fy 2019') }}
+    {{ stat(' wsu-stat--size-small wsu-stat--layout-inline wsu-stat--width-medium', '66,558', 'hours', 'WSU student volunteers') }}
 </div>
+<hr />
+<h2>Circle (left,right,center)</h2>
+<div>
+    {{ stat(' wsu-stat--style-circle-left', '$345', 'Million', 'Annual research funding, fy 2019','wsu-i-location') }}
+    {{ stat(' wsu-stat--style-circle-right', '31%', '', 'First Generation','wsu-i-location') }}
+    {{ stat(' wsu-stat--style-circle-center', '66,558', 'hours', 'WSU student volunteers','wsu-i-location') }}
+</div>
+<h2>Circle (left,right,center) | wsu-stat--layout-inline</h2>
+<div style="text-align: center">
+    {{ stat(' wsu-stat--style-circle-left wsu-stat--layout-inline', '$345', 'Million', 'Annual research funding, fy 2019','wsu-i-location') }}
+    {{ stat(' wsu-stat--style-circle-right wsu-stat--layout-inline', '31%', '', 'First Generation','wsu-i-location') }}
+    {{ stat(' wsu-stat--style-circle-center wsu-stat--layout-inline', '66,558', 'hours', 'WSU student volunteers','wsu-i-location') }}
+</div>
+
 {%  endblock %} 

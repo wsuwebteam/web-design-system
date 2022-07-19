@@ -1,6 +1,16 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+$wsu-list-indent-map: (
+    'xlarge':   $wsu-spacing--xlarge,
+    'large':    $wsu-spacing--xlarge,
+    'xxmedium': $wsu-spacing--xxmedium,
+    'xmedium':  $wsu-spacing--xmedium,
+    'medium':   $wsu-spacing--medium,
+    'small':    $wsu-spacing--small,
+    'xsmall':   $wsu-spacing--xsmall,
+);
+
 .wsu-list {
 
     &--arrow,
@@ -98,6 +108,15 @@
             column-count: auto; 
 
         }
+    }
+
+}
+
+@each $indentName, $indentValue in $wsu-list-indent-map {
+
+    .wsu-list--padding-#{$indentName} li {
+        padding-left: $indentValue !important;
+        padding-right: $indentValue !important;
     }
 
 }

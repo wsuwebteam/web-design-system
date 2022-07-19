@@ -3,25 +3,24 @@
 @import '../../../_assets/scss/placeholders';
 
 
-.wsu-table {
-    @extend %table;
+.wsu-table:not([class*="-table--style-"]) {
+    border-top: 4px solid $wsu-color--crimson;
+    border-collapse: collapse;
+    margin-bottom: $wsu-spacing--component;
 
-    &--style-striped { 
-        th,
-        td {
-            border-left: none !important;
-            border-right: none !important;
-        }
-
-        tr:nth-child(even) {
-            background-color: $wsu-color--gray-5 !important;
-        }
+    th,
+    td {
+        padding: $wsu-spacing--xxsmall;
+        border: 1px solid $wsu-color--gray-30;
+        border-collapse: collapse;
     }
 
-    &--style-none {  
-        th,
-        td {
-            border: none !important;
-        }
+    th {   
+        font-weight: 600;
     }
 }
+
+@import './style-stripped';
+@import './style-lines';
+@import './style-stats';
+@import './style-none';

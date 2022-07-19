@@ -1,0 +1,9 @@
+{% from "image-frame/_macro.njk" import imageFrame %}
+
+{% macro pageBanner(classes = '', imageSrc = 'https://source.unsplash.com/collection/895539' ) %}
+  <div class="wsu-page-banner {{ classes }}">
+    {% if imageSrc %}
+      {{ imageFrame( ' wsu-image-frame--style-background', '', false, imageSrc ) }}
+    {% endif %}
+  </div>
+{% endmacro %}
