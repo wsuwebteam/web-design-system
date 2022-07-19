@@ -22,6 +22,7 @@
     padding: $wsu-spacing--xxlarge $wsu-spacing--xlarge $wsu-spacing--xlarge;
     box-sizing: border-box;
     max-width: $wsu-width--content;
+    width: 100%;
 
     &::before {
         content: "";
