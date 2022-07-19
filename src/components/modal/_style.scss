@@ -35,6 +35,9 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    &__bottom-heading{
+        font-size: $wsu-font-size--xmedium;
+    }
     &__quicklinks{
         display: flex;
         flex-direction: row;
