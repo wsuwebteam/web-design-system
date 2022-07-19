@@ -18,9 +18,23 @@
         min-height: 56px;
         max-height: 56px;
     }
-    &__quicklinks:hover{
+    &__quicklinks:hover,&__quicklinks:focus,&__quicklinks:active{
         background-color: $wsu-color--gray-75;
         border-bottom: 5px solid $wsu-color--crimson-dark;
+    }
+    &__quicklinks::before{
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 12px;
+        visibility: hidden;
+        margin-left: 0.5rem;
+        background-color: transparent;
+        transition: background-color .2s cubic-bezier(0,0,.03,1);
+    }
+    &__quicklinks:hover::before{
+        visibility: visible;
+        background-color: white;
     }
     &__quicklinks::after{
         content: '\F140';
@@ -28,6 +42,7 @@
         font-size: $wsu-font-size--small;
         flex: none;
         vertical-align: text-bottom;
+        margin-right: 0.5rem;
     }
     &__cta{
         background-color: $wsu-color--crimson-light;
@@ -36,15 +51,39 @@
         text-decoration-color: transparent;
         max-height: 56px;
         box-shadow: none;
-        padding: 1em 2em;
+        padding: 1em 1.75em;
         cursor: pointer;
         transition: ease-in-out 100ms;
         font-weight: $wsu-font-weight--bold;
         -webkit-clip-path: polygon(100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 0);
         clip-path: polygon(100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 0);
     }
-    &__cta:hover{
+    &__cta:hover,&__cta:focus,&__cta:active{
         background-color: $wsu-color--crimson-dark;
+    }
+    &__cta::before{
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 12px;
+        margin-right: 0.25rem;
+        visibility: hidden;
+        background-color: transparent;
+        transition: background-color .2s cubic-bezier(0,0,.03,1);
+    }
+    &__cta::after{
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 12px;
+        margin-left: 0.25rem;
+        visibility: hidden;
+        background-color: transparent;
+    }
+    &__cta:hover::before{
+        visibility: visible;
+        background-color: white;
+
     }
 
 }
