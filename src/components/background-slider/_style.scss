@@ -80,6 +80,9 @@
     transition: left 1000ms;
     right: auto;
     left: -100%;
+    box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
+    -moz-box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
   }
 
   .wsu-background-slider__slide.wsu-slide--next {
