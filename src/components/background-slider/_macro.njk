@@ -1,0 +1,12 @@
+{% macro backgroundSlider(classes = '', delay = 5000, numberOfSlides = 5 ) %}
+    <div class="wsu-background-slider {{ classes }}" 
+        data-delay="{{delay}}"          
+        data-effect="{{effect}}">
+            {% for i in range(0, numberOfSlides) %}
+                <div class="wsu-background-slider__slide {% if (i == 0) %}wsu-slide--active{% endif %}">
+                    <img src="https://picsum.photos/600/400?random={{i}}" class="wsu-slider-frame__image"/>
+                </div>
+            {% endfor %}
+        <button class="wsu-button-pause-background wsu-background-slider__pause-button" aria-label="Pause Animation"></button>
+    </div>
+{% endmacro %}

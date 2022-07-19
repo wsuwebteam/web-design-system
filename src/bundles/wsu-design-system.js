@@ -11,8 +11,9 @@ import WsuVideoFrame from '../components/experimental_video-frame/_script';
 import WsuButton from '../components/button/_script';
 import WsuStickyBox from '../components/sticky-box/_script';
 import WsuAnchorMenu from '../components/anchor-menu/_script';
+import WsuBackgroundSlider from '../components/background-slider/_script';
 
-import '../components/slider-frame/_script';
+//import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
 
 
@@ -23,6 +24,7 @@ const wsu = {
     verticalNavitation: new WsunavigationSite(),
     navigationSiteVertical: new WsuNavigationSiteVertical(),
     navigationSiteHorizontal: new WsuNavigationSiteHorizontal(),
+    backgroundSlider: new WsuBackgroundSlider(),
     headerGlobal: new WsuHeaderGlobal(),
     accordion: new WsuAccordion(),
     collapsable: new WsuCollapsable(),
