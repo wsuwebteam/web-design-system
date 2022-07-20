@@ -1,0 +1,42 @@
+{% from "menu/_macro.njk" import menu %}
+{% from "menu-audience/_macro.njk" import menuAudience %}
+
+{% macro mobileMenu(bodyClasses, startOpen=true) %}
+<nav class="wsu-mobile-menu{{ bodyClasses }}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
+    <button class="wsu-mobile-menu__overlay wsu-mobile-menu--close" aria-label="Close site menu"></button>
+    <button class="wsu-mobile-menu__toggle-button wsu-mobile-menu--toggle" aria-label="Open site menu">Menu</button>
+    <button class="wsu-mobile-menu__open-button wsu-mobile-menu--open" aria-label="Open site menu">Menu</button>
+    <div class="wsu-mobile-menu__panel">
+        <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
+        <a class="wsu-mobile-menu__quicklinks">Quicklinks / Search</a>
+        <ul class="wsu-menu wsu-menu--mobile">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Academics</a>
+            </li>
+            <li>
+                <a href="#">Admissions</a>
+            </li>
+            <li>
+                <a href="#">Research</a>
+            </li>
+            <li>
+                <a href="#">Athletics</a>
+            </li>
+            <li>
+                <a href="#">Campuses</a>
+            </li>
+            <li>
+                <a href="#">News</a>
+            </li>
+        </ul>
+        {{ menuAudience() }}
+    </div>
+    <button tabindex="-1" class="wsu-mobile-menu__overlay wsu-mobile-menu--close" aria-label="Close site menu"></button>
+</nav>
+{% endmacro %} 

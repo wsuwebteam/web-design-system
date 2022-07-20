@@ -2,6 +2,14 @@
 
 $wsu-borders-list: 'top', 'bottom', 'left', 'right';
 
+.wsu-border--crimson {
+    border: 1px solid $wsu-color--crimson-light;
+}
+
+.wsu-border--gray {
+    border: 1px solid $wsu-color--gray-15;
+}
+
 @each $borderName in $wsu-borders-list {
 
     .wsu-border--crimson-#{$borderName} {
