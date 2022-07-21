@@ -77,16 +77,14 @@ class WsuMobileMenu {
 
 
     keyDownEvents( event ) {
+        const KEYCODE_ESCAPE = 27;
 
         try {
 
-            if ( keyDownEvent( { domEvent: event, key:'Escape', inClass: this.wrapperClass } ) ) {
+            if ( event.code === "Escape" || event.keyCode === KEYCODE_ESCAPE ) {
 
-                toggleAriaExpandedClose( { 
-                    wrapper:          elementGet( { elementClass: this.wrapperClass } ),
-                    actionPrefix:     this.actionPrefix,
-                    ariaLabelElement: elementGet( { elementClass: 'wsu-navigation-site--toggle' } ),  
-                } );
+                document.body.classList.remove('wsu-mobile-menu--is-open');
+                document.body.classList.add('wsu-mobile-menu--is-closed');
 
             }
            
