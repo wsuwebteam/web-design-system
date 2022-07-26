@@ -16,12 +16,17 @@
         
         a {
             font-weight: 600;
-            font-size: $wsu-font-size--xmedium;
+            font-size: $wsu-font-size--xxmedium;
             color: $wsu-color--gray-85;
             text-decoration: none;
-            padding: $wsu-spacing--small $wsu-spacing--xmedium;
+            padding: $wsu-spacing--medium $wsu-spacing--xmedium;
             position: relative;
             display: block;
+
+            @media screen and (max-width: $wsu-breakpoint--xultrawide ) {
+                font-size: $wsu-font-size--xmedium;
+                padding: $wsu-spacing--medium $wsu-spacing--medium;
+            }
         }
         a:hover,a:focus {
             background: rgb(247,247,247);
@@ -43,13 +48,18 @@
             height: 0;
             transition: height $wsu-easing 150ms;
         }
+
+        &.wsu-menu-item--current::after {
+            background-color: $wsu-color--crimson-light;
+            height: 5px;
+        }
         
         &:hover,
         &:focus,
         &.wsu-active {
 
             &::after {
-                height: 4px;
+                height: 5px;
             }
 
         }
