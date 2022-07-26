@@ -6,6 +6,7 @@
 @import './style-lines';
 @import './style-shadow';
 @import './style-path';
+@import './style-border-angle';
 
 div[class*="decorator--style-path"],
 .wsu-decorator--style-wsu,
@@ -15,7 +16,7 @@ div[class*="decorator--style-path"],
 .wsu-decorator--style-triangle-gray-left,
 .wsu-decorator--style-triangle-gray-right,
 .wsu-decorator--style-triangle-crimson-left,
-.wsu-decorator--style-triangle-crimson-right {
+.wsu-decorator--style-triangle-crimson-right { 
     content: '';
 	display: block;
 	position: absolute; 
