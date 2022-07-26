@@ -103,7 +103,7 @@ const PeopleList = function (el) {
                           person.photo_srcset
                             ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
                             : ""
-                        } loading="lazy">${ linkProfile ? `</a>`:''}`
+                        } loading="lazy" alt="">${ linkProfile ? `</a>`:''}`
                     : ""
                 }
             </div>`

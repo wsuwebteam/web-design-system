@@ -1,0 +1,18 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-background--style-wsu {
+
+    &-crimson {
+        @include wsu-background-wsu-pattern-crimson(); 
+    }
+
+    &-crimson-solid {
+        @include wsu-background-wsu-pattern();
+        background-color: $wsu-color--crimson;
+    }
+
+    &-gray {
+
+    }
+}
