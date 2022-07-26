@@ -1,7 +1,7 @@
-{% macro button( classes, title='Lorem ipsum' ) %}
-<button class="wsu-button{{ classes }}">
+{% macro button( classes, title='Lorem ipsum', tag='button' ) %}
+<{{ tag }} class="wsu-button{{ classes }}">
     {{ title }}
-</button>
+</{{ tag }}>
 {% endmacro %}
 
 {% macro buttonPlay( classes='', title='Play Video' ) %}
@@ -13,6 +13,7 @@
 {% macro buttonPauseBackground( classes='', title='Pause Background' ) %}
 <button class="wsu-button-pause-background{{ classes }}" aria-label="Pause Animation"></button>
 {% endmacro %} 
+
 
 
 
