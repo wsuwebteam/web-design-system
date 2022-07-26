@@ -54,6 +54,9 @@
         max-width: 1300px;
         box-sizing: border-box;
     }
+    &__nav-desktop {
+        padding-right: $wsu-spacing--medium;
+    }
     &__mobile-wrapper{
         display: none;
     }
@@ -83,6 +86,7 @@
     }
     .wsu-header-system__coug-head-box{
         width: 175px;
+        min-height: 190px;
     }
 }
 
