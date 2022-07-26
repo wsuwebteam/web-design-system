@@ -55,11 +55,6 @@
     left: -100%;
   }
 
-  .wsu-background-slider__slide.wsu-slide--next {
-    z-index: 3;
-    visibility: visible;
-  }
-
   .wsu-background-slider__slide.wsu-slide--active {
     z-index: 2;
     visibility: visible;
@@ -85,11 +80,6 @@
     -moz-box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
   }
 
-  .wsu-background-slider__slide.wsu-slide--next {
-    z-index: 3;
-    visibility: visible;
-  }
-
   .wsu-background-slider__slide.wsu-slide--active {
     z-index: 2;
     visibility: visible;
@@ -98,7 +88,7 @@
 
   .wsu-background-slider__slide.wsu-slide--previous {
     z-index: 1;
-    visibility: visible;
+    visibility: visible; 
     left: 0; 
   }
 

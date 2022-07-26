@@ -140,9 +140,10 @@ class WsuBackgroundSliderInstance {
 	init() {
 
 		this.slides = this.instance.querySelectorAll(".wsu-background-slider__slide");
-		this.doSlideshow( 0 );
 		this.instance.classList.add('wsu-initialized');
 		this.bindEvents();
+
+		this.timer = setTimeout( () => { this.doSlideshow(1) }, this.delay );
 
 	}
 
@@ -199,8 +200,11 @@ class WsuBackgroundSliderInstance {
 
 			this.setActiveSlides( increment );
 
-			this.slides.forEach( slide => {
-				slide.classList.remove('wsu-slide--active', 'wsu-slide--next', 'wsu-slide--previous');
+			this.slides.forEach( ( slide, index ) => {
+
+				if ( index !== this.activeSlides.active || index !== this.activeSlides.next || this.activeSlides.previous ) {
+					slide.classList.remove('wsu-slide--active', 'wsu-slide--next', 'wsu-slide--previous');
+				}
 			});
 
 			this.slides[ this.activeSlides.active].classList.add('wsu-slide--active');
