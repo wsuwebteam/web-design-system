@@ -6,7 +6,7 @@
     line-height: 1.2;
     
     a::after {
-        display: none; 
+        display: none !important; 
     }
 }
 
