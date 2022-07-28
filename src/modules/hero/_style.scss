@@ -1,6 +1,18 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+@mixin wsu-hero-caption-size-small() {
+    @include wsu-font--xxmedium();
+    text-shadow: 0px 0px 3px #000000;
+    font-weight: 500;
+}
+
+@mixin wsu-hero-caption-size-large() {
+    @include wsu-font--xxlarge();
+    text-shadow: 0px 0px 8px #000000;
+    font-weight: 800;
+}
+
 .wsu-hero {
     position: relative;
     transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
@@ -136,11 +148,24 @@
 
     .wsu-caption { 
 
-        @include wsu-font--xxmedium();
-        text-shadow: 0px 0px 3px #000000;
+        @include wsu-hero-caption-size-small();
         margin-right: $wsu-spacing--large;
         margin-bottom: $wsu-spacing--xxmedium;
         position: relative;
+    }
+
+    &.wsu-hero--caption-size-large {
+        .wsu-caption {
+            @include wsu-hero-caption-size-large();
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+    
+            .wsu-caption {
+                @include wsu-font--xxmedium();
+            }
+            
+        }
     }
 
     .wsu-eyebrow-heading {
@@ -289,6 +314,7 @@
         .wsu-title {
             @include wsu-font--sxxlarge();
         }
+
         
     }
 
