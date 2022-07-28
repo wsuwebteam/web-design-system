@@ -28,18 +28,43 @@
     <div class="wsu-custom-demo">
 
 
+        <div class="wsu-hero wsu-width--full wsu-hero--style-caption">
 
 
-        <div class="wsu-hero wsu-width--full wsu-pattern--wsu-light-radial-left">
+            <div class="wsu-image-frame wsu-image-frame--fill">
 
+                <img src="https://source.unsplash.com/collection/895539" />
 
-
-            <div class="wsu-video-frame wsu-video-frame--position-fill">
-                <iframe class="wsu-video-frame__video-background" src="https://player.vimeo.com/video/76979871?background=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Description of the Video"></iframe>
-
-                <button class="wsu-button-pause-background wsu-video-frame--action-pause-background" aria-label="Pause Animation"></button>
             </div>
 
+
+
+
+
+            <div class="wsu-background-slider  wsu-background-slider--effect-fade" data-delay="3000" data-effect="">
+
+                <div class="wsu-background-slider__slide wsu-slide--active">
+                    <img src="https://picsum.photos/600/400?random=0" class="wsu-slider-frame__image" />
+                </div>
+
+                <div class="wsu-background-slider__slide ">
+                    <img src="https://picsum.photos/600/400?random=1" class="wsu-slider-frame__image" />
+                </div>
+
+                <div class="wsu-background-slider__slide ">
+                    <img src="https://picsum.photos/600/400?random=2" class="wsu-slider-frame__image" />
+                </div>
+
+                <div class="wsu-background-slider__slide ">
+                    <img src="https://picsum.photos/600/400?random=3" class="wsu-slider-frame__image" />
+                </div>
+
+                <div class="wsu-background-slider__slide ">
+                    <img src="https://picsum.photos/600/400?random=4" class="wsu-slider-frame__image" />
+                </div>
+
+                <button class="wsu-button-pause-background wsu-background-slider__pause-button" aria-label="Pause Animation"></button>
+            </div>
 
 
 
@@ -71,10 +96,19 @@
             </div>
         </div>
 
+        <hr />
+
+        <style>
+            .wsu-hero {
+                margin-bottom: 200px !important;
+            }
+
+            .wsu-custom-demo {
+                margin: 0 !important;
+            }
+        </style>
 
     </div>
-
-    <script src="https://player.vimeo.com/api/player.js"></script>
 
     <script defer src="../../bundles/wsu-design-system.js"></script>
 </body>
