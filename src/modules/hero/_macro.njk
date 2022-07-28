@@ -9,7 +9,7 @@
 {% from "experimental_video-frame/_macro.njk" import videoFrame %}
 {% from "background-slider/_macro.njk" import backgroundSlider %}
 
-{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title', isSlider = false) %}
+{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title', isSlider = false, caption = '' ) %}
   <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if imageSrc %}
       {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
@@ -29,7 +29,14 @@
         <{{ titleTag }} class="wsu-title" id="unique-id-hero-banner-title">
           {{ heroTitle }}
         </{{ titleTag }}>
-        {% if showCaption %}{{ caption() }}
+        {% if showCaption %}
+        <div class="wsu-caption">
+          {% if caption %}
+            {{ caption }}
+          {% else %}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.
+          {% endif %}
+        </div>
         {% endif %}
         {% if linked %}
           <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>

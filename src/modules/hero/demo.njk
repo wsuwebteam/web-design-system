@@ -5,7 +5,12 @@
 {% include 'hero/html.njk' %}
 {% include 'hero/html--linked.njk' %}
 <hr />
-{{ hero(classes = ' wsu-hero--style-caption', isSlider = true ) }}
+test
+{{ hero(classes=' wsu-hero--style-caption', isSlider=true, caption='Some Short Caption Here' ) }}
+<hr />
+{{ hero(classes=' wsu-hero--style-caption wsu-hero--caption-size-small', isSlider=true ) }}
+<hr />
+{{ hero(classes=' wsu-hero--caption-size-large', isSlider=true, caption='Some Short Caption Here' ) }}
 <hr />
 {{ hero(' wsu-hero--size-full wsu-pattern--wsu-light-radial-left') }}
 {{ hero(' wsu-hero--size-large wsu-pattern--wsu-light-radial-left') }}

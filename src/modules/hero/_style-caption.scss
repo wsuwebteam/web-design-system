@@ -9,21 +9,21 @@
         &__content {
             padding-top: $wsu-spacing--xhero;
             padding-bottom: $wsu-spacing--xhero;
-            padding-left: $wsu-spacing--large;
-            padding-right: $wsu-spacing--large;
+            padding-left: $wsu-spacing--xlarge;
+            padding-right: $wsu-spacing--xlarge;
             position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
             min-height: 650px;
             box-sizing: border-box;
         }
 
         &__caption {
+            align-self: center;
+            padding-top: $wsu-spacing--hero;
+            padding-bottom: $wsu-spacing--xmedium;
             max-width: 1200px;
-            width: 100%;
             margin: 0 auto;
-
+            width: 100%;
         }
 
         &__image-caption {
@@ -56,24 +56,22 @@
     .wsu-title {
         @include wsu-font--hero();
         margin: 0 0 $wsu-spacing--xsmall;
-        padding: 0;
         text-shadow: 0px 0px 8px #000000;
         font-weight: 800;
         position: relative;
         word-break: break-word;
-        z-index: 7;
+        z-index: 1;
+        max-width: 900px;
     }
 
-    .wsu-caption { 
-        @include wsu-font--xxlarge();
-        text-shadow: 0px 0px 8px #000000;
+    .wsu-caption {
+        @include wsu-hero-caption-size-large();
+        position: relative;
         margin-left: -$wsu-spacing--large;
-        margin-top: -$wsu-spacing--large;
-        padding: $wsu-spacing--large $wsu-spacing--xlarge $wsu-spacing--xlarge $wsu-spacing--large;
+        margin-top: -3.8rem;
+        padding: $wsu-spacing--large $wsu-spacing--xlarge $wsu-spacing--xxmedium $wsu-spacing--large;
         position: relative;
-        font-weight: 800;
-        display: inline-block;
-        position: relative;
+        display: table;
         background: -moz-linear-gradient(left,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
         background: -webkit-linear-gradient(left,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.4) 100%);
         background: linear-gradient(to right,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.4) 100%);
@@ -83,6 +81,7 @@
         box-shadow: -4px 1px 14px 0px rgba(0,0,0,0.38);
         -webkit-box-shadow: -4px 1px 14px 0px rgba(0,0,0,0.38);
         -moz-box-shadow: -4px 1px 14px 0px rgba(0,0,0,0.38);
+        max-width: 900px;
     }
 
     .wsu-background-slider {
@@ -126,6 +125,51 @@
         right: 0;
         width: auto;
         height: auto;
+    }
+
+    &.wsu-hero--caption-size-small {
+        .wsu-caption {
+            @include wsu-hero-caption-size-small();
+        }
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+
+        .wsu-title {
+            @include wsu-font--xxlarge(); 
+        }
+
+        .wsu-caption {
+            @include wsu-font--large();
+            margin-top: -2.8rem;
+            padding-top: $wsu-spacing--xxmedium;
+            padding-bottom: $wsu-spacing--xmedium;
+        }
+        
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+
+        .wsu-title {
+            @include wsu-font--xlarge(); 
+        }
+
+        .wsu-caption {
+            @include wsu-font--medium();
+            margin-top: -2.2rem;
+            padding-top: $wsu-spacing--xmedium;
+            padding-bottom: $wsu-spacing--medium;
+            margin-left: -$wsu-spacing--medium;
+            padding: $wsu-spacing--xmedium $wsu-spacing--xmedium $wsu-spacing--medium $wsu-spacing--medium;
+        }
+
+        .wsu-hero__content {
+            padding-top: $wsu-spacing--large;
+            padding-bottom: $wsu-spacing--large;
+            padding-left: $wsu-spacing--xxmedium;
+            padding-right: $wsu-spacing--xxmedium;
+        }
+        
     }
 
 }
