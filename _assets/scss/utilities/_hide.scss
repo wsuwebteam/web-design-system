@@ -1,0 +1,13 @@
+@import '../variables';
+
+.wsu-hide--xxultrawide,
+.wsu-hide--xultrawide,
+.wsu-hide--ultrawide,
+.wsu-hide--desktop,
+.wsu-hide--tablet-large,
+.wsu-hide--tablet-medium,
+.wsu-hide--tablet,
+.wsu-hide--phone,
+.wsu-hide--phone-small {
+    display: none !important;
+}
