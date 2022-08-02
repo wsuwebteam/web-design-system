@@ -31,4 +31,4 @@ jobs:
            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
            aws-region: us-west-2
       - name: Deploy
-        run: aws s3 sync ./test/bundles/ s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
+        run: aws s3 sync ./dist/bundles/ s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
