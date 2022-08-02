@@ -1,0 +1,17 @@
+{% extends "component.njk" %}
+{% from "hero/_macro.njk" import hero %}
+
+{% block content %}
+{{ hero(classes=' wsu-hero--style-caption', isSlider=true ) }}
+<hr />
+
+<style>
+.wsu-hero {
+    margin-bottom: 200px !important;
+}
+
+.wsu-custom-demo {
+    margin: 0 !important;
+}
+</style>
+{%  endblock %}   

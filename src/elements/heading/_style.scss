@@ -18,7 +18,7 @@ h6 {
         text-decoration: none;
         text-decoration-color: $wsu-color--crimson-light;
 
-        &::after:not(.wsu-heading__anchor-link) {
+        &:not(.wsu-heading__anchor-link)::after {
             content: '\F126';
             font-family: 'wsu-icons';
             font-size: $wsu-font-size--small;
@@ -28,7 +28,7 @@ h6 {
             text-decoration: none;
         }
 
-        &:hover:not(.wsu-heading__anchor-link) {
+        &:not(.wsu-heading__anchor-link):hover {
             text-decoration: underline;
             text-decoration-color: $wsu-color--crimson-light;
         }

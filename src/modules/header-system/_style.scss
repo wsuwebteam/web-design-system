@@ -4,7 +4,6 @@
 .wsu-header-system{
     background-color: white;
     width: 100%;
-    max-width: 1600px;
     border-bottom: 4px solid $wsu-color--gray-20;
 
     &__wrapper-top{
@@ -30,12 +29,12 @@
     &__coug-head-box{
         display: flex;
         height: 100%;
-        min-height: 210px;
-        width: 140px;
+        min-height: 190px;
+        width: 170px;
         margin-left: 25px;
         align-items: center;
         justify-content: center;
-        background-color: $wsu-color--crimson-dark;
+        background-color: $wsu-color--crimson;
     }
     &__coug-head-box > svg{
         width: 90px;
@@ -54,6 +53,9 @@
         display: flex;
         max-width: 1300px;
         box-sizing: border-box;
+    }
+    &__nav-desktop {
+        padding-right: $wsu-spacing--medium;
     }
     &__mobile-wrapper{
         display: none;
@@ -84,6 +86,7 @@
     }
     .wsu-header-system__coug-head-box{
         width: 175px;
+        min-height: 190px;
     }
 }
 

@@ -1,6 +1,18 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+@mixin wsu-hero-caption-size-small() {
+    @include wsu-font--xxmedium();
+    text-shadow: 0px 0px 3px #000000;
+    font-weight: 500;
+}
+
+@mixin wsu-hero-caption-size-large() {
+    @include wsu-font--xxlarge();
+    text-shadow: 0px 0px 8px #000000;
+    font-weight: 800;
+}
+
 .wsu-hero {
     position: relative;
     transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
@@ -136,11 +148,24 @@
 
     .wsu-caption { 
 
-        @include wsu-font--xxmedium();
-        text-shadow: 0px 0px 3px #000000;
+        @include wsu-hero-caption-size-small();
         margin-right: $wsu-spacing--large;
         margin-bottom: $wsu-spacing--xxmedium;
         position: relative;
+    }
+
+    &.wsu-hero--caption-size-large {
+        .wsu-caption {
+            @include wsu-hero-caption-size-large();
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+    
+            .wsu-caption {
+                @include wsu-font--xxmedium();
+            }
+            
+        }
     }
 
     .wsu-eyebrow-heading {
@@ -170,7 +195,7 @@
         z-index: 5;
     }
 
-    .wsu-hero {
+    &.wsu-hero {
 
         &--size-full {
 
@@ -244,6 +269,105 @@
             z-index: 4;
         }
     }
+
+    @media screen and (min-width: $wsu-breakpoint--xultrawide ) {
+
+        .wsu-hero {
+    
+            &__content {
+                padding-top: calc( #{$wsu-spacing--hero} * 1.5 );
+                padding-bottom: calc( #{$wsu-spacing--hero} * 1.5 );
+            }
+    
+        }
+            
+    }
+    
+    @media screen and (min-width: $wsu-breakpoint--xxultrawide ) {
+    
+        .wsu-hero {
+    
+            &__content {
+                padding-top: calc( #{$wsu-spacing--hero} * 2 );
+                padding-bottom: calc( #{$wsu-spacing--hero} * 2 );
+            }
+    
+        }
+            
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--desktop ) {
+
+        .wsu-hero {
+    
+            &__content {
+                padding-left: $wsu-spacing--xmedium;
+                padding-right: $wsu-spacing--xmedium;
+            }
+    
+        }
+            
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+
+        .wsu-title {
+            @include wsu-font--sxxlarge();
+        }
+
+        
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+        .wsu-hero {
+    
+            &__content {
+                padding-left: $wsu-spacing--medium;
+                padding-right: $wsu-spacing--medium;
+            }
+    
+            &__caption {
+                padding-top: $wsu-spacing--large;
+                padding-bottom: $wsu-spacing--large;
+                padding-left: $wsu-spacing--xxmedium;
+                padding-right: $wsu-spacing--xxmedium;
+            }
+    
+            
+    
+        }
+    
+        .wsu-title {
+            @include wsu-font--xxlarge();
+        }
+            
+    }
+    
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+    
+        .wsu-hero {
+    
+            &__content {
+                padding-left: $wsu-spacing--medium;
+                padding-right: $wsu-spacing--medium;
+                padding-top: $wsu-spacing--xxlarge;
+                padding-bottom: $wsu-spacing--xxlarge;
+            }
+    
+            
+    
+        }
+    
+        .wsu-title {
+            @include wsu-font--xlarge();
+        }
+    
+        .wsu-caption {
+            @include wsu-font--medium();
+        }
+            
+    }
     
 }
 
@@ -265,103 +389,13 @@
 
 
 
-@media screen and (min-width: $wsu-breakpoint--xultrawide ) {
-
-    .wsu-hero {
-
-        &__content {
-            padding-top: calc( #{$wsu-spacing--hero} * 1.5 );
-            padding-bottom: calc( #{$wsu-spacing--hero} * 1.5 );
-        }
-
-    }
-        
-}
-
-@media screen and (min-width: $wsu-breakpoint--xxultrawide ) {
-
-    .wsu-hero {
-
-        &__content {
-            padding-top: calc( #{$wsu-spacing--hero} * 2 );
-            padding-bottom: calc( #{$wsu-spacing--hero} * 2 );
-        }
-
-    }
-        
-}
 
 
-@media screen and (max-width: $wsu-breakpoint--desktop ) {
 
-    .wsu-hero {
 
-        &__content {
-            padding-left: $wsu-spacing--xmedium;
-            padding-right: $wsu-spacing--xmedium;
-        }
 
-    }
-        
-}
 
-@media screen and (max-width: $wsu-breakpoint--tablet-large ) {
 
-    .wsu-hero {
 
-        .wsu-title {
-            @include wsu-font--sxxlarge();
-        }
-
-    }
-        
-} 
-
-@media screen and (max-width: $wsu-breakpoint--tablet ) {
-
-    .wsu-hero {
-
-        &__content {
-            padding-left: $wsu-spacing--medium;
-            padding-right: $wsu-spacing--medium;
-        }
-
-        &__caption {
-            padding-top: $wsu-spacing--large;
-            padding-bottom: $wsu-spacing--large;
-            padding-left: $wsu-spacing--xxmedium;
-            padding-right: $wsu-spacing--xxmedium;
-        }
-
-        .wsu-title {
-            @include wsu-font--xxlarge();
-        }
-
-    }
-        
-}
-
-@media screen and (max-width: $wsu-breakpoint--phone ) {
-
-    .wsu-hero {
-
-        &__content {
-            padding-left: $wsu-spacing--medium;
-            padding-right: $wsu-spacing--medium;
-            padding-top: $wsu-spacing--xxlarge;
-            padding-bottom: $wsu-spacing--xxlarge;
-        }
-
-        .wsu-title {
-            @include wsu-font--xlarge();
-        }
-
-        .wsu-caption {
-            @include wsu-font--medium();
-        }
-
-    }
-        
-}
 
 @import './style-caption';
