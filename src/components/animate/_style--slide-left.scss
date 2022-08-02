@@ -1,0 +1,23 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-animate--action-slide-left {
+    transition: transform $wsu-easing 1s;
+
+    &.wsu-animate--timing-early,
+    &:not([class*='--timing-']),
+    &.wsu-animate--timing-late {
+        transform: translateX(-300px);
+    }
+
+    &.wsu-animate--timing-late.wsu-animate--do-late,
+    &.wsu-animate--timing-early.wsu-animate--do-early,
+    &:not([class*='--timing-']).wsu-animate--do-default {
+        transform: translateX(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transform: translateX(0) !important;
+    }
+
+}
