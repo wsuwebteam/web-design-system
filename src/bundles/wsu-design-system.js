@@ -2,6 +2,7 @@
 import WsunavigationSite from '../modules/deprecated_navigation-site/_navigation-site';
 import WsuHeaderGlobal from "../modules/header-global/_header-global";
 import WsuAccordion from "../components/accordion/_script";
+import WsuAnimate from '../components/animate/_script';
 import WsuCollapsable from "../components/experimental_collapsable/script";
 import WsuMenu from "../components/menu/_script";
 import WsuNavigationSiteVertical from "../modules/navigation-site-vertical/_script";
@@ -23,6 +24,7 @@ import '../modules/hero-slider/_script';
 
 
 const wsu = {
+    animate: new WsuAnimate(),
     verticalNavitation: new WsunavigationSite(),
     mobileMenu: new WsuMobileMenu(),
     navigationSiteVertical: new WsuNavigationSiteVertical(),
