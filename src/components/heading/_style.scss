@@ -2,6 +2,17 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-heading {
+    &__anchor-link{
+        color: $wsu-color--crimson;
+        font-size: $wsu-font-size--xxmedium;
+        text-decoration: underline;
+        text-decoration-color: $wsu-color--crimson-light;
+    }
+    &__anchor-link:hover{
+        color: $wsu-color--crimson-light;
+        font-size: $wsu-font-size--xxmedium;
+        text-decoration: none;
+    }
 
     &--style {
 
@@ -38,8 +49,8 @@
             }
         }
     }
+    
 }
-
 h1.wsu-heading--style-callout {
     margin-bottom: $wsu-spacing--large;
 

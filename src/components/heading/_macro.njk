@@ -1,7 +1,7 @@
-{% macro heading( tag='h1', classes='', title='Lorem ipsum', link='' ) %}
-<{{ tag }} class="{{ classes }}">
+{% macro heading( tag='h1', classes='', title='Lorem ipsum', link='', anchor='' ) %}
+<{{ tag }} class="{{ classes }}" id="{{anchor}}">
     {% if link %}<a href="{{link}}">{% endif %}
-    {{ title }} {{ tag }}
+    {{ title }} {{ tag }} {% if anchor %} <a href="#{{anchor}}" class="wsu-heading__anchor-link"><span class="wsu-screen-reader-only">Jump link for {{ title }}"</span><span aria-hidden="true">#</span></a> {% endif %}
     {% if link %}</a>{% endif %}
 </{{ tag }}>
 {% endmacro %}
