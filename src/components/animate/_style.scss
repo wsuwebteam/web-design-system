@@ -1,0 +1,24 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@import './style--fade-left';
+@import './style--fade-right';
+@import './style--fade-bottom';
+@import './style--fade-angle-left';
+@import './style--fade-angle-right';
+
+.wsu-animate--delay-1 {
+    transition-delay: 100ms !important;
+}
+.wsu-animate--delay-2 {
+    transition-delay: 300ms !important;
+}
+.wsu-animate--delay-3 {
+    transition-delay: 500ms !important;
+}
+.wsu-animate--delay-4 {
+    transition-delay: 700ms !important;
+}
+.wsu-animate--delay-5 {
+    transition-delay: 900ms !important;
+}

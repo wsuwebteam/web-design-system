@@ -1,0 +1,62 @@
+{% extends "component.njk" %}
+{% from "stat/_macro.njk" import stat %}
+{% block styles %}
+<style>
+.wsu-demo-animate-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 75vh;
+}
+.wsu-animate {
+    width: 33.33%;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    height: 250px;
+}
+</style>
+
+{%  endblock %} 
+{% block content %}
+<div class="wsu-demo-animate-wrapper">
+    <div class="wsu-animate wsu-animate--action-fade-left wsu-animate--delay-1"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--delay-2"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right wsu-animate--delay-3"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left wsu-animate--action-stagger"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--action-stagger"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right wsu-animate--action-stagger"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left"><span>Default</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-angle-left wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-angle-right wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate"></div>
+    <div class="wsu-animate wsu-animate--action-angle-right wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate wsu-animate--action-angle-left wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate"></div>
+    <div class="wsu-animate wsu-animate--action-angle-right wsu-animate--timing-early"><span>Early</span></div>
+    <div class="wsu-animate"></div>
+    <div class="wsu-animate"></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--timing-late"><span>late</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-right wsu-animate--timing-late"><span>late</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-left wsu-animate--timing-late"><span>late</span></div>
+    <div class="wsu-animate wsu-animate--action-fade-bottom wsu-animate--timing-late"><span>late</span></div>
+    <div class="wsu-animate wsu-animate--action-angle-left wsu-animate--timing-late"><span>late</span></div>
+    <div class="wsu-animate wsu-animate--action-angle-right wsu-animate--timing-late"><span>late</span></div>
+    <div class="wsu-animate"></div>
+    <div class="wsu-animate"></div>
+    <div class="wsu-animate"></div>
+</div>
+
+{%  endblock %} 
