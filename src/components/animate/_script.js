@@ -95,7 +95,7 @@ class WsuAnimate {
 
     getAdjustHeight( element ) {
 
-        if ( element.classList.contains( 'wsu-animate--style-fade-bottom' ) || element.classList.contains( 'wsu-animate--style-angle-left' ) || element.classList.contains( 'wsu-animate--style-angle-right' )  ) {
+        if ( element.classList.contains( 'wsu-animate--action-fade-bottom' ) || element.classList.contains( 'wsu-animate--action-angle-left' ) || element.classList.contains( 'wsu-animate--action-angle-right' )  ) {
 
             return -300;
 
