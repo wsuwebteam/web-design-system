@@ -1,12 +1,19 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+@import './style--slide-top';
+@import './style--slide-right';
+@import './style--slide-left';
+@import './style--slide-bottom';
 @import './style--fade';
 @import './style--fade-left';
 @import './style--fade-right';
 @import './style--fade-bottom';
-@import './style--fade-angle-left';
-@import './style--fade-angle-right';
+@import './style--fade-top';
+@import './style--fade-bottom-left';
+@import './style--fade-bottom-right';
+@import './style--fade-top-left';
+@import './style--fade-top-right';
 
 .wsu-animate--delay-1 {
     transition-delay: 100ms !important;
