@@ -6,7 +6,7 @@ class WsuAnimate {
 
         this.animateItems = [];
 
-        this.animateRatio = { timeEarly: 0.95, timeDefault: 0.85, timeLate: 0.70 };
+        this.animateRatio = { timeEarly: 0.95, timeDefault: 0.90, timeLate: 0.80 };
 
         this.animateEarlyClass = 'wsu-animate--do-early';
         this.animateDefaultClass = 'wsu-animate--do-default';
