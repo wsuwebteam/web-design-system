@@ -1,0 +1,26 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-animate--action-fade-bottom {
+    transition: transform $wsu-easing 1s, opacity ease-in 1s;
+
+    &.wsu-animate--timing-early,
+    &:not([class*='--timing-']),
+    &.wsu-animate--timing-late {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    &.wsu-animate--timing-late.wsu-animate--do-late,
+    &.wsu-animate--timing-early.wsu-animate--do-early,
+    &:not([class*='--timing-']).wsu-animate--do-default {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+}
