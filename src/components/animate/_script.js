@@ -6,7 +6,7 @@ class WsuAnimate {
 
         this.animateItems = [];
 
-        this.animateRatio = { timeEarly: 0.95, timeDefault: 0.90, timeLate: 0.80 };
+        this.animateRatio = { timeEarly: 0.95, timeDefault: 0.85, timeLate: 0.75 };
 
         this.animateEarlyClass = 'wsu-animate--do-early';
         this.animateDefaultClass = 'wsu-animate--do-default';
@@ -95,7 +95,7 @@ class WsuAnimate {
 
     getAdjustHeight( element ) {
 
-        if ( element.classList.contains( 'wsu-animate--action-fade-bottom' ) || element.classList.contains( 'wsu-animate--action-angle-left' ) || element.classList.contains( 'wsu-animate--action-angle-right' )  ) {
+        if ( element.classList.contains( 'wsu-animate--action-fade-bottom' ) || element.classList.contains( 'wsu-animate--action-bottom-left' ) || element.classList.contains( 'wsu-animate--action-bottom-right' )  ) {
 
             return -300;
 

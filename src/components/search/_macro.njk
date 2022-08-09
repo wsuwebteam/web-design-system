@@ -1,0 +1,14 @@
+{% macro search( classes='', showOptions=true ) %}
+<form class="wsu-search {{classes}}">
+    <div class="wsu-search__search-bar">
+        <input class="wsu-search__input" type="text" aria-lable="Search input" placeholder="Search" />
+        <button class="wsu-search__submit" aria-lable="Submit Search"></button>
+    </div>
+    {% if showOptions %}
+    <div class="wsu-search__search-options">
+        <label><input type="radio" /> This Site</label>
+        <label><input type="radio" /> All WSU</label>
+    </div>
+    {% endif %}
+</form>
+{% endmacro %}

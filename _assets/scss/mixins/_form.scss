@@ -1,0 +1,17 @@
+@import '../variables';
+
+@mixin wsu-form-input-text( $border-radius: $wsu-border-radius--medium ) {
+    border-radius: $border-radius;
+    background-color: #fff;
+    border: 1px solid $wsu-color--gray-30;
+    outline: none;
+    transition: box-shadow $wsu-transition-speed--medium $wsu-easing;
+    font-size: inherit;
+    padding: $wsu-spacing--small $wsu-spacing--small;
+    box-sizing: border-box;
+
+    &:focus {
+        box-shadow: $wsu-dropshadow--low;
+        border-color: $wsu-color--gray-80;
+    }
+}

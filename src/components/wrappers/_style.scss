@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    overflow: hidden;
 }
 
 .wsu-wrapper-site {
@@ -13,6 +14,7 @@
     flex-direction: column;
     flex-grow: 1;
     transition: transform $wsu-transition-speed--medium $wsu-easing, margin-left $wsu-transition-speed--medium $wsu-easing;
+    overflow: hidden;
 }
 
 .wsu-wrapper-content {

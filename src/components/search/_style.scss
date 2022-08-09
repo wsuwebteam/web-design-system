@@ -1,0 +1,31 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-search:not([class*="-search--style-"]) {
+
+    .wsu-search {
+
+        &__search-bar {
+            display: flex;
+        }
+
+        &__input {
+            @include wsu-form-input-text( $border-radius:  $wsu-border-radius--medium 0 0 $wsu-border-radius--medium );
+            display: block;
+            flex-grow: 1;
+        }
+        
+        &__submit {
+            @include wsu-button( $padding: 0 $wsu-spacing--xmedium, $border-radius:  0 $wsu-border-radius--large $wsu-border-radius--large 0  );
+
+            &::after {
+                content:"\F140";
+                font-family: 'wsu-icons';
+                font-size: $wsu-font-size--xxmedium;
+                font-weight: 500;
+            }
+        }
+    }
+
+}
