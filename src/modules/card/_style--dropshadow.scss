@@ -1,0 +1,18 @@
+
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-card--style-dropshadow {
+    border-radius: $wsu-border-radius--xsmall;
+    box-shadow: $wsu-dropshadow--xlow;
+    border-radius: 4px;
+
+    .wsu-card__content {
+        padding-left: $wsu-spacing--medium;
+        padding-right: $wsu-spacing--medium;
+    }
+
+    .wsu-image-frame img {
+        border-radius: $wsu-border-radius--xsmall $wsu-border-radius--xsmall 0 0;
+    }
+}

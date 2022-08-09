@@ -4,15 +4,11 @@
 {% from "card/_macro.njk" import cardPerson %}
 
 {% block content %}
-<div class="wsu-demo-component--narrow" >
-    {% include 'card/html.njk' %}
-    <hr />
-</div>
 <div class="wsu-demo-component" >
     <div class="wsu-card-group wsu-card-group--per-row-3">
     {{ card() }}
-    {{ card( ' wsu-card--outline-boxed' ) }}
-    {{ card( ' wsu-card--outline-shadow' ) }}
+    {{ card( ' wsu-card--style-boxed' ) }}
+    {{ card( ' wsu-card--style-dropshadow' ) }}
     </div>
 </div>
 <div class="wsu-demo-component" >
