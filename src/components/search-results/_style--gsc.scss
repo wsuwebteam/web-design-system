@@ -5,6 +5,11 @@ a.gs-title {
     font-size: $wsu-font-size--xmedium !important;
     font-weight: 500 !important;
     text-decoration: underline !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none !important;
+    }
 }
 
 .gsc-url-top {
