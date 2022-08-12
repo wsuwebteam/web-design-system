@@ -1,25 +1,6 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.gs-result .gs-title a {
-    color: $wsu-color--crimson;
-    text-decoration: underline !important;
-    font-weight: 600;
-    @include wsu-font--xmedium();
-
-    b {
-        color: inherit;
-        font-weight: 800;
-    }
-}
-
-
-.gs-promotion .gs-visibleUrl, 
-.gs-webResult .gs-visibleUrl {
-    color: $wsu-color--gray-60 !important;
-    @include wsu-font--xsmall();
-    font-weight: 500;
-}
 
 .gsc-url-top {
     margin-bottom: 0.2rem !important;
@@ -34,7 +15,7 @@
 }
 
 .gs-snippet {
-    @include wsu-font--medium();
+    font-size: $wsu-font-size--medium !important;
 }
 
 .gsc-above-wrapper-area-container {
@@ -55,7 +36,10 @@
     box-sizing: border-box;
 
     &.gsc-cursor-current-page {
-        border: 2px solid $wsu-color--crimson; 
+        border-color: $wsu-color--crimson  !important;
+        border: 2px solid $wsu-color--crimson  !important;
+        background-color: $wsu-color--crimson  !important;
+        color: #fff !important;
     }
 
     &:hover,
@@ -71,4 +55,8 @@
 
 .gcsc-find-more-on-google svg {
     display: none;
+}
+
+.gsc-result .gs-title {
+    overflow: visible !important;
 }
