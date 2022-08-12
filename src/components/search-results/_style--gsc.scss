@@ -1,0 +1,74 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.gs-result .gs-title a {
+    color: $wsu-color--crimson;
+    text-decoration: underline !important;
+    font-weight: 600;
+    @include wsu-font--xmedium();
+
+    b {
+        color: inherit;
+        font-weight: 800;
+    }
+}
+
+
+.gs-promotion .gs-visibleUrl, 
+.gs-webResult .gs-visibleUrl {
+    color: $wsu-color--gray-60 !important;
+    @include wsu-font--xsmall();
+    font-weight: 500;
+}
+
+.gsc-url-top {
+    margin-bottom: 0.2rem !important;
+}
+
+.gs-image-box {
+    padding-right: 0.75rem !important;
+}
+
+.gsc-result {
+    padding: $wsu-spacing--medium 0 !important;
+}
+
+.gs-snippet {
+    @include wsu-font--medium();
+}
+
+.gsc-above-wrapper-area-container {
+    margin-bottom: $wsu-spacing--xmedium !important;
+
+    td {
+        border: none !important;
+    }
+}
+
+.gsc-cursor .gsc-cursor-page {
+    color: $wsu-color--crimson !important;
+    border: 1px solid $wsu-color--gray-10;
+    border-radius: 3px;
+    padding: $wsu-spacing--sxxsmall $wsu-spacing--small;
+    display: inline-block !important;
+    margin-bottom: $wsu-spacing--sxxsmall !important;
+    box-sizing: border-box;
+
+    &.gsc-cursor-current-page {
+        border: 2px solid $wsu-color--crimson; 
+    }
+
+    &:hover,
+    &:focus {
+        outline: 2px solid $wsu-color--gray-65; 
+    }
+}
+
+.gcsc-find-more-on-google {
+    color: $wsu-color--crimson !important;
+    @include wsu-font--xsmall();
+}
+
+.gcsc-find-more-on-google svg {
+    display: none;
+}
