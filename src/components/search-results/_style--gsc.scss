@@ -21,7 +21,7 @@ a.gs-title {
 }
 
 .gsc-results {
-    padding: $wsu-spacing--xmedium 0 $wsu-spacing--xxmedium !important;
+    padding: $wsu-spacing--medium 0 $wsu-spacing--xxmedium !important;
 }
 
 .gsc-result {
@@ -38,6 +38,10 @@ a.gs-title {
     td {
         border: none !important;
     }
+}
+
+.gsc-cursor-box {
+    margin-top: $wsu-spacing--xmedium !important;
 }
 
 .gsc-cursor .gsc-cursor-page {
