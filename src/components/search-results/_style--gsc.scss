@@ -1,6 +1,11 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+a.gs-title {
+    font-size: $wsu-font-size--xmedium !important;
+    font-weight: 500;
+    text-decoration: underline;
+}
 
 .gsc-url-top {
     margin-bottom: 0.2rem !important;
@@ -11,11 +16,11 @@
 }
 
 .gsc-result {
-    padding: $wsu-spacing--medium 0 !important;
+    padding: $wsu-spacing--small 0 !important;
 }
 
 .gs-snippet {
-    font-size: $wsu-font-size--medium !important;
+    font-size: $wsu-font-size--small !important;
 }
 
 .gsc-above-wrapper-area-container {
