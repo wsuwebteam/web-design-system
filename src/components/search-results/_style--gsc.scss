@@ -3,8 +3,8 @@
 
 a.gs-title {
     font-size: $wsu-font-size--xmedium !important;
-    font-weight: 500;
-    text-decoration: underline;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
 }
 
 .gsc-url-top {
@@ -15,8 +15,12 @@ a.gs-title {
     padding-right: 0.75rem !important;
 }
 
+.gsc-results {
+    padding: $wsu-spacing--xmedium 0 !important;
+}
+
 .gsc-result {
-    padding: $wsu-spacing--small 0 !important;
+    margin-bottom: $wsu-spacing--xmedium 0 !important;
 }
 
 .gs-snippet {
