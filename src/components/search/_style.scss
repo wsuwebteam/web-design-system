@@ -1,0 +1,85 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-search:not([class*="-search--style-"]) {
+
+    margin-bottom: $wsu-spacing--component;
+
+    .wsu-search {
+
+        &__search-bar {
+            display: flex;
+        }
+
+        &__input {
+            @include wsu-form-input-text( $border-radius:  $wsu-border-radius--medium 0 0 $wsu-border-radius--medium );
+            min-width: 125px;
+            display: block;
+            flex-grow: 1;
+        }
+        
+        &__submit {
+            @include wsu-button( $padding: 0 $wsu-spacing--xmedium, $border-radius:  0 $wsu-border-radius--large $wsu-border-radius--large 0  );
+
+            &::after {
+                content:"\F140";
+                font-family: 'wsu-icons';
+                font-size: $wsu-font-size--xxmedium;
+                font-weight: 500;
+            }
+        }
+
+        &__search-options {
+            display: flex;
+            margin-top: $wsu-spacing--xxsmall;
+
+            input {
+                position: absolute;
+                left: -200vw;
+                opacity: 0;
+            }
+        }
+
+        &__search-toggle {
+            position: absolute;
+            left: -200vw;
+            opacity: 0;
+
+            &:focus + label::before {
+                background-color: $wsu-color--gray-30;
+                outline: 2px solid $wsu-color--gray-85;
+                box-shadow: $wsu-shadow--xlow;  
+            }
+
+            &:checked + label::before {
+                background-color: $wsu-color--crimson-light;
+            }
+
+            
+        }
+
+        &__search-toggle-label {
+            margin-right: $wsu-spacing--small;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            min-height: 20px;
+            font-weight: 500;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                outline: 1px solid $wsu-color--gray-50;
+                outline-offset: 2px;
+                border-radius: 50%;
+                margin-right: $wsu-spacing--sxxsmall;
+            }
+
+        }
+    }
+
+}

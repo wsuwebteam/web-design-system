@@ -1,0 +1,80 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+a.gs-title {
+    font-size: $wsu-font-size--xmedium !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none !important;
+    }
+}
+
+.gsc-url-top {
+    margin-bottom: 0.2rem !important;
+}
+
+.gs-image-box {
+    padding-right: 0.75rem !important;
+}
+
+.gsc-results {
+    padding: $wsu-spacing--medium 0 $wsu-spacing--xxmedium !important;
+}
+
+.gsc-result {
+    margin-bottom: $wsu-spacing--xxmedium 0 !important;
+}
+
+.gs-snippet {
+    font-size: $wsu-font-size--small !important;
+}
+
+.gsc-above-wrapper-area-container {
+    margin-bottom: $wsu-spacing--xmedium !important;
+
+    td {
+        border: none !important;
+    }
+}
+
+.gsc-cursor-box {
+    margin-top: $wsu-spacing--xmedium !important;
+}
+
+.gsc-cursor .gsc-cursor-page {
+    color: $wsu-color--crimson !important;
+    border: 1px solid $wsu-color--gray-10;
+    border-radius: 3px;
+    padding: $wsu-spacing--sxxsmall $wsu-spacing--small;
+    display: inline-block !important;
+    margin-bottom: $wsu-spacing--sxxsmall !important;
+    box-sizing: border-box;
+
+    &.gsc-cursor-current-page {
+        border-color: $wsu-color--crimson  !important;
+        border: 2px solid $wsu-color--crimson  !important;
+        background-color: $wsu-color--crimson  !important;
+        color: #fff !important;
+    }
+
+    &:hover,
+    &:focus {
+        outline: 2px solid $wsu-color--gray-65; 
+    }
+}
+
+.gcsc-find-more-on-google {
+    color: $wsu-color--crimson !important;
+    @include wsu-font--xsmall();
+}
+
+.gcsc-find-more-on-google svg {
+    display: none;
+}
+
+.gsc-result .gs-title {
+    overflow: visible !important;
+}

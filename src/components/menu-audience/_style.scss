@@ -8,13 +8,26 @@
     align-items: flex-start;
     margin-top: 10px;
 
-    &__link{ 
-        font-size: $wsu-font-size--medium; 
-        padding: 0.5em 2em; 
-        color: $wsu-color--gray-85; 
-        text-decoration: none; 
-        position: relative; 
-    } 
+    &__link{
+        font-size: $wsu-font-size--medium;
+        padding: 0.5em 2em;
+        color: $wsu-color--gray-85;
+        text-decoration: none;
+        position: relative;
+    }
+
+    &__link:not(:last-child)::before {
+        content: "";
+        display: block;
+        right: 0;
+        top: 10px;
+        bottom: 10px;
+        width: 1px;
+        height: auto;
+        position: absolute;
+        background-color: #ccc; 
+    }
+
     &__link::after{
         content: '';
         display: block;
@@ -25,7 +38,7 @@
         background-color: transparent;
         transition: height .2s cubic-bezier(0,0,.03,1);
     }
-    
+
     &__link:hover::after{
         height: 4px;
         background-color: $wsu-color--crimson-light;
@@ -33,6 +46,7 @@
     &__link:hover, &__link:focus, &__link:active{
         padding: 0.5em 2em;
     }
+    
     &__mobile-separator{
         display:none;
     }
