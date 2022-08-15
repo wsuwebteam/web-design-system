@@ -33,7 +33,6 @@ class WsuMobileMenu {
                     ariaUpdate("Open", ".wsu-mobile-menu--toggle");
                 }
             }
-
             // Open Action
             if (eventElement.classList.contains("wsu-mobile-menu--open")) {
                 this.open(eventElement);
@@ -43,6 +42,22 @@ class WsuMobileMenu {
             if (eventElement.classList.contains("wsu-mobile-menu--close")) {
                 this.close(eventElement);
             }
+
+            //Quicklinks overlay click actions
+            if (eventElement.classList.contains("wsu-mobile-menu__quicklinks")){
+                let quicklinksOverlay = document.getElementsByClassName("wsu-mobile-menu__quicklinks-overlay")[0] || false;
+                quicklinksOverlay.classList.add("wsu-mobile-menu__quicklinks-overlay-open");
+            }
+            if (eventElement.classList.contains("wsu-mobile-menu__quicklinks-close")){
+                let quicklinksOverlay = document.getElementsByClassName("wsu-mobile-menu__quicklinks-overlay")[0] || false;
+                quicklinksOverlay.classList.remove("wsu-mobile-menu__quicklinks-overlay-open");
+            }
+            if (eventElement.classList.contains("wsu-mobile-menu__quicklinks-overlay")) {
+                let quicklinksOverlay = document.getElementsByClassName("wsu-mobile-menu__quicklinks-overlay")[0] || false;
+                quicklinksOverlay.classList.remove("wsu-mobile-menu__quicklinks-overlay-open");
+            }
+
+            
         } catch (error) {
             console.error(error);
         }

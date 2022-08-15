@@ -1,5 +1,6 @@
 {% from "menu/_macro.njk" import menu %}
 {% from "menu-audience/_macro.njk" import menuAudience %}
+{% from "search-field/macro.njk" import searchField %}
 
 {% macro mobileMenu(bodyClasses, startOpen=true) %}
 <nav class="wsu-mobile-menu{{ bodyClasses }}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
@@ -8,7 +9,22 @@
     <button class="wsu-mobile-menu__open-button wsu-mobile-menu--open" aria-label="Open site menu">Menu</button>
     <div class="wsu-mobile-menu__panel">
         <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
-        <a class="wsu-mobile-menu__quicklinks">Quicklinks / Search</a>
+        <a class="wsu-mobile-menu__quicklinks">Quick Links / Search</a>
+        <div class="wsu-mobile-menu__quicklinks-overlay">
+            <div class="wsu-mobile-menu__quicklinks-top">
+                <h2 id="modalTitle" class="wsu-mobile-menu__quicklinks-overlay-title">Search WSU</h2>
+                <button class="wsu-mobile-menu__quicklinks-close" aria-label="Close">CLOSE X</button>
+            </div>
+            <div class="wsu-mobile-menu__quicklinks-bottom">
+                {{ searchField( ' wsu-search-field--secondary' ) }}
+                <h2 class="wsu-mobile-menu__quicklinks-bottom-heading">Quick Links</h2>
+                <div class="wsu-mobile-menu__quicklinks-links">
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                </div>
+            </div>
+        </div>
         <ul class="wsu-menu wsu-menu--mobile">
             <li>
                 <a href="https://wsu.edu/new">Home</a>
@@ -37,21 +53,7 @@
         </ul>
         {{ menuAudience() }}
     </div>
-    <div class="wsu-mobile-menu__quicklinks-overlay">
-        <div class="wsu-mobile-menu__quicklinks-top">
-            <h2 id="modalTitle">Search WSU</h2>
-            <button class="wsu-mobile-menu__quicklinks-close-button" aria-label="Close">CLOSE X</button>
-        </div>
-        <div class="wsu-mobile-menu__quicklinks-bottom">
-            <div class="wsu-mobile-menu__quicklinks-search-bar"></div>
-            <h2 class="wsu-mobile-menu__quicklinks-bottom-heading">Quick Links</h2>
-            <div class="wsu-mobile-menu__quicklinks-links">
-                <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-            </div>
-        </div>
-    </div>
+    
     <button tabindex="-1" class="wsu-mobile-menu__overlay wsu-mobile-menu--close" aria-label="Close site menu"></button>
 </nav>
 {% endmacro %} 
