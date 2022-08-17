@@ -4,8 +4,16 @@
 @each $colorName, $color in $wsu-color-map{
 
     .wsu-font-color--#{$colorName} {
-        background-color: $color !important;
-        color: map-get( $wsu-color-background-text-map, $colorName );
+        color: $color !important;
+    }
+
+}
+
+@each $fontKey, $fontSize in $wsu-font-size-map{
+
+    .wsu-font-size--#{$fontKey} {
+        font-size: $fontSize !important;
+        line-height: map-get( $wsu-line-height-map, $fontKey ) !important;
     }
 
 }
