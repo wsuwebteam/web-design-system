@@ -1,0 +1,26 @@
+@import '../variables';
+
+
+@each $colorName, $color in $wsu-color-map{
+
+    .wsu-font-color--#{$colorName} {
+        background-color: $color !important;
+        color: map-get( $wsu-color-background-text-map, $colorName );
+    }
+
+}
+
+.wsu-font-weight {
+
+    &--semibold {
+        font-weight: 600 !important;
+    }
+
+    &--bold {
+        font-weight: 600 !important;
+    }
+
+    &--extra-bold {
+        font-weight: 800 !important;
+    }
+}
