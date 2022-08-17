@@ -16,18 +16,6 @@
         position: relative;
     }
 
-    &__link:not(:last-child)::before {
-        content: "";
-        display: block;
-        right: 0;
-        top: 10px;
-        bottom: 10px;
-        width: 1px;
-        height: auto;
-        position: absolute;
-        background-color: #ccc; 
-    }
-
     &__link::after{
         content: '';
         display: block;
