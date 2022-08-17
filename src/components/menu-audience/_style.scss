@@ -16,18 +16,6 @@
         position: relative;
     }
 
-    &__link:not(:last-child)::before {
-        content: "";
-        display: block;
-        right: 0;
-        top: 10px;
-        bottom: 10px;
-        width: 1px;
-        height: auto;
-        position: absolute;
-        background-color: #ccc; 
-    }
-
     &__link::after{
         content: '';
         display: block;
@@ -45,10 +33,23 @@
     }
     &__link:hover, &__link:focus, &__link:active{
         padding: 0.5em 2em;
-        
     }
     
     &__mobile-separator{
         display:none;
+    }
+}
+
+@media screen and (min-width: 992px ) {
+    .wsu-menu-audience__link:not(:last-child)::before { 
+        content: ""; 
+        display: block; 
+        right: 0; 
+        top: 10px; 
+        bottom: 10px; 
+        width: 1px; 
+        height: auto; 
+        position: absolute; 
+        background-color: #ccc;
     }
 }

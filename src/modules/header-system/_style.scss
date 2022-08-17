@@ -3,22 +3,40 @@
 
 .wsu-header-system{
     background-color: white;
-    width: 100%;
     border-bottom: 4px solid $wsu-color--gray-20;
-
-    &__wrapper-top{
-        display: flex;
-        justify-content: space-between;
-    }
+    display: grid;
+    grid-template-columns: [col-1] 400px [col-2] auto; /* First column 400px, second auto width */
+    grid-template-rows: [row-1] auto [row-2] auto; /* two rows, both auto width */
+    
     &__top-bar{
         display: flex;
         justify-content: flex-end;
+        max-height: 56px;
+        height: 56px;
+        grid-column-start: 2; /* Start at second column */
+        grid-column-end: span 1; /* And span only one column */
+        grid-row-start: 1; /* Start at first row */
+        grid-row-end: span 1; /* And span only one row */
     }
-    &__nav-tablet{
-        display: none;
-    }
-    &__left{
+    &__nav{
+        color: #262626;
+        padding-right: $wsu-spacing--medium;
         display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        box-sizing: border-box;
+        grid-column-start: 2; /* Start at second column */
+        grid-column-end: span 1; /* And span only one column */
+        grid-row-start: 2; /* Start at second row */
+        grid-row-end: span 1; /* And span only one row */
+    }
+    &__logo{
+        display: flex;
+        grid-column-start: 1; /* Start at first column */
+        grid-column-end: span 1;  /* And span only one column */
+        grid-row-start: 1; /* Start at first row */
+        grid-row-end: span 2; /* but span two rows */
+        min-height: 200px; /* with everything else set to auto - this is setting the height */
     }
     &__right{
         display: flex;
@@ -30,7 +48,7 @@
         display: flex;
         height: 100%;
         min-height: 190px;
-        width: 170px;
+        min-width: 170px;
         margin-left: 25px;
         align-items: center;
         justify-content: center;
@@ -48,21 +66,16 @@
         padding: 1em 1em;
         align-items: center;
     }
-    &__nav{
-        color: #262626;
-        display: flex;
-        max-width: 1300px;
-        box-sizing: border-box;
-    }
-    &__nav-desktop {
-        padding-right: $wsu-spacing--medium;
-    }
     &__mobile-wrapper{
         display: none;
     }
 }
-
-@media screen and (max-width: 1700px ) {
+.wsu-menu--style-header-system li a{
+    font-size: 1.125rem;
+    padding: 1.5rem 1.5rem
+}
+// 1750px breakpoint
+@media screen and (max-width: $wsu-breakpoint--xultrawide ) {
     .wsu-header-system__wordmark{
         padding: 0.5em 0.5em;
     }
@@ -71,9 +84,11 @@
     }
      
 }
-
-@media screen and (max-width: $wsu-breakpoint--ultrawide ) {
-
+// 1650px breakpoint
+@media screen and (max-width: 1650px ) {
+    .wsu-header-system{
+        grid-template-columns: [col-1] 200px [col-2] auto;
+    }
     .wsu-header-system__wordmark{
         display: none;
     }
@@ -91,8 +106,24 @@
 }
 
 @media screen and (max-width: 1350px ) {
-    .wsu-header-system__wrapper-top{
+    .wsu-header-system{
         border-bottom: 1px solid $wsu-color--gray-10;
+        grid-template-columns: [col-1] 300px [col-2] auto;
+    }
+    .wsu-header-system__logo {
+        grid-row-start: 1;
+        grid-row-end: span 1;
+        min-height: 160px;
+    }
+    
+    .wsu-header-system__nav {
+        grid-column-start: 1;
+        grid-column-end: span 2;
+        grid-row-start: 2;
+        grid-row-end: span 1;
+        justify-content: center;
+        padding: 0 10px;
+        border-top: 1px solid $wsu-color--gray-10;
     }
     .wsu-header-system__top-bar{
         flex-direction: column-reverse;
@@ -100,20 +131,11 @@
     .wsu-menu-audience{
         margin-top: 15px;
     }
-    .wsu-header-system__nav-desktop{
-        display: none;
-    }
-    .wsu-header-system__nav-tablet{
-        display: flex;
-        margin-left: 20px;
-        margin-right: 20px;
-        justify-content: space-around;
-    }
     .wsu-header-system__coug-head-box{
         margin-left: 0;
         width: 150px;
         height: 150px;
-        min-height: 150px;
+        min-height: 170px;
     }
     .wsu-header-system__coug-head-stacked > svg{
         display: flex;
@@ -128,10 +150,10 @@
         padding: 1rem;
     }
 }
-
-@media screen and (max-width: 950px ) {
-    .wsu-header-system__nav-tablet{
-        display: none;
+// 992px breakpoint
+@media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+    .wsu-header-system__logo {
+        min-height: 100px;
     }
     .wsu-header-system__top-bar{
         display: none;
@@ -147,7 +169,6 @@
         margin: 0 !important;
         padding: 0 !important;
     }
-
     .wsu-header-system__wordmark{
         display: flex;
         padding: 1em 1em;
@@ -157,13 +178,15 @@
     }
     .wsu-header-system__coug-head-box{
         margin-left: 0;
-        min-height: 100px;
-        height: 100px;
-        width: 80px;
+        min-height: 50px;
+        height: 100%;
+        width: 90px;
+        min-width: 90px;
     }
     .wsu-header-system__coug-head-box > svg{
         display: flex;
         padding: 0 15px 0 15px;
+        width: 50px;
     }
     .wsu-header-system__coug-head-stacked > svg{
         display: none;

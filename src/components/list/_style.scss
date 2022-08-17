@@ -112,7 +112,6 @@ $wsu-list-indent-map: (
 
 }
 
-
 ol ol ol li {
     list-style-type: lower-roman;
 }
@@ -132,15 +131,42 @@ ol ol ol ol ol ol li {
     list-style-type: lower-roman;
 }
 
-ul ul ul ul{
+ul ul ul li{
+    list-style-type: square;
+}
+
+ul ul ul ul li{
     list-style-type: disc;
 }
 
-ul ul ul ul ul {
+ul ul ul ul ul li {
     list-style-type: circle;
 }
-ul ul ul ul ul ul {
+ul ul ul ul ul ul li {
     list-style-type: square;
+}
+
+
+
+ol ul li{
+    list-style-type: disc;
+}
+ol ul ul li{
+    list-style-type: circle;
+}
+ol ul ul ul li{
+    list-style-type: square;
+}
+ol ul ul ul ul li{
+    list-style-type: disc;
+}
+ol ul ul ul ul ul li{
+    list-style-type: circle;
+}
+
+
+ol ul ol li{
+    list-style-type: lower-roman;
 }
 
 @each $indentName, $indentValue in $wsu-list-indent-map {
