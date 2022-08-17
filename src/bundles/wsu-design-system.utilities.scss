@@ -213,25 +213,8 @@
 
 }
 
-@each $colorName, $color in $wsu-color-map{
-
-    .wsu-color-text--#{$colorName} {
-        color: $color !important;
-    }
-
-}
 
 
-
-
-@each $fontKey, $fontSize in $wsu-font-size-map{
-
-    .wsu-font-size--#{$fontKey} {
-        font-size: $fontSize !important;
-        line-height: map-get( $wsu-line-height-map, $fontKey ) !important;
-    }
-
-}
 
 .wsu-screen-reader-only,
 .screen-reader-only {
@@ -369,5 +352,5 @@
 @import '../../_assets/scss/utilities/width';
 @import '../../_assets/scss/utilities/border';
 @import '../../_assets/scss/utilities/notch';
-@import '../../_assets/scss/utilities/font-weight';
+@import '../../_assets/scss/utilities/font';
 @import '../../_assets/scss/utilities/hide';
