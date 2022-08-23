@@ -20,9 +20,6 @@ class WsuModal {
             let openButton = document.getElementById("open-modal");
             let closeButton = document.querySelector(".wsu-modal__close-button");
 
-            //for mobile menu quicklinks popover
-            let quickLinks = document.querySelector(".wsu-mobile-menu__quicklinks");
-
             // If open is clicked, open modal
             if (eventElement === openButton) {
                 if (modal.classList.contains(".modal-open") === false) {
