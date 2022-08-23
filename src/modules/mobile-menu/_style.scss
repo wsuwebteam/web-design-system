@@ -19,7 +19,7 @@ $global-header-height: 65px;
         font-size: 1rem;
     }
     &__quicklinks-open{
-        background-color: $wsu-color--gray-75 !important;
+        background-color: $wsu-color--gray-75;
     }
     &__quicklinks-top{
         background-color: #f6f6f6;
@@ -449,6 +449,7 @@ $global-header-height: 65px;
                 vertical-align: text-top;
                 margin-left: 5px;
             }
+            
             & ~ .wsu-wrapper-site {
                 transform: translateX( calc( #{$wsu-width--navigation-open} * -1 ) )
             }
@@ -468,6 +469,9 @@ $global-header-height: 65px;
             .wsu-menu-audience__link:not(:last-child){
                 border-right:none;
             }
+        }
+        .wsu-mobile-menu__quicklinks:focus,.wsu-mobile-menu__quicklinks:hover,.wsu-mobile-menu__quicklinks:active{
+            background-color: $wsu-color--gray-95;
         }
         .wsu-mobile-menu .wsu-menu a{
             text-decoration: none;
@@ -490,7 +494,11 @@ $global-header-height: 65px;
             position: relative;
             line-height: 1.5;
             cursor: pointer;
-        
+        }
+        .wsu-mobile-menu .wsu-menu a:focus{
+            text-decoration: none;
+            outline: 2px solid #ca1237;
+            border-radius: 3px;
         }
     }
 
