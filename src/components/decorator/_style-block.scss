@@ -1,6 +1,6 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
-
+.wsu-decorator--style-block-white,
 .wsu-decorator--style-block-gray-wsu,
 .wsu-decorator--style-block-crimson-wsu,
 .wsu-decorator--style-block-wsu,
@@ -31,5 +31,9 @@
 
 .wsu-decorator--style-block-gray-darker {
     background-color: $wsu-color--gray-70;
+}
+
+.wsu-decorator--style-block-white {
+    background-color: #fff;
 }
 
