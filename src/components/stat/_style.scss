@@ -72,13 +72,13 @@ $stat-width-map: (
 
 	&.wsu-stat--size-medium {
 
-		font-size: $wsu-font-size--xxlarge;
+		font-size: $wsu-font-size--xxlarge !important;
 		
     }
 
     &.wsu-stat--size-small {
 
-		font-size: $wsu-font-size--xlarge;
+		font-size: $wsu-font-size--xlarge !important;
 
     }
 
