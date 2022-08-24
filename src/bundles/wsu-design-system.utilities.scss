@@ -178,15 +178,15 @@
 /*----------  Display  ----------*/
 .wsu-display {
     &--block {
-      display: block;
+      display: block !important;
     }
   
     &--inline {
-      display: inline;
+      display: inline !important;
     }
   
     &--inline-block {
-      display: inline-block;
+      display: inline-block !important;
     }
   }
   
