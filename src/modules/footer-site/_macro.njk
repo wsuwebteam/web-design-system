@@ -6,7 +6,7 @@
 {% from "experimental_menu-deep-links/_macro.njk" import menuDeepLinks %}
 
 {% macro footerSite( classes='', showTitle=true, showContent=true, showMenu=true, showOffsite=true ) %}
-<footer class="wsu-footer-site{{classes}}">
+<footer class="wsu-footer-site{{classes}}" id="wsu-footer-site">
     <div class="wsu-footer-site__content">
     {% if showOffsite %}
         <h2 class="wsu-footer-site__offsite-title">More Resources</h2>

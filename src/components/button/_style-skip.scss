@@ -1,0 +1,16 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-button--style-skip{
+    opacity:0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    &:focus{
+        opacity: 100%;
+        pointer-events: unset;
+    }
+    &:active{
+        opacity: 100%;
+        pointer-events: unset;
+    }
+}
