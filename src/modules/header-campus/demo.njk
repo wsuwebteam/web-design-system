@@ -1,0 +1,20 @@
+{% from "header-campus/_macro.njk" import headerCampus %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+{{ headerCampus() }}
+{{ headerCampus('', 'everett') }}
+{{ headerCampus('', 'global') }}
+{{ headerCampus('', 'spokane') }}
+{{ headerCampus('', 'tricities') }}
+{{ headerCampus('', 'vancouver') }}
+<style>
+body {
+    background-color: #f1f1f1;
+}
+.wsu-header-campus {
+    margin-bottom: 4rem;
+}
+</style>
+{%  endblock %}
