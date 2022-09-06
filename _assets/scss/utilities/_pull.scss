@@ -58,6 +58,7 @@ $wsu-breakpoint-map: (
 
     .wsu-pull-up--#{$pullName} {
         margin-top: -$pullValue !important;
+        position: relative;
     }
 
     .wsu-pull-down--#{$pullName} {

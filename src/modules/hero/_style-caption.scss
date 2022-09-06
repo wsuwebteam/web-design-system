@@ -15,6 +15,18 @@
             display: flex;
             min-height: 650px;
             box-sizing: border-box;
+
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                height: $wsu-spacing--xlarge;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(0deg,#fff 0,rgba(255,255,255,.8) 100%);
+                
+            }
         }
 
         &__caption {
@@ -52,6 +64,8 @@
         }
          
     }
+
+    &
 
     .wsu-title {
         @include wsu-font--hero();
@@ -97,19 +111,12 @@
     .wsu-background-slider ~ .wsu-hero__content {
 
         &::after {
-            display: block;
-            content: '';
-            position: absolute;
-            height: $wsu-spacing--xlarge;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: linear-gradient(0deg,#fff 0,rgba(255,255,255,.8) 100%);
             z-index: 4;
         }
     }
 
     .wsu-image-frame {
+        position: absolute;
         width: 100%;
         height: auto;
         left: 0;

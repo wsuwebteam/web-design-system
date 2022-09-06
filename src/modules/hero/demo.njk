@@ -5,7 +5,8 @@
 {% include 'hero/html.njk' %}
 {% include 'hero/html--linked.njk' %}
 <hr />
-test
+{{ hero(classes=' wsu-hero--style-caption', caption='Some Short Caption Here' ) }}
+<hr />
 {{ hero(classes=' wsu-hero--style-caption', isSlider=true, caption='Some Short Caption Here' ) }}
 <hr />
 {{ hero(classes=' wsu-hero--style-caption wsu-hero--caption-size-small', isSlider=true ) }}
