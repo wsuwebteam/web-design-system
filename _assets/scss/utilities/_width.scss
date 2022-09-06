@@ -16,12 +16,12 @@
     }
 
     .wsu-width--full-maxed {
-        @media screan and ( max-width: $wsu-breakpoint--xxultrawide ) {
+        @media screen and ( max-width: $wsu-breakpoint--xxultrawide ) {
             margin-left: calc( (100vw - 100% ) / -2 );
             margin-right: calc( (100vw - 100% ) / -2 );
             width: auto;
         }
-        @media screan and ( min-width: $wsu-breakpoint--xxultrawide ) {
+        @media screen and ( min-width: $wsu-breakpoint--xxultrawide ) {
             margin-left: calc( ( $wsu-breakpoint--xxultrawide - $wsu-width--content  ) / -2 );
             margin-right: calc( ( $wsu-breakpoint--xxultrawide - $wsu-width--content  ) / -2 );
             width: auto;
