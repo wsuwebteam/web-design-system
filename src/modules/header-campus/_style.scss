@@ -151,6 +151,7 @@
     }
     .wsu-header-campus__wordmark{
         display: flex;
+        width: 200px;
         padding: 1em 1em;
     }
     .wsu-mobile-menu__toggle-button{
@@ -158,17 +159,18 @@
         margin-top: 1.25rem !important;
     }
 
-    .wsu-header-system__coug-head-box{
+    .wsu-header-campus__coug-head-box{
         margin-left: 0;
         min-height: 50px;
         height: 100%;
         width: 90px;
         min-width: 90px;
     }
-    .wsu-header-system__coug-head-box > svg{
+    .wsu-header-campus__coug-head-box > svg{
         display: flex;
         padding: 0 15px 0 15px;
         width: 50px;
+        margin-left: 0;
     }
 
 }
