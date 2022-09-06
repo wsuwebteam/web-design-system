@@ -48,8 +48,7 @@
         display: flex;
         height: 100%;
         min-height: 190px;
-        min-width: 170px;
-        margin-left: 25px;
+        min-width: 190px;
         align-items: center;
         justify-content: center;
         background-color: $wsu-color--crimson;
@@ -105,7 +104,7 @@
     }
 }
 
-@media screen and (max-width: 1350px ) {
+@media screen and (max-width: $wsu-breakpoint--xdesktop ) {
     .wsu-header-system{
         border-bottom: 1px solid $wsu-color--gray-10;
         grid-template-columns: [col-1] 300px [col-2] auto;
