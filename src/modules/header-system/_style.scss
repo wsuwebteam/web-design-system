@@ -1,7 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-header-system{
+.wsu-header-system {
     background-color: white;
     border-bottom: 4px solid $wsu-color--gray-20;
     display: grid;
@@ -68,6 +68,68 @@
     &__mobile-wrapper{
         display: none;
     }
+
+    .wsu-mobile-menu {
+
+        &__panel,
+        &__overlay {
+            top: $wsu-height--system-header;
+        }
+
+        &__quicklinks {
+            text-decoration: none;
+            color: #fff;
+            background-color: #595959;
+            border-right: none;
+            border-bottom: 2px solid #d9d9d9;
+            border-top: none;
+            outline: 0;
+            box-shadow: none;
+            margin: 0;
+            padding: $wsu-spacing--xmedium $wsu-spacing--large !important;
+            border-radius: 0;
+            display: block;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: $wsu-font-size--xxmedium !important;
+            font-weight: 700;
+            position: relative;
+            line-height: 1.5;
+            cursor: pointer;
+
+            &::after {
+                font-size: 0.8em;
+            }
+        }
+
+        &__toggle-container {
+            height: $wsu-height--system-header;
+            width: 80px;
+        }
+
+        .wsu-menu {
+            li {
+                margin: 0;
+            }
+            a {
+                color: $wsu-color--crimson !important;
+                border-bottom: 1px solid $wsu-color--gray-10 !important;
+                padding: $wsu-spacing--small $wsu-spacing--large !important;
+                font-size: $wsu-font-size--large !important;
+                font-weight: 700 !important;
+            }
+        }
+
+        .wsu-menu-audience {
+            margin-top: $wsu-spacing--xxmedium;
+        }
+
+        .wsu-menu-audience__link {
+            padding: $wsu-spacing--sxxsmall $wsu-spacing--large !important;
+            display: block;
+        }
+    }
+
 }
 .wsu-menu--style-header-system li a{
     font-size: 1.125rem;
@@ -137,7 +199,7 @@
         min-height: 170px;
     }
     .wsu-header-system__coug-head-stacked > svg{
-        display: flex;
+        display: flex; 
         width: 100px;
     }
     .wsu-menu--style-header-system{
@@ -189,9 +251,5 @@
     }
     .wsu-header-system__coug-head-stacked > svg{
         display: none;
-    }
-    .wsu-mobile-menu__toggle-button{
-        border-top: none !important;
-        margin-top: 1.25rem !important;
-    }
+    } 
 }
