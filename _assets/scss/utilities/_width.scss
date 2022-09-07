@@ -22,8 +22,8 @@
             width: auto;
         }
         @media screen and ( min-width: $wsu-breakpoint--xxultrawide ) {
-            margin-left: calc( ( $wsu-breakpoint--xxultrawide - $wsu-width--content  ) / -2 );
-            margin-right: calc( ( $wsu-breakpoint--xxultrawide - $wsu-width--content  ) / -2 );
+            margin-left: calc( ( #{$wsu-breakpoint--xxultrawide} - #{$wsu-width--content}  ) / -2 );
+            margin-right: calc( ( #{$wsu-breakpoint--xxultrawide} - #{$wsu-width--content}  ) / -2 );
             width: auto;
         }
     }
