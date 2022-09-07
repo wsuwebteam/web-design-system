@@ -81,8 +81,6 @@ $global-header-height: 65px;
         position: absolute; 
         top: 85px;
         padding-top: 0;
-        overflow-x: hidden;
-        overflow-y: scroll;
         display: flex;
         flex-direction: column;
         border-right: 1px solid $wsu-color--gray-10;
@@ -92,8 +90,11 @@ $global-header-height: 65px;
         opacity: 1;
         visibility: inherit;
         box-sizing: border-box;
-        z-index: $wsu-zindex--navigation;
+        z-index: calc( #{$wsu-zindex--navigation} + 2 );
         background-color: #fff;
+        box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+        -webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+        -moz-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
     }
 
     &__overlay {
@@ -105,10 +106,10 @@ $global-header-height: 65px;
         bottom: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0,0,0,0.4);
-        z-index: calc( #{$wsu-zindex--navigation} - 1 );
+        background-color: rgba(0,0,0,0.6);
+        z-index: calc( #{$wsu-zindex--navigation} + 1 );
         opacity: 0;
-        visibility: hidden;
+        //visibility: hidden;
         transition:  opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
         cursor: pointer;
     }

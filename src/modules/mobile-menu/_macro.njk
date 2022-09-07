@@ -4,6 +4,7 @@
 
 {% macro mobileMenu(bodyClasses, startOpen=true) %}
 <nav class="wsu-mobile-menu{{ bodyClasses }}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
+    <div class="wsu-mobile-menu__overlay wsu-mobile-menu--toggle"></div>
     <div class="wsu-mobile-menu__toggle-container">
         <button class="wsu-mobile-menu__toggle-button wsu-mobile-menu--toggle" id="mobile-menu-open" aria-label="Open site menu">Menu</button>
     </div>
