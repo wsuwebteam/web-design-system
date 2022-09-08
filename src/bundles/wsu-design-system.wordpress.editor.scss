@@ -101,3 +101,14 @@
 
     @import "wsu-design-system.utilities.scss";
 }
+
+/** Temporary Fix **/
+.block-editor-block-list__layout .wsu-card--style-framed .wsu-card__content {
+    position: relative;
+    z-index: 999998 !important;
+}
+
+.wsu-image-frame-control__button {
+    position: relative;
+    z-index: 999999 !important;
+}
