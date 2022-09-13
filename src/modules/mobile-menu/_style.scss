@@ -368,7 +368,7 @@ $global-header-height: 65px;
 
         .wsu-mobile-menu {
             &__overlay {
-                transition:  opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 2s;
+                visibility: hidden;
             }
             
         }
@@ -398,6 +398,9 @@ $global-header-height: 65px;
             & > .wsu-button-ui-close:first-child {
                 display: none;
             }
+        }
+        &__overlay {
+            visibility: hidden;
         }
 
         .wsu-menu {
@@ -509,7 +512,7 @@ $global-header-height: 65px;
 
         .wsu-mobile-menu {
             &__overlay {
-                transition:  opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 2s;
+                visibility: hidden;
             }
             
         }

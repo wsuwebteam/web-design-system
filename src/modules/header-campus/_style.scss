@@ -62,7 +62,6 @@
         padding: 1em 1em;
         align-items: center;
     }
-    
     &__mobile-wrapper{
         display: none;
     }
@@ -127,9 +126,6 @@
         }
     }
 }
-
-
-
 .svg-fill{
     fill:#4D4D4D;
 }
@@ -190,7 +186,6 @@
         min-height: 190px;
     }
 }
-
 
 // 992px breakpoint
 @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
