@@ -37,6 +37,9 @@
         grid-row-start: 1; /* Start at first row */
         grid-row-end: span 2; /* but span two rows */
         min-height: 200px; /* with everything else set to auto - this is setting the height */
+        background: white;
+        z-index: $wsu-zindex--global-header;
+        position: relative;
     }
     &__right{
         display: flex;
@@ -71,8 +74,7 @@
 
     .wsu-mobile-menu {
 
-        &__panel,
-        &__overlay {
+        &__panel {
             top: $wsu-height--system-header;
         }
 
