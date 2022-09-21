@@ -494,6 +494,12 @@ const PeopleList = function (el) {
     // initial run for processing url params
     processPeopleFilters();
 
+    // handle form submit
+    filtersContainer.addEventListener("submit", function (e) {
+      e.preventDefault();
+      return false;
+    });
+
     // filter on select option change
     filtersContainer.addEventListener("change", function (e) {
       if (e.target !== searchInput) {
