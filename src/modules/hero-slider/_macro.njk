@@ -1,0 +1,36 @@
+{% from "hero/_macro.njk" import hero %}
+
+{# Slider content #}
+{% set slides = [
+  { eyebrowHeader: 'Slide 1', title: 'Measuring Flying Baseballs', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/baseballs.jpg' },
+  { eyebrowHeader: 'Slide 2', title: 'Brain-like Computer Chips from Honey', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/04/honey-jar.jpg' },
+  { eyebrowHeader: 'Slide 3', title: 'The Mystery and Beauty of PI', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/mystery-of-pi-charles-moore.jpg' },
+  { eyebrowHeader: 'Slide 4', title: 'Study of Fast-Changing Greenland', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/greenlandphoto1.jpg' },
+  { eyebrowHeader: 'Slide 5', title: 'Cougs in Space', img: 'https://s3.wp.wsu.edu/uploads/sites/2797/2022/03/space.jpg' }
+] %}
+
+{% macro heroSlider(classes, content = slides) %}
+  {% if content.length > 1 %}
+    <div class="wsu-hero-slider wsu-width--full{{ classes }} swiper" data-autoplay="true" data-autoplay-delay="3000">
+      <div class="wsu-hero-slider__wrapper swiper-wrapper">
+        {% for item in content %}
+          {% if item.video %}
+            {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, true, item.video, item.title ) }}
+          {% else %}
+            {{ hero( ' swiper-slide', true, true, 'h2', item.eyebrowHeader, false, item.img, item.title ) }}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="wsu-hero-slider__slider-elements">
+        <nav class="wsu-hero-slider__navigation">
+          <button class="wsu-hero-slider__icon wsu-i-arrow-left-carrot" aria-label="Previous"></button>
+          <button class="wsu-hero-slider__pause-btn wsu-hero-slider__icon wsu-i-pause play" aria-label="Pause"></button>
+          <button class="wsu-hero-slider__icon wsu-i-arrow-right-carrot" aria-label="Next"></button>
+        </nav>
+        <div class="wsu-hero-slider__pagination"></div>
+      </div>
+    </div>
+  {% else %}
+    {{ hero() }}
+  {% endif %}
+{% endmacro %}

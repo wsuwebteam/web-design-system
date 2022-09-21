@@ -6,6 +6,19 @@
     margin-bottom: $wsu-spacing--component;
     box-sizing: border-box;
 
+    &[class*="wsu-color-background"] {
+
+        border-radius: 3px; 
+
+        .wsu-card__content {
+            padding-left: $wsu-spacing--medium;
+            padding-right: $wsu-spacing--medium;
+            
+        }
+       
+    }
+
+    // Legacy Code
     &__wrapper {
 
         margin-left: -$wsu-spacing--small;
@@ -96,6 +109,43 @@
         margin-top: $wsu-spacing--small;
     }
 
+    &__focus-area {
+
+        margin-bottom: $wsu-spacing--xsmall;
+        margin-top: $wsu-spacing--xsmall;
+
+        &-title {
+            @include wsu-font--small();
+            font-weight: 600;
+        }
+
+        &-list {
+            padding: 0 0;
+            margin: 0;
+
+            li {
+                list-style-type: none;
+                font-size: $wsu-font-size--small;
+                line-height: 1.5;
+                padding: 0 0 0 1.25rem;
+                margin: 0;
+                position: relative;
+            }
+
+            li::before {
+                content: "";
+                width: 0.5rem;
+                height: 1px;
+                background-color: $wsu-color--crimson-light;
+                top: 0.6em;
+                position: absolute;
+                display: block;
+                left: 0;
+            }
+            
+        }
+    }
+
 
     .wsu-title {
         margin-bottom: $wsu-spacing--xxsmall;
@@ -103,6 +153,10 @@
 
         & + .wsu-meta-date {
             margin-top: -0.4rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 
@@ -116,6 +170,13 @@
 
     .wsu-caption {
         @include wsu-font--small();
+
+        p {
+            @include wsu-font--small();
+            margin-bottom: 0;
+        }
+
+
 
         &:not(:first-child) {
 
@@ -247,3 +308,7 @@
 .wsu-row--quarters .wsu-card__wrapper .wsu-card {
     width: calc( 100% - ( #{ $wsu-spacing--small } * 2 ) ) !important;
 }
+
+@import './style--framed';
+@import './style--boxed';
+@import './style--dropshadow';

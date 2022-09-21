@@ -9,6 +9,7 @@
     border: 1px solid $wsu-color--gray-10;
     border-radius: 3px;
     margin-bottom: $wsu-spacing--component;
+    position: relative;
 
     &__title {
         @include wsu-font--xxmedium();

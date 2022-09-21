@@ -1,0 +1,46 @@
+{% extends "component.njk" %}
+
+{% from "sticky-box/_macro.njk" import stickyBoxStart %}
+{% from "sticky-box/_macro.njk" import stickyBoxEnd %}
+
+
+{% block styles %}
+<style>
+body {
+    min-height: 200vh;
+}
+</style>
+{%  endblock %} 
+
+{% block content %}
+<section style="position: relative; min-height: 800px;">
+    <div class="wsu-decorator--style-triangle-crimson-wsu-steep-left" style="bottom:0; right: 50%"></div>
+    <div class="wsu-decorator--style-triangle-crimson-wsu-steep-right" style="bottom:0; left: 50%"></div>
+</section>
+<section style="position: relative; min-height: 800px;">
+    <div class="wsu-decorator--style-triangle-crimson-wsu-steep-top-left" style="top:0; right: 50%"></div>
+    <div class="wsu-decorator--style-triangle-crimson-wsu-steep-top-right" style="top:0; left: 50%"></div>
+</section>
+<section style="position: relative; min-height: 800px;">
+    <div class="wsu-decorator--style-triangle-crimson-left" style="bottom:0; right: 50%"></div>
+    <div class="wsu-decorator--style-triangle-crimson-right" style="bottom:0; left: 50%"></div>
+</section>
+<section style="position: relative; min-height: 800px;">
+    <div class="wsu-decorator--style-triangle-gray-left" style="bottom:0; right: 50%"></div>
+    <div class="wsu-decorator--style-triangle-gray-right" style="bottom:0; left: 50%"></div>
+</section>
+<section style="position: relative; min-height: 800px;">
+    <div class="wsu-decorator--style-block-gray" style="width:20vw;height:20vw;top:0;left:0"></div>
+    <div class="wsu-decorator--style-block-crimson" style="width:20vw;height:20vw;top:0;left:20vw"></div>
+    <div class="wsu-decorator--style-block-gray-wsu" style="width:20vw;height:20vw;top:20vw;left:0"></div>
+    <div class="wsu-decorator--style-block-crimson-wsu" style="width:20vw;height:20vw;top:20vw;left:20vw"></div>
+    <div class="wsu-decorator--style-lines-gray" style="width:20vw;height:20vw;top:0;left:40vw"></div>
+    <div class="wsu-decorator--style-lines-crimson" style="width:20vw;height:20vw;top:0;left:60vw"></div>
+    <div class="wsu-decorator--style-shadow-left" style="width:5vw;height:20vw;top:20vw;left:40vw"></div>
+    <div class="wsu-decorator--style-shadow-right" style="width:5vw;height:20vw;top:20vw;left:60vw"></div>
+</section>
+<section style="position: relative; min-height: 800px; overflow: hidden">
+    <div class="wsu-decorator--style-border-angle-right" style="top:0; left: 100%"></div>
+    <div class="wsu-decorator--style-border-angle-left" style="top:0; right: 100%"></div>
+</section>
+{%  endblock %} 

@@ -1,0 +1,49 @@
+
+.wsu-header--style-outline {
+
+    vertical-align: middle;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 67px;
+    text-transform: uppercase;
+    justify-content: center;
+
+    .wsu-header__ouline-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        font-size: 67px;
+        line-height: 1;
+        fill: #fff;
+        paint-order: stroke fill;
+        stroke: #B12D47;
+        stroke-width: 6px;
+        display: inline;
+          text-transform: uppercase;
+    }
+
+    .wsu-header__outline {
+        vertical-align: middle;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 67px;
+        text-transform: uppercase;
+        justify-content: center;
+    }
+    
+    .wsu-header__before {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+    
+    .wsu-header__after {
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+}
+
+
+  
+  

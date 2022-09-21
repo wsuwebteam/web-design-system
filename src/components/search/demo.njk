@@ -1,0 +1,9 @@
+{% extends "component.njk" %}
+{% from "search/_macro.njk" import search %}
+
+
+{% block content %}
+{% include 'search/html.njk' %}
+<hr />
+{{ search( showOptions=false ) }}
+{%  endblock %}   

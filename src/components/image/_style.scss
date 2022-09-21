@@ -1,0 +1,8 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-image:not([class*="-image--style-"]) {
+}
+
+@import './style--framed';

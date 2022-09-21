@@ -1,0 +1,56 @@
+@import '../variables';
+
+/*----------  Alignment  ----------*/
+.wsu-align {
+
+    &--right {
+        margin-left: auto;
+    }
+
+    &--left {
+        margin-right: auto;
+    }
+
+    &--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+}
+
+.wsu-align-item {
+    &--flex-bottom {
+        margin-top: auto !important;
+    }
+}
+
+.wsu-text-align {
+
+    &--right {
+        text-align: right;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.wsu-align-vertical {
+
+    &--bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &--center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

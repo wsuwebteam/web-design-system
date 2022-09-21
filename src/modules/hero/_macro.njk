@@ -7,29 +7,42 @@
 {% from "overlay/_macro.njk" import overlay %}
 {% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
 {% from "experimental_video-frame/_macro.njk" import videoFrame %}
+{% from "background-slider/_macro.njk" import backgroundSlider %}
 
-
-{% macro hero( classes='', linked=false, showCaption=true, titleTag="div", eyebrowHeaderText="Lorem ipsum dolor", isVideo=false, imageSrc='https://source.unsplash.com/collection/895539' ) %}
-<div class="wsu-hero wsu-width--full{{ classes }}">
+{% macro hero(classes = '', linked = false, showCaption = true, titleTag = "div", eyebrowHeaderText = "Lorem ipsum dolor", isVideo = false, imageSrc = 'https://source.unsplash.com/collection/895539', heroTitle = 'Hero Banner Title', isSlider = false, caption = '' ) %}
+  <div class="wsu-hero wsu-width--full{{ classes }}">
     {% if imageSrc %}
-        {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
+      {{ imageFrame( ' wsu-image-frame--fill', '', false, imageSrc ) }}
     {% endif %}
     {% if isVideo %}
-        {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
+      {{ videoFrame( ' wsu-video-frame--position-fill', true ) }}
+    {% endif %}
+    {% if isSlider %}
+      {{ backgroundSlider( ' wsu-background-slider--effect-fade', delay = 3000 ) }}
     {% endif %}
     {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
     <div class="wsu-hero__content">
-        <div class="wsu-hero__caption">
-            {% if eyebrowHeaderText %}
-            {{ eyebrowHeader() }}
-            {% endif %}
-            <{{ titleTag }} class="wsu-title" id=""unique-id-hero-banner-title">
-            Hero Banner Title
-            </{{ titleTag }}>
-            {% if showCaption %}{{ caption() }}{% endif %}
-            {% if linked %}<a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>{% endif %}
+      <div class="wsu-hero__caption">
+        {% if eyebrowHeaderText %}
+          {{ eyebrowHeader('', eyebrowHeaderText) }}
+        {% endif %}
+        <{{ titleTag }} class="wsu-title" id="unique-id-hero-banner-title">
+          {{ heroTitle }}
+        </{{ titleTag }}>
+        {% if showCaption %}
+        <div class="wsu-caption">
+          {% if caption %}
+            {{ caption }}
+          {% else %}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.
+          {% endif %}
         </div>
-        <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
+        {% endif %}
+        {% if linked %}
+          <a class="wsu-button wsu-button--size-small" href="#" aria-labelledby="unique-id-hero-banner-title">Read More</a>
+        {% endif %}
+      </div>
+      <div class="wsu-hero__image-caption">Image caption <a href="#">linked</a> here.</div>
     </div>
-</div>
+  </div>
 {% endmacro %}

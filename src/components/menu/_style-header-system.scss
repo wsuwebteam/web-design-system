@@ -1,0 +1,68 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-menu--style-header-system{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        
+        a {
+            font-weight: 600;
+            font-size: $wsu-font-size--xxmedium;
+            color: $wsu-color--gray-85;
+            text-decoration: none;
+            padding: $wsu-spacing--medium $wsu-spacing--medium;
+            position: relative;
+            display: block;
+
+            @media screen and (max-width: $wsu-breakpoint--xultrawide ) {
+                font-size: $wsu-font-size--xmedium;
+                padding: $wsu-spacing--medium $wsu-spacing--medium;
+            }
+        }
+        a:hover,a:focus {
+            background: rgb(247,247,247);
+            background: linear-gradient(0deg, rgba(247,247,247,1) 0%, rgba(247,247,247,0) 100%);
+        }
+
+        &:last-child a::after {
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            background-color: $wsu-color--gray-55;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: 0;
+            transition: height $wsu-easing 150ms;
+        }
+
+        &.wsu-menu-item--current::after {
+            background-color: $wsu-color--crimson-light;
+            height: 5px;
+        }
+        
+        &:hover,
+        &:focus,
+        &.wsu-active {
+
+            &::after {
+                height: 5px;
+            }
+
+        }
+    }
+
+}

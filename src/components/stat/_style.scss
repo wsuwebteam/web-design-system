@@ -1,0 +1,105 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+$stat-width-map: (
+	'xxsmall': 150px,
+	'xsmall': 200px,
+	'small': 250px,
+	'medium': 300px,
+	'xmedium': 350px,
+	'large': 400px,
+	'xlarge': 450px,
+	'xxlarge': 500px,
+	'hero': 600px,
+);
+
+.wsu-stat {
+	margin-bottom: $wsu-spacing--component;
+
+	&__icon::before {
+		font-family: wsu-icons;
+	}
+}
+
+.wsu-stat:not([class*="-stat--style-"]) {
+    display: flex;
+	flex-wrap: wrap;
+    box-sizing: border-box;
+    position: relative;
+	font-size: $wsu-font-size--sxxlarge;
+
+    .wsu-stat {
+
+		&__value-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		
+
+		&__unit,
+        &__value {
+            display: block;
+			font-size: inherit;
+            font-weight: $wsu-font-weight--xextrabold;
+            background: linear-gradient(0deg, #B12D47 0%, $wsu-color--crimson-light 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.25rem; 
+
+            @media screen and ( max-width: $wsu-breakpoint--tablet ) {
+            	font-size: $wsu-font-size--xxlarge;
+            }
+        }
+
+		&__value {
+			margin-right: 0.25em;
+		}
+
+
+        &__caption {
+			display: block;
+			flex-basis: 100%;
+			font-size: $wsu-font-size--medium;
+			font-weight: $wsu-font-weight--semibold;
+			color: $wsu-color--gray-75;
+			margin-bottom: 0;
+        }
+
+
+    }
+
+	&.wsu-stat--size-medium {
+
+		font-size: $wsu-font-size--xxlarge !important;
+		
+    }
+
+    &.wsu-stat--size-small {
+
+		font-size: $wsu-font-size--xlarge !important;
+
+    }
+
+	&.wsu-stat--layout-inline {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 1.5em;
+	}
+
+
+}
+
+
+@each $statWidthName, $statWidth in $stat-width-map {
+
+    .wsu-stat--width-#{$statWidthName} {
+        max-width: $statWidth;
+    }
+
+}
+
+
+
+@import './style-circles';

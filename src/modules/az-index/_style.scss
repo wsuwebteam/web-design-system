@@ -1,0 +1,148 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-az-index {       
+
+    &__controls{
+        display: flex;
+        flex-direction: column;
+        gap: $wsu-spacing--small;
+        margin-bottom: $wsu-spacing--xxmedium;
+        padding-bottom: $wsu-spacing--xxmedium;
+        border-bottom: 5px solid $wsu-color--gray-10;
+    }
+
+    /*=============================================
+    =            Alphabet Links            =
+    =============================================*/   
+    &__nav {
+        flex-basis: 70%;
+    }
+
+    &__nav-list, &__nav-item {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: row;        
+        flex-wrap: wrap;
+        gap: $wsu-spacing--xxsmall;
+    }
+    
+    &__nav-item {   
+    }
+
+    &__nav-link {
+        color: #666;
+        border: 1px solid #b3b3b3;
+        font-size: .75rem;
+        background-color: #fff;
+
+        padding: 0;
+        width: 3.125rem;
+        height: 3.125rem;
+        line-height: 3.125rem;
+        text-align: center;
+        min-width: 100%;
+
+        &.is-disabled{
+            pointer-events: none;
+            background-color: $wsu-color--gray-5;
+            opacity: .5;
+        }
+
+        &.is-selected{            
+            background-color: #fff;
+            color: #ca1237;           
+            border-radius: 5px;
+            border-color: #ca1237;
+        }
+
+        &:not(.is-disabled){
+            &:hover, &:focus, &:active {
+                background-color: #fff;
+                color: #ca1237;
+                outline-width: 1px;
+                border-radius: 5px;
+                border-color: #ca1237;
+            }
+        }
+
+    }
+    /*=====  End of Alphabet Links  ======*/
+
+
+
+    /*=============================================
+    =            Search Form            =
+    =============================================*/
+    &__search-form {
+        flex-grow: 1;
+    }
+
+    &__search-input[type=text] {
+        width: 100%;
+        font-size: .75rem;
+        height: 3.125rem;
+    }
+    /*=====  End of Search Form  ======*/
+
+
+    /*=============================================
+    =            Links            =
+    =============================================*/
+    &__link-list-group{
+
+        & + &{
+            margin-top: $wsu-spacing--xxmedium;
+            padding-top: .75rem;
+            border-top: 3px solid $wsu-color--gray-10;
+        }        
+    }
+    
+    &__link-list-heading{
+        font-size: $wsu-font-size--xxmedium;
+        font-weight: $wsu-font-weight--semibold;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: $wsu-spacing--xxsmall;
+    }
+    
+    &__link-list, &__link-list-item {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    &__link-list {
+        font-size: $wsu-font-size--medium;
+        margin-bottom: .75rem;
+    }
+    
+    &__link-list-item {
+        margin-bottom: $wsu-spacing--sxxsmall;
+        // margin-bottom: .25rem;
+    }
+
+    &__link-list-link {
+
+    }
+    /*=====  End of Links  ======*/
+
+
+
+
+
+    @media screen and (min-width: $wsu-breakpoint--tablet ) {
+
+        &__controls{
+            display: flex;
+            flex-direction: row;
+            gap: $wsu-spacing--medium;            
+        }
+            
+    }
+}

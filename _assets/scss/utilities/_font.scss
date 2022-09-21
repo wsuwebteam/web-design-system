@@ -1,0 +1,34 @@
+@import '../variables';
+
+
+@each $colorName, $color in $wsu-color-map{
+
+    .wsu-font-color--#{$colorName} {
+        color: $color !important;
+    }
+
+}
+
+@each $fontKey, $fontSize in $wsu-font-size-map{
+
+    .wsu-font-size--#{$fontKey} {
+        font-size: $fontSize !important;
+        line-height: map-get( $wsu-line-height-map, $fontKey ) !important;
+    }
+
+}
+
+.wsu-font-weight {
+
+    &--semibold {
+        font-weight: 600 !important;
+    }
+
+    &--bold {
+        font-weight: 600 !important;
+    }
+
+    &--extra-bold {
+        font-weight: 800 !important;
+    }
+}

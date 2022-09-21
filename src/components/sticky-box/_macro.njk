@@ -1,0 +1,10 @@
+{% macro stickyBoxStart( classes='', tag='div' ) %}
+<{{ tag }} class="wsu-sticky-box{{ classes }}">
+    <div class="wsu-sticky-box__content">
+    {% endmacro %}
+
+    {% macro stickyBoxEnd( tag='div' ) %}
+    </div>
+</{{ tag }}>
+{% endmacro %}
+

@@ -1,0 +1,91 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+#mc-embedded-subscribe-form {
+
+    margin-bottom: $wsu-spacing--component;
+
+    input.email {
+        padding: 1.125rem 1.125rem !important;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input[type="submit"] {
+        @extend %wsu_button;
+        padding-left: $wsu-spacing--xmedium;
+        padding-right: $wsu-spacing--xmedium;
+        margin-top: 0.5rem;
+    }
+}
+
+#mc_embed_signup {
+    input.button {
+        width: auto !important;
+    }
+
+    .button {
+        height: auto !important;
+    }
+}
+
+.wp-block-search {
+    margin-bottom: $wsu-spacing--component;
+
+    button {
+        @extend %wsu_button;
+        padding-left: $wsu-spacing--xmedium;
+        padding-right: $wsu-spacing--xmedium;
+    }
+
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: $wsu-spacing--component;
+
+    label {
+        flex-grow: 1;
+
+        .screen-reader-text {
+            font-size: 0;
+            position: absolute;
+            top: -9999rem;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    input[type="submit"] {
+        @extend %wsu_button;
+        padding-left: $wsu-spacing--xmedium;
+        padding-right: $wsu-spacing--xmedium;
+        margin-left: 0.5rem;
+        
+    }
+
+}
+
+.wsu-wrapper-sidebar {
+
+    form {
+        margin-bottom: $wsu-spacing--component;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    ul {
+        font-size: 1rem;
+
+        li {
+            margin-bottom: 0.4em;
+            padding-left: 0.2em; 
+        }
+    }
+
+} 

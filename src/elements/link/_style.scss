@@ -4,6 +4,11 @@ a {
     text-decoration-thickness: 0.1em;
 	overflow-wrap: anywhere;
 
+	&:hover {
+		text-decoration-color: transparent;
+	}
+	
+
     &:focus {
         text-decoration: none;
 		@include wsu-focus--link(); 
@@ -19,4 +24,14 @@ a {
 			margin-left: 0.2rem;
 		}
 	}
+
+	@media not all and (prefers-reduced-motion) {
+		
+		transition: text-decoration .01s linear;
+		
+		&:hover {
+			transition: text-decoration .1s ease;
+		}
+	}
+	
 }

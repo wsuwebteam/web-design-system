@@ -1,0 +1,19 @@
+{% macro note( classes, icon='', showHeading=false, tag='h3' ) %}
+<div class="wsu-note{{ classes }}" role="note">
+    {% if icon %}
+    <i class="wsu-note__icon {{ icon }}"></i>
+    {% endif %}
+    {% if showHeading %}
+        {% if tag %}
+        <{{ tag }} class="wsu-note__title">Donec condimentum risus</{{ tag }}>
+        {% else %}
+        <div class="wsu-note__title">Donec condimentum risus</div>
+        {% endif %}
+    {% endif %}
+    <p>
+        Donec mollis diam sapien, nec tincidunt sem tincidunt in. Aliquam erat volutpat. Aliquam in blandit nibh, vitae pulvinar libero.
+        Duis molestie rutrum libero a convallis. Cras vestibulum ex in libero tincidunt, non eleifend magna commodo. Nunc luctus rutrum
+        imperdiet. Donec sagittis tortor ipsum, sit amet molestie tortor mollis at.
+    </p>
+</div>
+{% endmacro %}

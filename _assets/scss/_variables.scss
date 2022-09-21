@@ -26,15 +26,30 @@ $wsu-border-radius--xsmall: 3px;
 /* ========================================================
 == Breakpoints ==
 ==========================================================*/
-$wsu-breakpoint--xxultrawide:  2400px;
-$wsu-breakpoint--xultrawide:   1900px;
+$wsu-breakpoint--sxxultrawide:  2400px;
+$wsu-breakpoint--xxultrawide:   1900px;
+$wsu-breakpoint--xultrawide:   1750px;
 $wsu-breakpoint--ultrawide:    1600px;
+$wsu-breakpoint--xdesktop:     1400px;
 $wsu-breakpoint--desktop:      1260px;
 $wsu-breakpoint--tablet-large: 992px;
 $wsu-breakpoint--tablet-medium: 860px;
 $wsu-breakpoint--tablet:       768px;
 $wsu-breakpoint--phone:        576px;
 $wsu-breakpoint--phone-small:  450px;
+$wsu-breakpoint--phone-xsmall:  380px;
+
+$wsu-breakpoint-map: (
+    'xxultrawide':  2400px,
+    'xultrawide':   1900px,
+    'ultrawide':    1600px,
+    'desktop':      1260px,
+    'tablet-large': 992px,
+    'tablet-medium': 860px,
+    'tablet':       768px,
+    'phone':        576px,
+    'phone-small':  450px,
+);
 
 /* ========================================================
 == Colors ==
@@ -76,7 +91,7 @@ $wsu-color--gray-90:  hsl(0, 0, 10%); // #1a1a1a
 $wsu-color--gray-95:  hsl(0, 0, 3%); // #080808 - 5% and 3% are nearly indistinguishable, so treat them the same and leave the value to maintain consistency
 $wsu-color--gray-100: hsl(0, 0, 3%); // #080808
 
-$wsu-color--text: $wsu-color--gray-85; // #080808 
+$wsu-color--text: $wsu-color--gray-85; // #080808
 
 $wsu-color-map: (
     'white':        #ffffff,
@@ -221,9 +236,11 @@ $wsu-font-weight--medium:     500;
 $wsu-font-weight--semibold:   600;
 $wsu-font-weight--bold:       700;
 $wsu-font-weight--extrabold:  800;
+$wsu-font-weight--xextrabold: 900;
 
 
 $wsu-height--global-header: 64px;
+$wsu-height--system-header: 100px;
 
 /* ========================================================
 == Image Sizes ==
@@ -339,6 +356,7 @@ $wsu-image-ratio-map: (
 /* ========================================================
 == Spacing ==
 ==========================================================*/
+
 $wsu-spacing--hero:     6.87rem;
 $wsu-spacing--xxlarge:  5.125rem;
 $wsu-spacing--xlarge:   4.125rem;
@@ -350,6 +368,8 @@ $wsu-spacing--small:    1.125rem;
 $wsu-spacing--xsmall:   0.875rem;
 $wsu-spacing--xxsmall:  0.6875rem;
 $wsu-spacing--sxxsmall: 0.5rem;
+$wsu-spacing--xxhero:   ( $wsu-spacing--hero + $wsu-spacing--xlarge );
+$wsu-spacing--xhero:    ( $wsu-spacing--hero + $wsu-spacing--xmedium );
 
 $wsu-spacing--em-hero:     6.87em;
 $wsu-spacing--em-xlarge:   5.125em;
@@ -365,6 +385,8 @@ $wsu-spacing--component: $wsu-spacing--xxmedium;
 $wsu-spacing--column:    $wsu-spacing--xmedium;
 
 $wsu-spacing-map: (
+    'xxhero':   $wsu-spacing--xxhero,
+    'xhero':    $wsu-spacing--xhero,
     'hero':     $wsu-spacing--hero,
     'xxlarge':  $wsu-spacing--xxlarge,
     'xlarge':   $wsu-spacing--xlarge,

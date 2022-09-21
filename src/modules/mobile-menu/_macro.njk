@@ -1,0 +1,65 @@
+{% from "menu/_macro.njk" import menu %}
+{% from "menu-audience/_macro.njk" import menuAudience %}
+{% from "search/_macro.njk" import search %}
+
+{% macro mobileMenu(bodyClasses, startOpen=true) %}
+<nav class="wsu-mobile-menu{{ bodyClasses }}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
+    <div class="wsu-mobile-menu__overlay wsu-mobile-menu--toggle"></div>
+    <div class="wsu-mobile-menu__toggle-container">
+        <button class="wsu-mobile-menu__toggle-button wsu-mobile-menu--toggle" id="mobile-menu-open" aria-label="Open site menu">Menu</button>
+    </div>
+    <button class="wsu-mobile-menu__open-button wsu-mobile-menu--open" aria-label="Open site menu">Menu</button>
+    <div class="wsu-mobile-menu__panel">
+        
+        <button class="wsu-mobile-menu__quicklinks">Quick Links / Search</button>
+        <div class="wsu-mobile-menu__quicklinks-overlay">
+            <div class="wsu-mobile-menu__quicklinks-top">
+                <h2 id="modalTitle" class="wsu-mobile-menu__quicklinks-overlay-title">Search WSU</h2>
+                
+            </div>
+            <div class="wsu-mobile-menu__quicklinks-bottom">
+                {{ search() }}
+                <h2 class="wsu-mobile-menu__quicklinks-bottom-heading">Quick Links</h2>
+                <div class="wsu-mobile-menu__quicklinks-links">
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                </div>
+                <button class="wsu-mobile-menu__quicklinks-close" aria-label="Close">CLOSE SEARCH</button>
+            </div>
+            
+        </div>
+        <ul class="wsu-menu wsu-menu--mobile">
+            <li>
+                <a href="https://wsu.edu/new">Home</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/about-wsu">About</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/wsu-academics">Academics</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/wsu-admissions">Admissions</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/wsu-research">Research</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/athletics">Athletics</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/wsu-campuses">Campuses</a>
+            </li>
+            <li>
+                <a href="https://wsu.edu/new/news">News</a>
+            </li>
+        </ul>
+        {{ menuAudience() }}
+        <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
+    </div>
+</nav>
+{% endmacro %} 

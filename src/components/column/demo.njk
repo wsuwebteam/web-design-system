@@ -1,0 +1,18 @@
+{% extends "component.njk" %}
+{% from "row/_macro.njk" import row %}
+
+{{ row( 'wsu-row--sidebar-right') }}
+
+{% from "row/_macro.njk" import row %}
+
+{% block content %}
+<div class="wsu-wrapper-site">
+    <div class="wsu-wrapper-content">
+        <main class="wsu-wrapper-main">
+        {{ row( 'wsu-row--sidebar-right','', false, false, false, ' wsu-column--style-crimson-top' ) }}
+        </main>
+    </div>
+</div>
+<style>
+</style>
+{%  endblock %}    

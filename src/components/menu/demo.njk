@@ -1,18 +1,35 @@
 {% extends "component.njk" %}
 
 {% block content %}
-<div class="wsu-demo-component">
-{% include 'menu/html--primary-vertical.njk' %}
-</div>
-<style>
-hr {
-    width: 100%;
-}
-
-
-.wsu-menu--primary-vertical {
-    max-width: 260px;
-    border: 1px solid #ccc;
-}
-</style>
+<ul class="wsu-menu--style-inline">
+    <li><a href="#">Menu Link 1</a></li>
+    <li><a href="#">Menu Link 2</a></li>
+    <li><a href="#">Menu Link 3</a></li>
+    <li><a href="#">Menu Link 4</a></li>
+    <li><a href="#">Menu Link 5</a></li>
+</ul>
+<hr />
+<ul class="wsu-menu--style-inline-split">
+    <li><a href="#">Menu Link 1</a></li>
+    <li><a href="#">Menu Link 2</a></li>
+    <li><a href="#">Menu Link 3</a></li>
+    <li><a href="#">Menu Link 4</a></li>
+    <li><a href="#">Menu Link 5</a></li>
+</ul>
+<hr />
+<ul class="wsu-menu--style-sidebar">
+    <li><a href="#">Menu Link 1</a></li>
+    <li><a href="#">Menu Link 2</a></li>
+    <li><a href="#">Menu Link 3</a></li>
+    <li><a href="#">Menu Link 4</a></li>
+    <li><a href="#">Menu Link 5</a></li>
+</ul>
+<hr />
+<ul class="wsu-menu--style-header-system">
+    <li><a href="#">Menu Link 1</a></li>
+    <li><a href="#">Menu Link 2</a></li>
+    <li><a href="#">Menu Link 3</a></li>
+    <li><a href="#">Menu Link 4</a></li>
+    <li><a href="#">Menu Link 5</a></li>
+</ul>
 {%  endblock %}   

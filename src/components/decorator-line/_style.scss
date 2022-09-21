@@ -1,0 +1,33 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.wsu-decorator-line {
+    @extend %ph_absolute_fill;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        content:"";
+        left: 0;
+        bottom: 0;
+        background-color: $wsu-color--crimson-light;
+    }
+
+    &::after {
+        position: absolute;
+        height: calc( 100% * 1.42 );
+        width: 100vh;
+        content:"";
+        left: 100%;
+        top: 0;
+        background-color: #fff;
+        border-left: 2px solid $wsu-color--crimson-light;
+        transform: rotate(45deg);
+        display: block;
+        transform-origin: 0% 0%;
+    }
+
+}

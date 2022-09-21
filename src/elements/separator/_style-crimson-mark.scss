@@ -1,0 +1,16 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-separator--style-crimson-mark {
+    width: 95px;
+    border-color: transparent;
+    border-top: 8px solid $wsu-color--crimson-light;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: $wsu-spacing--large;
+    margin-bottom: $wsu-spacing--large;
+}

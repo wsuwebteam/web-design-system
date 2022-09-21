@@ -1,0 +1,28 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-decorator--style-border-angle-left,
+.wsu-decorator--style-border-angle-right {
+    height: 200%;
+    width: 100%;
+    content: '';
+	display: block;
+	position: absolute;
+    background-color: #fff;
+}
+
+.wsu-decorator--style-border-angle {
+
+    &-right {
+        border-left: 1px solid $wsu-color--crimson-light;
+        transform: rotate(45deg);
+        transform-origin: top left;
+    }
+
+    &-left {
+        border-right: 1px solid $wsu-color--crimson-light;
+        transform: rotate(-45deg);
+        transform-origin: top right;
+    }
+}
+   

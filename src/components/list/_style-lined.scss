@@ -1,0 +1,30 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-list--style-lined {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+        border-bottom: 1px solid $wsu-color--gray-5;
+        margin: 0;
+        padding: 0.5em 0;
+        font-weight: 600;
+        position: relative; 
+    }
+}
+
+.wsu-list--style-lined-inset {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+        border-bottom: 1px solid $wsu-color--gray-5;
+        margin: 0;
+        padding: 0.5em $wsu-spacing--xmedium;
+        font-weight: 600;
+        position: relative;
+    }
+}

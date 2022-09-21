@@ -14,6 +14,7 @@ const PeopleList = function (el) {
     "university-category",
     "university-location",
     "university-organization",
+    "tag",
     "photo-size",
     "profile-order",
   ];
@@ -30,7 +31,7 @@ const PeopleList = function (el) {
     threshold: 0.3,
     keys: [
       {
-        name: "name",
+        name: "name", 
         weight: 3,
       },
       "title",
@@ -40,9 +41,30 @@ const PeopleList = function (el) {
     ],
   });
   const componentId = el.dataset.componentId;
+  const profileLink = el.dataset.profileLink ?? '';
   const displayFields = el.dataset.displayFields.split(",");
-  const excludedTerms = el.dataset.excludeTermValues.split(",");
+  const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
+  const excludedTerms = el.dataset.excludeTermValues
+    .split(",")
+    .filter((r) => r !== "");
   const activeFilters = [];
+  const categoryTerms = el.dataset.categoryFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const tagTerms = el.dataset.tagFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const locationTerms = el.dataset.locationFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const organizationTerms = el.dataset.organizationFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  const classificationTerms = el.dataset.classificationFilterTerms
+  .split(",")
+  .filter((r) => r !== "");
+  
+  const includedTerms = [];
   let selectedFiltersList = [];
   let allPeopleString = "";
   let people;
@@ -51,8 +73,14 @@ const PeopleList = function (el) {
   let filtersContainer;
   let filterToggles;
   let searchInput;
+  
 
   function getPersonHTML(person) {
+
+    console.log( person );
+
+    let linkProfile = ( profileLink && person.bio ) ? true : false;
+
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
     }">
@@ -65,7 +93,7 @@ const PeopleList = function (el) {
                 ${
                   person.photo
                     ? `
-                    <img src="${person.photo}"
+                    ${ linkProfile ? `<a href="${profileLink}?nid=${person.nid}">`:''}<img src="${person.photo}"
                         ${
                           person.photo_srcset
                             ? `srcset="${person.photo_srcset}"`
@@ -75,7 +103,7 @@ const PeopleList = function (el) {
                           person.photo_srcset
                             ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
                             : ""
-                        }>`
+                        } loading="lazy" alt="">${ linkProfile ? `</a>`:''}`
                     : ""
                 }
             </div>`
@@ -96,6 +124,23 @@ const PeopleList = function (el) {
                       (t) => `<div class="wsu-card__person-title">${t}</div>`
                     )
                     .join("")
+                : ""
+            }
+
+            ${
+              displayFields.includes("focus-area") && Array.isArray(person.focus_area) && (person.focus_area.length > 0 )
+                ? `
+                <div class="wsu-card__focus-area">
+                    <div class="wsu-card__focus-area-title">Focus Area</div>
+                    <ul class="wsu-card__focus-area-list">` +
+                        person.focus_area
+                        .map(
+                          (f) => `<li>${f.name}</li>`
+                        )
+                        .join("") +
+                        `
+                    </ul>
+                </div>`
                 : ""
             }
             
@@ -137,12 +182,46 @@ const PeopleList = function (el) {
                 </div>`
                 : ""
             }
+            ${ linkProfile ? `<div class="wsu-people-list__view-profile"><a class="wsu-button--style-arrow" href="${profileLink}?nid=${person.nid}">View Profile</a></div>`:''}
         </div>
     </div>`;
   }
 
+  function shouldIncludeTermValue(slug) {
+    if (onlyShowSelectedTermValues === "true" && includedTerms.length > 0) {
+      return includedTerms.includes(slug);
+    } else if (
+      onlyShowSelectedTermValues === "false" &&
+      excludedTerms.length > 0
+    ) {
+      return !excludedTerms.includes(slug);
+    }
+
+    return true;
+  }
+
   function createSelectFilterHTML(filter, people) {
     let options = [];
+
+    let includeTerms = [];
+
+    switch ( filter ) {
+      case 'organization':
+        includeTerms = organizationTerms;
+        break;
+      case 'tag':
+        includeTerms = tagTerms;
+        break;
+      case 'location':
+        includeTerms = locationTerms;
+        break;
+      case 'classification':
+        includeTerms = classificationTerms;
+        break;
+      case 'category':
+        includeTerms = categoryTerms;
+        break;
+    }
 
     // set filter options
     people.forEach((person) => {
@@ -154,12 +233,24 @@ const PeopleList = function (el) {
         }
 
         filterOptions.forEach((v) => {
-          if (
-            !excludedTerms.includes(v.slug) &&
+
+          if ( includeTerms.length > 0 ) {
+
+            if ( includeTerms.includes( v.slug ) && options.findIndex((o) => o.slug === v.slug) === -1 )  {
+  
+                options.push(v);
+              
+            }
+
+          } else if ( options.findIndex((o) => o.slug === v.slug) === -1 ) {
+            options.push(v);
+          }
+          /*if (
+            shouldIncludeTermValue(v.slug) &&
             options.findIndex((o) => o.slug === v.slug) === -1
           ) {
             options.push(v);
-          }
+          }*/
         });
       }
     });
@@ -304,9 +395,15 @@ const PeopleList = function (el) {
     let filteredPeople = JSON.parse(allPeopleString);
 
     activeFilters.forEach((f) => {
-      const selectedInputs = Array.from(
-        filtersContainer.elements[`${f}[]`]
-      ).filter((f) => f.checked);
+      const checkboxInputs = filtersContainer.elements[`${f}[]`];
+
+      if (!checkboxInputs) {
+        return;
+      }
+
+      const selectedInputs = Array.from(checkboxInputs).filter(
+        (f) => f.checked
+      );
 
       if (selectedInputs.length > 0) {
         selectedFilterInputs = selectedFilterInputs.concat(selectedInputs);

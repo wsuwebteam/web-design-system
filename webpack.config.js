@@ -12,6 +12,8 @@ module.exports = env => {
 			'bundles/wsu-design-system': './src/bundles/wsu-design-system.js',
 			'bundles/wsu-design-system.init': './src/bundles/wsu-design-system.init.js',
 			'bundles/standalone/people-list/scripts': './src/bundles/standalone/people-list/scripts.js',
+			'bundles/standalone/hero-slider/scripts': './src/bundles/standalone/hero-slider/scripts.js',
+			'bundles/standalone/programs-list/scripts': './src/bundles/standalone/programs-list/scripts.js',
 		},
 		output: {
 			filename: '[name].js',
@@ -42,7 +44,8 @@ module.exports = env => {
 		},
 		plugins: [
 			new webpack.DefinePlugin({
-				PEOPLE_API_BASE_URL: DEV ? JSON.stringify('http://wsuwp.local') : JSON.stringify('https://people.wsu.edu')
+				//PEOPLE_API_BASE_URL: DEV ? JSON.stringify('http://wsuwp.local') : JSON.stringify('https://people.wsu.edu')
+				PEOPLE_API_BASE_URL: JSON.stringify('https://people.wsu.edu')
 			})
 		]
 	}

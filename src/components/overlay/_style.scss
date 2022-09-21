@@ -13,9 +13,13 @@
 
     &--dark-left {
 
-        background-color: transparent;
-        background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.7) 5%, rgba(0,0,0,0.7) 51%, rgba(255,255,255,0) 100%);
-    
+        background: -moz-linear-gradient(left,  rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.6) 40%,rgba(0,0,0,0.2) 100%);
+        background: linear-gradient(to right,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.6) 40%,rgba(0,0,0,0.2) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#33000000',GradientType=1 );
+
+
+
         /*&::before {
             content: "";
             display: block;

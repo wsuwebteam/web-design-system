@@ -1,0 +1,14 @@
+@import '../variables';
+
+
+@each $breakpointName, $breakpointValue in $wsu-breakpoint-map {
+
+    @media screen and ( max-width: $breakpointValue ) {
+
+        .wsu-hide--#{$breakpointName} {
+            display: none !important;
+        }
+
+    }
+
+}

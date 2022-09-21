@@ -1,6 +1,40 @@
 @import './variables';
 @import './mixins';
 
+%ph_absolute_fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+%wsu_button {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    font-family: $wsu-font-family;
+    background-color: $wsu-color--crimson;
+    color: #fff;
+    border-radius: $wsu-border-radius--large;
+    border: none;
+    padding: 1em 3em;
+    font-size: $wsu-font-size--medium;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: box-shadow $wsu-transition-speed--fast $wsu-easing;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        box-shadow: $wsu-dropshadow-rise--medium;
+        background-color: $wsu-color--crimson-light;
+    }
+}
+
 %table {
     border-top: 4px solid $wsu-color--crimson;
     border-collapse: collapse;

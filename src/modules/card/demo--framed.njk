@@ -1,0 +1,22 @@
+{% extends "component.njk" %}
+
+{% from "card/_macro.njk" import cardLinked %}
+
+
+{% block content %}
+<div class="wsu-demo-component">
+    <div class="wsu-card-group wsu-card-group--spacing-none wsu-card-group--per-row-3">
+    {{ cardLinked( ' wsu-card--style-framed' ) }}
+    {{ cardLinked( ' wsu-card--style-framed' ) }}
+    {{ cardLinked( ' wsu-card--style-framed' ) }}
+    </div>
+</div>
+
+<style>
+.wsu-demo-component {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %} 

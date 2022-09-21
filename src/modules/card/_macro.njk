@@ -27,6 +27,19 @@
 </article>
 {% endmacro %}
 
+{% macro cardLinked( classes='', imgSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', title='Maecenas bibendum volutpat ante et condimentum', caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. ') %}
+<article class="wsu-card{{classes}}">
+    <a class="wsu-card__link" href="#">Maecenas bibendum volutpat ante et condimentum</a>
+    <div class="wsu-image-frame">
+        <img src="{{ imgSrc }}">
+    </div>
+    <div class="wsu-card__content">
+        <h2 class="wsu-title">{{ title }}</h2>
+        <div class="wsu-caption">{{ caption }}</div>
+    </div>
+</article>
+{% endmacro %}
+
 {% macro cardPerson( classes='', linked=false, showImage=true, showPositionTitle=true,showCaption=false,showPhone=true,showEmail=true,showOffice=true ) %}
 <div class="wsu-card wsu-card-person wsu-image-frame--ratio-square{{ classes }}">
     <div class="wsu-image-frame wsu-card__person-image">
@@ -38,6 +51,16 @@
         {% if showCaption %}
         {{ caption('', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nunc, facilisis vel lectus nec, mollis laoreet ipsum. Aliquam sed semper justo. Aliquam molestie ligula sit amet lorem viverra, sed pellentesque purus convallis.') }}
         {% endif %}
+        <div class="wsu-card__focus-area">
+            <div class="wsu-card__focus-area-title">Focus Area</div>
+            <ul class="wsu-card__focus-area-list">
+                <li>Focus area of interest</li>
+                <li>Focus area of interest</li>
+                <li>Focus area of interest long title here</li>
+                <li>Focus area of interest</li>
+                <li>Focus area of interest</li>
+            </ul>
+        </div>
         {{ metaEmail( ' wsu-meta--icon-crimson' ) }}
         {{ metaLocation( ' wsu-meta--icon-crimson' ) }}
         {{ metaPhone( ' wsu-meta--icon-crimson' ) }}

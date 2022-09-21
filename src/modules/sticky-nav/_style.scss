@@ -1,0 +1,36 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-sticky-nav {
+
+    .wsu-sticky-box__content {
+        z-index: $wsu-zindex--navigation;
+        transition: top $wsu-easing 1200ms;
+    }
+
+    .wsu-sticky-box {
+
+        &.wsu-sticky-box--stuck {
+
+            .wsu-sticky-box__content {
+                top: -150px;
+
+                &:hover,
+                &:focus-within {
+                    top: 0;
+                }
+            }
+
+            &.wsu-active {
+                .wsu-sticky-box__content {
+                    top: 0;
+                }
+            }
+        }
+        
+    }
+
+}
+
+@import './style-default';
+@import './style-crimson';

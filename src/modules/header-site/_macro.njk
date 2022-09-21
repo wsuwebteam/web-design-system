@@ -1,6 +1,6 @@
 {% from "experimental_navigation-horizontal/_macro.njk" import navigationHorizontal %}
 
-{% macro headerSite(bodyClasses, siteTitle, siteSubtitle, displayNav=false ) %}
+{% macro headerSite(bodyClasses, siteTitle='Example Site Title', siteSubtitle='', displayNav=false) %}
 <header class="wsu-header-site{{ bodyClasses }}">
     <div class="wsu-header-site__label">
         {% if siteSubtitle %}

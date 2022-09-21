@@ -1,0 +1,186 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-programs-list {
+  $this: &;
+
+  z-index: 1;
+  position: relative;
+
+  /*=============================================
+    =            Filter Controls            =
+    =============================================*/
+  &__controls {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: $wsu-color--crimson;
+    padding: $wsu-spacing--medium $wsu-spacing--xxmedium;
+    margin: 0 (-$wsu-spacing--xxmedium) $wsu-spacing--xxmedium
+      (-$wsu-spacing--xxmedium);
+    // flex-direction: column;
+    // gap: $wsu-spacing--small;
+    // padding-bottom: $wsu-spacing--xxmedium;
+    // border-bottom: 5px solid $wsu-color--gray-10;
+    align-items: center;
+    column-gap: $wsu-spacing--xxmedium;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__control--select {
+    position: relative;
+  }
+
+  &__control--search {
+    flex-grow: 1;
+
+    // margin-right: $wsu-spacing--medium;
+    // margin-bottom: $wsu-spacing--sxxsmall;
+  }
+
+  &__search-input {
+    width: 100%;
+
+    &[type="text"] {
+      font-size: 0.85rem;
+      color: map-get($wsu-color-map, "white");
+      border: none;
+      background-color: rgba($wsu-color--crimson-dark, 0.45);
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    @include placeholder {
+      color: rgba(map-get($wsu-color-map, "white"), 0.8);
+    }
+  }
+
+  &__control-group {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: $wsu-spacing--xxmedium;
+    padding-left: 4px;
+  }
+
+  &__control-button {
+    padding: 0;
+
+    @at-root .wsu-button#{&} {
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    &[aria-expanded="false"] + #{$this}__filter-options {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-$wsu-spacing--medium);
+    }
+  }
+
+  &__button-text {
+  }
+
+  &__button-icon {
+    margin-right: 0;
+    margin-left: $wsu-spacing--sxxsmall;
+  }
+
+  &__filter-options {
+    background: map-get($wsu-color-map, "white");
+    box-shadow: $wsu-dropshadow--low;
+    padding: $wsu-spacing--small $wsu-spacing--medium;
+    position: absolute;
+    margin-top: $wsu-spacing--small;
+    border-radius: 4px;
+    width: max-content;
+    right: -$wsu-spacing--xxmedium;
+    transition-property: opacity, visibility, transform;
+    transition-timing-function: $wsu-easing;
+    transition-duration: $wsu-transition-speed--fast;
+  }
+
+  &__filter-option {
+    &:not(:last-child) {
+      margin-bottom: $wsu-spacing--sxxsmall;
+    }
+  }
+
+  /*=====  End of Filter Controls  ======*/
+
+  /*=============================================
+    =            Program List            =
+    =============================================*/
+  &__list-group {
+    & + & {
+      margin-top: $wsu-spacing--xxmedium;
+      //   padding-top: 0.75rem;
+      //   border-top: 3px solid $wsu-color--gray-10;
+    }
+  }
+
+  &__list-heading {
+    font-size: $wsu-font-size--xxmedium;
+    font-weight: $wsu-font-weight--semibold;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: $wsu-spacing--xxsmall;
+  }
+
+  &__list,
+  &__list-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    font-size: $wsu-font-size--medium;
+    margin-bottom: 0.75rem;
+  }
+
+  &__list-item {
+    // margin-bottom: $wsu-spacing--small;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: $wsu-spacing--xxsmall;
+    row-gap: 0.25rem;
+    align-items: center;
+    // margin-bottom: .25rem;
+  }
+
+  &__program-link {
+  }
+
+  &__degree-types {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25em;
+    // margin-top: 0.25rem;
+  }
+
+  &__degree-type {
+    font-size: $wsu-font-size--small;
+    background: $wsu-color--gray-5;
+    padding: 0.1em 0.75em;
+    border-radius: 1em;
+    font-weight: $wsu-font-weight--medium;
+    // margin: 2px 0 2px 0;
+    // display: inline-block;
+  }
+  /*=====  End of Links  ======*/
+
+  @media screen and (min-width: $wsu-breakpoint--tablet) {
+    &__controls {
+      //   display: flex;
+      //   flex-direction: row;
+      //   gap: $wsu-spacing--medium;
+    }
+  }
+}

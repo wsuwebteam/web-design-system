@@ -1,0 +1,95 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-background-slider {
+  @include wsu-position-absolute-fill();
+  overflow: hidden;
+
+  &__slide {
+    @include wsu-position-absolute-fill();
+    visibility: hidden;
+
+    & > img {
+      @include wsu-position-absolute-fill();
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__pause-button {
+    position: absolute;
+    top: $wsu-spacing--small;
+    right: $wsu-spacing--small; 
+    z-index: 4;
+  }
+
+}
+
+.wsu-background-slider:not([class*="--effect-"]),
+.wsu-background-slider--effect-fade {
+
+  .wsu-background-slider__slide {
+    opacity: 0;
+    transition: opacity 1000ms;
+  }
+
+  .wsu-background-slider__slide.wsu-slide--active {
+    opacity: 1;
+    z-index: 2;
+    visibility: visible;
+  }
+
+  .wsu-background-slider__slide.wsu-slide--previous {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+  }
+
+}
+
+.wsu-background-slider--effect-slide {
+
+  .wsu-background-slider__slide {
+    transition: left 1000ms;
+    right: auto;
+    left: -100%;
+  }
+
+  .wsu-background-slider__slide.wsu-slide--active {
+    z-index: 2;
+    visibility: visible;
+    left: 0;
+  }
+
+  .wsu-background-slider__slide.wsu-slide--previous {
+    z-index: 1;
+    visibility: visible;
+    left: 100%; 
+  }
+
+}
+
+.wsu-background-slider--effect-stacked {
+
+  .wsu-background-slider__slide {
+    transition: left 1000ms;
+    right: auto;
+    left: -100%;
+    box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
+    -moz-box-shadow: 6px -1px 28px 3px rgba(0,0,0,0.48);
+  }
+
+  .wsu-background-slider__slide.wsu-slide--active {
+    z-index: 2;
+    visibility: visible;
+    left: 0;
+  }
+
+  .wsu-background-slider__slide.wsu-slide--previous {
+    z-index: 1;
+    visibility: visible; 
+    left: 0; 
+  }
+
+}

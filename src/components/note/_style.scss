@@ -1,0 +1,68 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-note {
+
+    box-sizing: border-box;
+    margin: -$wsu-spacing--xsmall 0 $wsu-spacing--component $wsu-spacing--medium;
+    padding-left: $wsu-spacing--small;
+    padding-right: 10%;
+    border-left: 3px solid $wsu-color--crimson;
+    max-width: $wsu-width--copy;
+
+    &__icon {
+      display: inline-block;
+      line-height: 1;
+      color: inherit;
+      text-decoration: none;
+      font-size: $wsu-font-size--xxmedium !important;
+      margin: 0 $wsu-spacing--sxxsmall $wsu-spacing--sxxsmall 0;
+      vertical-align: middle;
+
+      &::before {
+        font-family: wsu-icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        vertical-align: middle;
+      }
+    }
+
+    &__title {
+        @include wsu-font--xmedium();
+        display: inline-block;
+        font-weight: $wsu-font-weight--semibold;
+        margin-bottom: $wsu-spacing--sxxsmall;
+    }
+
+    > p,
+    ul,
+    ol {
+      font-size: $wsu-font-size--medium;
+      margin-bottom: $wsu-spacing--sxxsmall;
+    }
+
+    &--size-small {
+        > p {
+          font-size: $wsu-font-size--small;
+        }
+    }
+
+    &--border-crimson-light {
+        border-left: 3px solid $wsu-color--crimson-light;
+    }
+    &--border-autumn {
+        border-left: 3px solid $wsu-color--accent-autumn;
+    }
+    &--border-goldfinch {
+        border-left: 3px solid $wsu-color--accent-goldfinch;
+    }
+    &--border-vineyard {
+        border-left: 3px solid $wsu-color--accent-vineyard;
+    }
+    &--border-pacificsky {
+        border-left: 3px solid $wsu-color--accent-pacificsky;
+    }
+    &--border-midnight {
+        border-left: 3px solid $wsu-color--accent-midnight;
+    }
+}

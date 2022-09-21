@@ -46,6 +46,14 @@
         content: "\F144";
     }
 
+    &__youtube a::before  {
+        content: "\F149";
+    }
+
+    &__instagram a::before  {
+        content: "\F146";
+    }
+
     &__email a::before  {
         content: "\F11A";
     }

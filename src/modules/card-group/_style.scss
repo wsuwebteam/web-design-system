@@ -1,0 +1,228 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$wsu-card-margin: $wsu-spacing--xsmall;
+
+.wsu-card-group,
+.wsu-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    &__title {
+        margin-bottom: $wsu-spacing--small;
+    }
+
+    &__footer,
+    &__title {
+        width: 100%;
+        margin-left: $wsu-card-margin;
+        margin-right: $wsu-card-margin;
+        box-sizing: border-box;
+    }
+
+    &--per-row-1 {
+        .wsu-card {
+            width: 100%;
+
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &--per-row-2:not(.wsu-card-group--spacing-none),
+    &--per-row-3:not(.wsu-card-group--spacing-none),
+    &--per-row-4:not(.wsu-card-group--spacing-none) {
+        margin-left: -$wsu-card-margin;
+        margin-right: -$wsu-card-margin;
+
+        .wsu-card {
+            margin-left: $wsu-card-margin;
+            margin-right: $wsu-card-margin;
+        }
+    }
+
+    &--per-row-2 {
+
+        .wsu-card {
+            width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
+
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            .wsu-card {
+                width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+
+                &:nth-last-child(2) {
+                    margin-bottom: $wsu-spacing--component;
+                }
+            }
+        }
+
+        &.wsu-card-wrapper--break-early {
+
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                .wsu-card {
+                    width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+                }
+            }
+
+        }
+
+    }
+    &--per-row-3 {
+        .wsu-card {
+            width: calc( 33.33% - ( #{$wsu-card-margin} * 2 ) );
+
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            .wsu-card {
+                width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+
+            }
+        }
+
+        &.wsu-card-wrapper--break-early {
+
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                .wsu-card {
+                    width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+                }
+            }
+
+        }
+
+    }
+
+    &--per-row-4 {
+        .wsu-card {
+            width: calc( 25% - ( #{$wsu-card-margin} * 2 ) );
+
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+            .wsu-card {
+                width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
+
+                
+            }
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            .wsu-card {
+                width: calc( 100% - ( #{$wsu-card-margin} * 2 ) );
+
+
+            }
+        }
+
+        &.wsu-card-wrapper--break-early {
+
+            @media screen and (max-width: $wsu-breakpoint--desktop ) {
+                .wsu-card {
+                    width: calc( 50% - ( #{$wsu-card-margin} * 2 ) );
+                }
+            }
+
+        }
+    }
+}
+
+.wsu-card-group { 
+
+    &--spacing-none { 
+
+        .wsu-card {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &--per-row-2 {
+
+        &.wsu-card-group--spacing-none {
+            .wsu-card {
+                width: 50%;
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                .wsu-card {
+                    width: 100%;
+                }
+            }
+    
+            &.wsu-card-wrapper--break-early {
+    
+                @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                    .wsu-card {
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    &--per-row-3 {
+        &.wsu-card-group--spacing-none {
+
+            .wsu-card {
+                width: 33.33%;
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                .wsu-card {
+                    width: 100%;
+                }
+            }
+    
+            &.wsu-card-wrapper--break-early {
+    
+                @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                    .wsu-card {
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    &--per-row-4 {
+
+        &.wsu-card-group--spacing-none {
+
+            .wsu-card {
+                width: 25%;
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+                .wsu-card {
+                    width: 50%;
+                }
+            }
+    
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
+                .wsu-card {
+                    width: 100%;
+                }
+            }
+    
+            &.wsu-card-wrapper--break-early {
+    
+                @media screen and (max-width: $wsu-breakpoint--desktop ) {
+                    .wsu-card {
+                        width: 50%;
+                    }
+                }
+    
+            }
+        }
+    }
+
+    
+
+
+
+}

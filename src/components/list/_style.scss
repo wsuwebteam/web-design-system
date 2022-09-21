@@ -1,18 +1,29 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+$wsu-list-indent-map: (
+    'xlarge':   $wsu-spacing--xlarge,
+    'large':    $wsu-spacing--xlarge,
+    'xxmedium': $wsu-spacing--xxmedium,
+    'xmedium':  $wsu-spacing--xmedium,
+    'medium':   $wsu-spacing--medium,
+    'small':    $wsu-spacing--small,
+    'xsmall':   $wsu-spacing--xsmall,
+);
+
 .wsu-list {
 
     &--arrow,
     &--style-arrow {
         li::marker {
             font-family: 'wsu-icons';
-            content:'\F107';
+            content:'\F107\00A0\00A0\00A0';
             font-size: 0.7em;
             font-weight: 600;
         }
     
     }
+
     
     &--checkbox,
     &--style-checkbox {
@@ -25,10 +36,11 @@
                 content:'\F14B';
                 color: $wsu-color--crimson-light;
                 font-weight: 400;
-                font-size: 1.5em;
+                font-size: 1.3em;
                 line-height: 1em;
                 position: absolute;
-                left: -1.1em;
+                left: -1.5em;
+                top: 0.1em;
             } 
             
         }
@@ -43,16 +55,128 @@
     
             &::before {
                 font-family: 'wsu-icons';
-                content:'\F110';
+                content:'\F110\00A0\00A0\00A0';
                 color: $wsu-color--crimson-light;
                 font-weight: 400;
-                font-size: 1.2em;
+                font-size: 1em;
                 line-height: 1em;
                 position: absolute;
-                left: -1.2em;
+                left: -1.75em;
+                top: 0.1em;
             }
         }
     }
 
+    &--columns-2,
+    &--columns-3,
+    &--columns-4 {
+        column-gap: $wsu-spacing--large;
+    }
+
+    &--columns-2 {
+        column-count: 2;
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+            column-count: auto; 
+
+        }
+
+    }
+
+    &--columns-3 {
+        column-count: 3;
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+            column-count: auto; 
+
+        }
+    }
+
+    &--columns-4 {
+        column-count: 4;
+
+        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+
+            column-count: 2; 
+
+        }
+
+        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+
+            column-count: auto; 
+
+        }
+    }
+
 }
+
+ol ol ol li {
+    list-style-type: lower-roman;
+}
+
+
+ol ol ol ol li {
+    list-style-type: decimal;
+}
+
+
+ol ol ol ol ol li {
+    list-style-type: lower-alpha;
+}
+
+
+ol ol ol ol ol ol li {
+    list-style-type: lower-roman;
+}
+
+ul ul ul li{
+    list-style-type: square;
+}
+
+ul ul ul ul li{
+    list-style-type: disc;
+}
+
+ul ul ul ul ul li {
+    list-style-type: circle;
+}
+ul ul ul ul ul ul li {
+    list-style-type: square;
+}
+
+
+
+ol ul li{
+    list-style-type: disc;
+}
+ol ul ul li{
+    list-style-type: circle;
+}
+ol ul ul ul li{
+    list-style-type: square;
+}
+ol ul ul ul ul li{
+    list-style-type: disc;
+}
+ol ul ul ul ul ul li{
+    list-style-type: circle;
+}
+
+
+ol ul ol li{
+    list-style-type: lower-roman;
+}
+
+@each $indentName, $indentValue in $wsu-list-indent-map {
+
+    .wsu-list--padding-#{$indentName} li {
+        padding-left: $indentValue !important;
+        padding-right: $indentValue !important;
+    }
+
+}
+
+@import './style-lined';
 

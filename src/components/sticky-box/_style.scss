@@ -1,0 +1,16 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-sticky-box {
+
+    &--stuck {
+
+        .wsu-sticky-box__content {
+            position: fixed !important;
+            top: 0;
+        }
+
+    }
+
+}

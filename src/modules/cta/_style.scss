@@ -1,0 +1,26 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.wsu-cta {
+    margin-bottom: $wsu-spacing--component;
+
+    &--width-inline {
+        display: inline-block;
+    }
+
+    &--width-inline {
+        display: inline-block;
+        margin-right: $wsu-spacing--xxsmall;
+    } 
+
+    &--width-full .wsu-button {
+        display: block;
+        text-align: center;
+    }
+
+    + .wsu-cta:not(.wsu-cta--width-inline) {
+        margin-top: -0.6rem;
+    }
+
+}

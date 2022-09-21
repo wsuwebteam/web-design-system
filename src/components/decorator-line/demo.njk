@@ -1,0 +1,28 @@
+{% extends "component.njk" %}
+
+{% block styles %}
+<style>
+.wsu-decorator-line__demo-wrapper {
+    margin-bottom: 4rem;
+}
+.wsu-decorator-line {
+    transition: width 500ms;
+    left: auto;
+}
+.wsu-decorator-line__demo-wrapper:hover .wsu-decorator-line {
+    width: 0;
+}
+</style>
+{%  endblock %}
+
+{% block content %}
+    <div class="wsu-decorator-line__demo-wrapper" style="min-height: 100px; position: relative">
+        {% include 'decorator-line/html.njk' %}
+    </div>
+    <div class="wsu-decorator-line__demo-wrapper" style="min-height: 200px; position: relative">
+        {% include 'decorator-line/html.njk' %}
+    </div>
+    <div class="wsu-decorator-line__demo-wrapper" style="min-height: 400px; position: relative">
+        {% include 'decorator-line/html.njk' %}
+    </div>
+{%  endblock %} 
