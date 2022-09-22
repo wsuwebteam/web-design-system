@@ -1,6 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+.wsu-decorator--style-lines-gray-dark,
 .wsu-decorator--style-lines-crimson,
 .wsu-decorator--style-lines-gray {
     content: '';
@@ -11,6 +12,13 @@
 .wsu-decorator--style-lines-gray {
 	
 	background-image: repeating-linear-gradient(135deg, $wsu-color--gray-5, $wsu-color--gray-5 2px, transparent 2px, transparent 10px);
+    background-position: 0 -4px;
+    background-repeat: no-repeat;
+}
+
+.wsu-decorator--style-lines-gray-dark {
+	
+	background-image: repeating-linear-gradient(135deg, $wsu-color--gray-40, $wsu-color--gray-40 2px, transparent 2px, transparent 10px);
     background-position: 0 -4px;
     background-repeat: no-repeat;
 }

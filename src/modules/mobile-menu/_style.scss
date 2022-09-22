@@ -6,13 +6,81 @@ $global-header-height: 65px;
 
 .wsu-mobile-menu {
 
+    &__quicklinks-overlay{
+        display: none;
+        z-index: calc( #{$wsu-zindex--navigation} + 10);
+    }
+    &__quicklinks-overlay-open{
+        opacity: 100%;
+        visibility: visible;
+        display: block;
+    }
+    &__quicklinks-overlay-title{
+        font-size: 1rem;
+    }
+    &__quicklinks-open{
+        background-color: $wsu-color--gray-75;
+    }
+    &__quicklinks-top{
+        background-color: #f6f6f6;
+        padding: 20px 20px 0 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__quicklinks-bottom{
+        background-color: #f6f6f6;
+        padding: 10px 20px;
+        overflow: auto;
+    }
+    &__quicklinks-bottom-heading{
+        font-size: 1rem;
+    }
+    &__quicklinks-search-bar{
+        width: 100%;
+        margin: 20px 0;
+    }
+    &__quicklinks-links{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__quicklinks-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+        background: gray;
+        border-radius: 50px;
+        font-weight: 700;
+        color: white;
+    }
+    &__quicklinks-close {
+        float: right;
+        margin: 40px 0 10px 0;
+        background: none;
+        border: none;
+        color: $wsu-color--gray-75; 
+        font-size: .6875rem;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    &__quicklinks-close::after{
+        content: '\F154';
+        font-family: wsu-icons;
+        display: inline-block;
+        font-size: 1rem;
+        vertical-align: middle;
+        color: #404040;
+        margin-left: calc(0.6875rem / 2);
+    }
     &__panel {
-        position: fixed; 
-        top: 0;
-        padding-top: 65px;
-        padding-left: $wsu-spacing--xxmedium;
-        height: 100vh;
-        overflow-x: hidden;
+        position: absolute; 
+        top: $wsu-height--global-header;
+        padding-top: 0;
         display: flex;
         flex-direction: column;
         border-right: 1px solid $wsu-color--gray-10;
@@ -22,37 +90,55 @@ $global-header-height: 65px;
         opacity: 1;
         visibility: inherit;
         box-sizing: border-box;
-        z-index: $wsu-zindex--navigation;
+        z-index: calc( #{$wsu-zindex--navigation} + 2 );
         background-color: #fff;
+        box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+        -webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+        -moz-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
     }
 
     &__overlay {
         display: block;
         position: fixed;
-        top: 0;
+        top: $wsu-height--global-header;
         left: 0;
         right: 0;
         bottom: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0,0,0,0.4);
-        z-index: calc( #{$wsu-zindex--navigation} - 1 );
+        background-color: rgba(0,0,0,0.6);
+        z-index: calc( #{$wsu-zindex--navigation} + 1 );
         opacity: 0;
-        visibility: hidden;
+        //visibility: hidden;
         transition:  opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
         cursor: pointer;
+    }
+
+    &__toggle-container{
+        z-index: 1035;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: $wsu-height--global-header;
+        width: $wsu-height--global-header;
+    }
+    &__toggle-container-open{
+        background: white;
     }
 
     &__toggle-button {
         position: absolute;
         top: 0;
         right: 0;
-        height: $wsu-height--global-header;
+        bottom: 0;
+        left: 0;
+        height: auto;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
         border:none;
-        width: $wsu-width--button-small;
+        width: auto;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -327,23 +413,20 @@ $global-header-height: 65px;
 
             &__panel {
                 transform: translateX( 0 );
-                padding-top: 40px;
                 opacity: 1;
                 right: 0;
                 left: auto;
                 visibility: visible;
                 transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
             }
-
             &__overlay {
                 opacity: 1;
                 visibility: visible;
             }
-
             &__quicklinks{
                 text-decoration: none;
-                color: inherit;
-                background-color: transparent;
+                color: white;
+                background-color: $wsu-color--gray-65;
                 border-right: none;
                 border-bottom: 2px solid $wsu-color--gray-15;
                 border-top: none;
@@ -356,20 +439,20 @@ $global-header-height: 65px;
                 box-sizing: border-box;
                 text-align: left;
                 font-size: 1rem;
-                font-weight: 700;
+                font-weight: 600;
                 position: relative;
                 line-height: 1.5;
                 cursor: pointer;
             }
             &__quicklinks::after{
-                content: '\F108';
+                content: '\F140';
                 font-family:'wsu-icons';
                 font-size: $wsu-font-size--small;
                 flex: none;
                 vertical-align: text-top;
                 margin-left: 5px;
             }
-
+            
             & ~ .wsu-wrapper-site {
                 transform: translateX( calc( #{$wsu-width--navigation-open} * -1 ) )
             }
@@ -389,6 +472,9 @@ $global-header-height: 65px;
             .wsu-menu-audience__link:not(:last-child){
                 border-right:none;
             }
+        }
+        .wsu-mobile-menu__quicklinks:focus,.wsu-mobile-menu__quicklinks:hover,.wsu-mobile-menu__quicklinks:active{
+            background-color: $wsu-color--gray-95;
         }
         .wsu-mobile-menu .wsu-menu a{
             text-decoration: none;
@@ -411,7 +497,11 @@ $global-header-height: 65px;
             position: relative;
             line-height: 1.5;
             cursor: pointer;
-        
+        }
+        .wsu-mobile-menu .wsu-menu a:focus{
+            text-decoration: none;
+            outline: 2px solid #ca1237;
+            border-radius: 3px;
         }
     }
 
@@ -437,4 +527,15 @@ $global-header-height: 65px;
         color: $wsu-color--gray-5;
     }
 
+}
+
+.wsu-mobile-menu__quicklinks-bottom .wsu-search:not([class*="-search--style-"]) .wsu-search__search-toggle-label{
+    padding: 15px;
+}
+
+.wsu-mobile-menu__quicklinks-bottom .wsu-search:not([class*="-search--style-"]) {
+    margin-bottom: 1.25rem;
+}
+.wsu-mobile-menu__quicklinks-open::after{
+    content: '\F154' !important;
 }

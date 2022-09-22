@@ -1,7 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-menu--style-header-system{
+.wsu-menu--style-header-campus{
 
     list-style-type: none;
     margin: 0;
@@ -19,7 +19,7 @@
             font-size: $wsu-font-size--xxmedium;
             color: $wsu-color--gray-85;
             text-decoration: none;
-            padding: $wsu-spacing--medium $wsu-spacing--medium;
+            padding: $wsu-spacing--medium $wsu-spacing--xmedium;
             position: relative;
             display: block;
 

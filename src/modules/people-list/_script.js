@@ -1,11 +1,15 @@
 import Fuse from "fuse.js";
+import { sanitize } from "dompurify";
+import { groupBy, isSafeInteger } from "lodash";
 import {
   wsuAriaExpanded,
   wsuAriaIsExpanded,
 } from "../../../_assets/js/partials/wsuPartials";
 
 const PeopleList = function (el) {
+  const urlParams = new URLSearchParams(window.location.search);
   const apiEndpoint = PEOPLE_API_BASE_URL + "/wp-json/peopleapi/v1/people?";
+  let isInitialized = false;
   const queryAttributes = [
     "count",
     "page",
@@ -31,7 +35,7 @@ const PeopleList = function (el) {
     threshold: 0.3,
     keys: [
       {
-        name: "name", 
+        name: "name",
         weight: 3,
       },
       "title",
@@ -41,7 +45,7 @@ const PeopleList = function (el) {
     ],
   });
   const componentId = el.dataset.componentId;
-  const profileLink = el.dataset.profileLink ?? '';
+  const profileLink = el.dataset.profileLink ?? "";
   const displayFields = el.dataset.displayFields.split(",");
   const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
   const excludedTerms = el.dataset.excludeTermValues
@@ -49,21 +53,19 @@ const PeopleList = function (el) {
     .filter((r) => r !== "");
   const activeFilters = [];
   const categoryTerms = el.dataset.categoryFilterTerms
-  .split(",")
-  .filter((r) => r !== "");
-  const tagTerms = el.dataset.tagFilterTerms
-  .split(",")
-  .filter((r) => r !== "");
+    .split(",")
+    .filter((r) => r !== "");
+  const tagTerms = el.dataset.tagFilterTerms.split(",").filter((r) => r !== "");
   const locationTerms = el.dataset.locationFilterTerms
-  .split(",")
-  .filter((r) => r !== "");
+    .split(",")
+    .filter((r) => r !== "");
   const organizationTerms = el.dataset.organizationFilterTerms
-  .split(",")
-  .filter((r) => r !== "");
+    .split(",")
+    .filter((r) => r !== "");
   const classificationTerms = el.dataset.classificationFilterTerms
-  .split(",")
-  .filter((r) => r !== "");
-  
+    .split(",")
+    .filter((r) => r !== "");
+
   const includedTerms = [];
   let selectedFiltersList = [];
   let allPeopleString = "";
@@ -73,13 +75,11 @@ const PeopleList = function (el) {
   let filtersContainer;
   let filterToggles;
   let searchInput;
-  
 
   function getPersonHTML(person) {
+    // console.log(person);
 
-    console.log( person );
-
-    let linkProfile = ( profileLink && person.bio ) ? true : false;
+    let linkProfile = profileLink && person.bio ? true : false;
 
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
@@ -93,7 +93,11 @@ const PeopleList = function (el) {
                 ${
                   person.photo
                     ? `
-                    ${ linkProfile ? `<a href="${profileLink}?nid=${person.nid}">`:''}<img src="${person.photo}"
+                    ${
+                      linkProfile
+                        ? `<a href="${profileLink}?nid=${person.nid}">`
+                        : ""
+                    }<img src="${person.photo}"
                         ${
                           person.photo_srcset
                             ? `srcset="${person.photo_srcset}"`
@@ -103,7 +107,7 @@ const PeopleList = function (el) {
                           person.photo_srcset
                             ? `sizes="(min-width: 768px) 33.3vw, 100vw"`
                             : ""
-                        } loading="lazy" alt="">${ linkProfile ? `</a>`:''}`
+                        } loading="lazy" alt="">${linkProfile ? `</a>` : ""}`
                     : ""
                 }
             </div>`
@@ -128,17 +132,15 @@ const PeopleList = function (el) {
             }
 
             ${
-              displayFields.includes("focus-area") && Array.isArray(person.focus_area) && (person.focus_area.length > 0 )
+              displayFields.includes("focus-area") &&
+              Array.isArray(person.focus_area) &&
+              person.focus_area.length > 0
                 ? `
                 <div class="wsu-card__focus-area">
                     <div class="wsu-card__focus-area-title">Focus Area</div>
                     <ul class="wsu-card__focus-area-list">` +
-                        person.focus_area
-                        .map(
-                          (f) => `<li>${f.name}</li>`
-                        )
-                        .join("") +
-                        `
+                  person.focus_area.map((f) => `<li>${f.name}</li>`).join("") +
+                  `
                     </ul>
                 </div>`
                 : ""
@@ -182,7 +184,11 @@ const PeopleList = function (el) {
                 </div>`
                 : ""
             }
-            ${ linkProfile ? `<div class="wsu-people-list__view-profile"><a class="wsu-button--style-arrow" href="${profileLink}?nid=${person.nid}">View Profile</a></div>`:''}
+            ${
+              linkProfile
+                ? `<div class="wsu-people-list__view-profile"><a class="wsu-button--style-arrow" href="${profileLink}?nid=${person.nid}">View Profile</a></div>`
+                : ""
+            }
         </div>
     </div>`;
   }
@@ -201,24 +207,28 @@ const PeopleList = function (el) {
   }
 
   function createSelectFilterHTML(filter, people) {
+    const appliedFilters = urlParams.has(filter)
+      ? urlParams.get(filter).split(",")
+      : [];
+
     let options = [];
 
     let includeTerms = [];
 
-    switch ( filter ) {
-      case 'organization':
+    switch (filter) {
+      case "organization":
         includeTerms = organizationTerms;
         break;
-      case 'tag':
+      case "tag":
         includeTerms = tagTerms;
         break;
-      case 'location':
+      case "location":
         includeTerms = locationTerms;
         break;
-      case 'classification':
+      case "classification":
         includeTerms = classificationTerms;
         break;
-      case 'category':
+      case "category":
         includeTerms = categoryTerms;
         break;
     }
@@ -233,16 +243,14 @@ const PeopleList = function (el) {
         }
 
         filterOptions.forEach((v) => {
-
-          if ( includeTerms.length > 0 ) {
-
-            if ( includeTerms.includes( v.slug ) && options.findIndex((o) => o.slug === v.slug) === -1 )  {
-  
-                options.push(v);
-              
+          if (includeTerms.length > 0) {
+            if (
+              includeTerms.includes(v.slug) &&
+              options.findIndex((o) => o.slug === v.slug) === -1
+            ) {
+              options.push(v);
             }
-
-          } else if ( options.findIndex((o) => o.slug === v.slug) === -1 ) {
+          } else if (options.findIndex((o) => o.slug === v.slug) === -1) {
             options.push(v);
           }
           /*if (
@@ -271,14 +279,21 @@ const PeopleList = function (el) {
             <div id="${componentId}__content" class="wsu-people-list__select-list-container" aria-labelledby="${componentId}__title">
                 <ul class="wsu-people-list__select-list">
                     ${options
-                      .map(
-                        (o) => `<li class="wsu-people-list__select-list-item">
-                        <label class="wsu-people-list__fitler-label">
-                            <input class="wsu-people-list__fitler-checkbox" type="checkbox" name="${filter}[]" value="${o.slug}" />
-                            ${o.name}                    
-                        </label>
-                    </li>`
-                      )
+                      .map((o) => {
+                        return `<li class="wsu-people-list__select-list-item">
+                              <label class="wsu-people-list__fitler-label">
+                                  <input class="wsu-people-list__fitler-checkbox" type="checkbox" name="${filter}[]" value="${
+                          o.slug
+                        }" 
+                                  ${
+                                    appliedFilters.includes(o.slug)
+                                      ? "checked"
+                                      : ""
+                                  } />
+                                  ${o.name}                    
+                              </label>
+                          </li>`;
+                      })
                       .join("")}
                 </ul>
             </div>
@@ -303,9 +318,12 @@ const PeopleList = function (el) {
 
     // create search filter
     if (filters.includes("search")) {
-      content += `
+      const defaultValue = urlParams.has("search")
+        ? sanitize(urlParams.get("search"))
+        : "";
+      content += `        
         <div class="wsu-people-list__search-filter">
-            <input class="wsu-people-list__search-input" type="text" placeholder="${el.dataset.searchFilterLabel}"/>
+            <input class="wsu-people-list__search-input" type="text" placeholder="${el.dataset.searchFilterLabel}" value="${defaultValue}"/>
         </div>`;
     }
 
@@ -372,6 +390,34 @@ const PeopleList = function (el) {
       : el.classList.remove("has-no-results");
   }
 
+  function updateUrlParams(selectedFilterInputs, searchInput) {
+    const searchParams = new URLSearchParams();
+
+    // update select filter params
+    const groupedInputs = groupBy(selectedFilterInputs, (i) =>
+      i.name.replace("[]", "")
+    );
+
+    Object.keys(groupedInputs).forEach((key) => {
+      const value = groupedInputs[key].map((i) => i.value).join(",");
+      searchParams.set(key, value);
+    });
+
+    // update search param
+    if (
+      searchInput &&
+      searchInput.value !== "" &&
+      searchInput.value.length >= 3
+    ) {
+      searchParams.set("search", searchInput.value);
+    }
+
+    // update url
+    var newRelativePathQuery =
+      window.location.pathname + "?" + searchParams.toString();
+    history.replaceState(null, "", newRelativePathQuery);
+  }
+
   function updateSelectedFilters(selectedFilterInputs) {
     let content = "";
 
@@ -432,6 +478,7 @@ const PeopleList = function (el) {
 
     updateSelectedFilters(selectedFilterInputs);
     updatePeopleList(filteredPeople);
+    isInitialized && updateUrlParams(selectedFilterInputs, searchInput);
   }
 
   function bindEvents(el) {
@@ -443,6 +490,15 @@ const PeopleList = function (el) {
     );
     peopleContainer = el.querySelector(".wsu-people-list__filters-container");
     peopleElements = el.querySelectorAll(".js-people-list__person");
+
+    // initial run for processing url params
+    processPeopleFilters();
+
+    // handle form submit
+    filtersContainer.addEventListener("submit", function (e) {
+      e.preventDefault();
+      return false;
+    });
 
     // filter on select option change
     filtersContainer.addEventListener("change", function (e) {
@@ -562,9 +618,9 @@ const PeopleList = function (el) {
       people = JSON.parse(data);
 
       generateHTML(people);
-
       setTimeout(() => {
         bindEvents(el);
+        isInitialized = true;
       }, 0);
     });
   }

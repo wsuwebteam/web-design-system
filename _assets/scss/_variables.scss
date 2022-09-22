@@ -30,12 +30,14 @@ $wsu-breakpoint--sxxultrawide:  2400px;
 $wsu-breakpoint--xxultrawide:   1900px;
 $wsu-breakpoint--xultrawide:   1750px;
 $wsu-breakpoint--ultrawide:    1600px;
+$wsu-breakpoint--xdesktop:     1400px;
 $wsu-breakpoint--desktop:      1260px;
 $wsu-breakpoint--tablet-large: 992px;
 $wsu-breakpoint--tablet-medium: 860px;
 $wsu-breakpoint--tablet:       768px;
 $wsu-breakpoint--phone:        576px;
 $wsu-breakpoint--phone-small:  450px;
+$wsu-breakpoint--phone-xsmall:  380px;
 
 $wsu-breakpoint-map: (
     'xxultrawide':  2400px,
@@ -238,6 +240,7 @@ $wsu-font-weight--xextrabold: 900;
 
 
 $wsu-height--global-header: 64px;
+$wsu-height--system-header: 100px;
 
 /* ========================================================
 == Image Sizes ==

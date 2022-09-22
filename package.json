@@ -45,6 +45,7 @@
         "registry": "https://npm.pkg.github.com/"
     },
     "dependencies": {
+        "dompurify": "^2.4.0",
         "fuse.js": "^6.5.3",
         "lodash": "^4.17.21",
         "swiper": "^6.8.4"

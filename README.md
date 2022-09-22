@@ -1,3 +1,7 @@
+# web-design-system
+To build dev, run: npm run build:gulp and npm run build:js
+
+To build prod, run: npm run build
 # WSU Web Design System
 We aim to create a more beautiful, accessible, and usable web presence for the WSU System. Storybook will define all of the unique components, page templates, and design tokens available for the WSU System to adopt and use in their own web sites and applications.
 

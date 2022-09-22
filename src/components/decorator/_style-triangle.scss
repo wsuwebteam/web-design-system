@@ -13,7 +13,8 @@ div[class*="decorator--style-triangle"] {
 div[class*="decorator--style-triangle-crimson"] {
 	background-color: $wsu-color--crimson;
 }
-
+.wsu-decorator--style-triangle-gray-top-right,
+.wsu-decorator--style-triangle-gray-top-left,
 .wsu-decorator--style-triangle-gray-left,
 .wsu-decorator--style-triangle-gray-right {
 	background-color: $wsu-color--gray-5;
@@ -27,6 +28,16 @@ div[class*="decorator--style-triangle-crimson"] {
 .wsu-decorator--style-triangle-gray-left,
 .wsu-decorator--style-triangle-crimson-left {
 	clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+}
+
+.wsu-decorator--style-triangle-gray-top-left,
+.wsu-decorator--style-triangle-crimson-top-left {
+	clip-path: polygon(0 0,100% 0,50% 100%,0 100%);
+}
+
+.wsu-decorator--style-triangle-gray-top-right,
+.wsu-decorator--style-triangle-crimson-top-right {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
 }
 
 .wsu-decorator--style-triangle-crimson-wsu-steep-right {
