@@ -1,0 +1,31 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+@each $breakpointName, $breakpointValue in $wsu-breakpoint-map {
+
+    @media screen and ( max-width: $breakpointValue ) {
+
+        .wsu-break--#{$breakpointName}-25 {
+            width: 25% !important;
+        }
+
+        .wsu-break--#{$breakpointName}-33 {
+            width: 33.33% !important;
+        }
+
+        .wsu-break--#{$breakpointName}-50 {
+            width: 50% !important;
+        }
+
+        .wsu-break--#{$breakpointName}-66 {
+            width: 66.66% !important;
+        }
+
+        .wsu-break--#{$breakpointName}-100 {
+            width: 100% !important;
+        }
+
+    }
+
+}
