@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { sanitize } from "dompurify";
+//import { sanitize } from "dompurify";
 import { groupBy, isSafeInteger } from "lodash";
 import {
   wsuAriaExpanded,
@@ -318,9 +318,7 @@ const PeopleList = function (el) {
 
     // create search filter
     if (filters.includes("search")) {
-      const defaultValue = urlParams.has("search")
-        ? sanitize(urlParams.get("search"))
-        : "";
+      const defaultValue = urlParams.has("search") ? urlParams.get("search") : "";
       content += `        
         <div class="wsu-people-list__search-filter">
             <input class="wsu-people-list__search-input" type="text" placeholder="${el.dataset.searchFilterLabel}" value="${defaultValue}"/>
