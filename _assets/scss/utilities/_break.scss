@@ -6,6 +6,11 @@
 
     @media screen and ( max-width: $breakpointValue ) {
 
+        .wsu-break--#{$breakpointName}-auto {
+            width: auto !important;
+            flex-grow: 1 !important;
+        }
+
         .wsu-break--#{$breakpointName}-25 {
             width: 25% !important;
         }
@@ -20,6 +25,10 @@
 
         .wsu-break--#{$breakpointName}-66 {
             width: 66.66% !important;
+        }
+
+        .wsu-break--#{$breakpointName}-75 {
+            width: 75% !important;
         }
 
         .wsu-break--#{$breakpointName}-100 {
