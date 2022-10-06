@@ -1,6 +1,7 @@
 @import '../variables';
 
 /*----------  Alignment  ----------*/
+.wsu-align-item,
 .wsu-align {
 
     &--right {
@@ -25,6 +26,7 @@
     }
 }
 
+.wsu-align-text,
 .wsu-text-align {
 
     &--right {
