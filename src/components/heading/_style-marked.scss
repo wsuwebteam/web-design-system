@@ -1,0 +1,58 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-heading--style-marked {
+    
+    &::before,
+    &::after {
+        width: 50px;
+        height: 6px;
+        display: block;
+        background-color: $wsu-color--crimson-light;
+        content: '';
+    }
+
+    &::after {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &::before {
+        margin-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+        display: none;
+    }
+}
+
+.wsu-heading--mark-centered {
+    text-align: center;
+    &::before,
+    &::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.wsu-heading--mark-top {
+    &::after {
+        display: none;
+    }
+
+    &::before {
+        display: block;
+    }
+}
+
+.wsu-heading--mark-crimson {
+    &::before,
+    &::after {
+        background-color: $wsu-color--crimson-light;
+    }
+}
+
+.wsu-heading--mark-gray {
+    &::before,
+    &::after {
+        background-color: $wsu-color--gray-30;
+    }
+}
