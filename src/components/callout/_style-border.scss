@@ -1,0 +1,32 @@
+.wsu-callout--style-border-right,
+.wsu-callout--style-border-left,
+.wsu-callout--style-border-bottom,
+.wsu-callout--style-border-top {
+    background-color: white;
+    padding: $wsu-spacing--medium $wsu-spacing--xmedium 1px;
+    box-sizing: border-box;
+    margin-bottom: $wsu-spacing--component;
+    position: relative;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.wsu-callout--style-border-top {
+    border-top: 4px solid $wsu-color--crimson;
+}
+
+
+.wsu-callout--style-border-bottom {
+    border-bottom: 4px solid $wsu-color--crimson;
+}
+
+.wsu-callout--style-border-left {
+    border-left: 4px solid $wsu-color--crimson;
+}
+
+.wsu-callout--style-border-right {
+    border-right: 4px solid $wsu-color--crimson;
+}
+
