@@ -43,16 +43,50 @@
     }
 }
 
-.wsu-heading--mark-crimson {
-    &::before,
-    &::after {
-        background-color: $wsu-color--crimson-light;
-    }
-}
+.wsu-heading--mark-color {
 
-.wsu-heading--mark-gray {
-    &::before,
-    &::after {
-        background-color: $wsu-color--gray-30;
+    &-crimson {
+        &::before,
+        &::after {
+            background-color: $wsu-color--crimson-light;
+        }
+    }
+
+    &-gray {
+        &::before,
+        &::after {
+            background-color: $wsu-color--gray-30;
+        }
+    }
+
+    &-autumn {
+        &::before,
+        &::after {
+            background-color: $wsu-color--accent-autumn;
+        }
+    }
+    &-goldfinch {
+        &::before,
+        &::after {
+            background-color: $wsu-color--accent-goldfinch;
+        }
+    }
+    &-vineyard {
+        &::before,
+        &::after {
+            background-color: $wsu-color--accent-vineyard;
+        }
+    }
+    &-pacificsky {
+        &::before,
+        &::after {
+            background-color: $wsu-color--accent-pacificsky;
+        }
+    }
+    &-midnight {
+        &::before,
+        &::after {
+            background-color: $wsu-color--accent-midnight;
+        }
     }
 }
