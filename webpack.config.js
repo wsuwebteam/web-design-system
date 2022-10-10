@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const args = require('./env');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = env => {
 
@@ -43,6 +44,7 @@ module.exports = env => {
 			],
 		},
 		plugins: [
+			new NodePolyfillPlugin(),
 			new webpack.DefinePlugin({
 				//PEOPLE_API_BASE_URL: DEV ? JSON.stringify('http://wsuwp.local') : JSON.stringify('https://people.wsu.edu')
 				PEOPLE_API_BASE_URL: JSON.stringify('https://people.wsu.edu')
