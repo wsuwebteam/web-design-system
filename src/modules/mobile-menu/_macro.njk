@@ -1,8 +1,9 @@
 {% from "menu/_macro.njk" import menu %}
 {% from "menu-audience/_macro.njk" import menuAudience %}
 {% from "search/_macro.njk" import search %}
+{% from "nested-menu/_macro.njk" import nestedMenu %}
 
-{% macro mobileMenu(bodyClasses, startOpen=true) %}
+{% macro mobileMenu(bodyClasses, startOpen=true, nested=true) %}
 <nav class="wsu-mobile-menu{{ bodyClasses }}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
     <div class="wsu-mobile-menu__overlay wsu-mobile-menu--toggle"></div>
     <div class="wsu-mobile-menu__toggle-container">
@@ -10,12 +11,18 @@
     </div>
     <button class="wsu-mobile-menu__open-button wsu-mobile-menu--open" aria-label="Open site menu">Menu</button>
     <div class="wsu-mobile-menu__panel">
-        
+        {% if true == nested %}
+        <div class="wsu-nested-menu__breadcrumbs"><a class="wsu-nested-menu__breadcrumb">Breadcrumbs to Refer User</a> / <a class="wsu-nested-menu__breadcrumb">To Site Homepage</a> /</div>
+        <h2 class="wsu-nested-menu__heading">
+            Nested Menu Title
+        </h2>
+        {{ nestedMenu() }}
+        {% endif %}
+        {% if false == nested %}
         <button class="wsu-mobile-menu__quicklinks">Quick Links / Search</button>
         <div class="wsu-mobile-menu__quicklinks-overlay">
             <div class="wsu-mobile-menu__quicklinks-top">
                 <h2 id="modalTitle" class="wsu-mobile-menu__quicklinks-overlay-title">Search WSU</h2>
-                
             </div>
             <div class="wsu-mobile-menu__quicklinks-bottom">
                 {{ search() }}
@@ -30,7 +37,6 @@
                 </div>
                 <button class="wsu-mobile-menu__quicklinks-close" aria-label="Close">CLOSE SEARCH</button>
             </div>
-            
         </div>
         <ul class="wsu-menu wsu-menu--mobile">
             <li>
@@ -59,6 +65,7 @@
             </li>
         </ul>
         {{ menuAudience() }}
+        {% endif %}
         <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
     </div>
 </nav>
