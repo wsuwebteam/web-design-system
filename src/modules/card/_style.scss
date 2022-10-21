@@ -17,6 +17,14 @@
         }
        
     }
+    &--layout-reversed{
+        @media screen and (min-width: $wsu-breakpoint--tablet )  {
+            flex-direction: row-reverse;
+            .wsu-card__content {
+                padding-left: 0 !important;
+            }
+        }
+    }
 
     // Legacy Code
     &__wrapper {
@@ -312,3 +320,6 @@
 @import './style--framed';
 @import './style--boxed';
 @import './style--dropshadow';
+@import './style--horizontal-25';
+@import './style--horizontal-33';
+@import './style--horizontal-50';

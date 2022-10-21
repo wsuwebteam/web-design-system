@@ -1,0 +1,246 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../components/menu/mixins';
+
+.wsu-nested-menu{
+    display: flex;
+    flex-direction: column;
+
+    &__heading{
+        padding: 1rem 1.5rem 15px 1.5rem;
+        margin-bottom: 0;
+
+    }
+    &__breadcrumb{
+        text-decoration: underline;
+    }
+    &__breadcrumbs{
+        font-size: 14px;
+        margin-bottom: 0;
+        padding: 1.5rem 2.5rem 0 1.5rem;
+    }
+
+    .wsu-menu--nested{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        flex-grow: 1;
+        visibility: inherit;
+    }
+    .wsu-menu--nested:focus > li::after,
+    .wsu-menu--nested:focus-within > li::after,
+    .wsu-menu--nested:hover > li::after,
+    .wsu-menu--nested:focus-within > li[aria-expanded]>a::after,
+    .wsu-menu--nested:focus > li[aria-expanded]>a::after,
+    .wsu-menu--nested:hover > li[aria-expanded]>a::after{
+        opacity: 1 !important;
+    }
+    .wsu-menu--nested li{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .wsu-menu--nested li:after{
+        content: '';
+        width: 100%;
+        background-color: #e6e6e6;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        opacity: 0;
+        transition: opacity .2s cubic-bezier(0,0,.03,1);
+    }
+
+    .wsu-menu--nested>li:first-child a::before{
+        content: '\F122';
+        font-family: wsu-icons;
+        margin-right: 0.3em;
+    }
+    .wsu-menu--nested ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: max-height .4s cubic-bezier(0,0,.03,1);
+        overflow: hidden;
+    }
+    .wsu-menu--nested li[aria-expanded=false]>ul {
+        visibility: hidden;
+        max-height: 0!important;
+    }
+    .wsu-menu--nested li[aria-expanded]>a {
+        max-width: calc(100% - 50px);
+    }
+    .wsu-menu--nested li li a{
+        font-weight: 400;
+        padding-left: calc(1.5rem + 0.875rem);
+        padding-top: 0.55rem;
+        padding-bottom: 0.55rem;
+    }
+    .wsu-menu--nested li li li a{
+        padding-left: calc(1.5rem + 1.75rem);
+    }
+    .wsu-menu--nested a{
+        text-decoration: none;
+        color: inherit;
+        background-color: transparent;
+        border-left: 5px solid transparent;
+        border-right: none;
+        border-bottom: none;
+        border-top: none;
+        outline: 0;
+        box-shadow: none;
+        font-weight: inherit;
+        margin: 0;
+        padding: 0.7rem 1.5rem;
+        flex-grow: 1;
+        border-radius: 0;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: .875rem;
+        font-weight: 600;
+        position: relative;
+        line-height: 1.5;
+        cursor: pointer;
+    }
+    .wsu-menu--nested button:first-child{
+        text-decoration: none;
+        color: inherit;
+        background-color: transparent;
+        border-left: 5px solid transparent;
+        border-right: none;
+        border-bottom: none;
+        border-top: none;
+        outline: 0;
+        box-shadow: none;
+        font-weight: inherit;
+        margin: 0;
+        padding: 0.7rem 1.5rem;
+        flex-grow: 1;
+        border-radius: 0;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: .875rem;
+        font-weight: 600;
+        position: relative;
+        line-height: 1.5;
+        cursor: pointer;
+    }
+    .wsu-menu--nested button:hover{
+        background-color: #e6e6e6;
+    }
+    .wsu-menu--nested button::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: transparent;
+        bottom: 0.7rem;
+        right: 25px;
+        transition: right .2s cubic-bezier(0,0,.03,1),width .2s cubic-bezier(0,0,.03,1);
+    }
+    .wsu-menu--nested button:first-child:hover::before{
+        width: 12px;
+        background-color: gray;
+        right: 19px;
+    }
+    .wsu-menu--nested button:first-child::after{
+        content: '\F103';
+        font-family: wsu-icons;
+        transition: transform .2s;
+        cursor: pointer;
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+    }
+    .wsu-menu--nested li[aria-expanded=true]>button:first-child::after{
+        transform: rotate(180deg);
+    }
+    .wsu-menu--nested a+button{
+        width: 50px;
+        flex-grow: 0;
+        margin: 0;
+        padding: 0;
+        color: inherit;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        background-color: transparent;
+        position: relative;
+    }
+    .wsu-menu--nested a+button:hover{
+        background-color: #e6e6e6;
+    }
+    .wsu-menu--nested a+button:hover::before{
+        width: 12px;
+        background-color: gray;
+        right: 19px;
+    }
+    .wsu-menu--nested a+button::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: transparent;
+        bottom: 0.7rem;
+        right: 25px;
+        transition: right .2s cubic-bezier(0,0,.03,1),width .2s cubic-bezier(0,0,.03,1);
+    }
+    .wsu-menu--nested a+button::after{
+        content: '\F103';
+        font-family: wsu-icons;
+        transition: transform .2s;
+        cursor: pointer;
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wsu-menu--nested li[aria-expanded=true]>button::after{
+        transform: rotate(180deg);
+    }
+    .wsu-menu--nested>li[aria-expanded]>a::after{
+        content: '';
+        width: 1px;
+        background-color: #e6e6e6;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        opacity: 0;
+        transition: opacity .2s cubic-bezier(0,0,.03,1);
+    }
+    .wsu-menu--nested:focus-within .wsu-menu>li[aria-expanded]>a::after,.wsu-menu--nested:hover .wsu-menu>li[aria-expanded]>a::after{
+        opacity: 1!important;
+    }
+    .wsu-menu--nested a:hover{
+        background-color: #e6e6e6;
+        border-left: 5px solid #999;
+    }
+
+    .wsu-menu--nested a[aria-current=page]{
+        border-left: 5px solid #ca1237!important;
+    }
+    
+}
+
+

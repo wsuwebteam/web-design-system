@@ -1,0 +1,10 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-header-site--nested {
+    .wsu-header-site {
+        &__title{
+            font-size:$wsu-font-size--large;
+        }
+    }
+}

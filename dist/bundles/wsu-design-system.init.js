@@ -1,2 +1,0 @@
-(()=>{"use strict";var e;document.documentElement.classList.add("wsu-has-js"),console.log(window.matchMedia("(prefers-reduced-motion: reduce)").matches),null!==(e=window.matchMedia("(prefers-reduced-motion: reduce)").matches)&&void 0!==e&&e||document.documentElement.classList.add("wsu-reduce-motion")})();
-//# sourceMappingURL=wsu-design-system.init.js.map
