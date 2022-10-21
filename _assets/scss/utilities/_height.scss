@@ -1,0 +1,10 @@
+@import '../variables';
+
+
+@each $heightName, $height in $wsu-height-map {
+
+    .wsu-height--#{$heightName} {
+        min-height: $height !important;
+    }
+
+}
