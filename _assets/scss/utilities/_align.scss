@@ -5,16 +5,16 @@
 .wsu-align {
 
     &--right {
-        margin-left: auto;
+        margin-left: auto !important;
     }
 
     &--left {
-        margin-right: auto;
+        margin-right: auto !important;
     }
 
     &--center {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     
@@ -30,15 +30,15 @@
 .wsu-text-align {
 
     &--right {
-        text-align: right;
+        text-align: right !important;
     }
 
     &--left {
-        text-align: left;
+        text-align: left !important;
     }
 
     &--center {
-        text-align: center;
+        text-align: center !important;
     }
 }
 
