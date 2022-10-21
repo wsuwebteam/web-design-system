@@ -18,6 +18,12 @@
         }
         .wsu-image-frame{
             min-width: 25%;
+            aspect-ratio: 4/3;
+            padding-top: 1.25rem;
+            & img{
+                object-fit: contain;
+                object-position: left 1.25rem;
+            }
         }
     }
     .wsu-card--style-horizontal-25.wsu-card--style-boxed .wsu-image-frame img
