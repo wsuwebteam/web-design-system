@@ -18,11 +18,7 @@
         }
         .wsu-image-frame{
             min-width: 33.3%;
-            min-height: 300px;
+            min-height: $wsu-height--xxsmall;
         }
-    }
-    .wsu-card--style-horizontal-33.wsu-card--style-boxed .wsu-image-frame img
-    {
-        border-radius: 3px 0 0 3px;
     }
 }
