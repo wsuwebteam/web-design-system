@@ -6,7 +6,7 @@
         display: flex;
         margin-bottom: 2.25rem !important;
         
-        .wsu-card{
+        .wsu-card {
 
             &__content {
                 padding-left: 1.5rem;
@@ -16,11 +16,14 @@
                 justify-content: center;
             }
         }
-        .wsu-image-frame{
+        .wsu-image-frame {
             min-width: 50%;
             min-height: $wsu-height--small;
             
         }
+    }
+    .wsu-card-group--per-row-2 .wsu-card--style-horizontal-50 .wsu-image-frame {
+        min-height: 0;
     }
 }
     
