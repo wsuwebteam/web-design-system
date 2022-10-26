@@ -19,10 +19,13 @@
         .wsu-image-frame {
             min-width: 50%;
             min-height: $wsu-height--small;
-            
         }
+        .wsu-title {
+            font-size: $wsu-font-size--xlarge;
+        }
+
     }
-    .wsu-card-group--per-row-2 .wsu-card--style-horizontal-50 .wsu-image-frame {
+    .wsu-card-group--per-row-2 .wsu-card--style-horizontal-50 .wsu-image-frame, .wsu-card-wrapper--per-row-2 .wsu-card--style-horizontal-50 .wsu-image-frame {
         min-height: 0;
     }
 }
