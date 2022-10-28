@@ -1,0 +1,7343 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?ver=0.15.2.1" media='all' />
+    <link rel="stylesheet" href="../../bundles/wsu-design-system.css" media='all' />
+    <style>
+        .wsu-custom-demo {
+            margin: 0 80px;
+            padding: 80px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../../bundles/standalone/programs-list/styles-wds.css" media='all' />
+
+    <script src="../../bundles/wsu-design-system.init.js"></script>
+</head>
+
+<body>
+    <div class="wsu-custom-demo">
+
+
+
+
+        <div class="wsu-programs-list ">
+
+            <div class="wsu-programs-list__controls">
+                <div class="wsu-programs-list__control--search">
+                    <input class="wsu-programs-list__search-input" type="text" placeholder="Search Degree Programs">
+                </div>
+
+                <div class="wsu-programs-list__control-group js-programs-list__select-controls">
+                    <div class="wsu-programs-list__control--select">
+                        <button class="wsu-button wsu-button--tertiary wsu-button--size-small wsu-programs-list__control-button" aria-expanded="false">
+                            <span class="wsu-programs-list__button-text">Area of Interest</span>
+                            <i class="wsu-icon wsu-i-arrow-down-carrot wsu-programs-list__button-icon"></i>
+                        </button>
+                        <div class="wsu-programs-list__filter-options">
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="agricultural-sciences" name="area" value="agricultural-sciences">
+                                <label for="agricultural-sciences">Agricultural Sciences</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="art-architecture-and-design" name="area" value="art-architecture-and-design">
+                                <label for="art-architecture-and-design">Art, Architecture, and Design</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="biological-and-environmental-sciences" name="area" value="biological-and-environmental-sciences">
+                                <label for="biological-and-environmental-sciences">Biological and Environmental Sciences</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="business" name="area" value="business">
+                                <label for="business">Business</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="communication" name="area" value="communication">
+                                <label for="communication">Communication</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="cultural-studies-and-foreign-languages" name="area" value="cultural-studies-and-foreign-languages">
+                                <label for="cultural-studies-and-foreign-languages">Cultural Studies and Foreign Languages</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="economics" name="area" value="economics">
+                                <label for="economics">Economics</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="education" name="area" value="education">
+                                <label for="education">Education</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="engineering-and-computer-science" name="area" value="engineering-and-computer-science">
+                                <label for="engineering-and-computer-science">Engineering and Computer Science</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="health-sciences" name="area" value="health-sciences">
+                                <label for="health-sciences">Health Sciences</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="history-literature-and-philosophy" name="area" value="history-literature-and-philosophy">
+                                <label for="history-literature-and-philosophy">History, Literature, and Philosophy</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="music" name="area" value="music">
+                                <label for="music">Music</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="physical-and-mathematical-sciences" name="area" value="physical-and-mathematical-sciences">
+                                <label for="physical-and-mathematical-sciences">Physical and Mathematical Sciences</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="pre-professional-studies" name="area" value="pre-professional-studies">
+                                <label for="pre-professional-studies">Pre-Professional Studies</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="social-sciences" name="area" value="social-sciences">
+                                <label for="social-sciences">Social Sciences</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="sport-and-fitness" name="area" value="sport-and-fitness">
+                                <label for="sport-and-fitness">Sport and Fitness</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="wsu-programs-list__control--select">
+                        <button class="wsu-button wsu-button--tertiary wsu-button--size-small wsu-programs-list__control-button" aria-expanded="false">
+                            <span class="wsu-programs-list__button-text">Degree Type</span>
+                            <i class="wsu-icon wsu-i-arrow-down-carrot wsu-programs-list__button-icon"></i>
+                        </button>
+                        <div class="wsu-programs-list__filter-options">
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="major" name="degreeType" value="major">
+                                <label for="major">Major</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="minor" name="degreeType" value="minor">
+                                <label for="minor">Minor</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="certificate" name="degreeType" value="certificate">
+                                <label for="certificate">Certificate</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="masters" name="degreeType" value="masters">
+                                <label for="masters">Masters</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="wsu-programs-list__control--select">
+                        <button class="wsu-button wsu-button--tertiary wsu-button--size-small wsu-programs-list__control-button" aria-expanded="false">
+                            <span class="wsu-programs-list__button-text">Campus</span>
+                            <i class="wsu-icon wsu-i-arrow-down-carrot wsu-programs-list__button-icon"></i>
+                        </button>
+                        <div class="wsu-programs-list__filter-options">
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="bremerton" name="campus" value="bremerton">
+                                <label for="bremerton">Bremerton</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="everett" name="campus" value="everett">
+                                <label for="everett">Everett</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="extension" name="campus" value="extension">
+                                <label for="extension">Extension</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="global-campus" name="campus" value="global-campus">
+                                <label for="global-campus">Global Campus</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="health-sciences-spokane" name="campus" value="health-sciences-spokane">
+                                <label for="health-sciences-spokane">Health Sciences Spokane</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="pullman" name="campus" value="pullman">
+                                <label for="pullman">Pullman</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="research-centers" name="campus" value="research-centers">
+                                <label for="research-centers">Research Centers</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="seattle" name="campus" value="seattle">
+                                <label for="seattle">Seattle</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="tri-cities" name="campus" value="tri-cities">
+                                <label for="tri-cities">Tri-Cities</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="vancouver" name="campus" value="vancouver">
+                                <label for="vancouver">Vancouver</label>
+                            </div>
+
+                            <div class="wsu-programs-list__filter-option">
+                                <input class="js-programs-list__filter-option-input" type="checkbox" id="westdowntown-seattle" name="campus" value="westdowntown-seattle">
+                                <label for="westdowntown-seattle">West/Downtown Seattle</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="js-programs-list__list-groups">
+
+
+                <div id="program-group-a" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">A</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-00" class="wsu-programs-list__list-item" data-title="Accounting" data-areas="pre-professional-studies|education|physical-and-mathematical-sciences|music" data-campus-degrees="tri-cities--certificate|global-campus--certificate|health-sciences-spokane--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Accounting</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|global-campus|health-sciences-spokane">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-01" class="wsu-programs-list__list-item" data-title="Accounting (4+1 BS-MS)" data-areas="business|pre-professional-studies|music|biological-and-environmental-sciences" data-campus-degrees="pullman--major|health-sciences-spokane--major|seattle--major|westdowntown-seattle--minor|tri-cities--minor|global-campus--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Accounting (4+1 BS-MS)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|health-sciences-spokane|seattle">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|tri-cities|global-campus">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-02" class="wsu-programs-list__list-item" data-title="Accounting (MSAC)" data-areas="communication|biological-and-environmental-sciences|music|art-architecture-and-design" data-campus-degrees="vancouver--major|extension--major|westdowntown-seattle--major|global-campus--major|research-centers--minor|pullman--minor|health-sciences-spokane--minor">
+
+                            <span class="wsu-programs-list__list-link">Accounting (MSAC)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|extension|westdowntown-seattle|global-campus">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|pullman|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-03" class="wsu-programs-list__list-item" data-title="Acting" data-areas="sport-and-fitness|education" data-campus-degrees="everett--masters|everett--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Acting</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-04" class="wsu-programs-list__list-item" data-title="Africana Studies" data-areas="art-architecture-and-design" data-campus-degrees="bremerton--minor|pullman--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Africana Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-05" class="wsu-programs-list__list-item" data-title="American Studies" data-areas="communication|cultural-studies-and-foreign-languages|music|art-architecture-and-design" data-campus-degrees="pullman--masters|health-sciences-spokane--masters|seattle--masters|global-campus--masters|westdowntown-seattle--masters|everett--masters|research-centers--masters|vancouver--masters|bremerton--masters|extension--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">American Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|health-sciences-spokane|seattle|global-campus|westdowntown-seattle|everett|research-centers|vancouver|bremerton|extension">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-06" class="wsu-programs-list__list-item" data-title="Anthropology" data-areas="history-literature-and-philosophy|health-sciences|sport-and-fitness" data-campus-degrees="global-campus--certificate|vancouver--major|everett--masters">
+
+                            <span class="wsu-programs-list__list-link">Anthropology</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-07" class="wsu-programs-list__list-item" data-title="Applied Mathematics (MSAM)" data-areas="communication|physical-and-mathematical-sciences|engineering-and-computer-science|cultural-studies-and-foreign-languages" data-campus-degrees="research-centers--certificate|tri-cities--certificate|global-campus--certificate|pullman--certificate|vancouver--certificate|everett--certificate|health-sciences-spokane--certificate|bremerton--certificate|seattle--certificate|westdowntown-seattle--certificate">
+
+                            <span class="wsu-programs-list__list-link">Applied Mathematics (MSAM)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|tri-cities|global-campus|pullman|vancouver|everett|health-sciences-spokane|bremerton|seattle|westdowntown-seattle">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-08" class="wsu-programs-list__list-item" data-title="Art History" data-areas="health-sciences|music" data-campus-degrees="tri-cities--masters|pullman--masters|health-sciences-spokane--certificate|seattle--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Art History</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|pullman">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|seattle">Certificate</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-b" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">B</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-10" class="wsu-programs-list__list-item" data-title="Biochemistry" data-areas="pre-professional-studies|business" data-campus-degrees="bremerton--masters|tri-cities--masters|everett--masters|health-sciences-spokane--minor|seattle--minor|westdowntown-seattle--minor|extension--major|vancouver--major|research-centers--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Biochemistry</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|tri-cities|everett">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|seattle|westdowntown-seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|vancouver|research-centers">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-11" class="wsu-programs-list__list-item" data-title="Bioinformatics" data-areas="pre-professional-studies|business|economics|social-sciences" data-campus-degrees="tri-cities--minor|health-sciences-spokane--minor|vancouver--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Bioinformatics</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|health-sciences-spokane|vancouver">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-12" class="wsu-programs-list__list-item" data-title="Biology" data-areas="social-sciences|pre-professional-studies" data-campus-degrees="seattle--masters|bremerton--masters|pullman--masters|global-campus--masters|extension--masters|health-sciences-spokane--masters|everett--masters|vancouver--masters|research-centers--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Biology</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|bremerton|pullman|global-campus|extension|health-sciences-spokane|everett|vancouver|research-centers">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-13" class="wsu-programs-list__list-item" data-title="Business Analytics" data-areas="sport-and-fitness" data-campus-degrees="global-campus--major|research-centers--major|bremerton--masters|vancouver--masters|pullman--certificate|extension--certificate">
+
+                            <span class="wsu-programs-list__list-link">Business Analytics</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|research-centers">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|vancouver">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|extension">Certificate</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-c" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">C</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-20" class="wsu-programs-list__list-item" data-title="Chemistry" data-areas="education|health-sciences|social-sciences|economics" data-campus-degrees="vancouver--major|pullman--major">
+
+                            <span class="wsu-programs-list__list-link">Chemistry</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|pullman">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-21" class="wsu-programs-list__list-item" data-title="Chiropractic" data-areas="engineering-and-computer-science" data-campus-degrees="global-campus--major|seattle--major|westdowntown-seattle--major|extension--major|vancouver--minor|research-centers--minor|tri-cities--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Chiropractic</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|seattle|westdowntown-seattle|extension">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|research-centers|tri-cities">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-22" class="wsu-programs-list__list-item" data-title="Civic and Community Leadership" data-areas="economics|sport-and-fitness|communication|cultural-studies-and-foreign-languages" data-campus-degrees="westdowntown-seattle--certificate|everett--certificate">
+
+                            <span class="wsu-programs-list__list-link">Civic and Community Leadership</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|everett">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-23" class="wsu-programs-list__list-item" data-title="Clinical Lab Science (CLS)" data-areas="agricultural-sciences|education" data-campus-degrees="bremerton--minor|tri-cities--minor|westdowntown-seattle--minor|research-centers--minor|global-campus--minor|vancouver--minor">
+
+                            <span class="wsu-programs-list__list-link">Clinical Lab Science (CLS)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|tri-cities|westdowntown-seattle|research-centers|global-campus|vancouver">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-24" class="wsu-programs-list__list-item" data-title="Communication Arts (General)" data-areas="sport-and-fitness|cultural-studies-and-foreign-languages" data-campus-degrees="pullman--minor|everett--minor|vancouver--minor|extension--minor|tri-cities--minor|westdowntown-seattle--minor|research-centers--minor|health-sciences-spokane--minor">
+
+                            <span class="wsu-programs-list__list-link">Communication Arts (General)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|everett|vancouver|extension|tri-cities|westdowntown-seattle|research-centers|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-25" class="wsu-programs-list__list-item" data-title="Community Mental Health" data-areas="pre-professional-studies" data-campus-degrees="health-sciences-spokane--major|bremerton--major|pullman--certificate|vancouver--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Community Mental Health</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|bremerton">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|vancouver">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-26" class="wsu-programs-list__list-item" data-title="Computer Science" data-areas="history-literature-and-philosophy|cultural-studies-and-foreign-languages|pre-professional-studies|physical-and-mathematical-sciences" data-campus-degrees="westdowntown-seattle--major|research-centers--major|pullman--major|seattle--major|global-campus--major|tri-cities--minor|health-sciences-spokane--minor|everett--minor|bremerton--minor|extension--minor">
+
+                            <span class="wsu-programs-list__list-link">Computer Science</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|research-centers|pullman|seattle|global-campus">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|health-sciences-spokane|everett|bremerton|extension">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-27" class="wsu-programs-list__list-item" data-title="Computer Science (MSCS)" data-areas="engineering-and-computer-science|history-literature-and-philosophy" data-campus-degrees="health-sciences-spokane--major|tri-cities--major|vancouver--minor|research-centers--minor|bremerton--certificate">
+
+                            <span class="wsu-programs-list__list-link">Computer Science (MSCS)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|tri-cities">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|research-centers">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-28" class="wsu-programs-list__list-item" data-title="Contemplative Studies" data-areas="history-literature-and-philosophy|music|engineering-and-computer-science|communication" data-campus-degrees="vancouver--major|research-centers--major|everett--major|bremerton--major">
+
+                            <span class="wsu-programs-list__list-link">Contemplative Studies</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|research-centers|everett|bremerton">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-29" class="wsu-programs-list__list-item" data-title="Contemporary Arts" data-areas="engineering-and-computer-science|art-architecture-and-design" data-campus-degrees="everett--minor|pullman--minor|tri-cities--minor|westdowntown-seattle--minor|health-sciences-spokane--minor|seattle--masters|extension--masters|global-campus--masters|research-centers--masters|bremerton--masters">
+
+                            <span class="wsu-programs-list__list-link">Contemporary Arts</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|pullman|tri-cities|westdowntown-seattle|health-sciences-spokane">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|extension|global-campus|research-centers|bremerton">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-210" class="wsu-programs-list__list-item" data-title="Contemporary Arts: Professional Communication" data-areas="engineering-and-computer-science|cultural-studies-and-foreign-languages|physical-and-mathematical-sciences|business" data-campus-degrees="pullman--certificate|everett--certificate|research-centers--certificate|tri-cities--certificate|vancouver--certificate|global-campus--certificate|bremerton--certificate|extension--certificate|seattle--certificate|westdowntown-seattle--certificate">
+
+                            <span class="wsu-programs-list__list-link">Contemporary Arts: Professional Communication</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|everett|research-centers|tri-cities|vancouver|global-campus|bremerton|extension|seattle|westdowntown-seattle">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-211" class="wsu-programs-list__list-item" data-title="Contemporary Instructional Design (MCID)" data-areas="biological-and-environmental-sciences|business" data-campus-degrees="tri-cities--major|westdowntown-seattle--major|bremerton--major|pullman--major|vancouver--major|research-centers--masters|health-sciences-spokane--masters|extension--masters|global-campus--masters|seattle--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Contemporary Instructional Design (MCID)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|westdowntown-seattle|bremerton|pullman|vancouver">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|health-sciences-spokane|extension|global-campus|seattle">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-212" class="wsu-programs-list__list-item" data-title="Creative Writing" data-areas="economics|health-sciences|history-literature-and-philosophy|social-sciences" data-campus-degrees="extension--masters|research-centers--masters|seattle--masters|vancouver--masters|everett--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Creative Writing</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|research-centers|seattle|vancouver|everett">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-213" class="wsu-programs-list__list-item" data-title="Crime and Justice Studies" data-areas="art-architecture-and-design|music|biological-and-environmental-sciences|physical-and-mathematical-sciences" data-campus-degrees="everett--masters|tri-cities--masters|bremerton--certificate|westdowntown-seattle--certificate|global-campus--major|seattle--major">
+
+                            <span class="wsu-programs-list__list-link">Crime and Justice Studies</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|tri-cities">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|westdowntown-seattle">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|seattle">Major</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-d" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">D</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-30" class="wsu-programs-list__list-item" data-title="Data Science" data-areas="history-literature-and-philosophy|art-architecture-and-design|physical-and-mathematical-sciences|social-sciences" data-campus-degrees="seattle--minor|research-centers--minor|vancouver--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Data Science</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|research-centers|vancouver">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-31" class="wsu-programs-list__list-item" data-title="Data Science (4+1 BS/MS)" data-areas="history-literature-and-philosophy|music|pre-professional-studies|engineering-and-computer-science" data-campus-degrees="extension--minor|westdowntown-seattle--minor|pullman--minor|health-sciences-spokane--certificate|global-campus--certificate">
+
+                            <span class="wsu-programs-list__list-link">Data Science (4+1 BS/MS)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|westdowntown-seattle|pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|global-campus">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-32" class="wsu-programs-list__list-item" data-title="Data Science (MSDS)" data-areas="pre-professional-studies|education|communication" data-campus-degrees="global-campus--certificate|research-centers--certificate|everett--certificate|extension--masters|seattle--masters|tri-cities--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Data Science (MSDS)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|research-centers|everett">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|seattle|tri-cities">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-33" class="wsu-programs-list__list-item" data-title="Dentistry" data-areas="engineering-and-computer-science|history-literature-and-philosophy|cultural-studies-and-foreign-languages|pre-professional-studies" data-campus-degrees="global-campus--masters|seattle--masters|pullman--major|extension--major">
+
+                            <span class="wsu-programs-list__list-link">Dentistry</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|extension">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-34" class="wsu-programs-list__list-item" data-title="Design / Technical Theater" data-areas="engineering-and-computer-science" data-campus-degrees="tri-cities--minor|tri-cities--major|tri-cities--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Design / Technical Theater</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-35" class="wsu-programs-list__list-item" data-title="Digital Filmmaking" data-areas="art-architecture-and-design" data-campus-degrees="tri-cities--certificate|bremerton--certificate|research-centers--certificate|extension--masters|global-campus--masters|seattle--masters|vancouver--minor|everett--minor|health-sciences-spokane--minor">
+
+                            <span class="wsu-programs-list__list-link">Digital Filmmaking</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|bremerton|research-centers">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|global-campus|seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|everett|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-36" class="wsu-programs-list__list-item" data-title="Directing / Stage Management" data-areas="health-sciences|sport-and-fitness|art-architecture-and-design" data-campus-degrees="bremerton--major|research-centers--major|tri-cities--major|vancouver--major|global-campus--major|health-sciences-spokane--major|seattle--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Directing / Stage Management</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|research-centers|tri-cities|vancouver|global-campus|health-sciences-spokane|seattle">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-37" class="wsu-programs-list__list-item" data-title="Drawing and Painting" data-areas="business|biological-and-environmental-sciences" data-campus-degrees="bremerton--masters|tri-cities--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Drawing and Painting</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|tri-cities">Masters</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-e" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">E</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-40" class="wsu-programs-list__list-item" data-title="Earth Science" data-areas="engineering-and-computer-science" data-campus-degrees="extension--major|health-sciences-spokane--major|research-centers--major|tri-cities--major|everett--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Earth Science</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|health-sciences-spokane|research-centers|tri-cities|everett">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-41" class="wsu-programs-list__list-item" data-title="East Asian Studies" data-areas="history-literature-and-philosophy|pre-professional-studies" data-campus-degrees="vancouver--masters|everett--masters|health-sciences-spokane--masters|pullman--masters">
+
+                            <span class="wsu-programs-list__list-link">East Asian Studies</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|everett|health-sciences-spokane|pullman">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-42" class="wsu-programs-list__list-item" data-title="Economics" data-areas="health-sciences|physical-and-mathematical-sciences" data-campus-degrees="global-campus--minor|global-campus--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Economics</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-43" class="wsu-programs-list__list-item" data-title="Education Studies" data-areas="pre-professional-studies|education" data-campus-degrees="bremerton--masters|pullman--masters|global-campus--masters|extension--masters|vancouver--masters|everett--masters|research-centers--masters|health-sciences-spokane--masters|seattle--masters|tri-cities--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Education Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|pullman|global-campus|extension|vancouver|everett|research-centers|health-sciences-spokane|seattle|tri-cities">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-44" class="wsu-programs-list__list-item" data-title="Educational Leadership (MAEL)" data-areas="physical-and-mathematical-sciences" data-campus-degrees="vancouver--major|seattle--major|extension--major|westdowntown-seattle--major|tri-cities--major|health-sciences-spokane--major">
+
+                            <span class="wsu-programs-list__list-link">Educational Leadership (MAEL)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|seattle|extension|westdowntown-seattle|tri-cities|health-sciences-spokane">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-45" class="wsu-programs-list__list-item" data-title="Electronic Art &amp; Animation" data-areas="business|engineering-and-computer-science|cultural-studies-and-foreign-languages|economics" data-campus-degrees="global-campus--masters|bremerton--certificate|pullman--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Electronic Art &amp; Animation</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-46" class="wsu-programs-list__list-item" data-title="Elementary Education (4+1 BS/MA)" data-areas="art-architecture-and-design|economics|health-sciences|pre-professional-studies" data-campus-degrees="pullman--major|bremerton--major|extension--major|westdowntown-seattle--major|global-campus--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Elementary Education (4+1 BS/MA)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|bremerton|extension|westdowntown-seattle|global-campus">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-47" class="wsu-programs-list__list-item" data-title="Elementary Education (Teacher Certification Program)" data-areas="biological-and-environmental-sciences" data-campus-degrees="research-centers--major|tri-cities--major|vancouver--major|health-sciences-spokane--masters|pullman--masters|extension--masters|westdowntown-seattle--minor|bremerton--minor">
+
+                            <span class="wsu-programs-list__list-link">Elementary Education (Teacher Certification Program)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|tri-cities|vancouver">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|pullman|extension">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|bremerton">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-48" class="wsu-programs-list__list-item" data-title="Engineering Physics" data-areas="pre-professional-studies|physical-and-mathematical-sciences|economics" data-campus-degrees="tri-cities--masters|westdowntown-seattle--masters|health-sciences-spokane--masters">
+
+                            <span class="wsu-programs-list__list-link">Engineering Physics</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|westdowntown-seattle|health-sciences-spokane">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-49" class="wsu-programs-list__list-item" data-title="English and Literary Studies" data-areas="biological-and-environmental-sciences|history-literature-and-philosophy|health-sciences|art-architecture-and-design" data-campus-degrees="tri-cities--minor|pullman--minor|global-campus--minor|bremerton--minor|research-centers--minor|westdowntown-seattle--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">English and Literary Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|pullman|global-campus|bremerton|research-centers|westdowntown-seattle">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-410" class="wsu-programs-list__list-item" data-title="Entrepreneurship" data-areas="education|art-architecture-and-design" data-campus-degrees="health-sciences-spokane--minor|global-campus--minor|everett--minor|extension--minor|seattle--major|bremerton--major|vancouver--major|tri-cities--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Entrepreneurship</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|global-campus|everett|extension">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|bremerton|vancouver|tri-cities">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-411" class="wsu-programs-list__list-item" data-title="Environmental Science" data-areas="economics|business|music|art-architecture-and-design" data-campus-degrees="everett--masters|vancouver--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Environmental Science</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|vancouver">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-412" class="wsu-programs-list__list-item" data-title="Environmental Studies" data-areas="health-sciences|music|social-sciences" data-campus-degrees="global-campus--certificate|vancouver--certificate|bremerton--certificate|pullman--certificate|everett--certificate|research-centers--minor|seattle--minor|extension--minor|health-sciences-spokane--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Environmental Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|vancouver|bremerton|pullman|everett">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|seattle|extension|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-413" class="wsu-programs-list__list-item" data-title="Ethnicity &amp; Race Studies" data-areas="sport-and-fitness" data-campus-degrees="tri-cities--certificate|extension--masters|tri-cities--major|extension--major">
+
+                            <span class="wsu-programs-list__list-link">Ethnicity &amp; Race Studies</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|extension">Major</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-f" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">F</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-50" class="wsu-programs-list__list-item" data-title="Finance" data-areas="physical-and-mathematical-sciences|education|communication" data-campus-degrees="health-sciences-spokane--certificate|seattle--certificate|research-centers--minor|everett--minor|westdowntown-seattle--major|global-campus--major">
+
+                            <span class="wsu-programs-list__list-link">Finance</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|seattle">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|everett">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|global-campus">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-51" class="wsu-programs-list__list-item" data-title="Food Studies" data-areas="cultural-studies-and-foreign-languages|history-literature-and-philosophy|art-architecture-and-design|communication" data-campus-degrees="health-sciences-spokane--major|research-centers--major|vancouver--major|bremerton--major|everett--major|seattle--masters|pullman--masters|extension--masters|tri-cities--masters|global-campus--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Food Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|research-centers|vancouver|bremerton|everett">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|pullman|extension|tri-cities|global-campus">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-52" class="wsu-programs-list__list-item" data-title="French" data-areas="music|sport-and-fitness|engineering-and-computer-science" data-campus-degrees="research-centers--major|global-campus--certificate|research-centers--masters|global-campus--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">French</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|global-campus">Masters</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-g" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">G</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-60" class="wsu-programs-list__list-item" data-title="Gender &amp; Sexuality Studies" data-areas="education" data-campus-degrees="tri-cities--certificate|bremerton--certificate|everett--certificate|extension--certificate|westdowntown-seattle--major|pullman--major|vancouver--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Gender &amp; Sexuality Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|bremerton|everett|extension">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|pullman|vancouver">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-61" class="wsu-programs-list__list-item" data-title="Gerontology" data-areas="physical-and-mathematical-sciences|agricultural-sciences|education" data-campus-degrees="seattle--masters|pullman--certificate|global-campus--minor">
+
+                            <span class="wsu-programs-list__list-link">Gerontology</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-62" class="wsu-programs-list__list-item" data-title="Global Communication and Media" data-areas="education|art-architecture-and-design|physical-and-mathematical-sciences|cultural-studies-and-foreign-languages" data-campus-degrees="vancouver--minor|bremerton--minor|seattle--minor|westdowntown-seattle--minor|everett--masters|extension--masters|tri-cities--masters|global-campus--masters">
+
+                            <span class="wsu-programs-list__list-link">Global Communication and Media</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|bremerton|seattle|westdowntown-seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|extension|tri-cities|global-campus">Masters</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-h" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">H</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-70" class="wsu-programs-list__list-item" data-title="History" data-areas="engineering-and-computer-science|music|education" data-campus-degrees="tri-cities--masters|vancouver--masters|everett--masters|health-sciences-spokane--masters|pullman--certificate|seattle--certificate|global-campus--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">History</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|vancouver|everett|health-sciences-spokane">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|seattle|global-campus">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-71" class="wsu-programs-list__list-item" data-title="Human Resources Management" data-areas="education|social-sciences|art-architecture-and-design|sport-and-fitness" data-campus-degrees="westdowntown-seattle--major|health-sciences-spokane--major|bremerton--masters|seattle--masters|pullman--certificate|research-centers--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Human Resources Management</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|health-sciences-spokane">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|research-centers">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-72" class="wsu-programs-list__list-item" data-title="Human Rights and Genocide Studies" data-areas="biological-and-environmental-sciences|history-literature-and-philosophy" data-campus-degrees="health-sciences-spokane--certificate|extension--certificate|vancouver--certificate|bremerton--certificate|westdowntown-seattle--certificate|research-centers--minor|pullman--minor|seattle--minor|everett--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Human Rights and Genocide Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|extension|vancouver|bremerton|westdowntown-seattle">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|pullman|seattle|everett">Minor</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-i" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">I</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-80" class="wsu-programs-list__list-item" data-title="Information Technology Management" data-areas="cultural-studies-and-foreign-languages|economics" data-campus-degrees="research-centers--certificate">
+
+                            <span class="wsu-programs-list__list-link">Information Technology Management</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-81" class="wsu-programs-list__list-item" data-title="Integrated Science Studies" data-areas="education" data-campus-degrees="vancouver--minor|pullman--minor|westdowntown-seattle--certificate|global-campus--certificate|everett--masters|research-centers--masters">
+
+                            <span class="wsu-programs-list__list-link">Integrated Science Studies</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|global-campus">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|research-centers">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-82" class="wsu-programs-list__list-item" data-title="International Business" data-areas="music|education|communication" data-campus-degrees="vancouver--certificate|global-campus--certificate|extension--certificate|pullman--minor|research-centers--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">International Business</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|global-campus|extension">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|research-centers">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-83" class="wsu-programs-list__list-item" data-title="International Studies" data-areas="pre-professional-studies|biological-and-environmental-sciences|communication|education" data-campus-degrees="pullman--minor|everett--major|pullman--certificate|everett--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">International Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|everett">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-84" class="wsu-programs-list__list-item" data-title="Italian" data-areas="social-sciences|sport-and-fitness" data-campus-degrees="westdowntown-seattle--masters|tri-cities--masters|extension--major">
+
+                            <span class="wsu-programs-list__list-link">Italian</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|tri-cities">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension">Major</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-j" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">J</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-90" class="wsu-programs-list__list-item" data-title="Journalism" data-areas="cultural-studies-and-foreign-languages|biological-and-environmental-sciences" data-campus-degrees="seattle--major|health-sciences-spokane--major|vancouver--major|tri-cities--major|pullman--major|bremerton--major|everett--major|global-campus--major|research-centers--major|westdowntown-seattle--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Journalism</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|health-sciences-spokane|vancouver|tri-cities|pullman|bremerton|everett|global-campus|research-centers|westdowntown-seattle">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-91" class="wsu-programs-list__list-item" data-title="Judaic Studies" data-areas="health-sciences|pre-professional-studies" data-campus-degrees="seattle--minor|bremerton--certificate|seattle--masters|bremerton--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Judaic Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|bremerton">Masters</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-l" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">L</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-100" class="wsu-programs-list__list-item" data-title="Labor" data-areas="communication|cultural-studies-and-foreign-languages|education" data-campus-degrees="research-centers--major|bremerton--major|global-campus--major|extension--masters|everett--masters|pullman--masters|vancouver--certificate|westdowntown-seattle--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Labor</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|bremerton|global-campus">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|everett|pullman">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|westdowntown-seattle">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-101" class="wsu-programs-list__list-item" data-title="Latino/a and Latin American Studies" data-areas="social-sciences|history-literature-and-philosophy" data-campus-degrees="tri-cities--major|everett--major|research-centers--major|global-campus--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Latino/a and Latin American Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|everett|research-centers|global-campus">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-102" class="wsu-programs-list__list-item" data-title="Law and Society" data-areas="economics|history-literature-and-philosophy|music|agricultural-sciences" data-campus-degrees="westdowntown-seattle--certificate|seattle--certificate|research-centers--certificate|extension--certificate|tri-cities--certificate|bremerton--major|health-sciences-spokane--major|pullman--major|vancouver--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Law and Society</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|seattle|research-centers|extension|tri-cities">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|health-sciences-spokane|pullman|vancouver">Major</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-m" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">M</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-110" class="wsu-programs-list__list-item" data-title="Management" data-areas="music" data-campus-degrees="everett--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Management</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-111" class="wsu-programs-list__list-item" data-title="Marketing" data-areas="social-sciences|economics" data-campus-degrees="vancouver--certificate|health-sciences-spokane--certificate|westdowntown-seattle--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Marketing</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|health-sciences-spokane">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-112" class="wsu-programs-list__list-item" data-title="Master of Business Administration (MBA)" data-areas="health-sciences|history-literature-and-philosophy" data-campus-degrees="seattle--minor|westdowntown-seattle--minor|tri-cities--minor|pullman--minor|research-centers--minor|everett--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Master of Business Administration (MBA)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|westdowntown-seattle|tri-cities|pullman|research-centers|everett">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-113" class="wsu-programs-list__list-item" data-title="Mathematics" data-areas="agricultural-sciences|physical-and-mathematical-sciences" data-campus-degrees="global-campus--masters|everett--masters|pullman--masters|seattle--masters|extension--masters|vancouver--minor|tri-cities--minor|bremerton--minor|westdowntown-seattle--minor|health-sciences-spokane--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Mathematics</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|everett|pullman|seattle|extension">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|tri-cities|bremerton|westdowntown-seattle|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-114" class="wsu-programs-list__list-item" data-title="Medical Imaging Science" data-areas="biological-and-environmental-sciences|social-sciences|cultural-studies-and-foreign-languages|communication" data-campus-degrees="everett--minor|pullman--minor|research-centers--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Medical Imaging Science</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-115" class="wsu-programs-list__list-item" data-title="Museum and Exhibition Studies" data-areas="engineering-and-computer-science|agricultural-sciences|physical-and-mathematical-sciences" data-campus-degrees="global-campus--certificate|pullman--certificate|research-centers--certificate">
+
+                            <span class="wsu-programs-list__list-link">Museum and Exhibition Studies</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|pullman|research-centers">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-116" class="wsu-programs-list__list-item" data-title="Music (General Overview)" data-areas="music" data-campus-degrees="global-campus--major|health-sciences-spokane--major|bremerton--major|westdowntown-seattle--major|seattle--certificate|everett--certificate|pullman--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Music (General Overview)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|health-sciences-spokane|bremerton|westdowntown-seattle">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|everett|pullman">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-117" class="wsu-programs-list__list-item" data-title="Music and Creative Music Technology (4+1 BA/MFA)" data-areas="communication" data-campus-degrees="tri-cities--masters|everett--masters|health-sciences-spokane--masters|global-campus--masters|research-centers--major|vancouver--major|extension--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Music and Creative Music Technology (4+1 BA/MFA)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|everett|health-sciences-spokane|global-campus">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|vancouver|extension">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-118" class="wsu-programs-list__list-item" data-title="Music: Music Industry" data-areas="business|pre-professional-studies" data-campus-degrees="seattle--major|global-campus--major|research-centers--major|everett--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Music: Music Industry</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|global-campus|research-centers|everett">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-119" class="wsu-programs-list__list-item" data-title="Music: Music Performance" data-areas="engineering-and-computer-science|business|physical-and-mathematical-sciences|health-sciences" data-campus-degrees="bremerton--minor|seattle--minor|extension--certificate|research-centers--certificate|global-campus--masters|everett--masters">
+
+                            <span class="wsu-programs-list__list-link">Music: Music Performance</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|research-centers">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|everett">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1110" class="wsu-programs-list__list-item" data-title="Music: Music Production" data-areas="biological-and-environmental-sciences|music" data-campus-degrees="research-centers--minor|global-campus--minor|bremerton--certificate|pullman--certificate|seattle--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Music: Music Production</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|global-campus">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|pullman">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1111" class="wsu-programs-list__list-item" data-title="Music: Music Studies" data-areas="pre-professional-studies|history-literature-and-philosophy|business" data-campus-degrees="seattle--masters|research-centers--major|seattle--certificate|research-centers--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Music: Music Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|research-centers">Certificate</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-n" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">N</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-120" class="wsu-programs-list__list-item" data-title="Neuroscience" data-areas="business|sport-and-fitness" data-campus-degrees="vancouver--certificate|extension--certificate|westdowntown-seattle--certificate|tri-cities--minor|pullman--minor|health-sciences-spokane--minor|global-campus--masters|research-centers--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Neuroscience</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|extension|westdowntown-seattle">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|pullman|health-sciences-spokane">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|research-centers">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-121" class="wsu-programs-list__list-item" data-title="Nursing" data-areas="engineering-and-computer-science" data-campus-degrees="research-centers--masters|research-centers--certificate|research-centers--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Nursing</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-122" class="wsu-programs-list__list-item" data-title="Nursing (MSN) (Education Track)" data-areas="art-architecture-and-design|cultural-studies-and-foreign-languages|agricultural-sciences" data-campus-degrees="health-sciences-spokane--minor|pullman--minor|seattle--minor|research-centers--masters|everett--masters|global-campus--masters|vancouver--major|bremerton--major">
+
+                            <span class="wsu-programs-list__list-link">Nursing (MSN) (Education Track)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|pullman|seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|everett|global-campus">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|bremerton">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-123" class="wsu-programs-list__list-item" data-title="Nursing (MSN) (Family Nurse Practitioner)" data-areas="pre-professional-studies" data-campus-degrees="health-sciences-spokane--major|bremerton--major|westdowntown-seattle--certificate|extension--certificate|everett--minor|seattle--minor">
+
+                            <span class="wsu-programs-list__list-link">Nursing (MSN) (Family Nurse Practitioner)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|bremerton">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|extension">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|seattle">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-124" class="wsu-programs-list__list-item" data-title="Nursing (MSN) (Nurse Administration)" data-areas="social-sciences" data-campus-degrees="research-centers--masters|everett--masters|global-campus--masters|tri-cities--certificate|westdowntown-seattle--certificate|pullman--certificate|bremerton--minor|extension--minor|health-sciences-spokane--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Nursing (MSN) (Nurse Administration)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|everett|global-campus">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|westdowntown-seattle|pullman">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|extension|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-125" class="wsu-programs-list__list-item" data-title="Nursing Practice (DNP)" data-areas="music|communication" data-campus-degrees="extension--certificate|pullman--certificate|vancouver--minor|westdowntown-seattle--minor|research-centers--masters|seattle--masters">
+
+                            <span class="wsu-programs-list__list-link">Nursing Practice (DNP)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|pullman">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|westdowntown-seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|seattle">Masters</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-o" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">O</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-130" class="wsu-programs-list__list-item" data-title="Optometry" data-areas="communication|pre-professional-studies|music|sport-and-fitness" data-campus-degrees="health-sciences-spokane--certificate|research-centers--certificate|vancouver--certificate|tri-cities--major|bremerton--major|everett--major|global-campus--minor|westdowntown-seattle--minor|seattle--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Optometry</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|research-centers|vancouver">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|bremerton|everett">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|westdowntown-seattle|seattle">Minor</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-p" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">P</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-140" class="wsu-programs-list__list-item" data-title="Philosophy" data-areas="engineering-and-computer-science|health-sciences|communication|agricultural-sciences" data-campus-degrees="westdowntown-seattle--minor|research-centers--minor|bremerton--minor|seattle--minor|everett--certificate|health-sciences-spokane--certificate|tri-cities--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Philosophy</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|research-centers|bremerton|seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|health-sciences-spokane|tri-cities">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-141" class="wsu-programs-list__list-item" data-title="Photography" data-areas="history-literature-and-philosophy|engineering-and-computer-science|biological-and-environmental-sciences|sport-and-fitness" data-campus-degrees="global-campus--minor|pullman--minor|westdowntown-seattle--minor|tri-cities--major|everett--major|health-sciences-spokane--major">
+
+                            <span class="wsu-programs-list__list-link">Photography</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|pullman|westdowntown-seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|everett|health-sciences-spokane">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-142" class="wsu-programs-list__list-item" data-title="Physical Therapy" data-areas="health-sciences|art-architecture-and-design|education|communication" data-campus-degrees="everett--major|bremerton--major|vancouver--major|global-campus--major|seattle--major|tri-cities--certificate|extension--certificate|research-centers--certificate|pullman--certificate|health-sciences-spokane--certificate">
+
+                            <span class="wsu-programs-list__list-link">Physical Therapy</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|bremerton|vancouver|global-campus|seattle">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|extension|research-centers|pullman|health-sciences-spokane">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-143" class="wsu-programs-list__list-item" data-title="Plant Studies" data-areas="education" data-campus-degrees="tri-cities--certificate|global-campus--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Plant Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|global-campus">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-144" class="wsu-programs-list__list-item" data-title="Podiatric Medicine" data-areas="social-sciences|agricultural-sciences" data-campus-degrees="seattle--minor|pullman--minor|westdowntown-seattle--masters|everett--masters|global-campus--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Podiatric Medicine</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|everett">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-145" class="wsu-programs-list__list-item" data-title="Political Science" data-areas="business|pre-professional-studies|agricultural-sciences|social-sciences" data-campus-degrees="westdowntown-seattle--certificate|tri-cities--certificate|pullman--certificate|bremerton--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Political Science</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|tri-cities|pullman|bremerton">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-146" class="wsu-programs-list__list-item" data-title="Post-Baccalaureate Program in Teacher Education" data-areas="economics" data-campus-degrees="tri-cities--minor|bremerton--minor|research-centers--minor|everett--minor|westdowntown-seattle--minor|extension--minor|health-sciences-spokane--minor|vancouver--minor|global-campus--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Post-Baccalaureate Program in Teacher Education</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|bremerton|research-centers|everett|westdowntown-seattle|extension|health-sciences-spokane|vancouver|global-campus">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-147" class="wsu-programs-list__list-item" data-title="Post-Baccalaureate Program in the Health Sciences" data-areas="music" data-campus-degrees="pullman--masters|pullman--major|pullman--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Post-Baccalaureate Program in the Health Sciences</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-148" class="wsu-programs-list__list-item" data-title="Psychology" data-areas="education" data-campus-degrees="everett--major|research-centers--major|extension--major">
+
+                            <span class="wsu-programs-list__list-link">Psychology</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|research-centers|extension">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-149" class="wsu-programs-list__list-item" data-title="Public Health" data-areas="biological-and-environmental-sciences|music|art-architecture-and-design|education" data-campus-degrees="health-sciences-spokane--major|global-campus--major|research-centers--major|bremerton--minor|seattle--minor|westdowntown-seattle--minor|extension--masters|vancouver--masters">
+
+                            <span class="wsu-programs-list__list-link">Public Health</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|global-campus|research-centers">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|seattle|westdowntown-seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|vancouver">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1410" class="wsu-programs-list__list-item" data-title="Public Policy" data-areas="biological-and-environmental-sciences|engineering-and-computer-science|music|health-sciences" data-campus-degrees="vancouver--minor|research-centers--minor|extension--minor|bremerton--minor|westdowntown-seattle--minor|health-sciences-spokane--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Public Policy</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|research-centers|extension|bremerton|westdowntown-seattle|health-sciences-spokane">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1411" class="wsu-programs-list__list-item" data-title="Public Sociology" data-areas="engineering-and-computer-science|cultural-studies-and-foreign-languages|agricultural-sciences|health-sciences" data-campus-degrees="extension--minor|bremerton--minor|tri-cities--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Public Sociology</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|bremerton">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities">Certificate</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-s" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">S</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-150" class="wsu-programs-list__list-item" data-title="Sculpture" data-areas="education" data-campus-degrees="everett--major|vancouver--major|tri-cities--certificate|health-sciences-spokane--certificate">
+
+                            <span class="wsu-programs-list__list-link">Sculpture</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|vancouver">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|health-sciences-spokane">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-151" class="wsu-programs-list__list-item" data-title="Social Science" data-areas="health-sciences|communication|sport-and-fitness" data-campus-degrees="everett--certificate|vancouver--certificate|tri-cities--minor|extension--minor|health-sciences-spokane--masters|research-centers--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Social Science</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|vancouver">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|extension">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|research-centers">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-152" class="wsu-programs-list__list-item" data-title="Social Science: Society and Culture" data-areas="social-sciences" data-campus-degrees="extension--major|tri-cities--major|seattle--certificate|health-sciences-spokane--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Social Science: Society and Culture</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|tri-cities">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle|health-sciences-spokane">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-153" class="wsu-programs-list__list-item" data-title="Social Work" data-areas="cultural-studies-and-foreign-languages|music" data-campus-degrees="health-sciences-spokane--certificate|research-centers--certificate|extension--certificate|global-campus--masters|tri-cities--masters|seattle--masters|bremerton--minor|vancouver--minor|everett--minor">
+
+                            <span class="wsu-programs-list__list-link">Social Work</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|research-centers|extension">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|tri-cities|seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|vancouver|everett">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-154" class="wsu-programs-list__list-item" data-title="Social Work (MSW)" data-areas="art-architecture-and-design|economics|music|agricultural-sciences" data-campus-degrees="health-sciences-spokane--masters|global-campus--masters|extension--masters|vancouver--major|pullman--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Social Work (MSW)</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|global-campus|extension">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|pullman">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-155" class="wsu-programs-list__list-item" data-title="Sociology" data-areas="art-architecture-and-design|cultural-studies-and-foreign-languages|economics|physical-and-mathematical-sciences" data-campus-degrees="vancouver--minor|global-campus--minor|bremerton--major|seattle--major|extension--masters|westdowntown-seattle--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Sociology</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|global-campus">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|seattle">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|westdowntown-seattle">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-156" class="wsu-programs-list__list-item" data-title="Spanish for Health Care and Human Services Professionals" data-areas="art-architecture-and-design|education|business" data-campus-degrees="pullman--minor|global-campus--minor|vancouver--minor|research-centers--major|tri-cities--major|everett--major">
+
+                            <span class="wsu-programs-list__list-link">Spanish for Health Care and Human Services Professionals</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|global-campus|vancouver">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="research-centers|tri-cities|everett">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-157" class="wsu-programs-list__list-item" data-title="Spanish Language Studies" data-areas="art-architecture-and-design|health-sciences|business" data-campus-degrees="everett--masters|vancouver--masters|tri-cities--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Spanish Language Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|vancouver">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-158" class="wsu-programs-list__list-item" data-title="Special Education (4+1 BS/MA)" data-areas="cultural-studies-and-foreign-languages|sport-and-fitness|communication|physical-and-mathematical-sciences" data-campus-degrees="pullman--certificate|everett--certificate|health-sciences-spokane--certificate|tri-cities--certificate|westdowntown-seattle--masters|extension--masters|research-centers--masters|seattle--masters">
+
+                            <span class="wsu-programs-list__list-link">Special Education (4+1 BS/MA)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|everett|health-sciences-spokane|tri-cities">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|extension|research-centers|seattle">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-159" class="wsu-programs-list__list-item" data-title="Special Education (MASE)" data-areas="physical-and-mathematical-sciences|economics|sport-and-fitness|history-literature-and-philosophy" data-campus-degrees="global-campus--minor|pullman--minor|tri-cities--minor|vancouver--minor|bremerton--masters|everett--masters|health-sciences-spokane--masters">
+
+                            <span class="wsu-programs-list__list-link">Special Education (MASE)</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|pullman|tri-cities|vancouver">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|everett|health-sciences-spokane">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1510" class="wsu-programs-list__list-item" data-title="Sports Management" data-areas="physical-and-mathematical-sciences|art-architecture-and-design|engineering-and-computer-science" data-campus-degrees="tri-cities--masters|extension--masters|vancouver--minor|pullman--minor|global-campus--certificate|bremerton--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Sports Management</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|extension">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="vancouver|pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus|bremerton">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1511" class="wsu-programs-list__list-item" data-title="Substance Use Disorders" data-areas="music" data-campus-degrees="pullman--minor|seattle--minor|tri-cities--masters|research-centers--masters|extension--major">
+
+                            <span class="wsu-programs-list__list-link">Substance Use Disorders</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|seattle">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="tri-cities|research-centers">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension">Major</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-1512" class="wsu-programs-list__list-item" data-title="Sustainability" data-areas="agricultural-sciences" data-campus-degrees="bremerton--masters|research-centers--masters|westdowntown-seattle--masters|global-campus--masters|everett--masters|extension--major|seattle--major|vancouver--major|health-sciences-spokane--major|tri-cities--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Sustainability</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|research-centers|westdowntown-seattle|global-campus|everett">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension|seattle|vancouver|health-sciences-spokane|tri-cities">Major</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-t" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">T</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-160" class="wsu-programs-list__list-item" data-title="Teacher Education" data-areas="agricultural-sciences|history-literature-and-philosophy" data-campus-degrees="seattle--major|everett--certificate|global-campus--masters">
+
+                            <a href="#" class="wsu-programs-list__list-link">Teacher Education</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="seattle">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="global-campus">Masters</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-161" class="wsu-programs-list__list-item" data-title="Theater" data-areas="art-architecture-and-design|social-sciences|cultural-studies-and-foreign-languages" data-campus-degrees="bremerton--masters|pullman--minor|extension--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Theater</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman">Minor</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="extension">Certificate</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-162" class="wsu-programs-list__list-item" data-title="Theater Studies" data-areas="pre-professional-studies" data-campus-degrees="bremerton--major|research-centers--major|westdowntown-seattle--masters|vancouver--masters|everett--minor|tri-cities--minor">
+
+                            <a href="#" class="wsu-programs-list__list-link">Theater Studies</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="bremerton|research-centers">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|vancouver">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="everett|tri-cities">Minor</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-v" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">V</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-170" class="wsu-programs-list__list-item" data-title="Visual Arts" data-areas="cultural-studies-and-foreign-languages|sport-and-fitness|social-sciences|history-literature-and-philosophy" data-campus-degrees="health-sciences-spokane--certificate|everett--certificate|research-centers--certificate|westdowntown-seattle--certificate|pullman--minor|seattle--minor|vancouver--minor|extension--minor">
+
+                            <span class="wsu-programs-list__list-link">Visual Arts</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="health-sciences-spokane|everett|research-centers|westdowntown-seattle">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="pullman|seattle|vancouver|extension">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-171" class="wsu-programs-list__list-item" data-title="Visual Communication Design" data-areas="social-sciences" data-campus-degrees="westdowntown-seattle--certificate|health-sciences-spokane--certificate|tri-cities--certificate|extension--certificate|everett--certificate|bremerton--certificate|research-centers--certificate|global-campus--certificate|pullman--certificate|vancouver--certificate">
+
+                            <a href="#" class="wsu-programs-list__list-link">Visual Communication Design</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle|health-sciences-spokane|tri-cities|extension|everett|bremerton|research-centers|global-campus|pullman|vancouver">Certificate</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+
+                <div id="program-group-w" class="wsu-programs-list__list-group">
+                    <h2 class="wsu-programs-list__list-heading">W</h2>
+                    <ol class="wsu-programs-list__list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-180" class="wsu-programs-list__list-item" data-title="Womens" data-areas="art-architecture-and-design|history-literature-and-philosophy" data-campus-degrees="westdowntown-seattle--major|westdowntown-seattle--masters|westdowntown-seattle--minor">
+
+                            <span class="wsu-programs-list__list-link">Womens</span>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Major</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Minor</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li id="program-181" class="wsu-programs-list__list-item" data-title="Writing" data-areas="engineering-and-computer-science|economics|history-literature-and-philosophy" data-campus-degrees="westdowntown-seattle--masters|westdowntown-seattle--certificate|westdowntown-seattle--major">
+
+                            <a href="#" class="wsu-programs-list__list-link">Writing</a>
+
+
+                            <div class="wsu-programs-list__degree-types">
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Masters</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Certificate</span>
+
+
+                                <span class="wsu-programs-list__degree-type" data-campuses="westdowntown-seattle">Major</span>
+
+                            </div>
+                        </li>
+
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="../../bundles/standalone/programs-list/scripts.js"></script>
+
+    <script defer src="../../bundles/wsu-design-system.js"></script>
+</body>
+
+</html>
