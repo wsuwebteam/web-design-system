@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 object-assign
 (c) Sindre Sorhus
@@ -10,6 +11,9 @@ object-assign
  * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
  */
+=======
+/*! @license DOMPurify 2.4.0 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.4.0/LICENSE */
+>>>>>>> main
 
 /**
  * @license
