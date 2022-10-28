@@ -7,6 +7,7 @@
 - Font Family
 - Font Size
 - Font Weights
+- Heights
 - Media Sizes
 - Spacing
 - Transition Speed
@@ -239,8 +240,39 @@ $wsu-font-weight--extrabold:  800;
 $wsu-font-weight--xextrabold: 900;
 
 
+/* ========================================================
+== Height ==
+==========================================================*/
 $wsu-height--global-header: 64px;
 $wsu-height--system-header: 100px;
+
+$wsu-height--full: 100vh;
+$wsu-height--hero: 1150px;
+$wsu-height--xxlarge: 1050px;
+$wsu-height--xlarge: 950px;
+$wsu-height--large: 850px;
+$wsu-height--xxmedium: 750px;
+$wsu-height--xmedium: 650px;
+$wsu-height--medium: 550px;
+$wsu-height--small: 450px;
+$wsu-height--xsmall: 350px;
+$wsu-height--xxsmall: 250px;
+$wsu-height--sxxsmall: 150px;
+
+$wsu-height-map: (
+    'full':     $wsu-height--full,
+    'hero':     $wsu-height--hero,
+    'xxlarge':  $wsu-height--xxlarge,
+    'xlarge':   $wsu-height--xlarge,
+    'large':    $wsu-height--large,
+    'xxmedium': $wsu-height--xxmedium,
+    'xmedium':  $wsu-height--xmedium,
+    'medium':   $wsu-height--medium,
+    'small':    $wsu-height--small,
+    'xsmall':   $wsu-height--xsmall,
+    'xxsmall':  $wsu-height--xxsmall,
+    'sxxsmall':  $wsu-height--sxxsmall,
+);
 
 /* ========================================================
 == Image Sizes ==

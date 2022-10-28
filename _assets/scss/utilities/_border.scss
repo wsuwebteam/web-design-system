@@ -12,6 +12,10 @@ $wsu-borders-list: 'top', 'bottom', 'left', 'right';
 
 @each $borderName in $wsu-borders-list {
 
+    .wsu-border--add-#{$borderName} {
+        border-#{$borderName}: 4px solid $wsu-color--crimson-light;
+    }
+
     .wsu-border--crimson-#{$borderName} {
         border-#{$borderName}: 1px solid $wsu-color--crimson-light;
     }
@@ -29,9 +33,21 @@ $wsu-borders-list: 'top', 'bottom', 'left', 'right';
     }
 }
 
+@each $borderColorName, $borderColor in $wsu-color-border-map {
+
+    .wsu-border--color-#{$borderColorName} {
+        border-color: $borderColor !important;
+    }
+
+}
+
 /** -------------------- Legacy -------------------------- */
 
 @each $borderColorName, $borderColor in $wsu-color-border-map {
+
+    .wsu-border--color-#{$borderColorName} {
+        border-color: $borderColor !important;
+    }
 
     .wsu-border-top--color-#{$borderColorName} {
         border-top: 4px solid $borderColor;
@@ -41,6 +57,26 @@ $wsu-borders-list: 'top', 'bottom', 'left', 'right';
         border-bottom: 4px solid $borderColor;
     }
 
+}
+
+
+.wsu-border--width {
+    
+    &-thick {
+        border-width: 8px !important; 
+    }
+
+    &-medium {
+        border-width: 4px !important;
+    }
+
+    &-thin {
+        border-width: 2px !important;
+    }
+
+    &-xthin {
+        border-width: 1px !important;
+    }
 }
 
 .wsu-border-bottom {

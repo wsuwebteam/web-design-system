@@ -1,0 +1,32 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@media screen and (min-width: $wsu-breakpoint--tablet )  {
+    .wsu-card--style-horizontal-50 {
+        display: flex;
+        margin-bottom: 2.25rem !important;
+        
+        .wsu-card {
+
+            &__content {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+        .wsu-image-frame {
+            min-width: 50%;
+            min-height: $wsu-height--small;
+        }
+        .wsu-title {
+            font-size: $wsu-font-size--xlarge;
+        }
+
+    }
+    .wsu-card-group--per-row-2 .wsu-card--style-horizontal-50 .wsu-image-frame, .wsu-card-wrapper--per-row-2 .wsu-card--style-horizontal-50 .wsu-image-frame {
+        min-height: 0;
+    }
+}
+    

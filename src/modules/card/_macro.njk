@@ -18,7 +18,7 @@
         </a>
     </div>{% endif %}
     <div class="wsu-card__content">
-        {% if showTitle %}<h2 class="wsu-title"><a href="#">Maecenas bibendum volutpat ante et condimentum</a></h2>{% endif %}
+        {% if showTitle %}<h2 class="wsu-title"><a href="#">WSU Card Title Text</a></h2>{% endif %}
         {% if showDate %}{{ metaDate() }}{% endif %}
         {% if showCaption %}{{ caption() }}{% endif %}
         {% if showByline %}{{ metaByline() }}{% endif %}
@@ -27,9 +27,9 @@
 </article>
 {% endmacro %}
 
-{% macro cardLinked( classes='', imgSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', title='Maecenas bibendum volutpat ante et condimentum', caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. ') %}
+{% macro cardLinked( classes='', imgSrc='https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg', title='WSU Card Title', caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. ') %}
 <article class="wsu-card{{classes}}">
-    <a class="wsu-card__link" href="#">Maecenas bibendum volutpat ante et condimentum</a>
+    <a class="wsu-card__link" href="#">WSU Card Title</a>
     <div class="wsu-image-frame">
         <img src="{{ imgSrc }}">
     </div>

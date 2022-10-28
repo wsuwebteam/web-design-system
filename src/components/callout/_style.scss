@@ -1,59 +1,69 @@
 @import '../../../_assets/scss/variables';
-@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/mixins'; 
 
-.wsu-callout {
+.wsu-callout:not([class*="-callout--style-"]) {
 
     background-color: $wsu-color--gray-5;
-    padding: $wsu-spacing--medium $wsu-spacing--medium 0;
+    padding: $wsu-spacing--medium $wsu-spacing--medium 1px;
     box-sizing: border-box;
-    border: 1px solid $wsu-color--gray-10;
     border-radius: 3px;
     margin-bottom: $wsu-spacing--component;
     position: relative;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);
+    border-top: 4px solid transparent;
 
-    &__title {
-        @include wsu-font--xxmedium();
-        font-weight: 700;
-        margin-bottom: $wsu-spacing--medium;
-    }
+    &.wsu-callout {
 
-    &--color-white {
-        border: 1px solid #fff;
-    }
+        &__title {
+            @include wsu-font--xxmedium();
+            font-weight: 700;
+            margin-bottom: $wsu-spacing--medium;
+        }
 
-    &--color-crimson,
-    &--color-crimson-light,
-    &--color-autumn,
-    &--color-goldfinch,
-    &--color-vineyard,
-    &--color-pacificsky,
-    &--color-midnight {
-        border-left: 1px solid $wsu-color--gray-15;
-        border-bottom: 1px solid $wsu-color--gray-15;
-        border-right: 1px solid $wsu-color--gray-15;
-        background-color: #ffffff;
-    }
+        &--color-white {
+            border: 1px solid #fff;
+        }
 
-    &--color-crimson {
-        border-top: 4px solid $wsu-color--crimson;
-    }
-    &--color-crimson-light {
-        border-top: 4px solid $wsu-color--crimson-light;
-    }
-    &--color-autumn {
-        border-top: 4px solid $wsu-color--accent-autumn;
-    }
-    &--color-goldfinch {
-        border-top: 4px solid $wsu-color--accent-goldfinch;
-    }
-    &--color-vineyard {
-        border-top: 4px solid $wsu-color--accent-vineyard;
-    }
-    &--color-pacificsky {
-        border-top: 4px solid $wsu-color--accent-pacificsky;
-    }
-    &--color-midnight {
-        border-top: 4px solid $wsu-color--accent-midnight;
+        &--color-crimson,
+        &--color-crimson-light,
+        &--color-autumn,
+        &--color-goldfinch,
+        &--color-vineyard,
+        &--color-pacificsky,
+        &--color-midnight {
+            border-left: 1px solid $wsu-color--gray-15;
+            border-bottom: 1px solid $wsu-color--gray-15;
+            border-right: 1px solid $wsu-color--gray-15;
+            background-color: #ffffff;
+        }
+
+        &--color-crimson {
+            border-top: 4px solid $wsu-color--crimson;
+        }
+        &--color-crimson-light {
+            border-top: 4px solid $wsu-color--crimson-light;
+        }
+        &--color-autumn {
+            border-top: 4px solid $wsu-color--accent-autumn;
+        }
+        &--color-goldfinch {
+            border-top: 4px solid $wsu-color--accent-goldfinch;
+        }
+        &--color-vineyard {
+            border-top: 4px solid $wsu-color--accent-vineyard;
+        }
+        &--color-pacificsky {
+            border-top: 4px solid $wsu-color--accent-pacificsky;
+        }
+        &--color-midnight {
+            border-top: 4px solid $wsu-color--accent-midnight;
+        }
+
     }
 
 }  
+
+@import './style-basic';
+@import './style-border';
