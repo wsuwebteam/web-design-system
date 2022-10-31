@@ -6,13 +6,13 @@
     margin-bottom: $wsu-spacing--component;
     box-sizing: border-box;
 
-    &[class*="wsu-color-background"] {
+    &[class*="wsu-color-background"]:not([class*="wsu-card--style-horizontal-"] ) {
 
         border-radius: 3px; 
 
         .wsu-card__content {
             padding-left: $wsu-spacing--medium;
-            padding-right: $wsu-spacing--medium;
+            padding-right: $wsu-spacing--medium; 
             
         }
        
