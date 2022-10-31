@@ -4,20 +4,26 @@
 @media screen and (min-width: $wsu-breakpoint--tablet )  {
     .wsu-card--style-horizontal-50 {
         display: flex;
-        margin-bottom: 2.25rem !important;
+        margin-bottom: $wsu-spacing--xxmedium !important;
         
         .wsu-card {
 
             &__content {
-                padding-left: 2.5rem;
-                padding-right: 2.5rem;
+                padding-left: $wsu-spacing--xxmedium;
+                padding-right: $wsu-spacing--xxmedium;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
+                p, li,
+                .wsu-caption {
+                    font-size: $wsu-font-size--xmedium;
+                }
             }
         }
         .wsu-image-frame {
-            min-width: 50%;
+            width: 50%;
+            flex-shrink: 0;
             min-height: $wsu-height--small;
         }
         .wsu-title {

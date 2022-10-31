@@ -9,15 +9,22 @@
         .wsu-card{
 
             &__content {
-                padding-left: 2.5rem;
-                padding-right: 2.5rem;
+                padding-left: $wsu-spacing--xxmedium;
+                padding-right: $wsu-spacing--xxmedium;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                box-sizing: border-box;
+
+                p, li,
+                .wsu-caption {
+                    font-size: $wsu-font-size--small;
+                }
             }
         }
         .wsu-image-frame {
-            min-width: 25%;
+            width: 25%;
+            flex-shrink: 0;
             aspect-ratio: 4/3;
             padding-top: 1.25rem;
             
