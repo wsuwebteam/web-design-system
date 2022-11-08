@@ -1,0 +1,19 @@
+{% from "logo-lockup/_macro.njk" import logoLockup %}
+{% from "navigation-header/_macro.njk" import navigationHeader %}
+
+{% macro headerUnit( classes='', showNav=true ) %}
+<header class="wsu-header-unit {{ classes }}">
+    <div class="wsu-header-unit__inner">
+        <div class="wsu-header-unit__global">
+            <ul class="wsu-header-unit__global-menu">
+                <li><a href="#">Washington State University</a></li>
+                <li><a href="#">Pullman Campus</a></li>
+            </ul>
+        </div>
+        <div class="wsu-header-unit__banner">
+           {{ logoLockup( classes=' wsu-logo-lockup--style-unit', link='#' ) }}
+        </div>
+        {{ navigationHeader( activeItem='Degree Programs') }}
+    </div>
+</header>
+{% endmacro %}

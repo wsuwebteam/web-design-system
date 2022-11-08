@@ -1,0 +1,85 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$wsu-space--logo: $wsu-spacing--medium;
+
+.wsu-header-unit {
+    position: relative;
+    z-index: $wsu-zindex--navigation;
+
+    &::after {
+        content:'';
+        height: 5px;
+        width: auto;
+        bottom: -5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
+        opacity: 0.2;
+    }
+
+    &__global {
+        background-color: $wsu-color--gray-75;
+        height: 35px;
+        box-sizing: border-box;
+        border-bottom: 2px solid $wsu-color--crimson;
+        display: flex;
+    }
+
+    &__global-menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+
+        li {
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+            a {
+                color: $wsu-color--gray-5;
+                text-decoration: none;
+                font-size: $wsu-font-size--xsmall;
+                letter-spacing: 1px;
+                font-weight: 300;
+                display: flex;
+                align-items: center;
+                padding: 0 $wsu-spacing--xsmall;
+                text-transform: uppercase;
+                position: relative;
+
+                &::after {
+                    content: '/';
+                    right: -4px;
+                    position: absolute;
+                }
+
+            }
+
+            &:last-child a::after {
+                display: none;
+            }
+
+        }
+
+    }
+
+    &__banner {
+        background-color: #fff;
+        height: 130px;
+        display: flex;
+        width: 100%;
+    }
+
+    .wsu-navigation-header {
+        background-color: #fff;
+        height: 45px;
+        border-top: 1px solid $wsu-color--gray-10;
+        padding: 0 $wsu-spacing--small;
+    }
+}
