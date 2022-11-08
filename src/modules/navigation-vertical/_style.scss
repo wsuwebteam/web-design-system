@@ -8,6 +8,7 @@
     &__panel {
         width: $wsu-width--navigation-veritcal;
         border-right: 1px solid $wsu-color--gray-15;
+        overflow-y: auto;
     }
 
     &__panel-inner {
@@ -23,6 +24,14 @@
 
     .wsu-navigation-vertical__panel {
         padding-top: 211px;
+    }
+
+}
+
+.wsu-header-campus ~ .wsu-navigation-vertical {
+
+    .wsu-navigation-vertical__panel {
+        padding-top: 231px;
     }
 
 }

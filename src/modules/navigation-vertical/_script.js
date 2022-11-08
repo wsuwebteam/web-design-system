@@ -6,7 +6,7 @@ class WsuNavigationVertical {
     
         constructor( atts = {} ) {
 
-            this.headers = ['.wsu-header-unit'];
+            this.headers = ['.wsu-header-unit','.wsu-header-campus'];
 
             this.navigation = false;
 

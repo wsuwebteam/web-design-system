@@ -3,14 +3,10 @@
 @import './mixins';
 
 $wsu-menu-collapse-spacing--nav-horizontal: $wsu-spacing--medium;
-$wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
+$wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xxsmall;
+$wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
 
 .wsu-menu-collapse--style-vertical {
-    
-    a {
-        text-decoration: none;
-        display: block;
-    }
 
     ul {
         width: 100%;
@@ -21,6 +17,7 @@ $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
     li {
         margin: 0;
         padding: 0;
+        position: relative;
     }
 
     button {
@@ -41,6 +38,25 @@ $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
         text-align: left;
     }
 
+    button:first-child {
+        &::after {
+            content: '\F103';
+            font-family: wsu-icons;
+            transition: transform .2s;
+            font-size: $wsu-font-size--xsmall;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 50px;
+            position: absolute;
+            height: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
     a ~ button {
         width: 50px;
         flex-grow: 0;
@@ -59,6 +75,17 @@ $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
             align-items: center;
             flex-grow: 1;
         }
+
+        &::after {
+            content:'';
+            position: absolute;
+            height: auto;
+            left: 0;
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            background-color: $wsu-color--gray-10;
+        }
         
     }
 
@@ -68,6 +95,15 @@ $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
     }
 
     & > li {
+
+        &::after {
+            content:'';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom: 0;
+            background-color: $wsu-color--gray-10;
+        }
 
         & > button:first-child,
         & > a {
@@ -79,7 +115,8 @@ $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
 
         button:first-child,
         a {
-            padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical calc( ( #{$wsu-spacing--sxxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+            font-weight: 500;
+            padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
         }
     }
 
@@ -87,7 +124,7 @@ $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
 
         button:first-child,
         a {
-            padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical calc( ( #{$wsu-spacing--sxxsmall} * 2 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+            padding-left: calc( ( #{$wsu-spacing--xxsmall} * 2 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
         }
     }
 
