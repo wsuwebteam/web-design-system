@@ -1,0 +1,17 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+@mixin wsu-menu-collapse--menu-slide-up {
+    //visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms;
+}
+
+@mixin wsu-menu-collapse--menu-slide-down {
+
+    visibility: visible;
+    overflow: hidden;
+    transition: max-height 500ms;
+    
+}

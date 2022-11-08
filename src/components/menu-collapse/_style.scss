@@ -1,0 +1,33 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './mixins';
+
+.wsu-menu-collapse {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li,
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li[aria-expanded="false"] {
+
+        & > ul {
+            @include wsu-menu-collapse--menu-slide-up();
+        }
+    }
+
+    li[aria-expanded="true"] {
+
+        & > ul {
+            @include wsu-menu-collapse--menu-slide-down()
+        }
+    }
+
+}
+
+@import './style-vertical';

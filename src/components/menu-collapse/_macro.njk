@@ -1,0 +1,35 @@
+{% macro menuCollapse( classes='' ) %}
+
+<ul class="wsu-menu-collapse {{ classes }}">
+    <li><a href="#">Menu Item</a></li>
+    <li><a href="#">Menu Item</a></li>
+    <li aria-expanded="false" aria-haspopup="true">
+        <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li aria-expanded="false" aria-haspopup="true">
+                <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
+                <ul>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                    <li><a href="#">Menu Item</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+    <li class="wsu-menu-collapse--current-item"><a href="#">Menu Item</a></li>
+    <li aria-expanded="false" aria-haspopup="true">
+        <a href="#">Menu Item</a>
+        <button class="wsu-menu-collapse--action-toggle" aria-label="open submenu"></button>
+        <ul>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+            <li><a href="#">Menu Item</a></li>
+        </ul>
+    </li>
+</ul>
+{% endmacro %}

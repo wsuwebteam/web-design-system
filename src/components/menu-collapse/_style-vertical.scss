@@ -1,0 +1,94 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './mixins';
+
+$wsu-menu-collapse-spacing--nav-horizontal: $wsu-spacing--medium;
+$wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xsmall;
+
+.wsu-menu-collapse--style-vertical {
+    
+    a {
+        text-decoration: none;
+        display: block;
+    }
+
+    ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+    }
+
+    button:first-child,
+    a {
+        text-decoration: none;
+        font-size: $wsu-font-size--small;
+        color: $wsu-color--gray-75;
+        font-weight: 600;
+        display: block;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    a ~ button {
+        width: 50px;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            content: '\F103';
+            font-family: wsu-icons;
+            transition: transform .2s;
+            font-size: $wsu-font-size--xsmall;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+        
+    }
+
+    li[aria-expanded] {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & > li {
+
+        & > button:first-child,
+        & > a {
+            padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal;
+        }
+    }
+
+    & > li li {
+
+        button:first-child,
+        a {
+            padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical calc( ( #{$wsu-spacing--sxxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+        }
+    }
+
+    & > li li li {
+
+        button:first-child,
+        a {
+            padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical calc( ( #{$wsu-spacing--sxxsmall} * 2 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+        }
+    }
+
+}
