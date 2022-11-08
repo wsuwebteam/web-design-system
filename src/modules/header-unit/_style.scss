@@ -1,12 +1,9 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-@import '../../../_assets/scss/variables';
-@import '../../../_assets/scss/mixins';
-
 $wsu-space--logo: $wsu-spacing--medium;
 
-.wsu-header-campus {
+.wsu-header-unit {
     position: relative;
     z-index: $wsu-zindex--navigation;
 
@@ -74,13 +71,9 @@ $wsu-space--logo: $wsu-spacing--medium;
 
     &__banner {
         background-color: #fff;
-        height: 150px;
+        height: 130px;
         display: flex;
         width: 100%;
-    }
-
-    .wsu-logo-lockup__icon-wrapper {
-        width: 150px;
     }
 
     .wsu-navigation-header {

@@ -1,0 +1,45 @@
+.wsu-logo-lockup--style-unit {
+
+    svg {
+        height: 5.375em;
+        width: 5.375em;
+        margin: 0.75em 1em 1.5em 1.5em;
+    }
+
+    .wsu-logo-lockup{
+
+        &__title-wrapper {
+            padding: 0.2em 0 0.2em 1em;
+
+            &::before {
+                content: '';
+                height: auto;
+                width: 1px;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background-color: $wsu-color--gray-60;
+                position: absolute;
+            }
+        }
+
+        &__subtitle {
+            display: block;
+            font-weight: 300;
+            font-size: 0.9em;
+        }
+
+        &__title {
+            display: block;
+            font-size: 2.4em;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+    }
+
+}
+
+a.wsu-logo-lockup {
+    text-decoration: none;
+}

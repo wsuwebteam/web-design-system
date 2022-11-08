@@ -1,0 +1,19 @@
+{% from "header-unit/_macro.njk" import headerUnit %}
+
+{% extends "component.njk" %}
+
+{% block styles %}
+
+<style>
+body {
+    background-color: #f1f1f1;
+}
+.wsu-header-unit {
+    margin-bottom: 4rem;
+}
+</style>
+{%  endblock %}
+
+{% block content %}  
+{{ headerUnit() }}
+{%  endblock %}

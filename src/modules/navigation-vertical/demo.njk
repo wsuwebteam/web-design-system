@@ -1,0 +1,19 @@
+{% from "navigation-vertical/_macro.njk" import navigationVertical %}
+
+{% extends "component.njk" %}
+
+{% block styles %}
+
+<style>
+body {
+    background-color: #f1f1f1;
+}
+.wsu-header-unit {
+    margin-bottom: 4rem;
+}
+</style>
+{%  endblock %}
+
+{% block content %}  
+{{ navigationVertical() }}
+{%  endblock %}

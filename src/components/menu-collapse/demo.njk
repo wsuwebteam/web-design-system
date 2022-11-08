@@ -1,0 +1,20 @@
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
+
+{% extends "component.njk" %}
+
+{% block styles %}
+
+<style>
+body {
+    background-color: #f1f1f1;
+    min-height: 100vh;
+}
+
+</style>
+{%  endblock %}
+
+{% block content %}  
+{{ menuCollapse() }}
+<hr />
+{{ menuCollapse( classes=' wsu-menu-collapse--style-vertical') }}
+{%  endblock %}

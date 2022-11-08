@@ -1,0 +1,25 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-slide-in-panel {
+    
+    &__panel {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        background-color: #fff;
+        width: 300px;
+    }
+
+    &__panel-inner {
+
+
+    }
+
+    &__overlay {
+
+    }
+
+
+
+}

@@ -1,0 +1,40 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-logo-lockup {
+    color: $wsu-color--gray-75;
+    display: flex;
+    font-size: 1rem;
+
+    &__icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    &__subtitle {
+        display: block;
+        width: 100%;
+    }
+
+    &__title {
+        display: block;
+        width: 100%;
+    }
+
+}
+
+a.wsu-logo-lockup {
+    text-decoration: none;
+}
+
+@import './style-unit';
+@import './style-campus';

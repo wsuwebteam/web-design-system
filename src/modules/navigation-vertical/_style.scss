@@ -1,0 +1,30 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-navigation-vertical {
+    position: relative;
+    z-index: calc( #{$wsu-zindex--navigation} - 1 );
+
+    &__panel {
+        width: $wsu-width--navigation-veritcal;
+        border-right: 1px solid $wsu-color--gray-15;
+    }
+
+    &__panel-inner {
+        padding: $wsu-spacing--xxmedium 0;
+    }
+}
+
+.wsu-navigation-vertical ~ .wsu-wrapper-site {
+    margin-left: $wsu-width--navigation-veritcal;
+}
+
+.wsu-header-unit ~ .wsu-navigation-vertical {
+
+    .wsu-navigation-vertical__panel {
+        padding-top: 211px;
+    }
+
+}
+
+/*----- Temp ----- */

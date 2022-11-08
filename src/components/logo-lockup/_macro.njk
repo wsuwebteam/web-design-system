@@ -1,0 +1,12 @@
+{% macro logoLockup( classes='', link=false, subtitle='Elson S. Floyd', title='College of Medicine' ) %}
+
+<{% if link %}a href="{{ link }}"{% else %}div{% endif %} class="wsu-logo-lockup {{ classes }}">
+    <span class="wsu-logo-lockup__icon-wrapper">
+    {% include 'coug-head/html.njk' %}
+    </span>
+    <span class="wsu-logo-lockup__title-wrapper">
+        {% if subtitle %}<span class="wsu-logo-lockup__subtitle">{{ subtitle }}</span>{% endif %}
+        <span class="wsu-logo-lockup__title">{{ title }}</span>
+    </span>
+</{% if link %}a{% else %}div{% endif %}>
+{% endmacro %}

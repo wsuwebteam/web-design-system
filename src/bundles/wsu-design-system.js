@@ -5,6 +5,7 @@ import WsuAccordion from "../components/accordion/_script";
 import WsuAnimate from '../components/animate/_script';
 import WsuCollapsable from "../components/experimental_collapsable/script";
 import WsuMenu from "../components/menu/_script";
+import WsuMenuCollapse from "../components/menu-collapse/_script";
 import WsuNavigationSiteVertical from "../modules/navigation-site-vertical/_script";
 import WsuMobileMenu from '../modules/mobile-menu/_script';
 //import WsuModal from '../components/modal/_script';
@@ -16,6 +17,7 @@ import WsuStickyBox from '../components/sticky-box/_script';
 import WsuAnchorMenu from '../components/anchor-menu/_script';
 import WsuBackgroundSlider from '../components/background-slider/_script';
 import WsuUtilityPanel from '../components/utility-panel/_script';
+import WsuNavigationVertical from '../modules/navigation-vertical/_script';
 
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
@@ -28,12 +30,14 @@ const wsu = {
     animate: new WsuAnimate(),
     verticalNavitation: new WsunavigationSite(),
     mobileMenu: new WsuMobileMenu(),
+    WsuNavigationVertical: new WsuNavigationVertical(),
     navigationSiteVertical: new WsuNavigationSiteVertical(),
     navigationSiteHorizontal: new WsuNavigationSiteHorizontal(),
     backgroundSlider: new WsuBackgroundSlider(),
     headerGlobal: new WsuHeaderGlobal(),
     accordion: new WsuAccordion(),
     collapsable: new WsuCollapsable(),
+    wsuMenuCollapse: new WsuMenuCollapse,
     menu: new WsuMenu(),
     //modal: new WsuModal(),
     button: new WsuButton(),
