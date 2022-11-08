@@ -1,0 +1,10 @@
+{% macro navigationHeader( classes='', activeItem='Home', menuItems=[{ label:'Home'},{ label:'About'},{ label:'Academics'},{ label:'Degree Programs'},{ label:'Admissions'},{ label:'Research'},{ label:'News & Events'} ]) %}
+
+<nav class="wsu-navigation-header {{ classes }}">
+    <ul>
+        {% for item in menuItems %}
+        <li {% if activeItem == item.label %}class="wsu-navigation-header--current-item" {% endif %}><a href="#">{{ item.label }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}
