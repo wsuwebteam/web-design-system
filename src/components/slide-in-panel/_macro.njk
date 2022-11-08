@@ -1,0 +1,10 @@
+{% macro slideInPanel( classes='', classPrefix='' ) %}
+
+<div class="wsu-slide-in-panel{{ classes }} {{ classPrefix }}">
+    <div class="wsu-slide-in-panel__panel {{ classPrefix }}__panel">
+        <div class="wsu-slide-in-panel__panel-inner {{ classPrefix }}__panel-inner">
+            {{ caller() }}
+        </div>
+    </div>
+</div>
+{% endmacro %}
