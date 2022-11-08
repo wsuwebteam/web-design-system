@@ -1,0 +1,10 @@
+{% from "slide-in-panel/_macro.njk" import slideInPanel %}
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
+
+{% macro navigationVertical( classes='' ) %}
+
+    {% call slideInPanel( classPrefix='wsu-navigation-vertical') -%}
+        {{ menuCollapse( classes=' wsu-menu-collapse--style-vertical') }}
+    {%- endcall %}
+
+{% endmacro %}
