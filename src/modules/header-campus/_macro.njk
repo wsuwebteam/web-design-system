@@ -1,36 +1,19 @@
-{% from "header-utility-bar/_macro.njk" import headerUtilityBar %}
-{% from "menu-audience/_macro.njk" import menuAudience %}
-{% from "menu/_macro.njk" import menu %}
-{% from "mobile-menu/_macro.njk" import mobileMenu %}
-{% from "modal/_macro.njk" import modal %}
+{% from "logo-lockup/_macro.njk" import logoLockup %}
+{% from "navigation-header/_macro.njk" import navigationHeader %}
 
-{% macro headerCampus(bodyClasses, campus = "pullman") %}
-<header class="wsu-header-campus{{ bodyClasses }}">
-    <a href="https://{{campus}}.wsu.edu" class="wsu-header-campus__logo">
-        <div href="#" class="wsu-header-campus__coug-head-box">
-            {% include 'coug-head/html--white.njk' %}
+{% macro headerCampus( classes='', showNav=true ) %}
+<header class="wsu-header-campus {{ classes }}">
+    <div class="wsu-header-campus__inner">
+        <div class="wsu-header-campus__global">
+            <ul class="wsu-header-campus__global-menu">
+                <li><a href="#">Washington State University</a></li>
+                <li><a href="#">Pullman Campus</a></li>
+            </ul>
         </div>
-        <div href="#" class="wsu-header-campus__wordmark">
-            {% include 'header-campus/' + campus + '-svg.njk' ignore missing %}
+        <div class="wsu-header-campus__banner">
+           {{ logoLockup( classes=' wsu-logo-lockup--style-campus',link='#', subtitle='', title='Pullman' ) }}
         </div>
-    </a>
-    <div class="wsu-header-campus__top-bar">
-        {{ menuAudience() }} {{ headerUtilityBar() }}
+        {{ navigationHeader( activeItem='Degree Programs') }}
     </div>
-    <nav class="wsu-header-campus__nav">
-        <ul class="wsu-menu--style-header-campus">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li class="wsu-menu-item--current" ><a href="#">Academics</a></li>
-            <li><a href="#">Admissions</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Athletics</a></li>
-            <li><a href="#">News</a></li>
-        </ul>
-    </nav>
-    <div class="wsu-header-campus__mobile-wrapper">
-        {{ mobileMenu() }}
-    </div>
-    {{ modal() }}
 </header>
 {% endmacro %}
