@@ -1,0 +1,10 @@
+{% extends "template-component-page.njk" %}
+{% from "advanced-overlap/_macro.njk" import advancedOverlap %}
+{% block content %}
+{% include 'advanced-overlap/html.njk' %}
+
+{{ advancedOverlap(' wsu-advanced-overlap--overlap-xlarge') }}
+{{ advancedOverlap(' wsu-advanced-overlap--overlap-xxlarge') }}
+{{ advancedOverlap(' wsu-advanced-overlap--overlap-hero') }}
+{{ advancedOverlap(' wsu-advanced-overlap--overlap-xhero') }}
+{%  endblock %}
