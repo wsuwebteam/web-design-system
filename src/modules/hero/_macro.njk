@@ -20,17 +20,17 @@
     {% if isSlider %}
       {{ backgroundSlider( ' wsu-background-slider--effect-fade', delay = 3000 ) }}
     {% endif %}
-    {{ overlay(' wsu-overlay--dark-left wsu-pattern-after') }}
+    {{ overlay(' wsu-overlay--dark-left wsu-pattern--style-wsu-light') }}
     <div class="wsu-hero__content">
       <div class="wsu-hero__caption">
         {% if eyebrowHeaderText %}
           {{ eyebrowHeader('', eyebrowHeaderText) }}
         {% endif %}
-        <{{ titleTag }} class="wsu-title" id="unique-id-hero-banner-title">
-          {{ heroTitle }}
+        <{{ titleTag }} class="wsu-title wsu-hero__title" id="unique-id-hero-banner-title">
+          <span>{{ heroTitle }}</span>
         </{{ titleTag }}>
         {% if showCaption %}
-        <div class="wsu-caption">
+        <div class="wsu-caption wsu-hero__copy">
           {% if caption %}
             {{ caption }}
           {% else %}

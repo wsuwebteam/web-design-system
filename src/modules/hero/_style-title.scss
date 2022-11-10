@@ -1,0 +1,77 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-hero--style-title {
+    
+    @extend %wsu-hero;
+    align-items: flex-end;
+
+    .wsu-hero {
+
+        &__content {
+            flex-grow: 1;
+            display: flex;
+        }
+
+        &__caption {
+            max-width: 800px;
+            flex-grow: 0;
+            position: relative;
+            padding: $wsu-spacing--xxmedium $wsu-spacing--large;
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+            -webkit-clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+            clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+        }
+
+        &__copy {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            text-shadow: 0 0 3px #000;
+            font-weight: 500;
+            position: relative;
+        }
+
+        &__title {
+            @extend %wsu-hero--title;
+
+            span {
+                position: relative;
+            }
+
+            &::before {
+                content: '';
+                left: -$wsu-spacing--large;
+                right: -$wsu-spacing--large;
+                top: calc( ( 5.125rem * 1.15 ) / 2 );
+                width: auto;
+                height: 100vh;
+                background-color: rgba( 0,0,0,0.5);
+                position: absolute;
+                border-left: 8px solid $wsu-color--crimson-light;
+            }
+        }
+
+    }
+
+    .wsu-image-frame {
+        @extend %wsu-hero--image-frame;
+    }
+
+    .wsu-overlay {
+        @extend %wsu-hero--overlay;
+    }
+
+    &.wsu-hero--shape-notched {
+
+        .wsu-image-frame,
+        .wsu-overlay {
+            @extend %wsu-hero--notch;
+        }
+
+    }
+
+    
+    
+}

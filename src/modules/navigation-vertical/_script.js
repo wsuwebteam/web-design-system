@@ -48,13 +48,13 @@ class WsuNavigationVertical {
             
         }
 
-        scrollNav() {
+        scrollNav() { 
 
             this.setNavigation();
 
             let height = this.getHeight();
 
-            if ( this.navigation ) {
+            if ( this.navigation && ( false !== height ) ) {
 
                 this.navigation.style.paddingTop = height + 'px';
 
@@ -99,7 +99,7 @@ class WsuNavigationVertical {
 
             this.setHeader();
 
-            let height = 0;
+            let height = false;
 
             if ( this.siteHeader ) {
 

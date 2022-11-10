@@ -1,0 +1,25 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+.wsu-pattern--style-wsu {
+
+    &::before {
+        @extend %wsu-pattern--before;
+        @extend %wsu-pattern--wsu-dark;
+        @extend %wsu-pattern--mask;
+        opacity: 0.8;
+    }
+
+}
+
+.wsu-pattern--style-wsu-light {
+
+    &::before {
+        @extend %wsu-pattern--before;
+        @extend %wsu-pattern--wsu-light;
+        @extend %wsu-pattern--mask;
+        opacity: 0.8;
+    }
+
+}
