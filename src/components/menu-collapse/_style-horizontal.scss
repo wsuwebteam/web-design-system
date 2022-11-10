@@ -8,26 +8,17 @@
 
     ul {
         width: 100%;
-        margin: 0;
-        padding: 0;
+        @extend %wsu-menu-collapse-horizontal--ul;
     }
 
     li {
-        margin: 0;
-        padding: 0;
-        display: flex;
-    }
-
-    a {
-        text-decoration: none;
+        @extend %wsu-menu-collapse-horizontal--li;
     }
 
     button {
-        cursor: pointer;
-        background-color: transparent;
-        border-radius: 0;
-        border: none;
+        @extend %wsu-menu-collapse-horizontal--button;
     }
+
 
     button:first-child,
     a {

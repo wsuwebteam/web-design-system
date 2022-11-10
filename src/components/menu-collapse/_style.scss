@@ -2,12 +2,18 @@
 @import '../../../_assets/scss/mixins';
 @import './mixins';
 
+$wsu-menu-collapse-spacing--nav-horizontal: $wsu-spacing--medium;
+$wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xxsmall;
+$wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
+
 .wsu-menu-collapse {
     margin: 0;
     padding: 0;
     list-style-type: none;
 
-    
+    a {
+        text-decoration: none;
+    }
 
     li,
     ul {
@@ -32,5 +38,149 @@
 
 }
 
+%wsu-menu-collapse-horizontal--ul {
+    margin: 0;
+    padding: 0;
+}
+
+%wsu-menu-collapse-horizontal--li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+
+%wsu-menu-collapse-horizontal--button {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+%wsu-menu-collapse-vertical--ul {
+    margin: 0;
+    padding: 0;
+}
+
+%wsu-menu-collapse-vertical--li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+%wsu-menu-collapse-vertical--button {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+%wsu-menu-collapse-vertical--menu-item {
+    text-decoration: none;
+    font-size: $wsu-font-size--small;
+    color: $wsu-color--gray-75;
+    font-weight: 600;
+    display: block;
+    flex-grow: 1;
+    text-align: left;
+}
+
+%wsu-menu-collapse-vertical--menu-item-button {
+    &::after {
+        content: '\F103';
+        font-family: wsu-icons;
+        transition: transform .2s;
+        font-size: $wsu-font-size--xsmall;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        width: 50px;
+        position: absolute;
+        height: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+%wsu-menu-collapse-vertical--menu-item-split-button {
+    width: 50px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '\F103';
+        font-family: wsu-icons;
+        transition: transform .2s;
+        font-size: $wsu-font-size--xsmall;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    &::after {
+        content:'';
+        position: absolute;
+        height: auto;
+        left: 0;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        background-color: $wsu-color--gray-10;
+    }
+}
+
+%wsu-menu-collapse-vertical--level-1--ul {
+    position: relative;
+
+    &::before {
+        content:'';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 0;
+        background-color: $wsu-color--gray-10;
+    }
+}
+
+%wsu-menu-collapse-vertical--level-1--menu-item {
+    &::after {
+        content:'';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 0;
+        background-color: $wsu-color--gray-10;
+    }
+
+    & > button:first-child,
+    & > a {
+        padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal;
+    }
+}
+
+%wsu-menu-collapse-vertical--level-2--menu-item {
+    & > button:first-child,
+    & > a {
+        font-weight: 500;
+        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+    }
+}
+
+%wsu-menu-collapse-vertical--level-3--menu-item {
+    & > button:first-child,
+    & > a {
+        font-weight: 500;
+        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+    }
+}
+
+
 @import './style-vertical';
 @import './style-horizontal';
+@import './style-context.scss';

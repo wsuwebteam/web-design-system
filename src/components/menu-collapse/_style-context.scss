@@ -2,10 +2,7 @@
 @import '../../../_assets/scss/mixins';
 @import './mixins';
 
-.wsu-menu-collapse--style-vertical {
-
-    @extend %wsu-menu-collapse-vertical--level-1--ul;
-
+.wsu-menu-collapse--style-context {
     ul {
         width: 100%;
         @extend %wsu-menu-collapse-vertical--ul;
@@ -34,24 +31,31 @@
         @extend %wsu-menu-collapse-vertical--menu-item-split-button;
     }
 
-    li[aria-expanded] {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     & > li {
 
-        @extend %wsu-menu-collapse-vertical--level-1--menu-item;
+        & > a {
+            font-weight: 800;
+            font-size: $wsu-font-size--xmedium;
+            padding: $wsu-spacing--xxsmall $wsu-spacing--medium;
+        }
+
+        & > ul {
+            @extend %wsu-menu-collapse-vertical--level-1--ul;
+
+            & > li {
+                @extend %wsu-menu-collapse-vertical--level-1--menu-item;
+
+                & > ul > li {
+                    @extend %wsu-menu-collapse-vertical--level-2--menu-item;
+
+                    & > ul > li {
+                        @extend %wsu-menu-collapse-vertical--level-3--menu-item;
+                    }
+                }
+            }
+        }
+
     }
 
-    & > li li {
-
-        @extend %wsu-menu-collapse-vertical--level-2--menu-item;
-    }
-
-    & > li li li {
-
-        @extend %wsu-menu-collapse-vertical--level-3--menu-item;
-    }
 
 }
