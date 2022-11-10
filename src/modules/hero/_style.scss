@@ -22,6 +22,7 @@
     display: flex;
     min-height: 650px;
     box-sizing: border-box;
+    margin-bottom: $wsu-spacing--xlarge;
 
     &::after {
         display: block;
@@ -54,6 +55,17 @@
     right: 0;
     height: auto;
     width: auto;
+}
+
+%wsu-hero--video-frame {
+    position: absolute;
+    top: 0;
+    bottom: -$wsu-spacing--hero;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    background-color: #000;
 }
 
 %wsu-hero--title {

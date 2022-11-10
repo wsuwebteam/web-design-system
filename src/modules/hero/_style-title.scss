@@ -63,8 +63,13 @@
         @extend %wsu-hero--overlay;
     }
 
+    .wsu-video-frame {
+        @extend %wsu-hero--video-frame;
+    }
+
     &.wsu-hero--shape-notched {
 
+        .wsu-video-frame,
         .wsu-image-frame,
         .wsu-overlay {
             @extend %wsu-hero--notch;
