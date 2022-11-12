@@ -1,0 +1,44 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-stat--style-bar {
+
+    font-size: $wsu-font-size--sxxlarge;
+    border-left: 8px solid $wsu-color--gray-30;
+    padding-left: $wsu-spacing--xmedium;
+    padding-top: $wsu-spacing--xsmall;
+    padding-bottom: $wsu-spacing--xsmall;
+
+    .wsu-stat {
+
+        &__value-wrapper {
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.1em;
+        }
+
+        &__value {
+            @extend %wsu-stat--crimson;
+        }
+
+        &__unit {
+            @extend %wsu-stat--crimson;
+        }
+
+        &__caption {
+            font-size: $wsu-font-size--xmedium;
+            font-weight: 700;
+            display: block;
+        }
+
+        &__caption {
+            font-size: $wsu-font-size--xmedium;
+            font-weight: 700;
+            display: block;
+        }
+
+        &__citation {
+            @extend %wsu-stat--citation;
+        }
+    }
+}

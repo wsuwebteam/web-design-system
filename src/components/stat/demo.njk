@@ -1,7 +1,11 @@
 {% extends "component.njk" %}
 {% from "stat/_macro.njk" import stat %}
 {% block content %}
-<h2>Default</h2>
+<div>
+    {{ stat(value='31%', caption='students who are first in their family to attend college' ) }}
+    {{ stat(style='bar', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+    {{ stat('', '66,558', 'Hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+</div>
 <div>
     {{ stat('', '31%', '', 'students who are first in their family to attend college' ) }}
     {{ stat('', '$345', 'Million', 'annual research funding, fy 2019', false, '') }}
