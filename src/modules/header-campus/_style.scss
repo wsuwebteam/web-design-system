@@ -52,7 +52,7 @@ $wsu-space--logo: $wsu-spacing--medium;
         .wsu-mobile-menu {
             display: none;
         }
-        
+
     }
 
     @media screen and (max-width: $wsu-breakpoint--horizontal-nav ) {
@@ -109,3 +109,16 @@ $wsu-space--logo: $wsu-spacing--medium;
 
     }
 }
+
+@media screen and (max-width: $wsu-breakpoint--horizontal-nav ) {
+
+    .wsu-header-campus ~ .wsu-navigation-vertical {
+        display: none;
+    }
+
+    .wsu-header-campus ~ .wsu-navigation-vertical ~ .wsu-wrapper-site {
+        margin-left: 0;
+    }
+    
+}
+

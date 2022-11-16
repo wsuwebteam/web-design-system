@@ -2,7 +2,7 @@
 @import '../../../_assets/scss/mixins';
 @import '../../components/menu/mixins';
 
-$wsu-mobile-menu-width: 600px;
+$wsu-mobile-menu-width: $wsu-breakpoint--phone;
 
 %wsu-mobile-button--clean {
     color: inherit;
@@ -104,7 +104,6 @@ $wsu-mobile-menu-width: 600px;
             }
         }
     
-        
         
     }
 
