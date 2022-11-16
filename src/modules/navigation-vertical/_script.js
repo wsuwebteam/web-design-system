@@ -110,6 +110,8 @@ class WsuNavigationVertical {
 
             let height = false;
 
+            console.log( siteHeader );
+
             if ( siteHeader ) {
 
                 let headerHeight = siteHeader.scrollHeight;
@@ -117,6 +119,8 @@ class WsuNavigationVertical {
                 height = siteHeader.getBoundingClientRect().top + headerHeight;
 
             }
+
+            console.log( height );
 
             return height; 
         }
