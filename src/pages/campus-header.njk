@@ -3,10 +3,12 @@
 {% from "header-site/_macro.njk" import headerSite %}
 {% from "header-campus/_macro.njk" import headerCampus %}
 {% from "navigation-vertical/_macro.njk" import navigationVertical %}
+{% from "header-global/_macro.njk" import headerGlobal %}
 
 {% block content %}
 <div class="wsu-wrapper-global">
     {% include 'skip-to-main/html.njk' %}
+    {{ headerGlobal( style='system') }}
     {{ headerCampus() }}
     {{navigationVertical() }}
     <div class="wsu-wrapper-site">

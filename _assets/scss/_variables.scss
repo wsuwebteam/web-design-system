@@ -27,6 +27,8 @@ $wsu-border-radius--xsmall: 3px;
 /* ========================================================
 == Breakpoints ==
 ==========================================================*/
+
+
 $wsu-breakpoint--sxxultrawide:  2400px;
 $wsu-breakpoint--xxultrawide:   1900px;
 $wsu-breakpoint--xultrawide:   1750px;
@@ -51,6 +53,8 @@ $wsu-breakpoint-map: (
     'phone':        576px,
     'phone-small':  450px,
 );
+
+$wsu-breakpoint--horizontal-nav: $wsu-breakpoint--desktop;
 
 /* ========================================================
 == Colors ==

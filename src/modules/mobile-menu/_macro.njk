@@ -2,71 +2,48 @@
 {% from "menu-audience/_macro.njk" import menuAudience %}
 {% from "search/_macro.njk" import search %}
 {% from "nested-menu/_macro.njk" import nestedMenu %}
+{% from "menu-collapse/_macro.njk" import menuCollapse %}
 
-{% macro mobileMenu(bodyClasses, startOpen=true, nested=true) %}
-<nav class="wsu-mobile-menu{{ bodyClasses }}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
-    <div class="wsu-mobile-menu__overlay wsu-mobile-menu--toggle"></div>
-    <div class="wsu-mobile-menu__toggle-container">
-        <button class="wsu-mobile-menu__toggle-button wsu-mobile-menu--toggle" id="mobile-menu-open" aria-label="Open site menu">Menu</button>
-    </div>
-    <button class="wsu-mobile-menu__open-button wsu-mobile-menu--open" aria-label="Open site menu">Menu</button>
+{% macro mobileMenu(classes = '', startOpen=true, nested=true, style='top-right', quickLinks=false) %}
+<nav class="wsu-mobile-menu{{ classes }}{% if style %} wsu-mobile-menu--style-{{ style }}{% endif %}" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="Site mobile menu">
+    <button class="wsu-mobile-menu__toggle-button wsu-mobile-menu--toggle" id="mobile-menu-open" aria-label="Open site menu">Menu</button>
+    <button class="wsu-mobile-menu__overlay wsu-mobile-menu--close">Close Menu</button>
     <div class="wsu-mobile-menu__panel">
-        {% if true == nested %}
-        <div class="wsu-nested-menu__breadcrumbs"><a class="wsu-nested-menu__breadcrumb">Breadcrumbs to Refer User</a> / <a class="wsu-nested-menu__breadcrumb">To Site Homepage</a> /</div>
-        <h2 class="wsu-nested-menu__heading">
-            Nested Menu Title
-        </h2>
-        {{ nestedMenu() }}
-        {% endif %}
-        {% if false == nested %}
-        <button class="wsu-mobile-menu__quicklinks">Quick Links / Search</button>
-        <div class="wsu-mobile-menu__quicklinks-overlay">
-            <div class="wsu-mobile-menu__quicklinks-top">
-                <h2 id="modalTitle" class="wsu-mobile-menu__quicklinks-overlay-title">Search WSU</h2>
-            </div>
-            <div class="wsu-mobile-menu__quicklinks-bottom">
-                {{ search() }}
-                <h2 class="wsu-mobile-menu__quicklinks-bottom-heading">Quick Links</h2>
-                <div class="wsu-mobile-menu__quicklinks-links">
-                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
-                    <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+        <div class="wsu-mobile-menu__panel-inner">
+            {% if true == nested %}
+            <div class="wsu-nested-menu__breadcrumbs"><a class="wsu-nested-menu__breadcrumb">Breadcrumbs to Refer User</a> / <a class="wsu-nested-menu__breadcrumb">To Site Homepage</a> /</div>
+            <h2 class="wsu-nested-menu__heading">
+                Nested Menu Title
+            </h2>
+            {{ nestedMenu() }}
+            {% endif %}
+            {% if false == nested %}
+            {% if quickLinks %}
+            <button class="wsu-mobile-menu__quicklinks">Quick Links / Search</button>
+            <div class="wsu-mobile-menu__quicklinks-overlay">
+                <div class="wsu-mobile-menu__quicklinks-top">
+                    <h2 id="modalTitle" class="wsu-mobile-menu__quicklinks-overlay-title">Search WSU</h2>
                 </div>
-                <button class="wsu-mobile-menu__quicklinks-close" aria-label="Close">CLOSE SEARCH</button>
+                <div class="wsu-mobile-menu__quicklinks-bottom">
+                    {{ search() }}
+                    <h2 class="wsu-mobile-menu__quicklinks-bottom-heading">Quick Links</h2>
+                    <div class="wsu-mobile-menu__quicklinks-links">
+                        <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                        <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                        <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                        <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                        <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                        <div class="wsu-mobile-menu__quicklinks-link">Link</div>
+                    </div>
+                    <button class="wsu-mobile-menu__quicklinks-close" aria-label="Close">CLOSE SEARCH</button>
+                </div>
             </div>
+            {% endif %}
+            {{ menuCollapse( style='mobile' ) }} 
+            {{ menuAudience() }}
+            {% endif %}
+            <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
         </div>
-        <ul class="wsu-menu wsu-menu--mobile">
-            <li>
-                <a href="https://wsu.edu/new">Home</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/about-wsu">About</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/wsu-academics">Academics</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/wsu-admissions">Admissions</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/wsu-research">Research</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/athletics">Athletics</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/wsu-campuses">Campuses</a>
-            </li>
-            <li>
-                <a href="https://wsu.edu/new/news">News</a>
-            </li>
-        </ul>
-        {{ menuAudience() }}
-        {% endif %}
-        <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
     </div>
 </nav>
 {% endmacro %} 

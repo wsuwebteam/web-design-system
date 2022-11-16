@@ -25,32 +25,32 @@ class WsuMobileMenu {
             if (eventElement.classList.contains("wsu-mobile-menu--toggle")) {
                 if (this.shouldClose()) {
                     this.close(eventElement);
-                    let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
-                    toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
+                    //let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
+                    //toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
                     ariaUpdate("Close", ".wsu-mobile-menu--toggle");
                 } else {
                     this.open(eventElement);
-                    let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
-                    toggleContainer.classList.add("wsu-mobile-menu__toggle-container-open");
+                    //let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
+                    //toggleContainer.classList.add("wsu-mobile-menu__toggle-container-open");
                     ariaUpdate("Open", ".wsu-mobile-menu--toggle");
                 }
             }
             // Open Action
             if (eventElement.classList.contains("wsu-mobile-menu--open")) {
                 this.open(eventElement);
-                let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
-                toggleContainer.classList.add("wsu-mobile-menu__toggle-container-open");
+                //let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
+                //toggleContainer.classList.add("wsu-mobile-menu__toggle-container-open");
             }
 
             // Close Action
             if (eventElement.classList.contains("wsu-mobile-menu--close")) {
                 this.close(eventElement);
-                let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
-                toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
+                //let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
+                //toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
             }
 
             //Quicklinks overlay click actions
-            if (eventElement.classList.contains("wsu-mobile-menu__quicklinks")){
+            /*if (eventElement.classList.contains("wsu-mobile-menu__quicklinks")){
                 let quicklinksOverlay = document.getElementsByClassName("wsu-mobile-menu__quicklinks-overlay")[0] || false;
                 let quicklinksButton = document.getElementsByClassName("wsu-mobile-menu__quicklinks")[0] || false;
 
@@ -63,7 +63,7 @@ class WsuMobileMenu {
 
                 quicklinksOverlay.classList.remove("wsu-mobile-menu__quicklinks-overlay-open");
                 quicklinksButton.classList.toggle("wsu-mobile-menu__quicklinks-open");
-            }
+            }*/
             
         } catch (error) {
             console.error(error);
@@ -80,8 +80,8 @@ class WsuMobileMenu {
                 if (document.body.classList.contains("wsu-mobile-menu--is-open")) {
                     document.body.classList.remove("wsu-mobile-menu--is-open");
                     document.body.classList.add("wsu-mobile-menu--is-closed");
-                    let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
-                    toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
+                    //let toggleContainer = document.getElementsByClassName("wsu-mobile-menu__toggle-container")[0] || false;
+                    //toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
                 }
             }
             // Gather all focusable elements in a list

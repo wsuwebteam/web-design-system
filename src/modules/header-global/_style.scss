@@ -1,7 +1,8 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-header-global {
+.wsu-header-global:not([class*="wsu-header-global--style-"]) {
+    
     font-family: $wsu-font-family;
     border-top: 4px solid $wsu-color--crimson;
     background-color: $wsu-color--gray-0;
@@ -10,26 +11,30 @@
     padding-right: $wsu-spacing--small;
     position: relative;
 
-    &__content {
-        display: flex;
-        box-sizing: border-box;
-        width: auto;
-        max-width: 100%;
-        height: calc( #{$wsu-height--global-header} - 4px );
+    .wsu-header-global {
+        &__content {
+            display: flex;
+            box-sizing: border-box;
+            width: auto;
+            max-width: 100%;
+            height: calc( #{$wsu-height--global-header} - 4px );
+        }
+    
+        &__navigation {
+    
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            @include wsu-font--small();
+        }
+    
+        &__quick-links {
+            display: flex;
+            position: relative;
+        }
     }
 
-    &__navigation {
-
-        display: flex;
-        flex: 1;
-        justify-content: flex-end;
-        @include wsu-font--small();
-    }
-
-    &__quick-links {
-        display: flex;
-        position: relative;
-    }
+    
 
     .wsu-button-ui-search {
         display: flex;
@@ -126,6 +131,8 @@
     }
 
 }
+
+@import './style-system';
 
 
 

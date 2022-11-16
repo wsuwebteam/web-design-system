@@ -1,8 +1,8 @@
-{% macro menuCollapse( classes='', isContext=false ) %}
+{% macro menuCollapse( classes='', isContext=false, style='' ) %}
 
-<ul class="wsu-menu-collapse {{ classes }}">
+<ul class="wsu-menu-collapse {{ classes }}{% if style %} wsu-menu-collapse--style-{{ style }}{% endif %}">
 
-    {% if classes == 'wsu-menu-collapse--style-context' %}
+    {% if style == 'context' %}
     <li>
         <a href="#">Menu Item</a>
         <ul>
