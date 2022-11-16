@@ -1,0 +1,73 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import './mixins';
+
+.wsu-menu-collapse--style-mobile {
+
+    @extend %wsu-menu-collapse-vertical--level-1--ul;
+
+    ul {
+        width: 100%;
+        @extend %wsu-menu-collapse-vertical--ul;
+    }
+
+    li {
+        @extend %wsu-menu-collapse-vertical--li;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    button {
+        @extend %wsu-menu-collapse-vertical--button;
+    }
+
+    button:first-child,
+    a {
+        @extend %wsu-menu-collapse-vertical--menu-item;
+    }
+
+    button:first-child {
+        @extend %wsu-menu-collapse-vertical--menu-item-button;
+
+        &::after {
+            width: 70px;
+        }
+    }
+
+    a ~ button {
+        @extend %wsu-menu-collapse-vertical--menu-item-split-button;
+        width: 70px;
+    }
+
+    li[aria-expanded] {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & > li {
+
+        @extend %wsu-menu-collapse-vertical--level-1--menu-item;
+    
+        & > button:first-child,
+        & > a {
+            padding: $wsu-spacing--medium $wsu-menu-collapse-spacing--nav-horizontal;
+            font-size: $wsu-font-size--medium;
+        }
+    }
+
+    & > li li {
+
+        @extend %wsu-menu-collapse-vertical--level-2--menu-item;
+        & > button:first-child,
+        & > a {
+            font-weight: 500;
+            padding: $wsu-spacing--xxsmall $wsu-menu-collapse-spacing--nav-horizontal $wsu-spacing--small calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+        }
+    }
+
+    & > li li li {
+
+        @extend %wsu-menu-collapse-vertical--level-3--menu-item;
+    }
+
+}

@@ -1,0 +1,544 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../components/menu/mixins';
+
+$global-header-height: 65px;
+
+.wsu-mobile-menu {
+
+    &__quicklinks-overlay{
+        display: none;
+        z-index: calc( #{$wsu-zindex--navigation} + 10);
+    }
+    &__quicklinks-overlay-open{
+        opacity: 100%;
+        visibility: visible;
+        display: block;
+    }
+    &__quicklinks-overlay-title{
+        font-size: 1rem;
+    }
+    &__quicklinks-open{
+        background-color: $wsu-color--gray-75;
+    }
+    &__quicklinks-top{
+        background-color: #f6f6f6;
+        padding: 20px 20px 0 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__quicklinks-bottom{
+        background-color: #f6f6f6;
+        padding: 10px 20px;
+        overflow: auto;
+    }
+    &__quicklinks-bottom-heading{
+        font-size: 1rem;
+    }
+    &__quicklinks-search-bar{
+        width: 100%;
+        margin: 20px 0;
+    }
+    &__quicklinks-links{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__quicklinks-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+        background: gray;
+        border-radius: 50px;
+        font-weight: 700;
+        color: white;
+    }
+    &__quicklinks-close {
+        float: right;
+        margin: 40px 0 10px 0;
+        background: none;
+        border: none;
+        color: $wsu-color--gray-75; 
+        font-size: .6875rem;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    &__quicklinks-close::after{
+        content: '\F154';
+        font-family: wsu-icons;
+        display: inline-block;
+        font-size: 1rem;
+        vertical-align: middle;
+        color: #404040;
+        margin-left: calc(0.6875rem / 2);
+    }
+    &__panel {
+        position: absolute; 
+        top: $wsu-height--global-header;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $wsu-color--gray-10;
+        width: 100%;
+        left: 0;
+        transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing;
+        opacity: 1;
+        visibility: inherit;
+        box-sizing: border-box;
+        z-index: calc( #{$wsu-zindex--navigation} + 2 );
+        background-color: #fff;
+        box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+        -webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+        -moz-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+    }
+
+    &__overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.6);
+        z-index: calc( #{$wsu-zindex--navigation} + 1 );
+        opacity: 0;
+        //visibility: hidden;
+        transition:  opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
+        cursor: pointer;
+    }
+
+    &__toggle-container{
+        z-index: 1035;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: $wsu-height--global-header;
+        width: $wsu-height--global-header;
+    }
+    &__toggle-container-open{
+        background: white;
+    }
+
+    &__toggle-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        border:none;
+        width: auto;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-top: 4px solid #a60f2d;
+        background-color: transparent;
+        color: inherit;
+        align-items: center;
+        flex-grow: 1;
+        z-index: calc( #{$wsu-zindex--global-header} + 1 );
+        border-radius: 0;
+        justify-content: center;
+        font-size: 0;
+        display: none;
+        cursor: pointer;
+
+        &::before {
+            content: '\F12A';
+            font-family: 'wsu-icons';
+            font-size: $wsu-font-size--xmedium;
+            font-weight: 500; 
+        }
+
+        &:focus,
+        &:hover {
+            box-shadow: none;
+        }
+
+        @include wsu-hover--border-bottom();
+
+        &:focus {
+            @include wsu-focus--link();
+        } 
+    }
+
+    &__open-button {
+        position: fixed;
+        top: 0;
+        height: calc( 100vh );
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $wsu-color--gray-10;
+        width: $wsu-width--navigation-closed;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        box-shadow: none;
+        background-color: #fff;
+        color: inherit;
+        font-size: 0.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        align-items: center;
+        flex-grow: 1;
+        z-index: $wsu-zindex--navigation;
+        border-radius: 0;
+        justify-content: center;
+        transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing;
+        cursor: pointer; 
+
+        &::before {
+            content: '\F12A';
+            font-family: 'wsu-icons';
+            font-size: $wsu-font-size--large;
+            font-weight: 500;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: $wsu-color--gray-10;
+            border-right: 1px solid $wsu-color--gray-60;
+            box-shadow: none;
+        }
+
+    }
+
+    &:focus-within,
+    &:hover,
+    &:focus {
+        .wsu-menu > li {
+
+            &[aria-expanded] > a::after,
+            &::after {
+                opacity: 1 !important;
+            }
+
+        }
+
+    }
+
+    .wsu-button-ui-close {
+        margin-top: $wsu-spacing--medium;
+        margin-bottom: $wsu-spacing--medium;
+        padding-right: $wsu-spacing--small;
+        visibility: inherit;
+    }
+
+    .wsu-menu {
+        flex-grow: 1;
+        visibility: inherit;
+
+        & > li:first-child a::before {
+            content: '\F122';
+            font-family: 'wsu-icons';
+            margin-right: 0.3em;
+        }
+    }
+}
+
+/**
+* ========================= Desktop Responsive View =======================
+*/
+@media screen and (min-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-mobile-menu {
+        &__open-button {
+            visibility: hidden;
+            transform: translateX( calc( #{$wsu-width--navigation-open} - #{$wsu-width--navigation-closed} ) );
+            transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--fast $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
+            opacity: 0;
+        }
+
+        &__panel {
+            opacity: 1;
+            transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing, visibility 0s $wsu-easing 0s;
+        }
+
+        & ~ .wsu-wrapper-site {
+            margin-left: $wsu-width--navigation-open;
+        }
+    }
+
+    .wsu-mobile-menu--is-closed {
+
+        .wsu-mobile-menu {
+
+            &__open-button {
+                transform: translateX( 0 );
+                visibility: visible;
+                transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--fast $wsu-easing, visibility 0s $wsu-easing 0s;
+                opacity: 1;
+
+                &:focus,
+                &:hover {
+                    background-color: $wsu-color--gray-10;
+                    border-right: 1px solid $wsu-color--gray-60;
+                    box-shadow: none;
+                }
+            }
+
+            &__panel {
+                transform: translateX( calc( #{$wsu-width--navigation-closed} - #{$wsu-width--navigation-open} ) );
+                opacity: 0;
+                visibility: hidden;
+                transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
+            }
+
+            & ~ .wsu-wrapper-site {
+                margin-left: $wsu-width--navigation-closed;
+            }
+        }
+    }
+
+}
+
+/**
+* ========================= Tablet Responsive View =======================
+*/
+@media screen and (min-width: $wsu-breakpoint--tablet ) and (max-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-mobile-menu {
+        &__open-button {
+            transform: translateX( 0 );
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &__panel {
+            transform: translateX( calc( #{$wsu-width--navigation-closed} - #{$wsu-width--navigation-open} ) );
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        & ~ .wsu-wrapper-site {
+            margin-left: $wsu-width--navigation-closed;
+        }
+    }
+
+    .wsu-mobile-menu--is-open {
+
+        .wsu-mobile-menu {
+
+            &__open-button {
+                transform: translateX( calc( #{$wsu-width--navigation-open} - #{$wsu-width--navigation-closed} ) );
+                visibility: hidden;
+                transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--fast $wsu-easing, visibility 0s $wsu-easing 0s;
+                opacity: 0;
+            }
+
+            &__panel {
+                transform: translateX( 0 );
+                opacity: 1;
+                visibility: visible;
+                transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
+            }
+
+            &__overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            & ~ .wsu-wrapper-site {
+                transform: translateX( calc( #{$wsu-width--navigation-open} - #{$wsu-width--navigation-closed} ) )
+            }
+        }
+    }
+
+    .wsu-mobile-menu--is-closed {
+
+        .wsu-mobile-menu {
+            &__overlay {
+                visibility: hidden;
+            }
+            
+        }
+    }
+}
+
+/**
+* ========================= Phone Responsive View =======================
+*/
+@media screen and (max-width: $wsu-breakpoint--desktop) {
+
+    .wsu-mobile-menu {
+        &__open-button {
+            display: none;
+        }
+
+        &__toggle-button {
+            display: flex; 
+        }
+
+        &__panel {
+            transform: translateX( #{$wsu-width--navigation-open} );
+            opacity: 0;
+            visibility: hidden;
+            border-left: 1px solid $wsu-color--gray-10;
+
+            & > .wsu-button-ui-close:first-child {
+                display: none;
+            }
+        }
+        &__overlay {
+            visibility: hidden;
+        }
+
+        .wsu-menu {
+            margin-top: $wsu-spacing--medium;
+            flex-grow: unset;
+        }
+        
+    }
+
+    .wsu-mobile-menu--is-open {
+
+        .wsu-mobile-menu {
+
+            &__panel {
+                transform: translateX( 0 );
+                opacity: 1;
+                right: 0;
+                left: auto;
+                visibility: visible;
+                transition: transform $wsu-transition-speed--medium $wsu-easing, opacity $wsu-transition-speed--medium $wsu-easing, visibility $wsu-transition-speed--medium $wsu-easing 0s;
+            }
+            &__overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+            &__quicklinks{
+                text-decoration: none;
+                color: white;
+                background-color: $wsu-color--gray-65;
+                border-right: none;
+                border-bottom: 2px solid $wsu-color--gray-15;
+                border-top: none;
+                outline: 0;
+                box-shadow: none;
+                margin: 0;
+                padding: 1.25rem 1.5rem;
+                border-radius: 0;
+                display: block;
+                box-sizing: border-box;
+                text-align: left;
+                font-size: 1rem;
+                font-weight: 600;
+                position: relative;
+                line-height: 1.5;
+                cursor: pointer;
+            }
+            &__quicklinks::after{
+                content: '\F140';
+                font-family:'wsu-icons';
+                font-size: $wsu-font-size--small;
+                flex: none;
+                vertical-align: text-top;
+                margin-left: 5px;
+            }
+            
+            & ~ .wsu-wrapper-site {
+                transform: translateX( calc( #{$wsu-width--navigation-open} * -1 ) )
+            }
+            .wsu-menu-audience{
+                flex-direction: column;
+            }
+            .wsu-menu-audience__mobile-separator{
+                display: block;
+                margin: 0;
+                width: 100%;
+                border-color: $wsu-color--gray-15;
+                border-top: 1px solid $wsu-color--gray-15;
+            }
+            .wsu-menu-audience__link{
+                padding: 0.6rem 1.5rem;
+            }
+            .wsu-menu-audience__link:not(:last-child){
+                border-right:none;
+            }
+        }
+        .wsu-mobile-menu__quicklinks:focus,.wsu-mobile-menu__quicklinks:hover,.wsu-mobile-menu__quicklinks:active{
+            background-color: $wsu-color--gray-95;
+        }
+        .wsu-mobile-menu .wsu-menu a{
+            text-decoration: none;
+            color: inherit;
+            background-color: transparent;
+            border-right: none;
+            border-bottom: none;
+            border-top: none;
+            outline: 0;
+            box-shadow: none;
+            margin: 0;
+            padding: 0.6rem 1.5rem;
+            flex-grow: 1;
+            border-radius: 0;
+            display: block;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        .wsu-mobile-menu .wsu-menu a:focus{
+            text-decoration: none;
+            outline: 2px solid #ca1237;
+            border-radius: 3px;
+        }
+    }
+
+    .wsu-mobile-menu--is-closed {
+
+        .wsu-mobile-menu {
+            &__overlay {
+                visibility: hidden;
+            }
+            
+        }
+    }
+
+}
+
+
+/**
+* ========================= Make menu color light on dark header =======================
+*/
+
+.wsu-header-global--dark ~ .wsu-mobile-menu {
+    .wsu-mobile-menu__toggle-button {
+        color: $wsu-color--gray-5;
+    }
+
+}
+
+.wsu-mobile-menu__quicklinks-bottom .wsu-search:not([class*="-search--style-"]) .wsu-search__search-toggle-label{
+    padding: 15px;
+}
+
+.wsu-mobile-menu__quicklinks-bottom .wsu-search:not([class*="-search--style-"]) {
+    margin-bottom: 1.25rem;
+}
+.wsu-mobile-menu__quicklinks-open::after{
+    content: '\F154' !important;
+}

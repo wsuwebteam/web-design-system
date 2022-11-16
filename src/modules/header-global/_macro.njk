@@ -2,8 +2,14 @@
 
 
 
-{% macro headerGlobal(bodyClasses) %}
-<header class="wsu-header-global{{ bodyClasses }}">
+{% macro headerGlobal(bodyClasses='', style='' ) %}
+<header class="wsu-header-global {{ bodyClasses }}{% if style %} wsu-header-global--style-{{ style }}{% endif %}">
+    {% if style == 'system' %}
+    <ul class="wsu-header-global__menu">
+        <li><a href="#">Washington State University</a></li>
+        <li><a href="#">Pullman Campus</a></li>
+    </ul>
+    {% else %}
     <div class="wsu-header-global__content">
         {% include 'wordmark/html.njk' %}
         <nav class="wsu-header-global__navigation" aria-label="WSU header menu">
@@ -14,5 +20,6 @@
             <a href="https://search.wsu.edu" class="wsu-button-ui-search" title="Search WSU"></a>
         </nav>
     </div>
+    {% endif %}
 </header> 
 {% endmacro %} 

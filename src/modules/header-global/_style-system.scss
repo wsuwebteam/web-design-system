@@ -1,0 +1,51 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-header-global--style-system {
+    background-color: $wsu-color--gray-75;
+    height: 35px;
+    box-sizing: border-box;
+    border-bottom: 2px solid $wsu-color--crimson;
+    display: flex;
+    z-index: $wsu-zindex--navigation;
+
+    .wsu-header-global__menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+
+        li {
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+            a {
+                color: $wsu-color--gray-5;
+                text-decoration: none;
+                font-size: $wsu-font-size--xsmall;
+                letter-spacing: 1px;
+                font-weight: 300;
+                display: flex;
+                align-items: center;
+                padding: 0 $wsu-spacing--xsmall;
+                text-transform: uppercase;
+                position: relative;
+
+                &::after {
+                    content: '/';
+                    right: -4px;
+                    position: absolute;
+                }
+
+            }
+
+            &:last-child a::after {
+                display: none;
+            }
+
+        }
+
+    }
+
+}
