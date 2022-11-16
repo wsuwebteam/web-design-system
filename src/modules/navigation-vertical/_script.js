@@ -28,6 +28,13 @@ class WsuNavigationVertical {
                 this.scrollEvent.bind( this ),
                 false
             );
+
+            window.addEventListener(
+                'resize', 
+                this.scrollEvent.bind( this ),
+                false
+            );
+    
     
             /*document.addEventListener(
                 'keydown', 
@@ -62,7 +69,7 @@ class WsuNavigationVertical {
 
         }
 
-        setHeader() {
+        getHeader() {
 
             if ( ! this.siteHeader ) {
 
@@ -82,6 +89,8 @@ class WsuNavigationVertical {
 
             }
 
+            return this.siteHeader;
+
         }
 
         setNavigation() {
@@ -97,19 +106,19 @@ class WsuNavigationVertical {
         
         getHeight() {
 
-            this.setHeader();
+            let siteHeader = this.getHeader();
 
             let height = false;
 
-            if ( this.siteHeader ) {
+            if ( siteHeader ) {
 
-                let headerHeight = this.siteHeader.scrollHeight;
+                let headerHeight = siteHeader.scrollHeight;
 
-                height = this.siteHeader.getBoundingClientRect().top + headerHeight;
+                height = siteHeader.getBoundingClientRect().top + headerHeight;
 
             }
 
-            return height;
+            return height; 
         }
     
     }
