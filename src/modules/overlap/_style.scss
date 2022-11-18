@@ -14,18 +14,31 @@
     &__column-inner {
         flex-grow: 1;
     }
+    &:not([class*='--style-left'] ) {
+        .wsu-overlap__column:first-child{
+            .wsu-overlap__column-inner {
+                margin-right: -50px;
+            }
+        }
+        .wsu-overlap__column:last-child{
+            .wsu-overlap__column-inner {
+                margin-left: -50px;
+            }
+        }
+    }
+    &[class*='--style-left']  {    
+        .wsu-overlap__column:first-child{
+            .wsu-overlap__column-inner {
+                margin-left: -50px;
+            }
+        }
+        .wsu-overlap__column:last-child{
+            .wsu-overlap__column-inner {
+                margin-right: -50px;
+            }
+        }
+    }
 
-    &__column:first-child{
-        .wsu-overlap__column-inner {
-            margin-right: -50px;
-        }
-    }
-    &__column:last-child{
-        .wsu-overlap__column-inner {
-            margin-left: -50px;
-        }
-    }
-    
     @media screen and (max-width: $wsu-breakpoint--tablet )  {
         .wsu-overlap__container{
             display: flex;
@@ -63,24 +76,48 @@ $wsu-overlap-map: (
 
 @each $wsuOverlapName, $wsuOverlapValue in $wsu-overlap-map {
 
-    .wsu-overlap__column:first-child{
+    .wsu-overlap:not([class*='--style-left'] ) {
 
-        &.wsu-overlap--overlap-#{$wsuOverlapName} {
-            .wsu-overlap__column-inner {
-                margin-right: -$wsuOverlapValue !important;
+        .wsu-overlap__column:first-child{
+
+            &.wsu-overlap--overlap-#{$wsuOverlapName} {
+                .wsu-overlap__column-inner {
+                    margin-right: -$wsuOverlapValue !important;
+                }
             }
         }
+    
+        .wsu-overlap__column:last-child{
+            &.wsu-overlap--overlap-#{$wsuOverlapName} {
+                .wsu-overlap__column-inner {
+                    margin-left: -$wsuOverlapValue !important;
+                }
+            } 
+        }
+
     }
 
-    .wsu-overlap__column:last-child{
-        &.wsu-overlap--overlap-#{$wsuOverlapName} {
-            .wsu-overlap__column-inner {
-                margin-left: -$wsuOverlapValue !important;
+    .wsu-overlap[class*='--style-left']  {
+
+        .wsu-overlap__column:first-child{
+
+            &.wsu-overlap--overlap-#{$wsuOverlapName} {
+                .wsu-overlap__column-inner {
+                    margin-left: -$wsuOverlapValue !important;
+                }
             }
-        } 
+        }
+    
+        .wsu-overlap__column:last-child{
+            &.wsu-overlap--overlap-#{$wsuOverlapName} {
+                .wsu-overlap__column-inner {
+                    margin-right: -$wsuOverlapValue !important;
+                }
+            } 
+        }
+
     }
+
+    
 
 }
-
-
-
