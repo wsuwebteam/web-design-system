@@ -1,0 +1,8 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-overlap-spotlight--style-left-top{
+    @extend %wsu-overlap-spotlight-reverse;
+
+    @extend %wsu-overlap-spotlight-content-top;
+}

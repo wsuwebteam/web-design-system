@@ -1,0 +1,45 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-overlap-spotlight {
+
+}
+
+%wsu-overlap-spotlight-reverse {
+    @media screen and ( min-width: $wsu-breakpoint--tablet-medium ) {
+        .wsu-overlap__container{
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+%wsu-overlap-spotlight-content-top {
+    .wsu-overlap__column-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+%wsu-overlap-spotlight-content-middle {
+    .wsu-overlap__column-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+%wsu-overlap-spotlight-content-bottom {
+    .wsu-overlap__column-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+@import './style-left-top';
+@import './style-left-middle';
+@import './style-left-bottom';
+@import './style-right-top';
+@import './style-right-middle';
+@import './style-right-bottom'

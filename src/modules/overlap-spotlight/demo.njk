@@ -1,0 +1,19 @@
+{% extends "component.njk" %}
+{% from "overlap-spotlight/_macro.njk" import overlapSpotlight %}
+{% block styles %}
+    <style>
+    .wsu-overlap {
+        margin: 25px 0;
+    }
+    .wsu-overlap__container{
+        max-width: 900px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+{% include 'overlap-spotlight/html.njk' %}
+
+{{overlapSpotlight(style='left-middle')}}
+{{overlapSpotlight(style='right-bottom')}}
+
+{%  endblock %}
