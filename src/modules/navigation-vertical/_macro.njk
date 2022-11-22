@@ -3,8 +3,10 @@
 
 {% macro navigationVertical( classes='' ) %}
 
-    {% call slideInPanel( classPrefix='wsu-navigation-vertical') -%}
-        {{ menuCollapse( classes=' wsu-menu-collapse--style-vertical') }}
+    {% call slideInPanel( classes='wsu-navigation-vertical wsu-slide-in-panel--position-left wsu-slide-in-panel--overlay-none wsu-slide-in-panel--position-left wsu-slide-in-panel--width-vertical-nav', style='crimson-mark', panelID='wsu-navigation-vertical', startOpen='true', showClose='' ) -%}
+        <div class="wsu-navigation-vertical__menu-wrapper">
+            {{ menuCollapse( classes=' wsu-navigation-vertical__menu wsu-menu-collapse--style-context') }}
+        </div>
     {%- endcall %}
 
 {% endmacro %}

@@ -1,0 +1,67 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+%wsu-button-menu {
+    box-sizing: border-box;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    outline: 0;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: 4px solid $wsu-color--crimson;
+    color: inherit;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+%wsu-button-menu__icon {
+    content: '\F12A';
+    font-family: 'wsu-icons';
+    font-size: $wsu-font-size--xmedium;
+    font-weight: 500; 
+}
+
+.wsu-button-menu:not([class*="-menu--style-"]) {
+    @extend %wsu-button-menu;
+    width: 80px;
+
+    &::before {
+        @extend %wsu-button-menu__icon;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        background-color: $wsu-color--crimson;
+        transition: height 150ms $wsu-easing;
+    }
+
+    &:hover,
+    &:focus {
+        &::after {
+            height: 4px;
+        }
+    }
+
+    &:focus {
+        outline: 2px solid $wsu-color--crimson;
+        border-radius: 3px;
+        outline-offset: 2px;
+    }
+
+}

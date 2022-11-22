@@ -1,0 +1,12 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-navigation-mobile {
+    z-index: $wsu-zindex--modal;
+
+    &__close {
+        padding: $wsu-spacing--xmedium;
+        text-align: right;
+    }
+
+}
