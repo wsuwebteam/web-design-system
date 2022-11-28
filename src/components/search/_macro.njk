@@ -1,5 +1,5 @@
-{% macro search( classes='', showOptions=true ) %}
-<form class="wsu-search {{classes}}" method="get">
+{% macro search( classes='', style='', showOptions=true ) %}
+<form class="wsu-search {{classes}}{% if style %} wsu-search--style-{{ style }}{% endif %}" method="get">
     <div class="wsu-search__search-bar">
         <input class="wsu-search__input" type="text" aria-lable="Search input" placeholder="Search" name="q" />
         <button class="wsu-search__submit" aria-lable="Submit Search"></button>
