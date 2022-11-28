@@ -1,0 +1,4 @@
+{% macro decorator( classes='', style='', cssStyle='' ) %}
+<div class="wsu-decorator {{classes}}{% if style %} wsu-decorator--style-{{ style }}{% endif %}"{% if cssStyle %} style="{{ cssStyle }}"{% endif %}>
+</div>
+{% endmacro %}
