@@ -1,5 +1,5 @@
 {% macro stat( classes, style='', value='$345', unit='Million', caption='annual research funding', icon='', citation=''  ) %}
-<div class="wsu-stat{% if style %} wsu-stat--style-{{ style }}{% endif %}{{ classes }} ">
+<div class="wsu-stat{% if style %} wsu-stat--style-{{ style }}{% endif %} {{ classes }} ">
 	{% if icon %}
 	<i class="wsu-stat__icon {{ icon }}"></i>
 	{% endif %}

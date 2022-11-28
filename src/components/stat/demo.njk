@@ -4,14 +4,14 @@
 <div>
     {{ stat(value='31%', caption='students who are first in their family to attend college' ) }}
     {{ stat(style='bar', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
-    {{ stat(style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+    {{ stat(style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }} 
 </div>
 <div>
-    {{ stat('', '31%', '', 'students who are first in their family to attend college' ) }}
-    {{ stat('', '$345', 'Million', 'annual research funding, fy 2019', false, '') }}
-    {{ stat('', '66,558', 'Hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }} 
+    {{ stat(style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }} 
+    {{ stat(classes='wsu-stat--unit-medium', style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
 </div>
 <hr />
+
 <h2>Default | wsu-stat--size-medium</h2>
 <div>
     {{ stat(' wsu-stat--size-medium', '31%', '', 'students who are first in their family to attend college') }}

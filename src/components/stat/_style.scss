@@ -106,6 +106,22 @@ $stat-width-map: (
 
 }
 
+.wsu-stat--unit-medium {
+
+	.wsu-stat__unit {
+		font-size: $wsu-font-size--large !important;
+	}
+
+}
+
+.wsu-stat--unit-small {
+
+	.wsu-stat__unit {
+		font-size: $wsu-font-size--xmedium !important;
+	}
+
+}
+
 
 @each $statWidthName, $statWidth in $stat-width-map {
 
