@@ -1,0 +1,34 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-quicklinks:not([class*="-quicklinks--style-"] ) {
+
+    .wsu-quicklinks {
+
+        &__panel-content {
+            padding: 0 $wsu-spacing--xmedium;
+        }
+
+        &__close {
+            text-align: right;
+            padding: $wsu-spacing--xmedium 0;
+        }
+
+        &__search {
+            margin-bottom: $wsu-spacing--component;
+            padding-bottom: 45px;
+            position: relative;
+
+            .wsu-decorator {
+                width: auto;
+                left: 0;
+                right: 0;
+                height: 30px;
+                opacity: 0.3;
+                bottom: 0;
+            }
+        }
+
+    }
+
+}

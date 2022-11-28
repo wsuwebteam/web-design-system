@@ -1,0 +1,23 @@
+{% from "quicklinks/_macro.njk" import quicklinks %}
+
+
+{% extends "component.njk" %}
+
+
+{% block content %}
+<h2>Default Open</h2>
+<button data-panel="wsu-quicklinks-panel" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
+
+
+{% call quicklinks() -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+
+{%  endblock %} 
