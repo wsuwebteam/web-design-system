@@ -1,0 +1,162 @@
+{% from "slide-in-panel/_macro.njk" import slideInPanel %}
+
+{% extends "component.njk" %}
+
+
+{% block content %}
+<h2>Default Open</h2>
+<button data-panel="wsu-slide-in-panel-open" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
+<hr />
+<h2>Open Left</h2>
+<button data-panel="wsu-slide-in-panel-left" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
+<hr />
+<h2>Styles</h2>
+<button data-panel="wsu-slide-in-panel-crimson-mark" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Crimson Mark</button>
+<hr />
+<h2>No Overlay</h2>
+<button data-panel="wsu-slide-in-panel-overlay" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Crimson Mark</button>
+<hr />
+<h2>Sizes</h2>
+<button data-panel="wsu-slide-in-panel-default" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Default Panel</button>
+<button data-panel="wsu-slide-in-panel-small" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Small Panel</button>
+<button data-panel="wsu-slide-in-panel-medium" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Medium Panel</button>
+<button data-panel="wsu-slide-in-panel-large" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Large Panel</button>
+<button data-panel="wsu-slide-in-panel-xlarge" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open xLarge Panel</button>
+<button data-panel="wsu-slide-in-panel-xxlarge" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open xxLarge Panel</button>
+<button data-panel="wsu-slide-in-panel-hero" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Hero Panel</button>
+<button data-panel="wsu-slide-in-panel-full" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Full Panel</button>
+<button data-panel="wsu-slide-in-panel-cover" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Cover Panel</button>
+
+{% call slideInPanel( panelID='wsu-slide-in-panel-open', startOpen='true') -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--position-left', panelID='wsu-slide-in-panel-left') -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( panelID='wsu-slide-in-panel-crimson-mark', style='crimson-mark') -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( panelID='wsu-slide-in-panel-default') -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--overlay-none', panelID='wsu-slide-in-panel-overlay') -%}
+<h2>No Overlay</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-small', panelID='wsu-slide-in-panel-small') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-medium', panelID='wsu-slide-in-panel-medium') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-large', panelID='wsu-slide-in-panel-large') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-xlarge', panelID='wsu-slide-in-panel-xlarge') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-xxlarge', panelID='wsu-slide-in-panel-xxlarge') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-hero', panelID='wsu-slide-in-panel-hero') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-full', panelID='wsu-slide-in-panel-full') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+{% call slideInPanel( classes='wsu-slide-in-panel--width-cover', panelID='wsu-slide-in-panel-cover') -%}
+<h2>Small</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+
+<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+
+{%- endcall %}
+
+
+{%  endblock %} 

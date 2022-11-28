@@ -1,14 +1,19 @@
 {% from "logo-lockup/_macro.njk" import logoLockup %}
 {% from "navigation-header/_macro.njk" import navigationHeader %}
 {% from "mobile-menu/_macro.njk" import mobileMenu%}
+{% from "button-menu/_macro.njk" import buttonMenu %}
+{% from "header-utility-bar/_macro.njk" import headerUtilityBar %}
 
 {% macro headerCampus( classes='', showNav=true ) %}
 <header class="wsu-header-campus {{ classes }}">
     <div class="wsu-header-campus__inner">
         <div class="wsu-header-campus__banner">
            {{ logoLockup( classes=' wsu-logo-lockup--style-campus',link='#', subtitle='', title='Pullman' ) }}
+           <div class="wsu-header-campus__utility-options">
+            {{ headerUtilityBar() }}
+           </div>
+           {{ buttonMenu( classes='wsu-slide-in-panel--open', ariaLabel='Open Site Menu', for='wsu-navigation-mobile' ) }}
         </div>
-        {{ mobileMenu( classes=' wsu-header-campus__mobile', startOpen=false, nested=false ) }}
         {{ navigationHeader( activeItem='Degree Programs') }}
     </div>
 </header>

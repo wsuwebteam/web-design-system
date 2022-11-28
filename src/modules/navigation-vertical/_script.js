@@ -57,13 +57,13 @@ class WsuNavigationVertical {
 
         scrollNav() { 
 
-            this.setNavigation();
+            let navigation = this.getNavigation();
 
             let height = this.getHeight();
 
-            if ( this.navigation && ( false !== height ) ) {
+            if ( navigation && ( false !== height ) ) {
 
-                this.navigation.style.paddingTop = height + 'px';
+                navigation.style.paddingTop = height + 'px';
 
             }
 
@@ -93,13 +93,17 @@ class WsuNavigationVertical {
 
         }
 
-        setNavigation() {
+        getNavigation() {
 
             if ( ! this.navigation ) {
 
-                this.navigation = document.querySelector( '.wsu-navigation-vertical__panel' );
+                let navigationWrapper = document.querySelector( '.wsu-navigation-vertical' );
+
+                this.navigation = navigationWrapper.querySelector( '.wsu-slide-in-panel__panel-inner' );
 
             }
+
+            return this.navigation;
 
         }
     

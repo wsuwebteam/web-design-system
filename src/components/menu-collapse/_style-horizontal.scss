@@ -79,6 +79,8 @@
                 background-color: $wsu-color--gray-45;
             }
         }
+
+        
         
     }
 
@@ -120,6 +122,18 @@
             &::after {
                 height: 4px;
                 background-color: $wsu-color--gray-45;
+            }
+        }
+
+        &.wsu-menu-collapse--current-item-parent,
+        &.wsu-menu-collapse--current-item {
+            & > button:first-child,
+            & > a {
+
+                &::after {
+                    height: 4px;
+                    background-color: $wsu-color--crimson-light !important;
+                }
             }
         }
 

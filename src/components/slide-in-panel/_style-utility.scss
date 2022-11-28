@@ -1,0 +1,66 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+$wsu-slide-in-panel--speed: 200ms;
+$wsu-slide-in-panel-utility-width: 600px;
+
+.wsu-slide-in-panel--style-utility {
+    @extend %wsu-slide-in-panel;
+
+    .wsu-slide-in-panel {
+
+        &__overlay {
+            @extend %wsu-slide-in-panel__overlay;
+            @extend %wsu-slide-in-panel-overlay-fade-base;
+        }
+
+        &__panel {
+            @extend %wsu-slide-in-panel__panel;
+            @extend %wsu-slide-in-panel__panel--right;
+            @extend %wsu-slide-in-panel-shadow-left;
+            background-color: #fff;
+            width: $wsu-slide-in-panel-utility-width;
+            border-left: 3px solid $wsu-color--crimson;
+            transform: translateX(calc( #{$wsu-slide-in-panel-utility-width} + 6px ) );
+            transition: transform $wsu-slide-in-panel--speed $wsu-easing;
+
+            &::before {
+                @extend %wsu-slide-in-panel__crimson-triangle
+            }
+
+            &::after {
+                opacity: 0.5;
+            }
+        }
+
+        &__panel-inner {
+            @extend %wsu-slide-in-panel__panel-inner;
+        }
+
+        &__header {
+            @extend %wsu-slide-in-panel__header;
+            padding-left: $wsu-spacing--xmedium;
+            padding-right: $wsu-spacing--xmedium;
+        }
+
+        &__content {
+            @extend %wsu-slide-in-panel__content;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        @extend %wsu-slide-in-panel--expanded;
+
+        .wsu-slide-in-panel {
+
+            &__panel {
+                transform: translateX(0);
+            }
+
+            &__overlay {
+                @extend %wsu-slide-in-panel-overlay-fade-in;
+            }
+        }
+        
+    }
+}
