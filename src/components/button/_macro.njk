@@ -1,5 +1,5 @@
-{% macro button( classes, title='Lorem ipsum', tag='button' ) %}
-<{{ tag }} class="wsu-button{{ classes }}">
+{% macro button( classes='', title='Lorem ipsum', tag='button', style='', ariaLabel='', data='' ) %}
+<{{ tag }} class="wsu-button {{ classes }}{% if style %} wsu-button--style-{{ style }}{% endif %}"{% if ariaLabel %} aria-label="{{ ariaLabel }}{% endif %}{% if data %} {{ data }}{% endif %}">
     {{ title }}
 </{{ tag }}>
 {% endmacro %}
