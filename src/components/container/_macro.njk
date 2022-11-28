@@ -1,0 +1,5 @@
+{% macro container( classes='', style='') %}
+<div class="wsu-container {{classes}}{% if style %} wsu-container--style-{{style}}{% endif %}">
+    {{ caller() }}
+</div>
+{% endmacro %}
