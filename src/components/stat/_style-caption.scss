@@ -2,7 +2,6 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-stat--style-caption {
-    font-size: $wsu-font-size--xxlarge;
     flex-direction: column;
     display: flex;
 
@@ -11,6 +10,7 @@
         &__value-wrapper {
             display: block;
             order: 10;
+            margin-top: 0.6rem;
 
             &::after {
                 content: '';
@@ -20,13 +20,16 @@
                 margin-right: auto;
                 background-color: $wsu-color--gray-30;
                 height: 8px;
-                margin-top: 0.2rem;
+                margin-top: 0.6rem;
             }
         }
 
         &__value,
         &__unit {
-            @extend %wsu-stat--crimson;
+            @extend %wsu-stat--crimson; 
+            display: inline-block;
+            font-size: $wsu-font-size--xxlarge;
+            line-height: 1.1;
         }
 
         &__citation,

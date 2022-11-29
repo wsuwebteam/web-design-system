@@ -1,0 +1,309 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-stat--style-round {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    align-items: center;
+    position: relative;
+
+    .wsu-stat {
+
+        &__decorator {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            @extend %wsu-stat--background-circle;
+            @extend %wsu-stat--decorator-crimson-circle;
+
+            &::after {
+                z-index: calc( #{$wsu-zindex--content} - 1 );
+            }
+        }
+
+        &__value-wrapper {
+            @extend %wsu-stat--blocked;
+            margin-bottom: 0.4rem;
+        }
+
+        &__value {
+            @extend %wsu-stat--color-crimson;
+            @extend %wsu-stat--stat-large;
+            @extend %wsu-stat--blocked;
+        }
+
+        &__unit {
+            @extend %wsu-stat--color-crimson;
+            @extend %wsu-stat--stat-small;
+            @extend %wsu-stat--blocked;
+            padding: 0 0.2rem;
+        }
+
+        &__caption {
+            @extend %wsu-stat--caption-medium;
+            @extend %wsu-stat--blocked;
+            max-width: 150px;
+        }
+
+        &__citation {
+            @extend %wsu-stat--blocked;
+            max-width: 150px;
+            @extend %wsu-stat--citation-small;
+        }
+    }
+
+    // Default layout
+    &.wsu-stat--layout-center,
+    &:not([class*='wsu-stat--layout']) {
+        justify-content: center;
+
+        .wsu-stat {
+
+            &__value-wrapper {
+                @extend %wsu-stat--value-center;
+            }
+
+            &__caption {
+                flex-grow: 0;
+            }
+
+            &__citation {
+                flex-grow: 0;
+            }
+        }
+
+    }
+
+    &.wsu-stat--layout-caption-offset-right-reversed,
+    &.wsu-stat--layout-caption-offset-right {
+        justify-content: center;
+
+        .wsu-stat {
+
+            &__value-wrapper {
+                @extend %wsu-stat--value-center;
+                margin-left: 1rem;
+                margin-right: auto;
+            }
+
+            &__caption {
+                flex-grow: 0;
+                margin-left: auto;
+                margin-right: 0;
+            }
+
+            &__citation {
+                flex-grow: 0;
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+    }
+
+    
+
+    &.wsu-stat--layout-value-offset-right-reversed,
+    &.wsu-stat--layout-value-offset-right {
+        justify-content: center;
+
+        .wsu-stat {
+
+            &__value-wrapper {
+                @extend %wsu-stat--value-center;
+                margin-left: 50%;
+                margin-right: auto;
+            }
+
+            &__caption {
+                flex-grow: 0;
+            }
+
+            &__citation {
+                flex-grow: 0;
+            }
+        }
+    
+    }
+
+    &.wsu-stat--layout-value-offset-right-reversed,
+    &.wsu-stat--layout-caption-offset-right-reversed {
+
+        .wsu-stat {
+
+            &__value-wrapper {
+                margin-top: 0.5rem;
+                order: 10; 
+            }
+        }
+    }
+
+    &.wsu-stat--decorator-position-circle-above {
+
+        .wsu-stat__decorator {
+
+            &::after {
+                z-index: $wsu-zindex--content;
+            }
+        }
+
+    } 
+
+    &.wsu-stat--decorator-layout-circle {
+
+        &-bottom-right {
+
+            .wsu-stat__decorator::after {
+                bottom: -20px;
+                top: auto;
+                right: -20px;
+            }
+
+        }
+
+        &-bottom-left {
+
+            .wsu-stat__decorator::after {
+                bottom: -10px;
+                top: auto;
+                left: -10px;
+            }
+
+        }
+
+        &-top-left {
+
+            .wsu-stat__decorator::after {
+                top: -20px;
+                left: -20px;
+            }
+
+        }
+
+    }
+
+    .wsu-stat--decorator-layout-bar-caption-left,
+    &:not([class*='wsu-stat--decorator-layout-bar']) {
+
+        .wsu-stat__caption {
+            @extend %wsu-stat--decorator-bar-gray;
+            transform: translateX(10px);
+
+            &::before {
+                top: 0;
+                bottom: -0.5rem;
+                height: auto;
+                width: 8px;
+                left: -1.2rem;
+            }
+            
+        }
+    }
+
+    &.wsu-stat--decorator-layout-bar {
+
+        &-value-left .wsu-stat__value {
+            @extend %wsu-stat--decorator-bar-gray;
+            &::before {
+                bottom: 8px;
+                height: 8px;
+                width: 80px;
+                right: calc( 100% + 0.75rem );
+            }
+        }
+
+        &-value-above-left .wsu-stat__value {
+            @extend %wsu-stat--decorator-bar-gray;
+            &::before {
+                top: 8px;
+                height: 8px;
+                width: 80px;
+                right: calc( 100% + 1rem );
+            }
+        }
+
+        &-value-after-center .wsu-stat__value-wrapper,
+        &-value-after-left .wsu-stat__value-wrapper,
+        &-value-after-right .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                bottom: -12px;
+                height: 8px;
+                width: 100px;
+            }
+        }
+
+        &-value-after-left .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                left: 0;
+            }
+
+        }
+
+        &-value-after-right .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                right: 0;
+            }
+
+        }
+
+        &-value-after-center .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                right: 50%;
+                transform: translateX(40px);
+            }
+
+        }
+
+        &-value-before-center .wsu-stat__value-wrapper,
+        &-value-before-left .wsu-stat__value-wrapper,
+        &-value-before-right .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-top: 1.3rem;
+            &::before {
+                top: -12px;
+                height: 8px;
+                width: 100px;
+            }
+        }
+
+        &-value-before-left .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                left: 0;
+            }
+
+        }
+
+        &-value-before-right .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                right: 0;
+            }
+
+        }
+
+        &-value-before-center .wsu-stat__value-wrapper {
+            @extend %wsu-stat--decorator-bar-gray;
+            margin-bottom: 1rem;
+            &::before {
+                right: 50%;
+                transform: translateX(40px);
+            }
+
+        }
+    }
+}
+
