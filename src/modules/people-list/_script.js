@@ -8,7 +8,7 @@ import {
 
 const PeopleList = function (el) {
   const urlParams = new URLSearchParams(window.location.search);
-  const apiEndpoint = PEOPLE_API_BASE_URL + "/wp-json/peopleapi/v1/people?";
+  const apiEndpoint = el.dataset.baseUrl + "/wp-json/peopleapi/v1/people?";
   let isInitialized = false;
   const queryAttributes = [
     "count",
@@ -318,7 +318,9 @@ const PeopleList = function (el) {
 
     // create search filter
     if (filters.includes("search")) {
-      const defaultValue = urlParams.has("search") ? urlParams.get("search") : "";
+      const defaultValue = urlParams.has("search")
+        ? urlParams.get("search")
+        : "";
       content += `        
         <div class="wsu-people-list__search-filter">
             <input class="wsu-people-list__search-input" type="text" placeholder="${el.dataset.searchFilterLabel}" value="${defaultValue}"/>
