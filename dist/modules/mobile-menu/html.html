@@ -1,55 +1,81 @@
-<div id="wsu-slide-in-panel" class="wsu-slide-in-panel  wsu-slide-in-panel--style-mobile" aria-expanded="false" aria-haspopup="true" aria-label="Demo menu">
-    <button class="wsu-slide-in-panel__overlay wsu-slide-in-panel--close">Close Demo</button>
-    <div class="wsu-slide-in-panel__panel ">
-        <div class="wsu-slide-in-panel__panel-inner">
+<nav class="wsu-mobile-menu" aria-expanded="true" aria-haspopup="true" aria-label="Site mobile menu">
+    <div class="wsu-mobile-menu__overlay wsu-mobile-menu--toggle"></div>
+    <div class="wsu-mobile-menu__toggle-container">
+        <button class="wsu-mobile-menu__toggle-button wsu-mobile-menu--toggle" id="mobile-menu-open" aria-label="Open site menu">Menu</button>
+    </div>
+    <button class="wsu-mobile-menu__open-button wsu-mobile-menu--open" aria-label="Open site menu">Menu</button>
+    <div class="wsu-mobile-menu__panel">
 
+        <div class="wsu-nested-menu__breadcrumbs"><a class="wsu-nested-menu__breadcrumb">Breadcrumbs to Refer User</a> / <a class="wsu-nested-menu__breadcrumb">To Site Homepage</a> /</div>
+        <h2 class="wsu-nested-menu__heading">
+            Nested Menu Title
+        </h2>
 
-            <ul class="wsu-menu-collapse  wsu-menu-collapse--style-mobile">
-
-
-                <li><a href="#">Menu Item</a></li>
-                <li><a href="#">Menu Item</a></li>
+        <nav class="wsu-nested-menu">
+            <ul class="wsu-menu--nested">
+                <li>
+                    <a href="#">Program Overview</a>
+                </li>
+                <li class="wsu-menu-item--parent" aria-expanded="true" aria-haspopup="true">
+                    <button class="wsu-menu--toggle" aria-label="Close submenu Education">Applying to the MD Program</button>
+                    <ul class="sub-menu" style="">
+                        <li class="wsu-menu-item--current"><a href="#" aria-current="page">Overview</a></li>
+                        <li><a href="#">Admission Requirements</a></li>
+                        <li><a href="#">MD application process & timeline</a></li>
+                        <li><a href="#">Financial Aid and Estimated Cost of Attendance</a></li>
+                        <li><a href="#">Explore Campus Locations</a></li>
+                        <li><a href="#">MD Class Demographics and Statistics</a></li>
+                        <li><a href="#">Contact Admissions</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </li>
                 <li aria-expanded="false" aria-haspopup="true">
-                    <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
-                    <ul>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
+                    <button class="wsu-menu--toggle" aria-label="Close submenu Education">Student Affairs</button>
+                    <ul class="sub-menu" style="">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Financial Education and Scholarships</a></li>
+                        <li><a href="#">Learning Communities</a></li>
+                        <li><a href="#">Student Handbook</a></li>
+                        <li><a href="#">Health and Wellness Services for MD Students</a></li>
                         <li aria-expanded="false" aria-haspopup="true">
-                            <button class="wsu-menu-collapse--action-toggle">Menu Item</button>
-                            <ul>
-                                <li><a href="#">Menu Item</a></li>
-                                <li><a href="#">Menu Item</a></li>
-                                <li><a href="#">Menu Item</a></li>
-                                <li><a href="#">Menu Item</a></li>
+                            <a href="#">Student Programs</a>
+                            <button aria-label="Close submenu Departments" class="wsu-menu--toggle"></button>
+                            <ul class="sub-menu" style="">
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Highlights of the Curriculum</a></li>
+                                <li><a href="#">Curriculum by program year</a></li>
+                                <li><a href="#">Medical education glossary</a></li>
+                                <li><a href="#">Academic Calendar</a></li>
+                                <li><a href="#">Longitudinal Integrated Clerkship</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Menu Item</a></li>
                     </ul>
                 </li>
                 <li aria-expanded="false" aria-haspopup="true">
-                    <a href="#">Menu Item</a>
-                    <button class="wsu-menu-collapse--action-toggle" aria-label="open submenu"></button>
-                    <ul>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
+                    <a href="#">Curriculum</a>
+                    <button aria-label="Close submenu Departments" class="wsu-menu--toggle"></button>
+                    <ul class="sub-menu" style="">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Highlights of the Curriculum</a></li>
+                        <li><a href="#">Curriculum by program year</a></li>
+                        <li><a href="#">Medical education glossary</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Longitudinal Integrated Clerkship</a></li>
                     </ul>
                 </li>
-                <li class="wsu-menu-collapse--current-item"><a href="#">Menu Item</a></li>
                 <li aria-expanded="false" aria-haspopup="true">
-                    <a href="#">Menu Item</a>
-                    <button class="wsu-menu-collapse--action-toggle" aria-label="open submenu"></button>
-                    <ul>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
-                        <li><a href="#">Menu Item</a></li>
+                    <a href="#">Accreditation</a>
+                    <button aria-label="Close submenu Departments" class="wsu-menu--toggle"></button>
+                    <ul class="sub-menu" style="">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Policies</a></li>
                     </ul>
                 </li>
-
             </ul>
+        </nav>
 
-        </div>
+
+
+        <button class="wsu-button-ui-close wsu-mobile-menu--close" aria-label="Close site menu">Close</button>
     </div>
-</div>
+</nav>
