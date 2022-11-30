@@ -8,8 +8,7 @@
 .wsu-decorator--style-block-crimson-light,
 .wsu-decorator--style-block-crimson,
 .wsu-decorator--style-block-gray {
-	display: block;
-	position: absolute;
+	@extend %wsu-decorator--position-absolute;
 }
 
 .wsu-decorator--style-block-crimson-wsu,
