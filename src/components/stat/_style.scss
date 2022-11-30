@@ -23,6 +23,12 @@
 	}
 }
 
+%wsu-stat--stat-xlarge {
+	font-weight: 800;
+	font-size: $wsu-font-size--sxxlarge;
+	line-height: 1; 
+}
+
 %wsu-stat--stat-large {
 	font-weight: 800;
 	font-size: $wsu-font-size--xxlarge;
@@ -42,7 +48,7 @@
 }
 
 %wsu-stat--caption-medium {
-	font-weight: 600;
+	font-weight: 700;
 	font-size: $wsu-font-size--medium;
 	line-height: 1.2;
 	color: $wsu-color--gray-65;
