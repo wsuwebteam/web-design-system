@@ -2,7 +2,7 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-header-global--dark {
-    background-color: $wsu-color--gray-80;
+    background-color: $wsu-color--gray-80 !important;
     color: #fff;
 
     .wsu-wordmark {
