@@ -1,6 +1,11 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+%wsu-stat--display-none {
+	display: none;
+}
+
+
 %wsu-stat--blocked {
 	display: block;
 	position: relative;

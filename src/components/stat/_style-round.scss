@@ -183,6 +183,12 @@
 
         }
 
+        &-none .wsu-stat__decorator::after {
+            
+            @extend %wsu-stat--display-none; 
+
+        }
+
     }
 
     .wsu-stat--decorator-layout-bar-caption-left,
@@ -301,6 +307,15 @@
             &::before {
                 right: 50%;
                 transform: translateX(40px);
+            }
+
+        }
+
+        &-none .wsu-stat__value-wrapper {
+            
+            margin-bottom: 0.5rem;
+            &::before {
+                @extend %wsu-stat--display-none;
             }
 
         }
