@@ -99,7 +99,11 @@ class WsuNavigationVertical {
 
                 let navigationWrapper = document.querySelector( '.wsu-navigation-vertical' );
 
-                this.navigation = navigationWrapper.querySelector( '.wsu-slide-in-panel__panel-inner' );
+                if ( navigationWrapper ) {
+
+                    this.navigation = navigationWrapper.querySelector( '.wsu-slide-in-panel__panel-inner' );
+
+                } 
 
             }
 
