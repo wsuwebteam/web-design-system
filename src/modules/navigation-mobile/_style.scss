@@ -5,8 +5,39 @@
     z-index: $wsu-zindex--modal;
 
     &__close {
-        padding: $wsu-spacing--xmedium;
+        padding: $wsu-spacing--xxmedium $wsu-spacing--xmedium;
         text-align: right;
+    }
+
+    &__search-button {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: $wsu-color--gray-5;
+        padding: $wsu-spacing--medium;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+            content: '\F140';
+            font-family: wsu-icons;
+            opacity: 0.6;
+        }
+    }
+
+    &__menu > ul > li {
+
+        &:first-child {
+            & > a::before {
+                content: '\F122';
+                font-family: wsu-icons;
+                margin-right: 0.5em;
+                font-size: 0.8em;
+            }
+        }
     }
 
 }

@@ -82,10 +82,12 @@ $wsu-list-indent-map: (
     &--columns-2 {
         column-count: 2;
 
-        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+        &:not(.wsu-breakpoint--none) {
+            @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
 
-            column-count: auto; 
-
+                column-count: auto; 
+    
+            }
         }
 
     }
@@ -93,26 +95,30 @@ $wsu-list-indent-map: (
     &--columns-3 {
         column-count: 3;
 
-        @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+        &:not(.wsu-breakpoint--none) {
+            @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
 
-            column-count: auto; 
+                column-count: auto; 
 
+            }
         }
     }
 
     &--columns-4 {
         column-count: 4;
 
-        @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
+        &:not(.wsu-breakpoint--none) {
+            @media screen and (max-width: $wsu-breakpoint--tablet-large ) {
 
-            column-count: 2; 
+                column-count: 2; 
 
-        }
+            }
 
-        @media screen and (max-width: $wsu-breakpoint--tablet ) {
+            @media screen and (max-width: $wsu-breakpoint--tablet ) {
 
-            column-count: auto; 
+                column-count: auto; 
 
+            }
         }
     }
 
@@ -194,8 +200,6 @@ ol ul ol li{
             text-decoration: underline;
         }
     }
-    
-
 }
 
 @import './style-lined';
