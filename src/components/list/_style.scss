@@ -11,6 +11,12 @@ $wsu-list-indent-map: (
     'xsmall':   $wsu-spacing--xsmall,
 );
 
+%wsu-list--clean {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .wsu-list {
 
     &--arrow,
@@ -178,5 +184,20 @@ ol ul ol li{
 
 }
 
+.wsu-list--underline-hover {
+
+    a {
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+
+}
+
 @import './style-lined';
+@import './style-boxed'
 
