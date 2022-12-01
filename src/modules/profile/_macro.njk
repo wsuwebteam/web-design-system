@@ -1,0 +1,43 @@
+{% macro profile(classes = '', showPhoto = true, showBio = true) %}
+    <div class="wsu-profile">
+        {% if showPhoto %}
+            <div class="wsu-profile__photo-container">
+                <img class="wsu-profile__photo" src="https://www.fillmurray.com/300/300" alt="">
+            </div>
+        {% endif %}
+        <div class="wsu-profile__details-container">
+            <ol class="wsu-profile__titles">
+                <li class="wsu-profile__title">
+                    Director of Professoring
+                </li>
+                <li class="wsu-profile__title">
+                    Professor
+                </li>
+            </ol>
+            <div class="wsu-profile__meta wsu-meta-email wsu-meta--icon-crimson">
+                <span class="wsu-screen-reader-only">Email Address</span>
+                <a href="mailto:email@wsu.edu">email@wsu.edu</a>
+            </div>
+
+            <div class="wsu-profile__meta wsu-meta-location wsu-meta--icon-crimson">
+                <span class="wsu-screen-reader-only">Location</span>
+                JOHNSON 361
+            </div>
+
+            <div class="wsu-profile__meta wsu-meta-phone wsu-meta--icon-crimson">
+                <span class="wsu-screen-reader-only">Phone</span>
+                <a href="tel:509-335-5555">509-335-5555</a>
+            </div>
+
+            <div class="wsu-profile__meta wsu-meta-website wsu-meta--icon-crimson">
+                <a href="#">Website</a>
+            </div>
+        </div>
+    </div>
+    {% if showBio %}
+        <div class="wsu-profile__bio">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas dolores, nam vero tenetur corrupti excepturi eum dignissimos fugiat sit praesentium, dicta et reiciendis commodi eveniet, unde necessitatibus itaque. Magni, libero.</p>
+        </div>
+    {% endif %}
+{% endmacro %}

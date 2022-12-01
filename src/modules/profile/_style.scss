@@ -1,0 +1,56 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+/*=============================================
+=            Container            =
+=============================================*/
+.wsu-profile {
+  display: flex;
+  flex-flow: column;
+  row-gap: $wsu-spacing--small;
+  margin-bottom: $wsu-spacing--xxmedium;
+
+  &__photo-container {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+  &__photo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__titles {
+    padding: 0;
+    margin-bottom: $wsu-spacing--small;
+  }
+
+  &__title {
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+
+  &__meta {
+    font-size: $wsu-font-size--small;
+  }
+}
+
+@media screen and (min-width: $wsu-breakpoint--phone) {
+  .wsu-profile {
+    flex-flow: row wrap;
+    column-gap: $wsu-spacing--xmedium;
+    margin-bottom: $wsu-spacing--xxmedium;
+
+    &__photo-container {
+      flex-basis: 33%;
+    }
+  }
+}
+
+@media screen and (min-width: $wsu-breakpoint--tablet-large) {
+  .wsu-profile {
+    &__photo-container {
+      flex-basis: 25%;
+    }
+  }
+}
