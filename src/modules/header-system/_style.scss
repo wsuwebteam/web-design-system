@@ -70,6 +70,11 @@
     }
     &__mobile-wrapper{
         display: none;
+        position: relative;
+
+        .wsu-button-menu {
+            right: 0;
+        }
     }
 
     .wsu-mobile-menu {
