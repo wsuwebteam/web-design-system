@@ -1,0 +1,25 @@
+{% from "container/_macro.njk" import container %}
+
+{% extends "component.njk" %}
+
+
+{% block content %}
+
+
+{% call container() -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+{%- endcall %}
+<div style="width: 300px;">
+{% call container( style='sidebar') -%}
+<h2>Default</h2>
+Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. 
+Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.
+{%- endcall %}
+</div>
+
+
+{%  endblock %} 

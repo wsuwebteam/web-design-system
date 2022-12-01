@@ -2,6 +2,16 @@
 
 {% extends "component.njk" %}
 
+{% block styles %}
+<style>
+@font-face {
+	font-family: 'wsu-outline';
+	src: url('https://cdn.web.wsu.edu/css/Montserrat-Bold-static.ttf') format("opentype");
+}
+</style>
+
+{% endblock %}
+
 {% block content %}
 <div class="wsu-demo-component">
 {% include 'heading/html.njk' %}
@@ -12,6 +22,10 @@
 {{ heading( tag='h4', link='#link' ) }}
 {{ heading( tag='h5', link='#link' ) }}
 {{ heading( tag='h6', link='#link' ) }}
+<hr />
+{{ heading( tag='h1', style='outline', title='wsu', outline='outline' ) }}
+{{ heading( tag='h2', style='outline', title='wsu', outline='outline' ) }}
+{{ heading( tag='h3', style='outline', title='wsu', outline='outline' ) }}
 <hr />
 {{ heading( 'h1', '', 'Lorem ipsum', '', 'test' ) }}
 <p style="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui ligula, sagittis et accumsan sed, 

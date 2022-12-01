@@ -1,0 +1,49 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-stat--style-caption {
+    flex-direction: column;
+    display: flex;
+
+    .wsu-stat {
+
+        &__value-wrapper {
+            display: block;
+            order: 10;
+            margin-top: 0.6rem;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 133px;
+                max-width: 100%;
+                margin-right: auto;
+                background-color: $wsu-color--gray-30;
+                height: 8px;
+                margin-top: 0.6rem;
+            }
+        }
+
+        &__value,
+        &__unit {
+            @extend %wsu-stat--crimson; 
+            display: inline-block;
+            font-size: $wsu-font-size--xxlarge;
+            line-height: 1.1;
+        }
+
+        &__citation,
+        &__caption {
+            font-size: $wsu-font-size--medium;
+            display: block;
+            color: $wsu-color--gray-60
+        }
+
+        &__caption {
+            font-weight: 700;
+            
+        }
+
+    }
+
+}

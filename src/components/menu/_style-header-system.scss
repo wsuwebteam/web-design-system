@@ -3,9 +3,8 @@
 
 .wsu-menu--style-header-system{
 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    @extend %wsu-menu;
+    
     display: flex;
     flex-wrap: wrap;
 

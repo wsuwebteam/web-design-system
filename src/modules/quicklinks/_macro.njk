@@ -1,0 +1,28 @@
+{% from "slide-in-panel/_macro.njk" import slideInPanel %}
+{% from "search/_macro.njk" import search %}
+{% from "button/_macro.njk" import button %}
+{% from "decorator/_macro.njk" import decorator %}
+
+{% macro quicklinks( style='crimson-mark',  startOpen='true') %}
+
+{% call slideInPanel( classes='wsu-quicklinks wsu-slide-in-panel--width-large wsu-has-background--dark', style=style, panelClasses='wsu-quicklinks__panel wsu-background--gradient-dark', panelID='wsu-quicklinks-panel', startOpen=startOpen, panelLabel='Quick Links', tag='nav' ) -%}
+<div class="wsu-quicklinks__panel-content">
+    <div class="wsu-quicklinks__close">
+        {{ button( classes=' wsu-slide-in-panel--close', style='action', title='Close Search' ) }}
+    </div>
+    <div class="wsu-quicklinks__search">
+        {{ search( classes="wsu-has-background--dark", style='underline', showOptions=false ) }}
+        {{ decorator( style='lines-gray' ) }}
+    </div>
+    <div class="wsu-quicklinks__content">
+        {{ caller() }}
+    </div>
+    <div class="wsu-quicklinks__footer">
+        <h2>Featured News</h2>
+        <div class="wsu-quicklinks__footer-decorator">
+            <div class="wsu-decorator wsu-decorator--style-lines-gray"></div>
+        </div>
+    </div>
+</div>
+{%- endcall %}
+{% endmacro %}

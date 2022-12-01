@@ -1,0 +1,44 @@
+{% from "navigation-mobile/_macro.njk" import navigationMobile %}
+{% from "quicklinks/_macro.njk" import quicklinks %}
+
+{% extends "component.njk" %}
+
+
+
+{% block content %}
+<button data-panel="wsu-navigation-mobile" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Navitagtion</button>
+{{ navigationMobile() }}
+{% call quicklinks( startOpen='false') -%}
+<h2>Quick links</h2>
+<ul class="wsu-list wsu-list--style-boxed wsu-list--columns-2 wsu-breakpoint--none wsu-list--underline-hover  wsu-has-background--dark">
+    <li><a href="#">List Link 1</a></li>
+    <li><a href="#">List Link 2</a></li>
+    <li><a href="#">List Link 3</a></li>
+    <li><a href="#">List Link 4</a></li>
+    <li><a href="#">List Link 5</a></li>
+    <li><a href="#">List Link 1</a></li>
+    <li><a href="#">List Link 2</a></li>
+    <li><a href="#">List Link 3</a></li>
+    <li><a href="#">List Link 4</a></li>
+    <li><a href="#">List Link 5</a></li>
+    <li><a href="#">List Link 1</a></li>
+    <li><a href="#">List Link 2</a></li>
+</ul>
+
+<h2>Campuses</h2>
+<ul class="wsu-list wsu-list--style-boxed wsu-list--columns-2 wsu-breakpoint--none wsu-list--underline-hover  wsu-has-background--dark">
+    <li><a href="#">List Link 1</a></li>
+    <li><a href="#">List Link 2</a></li>
+    <li><a href="#">List Link 3</a></li>
+    <li><a href="#">List Link 4</a></li>
+    <li><a href="#">List Link 5</a></li>
+    <li><a href="#">List Link 1</a></li>
+    <li><a href="#">List Link 2</a></li>
+    <li><a href="#">List Link 3</a></li>
+    <li><a href="#">List Link 4</a></li>
+    <li><a href="#">List Link 5</a></li>
+    <li><a href="#">List Link 1</a></li>
+    <li><a href="#">List Link 2</a></li>
+</ul>
+{%- endcall %}
+{%  endblock %} 

@@ -1,0 +1,13 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-separator--style-thin {
+    border-color: transparent;
+    border-top: 1px solid $wsu-color--gray-20;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: $wsu-spacing--sxxsmall;
+    margin-bottom: $wsu-spacing--sxxsmall;
+} 

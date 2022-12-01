@@ -1,8 +1,6 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-@import '../../../_assets/scss/variables';
-@import '../../../_assets/scss/mixins';
 
 $wsu-space--logo: $wsu-spacing--medium;
 
@@ -31,9 +29,17 @@ $wsu-space--logo: $wsu-spacing--medium;
         background-color: #fff;
         height: 150px;
         display: flex;
-        width: 100%;
         z-index: $wsu-zindex--navigation;
         position: relative;
+        box-sizing: border-box;
+    }
+
+    &__utility-options {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
     }
 
     .wsu-logo-lockup__icon-wrapper {
@@ -47,8 +53,14 @@ $wsu-space--logo: $wsu-spacing--medium;
         padding: 0 $wsu-spacing--small;
     }
 
+    .wsu-button-menu {
+        right: 0;
+        display: none;
+    }
+
     @media screen and (min-width: $wsu-breakpoint--horizontal-nav ) {
 
+        .wsu-navigation-mobile,
         .wsu-mobile-menu {
             display: none;
         }
@@ -57,7 +69,9 @@ $wsu-space--logo: $wsu-spacing--medium;
 
     @media screen and (max-width: $wsu-breakpoint--horizontal-nav ) {
 
-        
+        .wsu-button-menu {
+            display: flex;
+        }
 
         .wsu-header-campus__banner {
             height: 125px;
@@ -72,6 +86,7 @@ $wsu-space--logo: $wsu-spacing--medium;
         }
 
 
+        .wsu-header-campus__utility-options,
         .wsu-navigation-header {
             display: none;
         }
@@ -120,5 +135,28 @@ $wsu-space--logo: $wsu-spacing--medium;
         margin-left: 0;
     }
     
+}
+
+.wsu-header-global ~ .wsu-header-campus .wsu-header-campus__utility-options {
+    margin-top: -35px;
+
+    .wsu-header-utility-bar {
+        position: relative;
+    }
+
+    .wsu-header-utility-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 35px;
+        width: 6px;
+        left: -6px;
+        display: block;
+        background: -moz-linear-gradient(left,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        background: linear-gradient(to right,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#80000000',GradientType=1 );
+        opacity: 0.5;
+    }
 }
 

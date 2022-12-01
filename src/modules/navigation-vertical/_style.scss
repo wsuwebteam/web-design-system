@@ -2,17 +2,15 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-navigation-vertical {
-    position: relative;
+
     z-index: calc( #{$wsu-zindex--navigation} - 1 );
 
-    &__panel {
-        width: $wsu-width--navigation-veritcal;
-        border-right: 1px solid $wsu-color--gray-15;
-        overflow-y: auto;
+    &__menu-wrapper {
+        padding-top: 60px;
     }
 
-    &__panel-inner {
-        padding: $wsu-spacing--xxmedium 0;
+    .wsu-slide-in-panel__panel {
+        border-right: 1px solid $wsu-color--gray-10 !important;
     }
 }
 
@@ -22,7 +20,7 @@
 
 .wsu-header-unit ~ .wsu-navigation-vertical {
 
-    .wsu-navigation-vertical__panel {
+    .wsu-slide-in-panel__panel-inner {
         padding-top: 211px;
     }
 
@@ -30,7 +28,7 @@
 
 .wsu-header-campus ~ .wsu-navigation-vertical {
 
-    .wsu-navigation-vertical__panel {
+    .wsu-slide-in-panel__panel-inner {
         padding-top: 231px;
     }
 

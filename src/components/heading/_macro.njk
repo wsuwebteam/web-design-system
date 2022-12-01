@@ -1,6 +1,6 @@
-{% macro heading( tag='h1', classes='', title='Lorem ipsum', link='', anchor='' ) %}
-<{{ tag }} class="{{ classes }}" id="{{anchor}}">
-    {% if link %}<a href="{{link}}">{% endif %}{{ title }}{% if link %}</a>{% endif %}
+{% macro heading( tag='h1', classes='', title='Lorem ipsum', link='', anchor='', style='', outline='' ) %}
+<{{ tag }} class="{{ classes }}{% if style %} wsu-heading--style-{{ style }}{% endif %}" id="{{anchor}}" >
+    {% if link %}<a href="{{link}}">{% endif %}{{ title }}{% if outline %} <strong>{{ outline }}</strong>{% endif %}{% if link %}</a>{% endif %}
     {% if anchor %} <a href="#{{anchor}}" class="wsu-heading__anchor-link"><span class="wsu-screen-reader-only">Jump link for {{ title }}"</span><span aria-hidden="true">#</span></a> {% endif %}
 </{{ tag }}>
 {% endmacro %}

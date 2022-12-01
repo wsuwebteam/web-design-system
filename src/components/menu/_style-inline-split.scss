@@ -3,9 +3,8 @@
 
 .wsu-menu--style-inline-split {
 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    @extend %wsu-menu;
+    
     display: flex;
     flex-wrap: wrap;
 

@@ -1,6 +1,121 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+%wsu-stat--display-none {
+	display: none;
+}
+
+
+%wsu-stat--blocked {
+	display: block;
+	position: relative;
+	z-index: $wsu-zindex--content;
+}
+
+%wsu-stat--value-center {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	margin-bottom: 0.1rem;
+
+	.wsu-stat__value {
+		flex-grow: 0;
+	}
+
+	.wsu-stat__unit {
+		flex-grow: 0;
+	}
+}
+
+%wsu-stat--stat-xlarge {
+	font-weight: 800;
+	font-size: $wsu-font-size--sxxlarge;
+	line-height: 1; 
+}
+
+%wsu-stat--stat-large {
+	font-weight: 800;
+	font-size: $wsu-font-size--xxlarge;
+	line-height: 1;
+}
+
+%wsu-stat--stat-medium {
+	font-weight: 800;
+	font-size: $wsu-font-size--xlarge;
+	line-height: 1;
+}
+
+%wsu-stat--stat-small {
+	font-weight: 800;
+	font-size: $wsu-font-size--xmedium;
+	line-height: 1.5;
+}
+
+%wsu-stat--caption-medium {
+	font-weight: 700;
+	font-size: $wsu-font-size--medium;
+	line-height: 1.2;
+	color: $wsu-color--gray-65;
+}
+
+%wsu-stat--citation-small {
+	font-weight: 500;
+	font-size: $wsu-font-size--small;
+	line-height: 1.5;
+	color: $wsu-color--gray-65;
+}
+
+%wsu-stat--position-relative {
+	position: relative;
+}
+
+%wsu-stat--background-circle {
+	position: relative;
+
+	&::before {
+		content:'';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		padding-top: 100%;
+		display: block;
+		border-radius: 50%;
+		background-color: $wsu-color--gray-10;
+		z-index: $wsu-zindex--content;
+	}
+}
+
+%wsu-stat--decorator-crimson-circle {
+
+	&::after {
+		content:'';
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		width: 80px;
+		padding-top: 80px;
+		display: block;
+		border-radius: 50%;
+		background-image: repeating-linear-gradient(135deg, $wsu-color--crimson-light, $wsu-color--crimson-light 2px, transparent 2px, transparent 10px);
+		background-position: 0 -4px;
+		background-repeat: no-repeat;
+		z-index: $wsu-zindex--content;
+	}
+}
+
+%wsu-stat--decorator-bar-gray {
+
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background-color: $wsu-color--gray-35;
+		display: block;
+	}
+}
+
 %wsu-stat--crimson {
 	font-size: inherit;
 	font-weight: $wsu-font-weight--xextrabold;
@@ -8,6 +123,12 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	line-height: inherit;
+}
+
+%wsu-stat--color-crimson {
+	background: linear-gradient(0deg, #B12D47 0%, $wsu-color--crimson-light 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 %wsu-stat--citation {
@@ -106,6 +227,22 @@ $stat-width-map: (
 
 }
 
+.wsu-stat--unit-medium {
+
+	.wsu-stat__unit {
+		font-size: $wsu-font-size--large !important;
+	}
+
+}
+
+.wsu-stat--unit-small {
+
+	.wsu-stat__unit {
+		font-size: $wsu-font-size--xmedium !important;
+	}
+
+}
+
 
 @each $statWidthName, $statWidth in $stat-width-map {
 
@@ -119,3 +256,5 @@ $stat-width-map: (
 
 @import './style-circles';
 @import './style-bar';
+@import './style-caption';
+@import './style-round';

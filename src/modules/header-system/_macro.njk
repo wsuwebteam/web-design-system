@@ -3,6 +3,7 @@
 {% from "menu/_macro.njk" import menu %}
 {% from "mobile-menu/_macro.njk" import mobileMenu %}
 {% from "modal/_macro.njk" import modal %}
+{% from "button-menu/_macro.njk" import buttonMenu %}
 
 {% macro headerSystem(bodyClasses) %}
 <header class="wsu-header-system{{ bodyClasses }}">
@@ -46,8 +47,7 @@
         </ul>
     </nav>
     <div class="wsu-header-system__mobile-wrapper">
-        {{ mobileMenu() }}
+        {{ buttonMenu( classes='wsu-slide-in-panel--open', ariaLabel='Site Menu', for='wsu-navigation-mobile' ) }}
     </div>
-    {{ modal() }}
 </header>
 {% endmacro %}

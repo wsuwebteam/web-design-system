@@ -1,0 +1,41 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-heading--style-outline {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4.2rem;
+    font-weight: 700;
+    margin-bottom: $wsu-spacing--xxmedium;
+    color: $wsu-color--gray-75;
+
+    &::before {
+        content: "";
+        background-color: #ca1237;
+        display: block;
+        height: 0.12em;
+        width: 1.4em;
+        top: 0;
+        margin: 0 auto 0.2em;
+    }
+
+    &::after {
+        display: none;
+    }
+
+    strong {
+        font-family: 'wsu-outline' !important;
+        font-weight: 500;
+        color: #fff;
+        font-size: 1.05em;
+        letter-spacing: 1px;
+        -webkit-text-stroke: 3px $wsu-color--crimson-light;
+        text-stroke: 3px $wsu-color--crimson-light;
+        text-shadow:
+            -1px -1px 0 $wsu-color--crimson-light,  
+                1px -1px 0 $wsu-color--crimson-light,
+                -1px 1px 0 $wsu-color--crimson-light,
+                1px 1px 0 $wsu-color--crimson-light;
+    }
+
+}

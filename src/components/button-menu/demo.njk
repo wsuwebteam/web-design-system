@@ -1,0 +1,19 @@
+{% from "button-menu/_macro.njk" import buttonMenu %}
+
+{% extends "component.njk" %}
+
+{% block styles %}
+<style>
+.demo-parent {
+    position: relative;
+    height: 100px;
+    border: 1px dashed #ddd;
+}
+</style>
+{%  endblock %}
+
+{% block content %}
+<div class="demo-parent">
+{{ buttonMenu( ariaLable='Open Site Menu' ) }}
+</div>
+{%  endblock %}

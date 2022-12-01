@@ -1,26 +1,252 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-slide-in-panel {
+$wsu-slide-in-panel--speed: 200ms;
+
+
+$wsu-slide-in-panel--width-default: 400px;
+$wsu-slide-in-panel--width-vertical-nav: $wsu-width--navigation-veritcal;
+$wsu-slide-in-panel--width-xsmall: 150px;
+$wsu-slide-in-panel--width-small: 250px;
+$wsu-slide-in-panel--width-medium: 350px;
+$wsu-slide-in-panel--width-large: 500px;
+$wsu-slide-in-panel--width-xlarge: 650px;
+$wsu-slide-in-panel--width-xxlarge: 800px;
+$wsu-slide-in-panel--width-hero: 1200px;
+$wsu-slide-in-panel--width-full: 95vw;
+$wsu-slide-in-panel--width-cover: 100vw;
+
+$wsu-slide-in-panel--width-map: (
+    'vertical-nav': $wsu-slide-in-panel--width-vertical-nav,
+    'small': $wsu-slide-in-panel--width-small,
+    'medium': $wsu-slide-in-panel--width-medium,
+    'large': $wsu-slide-in-panel--width-large,
+    'xlarge': $wsu-slide-in-panel--width-xlarge,
+    'xxlarge': $wsu-slide-in-panel--width-xxlarge,
+    'hero': $wsu-slide-in-panel--width-hero,
+    'cover': $wsu-slide-in-panel--width-cover,
+    'full': $wsu-slide-in-panel--width-full,
+);
+
+
+%wsu-slide-in-panel {
+    visibility: hidden;
+    transition: visibility 0s $wsu-easing 300ms;
+    /*width: 0;
+    overflow: hidden;
     
-    &__panel {
-        position: fixed;
+    position: fixed;
+    top:0;
+    height: 100vh;
+    left: 0;*/
+}
+
+%wsu-slide-in-panel--expanded {
+    visibility: visible;
+    width: 100vw;
+    transition: width 0s $wsu-easing 300ms;
+} 
+
+%wsu-slide-in-panel__crimson-triangle {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $wsu-color--crimson-light;
+    width: 80px;
+    height: 80px;
+    display: block;
+    clip-path: polygon(100% 0,100% calc(100% - 100px),calc(100% - 100px) 100%,0 100%,0 0)
+}
+
+%wsu-slide-in-panel-shadow {
+    
+    &::after {
+        position: absolute;
         top: 0;
-        height: 100vh;
+        bottom: 0;
+        content: '';
+        height: auto;
+        display: block;
+        width: 6px;
+        opacity: 0.5;
+    }
+}
+
+%wsu-slide-in-panel-shadow--left {
+    
+    &::after {
+        left: -6px;
+        background: -moz-linear-gradient(left,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        background: linear-gradient(to right,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#80000000',GradientType=1 );
+    }
+}
+
+
+%wsu-slide-in-panel-overlay-fade-in {
+     opacity: 0.7;
+}
+
+
+%wsu-slide-in-panel__overlay {
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    font-size: 0;
+    background-color: #000;
+    cursor: pointer;
+    width: 0;
+    opacity: 0;
+    transition: opacity 150ms $wsu-easing, width 0s $wsu-easing $wsu-slide-in-panel--speed;
+    overflow: hidden;
+}
+
+
+%wsu-slide-in-panel__panel {
+    display: block;
+    max-width: 100%;
+    position: fixed;
+    top:0;
+    height: 100vh;
+    right: 0;
+}
+
+%wsu-slide-in-panel__panel--right {
+    right: 0;
+}
+
+%wsu-slide-in-panel__panel--left {
+    left: 0;
+}
+
+%wsu-slide-in-panel__panel-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: auto;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    right: 0;
+}
+
+%wsu-slide-in-panel__header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+%wsu-slide-in-panel__content {
+    flex-grow: 1;
+}
+
+
+
+.wsu-slide-in-panel {
+    @extend %wsu-slide-in-panel;
+
+    &__overlay {
+        @extend %wsu-slide-in-panel__overlay;
+    }
+
+    &__panel {
+        @extend %wsu-slide-in-panel__panel;
         background-color: #fff;
-        width: 300px;
-        box-sizing: border-box;
+        transition: transform $wsu-slide-in-panel--speed $wsu-easing;
+        width: $wsu-slide-in-panel--width-default;
+        transform: translateX(calc( #{ $wsu-slide-in-panel--width-default } + 6px ) );
+        @extend %wsu-slide-in-panel-shadow;
+        @extend %wsu-slide-in-panel-shadow--left;
     }
 
     &__panel-inner {
-
-
+        @extend %wsu-slide-in-panel__panel-inner;
     }
 
-    &__overlay {
+    &[aria-expanded="true"] {
+        visibility: visible;
+        width: 100vw;
+        transition: visibility 0s $wsu-easing 0s;
+        
+        .wsu-slide-in-panel {
 
+            &__panel {
+                transform: translateX(0) !important;
+            }
+
+            &__overlay {
+                width: 100vw;
+                @extend %wsu-slide-in-panel-overlay-fade-in;
+                transition: opacity 150ms $wsu-easing, width 0s $wsu-easing 0s;
+            }
+        }
+        
     }
-
-
-
 }
+
+@each $width-name, $width-value in $wsu-slide-in-panel--width-map {
+
+    .wsu-slide-in-panel--width-#{$width-name} .wsu-slide-in-panel__panel {
+        width: $width-value;
+        transform: translateX(calc( #{ $width-value } + 6px ) );
+    }
+
+    .wsu-slide-in-panel--width-#{$width-name}.wsu-slide-in-panel--position-left  .wsu-slide-in-panel__panel {
+        transform: translateX(calc( ( #{ $width-value } + 6px ) * -1 ) );
+    }
+    
+}
+
+.wsu-slide-in-panel--position-left  .wsu-slide-in-panel__panel {
+    left: 0;
+    right: auto;
+    transform: translateX(calc( ( #{ $wsu-slide-in-panel--width-default } + 6px ) * -1 ) );
+}
+
+.wsu-slide-in-panel--overlay-none {
+    .wsu-slide-in-panel__panel::after,
+    .wsu-slide-in-panel__overlay {
+        display: none !important;
+    }
+
+} 
+
+
+@import './style-crimson-mark';
+
+
+
+
+
+/*.wsu-slide-in-panel {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wsu-slide-in-panel--background-gray {
+
+    .wsu-slide-in-panel__panel {
+        background-color: #333 !important;
+        background: rgb(68,68,68);
+        background: -moz-linear-gradient(-45deg,  rgba(68,68,68,1) 0%, rgba(17,17,17,1) 100%);
+        background: -webkit-linear-gradient(-45deg,  rgba(68,68,68,1) 0%,rgba(17,17,17,1) 100%);
+        background: linear-gradient(135deg,  rgba(68,68,68,1) 0%,rgba(17,17,17,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#111111',GradientType=1 );
+    }
+}*/
+
+
+//@import './style-vertical';

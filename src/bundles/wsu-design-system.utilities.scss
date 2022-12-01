@@ -345,14 +345,20 @@
 
 /** ================ .wsu-width-- ====================== **/
 
-
-@import '../../_assets/scss/utilities/pull';
-@import '../../_assets/scss/utilities/push';
 @import '../../_assets/scss/utilities/align';
-@import '../../_assets/scss/utilities/width';
+@import '../../_assets/scss/utilities/background';
 @import '../../_assets/scss/utilities/border';
-@import '../../_assets/scss/utilities/notch';
+@import '../../_assets/scss/utilities/break';
 @import '../../_assets/scss/utilities/font';
 @import '../../_assets/scss/utilities/hide';
+@import '../../_assets/scss/utilities/notch';
 @import '../../_assets/scss/utilities/opacity';
-@import '../../_assets/scss/utilities/break';
+@import '../../_assets/scss/utilities/pull';
+@import '../../_assets/scss/utilities/push';
+@import '../../_assets/scss/utilities/width';
+
+
+
+
+
+

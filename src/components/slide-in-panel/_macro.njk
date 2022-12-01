@@ -1,10 +1,11 @@
-{% macro slideInPanel( classes='', classPrefix='' ) %}
+{% macro slideInPanel( classes='', panelClasses='', style='', panelLabel='Demo', startOpen='false',  panelID='wsu-slide-in-panel', tag='div', buttonStyle='action', showClose='true' ) %}
 
-<div class="wsu-slide-in-panel{{ classes }} {{ classPrefix }}">
-    <div class="wsu-slide-in-panel__panel {{ classPrefix }}__panel">
-        <div class="wsu-slide-in-panel__panel-inner {{ classPrefix }}__panel-inner">
+<{{ tag }} id="{{ panelID }}" class="wsu-slide-in-panel {{ classes }}{% if style %} wsu-slide-in-panel--style-{{style}}{% endif %}"  aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="{{ panelLabel }} menu">
+    {% if showClose %}<button class="wsu-slide-in-panel__overlay wsu-slide-in-panel--close">Close {{ panelLabel }}</button>{% endif %}
+    <div class="wsu-slide-in-panel__panel {{ panelClasses }}">
+        <div  class="wsu-slide-in-panel__panel-inner">
             {{ caller() }}
         </div>
     </div>
-</div>
+</{{ tag }}>
 {% endmacro %}

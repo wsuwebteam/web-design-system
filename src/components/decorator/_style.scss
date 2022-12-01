@@ -1,6 +1,11 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
+%wsu-decorator--position-absolute {
+    display: block;
+	position: absolute;
+}
+
 @import './style-block';
 @import './style-triangle';
 @import './style-lines';

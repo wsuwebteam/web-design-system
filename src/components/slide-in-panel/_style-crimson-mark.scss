@@ -1,0 +1,30 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-slide-in-panel--style-crimson-mark {
+
+    .wsu-slide-in-panel {
+
+        &__panel {
+            border-top: 2px solid $wsu-color--crimson-light;
+            border-left: 3px solid $wsu-color--crimson;
+
+            &::before {
+                @extend %wsu-slide-in-panel__crimson-triangle
+            }
+        }
+    }
+
+}
+
+.wsu-slide-in-panel--style-crimson-mark.wsu-slide-in-panel--position-left {
+
+    .wsu-slide-in-panel {
+
+        &__panel {
+            border-left: none;
+            border-right: 3px solid $wsu-color--crimson;
+        }
+    }
+
+}

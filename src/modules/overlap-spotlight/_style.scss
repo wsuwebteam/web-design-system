@@ -2,7 +2,10 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-overlap-spotlight {
-
+    &__caption{
+        background-color: white;
+        padding: $wsu-spacing--xmedium;
+    }
 }
 
 %wsu-overlap-spotlight-reverse {

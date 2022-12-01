@@ -1,18 +1,71 @@
 {% extends "component.njk" %}
 {% from "stat/_macro.njk" import stat %}
+
+{% block styles %}\
+<style>
+.demo-group {
+    display: flex; 
+    flex-wrap:wrap; 
+    justify-content: space-between;
+}
+
+.demo-group .wsu-stat {
+    margin-right: 4rem;
+}
+</style>
+
+{%  endblock %} 
+
+
 {% block content %}
 <div>
     {{ stat(value='31%', caption='students who are first in their family to attend college' ) }}
     {{ stat(style='bar', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
-    {{ stat('', '66,558', 'Hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+    {{ stat(style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }} 
 </div>
 <div>
-    {{ stat('', '31%', '', 'students who are first in their family to attend college' ) }}
-    {{ stat('', '$345', 'Million', 'annual research funding, fy 2019', false, '') }}
-    {{ stat('', '66,558', 'Hours', 'civic engagement by 5,741 WSU student volunteers (2019-20)') }}
+    {{ stat(style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }} 
+    {{ stat(classes='wsu-stat--unit-medium', style='caption', value='31%', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
 </div>
 <hr />
-<h2>Default | wsu-stat--size-medium</h2>
+<h2>Default | wsu-stat--style-round</h2>
+<div class="demo-group" style="">
+{{ stat(style='round', value='31%', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes="wsu-stat--decorator-layout-circle-bottom-right wsu-stat--decorator-layout-bar-value-left wsu-stat--decorator-position-circle-above", style='round', value='31%', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes="wsu-stat--decorator-layout-circle-bottom-left wsu-stat--decorator-layout-bar-value-after-left", style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes="wsu-stat--decorator-layout-circle-top-left", style='round', value='31', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes="wsu-stat--decorator-layout-bar-value-after-center", style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+</div>
+<div class="demo-group" style="">
+{{ stat(classes='wsu-stat--layout-caption-offset-right wsu-stat--decorator-layout-bar-value-after-left', style='round', value='31%', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right wsu-stat--decorator-layout-circle-bottom-left', style='round', value='31%', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right wsu-stat--decorator-layout-circle-bottom-left wsu-stat--decorator-layout-bar-value-after-left', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right', style='round', value='31', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right wsu-stat--decorator-layout-circle-bottom-left', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+</div>
+<div class="demo-group" style="">
+{{ stat(classes='wsu-stat--layout-value-offset-right wsu-stat--decorator-layout-circle-top-left wsu-stat--decorator-layout-bar-value-left', style='round', value='31%', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right wsu-stat--decorator-layout-circle-top-left wsu-stat--decorator-layout-bar-value-left', style='round', value='31%', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right wsu-stat--decorator-layout-circle-top-left wsu-stat--decorator-layout-bar-value-left', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right wsu-stat--decorator-layout-circle-top-left wsu-stat--decorator-layout-bar-value-left', style='round', value='31', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right wsu-stat--decorator-layout-circle-top-left wsu-stat--decorator-layout-bar-value-left', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+</div>
+<div class="demo-group" style="">
+{{ stat(classes='wsu-stat--layout-caption-offset-right-reversed wsu-stat--decorator-layout-circle-top-left wsu-stat--decorator-layout-bar-none', style='round', value='31%', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right-reversed wsu-stat--decorator-layout-circle-bottom-right wsu-stat--decorator-layout-bar-value-before-right wsu-stat--decorator-position-circle-above', style='round', value='31%', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right-reversed wsu-stat--decorator-layout-circle-top-left  wsu-stat--decorator-layout-bar-value-before-center', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right-reversed wsu-stat--decorator-layout-circle-bottom-right', style='round', value='31', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-caption-offset-right-reversed wsu-stat--decorator-layout-circle-top-left', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+</div>
+<div class="demo-group" style="">
+{{ stat(classes='wsu-stat--layout-value-offset-right-reversed wsu-stat--decorator-layout-circle-none wsu-stat--decorator-position-circle-above', style='round', value='31%', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right-reversed wsu-stat--decorator-layout-circle-bottom-left wsu-stat--decorator-position-circle-above', style='round', value='31%', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right-reversed', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right-reversed wsu-stat--decorator-layout-circle-bottom-left', style='round', value='31', unit='million', caption='students who are first in their family to attend college', citation='(Sunset Magazine)' ) }}
+{{ stat(classes='wsu-stat--layout-value-offset-right-reversed wsu-stat--decorator-layout-circle-bottom-left wsu-stat--decorator-position-circle-above', style='round', value='66,558+', caption='students who are first in their family to attend college' ) }}
+</div>
+
+<h2>Default | wsu-stat--size-medium</h2> 
 <div>
     {{ stat(' wsu-stat--size-medium', '31%', '', 'students who are first in their family to attend college') }}
     {{ stat(' wsu-stat--size-medium', '$345', 'Million', 'annual research funding, fy 2019') }}
