@@ -6,6 +6,7 @@ class WsuSlideInPanel {
 
         this.panelClass    = ( atts.hasOwnProperty( 'panelClass') ) ? atts.panelClass : 'wsu-slide-in-panel';
         this.closeClass     = ( atts.hasOwnProperty( 'closeClass') ) ? atts.closeClass : 'wsu-slide-in-panel--close';
+        this.closeThisClass  = ( atts.hasOwnProperty( 'closeThisClass') ) ? atts.closeThisClass : 'wsu-slide-in-panel--close-this';
         this.openClass     = ( atts.hasOwnProperty( 'openClass') ) ? atts.openClass : 'wsu-slide-in-panel--open';
         this.toggleClass     = ( atts.hasOwnProperty( 'toggleClass') ) ? atts.toggleClass : 'wsu-slide-in-panel--toggle';
         this.init();
@@ -15,6 +16,7 @@ class WsuSlideInPanel {
     init() { 
 
         bindEventClass( { eventAction: 'click', eventClass: this.closeClass, eventCallback: this.closePanel.bind(this) } );
+        bindEventClass( { eventAction: 'click', eventClass: this.closeThisClass, eventCallback: this.closeCurrentPanel.bind(this) } );
         bindEventClass( { eventAction: 'click', eventClass: this.openClass, eventCallback: this.openPanel.bind(this) } );
 
     }
@@ -22,6 +24,18 @@ class WsuSlideInPanel {
     closePanel( eventElement ) { 
 
         let panel = this.getPanel( eventElement );
+
+        if ( panel ) {
+
+            panel.setAttribute('aria-expanded', false)
+
+        }
+
+    }
+
+    closeCurrentPanel( eventElement ) { 
+
+        let panel = this.getPanel( eventElement, false );
 
         if ( panel ) {
 
@@ -43,9 +57,9 @@ class WsuSlideInPanel {
 
     }
 
-    getPanel( eventElement ) {
+    getPanel( eventElement, check_remote = true ) {
 
-        if ( eventElement.hasAttribute('data-panel') ) {
+        if ( check_remote && eventElement.hasAttribute('data-panel') ) {
 
             return document.getElementById( eventElement.dataset.panel );
 
