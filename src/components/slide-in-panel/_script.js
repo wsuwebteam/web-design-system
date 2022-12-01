@@ -23,8 +23,6 @@ class WsuSlideInPanel {
 
         let panel = this.getPanel( eventElement );
 
-        console.log( panel );
-
         if ( panel ) {
 
             panel.setAttribute('aria-expanded', false)

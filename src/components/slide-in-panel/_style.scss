@@ -30,9 +30,11 @@ $wsu-slide-in-panel--width-map: (
 
 
 %wsu-slide-in-panel {
+    visibility: hidden;
+    transition: visibility 0s $wsu-easing 300ms;
     /*width: 0;
     overflow: hidden;
-    transition: width 0s $wsu-easing $wsu-slide-in-panel--speed;
+    
     position: fixed;
     top:0;
     height: 100vh;
@@ -42,7 +44,7 @@ $wsu-slide-in-panel--width-map: (
 %wsu-slide-in-panel--expanded {
     visibility: visible;
     width: 100vw;
-    transition: width 0s $wsu-easing 0s;
+    transition: width 0s $wsu-easing 300ms;
 } 
 
 %wsu-slide-in-panel__crimson-triangle {
@@ -174,6 +176,7 @@ $wsu-slide-in-panel--width-map: (
     &[aria-expanded="true"] {
         visibility: visible;
         width: 100vw;
+        transition: visibility 0s $wsu-easing 0s;
         
         .wsu-slide-in-panel {
 
