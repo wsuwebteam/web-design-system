@@ -2,6 +2,7 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-quicklinks:not([class*="-quicklinks--style-"] ) {
+    z-index: $wsu-zindex--modal;
 
     .wsu-quicklinks {
 
