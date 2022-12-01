@@ -2,9 +2,7 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-menu--style-sidebar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    @extend %wsu-menu;
 
     li {
         display: block;
