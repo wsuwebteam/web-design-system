@@ -614,8 +614,8 @@ const PeopleList = function (el) {
 
   function init() {
     getPeople().then((data) => {
-      allPeopleString = data;
-      people = JSON.parse(data);
+      allPeopleString = JSON.stringify(data);
+      people = data;
 
       generateHTML(people);
       setTimeout(() => {
