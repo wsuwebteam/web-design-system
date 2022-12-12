@@ -79,7 +79,13 @@ const PeopleList = function (el) {
   function getPersonHTML(person) {
     // console.log(person);
 
-    let linkProfile = profileLink && person.bio ? true : false;
+    const linkProfile =
+      displayFields.includes("profile-link") || (profileLink && person.bio)
+        ? true
+        : false;
+    const profileUrl = displayFields.includes("profile-link")
+      ? person.profile_url
+      : `${profileLink}?nid=${person.nid}`;
 
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
@@ -93,11 +99,9 @@ const PeopleList = function (el) {
                 ${
                   person.photo
                     ? `
-                    ${
-                      linkProfile
-                        ? `<a href="${profileLink}?nid=${person.nid}">`
-                        : ""
-                    }<img src="${person.photo}"
+                    ${linkProfile ? `<a href="${profileUrl}">` : ""}<img src="${
+                        person.photo
+                      }"
                         ${
                           person.photo_srcset
                             ? `srcset="${person.photo_srcset}"`
@@ -186,7 +190,7 @@ const PeopleList = function (el) {
             }
             ${
               linkProfile
-                ? `<div class="wsu-people-list__view-profile"><a class="wsu-button--style-arrow" href="${profileLink}?nid=${person.nid}">View Profile</a></div>`
+                ? `<div class="wsu-card__person-link"><a href="${profileUrl}" class="wsu-button wsu-button--style-action">View Profile</a></div>`
                 : ""
             }
         </div>
