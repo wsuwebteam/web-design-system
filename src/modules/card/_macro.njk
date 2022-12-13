@@ -9,6 +9,7 @@
 {% from "meta/_macro.njk" import metaPhone %}
 {% from "meta/_macro.njk" import metaTags %}
 {% from "meta/_macro.njk" import metaWebsite %}
+{% from "button/_macro.njk" import button %}
 
 {% macro card( classes='', showImage=true, showByline=true, showTags=true, showDate=true, showTitle=true, showCaption=true) %}
 <article class="wsu-card{{classes}}">
@@ -65,6 +66,9 @@
         {{ metaLocation( ' wsu-meta--icon-crimson' ) }}
         {{ metaPhone( ' wsu-meta--icon-crimson' ) }}
         {{ metaWebsite( ' wsu-meta--icon-crimson' ) }}
+        <div class="wsu-card__person-link">
+            {{ button( classes = ' wsu-button--style-action', title='View Profile', tag='a') }}
+        </div>
     </div>
 </div>
 {% endmacro %}

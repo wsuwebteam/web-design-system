@@ -119,6 +119,15 @@
         margin-top: $wsu-spacing--small;
     }
 
+    &__person-link {
+
+        margin-top: $wsu-spacing--small;
+
+        .wsu-button{
+            font-size: $wsu-font-size--small;
+        }   
+    }
+
     &__focus-area {
 
         margin-bottom: $wsu-spacing--xsmall;
