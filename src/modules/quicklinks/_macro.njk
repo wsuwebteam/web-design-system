@@ -3,7 +3,7 @@
 {% from "button/_macro.njk" import button %}
 {% from "decorator/_macro.njk" import decorator %}
 
-{% macro quicklinks( style='crimson-mark',  startOpen='true') %}
+{% macro quicklinks( style='crimson-mark',  startOpen='false') %}
 
 {% call slideInPanel( classes='wsu-quicklinks wsu-slide-in-panel--width-large wsu-has-background--dark', style=style, panelClasses='wsu-quicklinks__panel wsu-background--gradient-dark', panelID='wsu-quicklinks-panel', startOpen=startOpen, panelLabel='Quick Links', tag='nav' ) -%}
 <div class="wsu-quicklinks__panel-content">
