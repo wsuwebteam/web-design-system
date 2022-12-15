@@ -1,7 +1,7 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-header-utility-bar{
+.wsu-header-utility-bar {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -86,4 +86,8 @@
 
     }
 
+}
+
+.wsu-header-global ~ header .wsu-header-utility-bar {
+    top: -35px;
 }
