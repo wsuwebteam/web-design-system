@@ -22,58 +22,13 @@ $wsu-space--logo: $wsu-spacing--medium;
         opacity: 0.2;
     }
 
-    &__global {
-        background-color: $wsu-color--gray-75;
-        height: 35px;
-        box-sizing: border-box;
-        border-bottom: 2px solid $wsu-color--crimson;
-        display: flex;
-    }
-
-    &__global-menu {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: flex;
-
-        li {
-            padding: 0;
-            margin: 0;
-            display: flex;
-
-            a {
-                color: $wsu-color--gray-5;
-                text-decoration: none;
-                font-size: $wsu-font-size--xsmall;
-                letter-spacing: 1px;
-                font-weight: 300;
-                display: flex;
-                align-items: center;
-                padding: 0 $wsu-spacing--xsmall;
-                text-transform: uppercase;
-                position: relative;
-
-                &::after {
-                    content: '/';
-                    right: -4px;
-                    position: absolute;
-                }
-
-            }
-
-            &:last-child a::after {
-                display: none;
-            }
-
-        }
-
-    }
 
     &__banner {
         background-color: #fff;
-        height: 130px;
+        min-height: 150px;
         display: flex;
         width: 100%;
+        position: relative;
     }
 
     .wsu-navigation-header {
@@ -82,4 +37,94 @@ $wsu-space--logo: $wsu-spacing--medium;
         border-top: 1px solid $wsu-color--gray-10;
         padding: 0 $wsu-spacing--small;
     }
+
+    .wsu-button-menu {
+        top: 0;
+        right: 0;
+    }
+
+    .wsu-header-utility-bar {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    @media screen and (min-width: $wsu-breakpoint--horizontal-nav ) {
+
+        .wsu-button-menu {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--horizontal-nav ) {
+
+        .wsu-header-unit {
+
+            &__banner {
+                min-height: 120px;
+            }
+
+        }
+
+        .wsu-header-utility-bar,
+        .wsu-navigation-header {
+            display: none;
+        }
+
+        .wsu-logo-lockup {
+            font-size: 0.9rem;
+        }
+
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet-medium ) {
+
+        .wsu-header-unit {
+
+            &__banner {
+                min-height: 110px;
+            }
+
+        }
+
+        .wsu-logo-lockup {
+            font-size: 0.7rem;
+        }
+
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--tablet) {
+
+        .wsu-header-unit {
+
+            &__banner {
+                min-height: 100px;
+            }
+
+        }
+
+        .wsu-logo-lockup {
+            font-size: 0.6rem;
+        }
+
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--phone) {
+
+        .wsu-header-unit {
+
+            &__banner {
+                min-height: 90px;
+            }
+
+        }
+
+        .wsu-logo-lockup {
+            font-size: 0.5rem;
+        }
+
+    }
+
+    
 }
