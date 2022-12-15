@@ -9,24 +9,24 @@
     .wsu-logo-lockup{
 
         &__title-wrapper {
-            padding: 0.2em 0 0.2em 1em;
+            padding: 0.2em 0 0.2em 1.25em;
 
             &::before {
                 content: '';
                 height: auto;
                 width: 1px;
-                top: 0;
-                bottom: 0;
+                top: calc( ( 100% - 4.5em ) / 2 );
+                bottom: calc( ( 100% - 4.5em ) / 2 );
                 left: 0;
-                background-color: $wsu-color--gray-60;
-                position: absolute;
+                background-color: $wsu-color--gray-30;
+                position: absolute; 
             }
         }
 
         &__subtitle {
             display: block;
-            font-weight: 300;
-            font-size: 0.9em;
+            font-weight: 400;
+            font-size: $wsu-font-size--small;
         }
 
         &__title {
