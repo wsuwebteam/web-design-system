@@ -1,0 +1,81 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+%wsu-navigation-audience {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+%wsu-navigation-audience__menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+%wsu-navigation-audience__label {
+    font-weight: 700;
+    font-size: $wsu-font-size--small;
+}
+
+%wsu-navigation-audience__list-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+%wsu-navigation-audience__link {
+    color: inherit;
+    font-size: $wsu-font-size--small;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+
+%wsu-navigation-audience__li-after {
+    content:'';
+    position: absolute;
+    top: calc( ( 100% - #{$wsu-font-size--small} ) / 2 );
+    bottom: calc( ( 100% - #{$wsu-font-size--small} ) / 2 );
+    right: 0;
+    width: 1px;
+    height: auto;
+    background-color: $wsu-color--gray-20;
+}
+
+
+.wsu-navigation-audience:not([class*="-audience--style-"]) {
+    @extend %wsu-navigation-audience;
+    min-height: $wsu-spacing--large;
+    background-color: $wsu-color--gray-5;
+    padding: 0 $wsu-spacing--xmedium;
+
+    .wsu-navigation-audience {   
+
+        &__label {
+            @extend %wsu-navigation-audience__label;
+        }
+
+        &__menu {
+            @extend %wsu-navigation-audience__menu;
+
+            li {
+                @extend %wsu-navigation-audience__list-item;
+                padding: 0 $wsu-spacing--xxsmall;
+
+                &::after:not(:last-child) {
+                    @extend %wsu-navigation-audience__li-after;
+                }
+
+                a {
+                    @extend %wsu-navigation-audience__link;
+                }
+            }
+        }
+
+        
+    }
+
+}

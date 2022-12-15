@@ -1,0 +1,10 @@
+{% macro navigationAudience( classes='', style='', audiences=['Future Students','Current Students','Faculty & Staff'], label='Resources For:' ) %}
+<nav class="wsu-navigation-audience {{classes}}{% if style %} wsu-navigation-audience--style-{{ style }}{% endif %}" >
+    <div class="wsu-navigation-audience__label">{{ label }}</div>
+    <ul class="wsu-navigation-audience__menu">
+    {% for audience in audiences %}
+        <li><a href="#">{{ audience }}</a></li>
+    {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}
