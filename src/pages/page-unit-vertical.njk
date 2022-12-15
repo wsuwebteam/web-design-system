@@ -1,0 +1,32 @@
+{% extends "page-template.njk" %}
+{% from "hero/_macro.njk" import hero %}
+{% from "header-global/_macro.njk" import headerGlobal %}
+{% from "header-site/_macro.njk" import headerSite %}
+{% from "header-unit/_macro.njk" import headerUnit %}
+{% from "navigation-mobile/_macro.njk" import navigationMobile %}
+{% from "quicklinks/_macro.njk" import quicklinks %}
+{% from "navigation-vertical/_macro.njk" import navigationVertical %}
+{% from "navigation-audience/_macro.njk" import navigationAudience %}
+
+
+{% block content %}
+<div class="wsu-wrapper-global">
+    {% include 'skip-to-main/html.njk' %}
+    {{ headerGlobal( style='system') }}
+    {{ headerUnit( showNav='' ) }}
+    {{ navigationMobile() }}
+    {% include 'quicklinks/html.njk' %}
+    {{ navigationVertical() }}
+    <div class="wsu-wrapper-site">
+        {{ navigationAudience() }}
+        <div class="wsu-wrapper-content">
+            <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                {% include 'row/html--thirds.njk' %}
+            </main>
+        </div>
+        {% include 'footer-site/html.njk' %}
+    </div>
+    {% include 'footer-global/html.njk' %} 
+</div>
+{%  endblock %}  
