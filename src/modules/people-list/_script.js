@@ -165,7 +165,7 @@ const PeopleList = function (el) {
                 ? `
                 <div class="wsu-meta-location wsu-meta--icon-crimson">
                     <span class="wsu-screen-reader-only">Location</span>
-                    <a href="#">${person.office}</a>
+                    ${person.office}
                 </div>`
                 : ""
             }
