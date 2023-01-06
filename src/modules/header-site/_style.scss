@@ -157,3 +157,12 @@
 
 @import 'header-site--dark';
 @import 'header-site--nested';
+
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-header-site {
+        display: none !important;
+    }
+}

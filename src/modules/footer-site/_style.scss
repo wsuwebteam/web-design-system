@@ -183,3 +183,12 @@
     }
     
 }
+
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-footer-site {
+        display: none !important;
+    }
+}

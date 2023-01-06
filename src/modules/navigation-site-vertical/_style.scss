@@ -373,4 +373,13 @@ $global-header-height: 65px;
 }
 
 
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-navigation-site-vertical {
+        display: none !important;
+    }
+}
+
+
 

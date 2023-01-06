@@ -48,3 +48,11 @@
 } 
 
 @import 'footer-global--light';
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-footer-global {
+        display: none !important;
+    }
+}

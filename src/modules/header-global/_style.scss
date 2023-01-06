@@ -135,6 +135,15 @@
 @import './style-system';
 
 
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-header-global {
+        display: none !important;
+    }
+}
+
+
 
 
 
