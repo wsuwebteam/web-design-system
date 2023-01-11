@@ -1,5 +1,6 @@
 {% from "menu-collapse/_macro.njk" import menuCollapse %}
 {% from "slide-in-panel/_macro.njk" import slideInPanel %}
+{% from "navigation-audience/_macro.njk" import navigationAudience %}
 
 {% macro navigationMobile(classes ='', style='', quickLinks=false, startOpen='false' ) %}
 {% call slideInPanel( tag='nav', classes='wsu-navigation-mobile', style='crimson-mark', startOpen=startOpen, panelID='wsu-navigation-mobile' ) -%}
@@ -11,6 +12,9 @@
     </div>
     <div class="wsu-navigation-mobile__menu">
         {{ menuCollapse( style='mobile') }}
+    </div>
+    <div class="wsu-navigation-mobile__audience">
+        {{ navigationAudience( style='vertical') }}
     </div>
 {%- endcall %}
 {% endmacro %} 

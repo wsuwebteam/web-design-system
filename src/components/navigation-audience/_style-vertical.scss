@@ -1,0 +1,34 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-navigation-audience--style-vertical {
+
+    .wsu-navigation-audience {
+
+        &__menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0.2em 0;
+
+            li {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &__label {
+            @extend %wsu-navigation-audience__label;
+            border-bottom: 1px solid $wsu-color--gray-5;
+            color: $wsu-color--gray-50;
+        }
+    }
+
+    a {
+        color: inherit;
+        font-size: $wsu-font-size--medium;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        padding: 0.1em 0;
+    }
+}
