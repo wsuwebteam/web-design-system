@@ -1,6 +1,6 @@
 import Fuse from "fuse.js";
 //import { sanitize } from "dompurify";
-import { groupBy, isSafeInteger } from "lodash";
+import _groupBy from "lodash/groupBy";
 import {
   wsuAriaExpanded,
   wsuAriaIsExpanded,
