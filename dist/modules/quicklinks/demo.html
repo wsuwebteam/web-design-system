@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?ver=0.15.2.1" media='all' />
+    <link rel="stylesheet" href="../../bundles/wsu-design-system.css" media='all' />
+    <style>
+        .wsu-custom-demo {
+            margin: 0 80px;
+            padding: 80px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+    </style>
+
+    <script src="../../bundles/wsu-design-system.init.js"></script>
+</head>
+
+<body>
+    <div class="wsu-custom-demo">
+
+        <h2>Default Open</h2>
+        <button data-panel="wsu-quicklinks-panel" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
+
+
+
+
+
+
+        <nav id="wsu-quicklinks-panel" class="wsu-slide-in-panel wsu-quicklinks wsu-slide-in-panel--width-large wsu-has-background--dark wsu-slide-in-panel--style-crimson-mark" aria-expanded="true" aria-haspopup="true" aria-label="Quick Links menu">
+            <button class="wsu-slide-in-panel__overlay wsu-slide-in-panel--close">Close Quick Links</button>
+            <div class="wsu-slide-in-panel__panel wsu-quicklinks__panel wsu-background--gradient-dark">
+                <div class="wsu-slide-in-panel__panel-inner">
+                    <div class="wsu-quicklinks__panel-content">
+                        <div class="wsu-quicklinks__close">
+
+                            <button class="wsu-button  wsu-slide-in-panel--close wsu-button--style-action"">
+    Close Search
+</button>
+
+    </div>
+    <div class=" wsu-quicklinks__search">
+
+                                <form class="wsu-search wsu-has-background--dark wsu-search--style-underline" method="get">
+                                    <div class="wsu-search__search-bar">
+                                        <input class="wsu-search__input" type="text" aria-lable="Search input" placeholder="Search" name="q" />
+                                        <button class="wsu-search__submit" aria-lable="Submit Search"></button>
+                                    </div>
+
+                                </form>
+
+
+                                <div class="wsu-decorator  wsu-decorator--style-lines-gray">
+                                </div>
+
+                        </div>
+                        <div class="wsu-quicklinks__content">
+                            <h2>Quick links</h2>
+                            <ul class="wsu-list wsu-list--style-boxed wsu-list--columns-2 wsu-breakpoint--none wsu-list--underline-hover  wsu-has-background--dark">
+                                <li><a href="#">List Link 1</a></li>
+                                <li><a href="#">List Link 2</a></li>
+                                <li><a href="#">List Link 3</a></li>
+                                <li><a href="#">List Link 4</a></li>
+                                <li><a href="#">List Link 5</a></li>
+                                <li><a href="#">List Link 1</a></li>
+                                <li><a href="#">List Link 2</a></li>
+                                <li><a href="#">List Link 3</a></li>
+                                <li><a href="#">List Link 4</a></li>
+                                <li><a href="#">List Link 5</a></li>
+                                <li><a href="#">List Link 1</a></li>
+                                <li><a href="#">List Link 2</a></li>
+                            </ul>
+
+                            <h2>Campuses</h2>
+                            <ul class="wsu-list wsu-list--style-boxed wsu-list--columns-2 wsu-breakpoint--none wsu-list--underline-hover  wsu-has-background--dark">
+                                <li><a href="#">List Link 1</a></li>
+                                <li><a href="#">List Link 2</a></li>
+                                <li><a href="#">List Link 3</a></li>
+                                <li><a href="#">List Link 4</a></li>
+                                <li><a href="#">List Link 5</a></li>
+                                <li><a href="#">List Link 1</a></li>
+                                <li><a href="#">List Link 2</a></li>
+                                <li><a href="#">List Link 3</a></li>
+                                <li><a href="#">List Link 4</a></li>
+                                <li><a href="#">List Link 5</a></li>
+                                <li><a href="#">List Link 1</a></li>
+                                <li><a href="#">List Link 2</a></li>
+                            </ul>
+                        </div>
+                        <div class="wsu-quicklinks__footer">
+                            <h2>Featured News</h2>
+                            <div class="wsu-quicklinks__footer-decorator">
+                                <div class="wsu-decorator wsu-decorator--style-lines-gray"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+    </div>
+    <script defer src="../../bundles/wsu-design-system.js"></script>
+
+</body>
+
+</html>
