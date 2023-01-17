@@ -42,6 +42,7 @@ module.exports = env => {
 					}
 				}
 			],
+			noParse: /node_modules\/lodash\/lodash\.js/,
 		},
 		plugins: [
 			new NodePolyfillPlugin(),
