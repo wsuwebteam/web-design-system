@@ -45,7 +45,13 @@
     margin-right: calc(((100vw - 100%) - 280px)/ -2);
 }
 
-@media screen and (max-width: 1260px) {
+
+@media screen and (max-width: $wsu-breakpoint--horizontal-nav) {
+
+    .wsu-navigation-vertical {
+        display: none;
+    }
+
 	.wsu-navigation-vertical ~ .wsu-wrapper-site .wsu-width--full {
         margin-left: calc(((100vw - 100%))/ -2);
         margin-right: calc(((100vw - 100%))/ -2);
