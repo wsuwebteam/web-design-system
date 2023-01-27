@@ -1,12 +1,23 @@
-.wp-block-embed-youtube {
+
+.wp-block-embed {
+
+    &.wp-embed-aspect-4-3,
+    &.wp-embed-aspect-16-9 {
+
+        &.wp-block-embed-youtube,
+        .embed-youtube {
+
+            iframe {
+                height: auto !important;
+                aspect-ratio: 16/9;
+            }
+
+        }
+        
+    }
 
     &.wsu-video--width-full iframe {
         width: 100% !important;
-    }
-
-    &.wp-embed-aspect-16-9 iframe {
-        height: auto !important;
-        aspect-ratio: 16/9;
     }
 
 }
