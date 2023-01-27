@@ -16,8 +16,9 @@
         
     }
 
-    &.wsu-video--width-full iframe {
-        width: 100% !important;
-    }
+}
 
+.wsu-video--width-full iframe {
+    width: 100% !important;
+    height: auto !important;
 }
