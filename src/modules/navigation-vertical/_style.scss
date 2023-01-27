@@ -12,6 +12,12 @@
     .wsu-slide-in-panel__panel {
         border-right: 1px solid $wsu-color--gray-10 !important;
     }
+
+    .wsu-menu-collapse:not(.wsu-menu-collapse--style-context) > li:first-child a::before {
+        content: '\F122';
+        font-family: wsu-icons;
+        margin-right: 0.3em;
+    }
 }
 
 .wsu-navigation-vertical ~ .wsu-wrapper-site {
@@ -24,7 +30,7 @@
         padding-top: 211px;
     }
 
-}
+} 
 
 .wsu-header-campus ~ .wsu-navigation-vertical {
 
@@ -32,6 +38,24 @@
         padding-top: 231px;
     }
 
+}
+
+.wsu-navigation-vertical ~ .wsu-wrapper-site .wsu-width--full {
+    margin-left: calc(((100vw - 100%) - 280px)/ -2);
+    margin-right: calc(((100vw - 100%) - 280px)/ -2);
+}
+
+
+@media screen and (max-width: $wsu-breakpoint--horizontal-nav) {
+
+    .wsu-navigation-vertical {
+        display: none;
+    }
+
+	.wsu-navigation-vertical ~ .wsu-wrapper-site .wsu-width--full {
+        margin-left: calc(((100vw - 100%))/ -2);
+        margin-right: calc(((100vw - 100%))/ -2);
+    }
 }
 
 /*----- Temp ----- */
