@@ -64,4 +64,10 @@
         outline-offset: 2px;
     }
 
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+
+        width: 60px;
+        
+    }
+
 }
