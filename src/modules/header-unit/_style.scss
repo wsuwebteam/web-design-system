@@ -29,6 +29,14 @@ $wsu-space--logo: $wsu-spacing--medium;
         display: flex;
         width: 100%;
         position: relative;
+        padding-right: 90px;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $wsu-breakpoint--phone ) {
+
+            padding-right: 70px;
+            
+        }
     }
 
     .wsu-navigation-header {
