@@ -377,6 +377,7 @@ $wsu-ratio--16-9:   56.25%;
 $wsu-ratio--6-4:    66%;
 $wsu-ratio--4-3:    75%;
 $wsu-ratio--square: 100%;
+$wsu-ratio--1-1:    100%;
 $wsu-ratio--3-4:    133%;
 
 $wsu-image-ratio-map: (
@@ -385,6 +386,7 @@ $wsu-image-ratio-map: (
     '6-4':    $wsu-ratio--6-4,
     '4-3':    $wsu-ratio--4-3,
     'square': $wsu-ratio--square,
+    '1-1':    $wsu-ratio--1-1,
     '3-4':    $wsu-ratio--3-4,
 );
 
