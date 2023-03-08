@@ -52,19 +52,15 @@ const PeopleList = function (el) {
     .split(",")
     .filter((r) => r !== "");
   const activeFilters = [];
-  const categoryTerms = el.dataset.categoryFilterTerms
-    .split(",")
-    .filter((r) => r !== "");
-  const tagTerms = el.dataset.tagFilterTerms.split(",").filter((r) => r !== "");
-  const locationTerms = el.dataset.locationFilterTerms
-    .split(",")
-    .filter((r) => r !== "");
-  const organizationTerms = el.dataset.organizationFilterTerms
-    .split(",")
-    .filter((r) => r !== "");
-  const classificationTerms = el.dataset.classificationFilterTerms
-    .split(",")
-    .filter((r) => r !== "");
+  const categoryTerms = parseTermsAttribute(el.dataset.categoryFilterTerms);
+  const tagTerms = parseTermsAttribute(el.dataset.tagFilterTerms);
+  const locationTerms = parseTermsAttribute(el.dataset.locationFilterTerms);
+  const organizationTerms = parseTermsAttribute(
+    el.dataset.organizationFilterTerms
+  );
+  const classificationTerms = parseTermsAttribute(
+    el.dataset.classificationFilterTerms
+  );
 
   const includedTerms = [];
   let selectedFiltersList = [];
@@ -210,6 +206,17 @@ const PeopleList = function (el) {
     return true;
   }
 
+  function parseTermsAttribute(attribute) {
+    return attribute
+      .split(",")
+      .filter((r) => r !== "")
+      .map((option) => {
+        const parts = option.split("|");
+
+        return { slug: parts[0], name: parts[1] };
+      });
+  }
+
   function createSelectFilterHTML(filter, people) {
     const appliedFilters = urlParams.has(filter)
       ? urlParams.get(filter).split(",")
@@ -249,7 +256,7 @@ const PeopleList = function (el) {
         filterOptions.forEach((v) => {
           if (includeTerms.length > 0) {
             if (
-              includeTerms.includes(v.slug) &&
+              includeTerms.findIndex((o) => o.slug === v.slug) !== -1 &&
               options.findIndex((o) => o.slug === v.slug) === -1
             ) {
               options.push(v);
@@ -267,12 +274,24 @@ const PeopleList = function (el) {
       }
     });
 
-    // sort options alphabetically
-    options.sort(function (a, b) {
-      var x = a.name.toLowerCase();
-      var y = b.name.toLowerCase();
-      return x < y ? -1 : x > y ? 1 : 0;
-    });
+    if (includeTerms.length > 0) {
+      options = includeTerms.map((t) => {
+        const existingOption = options.find((o) => o.slug === t.slug);
+
+        if (existingOption) {
+          return existingOption;
+        }
+
+        return t;
+      });
+    } else {
+      // sort options alphabetically
+      options.sort(function (a, b) {
+        var x = a.name.toLowerCase();
+        var y = b.name.toLowerCase();
+        return x < y ? -1 : x > y ? 1 : 0;
+      });
+    }
 
     // class="wsu-screen-reader-only"
     return options.length > 0
@@ -398,7 +417,7 @@ const PeopleList = function (el) {
     const searchParams = new URLSearchParams();
 
     // update select filter params
-    const groupedInputs = groupBy(selectedFilterInputs, (i) =>
+    const groupedInputs = _groupBy(selectedFilterInputs, (i) =>
       i.name.replace("[]", "")
     );
 
@@ -445,16 +464,18 @@ const PeopleList = function (el) {
     let filteredPeople = JSON.parse(allPeopleString);
 
     activeFilters.forEach((f) => {
-      const checkboxInputs = filtersContainer.elements[`${f}[]`];
+      let checkboxInputs = filtersContainer.elements[`${f}[]`];
 
       if (!checkboxInputs) {
         return;
       }
 
-      const selectedInputs = Array.from(checkboxInputs).filter(
-        (f) => f.checked
-      );
+      checkboxInputs =
+        checkboxInputs.length !== undefined
+          ? Array.from(checkboxInputs)
+          : [checkboxInputs];
 
+      const selectedInputs = checkboxInputs.filter((f) => f.checked);
       if (selectedInputs.length > 0) {
         selectedFilterInputs = selectedFilterInputs.concat(selectedInputs);
         const selectedValues = selectedInputs.map((s) => s.value);
