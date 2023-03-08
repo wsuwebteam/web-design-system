@@ -1,0 +1,15 @@
+{% from "news-card/_macro.njk" import newsCard %}
+
+{# Slider content #}
+{% set slides = [
+  
+] %}
+
+{% macro cardCarousel( classes='', content = slides ) %}
+    <div class="wsu-card-carousel {{ classes }}">
+        <div class="wsu-card-carousel__wrapper swiper-wrapper">
+            {% for item in content %}
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
