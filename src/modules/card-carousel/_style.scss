@@ -1,6 +1,12 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-card-carousel{
-    display: flex;
+.wsu-card-carousel {
+    padding: 20px;
+    position: relative;
+    
+    &__pagination{
+        display: flex;
+        justify-content: center;
+    }
 }

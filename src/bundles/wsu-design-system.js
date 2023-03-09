@@ -23,7 +23,7 @@ import WsuSlideInPanel from '../components/slide-in-panel/_script';
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
 
-
+import '../modules/card-carousel/_script';
 
 
 

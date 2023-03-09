@@ -1,2 +1,18 @@
 {% extends "component.njk" %}
 {% from "card-carousel/_macro.njk" import cardCarousel %}
+
+{% block styles %}
+    <style>
+        .wsu-custom-demo {
+            display: unset!important;
+            margin: 0!important;
+            padding: 0!important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+{% include 'card-carousel/html.njk' %}
+
+{%  endblock %}
