@@ -2,11 +2,70 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-card-carousel {
-    padding: 20px;
+    padding: 39px;
     position: relative;
+    width: 75%;
+    overflow: hidden;
+    margin: auto;
     
     &__pagination{
         display: flex;
         justify-content: center;
     }
+    &__button-next{
+        color: #404040 !important;
+        right: 0px !important;
+        left: auto;
+        position: absolute;
+        top: 50%;
+        width: calc(var(--swiper-navigation-size)/ 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color,var(--swiper-theme-color));
+    }
+    &__button-next:after{
+        content: "\F107";
+    }
+    &__button-prev{
+        color: #404040 !important;
+        left: 0px !important;
+        right: auto;
+        position: absolute;
+        top: 50%;
+        width: calc(var(--swiper-navigation-size)/ 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color,var(--swiper-theme-color));
+    }
+    &__button-prev:after{
+        content: "\F105";
+    }
+    &__button-next:after, &__button-prev:after{
+        font-size: var(--swiper-navigation-size);
+        text-transform: none!important;
+        letter-spacing: 0;
+        text-transform: none;
+        font-variant: initial;
+        line-height: 1;
+        font-family: wsu-icons!important;
+        font-style: normal;
+        font-weight: 400!important;
+        vertical-align: middle;
+    }
+}
+.swiper-button-prev{
+    left: 0px !important;
+}
+.swiper-button-next{
+    right: 0px !important;
 }

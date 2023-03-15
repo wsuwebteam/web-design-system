@@ -6,18 +6,19 @@ const initSwiper = () => {
 
     const cardCarousel = new Swiper(".wsu-card-carousel", {
         slidesPerView: 3,
-        keyboardControl: true,
         spaceBetween: 30,
         navigation: {
-          nextEl: ".wsu-card-carousel__next",
-          prevEl: ".wsu-card-carousel__prev",
+          nextEl: '.wsu-card-carousel__button-next',
+          prevEl: '.wsu-card-carousel__button-prev',
         },
         pagination: {
           el: ".wsu-card-carousel__pagination",
-          clickable: true,
         },
         mousewheel: true,
-        keyboard: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
         allowTouchMove: true,
         breakpoints: {
           // when window width is >= 320px
