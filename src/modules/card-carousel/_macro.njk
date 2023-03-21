@@ -3,6 +3,7 @@
 
 {% macro cardCarousel( classes='' ) %}
     <div class="wsu-card-carousel {{ classes }}">
+        <button class="wsu-card-carousel__button-prev" aria-label="Previous slide"></button>
         <div class="wsu-card-carousel__wrapper swiper-wrapper">
             {{ newsCard(' swiper-slide') }}
             {{ newsCard(' swiper-slide') }}
@@ -13,22 +14,10 @@
             {{ newsCard(' swiper-slide') }}
             {{ newsCard(' swiper-slide') }}
             {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
         </div>
-        <div class="wsu-card-carousel__button-next"></div>
-        <div class="wsu-card-carousel__button-prev"></div>
+        <button class="wsu-card-carousel__button-next" aria-label="Next slide"></button>
         <div class="wsu-card-carousel__pagination"></div>
+
+
     </div>
 {% endmacro %}

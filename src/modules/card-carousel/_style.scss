@@ -5,6 +5,7 @@
     padding: 39px;
     position: relative;
     width: 75%;
+    height: 100%;
     overflow: hidden;
     margin: auto;
     
@@ -14,6 +15,8 @@
     }
     &__button-next{
         color: #404040 !important;
+        border: none;
+        background: none;
         right: 0px !important;
         left: auto;
         position: absolute;
@@ -26,13 +29,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--swiper-navigation-color,var(--swiper-theme-color));
     }
     &__button-next:after{
         content: "\F107";
     }
     &__button-prev{
         color: #404040 !important;
+        border: none;
+        background: none;
         left: 0px !important;
         right: auto;
         position: absolute;
@@ -45,7 +49,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--swiper-navigation-color,var(--swiper-theme-color));
     }
     &__button-prev:after{
         content: "\F105";
@@ -62,7 +65,20 @@
         font-weight: 400!important;
         vertical-align: middle;
     }
+    &__button-next.swiper-button-disabled,&__button-prev.swiper-button-disabled{
+        opacity: .35;
+        cursor: auto;
+        pointer-events: none;
+    }
 }
+
+.swiper-slide{
+    visibility: hidden;
+}
+.swiper-slide-active, .swiper-slide-next,.swiper-slide-next + .swiper-slide{
+    visibility: visible;
+}
+
 .swiper-button-prev{
     left: 0px !important;
 }
