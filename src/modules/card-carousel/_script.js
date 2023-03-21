@@ -49,42 +49,5 @@ const initSwiper = () => {
         },
     });
 
-
-    // // Gather all focusable elements in a list
-    // let carouselQuery = document.querySelector(".wsu-card-carousel");
-    // const KEYCODE_TAB = 9;
-    // var activeSlide = document.querySelector(".swiper-slide-active .wsu-news-card__content .wsu-article-title a");
-    // var lastSlideInFrame = document.querySelector(".swiper-slide-next + .swiper-slide .wsu-news-card__content .wsu-article-title a");
-    // var prevButton = document.querySelector(".wsu-card-carousel__button-prev");
-    // var nextButton = document.querySelector(".wsu-card-carousel__button-next");
-
-    // carouselQuery.addEventListener("keydown", function (e) {
-    //   var isTabPressed = e.key === "Tab" || e.keyCode === KEYCODE_TAB;
-
-    //   // Define behaviour for Tab or Shift+Tab
-    //   if (isTabPressed) {
-    //     console.log("tab pressed");
-    //       // Shift+Tab
-    //       if (e.shiftKey) {
-    //           if (document.activeElement === activeSlide) {
-
-    //             // NEED TO RESET FOCUS ON THE ELEMENT JUST BEFORE RIGHT ARROW.
-    //               // prevButton.focus();
-    //               // console.log("shift tab pressed");
-    //               // e.preventDefault();
-    //           }
-    //       }
-
-    //       // Tab
-    //       else {
-    //           if (document.activeElement === lastSlideInFrame) {
-    //               nextButton.focus();
-    //               console.log("tabbed on last element");
-    //               e.preventDefault();
-    //           }
-    //       }
-    //   }
-    // });
-
 }
 initSwiper(); 
