@@ -4,16 +4,16 @@ import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from "swiper";
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 const initSwiper = () => {
 
-    const cardCarousel = new Swiper(".wsu-card-carousel", {
+    const carousel = new Swiper(".wsu-carousel", {
         slidesPerView: 3,
         spaceBetween: 30,
         pagination: {
-          el: ".wsu-card-carousel__pagination",
+          el: ".wsu-carousel__pagination",
           clickable: false,
         },
         navigation: {
-          nextEl: '.wsu-card-carousel__button-next',
-          prevEl: '.wsu-card-carousel__button-prev',
+          nextEl: '.wsu-carousel__button-next',
+          prevEl: '.wsu-carousel__button-prev',
         },
         a11y: {
           enabled: true,
