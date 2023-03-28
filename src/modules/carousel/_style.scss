@@ -13,6 +13,7 @@
         display: flex;
         justify-content: center;
     }
+    // Button navigation styles
     &__button-next{
         color: #404040 !important;
         border: none;
@@ -72,6 +73,32 @@
     }
 }
 
+// Responsive styles
+
+@media screen and (max-width: 1024px ) {
+    .swiper-slide-prev{
+        visibility: visible !important;
+    }
+    .swiper-slide{
+        transition: opacity 150ms ease-in-out;
+    }
+    .swiper-slide-prev, .swiper-slide-next + .swiper-slide{
+        opacity: 0.4;
+    }
+}
+@media screen and (max-width: 480px ) {
+    .swiper-slide-prev{
+        visibility: visible !important;
+    }
+    .swiper-slide{
+        transition: opacity 150ms ease-in-out;
+    }
+    .swiper-slide-prev, .swiper-slide-next{
+        opacity: 0.4;
+    }
+}
+
+// Swiper class overrides to ensure correct tabbing order
 .swiper-slide{
     visibility: hidden;
 }
