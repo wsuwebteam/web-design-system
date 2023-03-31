@@ -135,6 +135,11 @@
             padding: $wsu-spacing--sxxsmall $wsu-spacing--large !important;
             display: block;
         }
+
+        .wsu-header-utility-bar {
+            position: relative;
+            top: 0 !important;
+        }
     }
 
 }

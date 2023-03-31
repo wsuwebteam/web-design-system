@@ -8,6 +8,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: $wsu-zindex--global-header;
     
     &__quicklinks{
         background-color: $wsu-color--gray-65;
