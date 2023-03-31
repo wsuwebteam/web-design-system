@@ -53,3 +53,8 @@ ol {
     }
 
 }
+
+p ~ ul li,
+p ~ ol li {
+    max-width: $wsu-width--copy;
+}

@@ -1,0 +1,18 @@
+{% from "article-header/_macro-v3.njk" import articleHeader %}
+{% from "article-footer/_macro-v3.njk" import articleFooter %}
+
+{% macro articleIndex( classes='', tag='h2', style='index', imageSrc='https://source.unsplash.com/collection/895539', alt='Alt Goes Here', title='Lorem ipsum dolor sit amet consectetur adipiscing elit', byline='', publishDate='', share='', breadcrumb='', link='' ) %}
+<div class="wsu-article{% if classes %} {{ classes }}{% endif %}{% if style %} wsu-style--{{ style }}{% endif %}">
+    <div class="wsu-article__inner-wrapper">
+        {{ articleHeader( tag=tag, publishDate='', share='', byline='', link=link ) }}
+        <div class="wsu-article__caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lorem sit amet felis tincidunt tincidunt nec sed diam. 
+            Proin vel tincidunt dui, sed fermentum odio. In id ligula tincidunt, pulvinar mi vitae, lacinia velit.
+        </div>
+        {{ articleFooter( publishDate=publishDate, share=share, byline=byline, link=link ) }}
+    </div>
+    {% if imageSrc %}<div class="wsu-article__thumbnail">
+        <img src="{{ imageSrc }}" alt="{{ alt }}" />
+    </div>{% endif %}
+</div>
+{% endmacro %}

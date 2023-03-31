@@ -1,0 +1,18 @@
+table.tablepress {
+    border-top: 4px solid $wsu-color--crimson;
+
+    th,
+    thead th {
+        background-color: transparent;
+        border: 1px solid $wsu-color--gray-30;
+    }
+
+    td {
+        border: 1px solid $wsu-color--gray-30;
+    }
+
+    .odd td {
+        background-color: transparent;
+    }
+    
+}
