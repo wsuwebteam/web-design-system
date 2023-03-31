@@ -1,0 +1,114 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-carousel {
+    padding: 39px;
+    position: relative;
+    width: 75%;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+    
+    &__pagination{
+        display: flex;
+        justify-content: center;
+    }
+    // Button navigation styles
+    &__button-next{
+        color: #404040 !important;
+        border: none;
+        background: none;
+        right: 0px !important;
+        left: auto;
+        position: absolute;
+        top: 50%;
+        width: calc(var(--swiper-navigation-size)/ 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button-next:after{
+        content: "\F107";
+    }
+    &__button-prev{
+        color: #404040 !important;
+        border: none;
+        background: none;
+        left: 0px !important;
+        right: auto;
+        position: absolute;
+        top: 50%;
+        width: calc(var(--swiper-navigation-size)/ 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button-prev:after{
+        content: "\F105";
+    }
+    &__button-next:after, &__button-prev:after{
+        font-size: var(--swiper-navigation-size);
+        text-transform: none!important;
+        letter-spacing: 0;
+        text-transform: none;
+        font-variant: initial;
+        line-height: 1;
+        font-family: wsu-icons!important;
+        font-style: normal;
+        font-weight: 400!important;
+        vertical-align: middle;
+    }
+    &__button-next.swiper-button-disabled,&__button-prev.swiper-button-disabled{
+        opacity: .35;
+        cursor: auto;
+        pointer-events: none;
+    }
+}
+
+// Responsive styles
+
+@media screen and (max-width: 1024px ) {
+    .swiper-slide-prev{
+        visibility: visible !important;
+    }
+    .swiper-slide{
+        transition: opacity 150ms ease-in-out;
+    }
+    .swiper-slide-prev, .swiper-slide-next + .swiper-slide{
+        opacity: 0.4;
+    }
+}
+@media screen and (max-width: 480px ) {
+    .swiper-slide-prev{
+        visibility: visible !important;
+    }
+    .swiper-slide{
+        transition: opacity 150ms ease-in-out;
+    }
+    .swiper-slide-prev, .swiper-slide-next{
+        opacity: 0.4;
+    }
+}
+
+// Swiper class overrides to ensure correct tabbing order
+.swiper-slide{
+    visibility: hidden;
+}
+.swiper-slide-active, .swiper-slide-next,.swiper-slide-next + .swiper-slide{
+    visibility: visible;
+}
+
+.swiper-button-prev{
+    left: 0px !important;
+}
+.swiper-button-next{
+    right: 0px !important;
+}

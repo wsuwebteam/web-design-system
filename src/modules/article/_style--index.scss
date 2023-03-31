@@ -1,0 +1,25 @@
+.wsu-article.wsu-style--index {
+
+    display: flex;
+    margin: $wsu-spacing--medium 0;
+
+    .wsu-article {
+
+        &__thumbnail {
+            flex: 0 0 120px;
+            padding: $wsu-spacing--xsmall 0 0 $wsu-spacing--xmedium;
+
+            img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+
+        &__caption {
+            margin-bottom: $wsu-spacing--sxxsmall;
+        }
+    }
+    
+}

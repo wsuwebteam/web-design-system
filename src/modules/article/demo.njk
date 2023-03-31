@@ -1,0 +1,17 @@
+{% extends "component.njk" %}
+{% from "article/_macro-v3.njk" import articleIndex %}
+
+
+{% block content %}
+
+{{ articleIndex( byline=true, publishDate=true, share=true, link=true ) }}
+{{ articleIndex( byline=true, publishDate=true, share=true, link=true ) }}
+{{ articleIndex( byline=true, publishDate=true, share=true, link=true ) }}
+<hr >
+{{ articleIndex( link=true ) }}
+{{ articleIndex( link=true ) }}
+{{ articleIndex( link=true ) }}
+<hr >
+
+
+{%  endblock %} 

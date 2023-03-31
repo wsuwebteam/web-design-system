@@ -1,0 +1,14 @@
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
+{% from "social-icons/macros/social-icons.macro.njk" import socialIcons %}
+{% from "breadcrumb/_macro.njk" import breadcrumb %}
+
+{% macro articleHeader( classes='', tag='h2', style='', title='Lorem ipsum dolor sit amet consectetur adipiscing elit', byline='', publishDate='', share='', breadcrumb='', link='' ) %}
+<header class="wsu-article-header">
+    {% if breadcrumb %}{{ breadcrumb() }}{% endif %}
+    <{{ tag }} class="wsu-article-header__title">{% if link %}<a href="#">{% endif %}{{ title }}{% if link %}</a>{% endif %}</{{ tag }}>
+    {% if byline %}{{ metaByline('Butch T. Cougar', 'WSU Maskot', 'By') }} {% endif %}
+    {% if publishDate %}{{ metaDate('June 7,2021') }}{% endif %}
+    {% if share %}{{ socialIcons( ' wsu-social-icons--small' ) }}{% endif %}
+</header>
+{% endmacro %}

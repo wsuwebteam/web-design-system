@@ -85,6 +85,10 @@
         max-width: 150px !important;
     }
 
+    &--copy {
+        max-width: $wsu-width--copy !important;
+    }
+
 }
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {

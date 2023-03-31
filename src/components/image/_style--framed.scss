@@ -1,7 +1,8 @@
 @import '../../../_assets/scss/variables';
 @import '../../../_assets/scss/mixins';
 
-.wsu-image--style-framed {
+img.wsu-image--style-framed,
+.wsu-image--style-framed img {
     outline-style: solid;
     outline-width: 1px;
     outline-offset: -$wsu-spacing--xmedium;
