@@ -1,0 +1,12 @@
+.wsu-block-quote{
+    &__bordered{
+        border-left: 5px solid;
+        padding-left: 30px;
+    }
+    &__border-crimson-dark{
+        border-color: $wsu-color--crimson-dark;
+    }
+    &__border-crimson{
+        border-color: $wsu-color--crimson;
+    }
+}
