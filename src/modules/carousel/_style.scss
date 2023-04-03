@@ -75,33 +75,46 @@
 
 // Responsive styles
 
-@media screen and (max-width: 1024px ) {
+// @media screen and (max-width: 1024px ) {
+//     .swiper-slide-prev{
+//         visibility: visible !important;
+//     }
+//     .swiper-slide{
+//         transition: opacity 150ms ease-in-out;
+//     }
+//     .swiper-slide-prev, .swiper-slide-next + .swiper-slide{
+//         opacity: 0.4;
+//     }
+// }
+@media screen and (max-width: 768px ) {
     .swiper-slide-prev{
         visibility: visible !important;
     }
-    .swiper-slide{
-        transition: opacity 150ms ease-in-out;
-    }
-    .swiper-slide-prev, .swiper-slide-next + .swiper-slide{
-        opacity: 0.4;
-    }
-}
-@media screen and (max-width: 480px ) {
-    .swiper-slide-prev{
-        visibility: visible !important;
-    }
-    .swiper-slide{
-        transition: opacity 150ms ease-in-out;
-    }
+
     .swiper-slide-prev, .swiper-slide-next{
-        opacity: 0.4;
+        opacity: 0.2;
     }
 }
 
 // Swiper class overrides to ensure correct tabbing order
 .swiper-slide{
     visibility: hidden;
+    transition: all 150ms ease-in-out;
 }
+
+.wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper{
+    .swiper-slide-next + .swiper-slide + .swiper-slide + .swiper-slide {
+        visibility: visible;
+    }
+}
+.wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper,
+.wsu-carousel[data-desktop-columns="4"] .wsu-carousel__wrapper{
+    .swiper-slide-next + .swiper-slide + .swiper-slide  {
+        visibility: visible;
+    }
+}
+.wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper,
+.wsu-carousel[data-desktop-columns="4"] .wsu-carousel__wrapper,
 .swiper-slide-active, .swiper-slide-next,.swiper-slide-next + .swiper-slide{
     visibility: visible;
 }
