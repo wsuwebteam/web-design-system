@@ -12,6 +12,13 @@ const initSwiper = () => {
 
       carousel.classList.add(`wsu-carousel-${index}`);
 
+      const slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
+      const carouselSlides = slideWrapper.children;
+
+      for (let i = 0; i < carouselSlides.length; i++) {
+        carouselSlides[i].classList.add(`swiper-slide`);
+      };
+
       let desktopCols;
       let tabletLargeCols;
       let tabletCols;

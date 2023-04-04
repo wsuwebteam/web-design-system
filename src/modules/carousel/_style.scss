@@ -89,6 +89,7 @@
 @media screen and (max-width: 768px ) {
     .swiper-slide-prev{
         visibility: visible !important;
+        opacity: 100%;
     }
 
     .swiper-slide-prev, .swiper-slide-next{
@@ -104,19 +105,22 @@
 
 .wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper{
     .swiper-slide-next + .swiper-slide + .swiper-slide + .swiper-slide {
-        visibility: visible;
+        visibility: visible !important;
+        opacity: 100%;
     }
 }
 .wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper,
 .wsu-carousel[data-desktop-columns="4"] .wsu-carousel__wrapper{
     .swiper-slide-next + .swiper-slide + .swiper-slide  {
-        visibility: visible;
+        visibility: visible !important;
+        opacity: 100%;
     }
 }
 .wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper,
 .wsu-carousel[data-desktop-columns="4"] .wsu-carousel__wrapper,
 .swiper-slide-active, .swiper-slide-next,.swiper-slide-next + .swiper-slide{
-    visibility: visible;
+    visibility: visible !important;
+    opacity: 100%;
 }
 
 .swiper-button-prev{
