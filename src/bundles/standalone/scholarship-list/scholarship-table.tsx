@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useQuery } from '@tanstack/react-query';
 import { IScholarship, IScholarshipsResponse } from "./interfaces";
-import { SortControl, Pagination } from './components';;
+import { TableSortControl, Pagination } from './components';;
 import WSULogo from "./logo.svg";
 
 const API_PATH = "/wp-json/wsu-scholarships/v1/get-scholarships";
@@ -58,39 +58,33 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 				<table className="wsu-scholarship-list__table wsu-table--style-striped">
 					<thead>
 						<tr>
-							<th>
-								<SortControl
-									className="wsu-scholarship-list__sort-control"
-									label="Scholarship"
-									ariaLabel="Order by scholarship"
-									metaKey="title"
-									params={params}
-									setParams={setParams}
-								/>
-							</th>
-							<th>
-								<SortControl
-									className="wsu-scholarship-list__sort-control"
-									label="Amount"
-									ariaLabel="Order by amount"
-									defaultDirection="desc"
-									metaKey="scholarship_amount"
-									params={params}
-									setParams={setParams}
-								/>
-							</th>
-							<th>
-								<SortControl
-									className="wsu-scholarship-list__sort-control"
-									label="Deadline"
-									ariaLabel="Order by deadline"
-									defaultDirection="desc"
-									metaKey="scholarship_deadline"
-									params={params}
-									setParams={setParams}
-								/>
-							</th>
-							<th></th>
+							<TableSortControl
+								className="wsu-scholarship-list__sort-control"
+								label="Scholarship"
+								ariaLabel="Order by scholarship"
+								metaKey="title"
+								params={params}
+								setParams={setParams}
+							/>
+							<TableSortControl
+								className="wsu-scholarship-list__sort-control"
+								label="Amount"
+								ariaLabel="Order by amount"
+								defaultDirection="desc"
+								metaKey="scholarship_amount"
+								params={params}
+								setParams={setParams}
+							/>
+							<TableSortControl
+								className="wsu-scholarship-list__sort-control"
+								label="Deadline"
+								ariaLabel="Order by deadline"
+								defaultDirection="desc"
+								metaKey="scholarship_deadline"
+								params={params}
+								setParams={setParams}
+							/>
+							<th><span className="wsu-screen-reader-only">Application</span></th>
 						</tr>
 					</thead>
 					<tbody className={isRefetching ? 'is-loading' : ''}>

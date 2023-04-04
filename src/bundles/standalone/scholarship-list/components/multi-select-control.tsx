@@ -59,7 +59,7 @@ function MultiSelectControl(props: MultiSelectControlProps) {
 					return <li key={option.id} className="wsu-scholarship-list__multi-select-control__list-item">
 						<input
 							type="checkbox"
-							className="wsu-scholarship-list__multi-select-control__input"
+							className="wsu-scholarship-list__multi-select-control__input wsu-screen-reader-only"
 							id={option.slug}
 							name={option.slug}
 							value={option.id}

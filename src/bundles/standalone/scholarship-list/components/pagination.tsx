@@ -25,7 +25,7 @@ function Pagination({ data, listRef, params, setParams }: {
 							setParams({ ...params, 'postsPerPage': e.target.value, 'page': '1' });
 							jumpToTop();
 						}}>
-						<option value="50">50</option>
+						<option value={params.postsPerPage}>{params.postsPerPage}</option>
 						<option value="100">100</option>
 						<option value="150">150</option>
 						<option value="200">200</option>
@@ -35,19 +35,23 @@ function Pagination({ data, listRef, params, setParams }: {
 			</p>
 			<nav className="wsu-scholarship-list__pagination" role="navigation" aria-label="Pagination Navigation">
 				<ol className="wsu-scholarship-list__pagination-menu">
-					{[...Array(data.numberOfPages)].map((e, index) =>
-						<li key={index} className="wsu-scholarship-list__pagination-menu-item">
+					{[...Array(data.numberOfPages)].map((e, index) => {
+						const currentPage = parseInt(params.page) === index + 1;
+						const label = currentPage ? 'Current page, page ' + (index + 1) : 'Go to page ' + (index + 1);
+
+						return <li key={index} className="wsu-scholarship-list__pagination-menu-item">
 							<button
 								className="wsu-scholarship-list__pagination-page"
-								aria-label={`Goto Page ${index + 1}`}
-								aria-current={parseInt(params.page) === index + 1}
+								aria-label={label}
+								aria-current={currentPage}
 								onClick={(e) => {
 									setParams({ ...params, 'page': (index + 1).toString() });
 									jumpToTop();
 								}}>
 								{index + 1}
 							</button>
-						</li>)
+						</li>
+					})
 					}
 				</ol>
 			</nav>
