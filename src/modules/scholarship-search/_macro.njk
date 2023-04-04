@@ -1,0 +1,62 @@
+{% macro scholarshipSearch() %}
+    <form class="wsu-scholarship-search" action="" method="get">
+
+        <div class="wsu-scholarship-search__select-wrapper">
+            <select id="wsu-scholarship-grade-level" class="wsu-scholarship-search__select" name="grade">
+                <option value="">- Current grade level -</option>
+                <option value="646">High School Freshman</option>
+                <option value="647">High School Sophomore</option>
+                <option value="648">High School Junior</option>
+                <option value="649">High School Senior</option>
+                <option value="650">Incoming College Freshman</option>
+                <option value="651">College Freshman</option>
+                <option value="652">College Sophomore</option>
+                <option value="653">College Junior</option>
+                <option value="654">College Senior</option>
+                <option value="655">Graduate</option>
+                <option value="667">Doctorate</option>
+                <option value="669">Law School</option>
+                <option value="690">MBA</option>
+                <option value="1214">Postdoctoral</option>
+                <option value="1217">Medical School</option>
+            </select>
+        </div>
+
+        <div class="wsu-scholarship-search__text-input-wrapper">
+            <input type="text" id="wsu-scholarship-gpa" class="wsu-scholarship-search__text-input" name="gpa" placeholder="G.P.A." value="" maxlength="4">
+        </div>
+
+        <div class="wsu-scholarship-search__select-wrapper">
+            <select id="wsu-scholarship-citizenship" class="wsu-scholarship-search__select" name="citizenship">
+                <option value="">- Citizenship -</option>
+                <option value="470">Asylee/Refugee</option>
+                <option value="675">Canada Citizen</option>
+                <option value="718">Canadian Permanent Resident</option>
+                <option value="1212">DACA</option>
+                <option value="670">District of Columbia Resident</option>
+                <option value="716">Israeli Citizens</option>
+                <option value="717">Israeli Permanent Resident</option>
+                <option value="587">Not a US Citizen</option>
+                <option value="829">U.S. Resident</option>
+                <option value="678">U.S. Student</option>
+                <option value="674">United Kingdom Citizen</option>
+                <option value="633">US Citizen</option>
+                <option value="677">US Nationals</option>
+                <option value="634">US Permanent Resident</option>
+                <option value="912">US Resident</option>
+                <option value="668">Valid Student Visa</option>
+            </select>
+        </div>
+
+        <div class="wsu-scholarship-search__select-wrapper">
+            <select id="wsu-scholarship-state" class="wsu-scholarship-search__select" name="state">
+                <option value="">- Residency -</option>
+                <option value="Washington">Washington</option>
+                <option value="Non-Washington">Non-Washington</option>
+            </select>
+        </div>
+
+        <input class="wsu-button wsu-scholarship-search__submit" type="submit" value="Go">
+
+    </form>
+{% endmacro %}
