@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider, PersistQueryClientOptions } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { default as ScholarshipList } from "./scholarship-list";
 
 const cacheTime = 1000 * 60 * 60 * 24; // 1 day
@@ -43,7 +43,7 @@ const ScholarshipListRoot = ({ props }: { props: DOMStringMap }) => {
 				client={queryClient}
 				persistOptions={persistOptions}>
 				<ScholarshipList siteUrl={props.siteUrl} />
-				<ReactQueryDevtools initialIsOpen={false} />
+				{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 			</PersistQueryClientProvider>
 		</React.StrictMode>
 	);

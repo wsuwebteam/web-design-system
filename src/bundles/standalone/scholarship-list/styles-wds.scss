@@ -12,9 +12,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
-		gap: $wsu-spacing--small;
+		gap: $wsu-spacing--medium;
 		flex-flow: row wrap;
-		margin-bottom: $wsu-spacing--xmedium;
+		margin-bottom: $wsu-spacing--medium;
 	}
 
 	&__meta-icon {
@@ -22,10 +22,20 @@
 		margin-bottom: 0;
 	}
 
-	&__meta-count {
+	&__meta-data {
 		margin-bottom: 0;
 		font-size: $wsu-font-size--small;
+	}
+
+	&__meta-count {
 		font-style: italic;
+
+		&::after {
+			content: "";
+			border-right: 1px solid #b3b3b3;
+			padding-right: $wsu-spacing--xsmall;
+			margin-right: $wsu-spacing--xsmall;
+		}
 	}
 
 	&__table-container {
@@ -178,6 +188,20 @@
 	&__results-per-page__control {
 		display: inline-block;
 		margin-right: $wsu-spacing--xxsmall;
+
+		&--top {
+			margin-right: 0;
+			margin-left: $wsu-spacing--sxxsmall;
+
+			&::after {
+				transform: translate(-60%, -50%) scaleY(0.8) !important;
+			}
+		}
+	}
+
+	&__results-per-page__control--top &__results-per-page__input {
+		padding: $wsu-spacing--sxxsmall;
+		padding-right: $wsu-spacing--medium;
 	}
 
 	&__results-per-page__input {

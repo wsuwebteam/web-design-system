@@ -49,8 +49,26 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 					<WSULogo className="wsu-scholarship-list__coug-head" />=
 					scholarships awarded by Washington State University.
 				</p>
-				<p className="wsu-scholarship-list__meta-count">
-					{data && `${data.totalCount} scholarships found`}
+
+				<p className="wsu-scholarship-list__meta-data">
+					{data && <span className="wsu-scholarship-list__meta-count">{`${data.totalCount} scholarships found`}</span>}
+					<span id="wsu-scholarship-list__results-per-page-top">Results per page</span>
+					<span className="wsu-scholarship-list__select-control wsu-scholarship-list__results-per-page__control wsu-scholarship-list__results-per-page__control--top">
+						<select
+							className="wsu-scholarship-list__select-control__input wsu-scholarship-list__results-per-page__input"
+							aria-labelledby="wsu-scholarship-list__results-per-page--top"
+							value={params.postsPerPage}
+							onChange={e => {
+								setParams({ ...params, 'postsPerPage': e.target.value, 'page': '1' });
+							}}>
+							<option value="10">10</option>
+							<option value="25">25</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+							<option value="150">150</option>
+							<option value="200">200</option>
+						</select>
+					</span>
 				</p>
 			</div>
 
