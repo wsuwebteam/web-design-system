@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { WP_Term } from 'wp-types';
 import _debounce from 'lodash/debounce';
-import { MultiSelectOption } from './interfaces';
+import { IMultiSelectOption } from './interfaces';
 import { TextControl, SelectControl, MultiSelectControl } from './components';
 
 const API_PATH = "/wp-json/wsu-scholarships/v1/get-filters";
@@ -29,13 +29,13 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 	}
 
 	function transformFilters(data: any) {
-		function wpTermsToMultiSelectOptions(terms: WP_Term[]): MultiSelectOption[] {
+		function wpTermsToMultiSelectOptions(terms: WP_Term[]): IMultiSelectOption[] {
 			return terms.map((term: WP_Term) => {
 				return {
 					id: term.term_id.toString(),
 					slug: term.slug,
 					label: term.name,
-				} as MultiSelectOption;
+				} as IMultiSelectOption;
 			});
 		}
 
@@ -45,7 +45,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 				id: requirement.key,
 				slug: requirement.key,
 				label: requirement.label,
-			} as MultiSelectOption;
+			} as IMultiSelectOption;
 		});
 
 		data.majors = wpTermsToMultiSelectOptions(data.majors);
@@ -58,12 +58,12 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 				id: 'from-wsu',
 				slug: 'from-wsu',
 				label: 'from WSU',
-			} as MultiSelectOption,
+			} as IMultiSelectOption,
 			{
 				id: 'outside-wsu',
 				slug: 'outside-wsu',
 				label: 'from outside WSU',
-			} as MultiSelectOption,
+			} as IMultiSelectOption,
 		];
 
 		return data;
@@ -133,6 +133,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 							<div className="wsu-scholarship-list__multi-select-controls">
 								<MultiSelectControl
 									label="with"
+									ariaLabel="Requirements"
 									name="requirements"
 									className="wsu-scholarship-list__text-control--requirements"
 									value={params.requirements}
@@ -142,6 +143,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 
 								<MultiSelectControl
 									label="for the following majors"
+									ariaLabel="Majors"
 									name="majors"
 									className="wsu-scholarship-list__text-control--majors"
 									value={params.majors}
@@ -151,6 +153,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 
 								<MultiSelectControl
 									label="for people who identify as"
+									ariaLabel="Gender Identities"
 									name="identities"
 									className="wsu-scholarship-list__text-control--identities"
 									value={params.identities}
@@ -160,6 +163,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 
 								<MultiSelectControl
 									label="for people who are"
+									ariaLabel="Ethnicities"
 									name="ethnicities"
 									className="wsu-scholarship-list__text-control--ethnicities"
 									value={params.ethnicities}

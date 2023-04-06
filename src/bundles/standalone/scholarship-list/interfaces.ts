@@ -15,29 +15,30 @@ export interface IScholarshipsResponse {
     scholarships: Array<IScholarship>;
 }
 
-export interface TextControlProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ITextControlProps extends React.InputHTMLAttributes<HTMLInputElement> {
     handleChange: (value: string, field?: string) => void
 }
 
-export interface SelectControlProps<T> extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface ISelectControlProps<T> extends React.SelectHTMLAttributes<HTMLSelectElement> {
     label?: string;
     options: Array<T>;
     handleChange: (value: string, field?: string) => void
     renderOption: (option: T) => JSX.Element;
 }
 
-export interface MultiSelectOption {
+export interface IMultiSelectOption {
     id: string;
     slug: string;
     label: string;
 }
 
-export interface MultiSelectControlProps {
+export interface IMultiSelectControlProps {
     label?: string;
+    ariaLabel?: string;
     name: string;
     className: string;
     layout?: 'list' | 'checkboxes';
     value: string;
-    options: MultiSelectOption[];
+    options: IMultiSelectOption[];
     handleChange: (value: string, field?: string) => void;
 }

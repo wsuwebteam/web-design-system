@@ -1,6 +1,6 @@
-import { TextControlProps } from "../interfaces"
+import { ITextControlProps } from "../interfaces"
 
-function TextControl(props: TextControlProps) {
+function TextControl(props: ITextControlProps) {
 	return <div className={`wsu-scholarship-list__text-control ${props.className}`}>
 		<input
 			type="text"

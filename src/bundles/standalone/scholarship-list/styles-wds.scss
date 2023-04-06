@@ -332,6 +332,7 @@
 			margin: 0;
 			padding: 0;
 			list-style-type: none;
+			position: relative;
 
 			/* width */
 			&::-webkit-scrollbar {
@@ -357,28 +358,42 @@
 
 		&__list-item {
 			margin: 0;
-		}
-
-		&__input {
-		}
-
-		&__input + &__input-label {
 			display: block;
-			margin: 0;
 			font-size: $wsu-font-size--small;
 			font-weight: $wsu-font-weight--regular;
 			padding: $wsu-spacing--sxxsmall;
+
+			&.is-focused,
+			&:hover {
+				background-color: $wsu-color--gray-20;
+			}
+
+			&[aria-selected="true"] {
+				background-color: $wsu-color--crimson;
+				color: white;
+			}
 		}
 
-		&__input:checked + &__input-label {
-			background-color: $wsu-color--crimson;
-			color: white;
-		}
+		// &__input {
+		// }
 
-		&__input:not(:checked) + &__input-label:hover,
-		&__input:not(:checked):focus + &__input-label {
-			background-color: $wsu-color--gray-20;
-		}
+		// &__input + &__input-label {
+		// 	display: block;
+		// 	margin: 0;
+		// 	font-size: $wsu-font-size--small;
+		// 	font-weight: $wsu-font-weight--regular;
+		// 	padding: $wsu-spacing--sxxsmall;
+		// }
+
+		// &__input:checked + &__input-label {
+		// 	background-color: $wsu-color--crimson;
+		// 	color: white;
+		// }
+
+		// &__input:not(:checked) + &__input-label:hover,
+		// &__input:not(:checked):focus + &__input-label {
+		// 	background-color: $wsu-color--gray-20;
+		// }
 	}
 
 	/*----------  Multi Checkbox Control  ----------*/

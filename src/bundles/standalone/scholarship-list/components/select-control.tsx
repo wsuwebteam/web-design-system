@@ -1,7 +1,7 @@
 import { WP_Term } from "wp-types";
-import { SelectControlProps } from "../interfaces";
+import { ISelectControlProps } from "../interfaces";
 
-function SelectControl<T extends WP_Term | string>(props: SelectControlProps<T>): JSX.Element {
+function SelectControl<T extends WP_Term | string>(props: ISelectControlProps<T>): JSX.Element {
 	return <div className={`wsu-scholarship-list__select-control ${props.className}`}>
 		<select
 			name={props.name}
