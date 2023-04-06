@@ -386,6 +386,7 @@
 			font-size: $wsu-font-size--small;
 			font-weight: $wsu-font-weight--regular;
 			padding: $wsu-spacing--sxxsmall;
+			cursor: pointer;
 
 			&.is-focused,
 			&:hover {
