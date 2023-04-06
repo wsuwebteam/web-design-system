@@ -6,6 +6,7 @@ function TextControl(props: ITextControlProps) {
 			type="text"
 			className={`wsu-scholarship-list__text-control__input`}
 			name={props.name}
+			aria-label={props['aria-label']}
 			maxLength={props.maxLength}
 			placeholder={props.placeholder}
 			defaultValue={props.defaultValue}

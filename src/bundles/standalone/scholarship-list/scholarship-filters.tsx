@@ -83,6 +83,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 						<div className="wsu-scholarship-list__default-filters">
 							<SelectControl<WP_Term>
 								label="- Current grade level -"
+								aria-label="Current grade level"
 								name="grade"
 								className="wsu-scholarship-list__text-control--grade-level"
 								value={params.grade}
@@ -92,6 +93,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 							/>
 							<TextControl
 								name="gpa"
+								aria-label="G.P.A"
 								className="wsu-scholarship-list__text-control--gpa"
 								maxLength={4}
 								placeholder="G.P.A"
@@ -100,6 +102,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 							/>
 							<SelectControl<WP_Term>
 								label="- Citizenship -"
+								aria-label="Citizenship"
 								name="citizenship"
 								className="wsu-scholarship-list__text-control--citizenship"
 								value={params.citizenship}
@@ -109,6 +112,7 @@ function ScholarshipFilters({ siteUrl, params, setParams }: {
 							/>
 							<SelectControl<string>
 								label="- Residency -"
+								aria-label="Residency"
 								name="state"
 								className="wsu-scholarship-list__text-control--state"
 								value={params.state}

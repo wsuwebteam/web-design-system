@@ -5,6 +5,7 @@ function SelectControl<T extends WP_Term | string>(props: ISelectControlProps<T>
 	return <div className={`wsu-scholarship-list__select-control ${props.className}`}>
 		<select
 			name={props.name}
+			aria-label={props['aria-label']}
 			className={`wsu-scholarship-list__select-control__input`}
 			value={props.value}
 			onChange={(e) => props.handleChange(e.target.value, props.name)}>

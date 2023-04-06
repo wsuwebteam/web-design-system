@@ -12,8 +12,52 @@ const initSwiper = () => {
 
       carousel.classList.add(`wsu-carousel-${index}`);
 
+      const slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
+      const carouselSlides = slideWrapper.children;
+
+      for (let i = 0; i < carouselSlides.length; i++) {
+        carouselSlides[i].classList.add(`swiper-slide`);
+      };
+
+      let desktopCols;
+      let tabletLargeCols;
+      let tabletCols;
+      let phoneCols;
+
+      switch(carousel.dataset.desktopColumns) {
+        case '1':
+          desktopCols = 1;
+          tabletLargeCols = 1;
+          tabletCols = 1;
+          phoneCols = 1;
+          break;
+        case '2':
+          desktopCols = 2;
+          tabletLargeCols = 2;
+          tabletCols = 2;
+          phoneCols = 1;
+          break;
+        case '4':
+          desktopCols = 4;
+          tabletLargeCols = 3;
+          tabletCols = 2;
+          phoneCols = 1;
+          break;
+        case '5':
+          desktopCols = 5;
+          tabletLargeCols = 4;
+          tabletCols = 3;
+          phoneCols = 1;
+          break;
+        default:
+          desktopCols = 3;
+          tabletLargeCols = 2;
+          tabletCols = 2;
+          phoneCols = 1;
+      }
+
       const swiperSettings = {
-        slidesPerView: carousel.dataset.desktopColumns,
+        slidesPerView: desktopCols,
           spaceBetween: 30,
           pagination: {
             el: ".wsu-carousel__pagination",
@@ -29,25 +73,25 @@ const initSwiper = () => {
             nextSlideMessage: 'Next slide',
           },
           breakpoints: {
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            // when window width is >= 480px
-            480: {
-              slidesPerView: 2,
+            // when window width is >= 0px
+            0: {
+              slidesPerView: phoneCols,
               spaceBetween: 30,
- 
             },
             // when window width is >= 640px
             768: {
-              slidesPerView: carousel.dataset.tabletColumns,
-              spaceBetween: 40
+              slidesPerView: tabletCols,
+              spaceBetween: 40,
             },
-            1024: {
-              slidesPerView: carousel.dataset.desktopColumns,
-              spaceBetween: 40
+            // when window width is >= 640px
+            992: {
+              slidesPerView: tabletLargeCols,
+              spaceBetween: 40,
+            },
+            // when window width is >= 640px
+            1260: {
+              slidesPerView: desktopCols,
+              spaceBetween: 40,
             },
           },
       };
