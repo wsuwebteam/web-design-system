@@ -1,5 +1,4 @@
 name: "Deploy Branch"
-description: "Builds assets and deploys to S3 for."
 
 on:
   # push:
