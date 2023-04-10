@@ -9,10 +9,15 @@
     overflow: hidden;
     margin: auto;
     
-    &__pagination{
-        display: flex;
-        justify-content: center;
-    }
+    &__pagination{ 
+        display: flex; 
+        justify-content: center; 
+        margin-top: $wsu-spacing--xsmall; 
+ 
+    } 
+    &__pagination .swiper-pagination-bullet-active{ 
+        --swiper-pagination-color: #a60f2d; 
+    } 
     // Button navigation styles
     &__button-next{
         color: #404040 !important;
