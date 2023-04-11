@@ -1,21 +1,22 @@
 {% from "card/_macro.njk" import card %}
 {% from "news-card/_macro.njk" import newsCard %}
 
-{% macro carousel( classes='', desktopColumns='3', tabletColumns='2' ) %}
-    <div class="wsu-carousel {{ classes }}" data-desktop-columns="{{ desktopColumns }}" data-tablet-columns="{{ tabletColumns }}">
+{% macro carousel( classes='', desktopColumns='3' ) %}
+    <div class="wsu-carousel {{ classes }}" data-desktop-columns="{{ desktopColumns }}">
         <button class="wsu-carousel__button-prev" aria-label="Previous slide"></button>
         <div class="wsu-carousel__wrapper swiper-wrapper">
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
-            {{ newsCard(' swiper-slide') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
+            {{ newsCard(' ') }}
         </div>
         <button class="wsu-carousel__button-next" aria-label="Next slide"></button>
         <div class="wsu-carousel__pagination"></div>
+
     </div>
 {% endmacro %}
