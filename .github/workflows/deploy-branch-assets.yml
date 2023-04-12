@@ -26,37 +26,46 @@ on:
 
 env:
   NODE_VERSION: 14
+  ARTIFACT_NAME: built-assets
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     name: Build Assets
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
-          path: ./${{ github.event.repository.name }}
+    uses: ./.github/workflows/build-assets.yml
+    with:
+      branch_ref: ${{ github.ref }}
+      node_version: ${{ github.event_name =='push' && env.NODE_VERSION || inputs.node_version }}
+      artifact_name: ${{ env.ARTIFACT_NAME }}
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ github.event_name =='push' && env.NODE_VERSION || inputs.node_version }}
-          cache: "npm"
-          cache-dependency-path: ./${{ github.event.repository.name }}/package-lock.json
+  # build:
+  #   runs-on: ubuntu-latest
+  #   name: Build Assets
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: ${{ github.ref }}
+  #         path: ./${{ github.event.repository.name }}
 
-      - name: Run npm install and build
-        working-directory: ./${{ github.event.repository.name }}
-        shell: bash
-        run: |
-          npm ci          
-          npm run build
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ github.event_name =='push' && env.NODE_VERSION || inputs.node_version }}
+  #         cache: "npm"
+  #         cache-dependency-path: ./${{ github.event.repository.name }}/package-lock.json
 
-      - name: Publish artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: built-assets
-          path: ./${{ github.event.repository.name }}/dist/bundles/
+  #     - name: Run npm install and build
+  #       working-directory: ./${{ github.event.repository.name }}
+  #       shell: bash
+  #       run: |
+  #         npm ci
+  #         npm run build
+
+  #     - name: Publish artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: built-assets
+  #         path: ./${{ github.event.repository.name }}/dist/bundles/
 
   deploy:
     runs-on: ubuntu-latest
@@ -66,7 +75,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: built-assets
+          name: ${{env.ARTIFACT_NAME}}
           path: ./assets
 
       - name: Configure AWS credentials
