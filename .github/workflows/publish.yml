@@ -39,7 +39,7 @@ jobs:
 
       - name: Push to S3
         run: |
-          echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
+          echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/"
         # aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
 
   deploy-production:
@@ -63,5 +63,5 @@ jobs:
 
       - name: Push to S3
         run: |
-          echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.x/dist/bundles/
+          echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.x/dist/bundles/"
         # aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.x/dist/bundles/
