@@ -17,9 +17,9 @@ on:
         type: string
 
 jobs:
-  build:
+  build-artifact:
     runs-on: ubuntu-latest
-    name: Build Assets
+    name: Build Artifact
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
