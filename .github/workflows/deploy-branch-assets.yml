@@ -24,6 +24,9 @@ on:
         default: "14" #we should attempt to update
         required: true
 
+env:
+  NODE_VERSION: 14
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,7 +40,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ inputs.node_version }}
+          node-version: ${{ github.event_name =='push' && env.NODE_VERSION || inputs.node_version }}
           cache: "npm"
           cache-dependency-path: ./${{ github.event.repository.name }}/package-lock.json
 
