@@ -1,4 +1,4 @@
-name: "Deploy Branch Assets"
+name: Deploy Branch Assets
 
 run-name: Deploy assets for branch "${{ github.ref_name }}"
 

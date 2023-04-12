@@ -1,4 +1,4 @@
-name: "Cleanup Branch Assets"
+name: Cleanup Branch Assets
 
 run-name: Cleanup for ${{github.event.ref_type}} "${{github.event.ref}}"
 
