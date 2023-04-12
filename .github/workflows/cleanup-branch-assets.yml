@@ -23,4 +23,4 @@ jobs:
       - name: Delete ${{ env.BRANCH }} folder from S3
         run: |
           echo "Deleting folder from S3 | s3://cdn-web-wsu/designsystem/${{ env.BRANCH }}/"
-          aws s3 rm s3://cdn-web-wsu/designsystem/${{ github.ref_name }}/ --recursive --dryrun
+          aws s3 rm s3://cdn-web-wsu/designsystem/${{ env.BRANCH }}/ --recursive --dryrun
