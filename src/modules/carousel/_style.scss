@@ -134,3 +134,7 @@
 .swiper-button-next{
     right: 0px !important;
 }
+
+.wsu-carousel[data-desktop-columns="1"] .wsu-carousel__wrapper .wp-block-quote{
+    min-width: 100%;
+}
