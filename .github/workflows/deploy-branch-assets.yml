@@ -30,6 +30,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build Assets
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -59,6 +60,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    name: Deploy Assets
     needs: build
     steps:
       - name: Download artifact
