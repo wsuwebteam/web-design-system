@@ -34,8 +34,8 @@ jobs:
     uses: ./.github/workflows/build-assets.yml
     with:
       branch_ref: ${{ github.ref }}
-      node_version: ${{ github.event_name =='push' && env.NODE_VERSION || inputs.node_version }}
-      artifact_name: ${{ env.ARTIFACT_NAME }}
+      node_version: ${{ github.event_name =='push' && 14 || inputs.node_version }} # env not available ${{ env.NODE_VERSION }}
+      artifact_name: built-assets # env not available here ${{ env.ARTIFACT_NAME }}
 
   # build:
   #   runs-on: ubuntu-latest
