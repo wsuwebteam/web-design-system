@@ -1,0 +1,89 @@
+name: "Deploy Branch Assets"
+
+run-name: Deploy assets for branch "${{ github.ref_name }}"
+
+on:
+  push:
+    branches-ignore:
+      - "main"
+      - "1.1"
+      - "1.x"
+      - "1"
+      - "2.0.0"
+      - "2.0.1"
+      - "2.beta"
+      - "2.x"
+      - "beta"
+      - "bk"
+      - "css"
+
+  workflow_dispatch:
+    inputs:
+      node_version:
+        description: "Node version to use for the build process."
+        default: "14" #we should attempt to update
+        required: true
+
+env:
+  NODE_VERSION: 14
+  ARTIFACT_NAME: built-assets
+
+jobs:
+  build:
+    name: Build Assets
+    uses: ./.github/workflows/build-assets.yml
+    with:
+      branch_ref: ${{ github.ref }}
+      node_version: ${{ github.event_name =='push' && 14 || inputs.node_version }} # env not available ${{ env.NODE_VERSION }}
+      artifact_name: built-assets # env not available here ${{ env.ARTIFACT_NAME }}
+
+  # build:
+  #   runs-on: ubuntu-latest
+  #   name: Build Assets
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: ${{ github.ref }}
+  #         path: ./${{ github.event.repository.name }}
+
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ github.event_name =='push' && env.NODE_VERSION || inputs.node_version }}
+  #         cache: "npm"
+  #         cache-dependency-path: ./${{ github.event.repository.name }}/package-lock.json
+
+  #     - name: Run npm install and build
+  #       working-directory: ./${{ github.event.repository.name }}
+  #       shell: bash
+  #       run: |
+  #         npm ci
+  #         npm run build
+
+  #     - name: Publish artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: built-assets
+  #         path: ./${{ github.event.repository.name }}/dist/bundles/
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Assets
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{env.ARTIFACT_NAME}}
+          path: ./assets
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Push to S3
+        run: aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/${{ github.ref_name }}/dist/bundles/

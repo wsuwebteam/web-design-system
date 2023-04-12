@@ -1,0 +1,48 @@
+name: Build Assets
+
+on:
+  workflow_call:
+    inputs:
+      branch_ref:
+        description: "Branch name to build assets for."
+        required: true
+        type: string
+      node_version:
+        description: "Node version to use for the build process."
+        required: true
+        type: string
+      artifact_name:
+        description: "Name of the assets artifact."
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build Assets
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.branch_ref }}
+          path: ./
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node_version }}
+          cache: "npm"
+          cache-dependency-path: ./package-lock.json
+
+      - name: Run npm install and build
+        working-directory: ./
+        shell: bash
+        run: |
+          npm ci          
+          npm run build
+
+      - name: Publish artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: ./dist/bundles/

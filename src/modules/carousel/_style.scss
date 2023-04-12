@@ -4,17 +4,22 @@
 .wsu-carousel {
     padding: 39px;
     position: relative;
-    width: 75%;
+    width: 90%;
     height: 100%;
     overflow: hidden;
     margin: auto;
     
-    &__pagination{
-        display: flex;
-        justify-content: center;
-    }
+    &__pagination {
+        display: flex; 
+        justify-content: center; 
+        margin-top: $wsu-spacing--xsmall; 
+ 
+    } 
+    &__pagination .swiper-pagination-bullet-active { 
+        --swiper-pagination-color: #a60f2d; 
+    } 
     // Button navigation styles
-    &__button-next{
+    &__button-next { 
         color: #404040 !important;
         border: none;
         background: none;
@@ -31,10 +36,10 @@
         align-items: center;
         justify-content: center;
     }
-    &__button-next:after{
+    &__button-next:after {
         content: "\F107";
     }
-    &__button-prev{
+    &__button-prev {
         color: #404040 !important;
         border: none;
         background: none;
@@ -51,10 +56,10 @@
         align-items: center;
         justify-content: center;
     }
-    &__button-prev:after{
+    &__button-prev:after {
         content: "\F105";
     }
-    &__button-next:after, &__button-prev:after{
+    &__button-next:after, &__button-prev:after {
         font-size: var(--swiper-navigation-size);
         text-transform: none!important;
         letter-spacing: 0;
@@ -66,7 +71,7 @@
         font-weight: 400!important;
         vertical-align: middle;
     }
-    &__button-next.swiper-button-disabled,&__button-prev.swiper-button-disabled{
+    &__button-next.swiper-button-disabled,&__button-prev.swiper-button-disabled {
         opacity: .35;
         cursor: auto;
         pointer-events: none;

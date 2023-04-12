@@ -1,0 +1,26 @@
+name: "Cleanup Branch Assets"
+
+run-name: Cleanup for ${{github.event.ref_type}} "${{github.event.ref}}"
+
+on:
+  delete:
+
+jobs:
+  cleanup:
+    if: ${{ github.event.ref != '' && github.event.ref_type == 'branch' && !contains(fromJSON('["main", "development", "develop", "dev", "beta.release", "gh-pages", "beta", "bk", "2.x", "2.beta", "2.0.1", "2.0.0", "1", "1.x", "1.1", "css"]'), github.event.ref) }}
+    runs-on: ubuntu-latest
+    name: Cleanup Assets
+    env:
+      BRANCH: ${{ github.event.ref }}
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Delete ${{ env.BRANCH }} folder from S3
+        run: |
+          echo "Deleting folder from S3 | s3://cdn-web-wsu/designsystem/${{ env.BRANCH }}/"
+          aws s3 rm s3://cdn-web-wsu/designsystem/${{ env.BRANCH }}/ --recursive
