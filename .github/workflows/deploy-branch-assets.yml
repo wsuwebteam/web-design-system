@@ -1,18 +1,28 @@
-name: "Deploy Branch"
+name: "Deploy Branch Assets"
+
+run-name: Deploy assets for branch "${{ github.ref_name }}"
 
 on:
-  # push:
-  #   branches:
-  #     - "**"
-  #     - "!beta.release"
-  #     - "!main"
+  push:
+    branches-ignore:
+      - "main"
+      - "1.1"
+      - "1.x"
+      - "1"
+      - "2.0.0"
+      - "2.0.1"
+      - "2.beta"
+      - "2.x"
+      - "beta"
+      - "bk"
+      - "css"
 
   workflow_dispatch:
     inputs:
       node_version:
         description: "Node version to use for the build process."
-        default: "latest"
-        required: false
+        default: "14" #we should attempt to update
+        required: true
 
 jobs:
   build:
@@ -23,18 +33,21 @@ jobs:
         with:
           ref: ${{ github.ref }}
           path: ./${{ github.event.repository.name }}
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.node_version }}
           cache: "npm"
           cache-dependency-path: ./${{ github.event.repository.name }}/package-lock.json
+
       - name: Run npm install and build
         working-directory: ./${{ github.event.repository.name }}
         shell: bash
         run: |
           npm ci          
           npm run build
+
       - name: Publish artifact
         uses: actions/upload-artifact@v3
         with:
@@ -50,11 +63,13 @@ jobs:
         with:
           name: built-assets
           path: ./assets
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
+
       - name: Push to S3
         run: aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/${{ github.ref_name }}/dist/bundles/
