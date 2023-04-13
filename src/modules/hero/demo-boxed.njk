@@ -1,0 +1,27 @@
+{% extends "component.njk" %}
+{% from "hero/_v3-macro.njk" import v3_hero %}
+
+{% block content %}
+
+{{ v3_hero( style='boxed' ) }}
+<hr />
+{{ v3_hero( style='boxed', classes='wsu-hero--notched', title='I Have a Notched Background' ) }}
+<hr />
+{{ v3_hero( style='boxed', title='No Caption Here, LOL', caption='' ) }}
+<hr />
+{{ v3_hero( style='boxed', title='I Have a Really Long Title Because We Like Those in Higer ED' ) }}
+<hr />
+{{ v3_hero( style='boxed', classes='wsu-hero--title-size-medium', title='I Have Smaller and I Have a Really Long Title Because We Like Those in Higer ED' ) }}
+<hr />
+{{ v3_hero( style='boxed', classes='wsu-hero--caption-top' ) }}
+<hr />
+{{ v3_hero( style='boxed', classes='wsu-hero--caption-top wsu-hero--content-reverse' ) }}
+<hr />
+{{ v3_hero( style='boxed', classes='wsu-hero--content-reverse' ) }}
+<style>
+
+.wsu-custom-demo {
+    margin: 0 !important;
+}
+</style>
+{%  endblock %}   
