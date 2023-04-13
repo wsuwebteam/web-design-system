@@ -1,0 +1,64 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+%wsu-hero__position-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+}
+
+%wsu-hero__overflow-bottom {
+    bottom: -$wsu-spacing--hero;
+
+    &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        height: $wsu-spacing--hero;
+        left: 0;
+        right: 0;
+        width: auto;
+        bottom: 0;
+        background: linear-gradient(0deg,#fff 0,rgba(255,255,255,.8) 100%);
+    }
+}
+ 
+%wsu-hero__notch {
+    -webkit-clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+    clip-path: polygon(100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 0);
+}
+
+.wsu-hero--content-reverse {
+
+    .wsu-hero__inner-content-wrapper {
+        flex-direction: row-reverse !important;
+    }
+
+    .wsu-hero__title-wrapper {
+        justify-content: flex-end !important;
+        margin-right: 0 !important;
+        margin-left: $wsu-spacing--large !important;
+    }
+
+}
+
+.wsu-hero--caption-top {
+    .wsu-hero__title-wrapper {
+        align-self: start !important;
+    }
+}
+
+.wsu-hero--notched {
+    .wsu-hero__background .wsu-image {
+        -webkit-clip-path: polygon(100% 0,100% calc(100% - 150px),calc(100% - 150px) 100%,0 100%,0 0);
+        clip-path: polygon(100% 0,100% calc(100% - 150px),calc(100% - 150px) 100%,0 100%,0 0);
+    }
+}
+
+
+
+@import './v3-style-boxed';
