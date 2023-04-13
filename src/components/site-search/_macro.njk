@@ -1,0 +1,23 @@
+{% macro siteSearch( classes='', style='', showOptions=true ) %}
+<form class="wsu-site-search {{classes}}{% if style %} wsu-style--{{ style }}{% endif %}" method="get">
+    <div class="wsu-site-search__tab" data-context="site">
+        <div class="wsu-site-search__search-bar" >
+            <input class="wsu-site-search__input" type="text" aria-lable="Search input" placeholder="Search" name="q" />
+            <button class="wsu-site-search__submit" aria-label="Submit Search"></button>
+        </div>
+    </div>
+    <div class="wsu-site-search__tab" data-context="wsu">
+        <div class="wsu-search__search-bar">
+            <input type="hidden" name="sa" value="search">
+            <input class="wsu-search__input" type="text" aria-lable="Search input" placeholder="Search" name="q">
+            <button class="wsu-search__submit" aria-lable="Submit Search"></button>
+        </div>
+    </div>
+    {% if showOptions %}
+    <div class="wsu-site-search__search-options">
+        <input type="radio" class="wsu-site-search__search-toggle" id="wsu-site-search__search-toggle-site" name="search_context" value="site" checked="checked"/><label for="wsu-site-search__search-toggle-site" class="wsu-site-search__search-toggle-label"> This Site</label>
+        <input type="radio" class="wsu-site-search__search-toggle" id="wsu-site-search__search-toggle-wsu" name="search_context" value="wsu" /><label for="wsu-site-search__search-toggle-wsu" class="wsu-site-search__search-toggle-label"> All WSU</label>
+    </div>
+    {% endif %}
+</form>
+{% endmacro %}
