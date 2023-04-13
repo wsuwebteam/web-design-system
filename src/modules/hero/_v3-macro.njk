@@ -1,0 +1,19 @@
+{% macro v3_hero( classes = '', style='', titleTag = "div", imageSrc = 'https://source.unsplash.com/collection/895539', title = 'Hero Banner Title', caption = 'Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.' ) %}
+  <div class="wsu-hero wsu-width--full{% if classes %} {{ classes }}{%endif%}{% if style %} wsu-style--{{style}}{%endif%}">
+    <div class="wsu-hero__background">
+        <img class="wsu-image" src="{{ imageSrc }}" />
+    </div>
+    <div class="wsu-hero__overlay">
+    </div>
+    <div class="wsu-hero__content-wrapper">
+        <div class="wsu-hero__inner-content-wrapper">
+            <div class="wsu-hero__title-wrapper">
+                <div class="wsu-hero__title">{{ title }}</div>
+                <div class="wsu-hero__caption">{{ caption }}</div>
+            </div>
+            <div class="wsu-hero__content">
+            </div>
+        </div>
+    </div>
+  </div>
+{% endmacro %} 
