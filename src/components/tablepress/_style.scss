@@ -4,11 +4,11 @@ table.tablepress {
     th,
     thead th {
         background-color: transparent;
-        border: 1px solid $wsu-color--gray-30;
+
     }
 
     td {
-        border: 1px solid $wsu-color--gray-30;
+        border-top: 1px solid $wsu-color--gray-20;
     }
 
     .odd td {

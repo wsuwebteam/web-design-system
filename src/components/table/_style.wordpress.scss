@@ -23,12 +23,26 @@
 
         th {
             background-color: transparent !important;
-
-            &:hover {
-                background-color: $wsu-color--gray-85 !important;
-                color: #fff !important;
-            }
         }
+
+        .row-hover th:hover {
+            background-color: #f3f3f3 !important;
+        }
+    }
+
+    .dataTables_scrollHead {
+        .tablepress {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .dataTables_scrollBody {
+
+        .tablepress {
+
+            border-top: 0px solid transparent !important;
+        }
+
     }
 
     & + .tablepress-table-description {
