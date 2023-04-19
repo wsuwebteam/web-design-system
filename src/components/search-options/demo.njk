@@ -1,0 +1,14 @@
+{% from "search-options/_macro-v3.njk" import searchOptions %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+<div style="padding: 2rem; margin: 2rem 0">
+        {{ searchOptions() }}
+</div>
+<div class="wsu-mode--dark" style="background-color: #333; padding: 2rem 0; margin: 2rem 0">
+    <div style="padding: 2rem; margin: 2rem 0">
+        {{ searchOptions() }}
+    </div>
+</div>
+{%  endblock %} 

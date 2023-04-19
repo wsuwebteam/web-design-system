@@ -1,0 +1,12 @@
+{% macro searchOptions( classes='', style='basic', mode='' ) %}
+<div class="wsu-search-options{% if classes %} {{classes}}{% endif %}{% if style %} wsu-style--{{ style }}{% endif %}{% if mode %} wsu-mode--{{ mode}}{% endif %}">
+    <label class="wsu-search-options__option">
+        <input class="wsu-search-options__option-input" type="radio" name="wsu-search-type" value="site" checked="checked" />
+        <span class="wsu-search-options__option-label">This Site</span>
+    </label>
+    <label class="wsu-search-options__option">
+        <input class="wsu-search-options__option-input" type="radio" name="wsu-search-type" value="wsu" checked="checked" />
+        <span class="wsu-search-options__option-label">All WSU</span>
+    </label>
+</div>
+{% endmacro %}
