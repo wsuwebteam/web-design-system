@@ -1,0 +1,83 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-search-bar.wsu-style--underline {
+    
+
+    .wsu-search-bar {
+
+        &__wrapper {
+            display: flex;
+            border-bottom: 1px solid $wsu-color--gray-80;
+        }
+
+        &__input {
+            border: none;
+            height: $wsu-spacing--large;
+            line-height: $wsu-spacing--large;
+            padding: 0 $wsu-spacing--sxxsmall;
+            box-sizing: border-box;
+            font-size: $wsu-font-size--xlarge;
+            flex: 1 1 100%;
+            border-radius: 4px;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        &__submit {
+            border: none;
+            box-sizing: border-box;
+            font-size: $wsu-font-size--xlarge;
+            flex: 0 0 80px;
+            background-color: transparent;
+            border-radius: 4px;
+            
+            cursor: pointer;
+
+            &::after {
+                content: '\F140';
+                font-family: wsu-icons;
+                font-size: $wsu-font-size--large;
+            }
+        }
+
+        &__input,
+        &__submit {
+
+            &:focus {
+                border: 3px solid $wsu-color--crimson-light;
+                outline: 3px solid #fff;
+                box-shadow: 0 0 7px rgba(0,0,0,.4);
+            }
+
+        }
+
+    }
+
+    
+
+}
+
+
+.wsu-mode--dark .wsu-style--underline.wsu-search-bar,
+.wsu-search-bar.wsu-style--underline.wsu-mode--dark {
+
+    .wsu-search-bar {
+
+        &__wrapper {
+            border-bottom: 1px solid #fff;
+        }
+
+        &__input {
+            color: #fff;
+        }
+
+        &__submit {
+            &::after {
+                color: $wsu-color--gray-10;
+            }
+        }
+
+    }
+
+}

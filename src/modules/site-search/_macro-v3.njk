@@ -1,0 +1,21 @@
+{% from "search-bar/_macro-v3.njk" import searchBar %}
+{% from "search-options/_macro-v3.njk" import searchOptions %}
+{% from "decorator/_macro.njk" import decorator %}
+
+{% macro siteSearch( classes='', style='quicklinks', showOptions=true, mode='', decoratorStyle='') %}
+<div class="wsu-site-search {{classes}}{% if style %} wsu-style--{{ style }}{% endif %}{% if mode %} wsu-mode--{{ mode}}{% endif %}" method="get">
+    <form class="wsu-site-search__tab wsu-site-search--active" data-context="site" method="get" action="web.wsu.edu">
+        {{ searchBar( style='underline' ) }}
+    </form>
+    {% if showOptions %}
+    <form class="wsu-site-search__tab" data-context="wsu" action="https://search.wsu.edu" method="get">
+         <input type="hidden" name="sa" value="search">
+        {{ searchBar( style='underline', name='q' ) }}
+    </form>
+    {% endif %}
+    {% if showOptions %}
+        {{ searchOptions() }}
+    {% endif %}
+    {% if decoratorStyle %}{{ decorator( style=decoratorStyle ) }}{% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,83 @@
+.wsu-search-bar.wsu-style--basic {
+
+    .wsu-search-bar {
+
+        &__wrapper {
+            display: flex;
+        }
+
+        &__input {
+            background-color: #fff;
+            border: 1px solid $wsu-color--gray-30;
+            border-radius: 4px 0 0 4px;
+            height: $wsu-spacing--xlarge;
+            line-height: $wsu-spacing--xlarge;
+            flex: 1 1 100%;
+            width: 100%;
+
+            &:focus {
+                border: 3px solid #fff;
+                outline: 3px solid  $wsu-color--crimson-light;
+                box-shadow: 0 0 7px rgba(0,0,0,.4);
+                border-radius: 4px;
+            }
+        }
+
+        &__submit {
+            border: none;
+            box-sizing: border-box;
+            font-size: $wsu-font-size--large;
+            flex: 0 0 80px;
+            background-color: $wsu-color--crimson;
+            border-radius: 0 4px 4px 0;
+            
+            cursor: pointer;
+
+            &::after {
+                content: '\F140';
+                font-family: wsu-icons;
+                font-size: $wsu-font-size--xmedium;
+                color: #fff;
+            }
+
+            &:focus {
+                border: 3px solid #fff;
+                outline: 3px solid  $wsu-color--crimson-light;
+                box-shadow: 0 0 7px rgba(0,0,0,.4);
+                border-radius: 4px;
+            }
+        }
+
+    }
+
+}
+
+.wsu-mode--dark .wsu-search-bar.wsu-style--basic,
+.wsu-search-bar.wsu-style--basic.wsu-mode--dark {
+
+    .wsu-search-bar {
+
+        &__input{
+
+            &:focus {
+                border: 3px solid $wsu-color--crimson-light;
+                outline: 3px solid #fff;
+            }
+
+        }
+
+        &__submit {
+            border-radius: 0 7px 7px 0;
+            background-color: $wsu-color--crimson-light;
+
+            &:focus {
+                border: 3px solid #fff;
+                outline: 3px solid $wsu-color--crimson-light;
+                box-shadow: 0 0 7px rgba(0,0,0,.4);
+                border-radius: 4px;
+            }
+        }
+
+    }
+
+}

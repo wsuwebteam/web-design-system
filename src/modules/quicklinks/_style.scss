@@ -21,7 +21,7 @@
 
         &__search {
             margin-bottom: 0;
-            padding-bottom: calc( #{$wsu-spacing--xxmedium} + #{$wsu-spacing--small});
+            padding-bottom: $wsu-spacing--xxmedium;
             position: relative;
 
             .wsu-decorator {
@@ -38,7 +38,7 @@
             flex-grow: 1;
 
             h2 {
-                margin-top: $wsu-spacing--large;
+                margin-top: $wsu-spacing--xmedium;
                 font-size: $wsu-font-size--large;
             }
         }
