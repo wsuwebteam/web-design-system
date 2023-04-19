@@ -176,7 +176,7 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
     & > button:first-child,
     & > a {
         font-weight: 500;
-        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 2 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
     }
 }
 
