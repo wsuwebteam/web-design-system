@@ -73,7 +73,7 @@ class WsuNavigationVertical {
 
             if ( navigation && ( false !== height ) ) {
 
-                navigation.style.paddingTop = height + 'px';
+                navigation.style.paddingTop = ( height < 0 ) ? 0 : height + 'px';
 
             }
 
