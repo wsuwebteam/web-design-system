@@ -19,7 +19,17 @@ class WsuNavigationVertical {
         init() {
     
             this.bindEvents();
-    
+
+            try {
+                
+                this.scrollNav();
+                
+            } catch (error) {
+
+              console.error(error);
+
+            }
+
         }
     
         bindEvents() {
@@ -34,13 +44,13 @@ class WsuNavigationVertical {
                 this.scrollEvent.bind( this ),
                 false
             );
-    
-    
-            /*document.addEventListener(
-                'keydown', 
-                this.keyDownEvents.bind( this ),
+
+            window.addEventListener(
+                'load', 
+                this.scrollEvent.bind( this ),
                 false
-            );*/
+            );
+    
         }
     
         scrollEvent( event ) {
@@ -118,8 +128,6 @@ class WsuNavigationVertical {
 
             let height = false;
 
-            console.log( siteHeader );
-
             if ( siteHeader ) {
 
                 let headerHeight = siteHeader.scrollHeight;
@@ -127,8 +135,6 @@ class WsuNavigationVertical {
                 height = siteHeader.getBoundingClientRect().top + headerHeight;
 
             }
-
-            console.log( height );
 
             return height; 
         }
