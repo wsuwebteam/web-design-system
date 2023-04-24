@@ -1,0 +1,8 @@
+{% macro searchBar( classes='', style='basic', name='s', placeholder='Search', ariaLabel='Submit Search', mode='' ) %}
+<div class="wsu-search-bar{% if classes %} {{classes}}{% endif %}{% if style %} wsu-style--{{ style }}{% endif %}{% if mode %} wsu-mode--{{ mode}}{% endif %}" >
+    <div class="wsu-search-bar__wrapper">
+        <input class="wsu-search-bar__input" type="text" aria-label="Search input" placeholder="{{ placeholder }}" name="{{ name }}" />
+        <button class="wsu-search-bar__submit" aria-label="{{ ariaLabel }}"></button>
+    </div>
+</div>
+{% endmacro %} 

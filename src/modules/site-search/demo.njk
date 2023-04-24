@@ -1,0 +1,18 @@
+{% from "site-search/_macro-v3.njk" import siteSearch %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+<div style="padding: 2rem; margin: 2rem 0">
+    {{ siteSearch() }}
+</div>
+<div style="padding: 2rem; margin: 2rem 0">
+    {{ siteSearch( decoratorStyle='lines-gray' ) }}
+</div>
+<div class="wsu-mode--dark" style="background-color: #333; padding: 2rem; margin: 2rem 0">
+    {{ siteSearch() }}
+</div>
+<div class="wsu-mode--dark" style="background-color: #333; padding: 2rem; margin: 2rem 0">
+    {{ siteSearch( decoratorStyle='lines-gray' ) }}
+</div>
+{%  endblock %} 

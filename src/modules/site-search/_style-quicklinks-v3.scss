@@ -1,0 +1,31 @@
+.wsu-site-search.wsu-style--quicklinks {
+
+    .wsu-site-search {
+
+
+        &__tab:not(.wsu-site-search--active) {
+            display: none;
+        }
+
+    }
+
+    .wsu-search-options {
+        padding: $wsu-spacing--xsmall $wsu-spacing--sxxsmall;
+    }
+
+    .wsu-decorator {
+        display: block;
+        position: relative;
+        height: 40px;
+    }
+
+}
+
+.wsu-mode--dark .wsu-site-search,
+.wsu-mode--dark.wsu-site-search {
+
+    .wsu-decorator {
+        opacity: 0.4;
+    }
+
+}
