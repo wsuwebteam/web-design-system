@@ -13,17 +13,20 @@
 
     li {
         @extend %wsu-menu-collapse-vertical--li;
+        @extend %wsu-menu-collapse--item-indicator;
         display: flex;
         flex-wrap: wrap;
     }
 
     button {
         @extend %wsu-menu-collapse-vertical--button;
+        box-sizing: border-box;
     }
 
     button:first-child,
     a {
         @extend %wsu-menu-collapse-vertical--menu-item;
+        outline: none;
     }
 
     button:first-child {
@@ -32,11 +35,19 @@
 
     a ~ button {
         @extend %wsu-menu-collapse-vertical--menu-item-split-button;
+        outline: none;
     }
 
     li[aria-expanded] {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    li[aria-expanded="true"] {
+        
+        & > a ~ button {
+            @extend %wsu-menu-collapse-vertical--menu-item-split-button-open;
+        }
     }
 
     & > li {
