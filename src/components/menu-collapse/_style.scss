@@ -121,6 +121,7 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
+        transition: transform ease-in-out 150ms;
     }
 
     &::after {
@@ -132,6 +133,24 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
         top: 0;
         bottom: 0;
         background-color: $wsu-color--gray-10;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $wsu-color--gray-5;
+
+        &::after {
+            left: -5px;
+            width: 6px;
+            background-color: $wsu-color--gray-30;
+        }
+    }
+}
+
+%wsu-menu-collapse-vertical--menu-item-split-button-open {
+
+    &::before {
+        transform: rotate(180deg);
     }
 }
 
@@ -177,6 +196,65 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
     & > a {
         font-weight: 500;
         padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 2 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+    }
+}
+
+%wsu-menu-collapse--item-indicator {
+    
+    & > a,
+    & > button:first-child {
+         position: relative;
+         
+
+         &::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: auto;
+            transition: opacity ease-in-out 200ms;
+            opacity: 0;
+         }
+
+         &:focus,
+         &:hover {
+            background-color: $wsu-color--gray-5;
+
+            &::before{
+                background-color: $wsu-color--gray-30;
+                opacity: 1;
+            }
+            
+         }
+    }
+
+    &.wsu-menu-collapse--current-item {
+
+        & > a,
+        & > button:first-child {
+
+            &::before {
+                background-color: $wsu-color--crimson-light;
+                opacity: 1;
+             }
+        }
+
+    }
+
+}
+
+%wsu-menu-collapse--current-item {
+    
+    & > a,
+    & > button:first-child {
+         position: relative;
+
+         &::before {
+            position: absolute;
+         }
     }
 }
 
