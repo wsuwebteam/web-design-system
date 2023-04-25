@@ -1,4 +1,5 @@
 {% from "header-unit/_macro.njk" import headerUnit %}
+{% from "header-unit/_macro.njk" import headerUnitAlt %}
 
 {% extends "component.njk" %}
 
@@ -16,4 +17,6 @@ body {
 
 {% block content %}  
 {{ headerUnit() }}
-{%  endblock %}
+<hr />
+{{ headerUnitAlt() }}
+{%  endblock %} 
