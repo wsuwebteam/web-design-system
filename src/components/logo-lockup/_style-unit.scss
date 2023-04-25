@@ -21,6 +21,10 @@
                 background-color: $wsu-color--gray-30;
                 position: absolute; 
             }
+
+            a {
+                color: $wsu-color--gray-75;
+            }
         }
 
         &__subtitle {
@@ -37,6 +41,13 @@
         }
 
     }
+
+    a {
+        text-decoration: none;
+    }
+
+
+
 
 }
 
