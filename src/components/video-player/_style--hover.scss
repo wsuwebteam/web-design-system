@@ -1,0 +1,19 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-video-player.wsu-style--hover {
+    @include wsu-video-player();
+
+    .wsu-video-player {
+        
+
+        &__image {
+            @include wsu-video-player__image();
+        }
+
+        &__video {
+            @include wsu-video-player__video();
+        }
+    }
+
+}

@@ -1,0 +1,13 @@
+{% macro videoPlayer(classes='', style='player', type='youtube', videoID='cSegLJJvVdE', hasImage=true ) %}
+
+<div class="wsu-video-player{% if classes %} {{ classes }}{% endif %}{% if style %} wsu-style--{{ style }}{% endif %}" data-type="{{ type }}" data-videoid="{{ videoID }}">
+    <div class="wsu-video-player__video-background"></div>
+    <img class="wsu-video-player__image" src="https://s3.wp.wsu.edu/uploads/sites/2438/2020/08/Coug-Logo-on-Chinook-crop_8520.jpg" />
+    <div class="wsu-video-player__video-wrapper">
+        <div class="wsu-video-player__video"></div>
+    </div>
+    <button class="wsu-video-player__button wsu-video-player--play">
+        <span class="wsu-video-player__button-inner">Play Video</span>
+    </button>
+</div>
+{% endmacro %}
