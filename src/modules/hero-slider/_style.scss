@@ -122,35 +122,37 @@
 }
 
 .wsu-wrapper-content {
-  .wsu-hero-slider:first-child {
-    margin-top: -5.125rem;
-  }
-
-  .swiper-wrapper {
-    position: relative;
-  }
-
-  .swiper-slide {
-    opacity: 0;
-    height: auto;
-    visibility: hidden;
-
-    &.swiper-slide-active {
-      opacity: 1;
-      visibility: visible;
+  .wsu-hero-slider {
+    &:first-child {
+      margin-top: -5.125rem;
     }
-  }
-
-  .test {
-    @extend .swiper-slide;
-
-    opacity: 0;
-    height: auto;
-    visibility: hidden;
-
-    &-active {
-      opacity: 1;
-      visibility: visible;
+  
+    .swiper-wrapper {
+      position: relative;
+    }
+  
+    .swiper-slide {
+      opacity: 0;
+      height: auto;
+      visibility: hidden;
+  
+      &.swiper-slide-active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+    .test {
+      @extend .swiper-slide;
+  
+      opacity: 0;
+      height: auto;
+      visibility: hidden;
+  
+      &-active {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }
