@@ -22,7 +22,7 @@
 
             & ~ .wsu-video-player__video-wrapper {
                 opacity: 0;
-            }
+            } 
         }
 
         &__video {
@@ -33,7 +33,7 @@
             @include wsu-video-player__button();
             justify-content: flex-start;
             align-items: flex-end;
-            padding: $wsu-spacing--sxxsmall;
+            padding: 0;
 
             &::before {
                 content: '';
@@ -68,10 +68,10 @@
         }
 
         &__button-inner {
-            width: 40px;
-            height: 40px;
+            width: 90px;
+            height: 90px;
             border: 3px solid #fff;
-            background-color: $wsu-color--gray-80;
+            background-color: $wsu-color--crimson-light;
             display: flex;
             border-radius: 50%;
             font-size: 0;
@@ -79,6 +79,10 @@
             justify-content: center;
             align-items: center;
             z-index: 1;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-45px);
+            bottom: -20px;
 
             &::before {
                 content: '\F136';
@@ -88,16 +92,6 @@
                 font-family: 'wsu-icons';
             }
 
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                height: 150px;
-                width: 40px;
-                background-color: $wsu-color--crimson-light;
-                right: 0;
-                bottom: 60px;
-            }
         }
 
         
