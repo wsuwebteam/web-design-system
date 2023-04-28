@@ -1,0 +1,74 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+
+
+@mixin wsu-video-player {
+    position: relative;
+}
+
+@mixin wsu-video-player__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+@mixin wsu-video-player__video-wrapper {
+    position: relative;
+    padding-top: $wsu-ratio--16-9;
+}
+
+@mixin wsu-video-player__video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@mixin wsu-video-player__video-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@mixin wsu-video-player__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+@import './style--player';
+@import './style--hover';
+@import './style--framed';
+
+.wsu-video-player.wsu-ratio--9-16 .wsu-video-player__video-wrapper {
+    padding-top: $wsu-ratio--9-16 !important;
+}
