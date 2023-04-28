@@ -100,8 +100,17 @@ class WsuVideoPlayer {
     mouseleaveEvent( event ) {
 
         if ( this.bgPlayer ) {
-            window.setTimeout( () => this.bgPlayer.pauseVideo(), 400 );
+            window.setTimeout( () => this.pauseBgVideo(), 400 );
         } 
+    }
+
+    pauseBgVideo() {
+
+        if ( this.bgPlayer && ( typeof this.bgPlayer.pauseVideo === "function" )  ) {
+
+            this.bgPlayer.pauseVideo();
+
+        }
     }
 
     load( args = {} ) {
