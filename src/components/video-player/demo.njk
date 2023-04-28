@@ -1,0 +1,15 @@
+{% extends "component.njk" %}
+{% from "video-player/_macro.njk" import videoPlayer %}
+
+{% block content %}
+
+{{ videoPlayer() }}
+<hr />
+{{ videoPlayer( style='framed') }}
+
+<hr />
+<div style="max-width: 400px">
+{{ videoPlayer( classes='wsu-ratio--9-16', style='framed') }}
+</div>
+
+{%  endblock %}   

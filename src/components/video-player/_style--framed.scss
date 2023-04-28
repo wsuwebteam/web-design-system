@@ -1,0 +1,147 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-video-player.wsu-style--framed {
+    @include wsu-video-player();
+
+    .wsu-video-player {
+
+        &__video-background {
+            @include wsu-video-player__video-background();
+        }
+
+        &__video-wrapper {
+            @include wsu-video-player__video-wrapper();
+            transition: opacity ease-in 500ms;
+        }
+        
+
+        &__image {
+            @include wsu-video-player__image();
+            transition: opacity ease-in 300ms 0ms;
+
+            & ~ .wsu-video-player__video-wrapper {
+                opacity: 0;
+            } 
+        }
+
+        &__video {
+            @include wsu-video-player__video();
+        }
+
+        &__button {
+            @include wsu-video-player__button();
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 0;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 100px;
+                width: 30px;
+                background-color: $wsu-color--crimson-light;
+                right: 0;
+                bottom: 60px;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 25px;
+                bottom: 25px;
+                left: 25px;
+                right: 25px;
+                height: auto;
+                width: auto;
+                border: 1px solid #fff;
+            }
+
+            &:focus {
+                outline: 3px solid $wsu-color--crimson-light;
+                outline-offset: 3px;
+                border-radius: 2px;
+            }
+
+        }
+
+        &__button-inner {
+            width: 90px;
+            height: 90px;
+            border: 3px solid #fff;
+            background-color: $wsu-color--crimson-light;
+            display: flex;
+            border-radius: 50%;
+            font-size: 0;
+            color: transparent;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-45px);
+            bottom: -20px;
+
+            &::before {
+                content: '\F136';
+                display:inline-block;
+                color: #fff;
+                font-size: 1.75rem;
+                font-family: 'wsu-icons';
+            }
+
+        }
+
+        
+    }
+
+    &:not(.wsu-state--playing):hover {
+
+        .wsu-video-player {
+
+            &__video-background ~ .wsu-video-player__image {
+                transition: opacity ease-in 1000ms 300ms;
+                opacity: 0;
+            }
+
+            &__button-inner {
+                background-color: $wsu-color--gray-75;
+            }
+
+            &__button:focus {
+                outline: 3px solid $wsu-color--crimson-light;
+                outline-offset: 3px;
+                border-radius: 2px;
+            }
+        }
+
+    }
+
+    &.wsu-state--playing {
+
+        .wsu-video-player {
+
+            &__button {
+                display: none;
+            }
+        }
+
+    }
+
+
+    &.wsu-state--playing {
+
+        .wsu-video-player {
+
+            &__video-wrapper {
+                opacity: 1 !important;
+                z-index: $wsu-zindex--content;
+            }
+
+        }
+
+    }
+
+}

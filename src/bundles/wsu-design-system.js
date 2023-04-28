@@ -20,6 +20,7 @@ import WsuBackgroundSlider from '../components/background-slider/_script';
 import WsuUtilityPanel from '../components/utility-panel/_script';
 import WsuNavigationVertical from '../modules/navigation-vertical/_script';
 import WsuSlideInPanel from '../components/slide-in-panel/_script';
+import WsuVideoPlayers from '../components/video-player/_script';
 
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
@@ -52,5 +53,6 @@ const wsu = {
     slideInPanel: new WsuSlideInPanel(),
     wsuAnchorMenu: new WsuAnchorMenu(),
     utilityPanel: new WsuUtilityPanel(),
+    videoPlayers: new WsuVideoPlayers(),
     
 }
