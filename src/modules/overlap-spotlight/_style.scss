@@ -6,6 +6,13 @@
         background-color: white;
         padding: $wsu-spacing--xmedium;
     }
+    
+}
+.wsu-overlap-spotlight.wsu-dropshadow--medium {
+    .wsu-overlap-spotlight__caption {
+        box-shadow: $wsu-dropshadow--medium;
+    }
+    
 }
 
 %wsu-overlap-spotlight-reverse {
