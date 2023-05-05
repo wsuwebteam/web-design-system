@@ -1,0 +1,17 @@
+@import '../variables';
+
+.wsu-dropshadow {
+
+    &--xlow {
+        box-shadow: $wsu-dropshadow--xlow;
+    }
+    &--low {
+        box-shadow: $wsu-dropshadow--low;
+    }
+    &--medium{
+        box-shadow: $wsu-dropshadow--medium;
+    }
+    &--high {
+        box-shadow: $wsu-dropshadow--high;
+    }
+}
