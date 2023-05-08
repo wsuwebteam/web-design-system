@@ -8,12 +8,6 @@
     }
     
 }
-.wsu-overlap-spotlight.wsu-dropshadow--medium {
-    .wsu-overlap-spotlight__caption {
-        box-shadow: $wsu-dropshadow--medium;
-    }
-    
-}
 
 %wsu-overlap-spotlight-reverse {
     @media screen and ( min-width: $wsu-breakpoint--tablet-medium ) {
