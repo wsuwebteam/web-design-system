@@ -1,0 +1,17 @@
+{% extends "component.njk" %}
+{% from "back-to-top/_macro.njk" import backToTop %}
+
+{% block styles %}
+<style>
+body {
+    min-height: 200vh;
+}
+</style>
+{%  endblock %}   
+
+{% block content %}
+
+{{  backToTop() }}
+
+
+{%  endblock %}   
