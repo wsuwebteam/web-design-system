@@ -1,20 +1,19 @@
 @import '../variables';
 
 
-@media screen and ( min-width: $wsu-breakpoint--tablet-medium ) {
-    .wsu-dropshadow {
 
-        &--xlow {
-            box-shadow: $wsu-dropshadow--xlow;
-        }
-        &--low {
-            box-shadow: $wsu-dropshadow--low;
-        }
-        &--medium{
-            box-shadow: $wsu-dropshadow--medium;
-        }
-        &--high {
-            box-shadow: $wsu-dropshadow--high;
-        }
+.wsu-dropshadow {
+    &--xlow {
+        box-shadow: $wsu-dropshadow--xlow;
+    }
+    &--low {
+        box-shadow: $wsu-dropshadow--low;
+    }
+    &--medium{
+        box-shadow: $wsu-dropshadow--medium;
+    }
+    &--high {
+        box-shadow: $wsu-dropshadow--high;
     }
 }
+
