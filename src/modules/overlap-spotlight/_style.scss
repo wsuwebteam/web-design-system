@@ -6,10 +6,10 @@
         background-color: white;
         padding: $wsu-spacing--xmedium;
     }
-    @media screen and ( min-width: $wsu-breakpoint--tablet-medium ) {
-        .wsu-overlap-spotlight__caption.wsu-dropshadow--medium{
-            box-shadow: none !important;
-        }
+}
+@media screen and ( min-width: $wsu-breakpoint--tablet-medium ) {
+    .wsu-overlap-spotlight__caption.wsu-dropshadow--medium{
+        box-shadow: none !important;
     }
 }
 
