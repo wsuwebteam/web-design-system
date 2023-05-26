@@ -138,6 +138,10 @@
     }
 }
 
+.wsu-carousel[data-desktop-columns="1"]{
+    height: auto;
+}
+
 .swiper-button-prev{
     left: 0px !important;
 }
