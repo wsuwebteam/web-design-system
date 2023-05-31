@@ -4,7 +4,6 @@ const args = require('./env');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = env => {
-
 	const DEV = args.env !== 'production';
 
 	return {
@@ -15,6 +14,7 @@ module.exports = env => {
 			'bundles/standalone/people-list/scripts': './src/bundles/standalone/people-list/scripts.js',
 			'bundles/standalone/hero-slider/scripts': './src/bundles/standalone/hero-slider/scripts.js',
 			'bundles/standalone/programs-list/scripts': './src/bundles/standalone/programs-list/scripts.js',
+			'bundles/standalone/scholarship-list/scripts': './src/bundles/standalone/scholarship-list/index.tsx',
 		},
 		output: {
 			filename: '[name].js',
@@ -32,17 +32,29 @@ module.exports = env => {
 		module: {
 			rules: [
 				{
-					test: /\.m?js$/,
+					test: /\.(js|mjs)$/,
 					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
+					use: [{
+						loader: 'babel-loader', 
 						options: {
 							presets: ['@babel/preset-env']
 						}
-					}
-				}
+					}],
+				},
+				{
+					test: /\.(ts|tsx|jsx)$/,
+					exclude: /(node_modules|bower_components)/,
+					use: ['babel-loader'],
+				},
+				{
+					test: /\.svg$/,
+					use: ['@svgr/webpack'],
+				},
 			],
 			noParse: /node_modules\/lodash\/lodash\.js/,
+		},
+		resolve: {
+			extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
 		},
 		plugins: [
 			new NodePolyfillPlugin(),

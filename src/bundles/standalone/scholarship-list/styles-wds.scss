@@ -1,0 +1,456 @@
+@import "../../../../_assets/scss/variables";
+@import "../../../../_assets/scss/mixins";
+
+.wsu-scholarship-list {
+	margin-bottom: $wsu-spacing--xxmedium;
+
+	/*=============================================
+  =            Scholarships Table            =
+  =============================================*/
+	// meta
+	&__meta {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: $wsu-spacing--medium;
+		flex-flow: row wrap;
+		margin-bottom: $wsu-spacing--medium;
+	}
+
+	&__meta-icon {
+		font-size: $wsu-font-size--small;
+		margin-bottom: 0;
+	}
+
+	&__meta-data {
+		margin-bottom: 0;
+		font-size: $wsu-font-size--small;
+	}
+
+	&__meta-count {
+		font-style: italic;
+
+		&::after {
+			content: "";
+			border-right: 1px solid #b3b3b3;
+			padding-right: $wsu-spacing--xsmall;
+			margin-right: $wsu-spacing--xsmall;
+		}
+	}
+
+	&__table-container {
+		overflow-x: auto;
+	}
+	&__table {
+		width: 100%;
+		margin-bottom: 0;
+
+		tbody.is-loading {
+			visibility: collapse;
+		}
+
+		th,
+		td {
+			padding: $wsu-spacing--small;
+		}
+
+		th {
+			text-align: left;
+		}
+	}
+
+	// logo
+	&__coug-head {
+		fill: $wsu-color--crimson;
+		width: $wsu-spacing--medium;
+		vertical-align: text-bottom;
+		margin-right: 0.5rem;
+	}
+
+	// loading indicator
+	@-webkit-keyframes spin {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes spin {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+
+	&__loading {
+		-webkit-animation: spin 1s infinite linear;
+		animation: spin 1s infinite linear;
+		border: 0.25rem solid rgba(113, 113, 113, 0.5);
+		border-radius: 50%;
+		border-top-color: #981e32;
+		height: 2rem;
+		margin: $wsu-spacing--xxmedium auto;
+		width: 2rem;
+	}
+
+	&__message {
+		margin: $wsu-spacing--xxmedium 0 0 0;
+	}
+
+	// sort control
+	&__sort-control {
+		position: relative;
+		background: none;
+		border: none;
+		padding: 0;
+		padding-right: $wsu-spacing--em-small;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $wsu-color--crimson;
+
+			&::before {
+				border-bottom-color: $wsu-color--crimson;
+			}
+
+			&::after {
+				border-top-color: $wsu-color--crimson;
+			}
+		}
+
+		&.is-active {
+			color: $wsu-color--crimson;
+
+			&.asc::before {
+				border-bottom-color: $wsu-color--crimson;
+			}
+			&.desc::after {
+				border-top-color: $wsu-color--crimson;
+			}
+		}
+
+		&::before,
+		&::after {
+			border: solid transparent;
+			border-width: 6px 4px;
+			box-sizing: border-box;
+			content: "";
+			height: 12px;
+			position: absolute;
+			right: 0;
+			transition: border-color 0.4s;
+		}
+
+		&::before {
+			border-bottom-color: $wsu-color--gray-25;
+			top: -5px;
+		}
+
+		&::after {
+			border-top-color: $wsu-color--gray-25;
+			bottom: -5px;
+		}
+	}
+
+	// apply link
+	&__apply-link {
+		white-space: nowrap;
+	}
+
+	/*----------  Pagination  ----------*/
+	&__pagination-container {
+		border-top: 1px solid $wsu-color--gray-15;
+		margin-top: $wsu-spacing--large;
+		padding-top: $wsu-spacing--xmedium;
+		display: flex;
+		flex-flow: row wrap;
+		gap: $wsu-spacing--small;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__results-per-page {
+		margin-bottom: 0;
+		font-size: $wsu-font-size--small;
+	}
+
+	&__results-per-page__control {
+		display: inline-block;
+		margin-right: $wsu-spacing--xxsmall;
+
+		&--top {
+			margin-right: 0;
+			margin-left: $wsu-spacing--sxxsmall;
+
+			&::after {
+				transform: translate(-60%, -50%) scaleY(0.8) !important;
+			}
+		}
+	}
+
+	&__results-per-page__control--top &__results-per-page__input {
+		padding: $wsu-spacing--sxxsmall;
+		padding-right: $wsu-spacing--medium;
+	}
+
+	&__results-per-page__input {
+	}
+
+	&__pagination {
+	}
+
+	&__pagination-menu {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0;
+		padding: 0;
+		gap: 0.25rem;
+	}
+
+	&__pagination-menu-item {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__pagination-page {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: $wsu-font-size--small;
+		font-weight: 500;
+		color: $wsu-color--crimson;
+		text-decoration: underline;
+		text-decoration-color: $wsu-color--crimson;
+		text-decoration-thickness: 0.1em;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+		&[aria-current="true"] {
+			font-weight: 600;
+			color: $wsu-color--gray-85;
+			text-decoration: none;
+		}
+	}
+
+	/*=====  End of Scholarships Table  ======*/
+
+	/*=============================================
+  =            Filters            =
+  =============================================*/
+	&__filters {
+		margin-bottom: $wsu-spacing--large;
+	}
+
+	&__default-filters {
+		margin-bottom: $wsu-spacing--medium;
+		display: flex;
+		flex-flow: row wrap;
+		gap: $wsu-spacing--xsmall;
+		font-size: $wsu-font-size--small;
+	}
+
+	&__text-control,
+	&__select-control {
+		flex-grow: 1;
+		flex-basis: 220px;
+	}
+
+	&__text-control {
+		&__input {
+			padding: $wsu-font-size--small !important;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	&__select-control {
+		position: relative;
+
+		&__input {
+			padding: $wsu-font-size--small;
+			padding-right: $wsu-spacing--xxmedium;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&::after {
+			content: "\0025BC"/ "";
+			color: $wsu-color--gray-30;
+			position: absolute;
+			top: 50%;
+			transform: translate(-100%, -50%) scaleY(0.8);
+			right: 0;
+			pointer-events: none;
+		}
+	}
+
+	/*----------  More Filters  ----------*/
+	&__filters-toggle {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		border-bottom: 3px solid $wsu-color--crimson;
+
+		&__icon {
+			margin-left: 0.4rem;
+			transition: transform $wsu-transition-speed--fast;
+			vertical-align: middle;
+			display: inline-block;
+			font-size: 1.25em;
+		}
+
+		&.is-showing &__icon {
+			transform: rotate(45deg);
+		}
+	}
+
+	&__more-filters {
+		margin-top: $wsu-spacing--small;
+	}
+
+	&__more-filters-label {
+		margin-bottom: $wsu-spacing--xxsmall;
+	}
+
+	/*----------  Multi Select Control  ----------*/
+	&__multi-select-controls {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: $wsu-spacing--small;
+		margin-bottom: $wsu-spacing--medium;
+	}
+
+	&__multi-select-control {
+		display: flex;
+		flex-direction: column;
+
+		&__label {
+			margin-bottom: $wsu-spacing--xxsmall;
+			font-size: $wsu-font-size--medium;
+		}
+
+		&__list {
+			max-height: 300px;
+			overflow-y: scroll;
+			background: $wsu-color--gray-10;
+			flex-grow: 1;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			position: relative;
+
+			/* width */
+			&::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			/* Track */
+			&::-webkit-scrollbar-track {
+				background: $wsu-color--gray-0;
+			}
+
+			/* Handle */
+			&::-webkit-scrollbar-thumb {
+				background: $wsu-color--crimson;
+				border-radius: 5px;
+			}
+
+			/* Handle on hover */
+			&::-webkit-scrollbar-thumb:hover {
+				background: $wsu-color--crimson-light;
+			}
+		}
+
+		&__list-item {
+			margin: 0;
+			display: block;
+			font-size: $wsu-font-size--small;
+			font-weight: $wsu-font-weight--regular;
+			padding: $wsu-spacing--sxxsmall;
+			cursor: pointer;
+
+			&.is-focused,
+			&:hover {
+				background-color: $wsu-color--gray-20;
+			}
+
+			&[aria-selected="true"] {
+				background-color: $wsu-color--crimson;
+				color: white;
+			}
+		}
+
+		// &__input {
+		// }
+
+		// &__input + &__input-label {
+		// 	display: block;
+		// 	margin: 0;
+		// 	font-size: $wsu-font-size--small;
+		// 	font-weight: $wsu-font-weight--regular;
+		// 	padding: $wsu-spacing--sxxsmall;
+		// }
+
+		// &__input:checked + &__input-label {
+		// 	background-color: $wsu-color--crimson;
+		// 	color: white;
+		// }
+
+		// &__input:not(:checked) + &__input-label:hover,
+		// &__input:not(:checked):focus + &__input-label {
+		// 	background-color: $wsu-color--gray-20;
+		// }
+	}
+
+	/*----------  Multi Checkbox Control  ----------*/
+	&__multi-checkbox-control {
+		&__list {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			flex-flow: row wrap;
+			gap: $wsu-spacing--small;
+		}
+
+		&__list-item {
+			margin: 0;
+		}
+
+		&__input {
+			accent-color: $wsu-color--crimson;
+			vertical-align: middle;
+		}
+
+		&__input + &__input-label {
+			margin: 0;
+			margin-left: $wsu-spacing--sxxsmall;
+			font-size: $wsu-font-size--small;
+			font-weight: $wsu-font-weight--regular;
+		}
+
+		&__input:checked + &__input-label {
+			font-weight: $wsu-font-weight--semibold;
+		}
+	}
+	/*=====  End of Filters  ======*/
+}

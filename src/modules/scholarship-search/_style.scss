@@ -1,0 +1,47 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-scholarship-search {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $wsu-spacing--xxsmall;
+  font-size: $wsu-font-size--small;
+
+  &__select-wrapper {
+    position: relative;
+
+    &::after {
+      content: "\0025BC"/ "";
+      color: $wsu-color--gray-30;
+      position: absolute;
+      top: 50%;
+      transform: translate(-100%, -50%) scaleY(0.8);
+      right: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__select {
+    padding: $wsu-font-size--small;
+    padding-right: $wsu-spacing--xxmedium;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__text-input-wrapper {
+    flex-basis: 100px;
+  }
+
+  &__text-input[type="text"] {
+    width: 100%;
+    padding: $wsu-font-size--small;
+  }
+
+  &__submit {
+    padding: $wsu-font-size--small $wsu-spacing--medium;
+    line-height: 1.15;
+  }
+}
