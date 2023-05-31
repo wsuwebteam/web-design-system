@@ -7,7 +7,7 @@
     transition: margin-left $wsu-transition-speed--medium $wsu-easing, margin-right $wsu-transition-speed--fast $wsu-easing;
 }
 
-.wsu-hero:not([class*="-hero--style-"]) {
+.wsu-hero:not([class*="-hero--style-"]):not([class*="wsu-style--"]) {
 
     margin-bottom: $wsu-spacing--xlarge;
 

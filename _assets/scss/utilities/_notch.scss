@@ -28,3 +28,13 @@
     -webkit-clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
     clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
 }
+
+.wsu-notch-top--medium {
+    -webkit-clip-path: polygon(70px 0, 100% 0, 100% 100%, 0 100%, 0 70px);
+    clip-path: polygon(70px 0, 100% 0, 100% 100%, 0 100%, 0 70px);
+}
+
+.wsu-notch-top--large {
+    -webkit-clip-path: polygon(100px 0, 100% 0, 100% 100%, 0 100%, 0 100px);
+    clip-path: polygon(100px 0, 100% 0, 100% 100%, 0 100%, 0 100px);
+}

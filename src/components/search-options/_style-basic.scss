@@ -1,0 +1,86 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-search-options.wsu-style--basic {
+
+    .wsu-search-options {
+
+        &__option-wrapper {
+            padding: $wsu-spacing--xxsmall $wsu-spacing--sxxsmall;
+        }
+
+        &__option {
+            display: inline-block;
+            margin-right: $wsu-spacing--xmedium;
+            position: relative;
+
+            &:focus-within::before {
+                -webkit-box-shadow: 0px 0px 0px 3px $wsu-color--crimson-light;
+                -moz-box-shadow: 0px 0px 0px 3px $wsu-color--crimson-light;
+                box-shadow: 0px 0px 0px 3px $wsu-color--crimson-light;
+            }
+        }
+
+        &__option-label {
+            display: flex;
+            align-items: center;
+            font-size: $wsu-font-size--small;
+            color: $wsu-color--gray-60;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 3px solid #fff;
+                background-color: $wsu-color--gray-15;
+                -webkit-box-shadow: 0px 0px 0px 1px rgba(173,173,173,1);
+                -moz-box-shadow: 0px 0px 0px 1px rgba(173,173,173,1);
+                box-shadow: 0px 0px 0px 1px rgba(173,173,173,1);
+                flex-grow: 0;
+                margin-right: $wsu-spacing--xxsmall;
+            }
+        }
+
+
+        &__option-input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked ~ .wsu-search-options__option-label::before {
+                background-color: $wsu-color--crimson-light;
+            }
+
+            &:focus ~ .wsu-search-options__option-label::before {
+                outline: 3px solid $wsu-color--crimson-light;
+                outline-offset: 3px;
+            }
+        }
+
+    }
+
+}
+
+.wsu-mode--dark .wsu-search-options.wsu-style--basic,
+.wsu-mode--dark.wsu-search-options.wsu-style--basic {
+
+    .wsu-search-options {
+
+        &__option-label {
+            color: $wsu-color--gray-15;
+        }
+
+        &__option-input {
+            &:focus ~ .wsu-search-options__option-label::before {
+                outline: 3px solid #fff;
+                outline-offset: 3px;
+            }
+        }
+
+    }
+
+}
+

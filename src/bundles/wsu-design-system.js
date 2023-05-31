@@ -14,11 +14,14 @@ import WsuNavigationSiteHorizontal from '../components/experimental_navigation-h
 import WsuVideoFrame from '../components/experimental_video-frame/_script';
 import WsuButton from '../components/button/_script';
 import WsuStickyBox from '../components/sticky-box/_script';
+import WsuSiteSearch from '../modules/site-search/_script-v3';
 import WsuAnchorMenu from '../components/anchor-menu/_script';
 import WsuBackgroundSlider from '../components/background-slider/_script';
 import WsuUtilityPanel from '../components/utility-panel/_script';
 import WsuNavigationVertical from '../modules/navigation-vertical/_script';
 import WsuSlideInPanel from '../components/slide-in-panel/_script';
+import WsuVideoPlayers from '../components/video-player/_script';
+import WsuBackToTop from '../components/back-to-top/_script';
 
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
@@ -46,8 +49,11 @@ const wsu = {
         //submenuSlideVertical: new WsuAnimateSubmenuSlideVertical(),
     },
     videoFrame: new WsuVideoFrame(),
+    siteSearch: new WsuSiteSearch(),
     stickyBox: new WsuStickyBox(),
     slideInPanel: new WsuSlideInPanel(),
     wsuAnchorMenu: new WsuAnchorMenu(),
     utilityPanel: new WsuUtilityPanel(),
+    videoPlayers: new WsuVideoPlayers(),
+    backToTop: new WsuBackToTop(),
 }

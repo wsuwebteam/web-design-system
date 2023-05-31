@@ -1,0 +1,29 @@
+{% from "search-bar/_macro-v3.njk" import searchBar %}
+
+{% extends "component.njk" %}
+
+{% block content %}
+<div style="padding: 2rem; margin: 2rem 0">
+    {{ searchBar() }}
+</div>
+<div style="background-color: #333; padding: 2rem; margin: 2rem 0">
+    {{ searchBar( classes='wsu-mode--dark' ) }}
+</div>
+<div style="padding: 2rem; margin: 2rem 0">
+    {% include 'search-bar/html.njk' %}
+</div>
+<div style="background-color: #333; padding: 2rem; margin: 2rem 0">
+    {{ searchBar( classes='wsu-mode--dark', style='underline' ) }}
+</div>
+<div style="background-color: #333; padding: 2rem; margin: 2rem 0">
+    {{ searchBar( classes='wsu-mode--dark', style='underline') }}
+</div>
+<div class="wsu-mode--dark" style="background-color: #333; padding: 2rem 0; margin: 2rem 0">
+    <div style="padding: 2rem; margin: 2rem 0">
+        {{ searchBar( style='basic' ) }}
+    </div>
+    <div style="background-color: #333; padding: 2rem; margin: 2rem 0">
+        {{ searchBar( style='underline' ) }}
+    </div>
+</div>
+{%  endblock %} 

@@ -1,0 +1,65 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-video-player.wsu-style--player {
+    @include wsu-video-player();
+
+    .wsu-video-player {
+
+        &__video-background {
+            @include wsu-video-player__video-background();
+        }
+
+        &__video-wrapper {
+            @include wsu-video-player__video-wrapper();
+            transition: opacity ease-in 500ms;
+        }
+        
+
+        &__image {
+            @include wsu-video-player__image();
+            transition: opacity ease-in 300ms 0ms;
+
+            & ~ .wsu-video-player__video-wrapper {
+                opacity: 0;
+            }
+        }
+
+        &__video {
+            @include wsu-video-player__video();
+        }
+
+        &__button {
+            @include wsu-video-player__button();
+        }
+
+        
+    }
+
+    &:not(.wsu-state--playing):hover {
+
+        .wsu-video-player {
+
+            &__video-background ~ .wsu-video-player__image {
+                transition: opacity ease-in 1000ms 300ms;
+                opacity: 0;
+            }
+        }
+
+    }
+
+
+    &.wsu-state--playing {
+
+        .wsu-video-player {
+
+            &__video-wrapper {
+                opacity: 1 !important;
+                z-index: $wsu-zindex--content;
+            }
+
+        }
+
+    }
+
+}

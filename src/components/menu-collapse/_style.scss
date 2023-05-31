@@ -2,7 +2,8 @@
 @import '../../../_assets/scss/mixins';
 @import './mixins';
 
-$wsu-menu-collapse-spacing--nav-horizontal: $wsu-spacing--medium;
+$wsu-menu-collapse-spacing--nav-horizontal: $wsu-spacing--small;
+$wsu-menu-collapse-spacing--nav-horizontal-end: $wsu-spacing--xsmall;
 $wsu-menu-collapse-spacing--nav-vertical: $wsu-spacing--xxsmall;
 $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
 
@@ -121,6 +122,7 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
+        transition: transform ease-in-out 150ms;
     }
 
     &::after {
@@ -132,6 +134,24 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
         top: 0;
         bottom: 0;
         background-color: $wsu-color--gray-10;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $wsu-color--gray-5;
+
+        &::after {
+            left: -3px;
+            width: 4px;
+            background-color: $wsu-color--gray-30;
+        }
+    }
+}
+
+%wsu-menu-collapse-vertical--menu-item-split-button-open {
+
+    &::before {
+        transform: rotate(180deg);
     }
 }
 
@@ -160,7 +180,7 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
 
     & > button:first-child,
     & > a {
-        padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal;
+        padding: $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal-end $wsu-menu-collapse-spacing--nav-vertical $wsu-menu-collapse-spacing--nav-horizontal;
     }
 }
 
@@ -168,7 +188,7 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
     & > button:first-child,
     & > a {
         font-weight: 500;
-        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal-end $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
     }
 }
 
@@ -176,7 +196,43 @@ $wsu-menu-collapse-spacing--nav-vertical-secondary: $wsu-spacing--sxxsmall;
     & > button:first-child,
     & > a {
         font-weight: 500;
-        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 1 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+        padding: $wsu-menu-collapse-spacing--nav-vertical-secondary $wsu-menu-collapse-spacing--nav-horizontal-end $wsu-menu-collapse-spacing--nav-vertical-secondary calc( ( #{$wsu-spacing--xxsmall} * 2 ) + #{$wsu-menu-collapse-spacing--nav-horizontal} );
+    }
+}
+
+%wsu-menu-collapse--item-indicator {
+    & > a,
+    & > button:first-child {
+         position: relative;
+         border-left: 5px solid transparent;
+
+         &:focus,
+         &:hover {
+            border-color: $wsu-color--gray-30;
+            background-color: $wsu-color--gray-5;
+         }
+    }
+
+    &.wsu-menu-collapse--current-item {
+
+        & > a,
+        & > button:first-child {
+            border-color: $wsu-color--crimson-light;
+        }
+
+    }
+
+}
+
+%wsu-menu-collapse--current-item {
+    
+    & > a,
+    & > button:first-child {
+         position: relative;
+
+         &::before {
+            position: absolute;
+         }
     }
 }
 
