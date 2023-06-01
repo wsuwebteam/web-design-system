@@ -8,7 +8,7 @@ import {
 
 const PeopleList = function (el) {
   const urlParams = new URLSearchParams(window.location.search);
-  const apiEndpoint = el.dataset.baseUrl + "/wp-json/peopleapi/v1/people?";
+  const apiEndpoint = ( el.dataset.baseUrl.includes( '?') ) ? el.dataset.baseUrl : el.dataset.baseUrl + "/wp-json/peopleapi/v1/people?";
   let isInitialized = false;
   const queryAttributes = [
     "count",
@@ -609,7 +609,7 @@ const PeopleList = function (el) {
     // create people list
     const peopleContainer = createPeopleContainer();
     populatePeopleContainer(people, peopleContainer);
-    content += peopleContainer.outerHTML;
+    content += peopleContainer.outerHTML; 
 
     // write html to dom
     el.innerHTML = content;
@@ -617,18 +617,21 @@ const PeopleList = function (el) {
 
   function getPeople() {
     // build request
+
     const params = queryAttributes
-      .reduce(function (acc, curr, idx) {
-        const attrValue = el.getAttribute("data-" + curr);
+    .reduce(function (acc, curr, idx) {
+      const attrValue = el.getAttribute("data-" + curr);
 
-        if (attrValue) {
-          acc.push(curr + "=" + attrValue);
-        }
+      if (attrValue) {
+        acc.push(curr + "=" + attrValue);
+      }
 
-        return acc;
-      }, [])
-      .join("&");
+      return acc;
+    }, [])
+    .join("&"); 
 
+    
+    
     // make request
     return fetch(apiEndpoint + params)
       .then((response) => response.json())

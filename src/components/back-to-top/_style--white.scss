@@ -1,0 +1,43 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+.wsu-back-to-top.wsu-style--white {
+    position: fixed;
+    right: 2vw;
+    bottom: 2vw;
+    border: 3px solid $wsu-color--crimson-light;
+    display: flex;
+    text-transform: uppercase;
+    font-size: 0;
+    color: transparent;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity ease-in-out 200ms;
+
+    &::before {
+        content: '\F10A';
+        font-family: 'wsu-icons';
+        font-size: 1rem;
+        color: $wsu-color--crimson-light;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $wsu-color--gray-85;
+
+        &::before {
+            color: #fff;
+        }
+    }
+
+    
+}
+
+.wsu-scroll--is-scrolled .wsu-back-to-top.wsu-style--white {
+    opacity: 1;
+}
