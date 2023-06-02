@@ -6,7 +6,7 @@ on:
       - "main"
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 20
   ARTIFACT_NAME: built-assets
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     uses: ./.github/workflows/build-assets.yml
     with:
       branch_ref: main
-      node_version: 14 # env not available ${{ env.NODE_VERSION }}
+      node_version: 20 # env not available ${{ env.NODE_VERSION }}
       artifact_name: built-assets # env not available here ${{ env.ARTIFACT_NAME }}
 
   deploy-staging:
