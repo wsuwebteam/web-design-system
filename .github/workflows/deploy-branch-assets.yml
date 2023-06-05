@@ -21,11 +21,11 @@ on:
     inputs:
       node_version:
         description: "Node version to use for the build process."
-        default: "14" #we should attempt to update
+        default: "20" #we should attempt to update
         required: true
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 20
   ARTIFACT_NAME: built-assets
 
 jobs:

@@ -74,27 +74,27 @@ $wsu-color--crimson-accent: #FAE6EA;
 $wsu-color--crimson-dark:   #78001e;
 
 /* WSU Grays */
-$wsu-color--gray-0:   hsl(0, 0, 97%); // #f7f7f7
-$wsu-color--gray-5:   hsl(0, 0, 95%); // #f2f2f2
-$wsu-color--gray-10:  hsl(0, 0, 90%); // #e6e6e6
-$wsu-color--gray-15:  hsl(0, 0, 85%); // #d9d9d9
-$wsu-color--gray-20:  hsl(0, 0, 80%); // #cccccc
-$wsu-color--gray-25:  hsl(0, 0, 75%); // #bfbfbf
-$wsu-color--gray-30:  hsl(0, 0, 70%); // #b3b3b3
-$wsu-color--gray-35:  hsl(0, 0, 65%); // #a6a6a6
-$wsu-color--gray-40:  hsl(0, 0, 60%); // #999999
-$wsu-color--gray-45:  hsl(0, 0, 55%); // #8c8c8c
-$wsu-color--gray-50:  hsl(0, 0, 50%); // #808080
-$wsu-color--gray-55:  hsl(0, 0, 45%); // #737373
-$wsu-color--gray-60:  hsl(0, 0, 40%); // #666666
-$wsu-color--gray-65:  hsl(0, 0, 35%); // #595959
-$wsu-color--gray-70:  hsl(0, 0, 30%); // #4d4d4d
-$wsu-color--gray-75:  hsl(0, 0, 25%); // #404040
-$wsu-color--gray-80:  hsl(0, 0, 20%); // #333333
-$wsu-color--gray-85:  hsl(0, 0, 15%); // #262626
-$wsu-color--gray-90:  hsl(0, 0, 10%); // #1a1a1a
-$wsu-color--gray-95:  hsl(0, 0, 3%); // #080808 - 5% and 3% are nearly indistinguishable, so treat them the same and leave the value to maintain consistency
-$wsu-color--gray-100: hsl(0, 0, 3%); // #080808
+$wsu-color--gray-0:   hsl(0deg, 0%, 97%); // #f7f7f7
+$wsu-color--gray-5:   hsl(0deg, 0%, 95%); // #f2f2f2
+$wsu-color--gray-10:  hsl(0deg, 0%, 90%); // #e6e6e6
+$wsu-color--gray-15:  hsl(0deg, 0%, 85%); // #d9d9d9
+$wsu-color--gray-20:  hsl(0deg, 0%, 80%); // #cccccc
+$wsu-color--gray-25:  hsl(0deg, 0%, 75%); // #bfbfbf
+$wsu-color--gray-30:  hsl(0deg, 0%, 70%); // #b3b3b3
+$wsu-color--gray-35:  hsl(0deg, 0%, 65%); // #a6a6a6
+$wsu-color--gray-40:  hsl(0deg, 0%, 60%); // #999999
+$wsu-color--gray-45:  hsl(0deg, 0%, 55%); // #8c8c8c
+$wsu-color--gray-50:  hsl(0deg, 0%, 50%); // #808080
+$wsu-color--gray-55:  hsl(0deg, 0%, 45%); // #737373
+$wsu-color--gray-60:  hsl(0deg, 0%, 40%); // #666666
+$wsu-color--gray-65:  hsl(0deg, 0%, 35%); // #595959
+$wsu-color--gray-70:  hsl(0deg, 0%, 30%); // #4d4d4d
+$wsu-color--gray-75:  hsl(0deg, 0%, 25%); // #404040
+$wsu-color--gray-80:  hsl(0deg, 0%, 20%); // #333333
+$wsu-color--gray-85:  hsl(0deg, 0%, 15%); // #262626
+$wsu-color--gray-90:  hsl(0deg, 0%, 10%); // #1a1a1a
+$wsu-color--gray-95:  hsl(0deg, 0%, 3%); // #080808 - 5% and 3% are nearly indistinguishable, so treat them the same and leave the value to maintain consistency
+$wsu-color--gray-100: hsl(0deg, 0%, 3%); // #080808
 
 $wsu-color--text: $wsu-color--gray-85; // #080808
 
