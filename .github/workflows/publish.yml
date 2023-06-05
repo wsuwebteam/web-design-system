@@ -24,23 +24,26 @@ jobs:
     name: Deploy to Staging Environment
     needs: build
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{env.ARTIFACT_NAME}}
-          path: ./assets
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-
-      - name: Push to S3
+      - name: Skipping
         run: |
-          echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/"
-          aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
+          echo "Skipping"
+      # - name: Download artifact
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: ${{env.ARTIFACT_NAME}}
+      #     path: ./assets
+
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-west-2
+
+      # - name: Push to S3
+      #   run: |
+      #     echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/"
+      #     aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
 
   deploy-production:
     runs-on: ubuntu-latest
@@ -48,23 +51,26 @@ jobs:
     name: Deploy to Production
     needs: [build, deploy-staging]
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{env.ARTIFACT_NAME}}
-          path: ./assets
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-
-      - name: Push to S3
+      - name: Skipping
         run: |
-          echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.x/dist/bundles/"
-          aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.x/dist/bundles/
+          echo "Skipping"
+      # - name: Download artifact
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: ${{env.ARTIFACT_NAME}}
+      #     path: ./assets
+
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-west-2
+
+      # - name: Push to S3
+      #   run: |
+      #     echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.x/dist/bundles/"
+      #     aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.x/dist/bundles/
 
   create-release:
     runs-on: ubuntu-latest
