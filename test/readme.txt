@@ -1,1 +1,1 @@
-This is the test directory. Use npm run build:gulp and build:js to poulate it. Use npm run start while working to watch changes.
+This is the test directory. Use npm run build:gulp and build:js to populate it. Use npm run start while working to watch changes.
