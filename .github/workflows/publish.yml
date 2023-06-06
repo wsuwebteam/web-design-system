@@ -6,7 +6,7 @@ on:
       - "main"
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 20
   ARTIFACT_NAME: built-assets
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     uses: ./.github/workflows/build-assets.yml
     with:
       branch_ref: main
-      node_version: 14 # env not available ${{ env.NODE_VERSION }}
+      node_version: 20 # env not available ${{ env.NODE_VERSION }}
       artifact_name: built-assets # env not available here ${{ env.ARTIFACT_NAME }}
 
   deploy-staging:
@@ -65,3 +65,40 @@ jobs:
         run: |
           echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.x/dist/bundles/"
           aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.x/dist/bundles/
+
+  create-release:
+    runs-on: ubuntu-latest
+    name: Create Release
+    needs: [deploy-production]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: ./package-lock.json
+
+      - name: Install dependencies
+        run: npx ci
+
+      - name: Download build assets
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{env.ARTIFACT_NAME}}
+          path: ./build-assets
+
+      - name: Create release asset
+        run: |
+          pushd ./build-assets
+          zip release.zip ./ -r
+          mv release.zip ${{ github.workspace }}
+          popd
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.PAT }}
+        run: npx semantic-release
