@@ -1,0 +1,9 @@
+{% extends "component.njk" %}
+{% from "events-list/_macro.njk" import eventsList %}
+{% block content %}
+
+<div class="wsu-demo-component">
+    {{ eventsList( '' ) }}
+</div>
+
+{%  endblock %}   
