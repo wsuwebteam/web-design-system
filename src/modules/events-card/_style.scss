@@ -2,57 +2,38 @@
 @import '../../../_assets/scss/mixins';
 
 
-.wsu-events-list {
-    list-style-type: none;
-    padding-left: 1.4em;
+.wsu-events-card {
 
-    li {
-        font-size: 0.75em;
-        line-height: 1.5;
-    }
-
+    box-sizing: border-box;
+    margin-bottom: $wsu-spacing--component;
+    
     a {
         font-size: 1.3em;
         display: block;
         font-weight: 600;
         margin-bottom: 0.2em;
     }
-
+    
     &__container {
         display: flex;
-        flex-direction: row;
-    }
-    &__content{
-        padding-left: $wsu-spacing--xxsmall;
-    }
-    &__date {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
-        font-weight: $wsu-font-weight--bold;
-    }
-    &__date-month {
-        font-size: $wsu-font-size--xmedium;
-        text-transform: capitalize;
-    }
-    &__date-day {
-        font-size: 1.95rem;
-        text-transform: capitalize;
-        line-height: 1;
-        color: #666;
     }
     &__meta{
         display: flex;
         flex-direction: row;
     }
-    &__meta-time{
-        margin-right: $wsu-spacing--xsmall;
+    &__meta-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-weight: $wsu-font-weight--bold;
+    }
+    &__meta-time{
+        font-weight: $wsu-font-weight--bold;
+        margin-left: $wsu-spacing--xxsmall;
     }
 
     &__meta-location{
-        margin-right: $wsu-spacing--sxxsmall;
         font-weight: $wsu-font-weight--medium;
     }
     &__meta-location::before{
