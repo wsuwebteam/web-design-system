@@ -1,0 +1,280 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+
+/** Start Code **/
+
+$nav-site-horiz__wds-menu-item-padding-horiz: $wsu-spacing--xmedium;
+$nav-site-horiz__wds-menu-item-padding-vert: $wsu-spacing--xsmall;
+$nav-site-horiz__wds-menu-item-padding-vert-inner: $wsu-spacing--xxsmall;
+$nav-site-horiz__wds-menu-width: 230px;
+$nav-site-horiz__wds-base-delay: 150ms;
+$nav-site-horiz__wds-base-slide-speed: 400ms;
+
+
+@media screen and (min-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-nav-site-horiz--style-wds {
+
+        ul,
+        li {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+        }
+        
+        button {
+            background-color: transparent;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            
+            &::after {
+                content: "\F103";
+                font-family: wsu-icons;
+                margin-left: 0.75em;
+                color: inherit;
+                font-size: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                transform: rotate(0);
+                transition: transform ease-in-out 200ms 150ms;
+            }
+        }
+        
+        /* ==== Button li expanded==== */
+        li[aria-expanded="true"] > button::after {
+            transform: rotate(180deg);
+        }
+        
+        a {
+            text-decoration: none;
+            display: block;
+        }
+        
+        a,
+        button {
+            padding: $nav-site-horiz__wds-menu-item-padding-vert-inner $nav-site-horiz__wds-menu-item-padding-horiz;
+            line-height: 1.3rem;
+            color: $wsu-color--gray-85;
+            font-family: inherit;
+            font-size: $wsu-font-size--small;
+            font-weight: 500;
+            position: relative;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            outline: none;
+        }
+        
+        .wsu-nav-site-horiz {
+            
+            &__menu {
+                display: flex;
+                margin: 0 $nav-site-horiz__wds-menu-item-padding-horiz;
+            }
+            
+            /* ==== First Level menu item li ==== */
+            &__menu > li {
+            
+                & > a,
+                & > button {
+                    font-size: $wsu-font-size--medium;
+                    font-weight: 600;
+                    padding-top: $nav-site-horiz__wds-menu-item-padding-vert;
+                    padding-bottom: $nav-site-horiz__wds-menu-item-padding-vert;
+                    border: 1px solid transparent;
+                    border-top: none;
+                    border-bottom: none;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 0;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $wsu-color--gray-40;
+                    display: block;
+                    transition: height ease-in-out 100ms;
+                }
+                
+                &:first-child > a::before {
+                    content: '\F122';
+                    font-family: wsu-icons;
+                    margin-right: 0.4em;
+                    font-size: .8em;
+                }
+            
+            }
+            
+            /* ==== First Level menu item li:hover & focus ==== */
+            &__menu > li:focus-within,
+            &__menu > li:hover {
+                & > a,
+                & > button {
+                    border-width: 1px;
+                    border-style: solid;
+                    border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) ) 1 100%;
+                    border-top: none;
+                    border-bottom: none;
+                    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.1) 100%);
+                    outline: none;
+                }
+            
+            }
+            
+            /* ==== First Level ul ==== */
+            &__menu > li > ul {
+                position: absolute;
+                width: $nav-site-horiz__wds-menu-width;
+                top: 100%;
+                background-color: #fff;
+                border-radius: 0 0 4px 4px;
+                max-height: 0px;
+                overflow: hidden;
+                visibility: hidden;
+                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed 0ms, visibility 0ms $nav-site-horiz__wds-base-slide-speed;
+            }
+            
+            /* ==== First Level hover ul ==== */
+            &__menu > li[aria-expanded="true"] > ul,
+            &__menu > li:hover > ul {
+                max-height: 1000px;
+                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed $nav-site-horiz__wds-base-delay, visibility 0ms 0ms;
+                visibility: visible;
+            }
+            
+            /* ==== Child Level menu item li ==== */
+            &__menu > li > ul li,
+            &__menu > li > ul li {
+        
+            &::before {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 0;
+                left: 0;
+                bottom: 0;
+                background-color: $wsu-color--gray-40;
+                display: block;
+                transition: width ease-in-out 100ms;
+                border-radius: 0 2px 2px 0;
+            }
+            }
+            
+            /* ==== Child Level menu item li hover ==== */
+            &__menu > li > ul li:hover,
+            &__menu > li > ul li:focus-within {
+            
+            background-color: $wsu-color--gray-10;
+                
+                &::before {
+                    width: 5px;
+                }
+        
+            }
+            
+            /* ==== Child Level menu ul ==== */
+            &__menu > li > ul li ul {
+                max-height: 0;
+                overflow: hidden;
+                visibility: hidden;
+                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed 0ms, visibility 0ms $nav-site-horiz__wds-base-slide-speed;
+            }
+            
+            /* ==== Child Level menu ul ==== */
+            &__menu > li > ul li[aria-expanded="true"] ul {
+                max-height: 1200px;
+                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed $nav-site-horiz__wds-base-delay, visibility 0ms 0ms;
+                visibility: visible;
+            }
+            
+            
+            /* ==== Second Level menu item li ==== */
+            &__menu > li > ul > li {
+            
+                &:first-child {
+                    margin-top: $nav-site-horiz__wds-menu-item-padding-vert-inner;
+                }
+                
+                &:last-child {
+                    margin-bottom: $nav-site-horiz__wds-menu-item-padding-vert-inner;
+                }
+            
+            }
+            
+            /* ==== Third Level menu item ==== */
+            &__menu > li > ul > li > ul {
+                background-color: $wsu-color--gray-5;
+                border: 1px solid transparent;
+            }
+            
+            /* ==== Third Level menu item li ==== */
+            &__menu > li > ul > li > ul > li {
+            
+                &:first-child {
+                    margin-top: $nav-site-horiz__wds-menu-item-padding-vert-inner;
+                }
+                
+                &:last-child {
+                    margin-bottom: $nav-site-horiz__wds-menu-item-padding-vert-inner;
+                }
+                
+                & > a,
+                & > button {
+                    padding-left: calc( #{$wsu-spacing--xmedium} + #{$wsu-spacing--xxsmall} );
+                    /*border-left: 4px solid $wsu-color--gray-40;*/
+                }
+            }
+            
+        }
+        
+        button.wsu-menu-action--close-menu {
+            justify-content: flex-start;
+            /* color: $wsu-color--crimson; */
+            max-height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 50px;
+            align-items: center;
+            transition: max-height ease-in-out 200ms;
+            
+            &::after {
+                display: none;
+            }
+            
+            &::before {
+                content: '\F154';
+                font-family: wsu-icons;
+                margin-right: 0.6em;
+                font-size: .8em;
+                background-color: $wsu-color--gray-60;
+                color: #fff;
+                display: block;
+                border-radius: 50%;
+                flex-shrink: 0;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+        }
+        
+        li[aria-expanded="true"] button.wsu-menu-action--close-menu {
+            max-height: 50px;
+        }
+
+
+    }
+
+}
