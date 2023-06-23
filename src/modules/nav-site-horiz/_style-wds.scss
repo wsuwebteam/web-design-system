@@ -10,10 +10,19 @@ $nav-site-horiz__wds-menu-width: 230px;
 $nav-site-horiz__wds-base-delay: 150ms;
 $nav-site-horiz__wds-base-slide-speed: 400ms;
 
+@media screen and (max-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-nav-site-horiz--style-wds {
+        display: none;
+    }
+}
+
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 
     .wsu-nav-site-horiz--style-wds {
+        position: relative;
+        z-index: $wsu-zindex--navigation;
 
         ul,
         li {
@@ -141,6 +150,12 @@ $nav-site-horiz__wds-base-slide-speed: 400ms;
                 overflow: hidden;
                 visibility: hidden;
                 transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed 0ms, visibility 0ms $nav-site-horiz__wds-base-slide-speed;
+            
+            }
+
+            /* ==== First Level ul ==== */
+            &__menu > li:last-child > ul {
+                right: 0;
             }
             
             /* ==== First Level hover ul ==== */
