@@ -22,13 +22,20 @@ import WsuNavigationVertical from '../modules/navigation-vertical/_script';
 import WsuSlideInPanel from '../components/slide-in-panel/_script';
 import WsuVideoPlayers from '../components/video-player/_script';
 import WsuBackToTop from '../components/back-to-top/_script';
+import WsuNavSiteHoriz from '../modules/nav-site-horiz/_script';
 
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
 
 import '../modules/carousel/_script';
+import WsuComponents from '../../_assets/js/wsu-components';
+import WsuEvents from '../../_assets/js/wsu-events';
 
 
+window['wsuComponents'] = new WsuComponents();
+window['wsuEvents']     = new WsuEvents();
+
+window['wsuComponents'].add( 'nav-site-horiz', new WsuNavSiteHoriz() );
 
 const wsu = {
     animate: new WsuAnimate(),
