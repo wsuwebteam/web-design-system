@@ -41,6 +41,11 @@
     li[aria-expanded] {
         display: flex;
         flex-wrap: wrap;
+
+        & > a {
+            width: calc( 100% - 50px );
+            box-sizing: border-box;
+        }
     }
 
     li[aria-expanded="true"] {
