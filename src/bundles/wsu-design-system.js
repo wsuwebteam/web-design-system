@@ -36,12 +36,12 @@ window['wsuComponents'] = new WsuComponents();
 window['wsuEvents']     = new WsuEvents();
 
 window['wsuComponents'].add( 'nav-site-horiz', new WsuNavSiteHoriz() );
+window['wsuComponents'].add( 'navigation-vertical', new WsuNavigationVertical() );
 
 const wsu = {
     animate: new WsuAnimate(),
     verticalNavitation: new WsunavigationSite(),
     mobileMenu: new WsuMobileMenu(),
-    WsuNavigationVertical: new WsuNavigationVertical(),
     navigationSiteVertical: new WsuNavigationSiteVertical(),
     navigationSiteHorizontal: new WsuNavigationSiteHorizontal(),
     backgroundSlider: new WsuBackgroundSlider(),
