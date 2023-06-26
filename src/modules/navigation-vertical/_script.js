@@ -6,11 +6,9 @@ class WsuNavigationVertical {
     
         constructor( atts = {} ) {
 
-            this.headers = ['.wsu-header-unit','.wsu-header-campus'];
+            this.heightElements = ['.wsu-header-unit','.wsu-header-campus','.wsu-nav-site-horiz'];
 
             this.navigation = false;
-
-            this.siteHeader = false;
     
             this.init();
             
@@ -69,37 +67,13 @@ class WsuNavigationVertical {
 
             let navigation = this.getNavigation();
 
-            let height = this.getHeight();
+            let height = this.getHeaderHeight();
 
             if ( navigation && ( false !== height ) ) {
 
                 navigation.style.paddingTop = ( height < 0 ) ? 0 : height + 'px';
 
             }
-
-        }
-
-        getHeader() {
-
-            if ( ! this.siteHeader ) {
-
-                for ( let h = 0; h < this.headers.length; h++ ) {
-
-                    let header = document.querySelector( this.headers[h] );
-    
-                    if ( header ) {
-    
-                        this.siteHeader = header;
-                        
-                        break;
-    
-                    }
-    
-                }
-
-            }
-
-            return this.siteHeader;
 
         }
 
@@ -120,24 +94,29 @@ class WsuNavigationVertical {
             return this.navigation;
 
         }
-    
-        
-        getHeight() {
 
-            let siteHeader = this.getHeader();
+        getHeaderHeight() {
 
-            let height = false;
+            let height = 0;
 
-            if ( siteHeader ) {
+            for ( let h = 0; h < this.heightElements.length; h++ ) {
 
-                let headerHeight = siteHeader.scrollHeight;
+                let heightElement = document.querySelector( this.heightElements[h] );
 
-                height = siteHeader.getBoundingClientRect().top + headerHeight;
+                if ( heightElement ) {
+
+                    height = height + heightElement.scrollHeight;
+
+                }
 
             }
 
-            return height; 
+            console.log( 'navigation-vertical:' + height );
+
+            return height;
+
         }
+    
     
     }
     
