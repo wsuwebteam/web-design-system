@@ -6,9 +6,10 @@ class WsuNavigationVertical {
     
         constructor( atts = {} ) {
 
-            this.heightElements = ['.wsu-header-unit','.wsu-header-campus','.wsu-nav-site-horiz'];
+            this.heightElements = ['.wsu-header-global', '.wsu-header-unit','.wsu-header-campus','.wsu-nav-site-horiz'];
 
             this.navigation = false;
+
     
             this.init();
             
@@ -77,6 +78,8 @@ class WsuNavigationVertical {
 
         }
 
+        
+
         getNavigation() {
 
             if ( ! this.navigation ) {
@@ -97,21 +100,32 @@ class WsuNavigationVertical {
 
         getHeaderHeight() {
 
-            let height = 0;
+            let height  = false;
+            let wrapper = document.querySelector( '.wsu-wrapper-global' );
 
-            for ( let h = 0; h < this.heightElements.length; h++ ) {
+            if ( ! wrapper ) {
 
-                let heightElement = document.querySelector( this.heightElements[h] );
-
-                if ( heightElement ) {
-
-                    height = height + heightElement.scrollHeight;
-
-                }
+                wrapper = document.querySelector( 'body' );
 
             }
 
-            console.log( 'navigation-vertical:' + height );
+            if ( wrapper ) {
+
+                height  = wrapper.getBoundingClientRect().top;
+
+                for ( let h = 0; h < this.heightElements.length; h++ ) {
+
+                    let heightElement = document.querySelector( this.heightElements[h] );
+    
+                    if ( heightElement ) {
+    
+                        height = height + heightElement.scrollHeight;
+    
+                    }
+    
+                }
+
+            }
 
             return height;
 
