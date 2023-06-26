@@ -3,17 +3,27 @@
 
 /** Start Code **/
 
-$nav-site-horiz__wds-menu-item-padding-horiz: $wsu-spacing--xmedium;
+$nav-site-horiz__wds-menu-item-padding-horiz: $wsu-spacing--medium;
 $nav-site-horiz__wds-menu-item-padding-vert: $wsu-spacing--xsmall;
 $nav-site-horiz__wds-menu-item-padding-vert-inner: $wsu-spacing--xxsmall;
 $nav-site-horiz__wds-menu-width: 230px;
 $nav-site-horiz__wds-base-delay: 150ms;
 $nav-site-horiz__wds-base-slide-speed: 400ms;
 
+@media screen and (max-width: $wsu-breakpoint--desktop ) {
+
+    .wsu-nav-site-horiz--style-wds {
+        display: none;
+    }
+}
+
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 
     .wsu-nav-site-horiz--style-wds {
+        position: relative;
+        z-index: $wsu-zindex--navigation;
+        background-color: #fff;
 
         ul,
         li {
@@ -100,7 +110,7 @@ $nav-site-horiz__wds-base-slide-speed: 400ms;
                     width: 100%;
                     left: 0;
                     bottom: 0;
-                    background-color: $wsu-color--gray-40;
+                    background-color: $wsu-color--crimson-light;
                     display: block;
                     transition: height ease-in-out 100ms;
                 }
@@ -111,10 +121,18 @@ $nav-site-horiz__wds-base-slide-speed: 400ms;
                     margin-right: 0.4em;
                     font-size: .8em;
                 }
+
+                &.wsu-menu--current-item,
+                &.wsu-menu--current-item-ancestor {
+                    &::before {
+                        height: 4px;
+                    }
+                }
             
             }
             
             /* ==== First Level menu item li:hover & focus ==== */
+            &__menu > li[aria-expanded="true"],
             &__menu > li:focus-within,
             &__menu > li:hover {
                 & > a,
@@ -136,37 +154,58 @@ $nav-site-horiz__wds-base-slide-speed: 400ms;
                 width: $nav-site-horiz__wds-menu-width;
                 top: 100%;
                 background-color: #fff;
+                border-left: 1px solid $wsu-color--gray-20;
+                border-right: 1px solid $wsu-color--gray-20;
+                border-bottom: 1px solid $wsu-color--gray-20;
+                -webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+                -moz-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+                box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
                 border-radius: 0 0 4px 4px;
                 max-height: 0px;
                 overflow: hidden;
                 visibility: hidden;
-                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed 0ms, visibility 0ms $nav-site-horiz__wds-base-slide-speed;
+                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed 0ms, visibility 0ms $nav-site-horiz__wds-base-slide-speed, opacity $nav-site-horiz__wds-base-slide-speed $nav-site-horiz__wds-base-delay;
+                opacity: 0;
+            }
+
+            /* ==== First Level ul ==== */
+            &__menu > li:last-child > ul {
+                right: 0;
             }
             
             /* ==== First Level hover ul ==== */
             &__menu > li[aria-expanded="true"] > ul,
             &__menu > li:hover > ul {
                 max-height: 1000px;
-                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed $nav-site-horiz__wds-base-delay, visibility 0ms 0ms;
+                transition: max-height ease-in-out $nav-site-horiz__wds-base-slide-speed $nav-site-horiz__wds-base-delay, visibility 0ms 0ms, opacity $nav-site-horiz__wds-base-slide-speed $nav-site-horiz__wds-base-delay;
                 visibility: visible;
+                opacity: 1;
             }
             
             /* ==== Child Level menu item li ==== */
             &__menu > li > ul li,
             &__menu > li > ul li {
         
-            &::before {
-                position: absolute;
-                content: "";
-                height: 100%;
-                width: 0;
-                left: 0;
-                bottom: 0;
-                background-color: $wsu-color--gray-40;
-                display: block;
-                transition: width ease-in-out 100ms;
-                border-radius: 0 2px 2px 0;
-            }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $wsu-color--gray-40;
+                    display: block;
+                    transition: width ease-in-out 100ms;
+                    border-radius: 0 2px 2px 0;
+                }
+
+                &.wsu-menu--current-item,
+                &.wsu-menu--current-item-ancestor {
+                    &::before {
+                        width: 5px;
+                        background-color: $wsu-color--crimson-light;
+                    }
+                }
             }
             
             /* ==== Child Level menu item li hover ==== */

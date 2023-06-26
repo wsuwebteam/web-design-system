@@ -49,12 +49,8 @@ class WsuMenuAction {
     }
     
     closeSiblings( element, event ) {
-    
-        console.log( 'close' );
         
         let children = element.children;
-        
-        console.log( children );
         
         for( let i=0; i < children.length; i++ ){
             
