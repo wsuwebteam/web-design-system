@@ -6,11 +6,10 @@ class WsuNavigationVertical {
     
         constructor( atts = {} ) {
 
-            this.headers = ['.wsu-header-unit','.wsu-header-campus'];
+            this.heightElements = ['.wsu-header-global', '.wsu-header-unit','.wsu-header-campus','.wsu-nav-site-horiz'];
 
             this.navigation = false;
 
-            this.siteHeader = false;
     
             this.init();
             
@@ -69,7 +68,7 @@ class WsuNavigationVertical {
 
             let navigation = this.getNavigation();
 
-            let height = this.getHeight();
+            let height = this.getHeaderHeight();
 
             if ( navigation && ( false !== height ) ) {
 
@@ -79,29 +78,7 @@ class WsuNavigationVertical {
 
         }
 
-        getHeader() {
-
-            if ( ! this.siteHeader ) {
-
-                for ( let h = 0; h < this.headers.length; h++ ) {
-
-                    let header = document.querySelector( this.headers[h] );
-    
-                    if ( header ) {
-    
-                        this.siteHeader = header;
-                        
-                        break;
-    
-                    }
-    
-                }
-
-            }
-
-            return this.siteHeader;
-
-        }
+        
 
         getNavigation() {
 
@@ -120,24 +97,40 @@ class WsuNavigationVertical {
             return this.navigation;
 
         }
-    
-        
-        getHeight() {
 
-            let siteHeader = this.getHeader();
+        getHeaderHeight() {
 
-            let height = false;
+            let height  = false;
+            let wrapper = document.querySelector( '.wsu-wrapper-global' );
 
-            if ( siteHeader ) {
+            if ( ! wrapper ) {
 
-                let headerHeight = siteHeader.scrollHeight;
-
-                height = siteHeader.getBoundingClientRect().top + headerHeight;
+                wrapper = document.querySelector( 'body' );
 
             }
 
-            return height; 
+            if ( wrapper ) {
+
+                height  = wrapper.getBoundingClientRect().top;
+
+                for ( let h = 0; h < this.heightElements.length; h++ ) {
+
+                    let heightElement = document.querySelector( this.heightElements[h] );
+    
+                    if ( heightElement ) {
+    
+                        height = height + heightElement.scrollHeight;
+    
+                    }
+    
+                }
+
+            }
+
+            return height;
+
         }
+    
     
     }
     
