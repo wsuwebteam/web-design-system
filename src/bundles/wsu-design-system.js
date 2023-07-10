@@ -1,4 +1,6 @@
 //import wsuDropdownModal from "../elements/dropdown-modal/_dropdown-modal";
+import WsuActionExpanded from '../actions/expanded/_script';
+import WsuActionCookie from '../actions/cookies/_script';
 import WsunavigationSite from '../modules/deprecated_navigation-site/_navigation-site';
 import WsuHeaderGlobal from "../modules/header-global/_header-global";
 import WsuAccordion from "../components/accordion/_script";
@@ -24,6 +26,7 @@ import WsuVideoPlayers from '../components/video-player/_script';
 import WsuBackToTop from '../components/back-to-top/_script';
 import WsuNavSiteHoriz from '../modules/nav-site-horiz/_script';
 
+
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
 
@@ -37,6 +40,9 @@ window['wsuEvents']     = new WsuEvents();
 
 window['wsuComponents'].add( 'nav-site-horiz', new WsuNavSiteHoriz() );
 window['wsuComponents'].add( 'navigation-vertical', new WsuNavigationVertical() );
+window['wsuComponents'].add( 'wsu-action-expanded', new WsuActionExpanded() );
+window['wsuComponents'].add( 'wsu-action-cookie', new WsuActionCookie() );
+
 
 const wsu = {
     animate: new WsuAnimate(),

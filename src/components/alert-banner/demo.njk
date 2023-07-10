@@ -1,0 +1,12 @@
+{% extends "component.njk" %}
+{% from "alert-banner/_macro.njk" import alertBanner %}
+
+
+{% block content %}
+
+{% call alertBanner( startOpen='true' ) -%}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in pellentesque neque. Nunc luctus varius ultrices. Etiam bibendum rhoncus bibendum. 
+Nunc vehicula erat eget consectetur varius. Praesent lacinia orci eu ipsum porttitor, sed rhoncus urna semper. Maecenas eget justo vel magna luctus convallis eu id quam. 
+{%- endcall %}
+
+{%  endblock %}   
