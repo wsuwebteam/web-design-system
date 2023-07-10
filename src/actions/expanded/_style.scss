@@ -1,0 +1,19 @@
+@mixin wsu-action-expanded() {
+
+    &[aria-expanded] {
+        overflow: hidden;
+    }
+
+    &[aria-expanded="true"] {
+        max-height: 1000px;
+        visibility: visible;
+        transition: max-height ease-in-out 1000ms, visibility 0s 0s;
+    }
+
+    &[aria-expanded="false"] {
+        max-height: 0px;
+        visibility: hidden;
+        transition: max-height ease-in-out 1000ms, visibility 0s 1000ms;
+    }
+    
+  }

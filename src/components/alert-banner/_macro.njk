@@ -1,0 +1,14 @@
+{% macro alertBanner( classes='', style='wds', startOpen="false" ) %}
+
+<div class="wsu-alert-banner wsu-alert-banner--style-{{style}}{% if style %} {{ classes }}{% endif %}" >
+    <div id="wsu-alert-banner__wrapper" class="wsu-alert-banner__wrapper" aria-expanded="{{ startOpen }}" aria-haspopup="true" aria-label="WSU alert & notices">
+        <button class="wsu-alert-banner__close wsu-action-expanded--close wsu-action-cookie--set" data-cookie-name="wsu-notice-expanded" data-cookie-value="hidden">Close</button>
+        <div  class="wsu-alert-banner__inner-wrapper">
+            <div class="wsu-alert-banner__notice">
+            {{ caller() }}
+            </div>
+        </div>
+    </div>
+    <button class="wsu-alert-banner__open wsu-action-expanded--open-target" data-target-id="wsu-alert-banner__wrapper">Open</button>
+</div>
+{% endmacro %}

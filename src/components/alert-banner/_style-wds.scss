@@ -1,0 +1,86 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../actions/expanded/style';
+
+.wsu-alert-banner--style-wds {
+
+    .wsu-alert-banner {
+
+        &__wrapper {
+            background-color: $wsu-color--gray-10;
+            position: relative;
+            overflow: hidden;
+            padding: 0 100px;
+            @include wsu-action-expanded();
+        }
+
+        &__inner-wrapper {
+            padding: $wsu-spacing--medium 0;
+            max-width: $wsu-width--content;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        &__close {
+            cursor: pointer;
+            position: absolute;
+            top: $wsu-spacing--medium;
+            right: $wsu-spacing--medium;
+            background-color: transparent;
+            border: none;
+            font-size: $wsu-font-size--xsmall;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: "\f154";
+                font-family: wsu-icons;
+                display: inline-block;
+                font-size: 1rem;
+                vertical-align: middle;
+                color: #3f3f3f;
+                margin-left: 0.2rem;
+            }
+        }
+
+        &__open {
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: $wsu-color--gray-10;
+            border: none;
+            font-size: 0;
+            display: block;
+            height: 6px;
+            position: relative;
+
+            &::after {
+                content: "\f103";
+                font-family: wsu-icons;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $wsu-color--gray-10;
+                border-radius: 0 0 8px 8px;
+                font-size: 1rem;
+                color: #3f3f3f;
+                position: absolute;
+                top: 0;
+                right: 1rem;
+                width: 25px;
+                height: 20px;
+            }
+        }
+
+        &__notice p,
+        &__notice {
+            font-size: $wsu-font-size--medium;
+        }
+
+    }
+
+}
