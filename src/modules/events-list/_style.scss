@@ -65,3 +65,13 @@
     }
 
 }
+@media screen and (max-width: $wsu-breakpoint--tablet) {
+    .wsu-events-list {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+    p {
+        margin-bottom: 1rem;
+        
+    }
+}
