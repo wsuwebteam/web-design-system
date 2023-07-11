@@ -3,24 +3,35 @@
 
 
 .wsu-events-card {
-
+ 
     box-sizing: border-box;
-    margin-bottom: $wsu-spacing--component;
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+    margin-left: 1.875rem;
+    margin-right: 1.875rem;
     
     a {
-        font-size: 1.3em;
+        font-size: 1.125em;
         display: block;
         font-weight: 600;
         margin-bottom: 0.2em;
+    }
+
+    p {
+        font-size: $wsu-font-size--medium;
     }
     
     &__container {
         display: flex;
         flex-direction: column;
     }
+    &__container p{
+        margin-bottom: 0.5rem;
+    }
     &__meta{
         display: flex;
         flex-direction: row;
+        font-size: $wsu-font-size--small;
     }
     &__meta-date {
         display: flex;
@@ -35,6 +46,8 @@
 
     &__meta-location{
         font-weight: $wsu-font-weight--medium;
+        font-size: $wsu-font-size--small;
+        margin: 0.25rem 0;
     }
     &__meta-location::before{
         font-family: 'wsu-icons';
