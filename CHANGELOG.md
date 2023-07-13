@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/wsuwebteam/web-design-system/compare/v2.7.0...v2.8.0) (2023-07-13)
+
+
+### Features
+
+* new build of events list and events cards ([#24](https://github.com/wsuwebteam/web-design-system/issues/24)) ([f3e65c1](https://github.com/wsuwebteam/web-design-system/commit/f3e65c1e1d02197bcb4e01140aee3965f25da1a3))
+
 # [2.7.0](https://github.com/wsuwebteam/web-design-system/compare/v2.6.0...v2.7.0) (2023-07-10)
 
 
