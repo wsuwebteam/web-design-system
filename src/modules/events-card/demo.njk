@@ -1,0 +1,42 @@
+{% extends "component.njk" %}
+{% from "events-card/_macro.njk" import eventsCard %}
+
+{% block content %}
+<div class="wsu-demo-component">
+    <div class="wsu-card__wrapper wsu-per-row--1">
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component">
+    <div class="wsu-card__wrapper wsu-per-row--2">
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+    </div>
+</div>
+<div class="wsu-demo-component">
+    <div class="wsu-card__wrapper wsu-per-row--3">
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+        {{ eventsCard( '','' ) }}
+    </div>
+</div>
+<style>
+.wsu-demo-component {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{%  endblock %}  

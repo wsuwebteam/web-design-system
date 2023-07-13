@@ -1,0 +1,20 @@
+{% from "experimental_article-title/macros/article-title.macro.njk" import articleTitle %}
+{% from "caption/macros/caption.macro.njk" import caption %}
+{% from "meta-date/macros/meta-date.macro.njk" import metaDate %}
+{% from "meta-byline/macros/meta-byline.macro.njk" import metaByline %}
+{% from "meta-tags/macros/macro.njk" import metaTags %}
+{% from "image-frame/_macro.njk" import imageFrame %}
+
+{% macro eventsCard( classes='', title='Phasellus pharetra nunc', articleCaption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra nunc nec rutrum porta. Praesent neque velit, dignissim sit amet massa sit amet, dapibus aliquam metus. Ut sapien lacus, fringilla non arcu elementum, blandit egestas justo.', link='#' ) %}
+<article class="wsu-card wsu-events-card{{ classes }}">
+    <div class="wsu-events-card__container">
+        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+        <div class="wsu-events-card__meta">
+            <div class="wsu-events-card__meta-date">JUN 7</div>
+            <div class="wsu-events-card__meta-time">8:00pm</div>
+        </div>
+        <div class="wsu-events-card__meta-location">WSU Pullman</div>
+        <p>Curabitur a mi in justo vehicula ornare. Curabitur euismod pellentesque nisl, ut semper est rutrum ut. Sed mollis viverra dolor tempor vestibulum. Nunc porttitor dapibus mi a luctus. Proin iaculis tempor velit, sit amet viverra lacus euismod ut.</p>
+    </div>
+</article>
+{% endmacro %}
