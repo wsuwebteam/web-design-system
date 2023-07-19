@@ -1,3 +1,22 @@
+# [2.8.0](https://github.com/wsuwebteam/web-design-system/compare/v2.7.0...v2.8.0) (2023-07-13)
+
+
+### Features
+
+* new build of events list and events cards ([#24](https://github.com/wsuwebteam/web-design-system/issues/24)) ([f3e65c1](https://github.com/wsuwebteam/web-design-system/commit/f3e65c1e1d02197bcb4e01140aee3965f25da1a3))
+
+# [2.7.0](https://github.com/wsuwebteam/web-design-system/compare/v2.6.0...v2.7.0) (2023-07-10)
+
+
+### Bug Fixes
+
+* fix facebook class name ([edac9d3](https://github.com/wsuwebteam/web-design-system/commit/edac9d33897e74774727f771543d99929a8a4dd7))
+
+
+### Features
+
+* add alert banner component ([8244954](https://github.com/wsuwebteam/web-design-system/commit/8244954b6ec2884277f7070f8abbbff26d5cd39d))
+
 # [2.6.0](https://github.com/wsuwebteam/web-design-system/compare/v2.5.1...v2.6.0) (2023-06-26)
 
 
