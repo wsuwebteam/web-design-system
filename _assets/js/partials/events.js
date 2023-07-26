@@ -29,6 +29,24 @@ const keyDownEvent = ( props ) => {
 
     }
 
-}
+};
 
-export { keyDownEvent };
+const onTransitionEnd = (element, callback) => {
+    element.addEventListener("transitionend", function once() {
+        element.removeEventListener("transitionend", once, false);
+        callback();
+      }, false);
+};
+
+const onAnimationEnd = (element, callback) => {
+    element.addEventListener("animationend", function once() {
+        element.removeEventListener("animationend", once, false);
+        callback();
+      }, false);
+};  
+
+export { 
+    keyDownEvent,
+    onTransitionEnd,
+    onAnimationEnd
+};
