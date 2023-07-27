@@ -40,6 +40,11 @@
     }
 }
 
+.wsu-menu-audience.wsu-color-scheme--dark{
+    color: white;
+    background-color: $wsu-color--gray-85;
+}
+
 @media screen and (min-width: 992px ) {
     .wsu-menu-audience__link:not(:last-child)::before { 
         content: ""; 
