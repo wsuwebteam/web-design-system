@@ -9,6 +9,7 @@ class WsuSlideInPanel {
         this.closeThisClass  = ( atts.hasOwnProperty( 'closeThisClass') ) ? atts.closeThisClass : 'wsu-slide-in-panel--close-this';
         this.openClass     = ( atts.hasOwnProperty( 'openClass') ) ? atts.openClass : 'wsu-slide-in-panel--open';
         this.toggleClass     = ( atts.hasOwnProperty( 'toggleClass') ) ? atts.toggleClass : 'wsu-slide-in-panel--toggle';
+        this.focusClass     = ( atts.hasOwnProperty( 'focusClass') ) ? atts.toggleClass : 'wsu-slide-in-panel--focus';
         this.init();
         
     }
@@ -51,7 +52,10 @@ class WsuSlideInPanel {
 
         if ( panel ) {
 
-            panel.setAttribute('aria-expanded', true )
+            panel.setAttribute('aria-expanded', true );
+
+            const focusSelector = eventElement.dataset.panelFocus ?? '.' + this.focusClass;
+            panel.querySelector(focusSelector)?.focus();        
 
         }
 

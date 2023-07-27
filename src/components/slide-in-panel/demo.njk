@@ -8,7 +8,7 @@
 <button data-panel="wsu-slide-in-panel-open" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
 <hr />
 <h2>Open Left</h2>
-<button data-panel="wsu-slide-in-panel-left" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
+<button data-panel="wsu-slide-in-panel-left" data-panel-focus=".js-focus-target" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
 <hr />
 <h2>Styles</h2>
 <button data-panel="wsu-slide-in-panel-crimson-mark" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Crimson Mark</button>
@@ -33,7 +33,7 @@ Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tort
 Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit.
 
-<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+<button class="wsu-button wsu-slide-in-panel--close wsu-slide-in-panel--focus">Close Panel</button>
 
 {%- endcall %}
 
@@ -43,7 +43,7 @@ Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tort
 Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit.
 
-<button class="wsu-button wsu-slide-in-panel--close">Close Panel</button>
+<button class="js-focus-target wsu-button wsu-slide-in-panel--close">Close Panel</button>
 
 {%- endcall %}
 

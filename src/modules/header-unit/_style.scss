@@ -136,3 +136,17 @@ $wsu-space--logo: $wsu-spacing--medium;
 
     
 }
+
+.wsu-header-unit.wsu-color-scheme--dark{
+    .wsu-header-unit__banner{ 
+        color: white;
+        background-color: $wsu-color--gray-85;
+    }
+    .wsu-coug-head{
+        fill: white;
+    }
+    .wsu-logo-lockup{
+        color: white;
+    }
+
+}
