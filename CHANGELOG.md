@@ -1,3 +1,10 @@
+## [2.9.1](https://github.com/wsuwebteam/web-design-system/compare/v2.9.0...v2.9.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* added missing arrow styles for dark mode ([2d10908](https://github.com/wsuwebteam/web-design-system/commit/2d109083aafa59d82a3ca5b6a0c14588ae6c5074))
+
 # [2.9.0](https://github.com/wsuwebteam/web-design-system/compare/v2.8.0...v2.9.0) (2023-07-27)
 
 
