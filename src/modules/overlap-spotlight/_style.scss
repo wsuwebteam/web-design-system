@@ -13,6 +13,16 @@
     }
 }
 
+.wsu-overlap-spotlight.wsu-color-scheme--dark{
+    .wsu-overlap-spotlight__caption{
+        background-color: $wsu-color--gray-85;
+        color: white;
+    }
+    .wsu-cta .wsu-button--style-action{
+        color:white;
+    }
+}
+
 %wsu-overlap-spotlight-reverse {
     @media screen and ( min-width: $wsu-breakpoint--tablet-medium ) {
         .wsu-overlap__container{
