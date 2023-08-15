@@ -15,6 +15,7 @@ module.exports = env => {
 			'bundles/standalone/hero-slider/scripts': './src/bundles/standalone/hero-slider/scripts.js',
 			'bundles/standalone/programs-list/scripts': './src/bundles/standalone/programs-list/scripts.js',
 			'bundles/standalone/scholarship-list/scripts': './src/bundles/standalone/scholarship-list/index.tsx',
+			'bundles/standalone/events-list/scripts': './src/bundles/standalone/events-list/scripts.js',
 		},
 		output: {
 			filename: '[name].js',
