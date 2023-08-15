@@ -1,77 +1,74 @@
-@import '../../../_assets/scss/variables';
-@import '../../../_assets/scss/mixins';
-
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
 
 .wsu-events-list {
-    list-style-type: none;
-    padding-left: 1.4em;
+  list-style-type: none;
+  padding-left: 1.4em;
 
-    li {
-        font-size: 0.75em;
-        line-height: 1.5;
-    }
+  li {
+    font-size: 0.75em;
+    line-height: 1.5;
+  }
 
-    a {
-        font-size: 1.3em;
-        display: block;
-        font-weight: 600;
-        margin-bottom: 0.2em;
-    }
+  a {
+    font-size: 1.3em;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+  }
 
-    &__container {
-        display: flex;
-        flex-direction: row;
-    }
-    &__content{
-        padding-left: $wsu-spacing--xxsmall;
-    }
-    &__date {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
-        font-weight: $wsu-font-weight--bold;
-    }
-    &__date-month {
-        font-size: $wsu-font-size--xmedium;
-        text-transform: capitalize;
-    }
-    &__date-day {
-        font-size: 1.95rem;
-        text-transform: capitalize;
-        line-height: 1;
-        color: #666;
-    }
-    &__meta{
-        display: flex;
-        flex-direction: row;
-    }
-    &__meta-time{
-        margin-right: $wsu-spacing--xsmall;
-        font-weight: $wsu-font-weight--bold;
-    }
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__content {
+    padding-left: $wsu-spacing--xxsmall;
+  }
+  &__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    font-weight: $wsu-font-weight--bold;
+  }
+  &__date-month {
+    font-size: $wsu-font-size--xmedium;
+    text-transform: uppercase;
+  }
+  &__date-day {
+    font-size: 1.95rem;
+    text-transform: capitalize;
+    line-height: 1;
+    color: #666;
+  }
+  &__meta {
+    display: flex;
+    flex-direction: row;
+  }
+  &__meta-time {
+    margin-right: $wsu-spacing--xsmall;
+    font-weight: $wsu-font-weight--bold;
+  }
 
-    &__meta-location{
-        margin-right: $wsu-spacing--sxxsmall;
-        font-weight: $wsu-font-weight--medium;
-    }
-    &__meta-location::before{
-        font-family: 'wsu-icons';
-        content:'\F127';
-        color: $wsu-color--crimson;
-        font-size: 0.9em;
-        font-weight: $wsu-font-weight--bold;
-        margin-right: 0.15rem;
-    }
-
+  &__meta-location {
+    margin-right: $wsu-spacing--sxxsmall;
+    font-weight: $wsu-font-weight--medium;
+  }
+  &__meta-location::before {
+    font-family: "wsu-icons";
+    content: "\F127";
+    color: $wsu-color--crimson;
+    font-size: 0.9em;
+    font-weight: $wsu-font-weight--bold;
+    margin-right: 0.15rem;
+  }
 }
 @media screen and (max-width: $wsu-breakpoint--tablet) {
-    .wsu-events-list {
-        padding-left: 0;
-        padding-top: 1rem;
-    }
-    p {
-        margin-bottom: 1rem;
-        
-    }
+  .wsu-events-list {
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
 }
