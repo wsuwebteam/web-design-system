@@ -150,3 +150,11 @@ $wsu-space--logo: $wsu-spacing--medium;
     }
 
 }
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-header-unit {
+        display: none !important;
+    }
+}
