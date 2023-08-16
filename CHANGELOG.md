@@ -1,3 +1,18 @@
+## [2.9.1](https://github.com/wsuwebteam/web-design-system/compare/v2.9.0...v2.9.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* added missing arrow styles for dark mode ([2d10908](https://github.com/wsuwebteam/web-design-system/commit/2d109083aafa59d82a3ca5b6a0c14588ae6c5074))
+
+# [2.9.0](https://github.com/wsuwebteam/web-design-system/compare/v2.8.0...v2.9.0) (2023-07-27)
+
+
+### Features
+
+* Add element focus functionality to slide-in-panel ([c14f2a9](https://github.com/wsuwebteam/web-design-system/commit/c14f2a979ed58a06099722382b8e3be60f59c8d2))
+* dark mode ([b1aad84](https://github.com/wsuwebteam/web-design-system/commit/b1aad841d43cb23c73fb63ed9139535396098912))
+
 # [2.8.0](https://github.com/wsuwebteam/web-design-system/compare/v2.7.0...v2.8.0) (2023-07-13)
 
 
