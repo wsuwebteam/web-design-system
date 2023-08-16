@@ -86,3 +86,9 @@
 }
 
 @import './style-vertical';
+
+@media print { 
+    .wsu-navigation-audience {
+        display: none !important;
+    }
+}

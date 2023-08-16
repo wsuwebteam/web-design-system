@@ -63,3 +63,12 @@
 }
 
 /*----- Temp ----- */
+
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-navigation-vertical {
+        display: none !important;
+    }
+}
