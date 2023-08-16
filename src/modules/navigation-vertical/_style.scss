@@ -100,4 +100,14 @@
     .wsu-navigation-vertical {
         display: none !important;
     }
+
+    .wsu-navigation-vertical ~ .wsu-wrapper-site .wsu-width--full {
+        margin-left: calc(((100vw - 100%))/ -2);
+        margin-right: calc(((100vw - 100%))/ -2);
+    }
+
+    .wsu-navigation-vertical~.wsu-wrapper-site {
+        margin-left: 0;
+    }
+
 }

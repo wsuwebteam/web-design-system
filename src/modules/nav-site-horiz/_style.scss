@@ -2,3 +2,12 @@
 @import '../../../_assets/scss/mixins';
 
 @import './style-wds';
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-nav-site-horiz {
+        display: none !important;
+    }
+
+}
