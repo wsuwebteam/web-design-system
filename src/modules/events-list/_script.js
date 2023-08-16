@@ -48,7 +48,7 @@ const EventList = function (el) {
                               : ""
                           }
                         </div>
-                        ${event.summary}
+                        <p>${event.summary}</p>
                     </div>
                 </div>
             </li>`;
