@@ -17,6 +17,17 @@ $nav-site-horiz__wds-base-slide-speed: 400ms;
     }
 }
 
+// Dark Mode Styling
+
+.wsu-nav-site-horiz--style-wds.wsu-color-scheme--dark {
+    background-color: $wsu-color--gray-80;
+
+    .wsu-nav-site-horiz__menu>li>a, .wsu-nav-site-horiz__menu>li>button{
+        color: white !important;
+    }
+    
+}
+
 
 @media screen and (min-width: $wsu-breakpoint--desktop ) {
 

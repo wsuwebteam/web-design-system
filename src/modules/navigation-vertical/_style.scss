@@ -20,6 +20,35 @@
     }
 }
 
+// Dark Mode Styling
+.wsu-navigation-vertical.wsu-color-scheme--dark {
+    
+    .wsu-slide-in-panel__panel{
+        background-color: $wsu-color--gray-80;
+        color: white;
+    }
+
+    .wsu-menu-collapse--style-context a~button, .wsu-menu-collapse--style-vertical a~button,
+    .wsu-menu-collapse--style-context a, .wsu-menu-collapse--style-context button:first-child,
+    .wsu-menu-collapse--style-mobile a, .wsu-menu-collapse--style-mobile button:first-child,
+    .wsu-menu-collapse--style-vertical a, .wsu-menu-collapse--style-vertical button:first-child{
+        color: white;
+    }
+
+    .wsu-menu-collapse button:first-child:hover, .wsu-menu-collapse button:first-child:focus,
+    .wsu-menu-collapse a~button:hover, .wsu-menu-collapse a~button:focus,
+    .wsu-menu-collapse a:hover, .wsu-menu-collapse a:focus{
+        background: #121212 !important;
+    }
+
+    .wsu-menu-collapse--style-context>li>ul>li::after, .wsu-menu-collapse--style-mobile>li::after, .wsu-menu-collapse--style-vertical>li::after,
+    .wsu-menu-collapse--style-context>li>ul::before, .wsu-menu-collapse--style-mobile::before, .wsu-menu-collapse--style-vertical::before, 
+    .wsu-menu-collapse--style-context a~button::after, .wsu-menu-collapse--style-mobile a~button::after, .wsu-menu-collapse--style-vertical a~button::after{
+        background-color: #777;
+    }
+
+}
+
 .wsu-navigation-vertical ~ .wsu-wrapper-site {
     margin-left: $wsu-width--navigation-veritcal;
 }

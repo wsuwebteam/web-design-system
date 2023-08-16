@@ -6,7 +6,7 @@
 
 {% block content %}
 <h2>Default Open</h2>
-<button data-panel="wsu-quicklinks-panel" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
+<button data-panel="wsu-quicklinks-panel" data-panel-focus=".wsu-search-bar__input" class="wsu-button wsu-slide-in-panel--open" style="margin-bottom: 2rem">Open Panel</button>
 
 
 {% call quicklinks( startOpen='true' ) -%}

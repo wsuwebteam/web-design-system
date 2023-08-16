@@ -45,7 +45,6 @@
     background-color: $wsu-color--gray-20;
 }
 
-
 .wsu-navigation-audience:not([class*="-audience--style-"]) {
     @extend %wsu-navigation-audience;
     min-height: $wsu-spacing--large;
@@ -83,6 +82,11 @@
         
     }
 
+}
+
+.wsu-navigation-audience.wsu-color-scheme--dark{
+    color: white;
+    background-color: $wsu-color--gray-85;
 }
 
 @import './style-vertical';
