@@ -107,7 +107,7 @@
         &__title-button {
 
             @include wsu-font--xmedium();
-            padding: $wsu-spacing--xsmall calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--xsmall $wsu-spacing--sxxsmall;
+            padding: $wsu-spacing--xsmall calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--xsmall $wsu-spacing--xsmall;
         }
 
     }
