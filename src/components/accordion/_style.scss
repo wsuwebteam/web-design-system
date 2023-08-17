@@ -107,14 +107,21 @@
         &__title-button {
 
             @include wsu-font--xmedium();
-            padding: $wsu-spacing--xsmall calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--xsmall $wsu-spacing--sxxsmall;
+            padding: $wsu-spacing--xsmall calc( 18px + #{$wsu-spacing--xmedium} + #{$wsu-spacing--xmedium} ) $wsu-spacing--xsmall $wsu-spacing--xsmall;
         }
 
     }
 
 }
 
-
+.wsu-accordion.wsu-color-scheme--dark{
+    background: #222;
+    color: white;
+    .wsu-accordion__title:hover,.wsu-accordion__title:focus, .wsu-accordion__title:visited, .wsu-accordion__title:focus-within{
+        background: #111;
+        color: white;
+    }
+}
 
 @media screen and (max-width: $wsu-breakpoint--tablet ) {
 
