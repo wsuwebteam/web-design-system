@@ -96,6 +96,6 @@ const EventList = function (el) {
   init();
 };
 
-document.querySelectorAll(".wsu-events-list").forEach((el) => {
+document.querySelectorAll(".js-wsu-events-list").forEach((el) => {
   new EventList(el);
 });

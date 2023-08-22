@@ -1,0 +1,27 @@
+{% extends "component.njk" %}
+{% from "events-card/_macro-js.njk" import eventsCards %}
+
+{% block content %}
+    <div class="wsu-demo-component">
+        <div class="wsu-card__wrapper wsu-per-row--1">
+            {{ eventsCards( count = 6 ) }}
+        </div>
+    </div>
+    <div class="wsu-demo-component">
+        <div class="wsu-card__wrapper wsu-per-row--2">
+            {{ eventsCards( count = 6 ) }}
+        </div>
+    </div>
+    <div class="wsu-demo-component">
+        <div class="wsu-card__wrapper wsu-per-row--3">
+            {{ eventsCards( count = 6 ) }}
+        </div>
+    </div>
+    <style>
+        .wsu-demo-component {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+{% endblock %}
