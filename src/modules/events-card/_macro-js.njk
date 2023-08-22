@@ -1,5 +1,5 @@
-{% macro eventsList(classes = '', type = 'feed', search = '', dataSource = 'http://wsuwp562.local', count = 5, postIds = '44040,42140,43713,44041,44039', exclude = '44039,43713,42140', types = '', categories = '', tags = '', organizations = '406') %}
-    <div class="js-wsu-events-list wsu-events-list {{classes}}"
+{% macro eventsCards(classes = '', type = 'feed', search = '', dataSource = 'http://wsuwp562.local', count = 5, postIds = '44040,42140,43713,44041,44039', exclude = '44039,43713,42140', types = '', categories = '', tags = '', organizations = '406') %}
+    <div class="js-wsu-events-card wsu-events-card {{classes}}"
         data-component-id="{{range(100, 1000) | random}}"
         data-type="{{type}}"
         data-search="{{search}}"
