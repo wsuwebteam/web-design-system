@@ -22,7 +22,7 @@ const EventCards = function (el) {
           month: "short",
         });
         const day = date.getDate();
-        return `<article class="wsu-card wsu-events-card">
+        return `<article class="wsu-card wsu-events-card ${data.className}">
             <div class="wsu-events-card__container">
               <a href="${event.url}">${event.title}</a>
                 <div class="wsu-events-card__meta">                
