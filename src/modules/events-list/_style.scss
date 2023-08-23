@@ -72,3 +72,22 @@
     margin-bottom: 1rem;
   }
 }
+
+.wsu-events-list.wsu-color-scheme--dark{
+  color: white;
+  background-color: #262626;
+  a {
+    color: white;
+    text-decoration-color: white;
+  }
+  a:hover {
+    color: white;
+    text-decoration-color: transparent;
+  }
+  .wsu-events-list__date-day{
+    color: #fafafa;
+  }
+  .wsu-events-list__meta-location::before{
+    color: white;
+  }
+}

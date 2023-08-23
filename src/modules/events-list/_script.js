@@ -22,7 +22,7 @@ const EventList = function (el) {
             const month = date.toLocaleString("en-US", {
               month: "short",
             });
-            const day = date.getDay();
+            const day = date.getDate();
             return `<li>
                 <div class="wsu-events-list__container">
                     <div class="wsu-events-list__date">
@@ -96,6 +96,6 @@ const EventList = function (el) {
   init();
 };
 
-document.querySelectorAll(".wsu-events-list").forEach((el) => {
+document.querySelectorAll(".js-wsu-events-list").forEach((el) => {
   new EventList(el);
 });

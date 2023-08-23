@@ -30,6 +30,7 @@ import WsuNavSiteHoriz from '../modules/nav-site-horiz/_script';
 //import '../components/slider-frame/_script';
 import '../modules/hero-slider/_script';
 import '../modules/events-list/_script';
+import '../modules/events-card/_script';
 
 import '../modules/carousel/_script';
 import WsuComponents from '../../_assets/js/wsu-components';
