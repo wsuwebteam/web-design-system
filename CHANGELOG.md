@@ -1,3 +1,20 @@
+# [2.11.0](https://github.com/wsuwebteam/web-design-system/compare/v2.10.0...v2.11.0) (2023-08-23)
+
+
+### Bug Fixes
+
+* add classname to event cards ([f9295ee](https://github.com/wsuwebteam/web-design-system/commit/f9295ee0c7e1acabb3b3304e73775566c6923612))
+* used wrong method for getting the date ([3a9c7f1](https://github.com/wsuwebteam/web-design-system/commit/3a9c7f10fdc532b55a3883a6df8cc75b0968aea4))
+
+
+### Features
+
+* add dark mode controls to callout ([4f6a982](https://github.com/wsuwebteam/web-design-system/commit/4f6a98217c296ce371d694bd7d4ccbc11486ca9c))
+* add dark mode to accordion, callout, and spotlight ([ee43c51](https://github.com/wsuwebteam/web-design-system/commit/ee43c51cb261ca12727a2a68e56fcbfd96d41f1a))
+* added dark mode style to Events List block ([4a4e613](https://github.com/wsuwebteam/web-design-system/commit/4a4e613f0dd73dd6b1af03fb52acd5e536e1920c))
+* edited dark mode on accordion and removed from callout ([d38fd5e](https://github.com/wsuwebteam/web-design-system/commit/d38fd5e02cafde29571ae2de8ddca198f2656653))
+* **events:** create JS and standalone version for event-card ([d8df09b](https://github.com/wsuwebteam/web-design-system/commit/d8df09b2a60d5f07ef9e03125bb944c5ba713cf0))
+
 # [2.10.0](https://github.com/wsuwebteam/web-design-system/compare/v2.9.1...v2.10.0) (2023-08-16)
 
 
