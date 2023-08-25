@@ -1,3 +1,12 @@
+## [2.11.1](https://github.com/wsuwebteam/web-design-system/compare/v2.11.0...v2.11.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* add events-card css to WP styles ([a084f19](https://github.com/wsuwebteam/web-design-system/commit/a084f198e08edaa32dfefecb125caa35e5ed0437))
+* add hero style to editor ([29d65a4](https://github.com/wsuwebteam/web-design-system/commit/29d65a4a01e92016c400fb60cb529b6939d07004))
+* add style boxed to hero ([3b1e749](https://github.com/wsuwebteam/web-design-system/commit/3b1e7493888f549c2125a4280d879e00d50656d4))
+
 # [2.11.0](https://github.com/wsuwebteam/web-design-system/compare/v2.10.0...v2.11.0) (2023-08-23)
 
 
