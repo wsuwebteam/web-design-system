@@ -1,3 +1,36 @@
+# [2.11.0](https://github.com/wsuwebteam/web-design-system/compare/v2.10.0...v2.11.0) (2023-08-23)
+
+
+### Bug Fixes
+
+* add classname to event cards ([f9295ee](https://github.com/wsuwebteam/web-design-system/commit/f9295ee0c7e1acabb3b3304e73775566c6923612))
+* used wrong method for getting the date ([3a9c7f1](https://github.com/wsuwebteam/web-design-system/commit/3a9c7f10fdc532b55a3883a6df8cc75b0968aea4))
+
+
+### Features
+
+* add dark mode controls to callout ([4f6a982](https://github.com/wsuwebteam/web-design-system/commit/4f6a98217c296ce371d694bd7d4ccbc11486ca9c))
+* add dark mode to accordion, callout, and spotlight ([ee43c51](https://github.com/wsuwebteam/web-design-system/commit/ee43c51cb261ca12727a2a68e56fcbfd96d41f1a))
+* added dark mode style to Events List block ([4a4e613](https://github.com/wsuwebteam/web-design-system/commit/4a4e613f0dd73dd6b1af03fb52acd5e536e1920c))
+* edited dark mode on accordion and removed from callout ([d38fd5e](https://github.com/wsuwebteam/web-design-system/commit/d38fd5e02cafde29571ae2de8ddca198f2656653))
+* **events:** create JS and standalone version for event-card ([d8df09b](https://github.com/wsuwebteam/web-design-system/commit/d8df09b2a60d5f07ef9e03125bb944c5ba713cf0))
+
+# [2.10.0](https://github.com/wsuwebteam/web-design-system/compare/v2.9.1...v2.10.0) (2023-08-16)
+
+
+### Bug Fixes
+
+* add event-list css to editor ([f68554c](https://github.com/wsuwebteam/web-design-system/commit/f68554cb1da4b4170a7492d8a9b4b3af2842dd84))
+* add link color to lockup ([3b670ca](https://github.com/wsuwebteam/web-design-system/commit/3b670ca0788e719b7f871d3f9e4ac3be4894e6f1))
+* add print styling ([a716644](https://github.com/wsuwebteam/web-design-system/commit/a716644208a2bed9e2105c930329351561e32a73))
+* additional print styles ([322f3c5](https://github.com/wsuwebteam/web-design-system/commit/322f3c5d051583345a409c2943c23c909f5bd211))
+* wrap summary in a paragraph tag ([942f9e9](https://github.com/wsuwebteam/web-design-system/commit/942f9e94777d79c345ec5ae2d561c48afbfac0dc))
+
+
+### Features
+
+* **events:** create JS and standalone version for event-list ([f78ead1](https://github.com/wsuwebteam/web-design-system/commit/f78ead149acad66d6445b3f3b7a9050bef9fb1ad))
+
 ## [2.9.1](https://github.com/wsuwebteam/web-design-system/compare/v2.9.0...v2.9.1) (2023-07-28)
 
 
