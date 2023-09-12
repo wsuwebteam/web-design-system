@@ -1,0 +1,43 @@
+
+.wsu-video-background--style-fill {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+
+    .wsu-video-background {
+
+        &__video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%,-50%);
+            object-fit: cover;
+        }
+
+        &__ui {
+            opacity: 0;
+            transition: opacity ease-in-out 500ms 500ms;
+        }
+
+    }
+
+    &.wsu-video-background--initialized {
+
+        .wsu-video-background {
+
+            &__ui {
+                opacity: 1;
+            }
+    
+        }
+
+    }
+
+}

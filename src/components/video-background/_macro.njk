@@ -1,0 +1,11 @@
+{% macro videoBackground(classes='', style='fill' ) %}
+
+<div class="wsu-video-background{% if classes %} {{ classes }}{% endif %}{% if style %} wsu-video-background--style-{{ style }}{% endif %}" >
+    <div class="wsu-video-background__inner">
+        <video class="wsu-video-background__video" autoplay loop muted poster="https://source.unsplash.com/collection/895539" data-source="https://s3.wp.wsu.edu/uploads/videos/wsu-homepage.mp4">
+            
+        </video>
+    </div>
+    <button class="wsu-video-background__ui" aria-label="Pause Video"></button>
+</div>
+{% endmacro %}
