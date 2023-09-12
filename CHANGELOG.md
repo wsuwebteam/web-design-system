@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/wsuwebteam/web-design-system/compare/v2.11.1...v2.12.0) (2023-09-12)
+
+
+### Features
+
+* video background component ([a6a2ccc](https://github.com/wsuwebteam/web-design-system/commit/a6a2cccf983ab4e573b90f49ca744774b4664e3d))
+
 ## [2.11.1](https://github.com/wsuwebteam/web-design-system/compare/v2.11.0...v2.11.1) (2023-08-25)
 
 
