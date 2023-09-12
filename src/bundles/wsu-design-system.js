@@ -25,6 +25,7 @@ import WsuSlideInPanel from '../components/slide-in-panel/_script';
 import WsuVideoPlayers from '../components/video-player/_script';
 import WsuBackToTop from '../components/back-to-top/_script';
 import WsuNavSiteHoriz from '../modules/nav-site-horiz/_script';
+import WsuBackgroundVideo from '../components/video-background/_script';
 
 
 //import '../components/slider-frame/_script';
@@ -36,14 +37,19 @@ import '../modules/carousel/_script';
 import WsuComponents from '../../_assets/js/wsu-components';
 import WsuEvents from '../../_assets/js/wsu-events';
 
+let wsuComponents = new WsuComponents();
+let wsuEvents = new WsuEvents();
 
-window['wsuComponents'] = new WsuComponents();
-window['wsuEvents']     = new WsuEvents();
+window['wsuComponents'] = wsuComponents;
+window['wsuEvents']     = wsuEvents;
 
 window['wsuComponents'].add( 'nav-site-horiz', new WsuNavSiteHoriz() );
 window['wsuComponents'].add( 'navigation-vertical', new WsuNavigationVertical() );
 window['wsuComponents'].add( 'wsu-action-expanded', new WsuActionExpanded() );
 window['wsuComponents'].add( 'wsu-action-cookie', new WsuActionCookie() );
+window['wsuComponents'].add( 'wsu-background-video', new WsuBackgroundVideo( wsuComponents, wsuEvents ) );
+
+
 
 
 const wsu = {
