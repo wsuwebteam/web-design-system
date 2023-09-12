@@ -360,6 +360,39 @@
     
 }
 
+.wsu-hero {
+
+    .wsu-video-background__ui {
+        outline: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #262626;
+        color: #fff;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        z-index: 1000;
+
+        &::after {
+            content: "\f132";
+            font-family: wsu-icons;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            color: inherit;
+            font-size: inherit;
+        }
+    }
+
+}
+
 .wsu-header-global ~ .wsu-wrapper-site .wsu-hero--size-full {
 
     .wsu-hero__content {
