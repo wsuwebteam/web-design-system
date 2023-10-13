@@ -21,6 +21,7 @@ const PeopleList = function (el) {
     "tag",
     "photo-size",
     "profile-order",
+    "directory",
   ];
   const filterAttributeMap = {
     location: "university_location",
@@ -46,6 +47,8 @@ const PeopleList = function (el) {
   });
   const componentId = el.dataset.componentId;
   const profileLink = el.dataset.profileLink ?? "";
+  const directory = el.dataset.directory ?? "";
+  const includeChildDirectories = el.dataset.children ?? "";
   const displayFields = el.dataset.displayFields.split(",");
   const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
   const excludedTerms = el.dataset.excludeTermValues
@@ -629,8 +632,6 @@ const PeopleList = function (el) {
       return acc;
     }, [])
     .join("&"); 
-
-    
     
     // make request
     return fetch(apiEndpoint + params)
