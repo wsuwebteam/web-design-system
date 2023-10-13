@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/wsuwebteam/web-design-system/compare/v2.12.0...v2.13.0) (2023-10-13)
+
+
+### Features
+
+* add directory support to people ([881bc02](https://github.com/wsuwebteam/web-design-system/commit/881bc024f57f5983451b535085a22a43e42ea054))
+
 # [2.12.0](https://github.com/wsuwebteam/web-design-system/compare/v2.11.1...v2.12.0) (2023-09-12)
 
 
