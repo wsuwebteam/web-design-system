@@ -1,0 +1,16 @@
+{% extends "component.njk" %}
+{% from "marker/_macro.njk" import marker %}
+
+{% block content %}
+
+<h2>Markers individually as divs</h2>
+{{marker(color='vineyard')}}
+{{marker(color='pacificsky')}}
+
+<h2>Markers as a list</h2>
+<ul class="wsu-marker__group">
+    {{marker(color='vineyard', tag="li", text="WSU Pullman")}}
+    {{marker(color='vineyard', tag="li", text="WSU Everett")}}
+    {{marker(color='vineyard', tag="li", text="WSU Tri-Cities")}}
+</ul>
+{%  endblock %}
