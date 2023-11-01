@@ -1,0 +1,51 @@
+{% from "image-frame/_macro.njk" import imageFrame %}
+{% from "marker/_macro.njk" import marker %}
+{% from "heading/_macro.njk" import heading %}
+{% from "button/_macro.njk" import button %}
+
+{% macro degreeProfile( bodyClasses, degreeTitle="Agricultural Technology and Production Management", campuses=["WSU Pullman", "WSU Vancouver", "WSU Tri-Cities"], degreeTypes=["Bachelor", "Master", "Doctoral"] ) %}
+    <div class="wsu-degree-profile {{bodyClasses}}">
+        <div class="wsu-degree-profile__hero">
+            <div class="wsu-degree-profile__hero-left">
+                <div class="wsu-degree-profile__title">
+                    {{heading(tag='h1', title=degreeTitle )}}
+                </div>
+                <div class="wsu-degree-profile__colleges">
+                    <p class="wsu-degree-profile__college">College of Agriculture, Human, and Natural Resource Sciences</p>
+                    <p class="wsu-degree-profile__department">Agricultural and Food Systems Program</p>
+                </div>
+                <div class="wsu-degree-profile__colleges">
+                    <p class="wsu-degree-profile__college">College of Agriculture, Human, and Natural Resource Sciences</p>
+                    <p class="wsu-degree-profile__department">Agricultural and Food Systems Program</p>
+                </div>
+                <div class="wsu-degree-profile__short-desc">
+                    <p>From precision agricultural operations and services to management of agricultural business and production operations, you’ll be ready to own, operate, and manage your own business.</p>
+                </div>
+                <div class="wsu-degree-profile__degree-tags">
+                    <p class="wsu-degree-profile__degree-tags-label">Campuses:</p>
+                    <ul class="wsu-marker__group">
+                        {% for campus in campuses %}
+                            {{marker(color='vineyard', tag="li", text=campus)}}
+                        {% endfor %}
+                    </ul>
+                    <p class="wsu-degree-profile__degree-tags-label">Degree Types:</p>
+                    <ul class="wsu-marker__group">
+                        {% for degree in degreeTypes %}
+                            {{marker(color='pacificsky', tag="li", text=degree)}}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="wsu-degree-profile__hero-right">
+                <div class="wsu-degree-profile__hero-image">
+                {{ imageFrame(' wsu-image-frame--large wsu-ratio--square', imageSrc="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/118326292_3587265347972711_1850701655313517960_n.jpg" ) }} 
+                </div>
+                <div class="wsu-degree-profile__hero-cta-wrapper">
+                    {{ button( classes = ' wsu-degree-profile__hero-cta wsu-degree-profile__hero-cta-rfi', tag='a', title="Request Information") }}
+                    {{ button( classes = ' wsu-degree-profile__hero-cta wsu-degree-profile__hero-cta-apply', tag='a', title="Apply") }}
+                    {{ button( classes = ' wsu-degree-profile__hero-cta wsu-degree-profile__hero-cta-visit', tag='a', title="Visit") }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

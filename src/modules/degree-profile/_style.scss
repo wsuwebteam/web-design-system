@@ -1,0 +1,93 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-degree-profile{
+    &__hero{
+        display: flex;
+        flex-direction: row;
+
+    }
+    &__hero-left{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-right: 2rem;
+    }
+    &__hero-right{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    &__title h1{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    &__title h1:after{
+        display: none;
+    }
+    &__colleges{
+        border-left: 7px solid $wsu-color--crimson-light;
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+    }
+    &__colleges p:last-child{
+        margin-bottom: 0;
+    }
+    &__college{
+        margin-bottom: 0.75rem;
+        line-height: 1.25;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #666;
+    }
+    &__department{
+        color: $wsu-color--crimson-light;
+        font-weight: 600;
+    }
+    &__degree-tags-label{
+        margin-bottom: 0.25rem;
+    }
+    &__short-desc p{
+        margin: 1rem 0 1rem 0;
+    }
+    &__hero-cta-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $wsu-color--crimson;
+    }
+    &__hero-cta-wrapper :last-child{
+        border-right: none;
+    }
+    &__hero-cta{
+        padding: 1.5rem;
+        padding-right: 32px;
+        border-radius: 0;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-right: 2px solid white;
+    }
+    &__hero-cta::before{
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        font-family: wsu-icons;
+        font-size: 1em;
+        font-weight: 300;
+        flex-shrink: 0;
+    }
+    &__hero-cta-rfi::before{
+        content:"\F123";
+    }
+    &__hero-cta-apply::before{
+        content:"\F117";
+    }
+    &__hero-cta-visit::before{
+        content:"\F127";
+    }
+}
+.wsu-marker__group{
+    margin-bottom: 0;
+}
