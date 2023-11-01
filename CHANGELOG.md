@@ -1,3 +1,11 @@
+## [2.14.1](https://github.com/wsuwebteam/web-design-system/compare/v2.14.0...v2.14.1) (2023-11-01)
+
+
+### Bug Fixes
+
+* update profile-link logic ([ec5ca2a](https://github.com/wsuwebteam/web-design-system/commit/ec5ca2a7f342f7a1013a5d7b81f83090841e79a7))
+* update profile-link logic ([#26](https://github.com/wsuwebteam/web-design-system/issues/26)) ([0e10401](https://github.com/wsuwebteam/web-design-system/commit/0e10401f66176de0d00a31f580bb401b1dc556c7))
+
 # [2.14.0](https://github.com/wsuwebteam/web-design-system/compare/v2.13.0...v2.14.0) (2023-11-01)
 
 
