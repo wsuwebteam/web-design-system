@@ -82,15 +82,9 @@ const PeopleList = function (el) {
   function getPersonHTML(person) {
     // console.log(person);
 
-    const linkProfile = ( displayFields.includes("profile-link") && person.bio ) ? true : false;
-
-    if ( showProfile && person.bio ) {
-
-      linkProfile = true;
-
-    }
+    let linkProfile = ( ( profileLink && person.bio ) || ( showProfile && person.bio ) ) ? true : false;
   
-    let profileUrl  = person.profile_url;
+    let profileUrl  = '';
 
     if ( showProfile ) {
 
