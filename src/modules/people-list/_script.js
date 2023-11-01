@@ -47,6 +47,8 @@ const PeopleList = function (el) {
   });
   const componentId = el.dataset.componentId;
   const profileLink = el.dataset.profileLink ?? "";
+  const showProfile = el.dataset.showProfile ?? "";
+  const customProfileLink = el.dataset.customProfileLink ?? "";
   const directory = el.dataset.directory ?? "";
   const includeChildDirectories = el.dataset.children ?? "";
   const displayFields = el.dataset.displayFields.split(",");
@@ -65,6 +67,8 @@ const PeopleList = function (el) {
     el.dataset.classificationFilterTerms
   );
 
+  const profilePath = `https://${window.location.hostname}/${window.location.pathname}/wsu-profile/`;
+
   const includedTerms = [];
   let selectedFiltersList = [];
   let allPeopleString = "";
@@ -78,13 +82,33 @@ const PeopleList = function (el) {
   function getPersonHTML(person) {
     // console.log(person);
 
-    const linkProfile =
-      displayFields.includes("profile-link") || (profileLink && person.bio)
-        ? true
-        : false;
-    const profileUrl = displayFields.includes("profile-link")
-      ? person.profile_url
-      : `${profileLink}?nid=${person.nid}`;
+    const linkProfile = ( displayFields.includes("profile-link") && person.bio ) ? true : false;
+    let profileUrl  = person.profile_url;
+
+    if ( showProfile ) {
+
+      if ( customProfileLink ) {
+
+      }
+
+      profileUrl = ( customProfileLink ) ? `${customProfileLink}wsu-profile/${person.nid}` : `https://${window.location.hostname}/${window.location.pathname}/wsu-profile/${person.nid}`;
+
+    } else if ( profileLink ) {
+
+      profileUrl = `${profileLink}?nid=${person.nid}`;
+
+    } else {
+
+      profileUrl = person.profile_url;
+
+    }
+
+    if ( ! profileUrl ) {
+
+      linkProfile = false;
+
+    }
+
 
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
@@ -191,6 +215,11 @@ const PeopleList = function (el) {
               linkProfile
                 ? `<div class="wsu-card__person-link"><a href="${profileUrl}" class="wsu-button wsu-button--style-action">View Profile</a></div>`
                 : ""
+            }
+            ${
+              `<div class="wsu-card__person-link">
+              <a class="wsu-button wsu-button--style-action" href="${profileUrl}">View Profile</a>
+            </div>`
             }
         </div>
     </div>`;
