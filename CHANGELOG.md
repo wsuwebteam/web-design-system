@@ -1,3 +1,15 @@
+# [2.14.0](https://github.com/wsuwebteam/web-design-system/compare/v2.13.0...v2.14.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* hide hero on print ([63b5abd](https://github.com/wsuwebteam/web-design-system/commit/63b5abd3f8257e9a8f07b165400de1319edd4cfb))
+
+
+### Features
+
+* add people list view profile ([2ebf06d](https://github.com/wsuwebteam/web-design-system/commit/2ebf06d7e1f8793881e2ca5c5f0c19f1d8f98dac))
+
 # [2.13.0](https://github.com/wsuwebteam/web-design-system/compare/v2.12.0...v2.13.0) (2023-10-13)
 
 
