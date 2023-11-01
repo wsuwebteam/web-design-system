@@ -83,15 +83,18 @@ const PeopleList = function (el) {
     // console.log(person);
 
     const linkProfile = ( displayFields.includes("profile-link") && person.bio ) ? true : false;
+
+    if ( showProfile && person.bio ) {
+
+      linkProfile = true;
+
+    }
+  
     let profileUrl  = person.profile_url;
 
     if ( showProfile ) {
 
-      if ( customProfileLink ) {
-
-      }
-
-      profileUrl = ( customProfileLink ) ? `${customProfileLink}wsu-profile/${person.nid}` : `https://${window.location.hostname}/${window.location.pathname}/wsu-profile/${person.nid}`;
+      profileUrl = ( customProfileLink ) ? `${customProfileLink}wsu-profile/${person.nid}` : `https://${window.location.hostname}${window.location.pathname}wsu-profile/${person.nid}`;
 
     } else if ( profileLink ) {
 
@@ -215,11 +218,6 @@ const PeopleList = function (el) {
               linkProfile
                 ? `<div class="wsu-card__person-link"><a href="${profileUrl}" class="wsu-button wsu-button--style-action">View Profile</a></div>`
                 : ""
-            }
-            ${
-              `<div class="wsu-card__person-link">
-              <a class="wsu-button wsu-button--style-action" href="${profileUrl}">View Profile</a>
-            </div>`
             }
         </div>
     </div>`;
