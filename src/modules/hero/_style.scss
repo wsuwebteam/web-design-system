@@ -89,3 +89,11 @@
 
 @import './style-caption';
 @import './style-title';
+
+/* ------------------- Print Styles ----------------- */
+
+@media print { 
+    .wsu-hero {
+        display: none !important;
+    }
+}

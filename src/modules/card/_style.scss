@@ -95,6 +95,10 @@
 
     }
 
+    &-person {
+        position: relative;
+    }
+
     &__content {
         padding-top: $wsu-spacing--small;
         padding-bottom: $wsu-spacing--medium;
@@ -162,6 +166,40 @@
                 left: 0;
             }
             
+        }
+
+        
+    }
+
+    &__footer-link-wrapper {
+        height: 30px;
+    }
+
+    &__footer-link {
+        text-decoration: none;
+        font-size: $wsu-font-size--xsmall;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        text-align: center; 
+        padding: $wsu-spacing--xsmall 0;
+        display: block;
+
+        &::after {
+            content: "\F108";
+            display: inline-block;
+            transform: rotate(-45deg);
+            font-size: $wsu-font-size--xxsmall;
+            font-family: 'wsu-icons';
+            margin-left: 0.4em;
+        }
+        
+
+        &:hover,
+        &:focus {
+            text-decoration: underline; 
         }
     }
 
