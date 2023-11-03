@@ -24,6 +24,12 @@
       background-image: none;
       background-color: $wsu-color--gray-5;
     }
+
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
   }
   &__photo {
     object-fit: cover;
@@ -43,6 +49,10 @@
 
   &__meta {
     font-size: $wsu-font-size--small;
+  }
+
+  &__bio {
+    width: 100%;
   }
 }
 
