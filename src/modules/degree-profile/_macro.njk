@@ -2,8 +2,10 @@
 {% from "marker/_macro.njk" import marker %}
 {% from "heading/_macro.njk" import heading %}
 {% from "button/_macro.njk" import button %}
+{% from "accordion/_macro.njk" import accordion %}
 
-{% macro degreeProfile( bodyClasses, degreeTitle="Agricultural Technology and Production Management", campuses=["WSU Pullman", "WSU Vancouver", "WSU Tri-Cities"], degreeTypes=["Bachelor", "Master", "Doctoral"] ) %}
+
+{% macro degreeProfile( bodyClasses, degreeTitle="Agricultural Technology and Production Management", degreeContactUrl="rep.wsu.edu", degreeContactEmail="future.coug@wsu.edu", degreeContactPhone="888-468-6978", degreeContactVanityPhone="888-GO-TO-WSU", degreeOptions=["Bachelor", "Master", "Doctorate"], campuses=["WSU Pullman", "WSU Vancouver", "WSU Tri-Cities"], degreeTypes=["Bachelor", "Master", "Doctoral"] ) %}
     <div class="wsu-degree-profile {{bodyClasses}}">
         <div class="wsu-degree-profile__hero">
             <div class="wsu-degree-profile__hero-left">
@@ -44,6 +46,101 @@
                     {{ button( classes = ' wsu-degree-profile__hero-cta wsu-degree-profile__hero-cta-rfi', tag='a', title="Request Information") }}
                     {{ button( classes = ' wsu-degree-profile__hero-cta wsu-degree-profile__hero-cta-apply', tag='a', title="Apply") }}
                     {{ button( classes = ' wsu-degree-profile__hero-cta wsu-degree-profile__hero-cta-visit', tag='a', title="Visit") }}
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="wsu-degree-profile__content">
+            <div class="wsu-degree-profile__content-left">
+                <div class="wsu-degree-profile__dig-deeper wsu-notch--small">
+                    <div class="wsu-degree-profile__dig-deeper-left">
+                        <svg width="94" height="88" viewBox="0 0 94 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M91.728 74L91.7088 2.00901L14.9723 2" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.17969 86L91.728 2" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="wsu-degree-profile__dig-deeper-right ">
+                        <p><b>Dig Deeper</b><br>
+                        Find out more about a degree in Agricultural Technology and Production Management</p>
+                        {{ button( classes = ' ', tag='a', title="Let's Go") }}
+                    </div>
+                </div>
+                <h2>Highlights</h2>
+                <ul>
+                    <li>Greenhouses, farms, research centers and other facilities available on campus and throughout the state</li>
+                    <li>Participate in undergraduate research guided by renowned faculty</li>
+                    <li>Blend of classroom instruction and hands-on field experience</li>
+                    <li>Join a math, science, and engineering residence hall, where you can study with your neighbors, get free tutoring, and use the hall’s computer lab</li>
+                </ul>
+                <h2>Career</h2>
+                <p>With an Agricultural Technology and Production degree, you can work in:</p>
+                <ul>
+                    <li>Management of farms, feedlots, and nurseries</li>
+                    <li>Plant and animal breeding</li>
+                    <li>Consulting</li>
+                    <li>Food quality assurance</li>
+                </ul>
+                <h2>Internships</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sit amet erat dictum dapibus.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sit amet erat dictum dapibus.</li>
+                </ul>
+                <h2>Scholarships</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sit amet erat dictum dapibus.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sit amet erat dictum dapibus.</li>
+                </ul>
+                <h2>Transfer Students</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sit amet erat dictum dapibus.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sit amet erat dictum dapibus.</li>
+                </ul>
+            </div>
+            <div class="wsu-degree-profile__content-right">
+                <div class="wsu-degree-profile__degree-details">
+                    <div class="wsu-degree-profile__degree-details-header">
+                        <h2>Degree Options</h2>
+                        <div class="wsu-decorator--style-lines-gray" style="width: 25%;height: 106%;top: 0;right: 0; background-image: repeating-linear-gradient(135deg,#ffffff,#ffffff 2px,transparent 2px,transparent 10px)"></div>
+                    </div>
+                    <div class="wsu-degree-profile__degree-details-body">
+                        {% for degreeOpt in degreeOptions %}
+                            <div class="wsu-accordion wsu-accordion--small">
+                            <h3 id="unique-id-1__title" class="wsu-accordion__title">
+                                <button  class="wsu-accordion__title-button wsu-accordion--toggle" aria-expanded="false" aria-controls="unique-id-1__content">{{degreeOpt}}</button>
+                            </h3>
+                            <div id="unique-id-1__content" class="wsu-accordion__content" aria-labelledby="unique-id-1__title">
+                                <div class="wsu-accordion__content-inner">
+                                    <h4>Communication</h4>
+                                    <ul class="wsu-marker__group">
+                                        {% for campus in campuses %}
+                                            {{marker(color='vineyard', tag="li", text=campus)}}
+                                        {% endfor %}
+                                    </ul>
+                                    <h4>Strategic Communication</h4>
+                                    <ul class="wsu-marker__group">
+                                        {% for campus in campuses %}
+                                            {{marker(color='vineyard', tag="li", text=campus)}}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="wsu-degree-profile__degree-details">
+                    <div class="wsu-degree-profile__degree-details-header">
+                        <h2>Degree Contact</h2>
+                        <div class="wsu-decorator--style-lines-gray" style="width: 25%;height: 106%;top: 0;right: 0; background-image: repeating-linear-gradient(135deg,#ffffff,#ffffff 2px,transparent 2px,transparent 10px)"></div>
+                    </div>
+                    <div class="wsu-degree-profile__degree-details-body">
+                        <p>Contact your personal admission counselor</p>
+                        <ul>
+                            <li class="wsu-degree-profile__contact-url"><a href="https://{{degreeContactUrl}}">{{degreeContactUrl}}</a></li>
+                            <li class="wsu-degree-profile__contact-email"><a href="mailto:{{degreeContactEmail}}">{{degreeContactEmail}}</a></li>
+                            <li class="wsu-degree-profile__contact-phone"><a href="tel:{{degreeContactPhone}}">{{degreeContactVanityPhone}}<br>({{degreeContactPhone}})<a href="mailto:{{degreeContactEmail}}"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
