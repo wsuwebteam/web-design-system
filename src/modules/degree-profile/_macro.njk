@@ -3,7 +3,7 @@
 {% from "heading/_macro.njk" import heading %}
 {% from "button/_macro.njk" import button %}
 {% from "accordion/_macro.njk" import accordion %}
-
+{% from "card/_macro.njk" import card %}
 
 {% macro degreeProfile( bodyClasses, degreeTitle="Agricultural Technology and Production Management", degreeContactUrl="rep.wsu.edu", degreeContactEmail="future.coug@wsu.edu", degreeContactPhone="888-468-6978", degreeContactVanityPhone="888-GO-TO-WSU", degreeOptions=["Bachelor", "Master", "Doctorate"], campuses=["WSU Pullman", "WSU Vancouver", "WSU Tri-Cities"], degreeTypes=["Bachelor", "Master", "Doctoral"] ) %}
     <div class="wsu-degree-profile {{bodyClasses}}">
@@ -143,6 +143,74 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="wsu-degree-profile__related wsu-card-group wsu-card-group--per-row-3">
+            <article class="wsu-card wsu-degree-profile__related-card">
+                <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+                    <a href="#" tabindex="-1" aria-hidden="true">
+                        <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_16-Untitled-–-Figma.jpg">
+                    </a>
+                </div>
+                <div class="wsu-card__content">
+                    <h2 class="wsu-title"><a href="#">Agricultural Biotechnology</a></h2>
+                    <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
+                </div>
+            </article>
+            <article class="wsu-card wsu-degree-profile__related-card">
+                <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+                    <a href="#" tabindex="-1" aria-hidden="true">
+                        <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_24-Untitled-–-Figma.jpg">
+                    </a>
+                </div>
+                <div class="wsu-card__content">
+                    <h2 class="wsu-title"><a href="#">Agricultural Education</a></h2>
+                    <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
+                </div>
+            </article>
+            <article class="wsu-card wsu-degree-profile__related-card">
+                <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+                    <a href="#" tabindex="-1" aria-hidden="true">
+                        <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_35-Untitled-–-Figma.jpg">
+                    </a>
+                </div>
+                <div class="wsu-card__content">
+                    <h2 class="wsu-title"><a href="#">Agricultural and Food Business Economics</a></h2>
+                    <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
+                </div>
+            </article>
+            <article class="wsu-card wsu-degree-profile__related-card"> 
+                <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+                    <a href="#" tabindex="-1" aria-hidden="true">
+                        <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/118326292_3587265347972711_1850701655313517960_n.jpg">
+                    </a>
+                </div>
+                <div class="wsu-card__content">
+                    <h2 class="wsu-title"><a href="#">Agricultural Technology and Production Management</a></h2>
+                    <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
+                </div>
+            </article>
+            <article class="wsu-card wsu-degree-profile__related-card">
+                <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+                    <a href="#" tabindex="-1" aria-hidden="true">
+                        <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_51-Untitled-–-Figma.jpg">
+                    </a>
+                </div>
+                <div class="wsu-card__content">
+                    <h2 class="wsu-title"><a href="#">Animal Sciences</a></h2>
+                    <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
+                </div>
+            </article>
+            <article class="wsu-card wsu-degree-profile__related-card">
+                <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
+                    <a href="#" tabindex="-1" aria-hidden="true">
+                        <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_19_06-Untitled-–-Figma.jpg">
+                    </a>
+                </div>
+                <div class="wsu-card__content">
+                    <h2 class="wsu-title"><a href="#">Field Crop Management</a></h2>
+                    <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
+                </div>
+            </article>
         </div>
     </div>
 {% endmacro %}
