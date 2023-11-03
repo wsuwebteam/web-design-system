@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/wsuwebteam/web-design-system/compare/v2.14.2...v2.15.0) (2023-11-03)
+
+
+### Features
+
+* update profile styling ([f66821f](https://github.com/wsuwebteam/web-design-system/commit/f66821fe2a647569d9bd82388ca86766071944fb))
+
 ## [2.14.2](https://github.com/wsuwebteam/web-design-system/compare/v2.14.1...v2.14.2) (2023-11-01)
 
 
