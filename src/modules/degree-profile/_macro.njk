@@ -130,7 +130,7 @@
                 </div>
                 <div class="wsu-degree-profile__degree-details">
                     <div class="wsu-degree-profile__degree-details-header">
-                        <h2>Degree Contact</h2>
+                        <h2>Contact</h2>
                         <div class="wsu-decorator--style-lines-gray" style="width: 25%;height: 106%;top: 0;right: 0; background-image: repeating-linear-gradient(135deg,#ffffff,#ffffff 2px,transparent 2px,transparent 10px)"></div>
                     </div>
                     <div class="wsu-degree-profile__degree-details-body">
@@ -211,6 +211,21 @@
                     <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
                 </div>
             </article>
+        </div>
+        <div class="wsu-degree-profile__undecided">
+            <div class="wsu-decorator--style-block-crimson-wsu" style="width: 10%;height: 100%;bottom: 0;left: 0;"></div>
+            <div class="wsu-decorator--style-lines-gray" style="width: 10%;height: 10%;bottom: 0;left: 0;"></div>
+
+            <div class="wsu-degree-profile__undecided-cta">
+                <h2>Still undecided?<br>Not sure what to study?</h2>
+                {{ button( classes = ' ', tag='a', title="CTA Click Me Button") }}
+            </div>
+            <div class="wsu-degree-profile__undecided-image">
+                <div class="wsu-decorator--style-block-gray" style="width: 95%;height: 95%;bottom: -1rem;right: -1rem; background-color: #d9d9d9"></div>
+                <figure class="wp-block-image size-large wsu-image--style-inset-outline wsu-notch--small">
+                    <img width="100%" height="unset" src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-06-10_06_49-Untitled-–-Figma.jpg">
+                </figure>
+            </div>
         </div>
     </div>
 {% endmacro %}

@@ -173,8 +173,7 @@
         font-family: 'wsu-icons';
         content: '\f133';
         font-size: 14px;
-    }
-    
+    }    
     &__related-card{
         .wsu-card__content{
             display: flex;
@@ -188,6 +187,28 @@
             margin-bottom: 0;
         }
     }
+    &__undecided{
+        display: flex;
+        background-color: #f5f5f5;
+        padding: 5rem 5% 5rem 13%;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__undecided-cta{
+        width: 50%;
+    }
+    &__undecided-cta h2{
+        margin-bottom: 1.5rem;
+    }
+    &__undecided-image{
+        width: 50%;
+        position: relative;
+    }
+    &__undecided-image figure{
+        margin: 0;
+    }
+
 
     @media screen and (max-width: $wsu-breakpoint--desktop ) {
         .wsu-degree-profile__hero-cta{
@@ -247,6 +268,24 @@
         .wsu-degree-profile__related > *{
             margin: 1rem 2rem !important;
         }
+        .wsu-degree-profile__undecided{
+            flex-direction: column-reverse;
+            padding: 2rem 2rem 5rem;
+        }
+        .wsu-degree-profile__undecided .wsu-decorator--style-block-crimson-wsu {
+            width: 100% !important;
+            height: 10% !important
+        }
+        .wsu-degree-profile__undecided .wsu-decorator--style-lines-gray{
+
+        }
+        .wsu-degree-profile__undecided-image{
+            margin-bottom: 3rem;
+        }
+        .wsu-degree-profile__undecided-cta, .wsu-degree-profile__undecided-image{
+            width: 100%;
+        }
+
     }
     @media screen and (max-width: $wsu-breakpoint--tablet ) {
         .wsu-degree-profile__dig-deeper{
