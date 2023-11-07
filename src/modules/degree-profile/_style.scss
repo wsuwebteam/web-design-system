@@ -19,7 +19,6 @@
         width: 50%;
     }
     &__title h1{
-        font-size: 2rem;
         margin-bottom: 2rem;
     }
     &__title h1:after{
@@ -87,7 +86,11 @@
     &__hero-cta-visit::before{
         content:"\F127";
     }
-
+    &__hero-image .wsu-image-frame img{
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 0.85;
+    }
     &__content{
         display: flex;
         flex-direction: row;
@@ -123,11 +126,12 @@
         flex-direction: row;
         align-items: center;
         padding: 1.5rem;
+        column-gap: 2rem;
     }
     &__dig-deeper-right p{
         margin-bottom: 0;
-        width: 65%;
-        padding: 1rem;
+        flex-basis: 65%;
+        flex-grow: 1;
     }
     &__degree-details{
         display: flex;
@@ -215,6 +219,11 @@
             font-size: 12px;
             padding: 1rem;
         }
+        .wsu-degree-profile__hero-image .wsu-image-frame img{
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 0;
+        }
         &__title h1{
             font-size: 1.5rem;
         }
@@ -275,9 +284,6 @@
         .wsu-degree-profile__undecided .wsu-decorator--style-block-crimson-wsu {
             width: 100% !important;
             height: 10% !important
-        }
-        .wsu-degree-profile__undecided .wsu-decorator--style-lines-gray{
-
         }
         .wsu-degree-profile__undecided-image{
             margin-bottom: 3rem;
@@ -342,9 +348,14 @@
     padding: 0.5rem;
 }
 .wsu-accordion__content-inner h4{
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 .wsu-marker__group{
     margin-bottom: 0;
     flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.wsu-marker{
+    padding: 0.25rem 0.65rem;
 }
