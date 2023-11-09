@@ -61,6 +61,7 @@
     &__hero-cta{
         padding: 1.5rem;
         padding-right: 32px;
+        white-space: nowrap;
         border-radius: 0;
         flex-grow: 1;
         display: flex;
@@ -163,6 +164,12 @@
     &__degree-details-body ul li a{
         padding-left: 10px;
     }
+    &__degree-details-body ul li{
+        margin-bottom: 0;
+    }
+    &__degree-details-body .wsu-marker{
+        font-size: 0.7rem;
+    }
     &__contact-url::marker{
         font-family: 'wsu-icons';
         content: '\f126';
@@ -234,10 +241,10 @@
             padding-right: 0;
         }
         .wsu-degree-profile__content-left > *{
-            margin: 0.5rem 1.5rem;
+            margin: 0.5rem 0;
         }
         .wsu-degree-profile__content-right > *{
-            margin: 0.5rem 1.5rem;
+            margin: 0.5rem 0;
         }
         .wsu-degree-profile__content-right{
             width: 100%;
@@ -251,7 +258,7 @@
             flex-direction: column;
         }
         .wsu-degree-profile__colleges, .wsu-degree-profile__short-desc, .wsu-degree-profile__title, .wsu-degree-profile__degree-tags{
-            margin: 1rem 1.5rem;
+            margin: 1rem 0;
         }
 
         .wsu-degree-profile__title h1{
@@ -275,7 +282,7 @@
             width: 100%;
         }
         .wsu-degree-profile__related > *{
-            margin: 1rem 2rem !important;
+            margin: 1rem -2.25rem !important;
         }
         .wsu-degree-profile__undecided{
             flex-direction: column-reverse;
@@ -321,6 +328,13 @@
             padding-bottom: 1rem;
         }
     }
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+        .wsu-degree-profile__hero-image, .wsu-degree-profile__hero-cta-wrapper, .wsu-degree-profile .wsu-degree-profile__undecided{
+            margin-left: -2.25rem;
+            margin-right: -2.25rem;
+        }
+
+    }
 }
 .wsu-accordion::after{
     display: none;
@@ -351,11 +365,16 @@
     font-size: 1.15rem;
 }
 .wsu-marker__group{
-    margin-bottom: 0;
+    margin-bottom: 0.875rem;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 .wsu-marker{
     padding: 0.25rem 0.65rem;
+}
+@media screen and (max-width: $wsu-breakpoint--phone ) {
+    .wsu-wrapper-content{
+        padding-top: 0 !important;
+    }
 }
