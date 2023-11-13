@@ -25,24 +25,35 @@
         display: none;
     }
     &__colleges{
-        border-left: 7px solid $wsu-color--crimson-light;
-        padding-left: 1rem;
+        // border-left: 7px solid $wsu-color--crimson-light;
         margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
     }
+
     &__colleges p:last-child{
         margin-bottom: 0;
     }
     &__college{
-        margin-bottom: 0.75rem;
+        margin-top: 1rem;   
+        margin-bottom: 0;
+        border-left: 7px solid $wsu-color--crimson-light;
+        padding-left: 1rem;
         line-height: 1.25;
         font-size: 1.25rem;
         font-weight: 700;
         color: #666;
     }
+    
     &__department{
         color: $wsu-color--crimson-light;
+        border-left: 7px solid $wsu-color--crimson-light;
         font-weight: 600;
+        padding-left: 1rem;
+        padding-top: 0.75rem;
+        margin-bottom: 0;
     }
+    
     &__degree-tags-label{
         margin-bottom: 0.25rem;
     }
