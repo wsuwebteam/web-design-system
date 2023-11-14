@@ -44,6 +44,11 @@
         font-weight: 700;
         color: #666;
     }
+    &__college + &__college{
+        margin-top: 0;
+        padding-top: 1rem;   
+        
+    }
     
     &__department{
         color: $wsu-color--crimson-light;
@@ -92,11 +97,9 @@
     &__hero-cta-rfi::before{
         content:"\F123";
     }
-    &__hero-cta-apply::before{
-        content:"\F117";
-    }
-    &__hero-cta-visit::before{
-        content:"\F127";
+    &__hero-cta-apply svg, &__hero-cta-visit svg{
+        width: 2rem;
+        height: 1.5rem;
     }
     &__hero-image .wsu-image-frame img{
         height: 100%;
@@ -242,7 +245,11 @@
             object-fit: cover;
             aspect-ratio: 0;
         }
-        &__title h1{
+        .wsu-degree-profile__hero-cta-apply svg, .wsu-degree-profile__hero-cta-visit svg{
+            width: 1.5rem;
+            height: 1rem;
+        }
+        .wsu-degree-profile__title h1{
             font-size: 1.5rem;
         }
         .wsu-degree-profile__content-left{
