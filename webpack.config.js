@@ -26,11 +26,16 @@ module.exports = env => {
 		mode: DEV ? 'development' : 'production',
 		devtool: DEV ? 'inline-source-map' : 'source-map',
 		devServer: {
-			writeToDisk: true,
-			contentBase: path.join(__dirname),
-			overlay: true,
-			quiet: false,
-			port: 9000
+			// writeToDisk: true,
+			// contentBase: path.join(__dirname),
+			// overlay: true,
+			// quiet: false,
+			// port: 9000
+			static: {
+				directory: path.join(__dirname, 'test'),				
+			},
+			compress: true,
+			port: 9000,
 		},
 		module: {
 			rules: [
