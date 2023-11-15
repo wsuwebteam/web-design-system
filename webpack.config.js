@@ -17,6 +17,7 @@ module.exports = env => {
 			'bundles/standalone/scholarship-list/scripts': './src/bundles/standalone/scholarship-list/index.tsx',
 			'bundles/standalone/events-list/scripts': './src/bundles/standalone/events-list/scripts.js',
 			'bundles/standalone/events-cards/scripts': './src/bundles/standalone/events-cards/scripts.js',
+			'bundles/standalone/degree-finder/scripts': './src/bundles/standalone/degree-finder/index.tsx',
 		},
 		output: {
 			filename: '[name].js',
