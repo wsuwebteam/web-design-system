@@ -2,4 +2,51 @@
 @import "../../../_assets/scss/mixins";
 
 .wsu-degree-finder {
+
+    &__hero{
+        background-color: #4d4d4d;
+
+    }
+    &__hero-top{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__hero-content{
+        max-width: 1200px;
+        margin: auto;
+        padding: 5.125rem 4.125rem 4.125rem;
+        color: white;
+    }
+    &__degrees-grid{
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #d0d0d0;
+        padding-top: 1rem;
+    }
+    &__degrees-grid-controls{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 2rem;
+        gap: 1.5rem;
+    }
+    
+    &__degrees-grid-control button:hover,&__degrees-grid-control button:active,&__degrees-grid-control button:focus {
+        color: $wsu-color--crimson;
+    }
+    &__degrees-grid-control button{
+        border: none;
+        color:#4d4d4d;
+        background-color: transparent;
+        transition: ease-in-out all .1s;
+    }
+    @media screen and (max-width: 576px){
+        &__hero-content{
+            padding: 5.125rem 2.25rem 4.125rem;
+        }
+    }
+}
+.wsu-degree-cta{
+    width: fit-content;
+    margin-right: 0.5rem;
+    border: 1px solid white;
 }

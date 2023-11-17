@@ -1,0 +1,13 @@
+{% extends "component.njk" %}
+{% from "degree-filter-list/_macro.njk" import degreeFilterList %}
+
+{% block content %}
+<div class="wsu-component-demo">
+{% include 'degree-filter-list/html.njk' %}
+
+</div>
+{%  endblock %} 
+
+{% block scripts %}
+    <script src="https://kit.fontawesome.com/5a4d2255bc.js" crossorigin="anonymous"></script>
+{% endblock %}

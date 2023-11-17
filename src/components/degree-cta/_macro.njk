@@ -1,0 +1,21 @@
+{% from "button/_macro.njk" import button %}
+
+{% macro degreeCta( classes='' ) %}
+
+<div class="wsu-degree-cta">
+    
+    <a class="wsu-button wsu-degree-cta__cta wsu-degree-cta__cta-rfi">
+        <i class="fa-kit fa-degree-rfi fa-xl"></i>
+        Request Information
+    </a>
+
+    <a class="wsu-button wsu-degree-cta__cta wsu-degree-cta__cta-apply">
+        <i class="fa-kit fa-degree-apply fa-xl"></i>
+        Apply
+    </a>
+    <a class="wsu-button wsu-degree-cta__cta wsu-degree-cta__cta-visit">
+        <i class="fa-kit fa-degree-visit fa-xl"></i>
+        Visit
+    </a>
+</div>
+{% endmacro %}
