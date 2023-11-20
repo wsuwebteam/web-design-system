@@ -45,6 +45,15 @@
         }
     }
 }
+.wsu-card__content .wsu-degree-grid__favorite-icon-solid{
+    color: transparent;
+}
+.wsu-degree--style-is-favorite .wsu-card__content .wsu-degree-grid__favorite-icon-solid{
+    color: $wsu-color--crimson;
+}
+.wsu-degree--style-is-favorite .wsu-card__content .wsu-degree-grid__favorite-icon-regular{
+    color: $wsu-color--crimson;
+}
 .wsu-degree-cta{
     width: fit-content;
     margin-right: 0.5rem;

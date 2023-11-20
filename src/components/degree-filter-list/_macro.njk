@@ -6,9 +6,8 @@
         <div class="wsu-degree-filter-list__terms">
             {% for term in filterTerms %}
                 <div class="wsu-degree-filter-list__term">
-                    <label for="{{term}}-filter">{{term}}</label>
                     <button id="{{term}}-filter" class="wsu-degree-filter-list__term-control">
-                        <i class="fa-solid fa-xmark"></i>
+                        <span>{{term}}</span><i class="fa-solid fa-xmark wsu-degree-filter-list__term-control-icon"></i>
                     </button>
                 </div>
             {% endfor %}
@@ -16,7 +15,7 @@
         <div class="wsu-degree-filter-list__clear">
             <button class="wsu-button wsu-degree-filter-list__clear-button">
                 <i class="fa-solid fa-rotate-right"></i>
-                Clear All
+                Clear All  
             </button>
         </div>
     </div>

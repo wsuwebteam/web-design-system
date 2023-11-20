@@ -1,4 +1,5 @@
 {% from "degree-cta/_macro.njk" import degreeCta %}
+{% from "degree-finder/_degree-grid.njk" import degreeGrid %}
 {% from "button/_macro.njk" import button %}
 {% from "degree-filter-list/_macro.njk" import degreeFilterList %}
 
@@ -18,92 +19,8 @@
         <div class="wsu-degree-finder__content">
             {{ degreeFilterList() }}
             
-            <div class="wsu-degree-finder__degrees-grid">
-                <div class="wsu-degree-finder__degrees-grid-controls">
-                    <div class="wsu-degree-finder__degrees-grid-control">
-                        <label for="degreeGridControl" class="wsu-screen-reader-only">Change degree list layout to a grid</label>
-                        <button id="degreeGridControl" class="wsu-degree-finder__degrees-grid-control-grid">
-                            <i class="fa-sharp fa-solid fa-grid fa-2xl"></i>
-                        </button>
-                    </div>
-                    <div class="wsu-degree-finder__degrees-grid-control">
-                        <label for="degreeListControl" class="wsu-screen-reader-only">Change degree list layout to a grid</label>
-                        <button id="degreeListControl" class="wsu-degree-finder__degrees-grid-control-list">
-                            <i class="fa-sharp fa-solid fa-list fa-2xl"></i>
-                        </button>
-                    </div>
-                </div>
-                <div id="degreesGrid" class="wsu-card-group wsu-card-group--per-row-3">
-                    <article class="wsu-card wsu-degree-profile__related-card">
-                        <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-                            <a href="#" tabindex="-1" aria-hidden="true">
-                                <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_16-Untitled-–-Figma.jpg">
-                            </a>
-                        </div>
-                        <div class="wsu-card__content">
-                            <h2 class="wsu-title"><a href="#">Agricultural Biotechnology</a></h2>
-                            <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
-                        </div>
-                    </article>
-                    <article class="wsu-card wsu-degree-profile__related-card">
-                        <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-                            <a href="#" tabindex="-1" aria-hidden="true">
-                                <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_24-Untitled-–-Figma.jpg">
-                            </a>
-                        </div>
-                        <div class="wsu-card__content">
-                            <h2 class="wsu-title"><a href="#">Agricultural Education</a></h2>
-                            <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
-                        </div>
-                    </article>
-                    <article class="wsu-card wsu-degree-profile__related-card">
-                        <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-                            <a href="#" tabindex="-1" aria-hidden="true">
-                                <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_35-Untitled-–-Figma.jpg">
-                            </a>
-                        </div>
-                        <div class="wsu-card__content">
-                            <h2 class="wsu-title"><a href="#">Agricultural and Food Business Economics</a></h2>
-                            <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
-                        </div>
-                    </article>
-                    <article class="wsu-card wsu-degree-profile__related-card"> 
-                        <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-                            <a href="#" tabindex="-1" aria-hidden="true">
-                                <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/118326292_3587265347972711_1850701655313517960_n.jpg">
-                            </a>
-                        </div>
-                        <div class="wsu-card__content">
-                            <h2 class="wsu-title"><a href="#">Agricultural Technology and Production Management</a></h2>
-                            <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
-                        </div>
-                    </article>
-                    <article class="wsu-card wsu-degree-profile__related-card">
-                        <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-                            <a href="#" tabindex="-1" aria-hidden="true">
-                                <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_51-Untitled-–-Figma.jpg">
-                            </a>
-                        </div>
-                        <div class="wsu-card__content">
-                            <h2 class="wsu-title"><a href="#">Animal Sciences</a></h2>
-                            <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
-                        </div>
-                    </article>
-                    <article class="wsu-card wsu-degree-profile__related-card">
-                        <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
-                            <a href="#" tabindex="-1" aria-hidden="true">
-                                <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_19_06-Untitled-–-Figma.jpg">
-                            </a>
-                        </div>
-                        <div class="wsu-card__content">
-                            <h2 class="wsu-title"><a href="#">Field Crop Management</a></h2>
-                            <i class="wsu-icon wsu-i-favorite" aria-label="Favorited"></i>
-                        </div>
-                    </article>
-                </div>
-            <div>
-        </div>
-        </div>
+            {{degreeGrid()}}
+            {# {{degreeList()}} #}
         
         <div class="wsu-degree-profile__undecided">
             <div class="wsu-decorator--style-block-crimson-wsu" style="width: 10%;height: 100%;bottom: 0;left: 0;"></div>
