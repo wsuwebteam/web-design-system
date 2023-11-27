@@ -1,21 +1,7 @@
 {% macro degreeGrid( bodyClasses ) %}
 <div class="wsu-degree-finder__degrees-grid">
-    <div class="wsu-degree-finder__degrees-grid-controls" role="selectbox">
-        <div class="wsu-degree-finder__degrees-grid-control">
-            <label for="degreeGridControl" class="wsu-screen-reader-only">Change degree list layout to a grid</label>
-            <button id="degreeGridControl" class="wsu-degree-finder__degrees-grid-control-grid">
-                <i class="fa-sharp fa-solid fa-grid fa-2xl"></i>
-            </button>
-        </div>
-        <div class="wsu-degree-finder__degrees-grid-control">
-            <label for="degreeListControl" class="wsu-screen-reader-only">Change degree list layout to a list</label>
-            <button id="degreeListControl" class="wsu-degree-finder__degrees-grid-control-list">
-                <i class="fa-sharp fa-solid fa-list fa-2xl"></i>
-            </button>
-        </div>
-    </div>
     <div id="degreesGrid" class="wsu-card-group wsu-card-group--per-row-3">
-        <article class="wsu-card wsu-degree-profile__related-card wsu-degree--style-is-favorite">
+        <article class="wsu-card wsu-degree-profile__related-card">
             <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
                 <a href="#" tabindex="-1" aria-hidden="true">
                     <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_16-Untitled-–-Figma.jpg">
@@ -23,9 +9,12 @@
             </div>
             <div class="wsu-card__content">
                 <h2 class="wsu-title"><a href="#">Agricultural Biotechnology</a></h2>
-                <span class="fa-layers fa-fw">
-                    <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
-                    <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                <span class="fa-layers fa-fw " role="listbox">
+                    <span class="wsu-screen-reader-only">Mark as favorite</span>
+                    <span class="wsu-degree-grid__favorite-controls" role="option" aria-selected="true" tabindex="0">
+                        <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
+                        <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                    </span>
                 </span>
             </div>
         </article>
@@ -37,13 +26,16 @@
             </div>
             <div class="wsu-card__content">
                 <h2 class="wsu-title"><a href="#">Agricultural Education</a></h2>
-                <span class="fa-layers fa-fw">
-                    <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
-                    <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                <span class="fa-layers fa-fw " role="listbox">
+                    <span class="wsu-screen-reader-only">Mark as favorite</span>
+                    <span class="wsu-degree-grid__favorite-controls" role="option" aria-selected="true" tabindex="0">
+                        <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
+                        <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                    </span>
                 </span>
             </div>
         </article>
-        <article class="wsu-card wsu-degree-profile__related-card wsu-degree--style-is-favorite">
+        <article class="wsu-card wsu-degree-profile__related-card">
             <div class="wsu-image-frame wsu-image-frame--fixed-ratio">
                 <a href="#" tabindex="-1" aria-hidden="true">
                     <img src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-03-14_18_35-Untitled-–-Figma.jpg">
@@ -51,9 +43,12 @@
             </div>
             <div class="wsu-card__content">
                 <h2 class="wsu-title"><a href="#">Agricultural and Food Business Economics</a></h2>
-                <span class="fa-layers fa-fw">
-                    <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
-                    <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                <span class="fa-layers fa-fw " role="listbox">
+                    <span class="wsu-screen-reader-only">Mark as favorite</span>
+                    <span class="wsu-degree-grid__favorite-controls" role="option" aria-selected="true" tabindex="0">
+                        <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
+                        <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                    </span>
                 </span>
             </div>
         </article>
@@ -65,9 +60,12 @@
             </div>
             <div class="wsu-card__content">
                 <h2 class="wsu-title"><a href="#">Agricultural Technology and Production Management</a></h2>
-                <span class="fa-layers fa-fw">
-                    <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
-                    <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                <span class="fa-layers fa-fw " role="listbox">
+                    <span class="wsu-screen-reader-only">Mark as favorite</span>
+                    <span class="wsu-degree-grid__favorite-controls" role="option" aria-selected="false" tabindex="0">
+                        <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
+                        <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                    </span>
                 </span>
             </div>
         </article>
@@ -79,9 +77,12 @@
             </div>
             <div class="wsu-card__content">
                 <h2 class="wsu-title"><a href="#">Animal Sciences</a></h2>
-                <span class="fa-layers fa-fw">
-                    <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
-                    <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                <span class="fa-layers fa-fw " role="listbox">
+                    <span class="wsu-screen-reader-only">Mark as favorite</span>
+                    <span class="wsu-degree-grid__favorite-controls" role="option" aria-selected="true" tabindex="0">
+                        <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
+                        <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                    </span>
                 </span>
             </div>
         </article>
@@ -93,9 +94,12 @@
             </div>
             <div class="wsu-card__content">
                 <h2 class="wsu-title"><a href="#">Field Crop Management</a></h2>
-                <span class="fa-layers fa-fw">
-                    <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
-                    <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                <span class="fa-layers fa-fw " role="listbox">
+                    <span class="wsu-screen-reader-only">Mark as favorite</span>
+                    <span class="wsu-degree-grid__favorite-controls" role="option" aria-selected="false" tabindex="0">
+                        <i class="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
+                        <i class="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
+                    </span>
                 </span>
             </div>
         </article>

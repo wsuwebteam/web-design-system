@@ -1,5 +1,6 @@
 {% from "degree-cta/_macro.njk" import degreeCta %}
 {% from "degree-finder/_degree-grid.njk" import degreeGrid %}
+{% from "degree-finder/_degree-list.njk" import degreeList %}
 {% from "button/_macro.njk" import button %}
 {% from "degree-filter-list/_macro.njk" import degreeFilterList %}
 
@@ -18,9 +19,25 @@
         </div>
         <div class="wsu-degree-finder__content">
             {{ degreeFilterList() }}
+
+            <div class="wsu-degree-finder__degrees-grid-controls" role="radiogroup" aria-labelledby="degreeControlLabel">
+                <h2 class="wsu-screen-reader-only" id="degreeControlLabel">Choose degree list layout:</h2>
+                <div class="wsu-degree-finder__degrees-grid-control">
+                    <label for="degreeGridControl" class="wsu-screen-reader-only">Change degree list layout to a grid</label>
+                    <button id="degreeGridControl" class="wsu-degree-finder__degrees-grid-control-grid" role="radio" aria-checked="true">
+                        <i class="fa-sharp fa-solid fa-grid fa-2xl"></i>
+                    </button>
+                </div>
+                <div class="wsu-degree-finder__degrees-grid-control">
+                    <label for="degreeListControl" class="wsu-screen-reader-only">Change degree list layout to a list</label>
+                    <button id="degreeListControl" class="wsu-degree-finder__degrees-grid-control-list" role="radio" aria-checked="false">
+                        <i class="fa-sharp fa-solid fa-list fa-2xl"></i>
+                    </button>
+                </div>
+            </div>
             
             {{degreeGrid()}}
-            {# {{degreeList()}} #}
+            {{degreeList()}}
         
         <div class="wsu-degree-profile__undecided">
             <div class="wsu-decorator--style-block-crimson-wsu" style="width: 10%;height: 100%;bottom: 0;left: 0;"></div>
