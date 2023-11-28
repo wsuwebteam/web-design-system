@@ -1,0 +1,57 @@
+{% from "degree-cta/_macro.njk" import degreeCta %}
+{% from "degree-finder/_degree-grid.njk" import degreeGrid %}
+{% from "degree-finder/_degree-list.njk" import degreeList %}
+{% from "button/_macro.njk" import button %}
+{% from "degree-filter-list/_macro.njk" import degreeFilterList %}
+
+{% macro degreeFinder( bodyClasses ) %}
+    <div class="wsu-degree-finder {{bodyClasses}}">
+        <div class="wsu-degree-finder__hero wsu-width--full">
+            <div class="wsu-degree-finder__hero-top">
+                {{ degreeCta() }}
+            </div>
+            <div class="wsu-degree-finder__hero-content wsu-container">
+                <h1>Degrees & Majors</h1>
+                <p>Explore 200+ interest areas</p>
+                <p>Whether you’re interested in art, science, business, or the humanities, you’ll find a program that fits you at WSU. Get started by using our Degree Finder to sort programs based on academic area, degree type, or campus location.
+                </p>
+            </div>
+        </div>
+        <div class="wsu-degree-finder__content">
+            {{ degreeFilterList() }}
+
+            <div class="wsu-degree-finder__degrees-grid-controls" role="radiogroup" aria-labelledby="degreeControlLabel">
+                <h2 class="wsu-screen-reader-only" id="degreeControlLabel">Choose degree list layout:</h2>
+                <div class="wsu-degree-finder__degrees-grid-control">
+                    <label for="degreeGridControl" class="wsu-screen-reader-only">Change degree list layout to a grid</label>
+                    <button id="degreeGridControl" class="wsu-degree-finder__degrees-grid-control-grid" role="radio" aria-checked="true">
+                        <i class="fa-sharp fa-solid fa-grid fa-2xl"></i>
+                    </button>
+                </div>
+                <div class="wsu-degree-finder__degrees-grid-control">
+                    <label for="degreeListControl" class="wsu-screen-reader-only">Change degree list layout to a list</label>
+                    <button id="degreeListControl" class="wsu-degree-finder__degrees-grid-control-list" role="radio" aria-checked="false">
+                        <i class="fa-sharp fa-solid fa-list fa-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            {{degreeGrid()}}
+            {{degreeList()}}
+        
+        <div class="wsu-degree-profile__undecided">
+            <div class="wsu-decorator--style-block-crimson-wsu" style="width: 10%;height: 100%;bottom: 0;left: 0;"></div>
+            <div class="wsu-decorator--style-lines-gray" style="width: 10%;height: 10%;bottom: 0;left: 0;"></div>
+            <div class="wsu-degree-profile__undecided-cta">
+                <h2>Still undecided?<br>Not sure what to study?</h2>
+                {{ button( classes = ' ', tag='a', title="CTA Click Me Button") }}
+            </div>
+            <div class="wsu-degree-profile__undecided-image">
+                <div class="wsu-decorator--style-block-gray" style="width: 95%;height: 95%;bottom: -1rem;right: -1rem; background-color: #d9d9d9"></div>
+                <figure class="wp-block-image size-large wsu-image--style-inset-outline wsu-notch--small">
+                    <img width="100%" height="unset" src="https://wpcdn.web.wsu.edu/ucomm/uploads/sites/2814/2023-11-06-10_06_49-Untitled-–-Figma.jpg">
+                </figure>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

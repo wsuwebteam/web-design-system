@@ -1,0 +1,77 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+.wsu-degree-filter-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    p{
+        margin-bottom: 0.5rem;
+        font-size: 14px;
+    }
+    &__body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    &__terms{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 75%;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    &__terms p{
+        margin-bottom: 0;
+    }
+    &__terms p+p{
+        margin-top: 0;
+    }
+    &__term{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    &__term label{
+        font-weight: 400;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    &__term-control{
+        border: none;
+        background-color: transparent;
+        gap: 0.25rem;
+        display: flex;
+        align-items: center;
+    }
+    &__term-control-icon{
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        padding: 3px;
+        line-height: 20px;
+        transition: ease-in-out all .1s;
+    }
+    &__term-control-icon:hover, &__term-control-icon:active, &__term-control-icon:focus{
+        background-color: $wsu-color--crimson;
+        color: white;
+    }
+    &__clear-button{
+        padding: 0.5rem 1rem;
+    }
+    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+        &__body{
+            flex-direction: column-reverse;
+        }
+        &__terms{
+            margin-top: 1.5rem;
+            max-width: 100%;
+        }
+        &__term-control{
+            align-items: center;
+            text-align: left;;
+        }
+    }
+}

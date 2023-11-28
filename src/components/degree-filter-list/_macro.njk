@@ -1,0 +1,23 @@
+{% macro degreeFilterList( classes='', filterTerms=['Agricultural Sciences','Biological & Environmental Sciences','Sports & Fitness','Science','Social Sciences'] ) %}
+
+<div class="wsu-degree-filter-list">
+    <p><i>Filters:</i></p>
+    <div class="wsu-degree-filter-list__body">
+        <div class="wsu-degree-filter-list__terms">
+            {% for term in filterTerms %}
+                <div class="wsu-degree-filter-list__term">
+                    <button id="{{term}}-filter" class="wsu-degree-filter-list__term-control">
+                        <span>{{term}}</span><i class="fa-solid fa-xmark wsu-degree-filter-list__term-control-icon"></i>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="wsu-degree-filter-list__clear">
+            <button class="wsu-button wsu-degree-filter-list__clear-button">
+                <i class="fa-solid fa-rotate-right"></i>
+                Clear All  
+            </button>
+        </div>
+    </div>
+</div>
+{% endmacro %}
