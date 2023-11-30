@@ -49,30 +49,52 @@ function DegreeFilters({ siteUrl }: { siteUrl: string }) {
     // }
 
     return (
-        <div>
-            {error && <p>Error: {error.message}</p>}
-            {isLoading && <p>Loading...</p>}
+        <>
+            <div>
+                {error && <p>Error: {error.message}</p>}
+                {isLoading && <p>Loading...</p>}
 
-            <TermFiltersGroup
-                label="Area of Interest"
-                groupKey="areas"
-                terms={data?.wsuwp_df_area || []}
-            // onChange={toggleTermFilter}
-            />
-            <TermFiltersGroup
-                label="Degree Type"
-                groupKey="degree-types"
-                terms={data?.wsuwp_df_degree_type || []}
-            // onChange={toggleTermFilter}
-            />
-            <TermFiltersGroup
-                label="Campus"
-                groupKey="campuses"
-                terms={data?.wsuwp_df_campus || []}
-            // onChange={toggleTermFilter}
-            />
+                <TermFiltersGroup
+                    label="Area of Interest"
+                    groupKey="areas"
+                    terms={data?.wsuwp_df_area || []}
+                // onChange={toggleTermFilter}
+                />
+                <TermFiltersGroup
+                    label="Degree Type"
+                    groupKey="degree-types"
+                    terms={data?.wsuwp_df_degree_type || []}
+                // onChange={toggleTermFilter}
+                />
+                <TermFiltersGroup
+                    label="Campus"
+                    groupKey="campuses"
+                    terms={data?.wsuwp_df_campus || []}
+                // onChange={toggleTermFilter}
+                />
 
-        </div>
+            </div>
+            <div className="wsu-degree-filter-list">
+                <p><i>Filters:</i></p>
+                <div className="wsu-degree-filter-list__body">
+                    <div className="wsu-degree-filter-list__terms">
+                        {/* {% for term in filterTerms %} */}
+                        <div className="wsu-degree-filter-list__term">
+                            <button id="term-filter" className="wsu-degree-filter-list__term-control">
+                                <span>term</span><i className="fa-solid fa-xmark wsu-degree-filter-list__term-control-icon"></i>
+                            </button>
+                        </div>
+                        {/* {% endfor %} */}
+                    </div>
+                    <div className="wsu-degree-filter-list__clear">
+                        <button className="wsu-button wsu-degree-filter-list__clear-button">
+                            <i className="fa-solid fa-rotate-right"></i>
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 
@@ -131,24 +153,15 @@ function useFilterTerms(siteUrl: string) {
     requestUrl.searchParams.append('taxonomies', taxonomies.join(','));
 
     return useQuery(['filter-terms-query'], async ({ signal }) => {
-        try {
-            const response = await fetch(requestUrl.toString(), { signal });
+        const response = await fetch(requestUrl.toString(), { signal });
 
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-
-            const json = await response.json();
-
-            return parse(filterTermsCollectionSchema, json);
+        if (!response.ok) {
+            throw new Error(response.statusText);
         }
-        catch (e) {
-            if (e instanceof Error) {
-                throw e;
-            } else {
-                throw new Error('Something went wrong. Could not retrieve degree filters.');
-            }
-        }
+
+        const json = await response.json();
+
+        return parse(filterTermsCollectionSchema, json);
     }, {
         onError: (err: Error) => err,
     });

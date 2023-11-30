@@ -6,7 +6,7 @@ import { default as DegreeFilters } from './degree-filters';
 import { useReducer, useState } from "react";
 import { removeEmptyProperties } from "./helpers";
 import { useDegreeFinder } from "./context";
-import DegreeList from "./degree-list";
+import Degrees from "./degrees";
 // import { default as ScholarshipTable } from './scholarship-table';
 
 // const queryString = window.location.search;
@@ -71,22 +71,10 @@ function DegreeFinder({ siteUrl }: { siteUrl: string }) {
 	// const [params, dispatch] = useReducer(reducer, degreeQueryParams);
 
 	return (
-		<>
-			<div className="wsu-degree-list">
-				<p>Testing</p>
-				<DegreeFilters siteUrl={siteUrl}></DegreeFilters>
-				<DegreeList siteUrl={siteUrl}></DegreeList>
-				{/* <ScholarshipFilters
-					siteUrl={siteUrl}
-					params={params}
-					setParams={setParams} />
-
-				<ScholarshipTable
-					siteUrl={siteUrl}
-					params={params}
-					setParams={setParams} /> */}
-			</div>
-		</>
+		<div className="wsu-degree-finder__content">
+			<DegreeFilters siteUrl={siteUrl}></DegreeFilters>
+			<Degrees siteUrl={siteUrl}></Degrees>
+		</div>
 	);
 }
 
