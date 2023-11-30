@@ -63,7 +63,7 @@ function reducer(state: DegreeFinderStateType, action: DegreeFinderActionType) {
   }
 }
 
-export function DegreeFinderProvider({ children }: { children: JSX.Element }) {
+export function DegreeFinderProvider({ children }: { children: JSX.Element | JSX.Element[] }) {
   const [state, dispatch] = useReducer(reducer, initialDegreeQueryParams);
 
   useEffect(() => {
