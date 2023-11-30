@@ -6,6 +6,7 @@ import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persist
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { default as DegreeFinder } from "./degree-finder";
 import { DegreeFinderProvider } from "./context";
+import { CookiesProvider } from "react-cookie";
 
 const cacheTime = 1000 * 60 * 60 * 24; // 1 day
 const staleTime = 1000 * 60 * 5; // 5 minutes
@@ -37,17 +38,22 @@ const persistOptions: PersistQueryClientOptions = {
 	}
 }
 
+const cookieExpireDate = new Date();
+cookieExpireDate.setDate(cookieExpireDate.getDate() + 365);
+
 const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 	return (
 		<React.StrictMode>
-			<DegreeFinderProvider>
-				<PersistQueryClientProvider
-					client={queryClient}
-					persistOptions={persistOptions}>
-					<DegreeFinder siteUrl={props.siteUrl ?? '/'} />
-					<ReactQueryDevtools initialIsOpen={false} />
-				</PersistQueryClientProvider>
-			</DegreeFinderProvider>
+			<PersistQueryClientProvider
+				client={queryClient}
+				persistOptions={persistOptions}>
+				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate }}>
+					<DegreeFinderProvider>
+						<DegreeFinder siteUrl={props.siteUrl ?? '/'} />
+						<ReactQueryDevtools initialIsOpen={false} />
+					</DegreeFinderProvider>
+				</CookiesProvider>
+			</PersistQueryClientProvider>
 		</React.StrictMode>
 	);
 };
