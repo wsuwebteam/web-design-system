@@ -48,8 +48,8 @@ const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 				client={queryClient}
 				persistOptions={persistOptions}>
 				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate }}>
-					<DegreeFinderProvider>
-						<DegreeFinder siteUrl={props.siteUrl ?? '/'} />
+					<DegreeFinderProvider siteUrl={props.siteUrl ?? '/'}>
+						<DegreeFinder />
 						<ReactQueryDevtools initialIsOpen={false} />
 					</DegreeFinderProvider>
 				</CookiesProvider>

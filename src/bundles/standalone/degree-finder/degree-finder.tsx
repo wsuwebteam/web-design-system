@@ -66,14 +66,14 @@ import Degrees from "./degrees";
 // const degreeCollectionSchema = array(degreeSchema);
 
 
-function DegreeFinder({ siteUrl }: { siteUrl: string }) {
+function DegreeFinder() {
 	console.log('Rendering: Degree List');
 	// const [params, dispatch] = useReducer(reducer, degreeQueryParams);
 
 	return (
 		<div className="wsu-degree-finder__content">
-			<DegreeFilters siteUrl={siteUrl}></DegreeFilters>
-			<Degrees siteUrl={siteUrl}></Degrees>
+			<DegreeFilters></DegreeFilters>
+			<Degrees></Degrees>
 		</div>
 	);
 }

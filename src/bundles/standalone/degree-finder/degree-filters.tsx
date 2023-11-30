@@ -33,10 +33,11 @@ type filterTermType = Output<typeof filterTermSchema>;
 
 
 
-function DegreeFilters({ siteUrl }: { siteUrl: string }) {
+function DegreeFilters() {
     console.log('Rendering: Filters');
     // const dispatch = useDegreeFinderDispatch();
-    const { data, isLoading, error } = useFilterTerms(siteUrl);
+    const state = useDegreeFinder();
+    const { data, isLoading, error } = useFilterTerms(state.siteUrl);
 
     // function toggleTermFilter(e: ChangeEvent<HTMLInputElement>) {
     //     dispatch({
@@ -111,7 +112,7 @@ function TermFiltersGroup(props: {
     const { label, groupKey, terms } = props;
     const state = useDegreeFinder();
     const dispatch = useDegreeFinderDispatch();
-    const selected = state[groupKey] ? state[groupKey].split(',') : [];
+    const selected = state.queryParams[groupKey] ? state.queryParams[groupKey].split(',') : [];
 
     function toggleTermFilter(e: ChangeEvent<HTMLInputElement>) {
         const value = e.target.value;
@@ -124,7 +125,7 @@ function TermFiltersGroup(props: {
             selected.splice(selected.indexOf(value), 1);
         }
         dispatch({
-            type: ActionType.SET_FIELD,
+            type: ActionType.UPDATE_QUERY_PARAM,
             payload: {
                 field: groupKey,
                 value: selected.join(','),
