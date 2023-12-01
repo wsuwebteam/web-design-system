@@ -11,6 +11,7 @@
         flex-direction: column;
         width: 50%;
         padding-right: 2rem;
+        padding-top: 2rem; 
     }
     &__hero-right{
         display: flex;
@@ -195,6 +196,24 @@
         margin: 0;
     }
 
+    &__back-bar{
+        background-color: $wsu-color--crimson;
+        padding: 1.5rem 0;
+        position: relative;
+    }
+    &__back-bar-button{
+        max-width: 1068px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    &__back-bar-button a{
+        background-color: $wsu-color--crimson-light;
+        display: flex;
+        gap: 0.5rem;
+    }
+
     @media screen and (max-width: $wsu-breakpoint--desktop ) {
 
         .wsu-degree-profile__hero-image .wsu-image-frame img{
@@ -349,4 +368,7 @@
     .wsu-wrapper-content{
         padding-top: 0 !important;
     }
+}
+.wsu-wrapper-content{
+    padding-top: 0 !important;
 }
