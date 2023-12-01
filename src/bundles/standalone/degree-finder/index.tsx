@@ -58,8 +58,9 @@ const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 	);
 };
 
-const elements = document.querySelectorAll<HTMLElement>(".wsu-degree-list");
+const elements = document.querySelectorAll<HTMLElement>(".js-wsu-degree-finder");
 elements.forEach((el) => {
-	const app = ReactDOM.createRoot(el);
+	const rootEl = el.dataset.rootElement === 'parent' ? (el.parentElement || el) : el;
+	const app = ReactDOM.createRoot(rootEl);
 	app.render(<DegreeFinderRoot props={el.dataset} />);
 });
