@@ -1,4 +1,4 @@
-import { degreeCollectionType, degreeType } from "../degrees";
+import { degreeCollectionType, degreeType } from "../types";
 import { useInView } from "react-intersection-observer";
 
 function DegreeList({ degrees, favorites, toggleFavorite }: { degrees: degreeCollectionType, favorites: number[], toggleFavorite: (id: number) => void }) {

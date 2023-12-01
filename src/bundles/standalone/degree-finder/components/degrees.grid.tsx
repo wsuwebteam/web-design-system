@@ -1,5 +1,5 @@
 import { useInView } from "react-intersection-observer";
-import { degreeCollectionType, degreeType } from "../degrees";
+import { degreeCollectionType, degreeType } from "../types";
 
 function DegreeGrid({ degrees, favorites, toggleFavorite }: { degrees: degreeCollectionType, favorites: number[], toggleFavorite: (id: number) => void }) {
 

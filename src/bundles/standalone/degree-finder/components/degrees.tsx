@@ -1,37 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
-import { object, array, parse, string, number, flatten, ValiError, Output } from "valibot";
-import { WP_Term } from 'wp-types';
-// import React, { useState } from "react";
-import { default as DegreeFilters } from './degree-filters';
-import { useReducer, useState } from "react";
-import { removeEmptyProperties } from "./helpers";
-import { useDegreeFinder } from "./context";
+import { parse } from "valibot";
+import { removeEmptyProperties } from "../helpers";
+import { useDegreeFinder } from "../context";
 import { useCookies } from "react-cookie";
-import DegreeList from "./components/degree-list";
-import DegreeGrid from "./components/degree-grid";
-import DegreeLayoutToggle from "./components/degree-layout-toggle";
+import { degreeCollectionSchema } from "../types";
+import DegreeList from "./degrees.list";
+import DegreeGrid from "./degrees.grid";
+import DegreeLayoutToggle from "./degrees.layout-toggle";
 
-const degreeSchema = object({
-    id: number(),
-    title: string(),
-    url: string(),
-    image: string(),
-    focalPoint: object({
-        x: number(),
-        y: number(),
-    }),
-    excerpt: string(),
-});
 
-const degreeCollectionSchema = array(degreeSchema);
-
-export type degreeType = Output<typeof degreeSchema>;
-export type degreeCollectionType = Output<typeof degreeCollectionSchema>;
-
-function Degrees({ siteUrl }: { siteUrl: string }) {
+function Degrees() {
     console.log('Rendering: List');
-    const params = useDegreeFinder();
-    const { data, isLoading, error } = useDegrees(siteUrl, params);
+    // const state = useDegreeFinder();
+    // const { data, isLoading, error } = useDegrees(state.siteUrl, state.queryParams);
+    const { data, isLoading, error } = useDegrees();
     const [cookies, setCookies] = useCookies(['degreeLayout', 'favoriteDegrees']);
     const layout = cookies.degreeLayout || 'grid';
     const favorites: number[] = cookies.favoriteDegrees || [];
@@ -59,9 +41,11 @@ function Degrees({ siteUrl }: { siteUrl: string }) {
     );
 }
 
-function useDegrees(siteUrl: string, params: Record<string, string>) {
-    const requestUrl = new URL('/wp-json/wsu-degree-finder/v1/get-degrees', siteUrl);
-    requestUrl.search = new URLSearchParams(removeEmptyProperties(params)).toString();
+// function useDegrees(siteUrl: string, params: Record<string, string>) {
+function useDegrees() {
+    const state = useDegreeFinder();
+    const requestUrl = new URL('/wp-json/wsu-degree-finder/v1/get-degrees', state.siteUrl);
+    requestUrl.search = new URLSearchParams(removeEmptyProperties(state.queryParams)).toString();
 
     return useQuery(['degrees-query', requestUrl.search], async ({ signal }) => {
         const response = await fetch(requestUrl.toString(), { signal });

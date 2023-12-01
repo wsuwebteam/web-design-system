@@ -1,43 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import { ChangeEvent } from "react";
-import { object, array, parse, string, number, type Output } from "valibot";
-import { ActionType, useDegreeFinder, useDegreeFinderDispatch } from "./context";
-
-const taxonomies = ['wsuwp_df_area', 'wsuwp_df_degree_type', 'wsuwp_df_campus'];
-
-const filterTermSchema = object({
-    term_id: number(),
-    name: string(),
-    slug: string(),
-    taxonomy: string(),
-});
-
-const filterTermsCollectionSchema = object({
-    wsuwp_df_area: array(filterTermSchema),
-    wsuwp_df_degree_type: array(filterTermSchema),
-    wsuwp_df_campus: array(filterTermSchema),
-});
-
-type filterTermType = Output<typeof filterTermSchema>;
-
-
-// const filterTermsCollectionSchema = object(taxonomies.reduce(
-//     (acc, curr) => {
-//         return {
-//             ...acc,
-//             [curr]: array(filterTermSchema),
-//         };
-//     },
-//     {}
-// ));
-
-
+import { object, array, parse, string, number, Output } from "valibot";
+import { useDegreeFinder, useDegreeFinderDispatch } from "../context";
+import { useFilterTerms } from "../hooks";
+import { ActionType, filterTermType } from "../types";
 
 function DegreeFilters() {
     console.log('Rendering: Filters');
     // const dispatch = useDegreeFinderDispatch();
     const state = useDegreeFinder();
-    const { data, isLoading, error } = useFilterTerms(state.siteUrl);
+    const data = state.filters;
+    // const appliedFilters = data ? getAppliedFilters(state, data) : [];
+
+    // function getAppliedFilters(state, filters) {
+    //     console.log(state, filters);
+    // }
 
     // function toggleTermFilter(e: ChangeEvent<HTMLInputElement>) {
     //     dispatch({
@@ -52,8 +29,8 @@ function DegreeFilters() {
     return (
         <>
             <div>
-                {error && <p>Error: {error.message}</p>}
-                {isLoading && <p>Loading...</p>}
+                {/* {error && <p>Error: {error.message}</p>}
+                {isLoading && <p>Loading...</p>} */}
 
                 <TermFiltersGroup
                     label="Area of Interest"
@@ -113,23 +90,25 @@ function TermFiltersGroup(props: {
     const state = useDegreeFinder();
     const dispatch = useDegreeFinderDispatch();
     const selected = state.queryParams[groupKey] ? state.queryParams[groupKey].split(',') : [];
+    // const selected = state.selectedFilters.reduce<string[]>((result, selectedFilter) => {
+    //     if (selectedFilter.group === groupKey) {
+    //         result.push(selectedFilter.termId);
+    //     }
+    //     return result;
+    // }, []);
+
 
     function toggleTermFilter(e: ChangeEvent<HTMLInputElement>) {
-        const value = e.target.value;
+        const termName = e.target.dataset.name || '';
+        const termId = e.target.value;
 
-        if (e.target.checked) {
-            if (!selected.includes(value)) {
-                selected.push(value);
-            }
-        } else {
-            selected.splice(selected.indexOf(value), 1);
-        }
         dispatch({
-            type: ActionType.UPDATE_QUERY_PARAM,
+            type: ActionType.TOGGLE_TERM_FILTER,
             payload: {
-                field: groupKey,
-                value: selected.join(','),
-            },
+                termId: termId,
+                termName: termName,
+                group: groupKey,
+            }
         });
     }
 
@@ -139,6 +118,7 @@ function TermFiltersGroup(props: {
             <label key={term.term_id}>
                 <input
                     type="checkbox"
+                    data-name={term.name}
                     onChange={toggleTermFilter}
                     value={term.term_id}
                     checked={selected.includes(term.term_id.toString())}
@@ -148,25 +128,5 @@ function TermFiltersGroup(props: {
         )}
     </div>
 }
-
-function useFilterTerms(siteUrl: string) {
-    const requestUrl = new URL('/wp-json/wsu-degree-finder/v1/get-all-terms-by-taxonomies', siteUrl);
-    requestUrl.searchParams.append('taxonomies', taxonomies.join(','));
-
-    return useQuery(['filter-terms-query'], async ({ signal }) => {
-        const response = await fetch(requestUrl.toString(), { signal });
-
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
-
-        const json = await response.json();
-
-        return parse(filterTermsCollectionSchema, json);
-    }, {
-        onError: (err: Error) => err,
-    });
-}
-
 
 export default DegreeFilters;
