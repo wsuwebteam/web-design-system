@@ -17,7 +17,8 @@ const initialDegreeFinderState = {
 		campuses: urlParams.get('campuses') || '',
 		colleges: urlParams.get('colleges') || '',
 		departments: urlParams.get('departments') || '',
-	}
+	},
+	activeFilters: {} as ActiveFiltersType
 };
 
 const DegreeFinderContext = createContext<DegreeFinderStateType>({} as DegreeFinderStateType);
@@ -95,19 +96,41 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 				...state,
 				queryParams: {
 					...state.queryParams,
+					q: '',
+					ids: '',
 					[action.payload.group]: selectTermIdsForGroup,
 				},
 				activeFilters: newActiveFilters
 			};
 		}
+		case ActionType.VIEW_FAVORITES: {
+			return {
+				...state,
+				queryParams: {
+					ids: action.payload.join(','),
+				},
+				activeFilters: {
+					type: FilterType.FAVORITES
+				} as ActiveFiltersType
+			}
+		}
 		case ActionType.SEARCH: {
 			return {
-				...initialDegreeFinderState,
-				siteUrl: state.siteUrl,
+				...state,
 				queryParams: {
-					...initialDegreeFinderState.queryParams,
-					q: action.query,
-				}
+					q: action.payload,
+				},
+				activeFilters: {
+					type: FilterType.SEARCH
+				} as ActiveFiltersType
+			}
+		}
+		case ActionType.RESET: {
+			return {
+				...state,
+				siteUrl: state.siteUrl,
+				queryParams: {} as Record<string, string>,
+				activeFilters: {} as ActiveFiltersType
 			}
 		}
 		default: {

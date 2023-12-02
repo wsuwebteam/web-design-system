@@ -6,8 +6,35 @@ import { object, array, string, number, Output } from "valibot";
 export enum ActionType {
     TOGGLE_TERM_FILTER = 'TOGGLE_TERM_FILTER',
     INITIALIZE_FILTERS = 'INITIALIZE_FILTERS',
+    VIEW_FAVORITES = 'VIEW_FAVORITES',
     SEARCH = 'SEARCH',
+    RESET = 'RESET',
 }
+
+export type DegreeFinderActionType = {
+    type: ActionType.TOGGLE_TERM_FILTER,
+    payload: SelectedTermType
+    } | {
+    type: ActionType.INITIALIZE_FILTERS,
+    payload: filterTermCollectionType
+    } | {
+	type: ActionType.VIEW_FAVORITES,
+    payload: number[]
+	} | {
+    type: ActionType.SEARCH,
+    payload: string
+	} | {
+    type: ActionType.RESET,
+};
+
+export type DegreeFinderDispatchType = Dispatch<DegreeFinderActionType>;
+
+export type DegreeFinderStateType = {
+    siteUrl: string,
+    queryParams: Record<string, string>,
+    filters?: filterTermCollectionType,
+    activeFilters?: ActiveFiltersType,
+};
 
 export enum FilterType {
     SEARCH = 'SEARCH',
@@ -25,26 +52,6 @@ export type ActiveFiltersType = {
     type: FilterType,
     selectedTerms?: Array<SelectedTermType>
 }
-
-export type DegreeFinderStateType = {
-    siteUrl: string,
-    queryParams: Record<string, string>,
-    filters?: filterTermCollectionType,
-    activeFilters?: ActiveFiltersType,
-};
-
-export type DegreeFinderActionType = {
-    type: ActionType.TOGGLE_TERM_FILTER,
-    payload: SelectedTermType
-    } | {
-    type: ActionType.INITIALIZE_FILTERS,
-    payload: filterTermCollectionType
-    } | {
-    type: ActionType.SEARCH,
-    query: string
-};
-
-export type DegreeFinderDispatchType = Dispatch<DegreeFinderActionType>;
 
 
 // term filter types
