@@ -1,4 +1,3 @@
-
 function DegreeLayoutToggle({ layout, onChange }: { layout: string, onChange: (layout: string) => void }) {
 
 	return <div className="wsu-degree-finder__degrees-grid-controls" role="radiogroup" aria-labelledby="degreeControlLabel">

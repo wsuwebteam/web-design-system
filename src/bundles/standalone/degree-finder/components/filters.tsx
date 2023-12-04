@@ -3,6 +3,7 @@ import { useDegreeFinder, useDegreeFinderDispatch } from "../context";
 import { ActionType, ActiveFiltersType, SelectedTermType, filterTermType } from "../types";
 import { useCookies } from "react-cookie";
 import _debounce from 'lodash/debounce';
+import ActiveFilters from "./filters.active";
 
 function DegreeFilters() {
 	console.log('Rendering: Filters');
@@ -38,6 +39,10 @@ function DegreeFilters() {
 			type: ActionType.TOGGLE_TERM_FILTER,
 			payload: term
 		});
+	}
+
+	function clearFilters() {
+		dispatch({ type: ActionType.RESET })
 	}
 
 	function viewFavorites() {
@@ -94,33 +99,11 @@ function DegreeFilters() {
 					defaultValue={state.queryParams.q}
 					onChange={_debounce(search, 400)}
 				/>
-
 			</div>
-			<div className="wsu-degree-filter-list">
-				<p><i>Filters:</i></p>
-				<div className="wsu-degree-filter-list__body">
-					<div className="wsu-degree-filter-list__terms">
-						{activeFilters?.selectedTerms && activeFilters.selectedTerms.map((term) =>
-							<div key={`active-filter-${term.termId}`} className="wsu-degree-filter-list__term">
-								<button
-									id="term-filter"
-									className="wsu-degree-filter-list__term-control"
-									onClick={() => deactivateFilter(term)}>
-									<span>{term.termName}</span><i className="fa-solid fa-xmark wsu-degree-filter-list__term-control-icon"></i>
-								</button>
-							</div>
-						)}
-					</div>
-					<div className="wsu-degree-filter-list__clear">
-						<button
-							className="wsu-button wsu-degree-filter-list__clear-button"
-							onClick={() => dispatch({ type: ActionType.RESET })}>
-							<i className="fa-solid fa-rotate-right"></i>
-							Clear All
-						</button>
-					</div>
-				</div>
-			</div>
+			{activeFilters && <ActiveFilters
+				activeFilters={activeFilters}
+				deactivateFilter={deactivateFilter}
+				clearFilters={clearFilters} />}
 		</>
 	);
 }

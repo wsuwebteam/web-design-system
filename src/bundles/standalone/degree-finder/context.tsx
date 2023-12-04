@@ -18,7 +18,6 @@ const initialDegreeFinderState = {
 		colleges: urlParams.get('colleges') || '',
 		departments: urlParams.get('departments') || '',
 	},
-	activeFilters: {} as ActiveFiltersType
 };
 
 const DegreeFinderContext = createContext<DegreeFinderStateType>({} as DegreeFinderStateType);
@@ -100,7 +99,7 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 					ids: '',
 					[action.payload.group]: selectTermIdsForGroup,
 				},
-				activeFilters: newActiveFilters
+				activeFilters: newActiveFilters.selectedTerms.length > 0 ? newActiveFilters : undefined
 			};
 		}
 		case ActionType.VIEW_FAVORITES: {
@@ -130,7 +129,7 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 				...state,
 				siteUrl: state.siteUrl,
 				queryParams: {} as Record<string, string>,
-				activeFilters: {} as ActiveFiltersType
+				activeFilters: undefined
 			}
 		}
 		default: {
