@@ -7,7 +7,7 @@ function DegreeList({ degrees, favorites, toggleFavorite }: { degrees: degreeCol
 		<div id="degreeslist" className="wsu-card-group wsu-card-group--per-row-1">
 			{degrees.map((d) => {
 				const isFavorited = favorites.includes(d.id);
-				return <Degree key={d.id} degree={d} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />;
+				return <Degree key={`list-item-${d.id}`} degree={d} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />;
 			})}
 		</div>
 	</div>

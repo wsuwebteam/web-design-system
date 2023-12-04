@@ -7,7 +7,7 @@ function DegreeGrid({ degrees, favorites, toggleFavorite }: { degrees: degreeCol
 		<div id="degreesGrid" className="wsu-card-group wsu-card-group--per-row-3">
 			{degrees.map((d) => {
 				const isFavorited = favorites.includes(d.id);
-				return <Degree key={d.id} degree={d} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />;
+				return <Degree key={`grid-item-${d.id}`} degree={d} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />;
 			})}
 		</div>
 	</div>

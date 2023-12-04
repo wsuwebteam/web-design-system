@@ -78,10 +78,10 @@ export const degreeSchema = object({
     title: string(),
     url: string(),
     image: string(),
-    focalPoint: object({
-        x: number(),
-        y: number(),
-    }),
+    // focalPoint: object({
+    //     x: number(),
+    //     y: number(),
+    // }),
     excerpt: string(),
 });
 

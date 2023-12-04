@@ -1,4 +1,4 @@
-import { ChangeEvent, HtmlHTMLAttributes, useRef } from "react";
+import { ChangeEvent, useRef } from "react";
 import { useDegreeFinder, useDegreeFinderDispatch } from "../context";
 import { ActionType, ActiveFiltersType, SelectedTermType, filterTermType } from "../types";
 import { useCookies } from "react-cookie";
