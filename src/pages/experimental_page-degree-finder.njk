@@ -8,11 +8,8 @@
             {% include 'header-site/html.njk' %}
             <div class="wsu-wrapper-content">
                 <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
-
-                    {% include 'degree-finder/html.njk' %}
-                    {# {% include 'degree-profile/html.njk' %} #}
-                    <div class="wsu-degree-list" data-site-url="http://wsuwp6.local/" data-message="Test message"></div>
-
+                    {# {% include 'degree-finder/html.njk' %} #}
+                    {% include 'degree-finder/html-js.njk' %}
                 </main>
             </div>
             {% include 'footer-site/html.njk' %}
@@ -22,11 +19,11 @@
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="../bundles/standalone/degree-finder/styles-wds.css" media='all'/>    
+    <link rel="stylesheet" href="../bundles/standalone/degree-finder/styles-wds.css" media='all'/>
 {% endblock %}
 
 {% block scripts %}
     <script src="https://kit.fontawesome.com/5a4d2255bc.js" crossorigin="anonymous"></script>
-    
-    <script src="../bundles/standalone/degree-finder/scripts.js"></script> 
+
+    <script src="../bundles/standalone/degree-finder/scripts.js"></script>
 {% endblock %}
