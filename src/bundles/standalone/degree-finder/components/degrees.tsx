@@ -23,14 +23,16 @@ function Degrees() {
 	return (
 		<>
 			<DegreeLayoutToggle layout={layout} onChange={updateLayout} />
-			{isLoading && <p>loading...</p>}
-			{error && <p>Something went wrong. Degrees could not be retrieved.</p>}
-			{!isLoading && data && data.length === 0 && <p>No degrees could be found.</p>}
-			{!isLoading && data && data.length > 0 && <>
-				{layout === "list" ?
-					<DegreeList degrees={data} favorites={favorites} toggleFavorite={toggleFavorite} />
-					: <DegreeGrid degrees={data} favorites={favorites} toggleFavorite={toggleFavorite} />}
-			</>}
+			<div id="degrees" tabIndex={-1} className="wsu-degree-finder__degrees-container">
+				{isLoading && <p>loading...</p>}
+				{error && <p>Something went wrong. Degrees could not be retrieved.</p>}
+				{!isLoading && data && data.length === 0 && <p>No degrees could be found.</p>}
+				{!isLoading && data && data.length > 0 && <>
+					{layout === "list" ?
+						<DegreeList degrees={data} favorites={favorites} toggleFavorite={toggleFavorite} />
+						: <DegreeGrid degrees={data} favorites={favorites} toggleFavorite={toggleFavorite} />}
+				</>}
+			</div>
 		</>
 	);
 }

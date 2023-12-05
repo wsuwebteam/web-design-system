@@ -65,6 +65,30 @@ function DegreeFilters() {
 		}
 	}
 
+	function gotoDegrees(e: React.KeyboardEvent<HTMLInputElement>) {
+		if (e.key === 'Enter') {
+			e.preventDefault();
+			const degreesContainer = document.getElementById('degrees');
+			const offset = 200;
+
+			if (!degreesContainer) {
+				return;
+			}
+
+			degreesContainer.focus({
+				preventScroll: true,
+			});
+
+			window.scrollTo({
+				behavior: 'smooth',
+				top:
+					degreesContainer.getBoundingClientRect().top -
+					document.body.getBoundingClientRect().top -
+					offset,
+			});
+		}
+	}
+
 	return (
 		<>
 			<div>
@@ -98,6 +122,7 @@ function DegreeFilters() {
 					placeholder="search..."
 					defaultValue={state.queryParams.q}
 					onChange={_debounce(search, 400)}
+					onKeyUp={gotoDegrees}
 				/>
 			</div>
 			{activeFilters && <ActiveFilters

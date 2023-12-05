@@ -4,7 +4,7 @@ import { degreeCollectionType, degreeType } from "../types";
 function DegreeGrid({ degrees, favorites, toggleFavorite }: { degrees: degreeCollectionType, favorites: number[], toggleFavorite: (id: number) => void }) {
 
 	return <div className="wsu-degree-finder__degrees-grid">
-		<div id="degreesGrid" className="wsu-card-group wsu-card-group--per-row-3">
+		<div className="wsu-card-group wsu-card-group--per-row-3">
 			{degrees.map((d) => {
 				const isFavorited = favorites.includes(d.id);
 				return <Degree key={`grid-item-${d.id}`} degree={d} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />;

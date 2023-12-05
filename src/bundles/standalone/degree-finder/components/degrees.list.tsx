@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 function DegreeList({ degrees, favorites, toggleFavorite }: { degrees: degreeCollectionType, favorites: number[], toggleFavorite: (id: number) => void }) {
 
 	return <div className="wsu-degree-finder__degrees-grid wsu-degree-finder__degrees-grid--layout-list">
-		<div id="degreeslist" className="wsu-card-group wsu-card-group--per-row-1">
+		<div className="wsu-card-group wsu-card-group--per-row-1">
 			{degrees.map((d) => {
 				const isFavorited = favorites.includes(d.id);
 				return <Degree key={`list-item-${d.id}`} degree={d} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />;
