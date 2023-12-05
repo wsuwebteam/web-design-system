@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider, PersistQueryClientOptions } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { default as DegreeFinder } from "./degree-finder";
 import { DegreeFinderProvider } from "./context";
 import { CookiesProvider } from "react-cookie";
@@ -50,7 +50,7 @@ const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate }}>
 					<DegreeFinderProvider siteUrl={props.siteUrl ?? '/'}>
 						<DegreeFinder />
-						<ReactQueryDevtools initialIsOpen={false} />
+						{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 					</DegreeFinderProvider>
 				</CookiesProvider>
 			</PersistQueryClientProvider>
