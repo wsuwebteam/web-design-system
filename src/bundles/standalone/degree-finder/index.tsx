@@ -4,7 +4,9 @@ import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider, PersistQueryClientOptions } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { default as DegreeList } from "./degree-list";
+import { default as DegreeFinder } from "./degree-finder";
+import { DegreeFinderProvider } from "./context";
+import { CookiesProvider } from "react-cookie";
 
 const cacheTime = 1000 * 60 * 60 * 24; // 1 day
 const staleTime = 1000 * 60 * 5; // 5 minutes
@@ -14,7 +16,7 @@ const queryClient = new QueryClient({
 		queries: {
 			cacheTime: cacheTime,
 			staleTime: staleTime,
-			retry: 0,
+			retry: 2,
 		},
 	},
 });
@@ -23,7 +25,7 @@ const persister = createSyncStoragePersister({
 	storage: window.localStorage
 })
 
-const doNotPersistKeys = ['degrees'];
+const doNotPersistKeys: string[] = []; // do not cache queries with these keys
 const persistOptions: PersistQueryClientOptions = {
 	queryClient: queryClient,
 	persister: persister,
@@ -36,21 +38,29 @@ const persistOptions: PersistQueryClientOptions = {
 	}
 }
 
-const DegreeListRoot = ({ props }: { props: DOMStringMap }) => {
+const cookieExpireDate = new Date();
+cookieExpireDate.setDate(cookieExpireDate.getDate() + 365);
+
+const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 	return (
 		<React.StrictMode>
 			<PersistQueryClientProvider
 				client={queryClient}
 				persistOptions={persistOptions}>
-				<DegreeList siteUrl={props.siteUrl} />
-				{/* <ReactQueryDevtools initialIsOpen={false} /> */}
+				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate }}>
+					<DegreeFinderProvider siteUrl={props.siteUrl ?? '/'}>
+						<DegreeFinder />
+						{/* <ReactQueryDevtools initialIsOpen={false} /> */}
+					</DegreeFinderProvider>
+				</CookiesProvider>
 			</PersistQueryClientProvider>
 		</React.StrictMode>
 	);
 };
 
-const elements = document.querySelectorAll<HTMLElement>(".wsu-degree-list");
+const elements = document.querySelectorAll<HTMLElement>(".js-wsu-degree-finder");
 elements.forEach((el) => {
-	const app = ReactDOM.createRoot(el);
-	app.render(<DegreeListRoot props={el.dataset} />);
+	const rootEl = el.dataset.rootElement === 'parent' ? (el.parentElement || el) : el;
+	const app = ReactDOM.createRoot(rootEl);
+	app.render(<DegreeFinderRoot props={el.dataset} />);
 });
