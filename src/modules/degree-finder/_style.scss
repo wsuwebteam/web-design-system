@@ -133,9 +133,10 @@
     &__filter-terms-list label{
         font-weight: 400;
         cursor: pointer;
+        display: inline-block;
     }
-    &__filter-terms-list label:focus{
-        border: 2px solid white;
+    &__filter-terms-list label:focus-within{
+        outline: 2px solid white;
         border-radius: 5px;
     }
     &__filter-terms-list label .fa-check{
@@ -220,13 +221,14 @@
         &__filter-types{
             padding-left: 0;
         }
-        &__filter-right{
-            border-left: 2px solid white;
-        }
+        
     }
     @media screen and (min-width: 768px){
         .wsu-card--style-horizontal-25 .wsu-image-frame img {
             object-fit: cover !important;
+        }
+        &__filter-right{
+            border-left: 2px solid white;
         }
     }
 }
