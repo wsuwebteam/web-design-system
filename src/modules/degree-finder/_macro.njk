@@ -4,7 +4,7 @@
 {% from "button/_macro.njk" import button %}
 {% from "degree-filter-list/_macro.njk" import degreeFilterList %}
 
-{% macro degreeFinder( bodyClasses ) %}
+{% macro degreeFinder(bodyClasses) %}
     <div class="wsu-degree-finder {{bodyClasses}}">
         <div class="wsu-degree-finder__hero wsu-width--full">
             <div class="wsu-degree-finder__hero-top">
@@ -114,10 +114,10 @@
                     </button>
                 </div>
             </div>
-            
+
             {{degreeGrid()}}
             {{degreeList()}}
-        
+        </div>
         <div class="wsu-degree-profile__undecided">
             <div class="wsu-decorator--style-block-crimson-wsu" style="width: 10%;height: 100%;bottom: 0;left: 0;"></div>
             <div class="wsu-decorator--style-lines-gray" style="width: 10%;height: 10%;bottom: 0;left: 0;"></div>
