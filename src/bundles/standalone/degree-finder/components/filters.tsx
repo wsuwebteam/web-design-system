@@ -1,3 +1,4 @@
+// TODO: This should be broken up into multiple small components
 import { ChangeEvent, useRef, useState } from "react";
 import { useDegreeFinder, useDegreeFinderDispatch } from "../context";
 import { ActionType, ActiveFiltersType, SelectedTermType, filterTermType } from "../types";
@@ -179,7 +180,7 @@ function TermFiltersGroup(props: {
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }) {
 	console.log('Rendering: Term Filters Group')
-	const { label, group, terms, activeFilters, onChange } = props;
+	const { group, terms, activeFilters, onChange } = props;
 	const selectedTermIds = activeFilters?.selectedTerms?.map(t => t.termId) || [];
 
 	return <ul className="wsu-degree-finder__filter-terms-list wsu-list--columns-2">

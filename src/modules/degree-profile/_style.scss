@@ -201,6 +201,19 @@
         padding: 1.5rem 0;
         position: relative;
     }
+    &__back-bar-decorator {
+        width: 10%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: repeating-linear-gradient(
+          135deg,
+          #ffffff,
+          #ffffff 2px,
+          transparent 2px,
+          transparent 10px
+        );
+    }
     &__back-bar-button{
         max-width: 1068px;
         margin: auto;
