@@ -3,7 +3,7 @@ import { degreeCollectionType, degreeType } from "../types";
 
 function DegreeGrid({ degrees, favorites, toggleFavorite }: { degrees: degreeCollectionType, favorites: number[], toggleFavorite: (id: number) => void }) {
 
-	return <div className="wsu-degree-finder__degrees-grid">
+	return <div className="wsu-degree-finder__degrees-grid" aria-live="assertive" aria-atomic="true">
 		<div className="wsu-card-group wsu-card-group--per-row-3">
 			{degrees.map((d) => {
 				const isFavorited = favorites.includes(d.id);
@@ -31,9 +31,9 @@ function Degree({ degree, isFavorited, toggleFavorite }: { degree: degreeType, i
 		<div className="wsu-card__content">
 			<h2 className="wsu-title"><a href={degree.url}>{degree.title}</a></h2>
 			{inView && <>
-				<span className="fa-layers fa-fw " role="listbox">
+				<span className="fa-layers fa-fw wsu-degree-grid__favorite-container" role="listbox" tabIndex={0}>
 					<span className="wsu-screen-reader-only">{isFavorited ? 'Remove from' : 'Add to'} favorites</span>
-					<span onClick={() => toggleFavorite(degree.id)} className="wsu-degree-grid__favorite-controls" role="option" aria-selected={isFavorited} tabIndex={0}>
+					<span onClick={() => toggleFavorite(degree.id)} className="wsu-degree-grid__favorite-controls" role="option" aria-selected={isFavorited}>
 						<i className="fa-solid fa-heart fa-xl wsu-degree-grid__favorite-icon-solid"></i>
 						<i className="fa-regular fa-heart fa-xl wsu-degree-grid__favorite-icon-regular"></i>
 					</span>

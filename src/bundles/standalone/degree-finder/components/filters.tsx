@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { useDegreeFinder, useDegreeFinderDispatch } from "../context";
 import { ActionType, ActiveFiltersType, SelectedTermType, filterTermType } from "../types";
 import { useCookies } from "react-cookie";
@@ -7,6 +7,7 @@ import ActiveFilters from "./filters.active";
 
 function DegreeFilters() {
 	console.log('Rendering: Filters');
+	const [activeTermGroupKey, setActiveTermGroupKey] = useState<string | null>(null);
 	const state = useDegreeFinder();
 	const dispatch = useDegreeFinderDispatch();
 	const [cookies] = useCookies(['favoriteDegrees']);
@@ -14,9 +15,33 @@ function DegreeFilters() {
 	const activeFilters = state.activeFilters;
 	const favorites: number[] = cookies.favoriteDegrees || [];
 	const searchInputRef = useRef<HTMLInputElement>(null);
+	const filterGroups = [
+		{
+			label: 'Areas of Interest',
+			group: 'areas',
+			terms: filters?.wsuwp_df_area || [],
+		},
+		{
+			label: 'Degree Type',
+			group: 'degree-types',
+			terms: filters?.wsuwp_df_degree_type || [],
+		},
+		{
+			label: 'Campus',
+			group: 'campuses',
+			terms: filters?.wsuwp_df_campus || [],
+		}
+	];
+	const activeFilterGroup = filterGroups.find(group => group.group === activeTermGroupKey);
 
 	if (!state.queryParams.q) {
 		clearSearchBox();
+	}
+
+	function updateActiveTermGroup(group: string) {
+		activeTermGroupKey === group
+			? setActiveTermGroupKey(null)
+			: setActiveTermGroupKey(group);
 	}
 
 	function toggleTermFilter(e: ChangeEvent<HTMLInputElement>) {
@@ -89,48 +114,61 @@ function DegreeFilters() {
 		}
 	}
 
-	return (
-		<>
-			<div>
-				<TermFiltersGroup
-					label="Area of Interest"
-					group="areas"
-					terms={filters?.wsuwp_df_area || []}
-					activeFilters={activeFilters}
-					onChange={toggleTermFilter}
-				/>
-				<TermFiltersGroup
-					label="Degree Type"
-					group="degree-types"
-					terms={filters?.wsuwp_df_degree_type || []}
-					activeFilters={activeFilters}
-					onChange={toggleTermFilter}
-				/>
-				<TermFiltersGroup
-					label="Campus"
-					group="campuses"
-					terms={filters?.wsuwp_df_campus || []}
-					activeFilters={activeFilters}
-					onChange={toggleTermFilter}
-				/>
+	return <>
+		<div className="wsu-degree-finder__filter-wrapper wsu-width--full">
+			<div className="wsu-degree-finder__filter-decorator-block wsu-decorator--style-block-crimson wsu-hide--tablet-large"></div>
+			<div className="wsu-degree-finder__filter-decorator-lines wsu-decorator--style-lines-gray wsu-hide--tablet-large"></div>
 
-				<button onClick={viewFavorites}>Favorites</button>
-
-				<input
-					ref={searchInputRef}
-					type="text"
-					placeholder="search..."
-					defaultValue={state.queryParams.q}
-					onChange={_debounce(search, 400)}
-					onKeyUp={gotoDegrees}
-				/>
+			<div className="wsu-degree-finder__filter-controls">
+				<span className="wsu-degree-finder__filter-title">Filter by: </span>
+				<div className="wsu-degree-finder__filter-list">
+					<ul className="wsu-degree-finder__filter-types">
+						{filterGroups.map((filterGroup) => {
+							return (
+								<li key={filterGroup.group}>
+									<button onClick={() => updateActiveTermGroup(filterGroup.group)} className="wsu-degree-finder__filter-type wsu-button">{filterGroup.label}</button>
+								</li>)
+						})}
+					</ul>
+					<div className="wsu-degree-finder__filter-right">
+						<button onClick={viewFavorites} className="wsu-degree-finder__filter-type wsu-degree-finder__filter-favorites wsu-button"><i className="fa-solid fa-heart"></i> Favorites</button>
+						<div className="wsu-degree-finder__filter-search-wrapper">
+							<input
+								ref={searchInputRef}
+								type="search"
+								className="wsu-degree-finder__filter-search-field"
+								placeholder="search..."
+								defaultValue={state.queryParams.q}
+								onChange={_debounce(search, 400)}
+								onKeyUp={gotoDegrees}
+								aria-label="Search through degree list"
+								aria-describedby="info" />
+							<div id="info" className="wsu-screen-reader-only"> Results will update as you type.</div>
+							<label className="wsu-degree-finder__filter-search-submit" tabIndex={0}>
+								<i className="fa-solid fa-magnifying-glass fa-xl"></i>
+								<span className="wsu-screen-reader-only">Go to search results</span>
+							</label>
+						</div>
+					</div>
+				</div>
 			</div>
-			{activeFilters && <ActiveFilters
-				activeFilters={activeFilters}
-				deactivateFilter={deactivateFilter}
-				clearFilters={clearFilters} />}
-		</>
-	);
+			{activeFilterGroup &&
+				<div className="wsu-degree-finder__filter-terms wsu-width--full">
+					<TermFiltersGroup
+						label={activeFilterGroup.label}
+						group={activeFilterGroup.group}
+						terms={activeFilterGroup.terms}
+						activeFilters={activeFilters}
+						onChange={toggleTermFilter}
+					/>
+				</div>
+			}
+		</div>
+		{activeFilters && <ActiveFilters
+			activeFilters={activeFilters}
+			deactivateFilter={deactivateFilter}
+			clearFilters={clearFilters} />}
+	</>
 }
 
 function TermFiltersGroup(props: {
@@ -144,22 +182,24 @@ function TermFiltersGroup(props: {
 	const { label, group, terms, activeFilters, onChange } = props;
 	const selectedTermIds = activeFilters?.selectedTerms?.map(t => t.termId) || [];
 
-	return <div>
-		<h3>{label}</h3>
+	return <ul className="wsu-degree-finder__filter-terms-list wsu-list--columns-2">
 		{terms.map((term) =>
-			<label key={term.term_id}>
-				<input
-					type="checkbox"
-					data-name={term.name}
-					data-group={group}
-					onChange={onChange}
-					value={term.term_id}
-					checked={selectedTermIds.includes(term.term_id.toString())}
-				/>
-				{term.name}
-			</label>
+			<li key={term.term_id}>
+				<label>
+					<input
+						type="checkbox"
+						className="wsu-screen-reader-only"
+						data-name={term.name}
+						data-group={group}
+						onChange={onChange}
+						value={term.term_id}
+						checked={selectedTermIds.includes(term.term_id.toString())} />
+					<i className="fa-solid fa-check"></i>
+					<span className="wsu-degree-finder__filter-term-title">{term.name}</span>
+				</label>
+			</li>
 		)}
-	</div>
+	</ul>
 }
 
 export default DegreeFilters;

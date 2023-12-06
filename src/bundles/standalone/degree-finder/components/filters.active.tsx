@@ -2,12 +2,12 @@ import { ActiveFiltersType, SelectedTermType } from "../types";
 
 
 function ActiveFilters({ activeFilters, deactivateFilter, clearFilters }: { activeFilters: ActiveFiltersType, deactivateFilter: (term: SelectedTermType) => void, clearFilters: () => void }) {
-	console.log(activeFilters)
+	console.log('RENDERING ACTIVE FILTERS', activeFilters)
 	return <div className="wsu-degree-filter-list">
 		<p><i>Filters:</i></p>
 		<div className="wsu-degree-filter-list__body">
 			<div className="wsu-degree-filter-list__terms">
-				{activeFilters.selectedTerms && activeFilters.selectedTerms.map((term) =>
+				{activeFilters?.selectedTerms && activeFilters.selectedTerms.map((term) =>
 					<div key={`active-filter-${term.termId}`} className="wsu-degree-filter-list__term">
 						<button
 							id="term-filter"
