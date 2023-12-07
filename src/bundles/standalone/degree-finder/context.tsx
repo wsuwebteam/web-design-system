@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 import { removeEmptyProperties } from './helpers';
 import { ActionType, ActiveFiltersType, DegreeFinderActionType, DegreeFinderDispatchType, DegreeFinderStateType, FilterType, SelectedTermType, filterTermType } from './types';
 import { useFilterTerms } from './hooks';
+import { useCookies } from 'react-cookie';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -142,6 +143,7 @@ export function DegreeFinderProvider({ siteUrl, children }: { siteUrl: string, c
 	initialDegreeFinderState.siteUrl = siteUrl;
 	const [state, dispatch] = useReducer(degreeFinderReducer, initialDegreeFinderState);
 	const { data: filters, isLoading, error } = useFilterTerms(state.siteUrl);
+	const [cookies, setCookies] = useCookies(['degreeFinderUrlState']);
 
 	useEffect(() => {
 		if (filters) {
@@ -158,6 +160,8 @@ export function DegreeFinderProvider({ siteUrl, children }: { siteUrl: string, c
 			} else {
 				history.replaceState(null, '', window.location.href.split('?')[0]);
 			}
+
+			setCookies('degreeFinderUrlState', location.href, { maxAge: 3600 }); // TODO: Find a better way. Causes an unnecessary rerender.
 		}
 	}, [state.queryParams]);
 
