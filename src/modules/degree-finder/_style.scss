@@ -141,6 +141,7 @@
     }
     &__filter-terms-list label .fa-check{
         visibility: hidden;
+        margin-right: 0.5rem;
     }
     &__filter-terms-list input:checked + .fa-check{
         visibility: visible;
@@ -157,7 +158,8 @@
     &__degrees-grid-controls{
         display: flex;
         justify-content: flex-end;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
+
         gap: 1.5rem;
     }
     
@@ -199,7 +201,13 @@
             justify-content: space-between;
             flex-direction: column;
         }
-    }    
+    }
+    @media screen and (max-width: 1100px){
+        &__filter-title{
+            margin-left: 1rem;
+        }
+
+    }
     @media screen and (max-width: $wsu-breakpoint--tablet-large){
         .wsu-degree-cta{
             width: 100%;
@@ -220,6 +228,9 @@
         }
         &__filter-types{
             padding-left: 0;
+        }
+        &__filter-title{
+            margin-left: 0;
         }
         
     }
