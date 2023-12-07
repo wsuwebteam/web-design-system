@@ -71,7 +71,7 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 				...state,
 				filters: action.payload,
 				activeFilters: activeFilters
-			}
+			} as DegreeFinderStateType;
 		}
 		case ActionType.TOGGLE_TERM_FILTER: {
 			const newActiveFilters: ActiveFiltersType = { type: FilterType.TERMS, selectedTerms: [] };
