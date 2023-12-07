@@ -160,7 +160,10 @@
         font-family: 'wsu-icons';
         content: '\f133';
         font-size: 14px;
-    }    
+    }
+    &__related h2{
+        margin-bottom: 2rem;
+    }
     &__related-card{
         .wsu-card__content{
             display: flex;
