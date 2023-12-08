@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/wsuwebteam/web-design-system/compare/v2.15.0...v2.16.0) (2023-12-08)
+
+
+### Features
+
+* support people directory filter ([1ad29f6](https://github.com/wsuwebteam/web-design-system/commit/1ad29f66f677609ad17869b953a03be5428db25f))
+
 # [2.15.0](https://github.com/wsuwebteam/web-design-system/compare/v2.14.2...v2.15.0) (2023-11-03)
 
 
