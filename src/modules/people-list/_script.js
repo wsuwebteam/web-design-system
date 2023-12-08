@@ -24,6 +24,7 @@ const PeopleList = function (el) {
     "directory",
   ];
   const filterAttributeMap = {
+    directory: "directories",
     location: "university_location",
     organization: "university_organization",
     classification: "classification",
@@ -57,6 +58,7 @@ const PeopleList = function (el) {
     .split(",")
     .filter((r) => r !== "");
   const activeFilters = [];
+  const directoryTerms = parseTermsAttribute(el.dataset.directoryFilterTerms);
   const categoryTerms = parseTermsAttribute(el.dataset.categoryFilterTerms);
   const tagTerms = parseTermsAttribute(el.dataset.tagFilterTerms);
   const locationTerms = parseTermsAttribute(el.dataset.locationFilterTerms);
@@ -236,8 +238,9 @@ const PeopleList = function (el) {
       .filter((r) => r !== "")
       .map((option) => {
         const parts = option.split("|");
+        let title = parts[1].split( '//' );
 
-        return { slug: parts[0], name: parts[1] };
+        return { slug: parts[0], name: title[0].trim() };
       });
   }
 
@@ -251,6 +254,9 @@ const PeopleList = function (el) {
     let includeTerms = [];
 
     switch (filter) {
+      case "directory":
+        includeTerms = directoryTerms;
+        break;
       case "organization":
         includeTerms = organizationTerms;
         break;
