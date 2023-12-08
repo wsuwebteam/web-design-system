@@ -24,7 +24,7 @@ function Degree({ degree, isFavorited, toggleFavorite }: { degree: degreeType, i
 	return <article ref={ref} className="wsu-card wsu-degree-profile__related-card">
 		{inView && <>
 			<div className="wsu-image-frame wsu-image-frame--fixed-ratio">
-				<a href={degree.url} tabIndex={-1} aria-hidden="true" dangerouslySetInnerHTML={{ __html: degree.image }}></a>
+				<a href={degree.url} tabIndex={-1} aria-hidden="true" dangerouslySetInnerHTML={{ __html: degree.image.mediumLarge }}></a>
 			</div>
 		</>
 		}
