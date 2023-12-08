@@ -1,7 +1,7 @@
 // TODO: This should be broken up into multiple small components
 import { ChangeEvent, useRef, useState } from "react";
 import { useDegreeFinder, useDegreeFinderDispatch } from "../context";
-import { ActionType, ActiveFiltersType, SelectedTermType, filterTermType } from "../types";
+import { ActionType, ActiveFiltersType, FilterType, SelectedTermType, filterTermType } from "../types";
 import { useCookies } from "react-cookie";
 import _debounce from 'lodash/debounce';
 import ActiveFilters from "./filters.active";
@@ -68,14 +68,17 @@ function DegreeFilters() {
 	}
 
 	function clearFilters() {
+		setActiveTermGroupKey(null)
 		dispatch({ type: ActionType.RESET })
 	}
 
-	function viewFavorites() {
-		dispatch({
-			type: ActionType.VIEW_FAVORITES,
-			payload: favorites
-		});
+	function toggleFavorites() {
+		setActiveTermGroupKey(null)
+		activeFilters?.type !== FilterType.FAVORITES ?
+			dispatch({
+				type: ActionType.VIEW_FAVORITES,
+				payload: favorites
+			}) : dispatch({ type: ActionType.RESET });
 	}
 
 	function search(e: ChangeEvent<HTMLInputElement>) {
@@ -132,7 +135,7 @@ function DegreeFilters() {
 						})}
 					</ul>
 					<div className="wsu-degree-finder__filter-right">
-						<button onClick={viewFavorites} className="wsu-degree-finder__filter-type wsu-degree-finder__filter-favorites wsu-button"><i className="fa-solid fa-heart"></i> Favorites</button>
+						<button onClick={toggleFavorites} className="wsu-degree-finder__filter-type wsu-degree-finder__filter-favorites wsu-button"><i className="fa-solid fa-heart"></i> Favorites</button>
 						<div className="wsu-degree-finder__filter-search-wrapper">
 							<input
 								ref={searchInputRef}
