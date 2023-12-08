@@ -10,15 +10,21 @@ export function useFilterTerms(siteUrl: string) {
     requestUrl.searchParams.append('taxonomies', taxonomies.join(','));
 
     return useQuery(['filter-terms-query'], async ({ signal }) => {
-        const response = await fetch(requestUrl.toString(), { signal });
+		try{
+			const response = await fetch(requestUrl.toString(), { signal });
 
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
+			if (!response.ok) {
+				throw new Error(response.statusText);
+			}
 
-        const json = await response.json();
+			const json = await response.json();
 
-        return parse(filterTermsCollectionSchema, json);
+			return parse(filterTermsCollectionSchema, json);
+		} catch(ex){
+			if(ex instanceof Error && ex.name !== 'AbortError'){
+				throw ex;
+			}
+		}
     }, {
         onError: (err: Error) => err,
     });
@@ -31,15 +37,21 @@ export function useDegrees() {
     requestUrl.search = new URLSearchParams(removeEmptyProperties(state.queryParams)).toString();
 
     return useQuery(['degrees-query', requestUrl.search], async ({ signal }) => {
-        const response = await fetch(requestUrl.toString(), { signal });
+		try{
+			const response = await fetch(requestUrl.toString(), { signal });
 
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
+			if (!response.ok) {
+				throw new Error(response.statusText);
+			}
 
-        const json = await response.json();
+			const json = await response.json();
 
-        return parse(degreeCollectionSchema, json);
+			return parse(degreeCollectionSchema, json);
+		} catch(ex){
+			if(ex instanceof Error && ex.name !== 'AbortError'){
+				throw ex;
+			}
+		}
     }, {
         onError: (err: Error) => err,
     });

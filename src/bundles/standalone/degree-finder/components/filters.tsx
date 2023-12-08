@@ -82,10 +82,12 @@ function DegreeFilters() {
 	}
 
 	function search(e: ChangeEvent<HTMLInputElement>) {
-		dispatch({
+		const searchTerm = e.target.value.trim();
+		searchTerm ? dispatch({
 			type: ActionType.SEARCH,
-			payload: e.target.value.trim()
-		});
+			payload: searchTerm
+		})
+			: dispatch({ type: ActionType.RESET });
 	}
 
 	function clearSearchBox() {

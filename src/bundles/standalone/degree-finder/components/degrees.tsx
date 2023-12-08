@@ -3,6 +3,7 @@ import DegreeList from "./degrees.list";
 import DegreeGrid from "./degrees.grid";
 import DegreeLayoutToggle from "./degrees.layout-toggle";
 import { useDegrees } from "../hooks";
+import Message from "./message";
 
 
 function Degrees() {
@@ -25,8 +26,8 @@ function Degrees() {
 			<DegreeLayoutToggle layout={layout} onChange={updateLayout} />
 			<div id="degrees" tabIndex={-1} className="wsu-degree-finder__degrees-container">
 				{isLoading && <p>loading...</p>}
-				{error && <p>Something went wrong. Degrees could not be retrieved.</p>}
-				{!isLoading && data && data.length === 0 && <p>No degrees could be found.</p>}
+				{!isLoading && error && <Message errorMessage="Something went wrong. Degrees could not be retrieved." />}
+				{!isLoading && data && data.length === 0 && <Message className="wsu-error--style-info" iconClass="circle-question" errorMessage="No degrees could be found for the provided parameters." />}
 				{!isLoading && data && data.length > 0 && <>
 					{layout === "list" ?
 						<DegreeList degrees={data} favorites={favorites} toggleFavorite={toggleFavorite} />

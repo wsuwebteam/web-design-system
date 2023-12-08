@@ -3,6 +3,7 @@ import { removeEmptyProperties } from './helpers';
 import { ActionType, ActiveFiltersType, DegreeFinderActionType, DegreeFinderDispatchType, DegreeFinderStateType, FilterType, SelectedTermType, filterTermType } from './types';
 import { useFilterTerms } from './hooks';
 import { useCookies } from 'react-cookie';
+import Message from './components/message';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -121,7 +122,8 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 					q: action.payload,
 				},
 				activeFilters: {
-					type: FilterType.SEARCH
+					type: FilterType.SEARCH,
+					searchTerm: action.payload
 				} as ActiveFiltersType
 			}
 		}
@@ -151,7 +153,6 @@ export function DegreeFinderProvider({ siteUrl, children }: { siteUrl: string, c
 		}
 	}, [filters]);
 
-
 	useEffect(() => {
 		if (state) {
 			const newUrlParams = new URLSearchParams(removeEmptyProperties(state.queryParams)).toString();
@@ -165,7 +166,7 @@ export function DegreeFinderProvider({ siteUrl, children }: { siteUrl: string, c
 		}
 	}, [state.queryParams]);
 
-	if (isLoading || error) { return; } // TODO: Add loading/error UI
+	if (!isLoading && error) { return <Message errorMessage="Something went wrong. Could not load data for degrees." />; }
 
 	return (
 		<DegreeFinderContext.Provider value={state}>

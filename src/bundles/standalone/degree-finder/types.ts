@@ -50,6 +50,7 @@ export type SelectedTermType = {
 
 export type ActiveFiltersType = {
     type: FilterType,
+	searchTerm?: string,
     selectedTerms?: Array<SelectedTermType>
 } | undefined;
 
