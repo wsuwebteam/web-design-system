@@ -1,0 +1,8 @@
+{% macro error( classes='', errorMessage='An error has occurred', showIcon=true, iconClass='circle-exclamation' ) %}
+<div class="wsu-error {{classes}}">
+    {% if showIcon %}
+    <i class="fa-solid wsu-error__icon fa-{{iconClass}}"></i>
+    {% endif %}
+    <p>{{errorMessage}}</p>
+</div>
+{% endmacro %}

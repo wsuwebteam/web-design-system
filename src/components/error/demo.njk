@@ -1,0 +1,14 @@
+{% extends "component.njk" %}
+{% from "error/_macro.njk" import error %}
+
+{% block content %}
+<div class="wsu-component-demo">
+    {{ error(classes='wsu-error--style-alert') }}
+    <hr>
+    {{ error(classes='wsu-error--style-info', errorMessage='No degrees found for that filter combination', iconClass='circle-question') }}
+</div>
+{%  endblock %}
+
+{% block scripts %}
+    <script src="https://kit.fontawesome.com/5a4d2255bc.js" crossorigin="anonymous"></script>
+{% endblock %}
