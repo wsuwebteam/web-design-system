@@ -1,3 +1,60 @@
+# [2.15.0](https://github.com/wsuwebteam/web-design-system/compare/v2.14.2...v2.15.0) (2023-11-03)
+
+
+### Features
+
+* update profile styling ([f66821f](https://github.com/wsuwebteam/web-design-system/commit/f66821fe2a647569d9bd82388ca86766071944fb))
+
+## [2.14.2](https://github.com/wsuwebteam/web-design-system/compare/v2.14.1...v2.14.2) (2023-11-01)
+
+
+### Bug Fixes
+
+* update profile logic ([c575ecf](https://github.com/wsuwebteam/web-design-system/commit/c575ecf9829489d945f7263411ab4b465e72164e))
+
+## [2.14.1](https://github.com/wsuwebteam/web-design-system/compare/v2.14.0...v2.14.1) (2023-11-01)
+
+
+### Bug Fixes
+
+* update profile-link logic ([ec5ca2a](https://github.com/wsuwebteam/web-design-system/commit/ec5ca2a7f342f7a1013a5d7b81f83090841e79a7))
+* update profile-link logic ([#26](https://github.com/wsuwebteam/web-design-system/issues/26)) ([0e10401](https://github.com/wsuwebteam/web-design-system/commit/0e10401f66176de0d00a31f580bb401b1dc556c7))
+
+# [2.14.0](https://github.com/wsuwebteam/web-design-system/compare/v2.13.0...v2.14.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* hide hero on print ([63b5abd](https://github.com/wsuwebteam/web-design-system/commit/63b5abd3f8257e9a8f07b165400de1319edd4cfb))
+
+
+### Features
+
+* add people list view profile ([2ebf06d](https://github.com/wsuwebteam/web-design-system/commit/2ebf06d7e1f8793881e2ca5c5f0c19f1d8f98dac))
+
+# [2.13.0](https://github.com/wsuwebteam/web-design-system/compare/v2.12.0...v2.13.0) (2023-10-13)
+
+
+### Features
+
+* add directory support to people ([881bc02](https://github.com/wsuwebteam/web-design-system/commit/881bc024f57f5983451b535085a22a43e42ea054))
+
+# [2.12.0](https://github.com/wsuwebteam/web-design-system/compare/v2.11.1...v2.12.0) (2023-09-12)
+
+
+### Features
+
+* video background component ([a6a2ccc](https://github.com/wsuwebteam/web-design-system/commit/a6a2cccf983ab4e573b90f49ca744774b4664e3d))
+
+## [2.11.1](https://github.com/wsuwebteam/web-design-system/compare/v2.11.0...v2.11.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* add events-card css to WP styles ([a084f19](https://github.com/wsuwebteam/web-design-system/commit/a084f198e08edaa32dfefecb125caa35e5ed0437))
+* add hero style to editor ([29d65a4](https://github.com/wsuwebteam/web-design-system/commit/29d65a4a01e92016c400fb60cb529b6939d07004))
+* add style boxed to hero ([3b1e749](https://github.com/wsuwebteam/web-design-system/commit/3b1e7493888f549c2125a4280d879e00d50656d4))
+
 # [2.11.0](https://github.com/wsuwebteam/web-design-system/compare/v2.10.0...v2.11.0) (2023-08-23)
 
 
