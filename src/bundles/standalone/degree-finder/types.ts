@@ -77,7 +77,14 @@ export const degreeSchema = object({
     id: number(),
     title: string(),
     url: string(),
-    image: string(),
+    image: object(
+		{
+			medium: string(),
+			mediumLarge: string(),
+			large: string(),
+			full: string(),
+		}
+	),
     // focalPoint: object({
     //     x: number(),
     //     y: number(),
