@@ -24,10 +24,12 @@ function Degrees() {
 	return (
 		<>
 			<DegreeLayoutToggle layout={layout} onChange={updateLayout} />
-			<div id="degrees" tabIndex={-1} className="wsu-degree-finder__degrees-container">
-				{isLoading && <p>loading...</p>}
+			<div id="degrees" tabIndex={-1} className={`wsu-degree-finder__degrees-container ${isLoading ? 'is-loading' : ''}`}>
+				{isLoading && <div className="wsu-degree-finder__loading"></div>}
 				{!isLoading && error && <Message errorMessage="Something went wrong. Degrees could not be retrieved." />}
-				{!isLoading && data && data.length === 0 && <Message className="wsu-error--style-info" iconClass="circle-question" errorMessage="No degrees could be found for the provided parameters." />}
+				{!isLoading && data && data.length === 0 && <Message className="wsu-error--style-info"
+					iconClass="circle-question"
+					errorMessage="No degrees could be found for the given criteria." />}
 				{!isLoading && data && data.length > 0 && <>
 					{layout === "list" ?
 						<DegreeList degrees={data} favorites={favorites} toggleFavorite={toggleFavorite} />
