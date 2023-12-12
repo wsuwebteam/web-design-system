@@ -53,12 +53,12 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 			let activeFilters = undefined;
 
 			if (state.queryParams.q) { // 🤮
-				activeFilters = { type: FilterType.SEARCH };
+				activeFilters = { type: FilterType.SEARCH, searchTerm: state.queryParams.q };
 			}
 			else if (state.queryParams.ids) { // 🤮🤮
 				activeFilters = { type: FilterType.FAVORITES };
 			}
-			else if (state.queryParams.areas || state.queryParams.degreeTypes || state.queryParams.campuses) { // 🤮🤮🤮
+			else if (state.queryParams.areas || state.queryParams['degree-types'] || state.queryParams.campuses) { // 🤮🤮🤮
 				let selectedTerms: SelectedTermType[] = [];
 				activeFilters = { type: FilterType.TERMS, selectedTerms: selectedTerms };
 

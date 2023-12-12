@@ -3,29 +3,35 @@
 .wsu-degree-filter-list{
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
-    p{
+    margin-top: 1.5rem;
+    padding-bottom: $wsu-spacing--medium;
+    border-bottom: 1px solid $wsu-color--gray-15;
+    
+    &__label{
         margin-bottom: 0.5rem;
         font-size: 14px;
+    }
+    &__alt-label{
+        font-size: 16px;
     }
     &__body{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
+        gap: 1.5rem;
     }
     &__terms{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         max-width: 75%;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
+        gap: $wsu-spacing--small;
+        align-items: center;
     }
     &__terms p{
         margin-bottom: 0;
     }
-    &__terms p+p{
+    &__terms p + p{
         margin-top: 0;
     }
     &__term{
@@ -45,6 +51,8 @@
         gap: 0.25rem;
         display: flex;
         align-items: center;
+        padding: 0;
+        cursor: pointer;
     }
     &__term-control-icon{
         border-radius: 50%;
@@ -66,11 +74,12 @@
     }
     @media screen and (max-width: $wsu-breakpoint--tablet ) {
         &__body{
-            flex-direction: column-reverse;
+            // flex-direction: column-reverse;
+            flex-direction: column;
         }
         &__terms{
-            margin-top: 1.5rem;
-            max-width: 100%;
+            // margin-top: 1.5rem;
+            // max-width: 100%;
         }
         &__term-control{
             align-items: center;

@@ -1,7 +1,7 @@
 {% macro degreeFilterList( classes='', filterTerms=['Agricultural Sciences','Biological & Environmental Sciences','Sports & Fitness','Science','Social Sciences'] ) %}
 
 <div class="wsu-degree-filter-list">
-    <p><i>Filters:</i></p>
+    <p class="wsu-degree-filter-list__label"><i>Filters:</i></p>
     <div class="wsu-degree-filter-list__body">
         <div class="wsu-degree-filter-list__terms">
             {% for term in filterTerms %}
@@ -20,11 +20,10 @@
         </div>
     </div>
 </div>
-<div class="wsu-degree-filter-list">
-    <p><i>Showing search results for: </i></p>
+<div class="wsu-degree-filter-list">    
     <div class="wsu-degree-filter-list__body">
         <div class="wsu-degree-filter-list__terms">
-            
+            <p class="wsu-degree-filter-list__alt-label"><i>Showing search results for: </i></p>
         </div>
         <div class="wsu-degree-filter-list__clear">
             <button class="wsu-button wsu-degree-filter-list__clear-button">
@@ -35,10 +34,9 @@
     </div>
 </div>
 <div class="wsu-degree-filter-list">
-    <p><b>Showing Favorites</b></p>
     <div class="wsu-degree-filter-list__body">
         <div class="wsu-degree-filter-list__terms">
-            
+            <p class="wsu-degree-filter-list__alt-label"><b>Showing Favorites</b></p>
         </div>
         <div class="wsu-degree-filter-list__clear">
             <button class="wsu-button wsu-degree-filter-list__clear-button">

@@ -7,7 +7,6 @@ import _debounce from 'lodash/debounce';
 import ActiveFilters from "./filters.active";
 
 function DegreeFilters() {
-	console.log('Rendering: Filters');
 	const [activeTermGroupKey, setActiveTermGroupKey] = useState<string | null>(null);
 	const state = useDegreeFinder();
 	const dispatch = useDegreeFinderDispatch();
@@ -160,13 +159,15 @@ function DegreeFilters() {
 			</div>
 			{activeFilterGroup &&
 				<div className="wsu-degree-finder__filter-terms wsu-width--full">
-					<TermFiltersGroup
-						label={activeFilterGroup.label}
-						group={activeFilterGroup.group}
-						terms={activeFilterGroup.terms}
-						activeFilters={activeFilters}
-						onChange={toggleTermFilter}
-					/>
+					<div className="wsu-degree-finder__filter-terms-list-container">
+						<TermFiltersGroup
+							label={activeFilterGroup.label}
+							group={activeFilterGroup.group}
+							terms={activeFilterGroup.terms}
+							activeFilters={activeFilters}
+							onChange={toggleTermFilter}
+						/>
+					</div>
 				</div>
 			}
 		</div>
@@ -184,7 +185,6 @@ function TermFiltersGroup(props: {
 	activeFilters: ActiveFiltersType | undefined
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }) {
-	console.log('Rendering: Term Filters Group')
 	const { group, terms, activeFilters, onChange } = props;
 	const selectedTermIds = activeFilters?.selectedTerms?.map(t => t.termId) || [];
 

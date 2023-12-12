@@ -2,8 +2,6 @@ import { ActiveFiltersType, FilterType, SelectedTermType } from "../types";
 
 
 function ActiveFilters({ activeFilters, deactivateFilter, clearFilters }: { activeFilters: ActiveFiltersType, deactivateFilter: (term: SelectedTermType) => void, clearFilters: () => void }) {
-	console.log('RENDERING ACTIVE FILTERS', activeFilters)
-
 	if (!activeFilters) return;
 
 	const data = { label: <></>, resetText: '' };
@@ -18,7 +16,7 @@ function ActiveFilters({ activeFilters, deactivateFilter, clearFilters }: { acti
 			data.resetText = 'Clear Search';
 			break;
 		case FilterType.FAVORITES:
-			data.label = <b>Showing Favorite Degrees</b>;
+			data.label = <b>Showing your favorite degrees</b>;
 			data.resetText = 'Clear';
 			break;
 		default:
@@ -26,9 +24,12 @@ function ActiveFilters({ activeFilters, deactivateFilter, clearFilters }: { acti
 	}
 
 	return <div className="wsu-degree-filter-list">
-		<p>{data.label}</p>
+		{activeFilters.type === FilterType.TERMS && <p className="wsu-degree-filter-list__label">{data.label}</p>}
 		<div className="wsu-degree-filter-list__body">
 			<div className="wsu-degree-filter-list__terms">
+				{activeFilters.type !== FilterType.TERMS
+					&& <p className="wsu-degree-filter-list__alt-label">{data.label}</p>}
+
 				{activeFilters.type === FilterType.TERMS
 					&& activeFilters.selectedTerms
 					&& activeFilters.selectedTerms.map((term) =>
