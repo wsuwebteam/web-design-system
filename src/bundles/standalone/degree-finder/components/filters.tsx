@@ -45,7 +45,6 @@ function DegreeFilters() {
 	}
 
 	function toggleTermFilter(e: ChangeEvent<HTMLInputElement>) {
-		setActiveTermGroupKey(null);
 		const termName = e.target.dataset.name || '';
 		const group = e.target.dataset.group || '';
 		const termId = e.target.value;
