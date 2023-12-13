@@ -418,10 +418,15 @@
         margin: 0;
         color: white;
         width: -webkit-fill-available;
+
+        &:focus{
+            background-color: $wsu-color--crimson-light;            
+        }
     }
     .wsu-accordion__title::before{
         color: white;
-        right: .5rem
+        right: .5rem;
+        z-index: 1;
     }
     .wsu-accordion__title:hover, .wsu-accordion__title:focus, .wsu-accordion__title:focus-within{
         background-color: $wsu-color--crimson-light;

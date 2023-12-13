@@ -191,6 +191,7 @@
     
     &__degrees-grid-control button:hover,&__degrees-grid-control button:active,&__degrees-grid-control button:focus {
         color: $wsu-color--crimson;
+        background-color: transparent;
         cursor: pointer;
     }
     &__degrees-grid-control button{
