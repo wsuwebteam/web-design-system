@@ -1,3 +1,11 @@
+## [2.16.1](https://github.com/wsuwebteam/web-design-system/compare/v2.16.0...v2.16.1) (2023-12-15)
+
+
+### Bug Fixes
+
+* header utility bar not hidden on mobile ([840812f](https://github.com/wsuwebteam/web-design-system/commit/840812f047e78002111595aa6a17b0077bdd5864))
+* header utility bar not hidden on mobile ([#31](https://github.com/wsuwebteam/web-design-system/issues/31)) ([e33ebdb](https://github.com/wsuwebteam/web-design-system/commit/e33ebdb82ca73a7bfc3796fa81a3b7821f81c7e7))
+
 # [2.16.0](https://github.com/wsuwebteam/web-design-system/compare/v2.15.0...v2.16.0) (2023-12-08)
 
 
