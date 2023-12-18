@@ -343,20 +343,7 @@
         // .wsu-degree-profile__related > *{
         //     margin: 1rem -2.25rem !important;
         // }
-        .wsu-degree-profile__undecided{
-            flex-direction: column-reverse;
-            padding: 2rem 2rem 5rem;
-        }
-        .wsu-degree-profile__undecided .wsu-decorator--style-block-crimson-wsu {
-            width: 100% !important;
-            height: 10% !important
-        }
-        .wsu-degree-profile__undecided-image{
-            margin-bottom: 3rem;
-        }
-        .wsu-degree-profile__undecided-cta, .wsu-degree-profile__undecided-image{
-            width: 100%;
-        }
+        
 
     }
     @media screen and (max-width: $wsu-breakpoint--tablet ) {
@@ -395,7 +382,22 @@
 
     }
 }
-
+@media screen and (max-width: $wsu-breakpoint--desktop ) {
+    .wsu-degree-profile__undecided{
+        flex-direction: column-reverse;
+        padding: 2rem 2rem 5rem;
+    }
+    .wsu-degree-profile__undecided .wsu-decorator--style-block-crimson-wsu {
+        width: 100% !important;
+        height: 10% !important
+    }
+    .wsu-degree-profile__undecided-image{
+        margin-bottom: 3rem;
+    }
+    .wsu-degree-profile__undecided-cta, .wsu-degree-profile__undecided-image{
+        width: 100%;
+    }   
+}
 .wsu-degree-profile__degree-details{
     .wsu-accordion{
         margin-bottom: 0;

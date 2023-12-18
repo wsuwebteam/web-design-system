@@ -252,6 +252,8 @@
             width: 100%;
             flex-wrap: wrap;
             justify-content: center;
+            flex-direction: column-reverse;
+            padding-bottom: 0;
         }
         &__filter-types{
             padding-left: 0;
@@ -260,6 +262,17 @@
             margin-left: 0;
         }
         
+    }
+    @media screen and (max-width: 768px){
+        .wsu-card--style-horizontal-25{
+            margin-bottom: 0;
+        }
+        .wsu-card--style-horizontal-25 .wsu-title a{
+            text-decoration: underline;
+        }
+        .wsu-card--style-horizontal-25 .wsu-image-frame{
+            display: none;
+        }
     }
     @media screen and (min-width: 768px){
         .wsu-card--style-horizontal-25 .wsu-image-frame img {
