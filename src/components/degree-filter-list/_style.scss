@@ -53,6 +53,11 @@
         align-items: center;
         padding: 0;
         cursor: pointer;
+
+        &:focus{
+            background-color: transparent;
+            color: inherit;
+        }
     }
     &__term-control-icon{
         border-radius: 50%;
