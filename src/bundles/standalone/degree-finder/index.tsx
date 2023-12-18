@@ -38,6 +38,7 @@ const persistOptions: PersistQueryClientOptions = {
 	}
 }
 
+const domain = window.location.hostname.includes('wsu.edu') ? '.wsu.edu' : window.location.host;
 const cookieExpireDate = new Date();
 cookieExpireDate.setDate(cookieExpireDate.getDate() + 365);
 
@@ -47,7 +48,7 @@ const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 			<PersistQueryClientProvider
 				client={queryClient}
 				persistOptions={persistOptions}>
-				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate }}>
+				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate, domain: domain }}>
 					<DegreeFinderProvider siteUrl={props.siteUrl ?? '/'}>
 						<DegreeFinder />
 						{/* <ReactQueryDevtools initialIsOpen={false} /> */}
