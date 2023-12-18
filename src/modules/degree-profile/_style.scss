@@ -429,6 +429,7 @@
         color: white;
         right: .5rem;
         z-index: 1;
+        pointer-events: none;
     }
     .wsu-accordion__title:hover, .wsu-accordion__title:focus, .wsu-accordion__title:focus-within{
         background-color: $wsu-color--crimson-light;
