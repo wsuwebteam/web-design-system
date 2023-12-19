@@ -200,6 +200,8 @@
         font-weight: $wsu-font-weight--semibold;
     }
     &__related-card{
+        align-items: start;
+        
         .wsu-image-frame{
             &::before{
                 background-color: $wsu-color--gray-5;
