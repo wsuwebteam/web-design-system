@@ -108,7 +108,7 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 			return {
 				...state,
 				queryParams: {
-					ids: action.payload.join(','),
+					ids: action.payload.length > 0 ? action.payload.join(',') : 'na',
 				},
 				activeFilters: {
 					type: FilterType.FAVORITES
