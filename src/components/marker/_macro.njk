@@ -1,0 +1,5 @@
+{% macro marker( bodyClasses, color='vineyard', text='WSU Pullman', tag="p") %}
+<{{tag}} class="wsu-marker wsu-marker__{{color}} wsu-notch--xsmall {{ bodyClasses }}">
+    {{text}}
+</{{tag}}>
+{% endmacro %}

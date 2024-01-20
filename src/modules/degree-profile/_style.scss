@@ -1,0 +1,463 @@
+@use 'sass:math';
+
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-degree-profile{
+    &__hero{
+        display: flex;
+        flex-direction: row;
+    }
+    &__hero-left{
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 1.5rem);
+        padding-right: 3rem;
+        padding-top: 2rem; 
+    }
+    &__hero-right{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    &__title h1{
+        margin-bottom: 2rem;
+    }
+    &__title h1:after{
+        display: none;
+    }
+    &__colleges{
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    &__colleges p:last-child{
+        margin-bottom: 0;
+    }
+    &__college{
+        margin-top: 1rem;   
+        margin-bottom: 0;
+        border-left: 7px solid $wsu-color--crimson-light;
+        padding-left: 1rem;
+        line-height: 1.25;
+        font-size: 1.25rem;
+        font-weight: $wsu-font-weight--semibold;
+        color: $wsu-color--gray-55;
+    }
+    &__college + &__college{
+        margin-top: 0;
+        padding-top: 1rem;   
+        
+    }
+    &__department{
+        border-left: 7px solid $wsu-color--crimson-light;
+        font-weight: 600;
+        padding-left: 1rem;
+        padding-top: 0.75rem;
+        margin-bottom: 0;
+        
+        a{            
+            color: $wsu-color--crimson-light;
+        }
+    }
+
+    &__degree-tags{
+        .wsu-marker__group{
+            margin-bottom: $wsu-spacing--small;
+        }
+        .wsu-marker__group:last-child{
+            margin-bottom: 0;
+        }
+        .wsu-marker{
+            margin-bottom: 0;
+        }        
+    } 
+    
+    &__degree-tags-label{
+        font-size: $wsu-font-size--small;
+        font-style: italic;
+        margin-bottom: 0.25rem;
+    }
+    &__short-desc p{
+        margin: 1rem 0 2rem 0;
+    }
+    
+    &__hero-image .wsu-image-frame img{
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 0.85;
+    }
+    &__content{
+        display: flex;
+        flex-direction: row;
+    }
+    &__content-left{
+        width: math.div(2, 3) * 100%;
+        display: flex;
+        flex-direction: column;
+        padding-right: 6rem;
+    }
+    &__content-right{
+        width: math.div(1, 3) * 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__dig-deeper{
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        background-color: #E9E5E5;
+        margin-bottom: 2rem;
+    }
+    &__dig-deeper-left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $wsu-color--crimson;
+        width: 150px;
+        min-width: 150px;
+    }
+    &__dig-deeper-right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1.5rem;
+        column-gap: 2rem;
+    }
+    &__dig-deeper-right p{
+        margin-bottom: 0;
+        flex-basis: 60%;
+        flex-grow: 1;
+    }
+    &__degree-details{
+        display: flex;
+        flex-direction: column;
+        background-color: #E9E5E5;
+        margin-bottom: 2rem;
+    }   
+    &__degree-details-header{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: $wsu-color--crimson;
+        color: white;
+    }   
+    &__degree-details-header h2{
+        font-size: $wsu-font-size--xxmedium;
+        font-weight: $wsu-font-weight--medium;
+        padding: 1rem;
+        margin-bottom: 0;
+    }
+    &__degree-details-body{
+        padding: 1rem;
+    }
+    &__degree-details-body p{
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+    &__degree-details-body ul li a{
+        padding-left: $wsu-spacing--xxsmall;
+        display: block;
+        font-size: $wsu-font-size--medium;
+        margin-bottom: $wsu-spacing--xxsmall;
+    }
+    &__degree-details-body ul li{
+        margin-bottom: 0;
+    }    
+    &__degree-details-body .wsu-marker__group {
+        padding-bottom: $wsu-spacing--medium;
+    }
+    &__degree-details-body .wsu-marker__group:not(:last-child) {
+        border-bottom: 2px solid $wsu-color--gray-15;
+    }
+    &__degree-details-body .wsu-marker{
+        font-size: 0.7rem;
+    }
+    &__contact-url::marker{
+        font-family: 'wsu-icons';
+        content: '\f126';
+        font-size: 14px;
+    }
+    &__contact-email::marker{
+        font-family: 'wsu-icons';
+        content: '\f11a';
+        font-size: 14px;
+    }
+    &__contact-phone::marker{
+        font-family: 'wsu-icons';
+        content: '\f133';
+        font-size: 14px;
+    }
+    &__related {
+        margin-top: $wsu-spacing--large;
+        margin-bottom: $wsu-spacing--large;
+        padding-top: $wsu-spacing--large;
+        border-top: 3px solid $wsu-color--gray-15;
+    }
+    &__related h2{
+        margin-bottom: $wsu-spacing--medium;
+        font-weight: $wsu-font-weight--semibold;
+    }
+    &__related-card{
+        align-items: start;
+        
+        .wsu-image-frame{
+            &::before{
+                background-color: $wsu-color--gray-5;
+            }
+        }
+        .wsu-card__content{
+            display: flex;
+            justify-content: space-between;
+        }
+        .wsu-icon{
+            font-size: 24px;
+            margin-right: 0;
+        }
+        .wsu-title{
+            margin-bottom: 0;
+        }
+    }
+    &__undecided{
+        display: flex;
+        background-color: #f5f5f5;
+        padding: 5rem 5% 5rem 13%;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__undecided-cta{
+        width: 50%;
+    }
+    &__undecided-cta h2{
+        margin-bottom: 1.5rem;
+    }
+    &__undecided-image{
+        width: 50%;
+        position: relative;
+    }
+    &__undecided-image figure{
+        margin: 0;
+    }
+
+    &__back-bar{
+        background-color: $wsu-color--crimson;
+        padding: 1.5rem 0;
+        position: relative;
+    }
+    &__back-bar-decorator {
+        width: calc(50vw - 1068px / 2 - $wsu-spacing--xxmedium);
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: repeating-linear-gradient(
+          135deg,
+          #ffffff,
+          #ffffff 2px,
+          transparent 2px,
+          transparent 10px
+        );
+        background-image: repeating-linear-gradient(
+            135deg,
+            #a60f2d,
+            #a60f2d 2px,
+            transparent 2px,
+            transparent 10px
+        );
+        background-color: $wsu-color--crimson-light;
+        background-position: 0;
+    }
+    &__back-bar-button{
+        max-width: 1068px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    &__back-bar-button .wsu-button {
+        background-color: $wsu-color--crimson-light;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    @media screen and (max-width: $wsu-breakpoint--desktop ) {
+
+        .wsu-degree-profile__hero-image .wsu-image-frame img{
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 0;
+        }
+
+        // .wsu-degree-profile__title h1{
+        //     font-size: 1.5rem;
+        // }
+        .wsu-degree-profile__content-left{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-right: 0;
+        }
+        .wsu-degree-profile__content-left > *{
+            margin: 0.5rem 0;
+        }
+        .wsu-degree-profile__content-right > *{
+            margin: 0.5rem 0;
+        }
+        .wsu-degree-profile__content-right{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .wsu-degree-profile__short-desc p{
+            width: 90%;
+        }
+        .wsu-degree-profile__content{
+            flex-direction: column;
+        }
+        .wsu-degree-profile__colleges, 
+        .wsu-degree-profile__short-desc, 
+        .wsu-degree-profile__title, 
+        .wsu-degree-profile__degree-tags{
+            margin: 1rem 0;
+        }
+
+        .wsu-degree-profile__title h1{
+            margin-bottom: 0;
+        }
+        .wsu-degree-profile__hero{
+            flex-direction: column-reverse;
+        }
+        .wsu-degree-cta{
+            margin-bottom: 1.54rem;
+        }
+        .wsu-degree-profile__hero-left{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-right: 0;
+        }
+        .wsu-degree-profile__hero-right{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        // .wsu-degree-profile__related > *{
+        //     margin: 1rem -2.25rem !important;
+        // }
+        
+
+    }
+    @media screen and (max-width: $wsu-breakpoint--tablet ) {
+        .wsu-degree-profile__dig-deeper{
+            height: unset;
+            display: flex;
+            flex-direction: column;
+            background-color: #E9E5E5;
+            margin-bottom: 2rem;
+        }
+        .wsu-degree-profile__dig-deeper-left{
+            display: none;
+            
+        }
+        .wsu-degree-profile__dig-deeper-left svg{
+            display: none;
+        }
+        .wsu-degree-profile__dig-deeper-right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+        }
+        .wsu-degree-profile__dig-deeper-right p{
+            margin-bottom: 0;
+            width: unset;
+            padding: unset;
+            padding-bottom: 1rem;
+        }
+    }
+    @media screen and (max-width: $wsu-breakpoint--phone ) {
+        .wsu-degree-profile__hero-image, .wsu-degree-cta, .wsu-degree-profile .wsu-degree-profile__undecided{
+            margin-left: -2.25rem;
+            margin-right: -2.25rem;
+        }
+
+    }
+}
+@media screen and (max-width: $wsu-breakpoint--desktop ) {
+    .wsu-degree-profile__undecided{
+        flex-direction: column-reverse;
+        padding: 2rem 2rem 5rem;
+    }
+    .wsu-degree-profile__undecided .wsu-decorator--style-block-crimson-wsu {
+        width: 100% !important;
+        height: 10% !important
+    }
+    .wsu-degree-profile__undecided-image{
+        margin-bottom: 3rem;
+    }
+    .wsu-degree-profile__undecided-cta, .wsu-degree-profile__undecided-image{
+        width: 100%;
+    }   
+}
+.wsu-degree-profile__degree-details{
+    .wsu-accordion{
+        margin-bottom: 0;
+    }
+    .wsu-accordion+.wsu-accordion{
+        margin-top: 0;
+    }
+    .wsu-accordion::after{
+        display: none;
+    }
+    .wsu-accordion__title{
+        background-color: $wsu-color--crimson;
+        margin-bottom: 0.5rem;
+    }
+    .wsu-accordion__title-button{
+        text-transform: uppercase;
+        font-size: $wsu-font-size--small;
+        font-weight: $wsu-font-weight--medium;
+        padding: 0.5rem;
+        margin: 0;
+        color: white;
+        width: -webkit-fill-available;
+
+        &:focus{
+            background-color: $wsu-color--crimson-light;            
+        }
+    }
+    .wsu-accordion__title::before{
+        color: white;
+        right: .5rem;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .wsu-accordion__title:hover, .wsu-accordion__title:focus, .wsu-accordion__title:focus-within{
+        background-color: $wsu-color--crimson-light;
+    }
+    .wsu-accordion__content-inner{
+        padding: 0.5rem;
+    }
+    .wsu-accordion__content-inner h4{
+        font-size: 1.15rem;
+        font-weight: $wsu-font-weight--medium;
+    }
+}
+.wsu-marker__group{
+    margin-bottom: 0.875rem;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.wsu-marker{
+    padding: 0.25rem 1rem 0.25rem 0.65rem;
+}
+@media screen and (max-width: $wsu-breakpoint--phone ) {
+    .wsu-wrapper-content{
+        padding-top: 0 !important;
+    }
+}
+.wsu-wrapper-content{
+    padding-top: 0 !important;
+}

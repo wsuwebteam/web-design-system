@@ -1,0 +1,49 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+.wsu-degree-cta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $wsu-color--crimson;
+    
+    :last-child{
+        border-right: none;
+    }
+    &__cta{
+        padding: 1.5rem;
+        padding-right: 32px;
+        white-space: nowrap;
+        border-radius: 0;
+        flex-grow: 1;
+        display: flex;
+        gap: 0.5rem; 
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 400;
+        border-right: 2px solid white;
+    }
+    
+    &__cta-apply svg, &__cta-visit svg{
+        width: 2rem;
+        height: 1.5rem;
+    }
+    &__cta-rfi svg{
+        width: 2rem;
+        height: 1.25rem;
+    }
+    @media screen and (max-width: $wsu-breakpoint--desktop ) {
+        &__cta{
+            padding: 1rem;
+            font-size: 12px;
+        }
+        &__cta-apply svg, &__cta-visit svg{
+            width: 1.5rem;
+            height: 1rem;
+        }
+        &__cta-rfi svg{
+            width: 1.5rem;
+            height: 1rem;
+        }
+    }
+}

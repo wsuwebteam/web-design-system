@@ -1,0 +1,29 @@
+{% extends "page-template.njk" %}
+
+{% block content %}
+    <div class="wsu-wrapper-global">
+        {% include 'skip-to-main/html.njk' %}
+        {% include 'header-global/html.njk' %}
+        <div class="wsu-wrapper-site">
+            {% include 'header-site/html.njk' %}
+            <div class="wsu-wrapper-content">
+                <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
+
+                    {% include 'degree-profile/html.njk' %}
+
+                </main>
+            </div>
+            {% include 'footer-site/html.njk' %}
+        </div>
+        {% include 'footer-global/html.njk' %}
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="../bundles/standalone/degree-finder/styles-wds.css" media='all'/>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://kit.fontawesome.com/5a4d2255bc.js" crossorigin="anonymous"></script>
+    <script src="../bundles/standalone/degree-finder/scripts.js"></script>
+{% endblock %}

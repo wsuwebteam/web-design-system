@@ -32,7 +32,7 @@ const useFetch = function (url: string, options = {}): FetchRequest {
 			options = { ...options, signal: abortControllerRef.current?.signal };
 
 			(async () => {
-				console.log("Calling: " + url);
+				// console.log("Calling: " + url);
 				const response = await fetch(url, options);
 				const responseJson = await response.json();
 
