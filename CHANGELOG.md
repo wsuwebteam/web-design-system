@@ -1,3 +1,52 @@
+# [2.17.0](https://github.com/wsuwebteam/web-design-system/compare/v2.16.1...v2.17.0) (2024-01-22)
+
+
+### Bug Fixes
+
+* accordion doesn't open when icon is clicked ([d9fdd34](https://github.com/wsuwebteam/web-design-system/commit/d9fdd34c444c2583533f4dd9e3d4a8ca5240ec2b))
+* add a margin bottom to the degree finder ([1f09da7](https://github.com/wsuwebteam/web-design-system/commit/1f09da72d87bfee13238850665c46d1c1f0f20a4))
+* add degree cta to styles ([00b6d8e](https://github.com/wsuwebteam/web-design-system/commit/00b6d8e355855dd9930cf7e548d3b7583fe9047b))
+* added style fixes to UI ([c026d86](https://github.com/wsuwebteam/web-design-system/commit/c026d86d720d3062158de7e0905d6ff7ae97d085))
+* button focus color ([a388d3f](https://github.com/wsuwebteam/web-design-system/commit/a388d3f3eaa8e3b7d5dec8be1f23a43b6178c4ff))
+* button quote location ([48e6acb](https://github.com/wsuwebteam/web-design-system/commit/48e6acb7571d4a8e26b670215a17d374e0687202))
+* cookies and button focus style ([228ba54](https://github.com/wsuwebteam/web-design-system/commit/228ba543d0581501a1b2b8508d23ae2e92d78051))
+* css path ([9b33b73](https://github.com/wsuwebteam/web-design-system/commit/9b33b736af904133171e5974e53f127110324e09))
+* degree cta style path ([8180686](https://github.com/wsuwebteam/web-design-system/commit/8180686ac1627d7980b585ce413d705188079971))
+* fixed responsive styles on finder ([707ccaa](https://github.com/wsuwebteam/web-design-system/commit/707ccaa76b65413d0bdf62d16fdf020070939039))
+* give dig deeper button a bit more space to grow ([d129730](https://github.com/wsuwebteam/web-design-system/commit/d1297302332350a0036daf3507a14c2942526efd))
+* list view spacing ([1d57893](https://github.com/wsuwebteam/web-design-system/commit/1d5789323cfe012b4b4050de82cf4b3b7c490635))
+* make ts checker happy ([5f66e34](https://github.com/wsuwebteam/web-design-system/commit/5f66e34e2fd1b7dc2f2ef08cc21d1a9c99b30ea4))
+* override slate styles ([46fa62e](https://github.com/wsuwebteam/web-design-system/commit/46fa62eaba797d7cbaf84d3ded3c2442d81ead39))
+* remove unwanted file ([2927c5a](https://github.com/wsuwebteam/web-design-system/commit/2927c5a236ba1a0d9a090625fd2153b6e68996c4))
+* show no results for favorites if no favorites are selected ([eb9679f](https://github.com/wsuwebteam/web-design-system/commit/eb9679f73b10e34ae7f772b0f1741c64a8b70290))
+* UI style updates and filter titles ([c5bd8e1](https://github.com/wsuwebteam/web-design-system/commit/c5bd8e182e969c15fac514fead524829be1745d6))
+
+
+### Features
+
+* add degree finder modules and bundles ([#27](https://github.com/wsuwebteam/web-design-system/issues/27)) ([7b60a6f](https://github.com/wsuwebteam/web-design-system/commit/7b60a6f8f3f63e1b73d7825c2800b5674ea3a5e8))
+* add loading spinner ([fe53850](https://github.com/wsuwebteam/web-design-system/commit/fe53850581d3937b9d7ae6dd5fafdd22584cd1d6))
+* added degree finder styles and layout ([2578a42](https://github.com/wsuwebteam/web-design-system/commit/2578a42b575af1a825cd98e045756263168d93df))
+* added degree list view and added styles ([28daf39](https://github.com/wsuwebteam/web-design-system/commit/28daf39d176e0d19058f662c54255dc3144025d9))
+* added focus states to degree filter ([f6563c3](https://github.com/wsuwebteam/web-design-system/commit/f6563c36d1eaa333e3d2085a79a94c91a85b4d5c))
+* added footer and style fixes to degree profile ([deba4de](https://github.com/wsuwebteam/web-design-system/commit/deba4de3a2e9ad618ff64d778404efaf2321d640))
+* added related degrees section ([0db1590](https://github.com/wsuwebteam/web-design-system/commit/0db159015fa0d1b603374abd74905d1e7000c5d3))
+* added styling to degree profile ([4319eec](https://github.com/wsuwebteam/web-design-system/commit/4319eec36319e81bd7da1052d933e84e111b232a))
+* added updated styles to profile ([cdba3cc](https://github.com/wsuwebteam/web-design-system/commit/cdba3cc28fc5c4fd1db126dc71cec6e1553fe743))
+* built finder filter and filter controls ([d4dbf63](https://github.com/wsuwebteam/web-design-system/commit/d4dbf637ed72d49f469f46380c85d6b757d2213a))
+* built wsu-error block ([9480ddc](https://github.com/wsuwebteam/web-design-system/commit/9480ddc402cae8888f0909481811fa43b440a1f6))
+* focus/scroll to degree list when pressing enter on search field ([4e20282](https://github.com/wsuwebteam/web-design-system/commit/4e202825d9a2de5f0a108dc9a8f15cf04cb0d0c0))
+* hacky lightweight localhost ([4c14243](https://github.com/wsuwebteam/web-design-system/commit/4c14243b2e3ddb900704d85711288e5f760c3955))
+* implement an intersection observer for conditional rendering to prevent lag ([7fe03ea](https://github.com/wsuwebteam/web-design-system/commit/7fe03eae14e289e09573c9c9fa60b66377a5317e))
+* split degree grid into separate macros ([4a13217](https://github.com/wsuwebteam/web-design-system/commit/4a13217ff8680cc97b3e8f51ddcaff6e752a18ce))
+* store url state for going back to degree list ([5166acd](https://github.com/wsuwebteam/web-design-system/commit/5166acddf5f1be76fcd5d4842cb262845b708d49))
+* update degree profile structure and styles ([57251bc](https://github.com/wsuwebteam/web-design-system/commit/57251bc6031cce472a2bdbb7087728710a9e3bfe))
+* updated college and department listing styling ([2ca4166](https://github.com/wsuwebteam/web-design-system/commit/2ca4166b0213dd576d4dc5ed6683a30410f7dc59))
+* updated icons to svgs ([01230be](https://github.com/wsuwebteam/web-design-system/commit/01230be8e7c6e148ae1be1a76b7f2efdefe01911))
+* updated styles and layout ([c52940f](https://github.com/wsuwebteam/web-design-system/commit/c52940f3ad6a70d14c73252349104a7a68595898))
+* updated styles to adjust for page width ([2ca6e69](https://github.com/wsuwebteam/web-design-system/commit/2ca6e691d7ea74624a9124bbb4469def94619d50))
+* WIP setup work area for degree finder ([42a4dd3](https://github.com/wsuwebteam/web-design-system/commit/42a4dd3877b9cdd5748a044fe91b145726b67eb1))
+
 ## [2.16.1](https://github.com/wsuwebteam/web-design-system/compare/v2.16.0...v2.16.1) (2023-12-15)
 
 
