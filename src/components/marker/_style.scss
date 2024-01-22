@@ -1,0 +1,29 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-marker{
+    display: flex !important;
+    width: fit-content;
+    padding: 0.5rem;
+
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #333333;
+    font-weight: $wsu-font-weight--semibold;
+
+    &__group{
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+    }
+    &__vineyard{
+        background-color: $wsu-color--accent-vineyard;
+    }
+    &__pacificsky{
+        background-color: $wsu-color--accent-pacificsky;
+    }
+    &.wsu-notch--xsmall{
+        clip-path: polygon(100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 0);
+    }
+}

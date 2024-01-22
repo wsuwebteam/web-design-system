@@ -1,0 +1,72 @@
+@import "../../../../_assets/scss/variables";
+@import "../../../../_assets/scss/mixins";
+@import "../../../components/degree-cta/style";
+@import "../../../modules/degree-profile/style";
+@import "../../../modules/degree-finder/style";
+
+.wsu-degree-finder {
+	.wsu-error {
+		padding-left: 0;
+	}
+
+	&__filter-decorator-block {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: #ca1237;
+	}
+	&__filter-decorator-lines {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: repeating-linear-gradient(
+			135deg,
+			#a60f2d,
+			#a60f2d 2px,
+			transparent 2px,
+			transparent 10px
+		);
+	}
+
+	&__degrees-container.is-loading {
+		min-height: 700px;
+	}
+
+	// loading indicator
+	@-webkit-keyframes spin {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes spin {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+
+	&__loading {
+		-webkit-animation: spin 1s infinite linear;
+		animation: spin 1s infinite linear;
+		border: 0.25rem solid rgba(113, 113, 113, 0.5);
+		border-radius: 50%;
+		border-top-color: #981e32;
+		height: 2rem;
+		margin: $wsu-spacing--xxmedium auto;
+		width: 2rem;
+	}
+}
