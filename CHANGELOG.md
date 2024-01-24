@@ -1,3 +1,18 @@
+# [2.18.0](https://github.com/wsuwebteam/web-design-system/compare/v2.17.0...v2.18.0) (2024-01-24)
+
+
+### Bug Fixes
+
+* prevent item wrapping ([c0c5bc8](https://github.com/wsuwebteam/web-design-system/commit/c0c5bc8e960ca35f97ecfa9f8cd02f353a3c64c0))
+* remove unwanted <li> ([b5a1111](https://github.com/wsuwebteam/web-design-system/commit/b5a1111c8017de696c22d8f63edb7cb1d82c299c))
+
+
+### Features
+
+* create content-list module ([#37](https://github.com/wsuwebteam/web-design-system/issues/37)) ([77a86ac](https://github.com/wsuwebteam/web-design-system/commit/77a86ac8de74c6db44218613384868761e80f5d2))
+* first build of content list block ([e45534a](https://github.com/wsuwebteam/web-design-system/commit/e45534a709a0114135048acd4d98200c0d94d86a))
+* updated spacing and added real text ([6f091dc](https://github.com/wsuwebteam/web-design-system/commit/6f091dc388a46264e784f35508147e77157bba81))
+
 # [2.17.0](https://github.com/wsuwebteam/web-design-system/compare/v2.16.1...v2.17.0) (2024-01-22)
 
 
