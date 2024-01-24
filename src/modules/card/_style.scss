@@ -118,6 +118,12 @@
         padding: 0;
     }
 
+    &__person-org {
+        @include wsu-font--xsmall();
+        font-weight: 500;
+        padding: 0;
+    }
+
     &__person-title + [class*="wsu-meta"],
     &__person-name + [class*="wsu-meta"] {
         margin-top: $wsu-spacing--small;
