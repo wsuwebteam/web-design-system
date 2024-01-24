@@ -1,3 +1,12 @@
+## [2.19.1](https://github.com/wsuwebteam/web-design-system/compare/v2.19.0...v2.19.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* add content-list to the wp-editor styles ([313b825](https://github.com/wsuwebteam/web-design-system/commit/313b82588bb581cb7bd99b7bf951e3dec19003a1))
+* organization ([#39](https://github.com/wsuwebteam/web-design-system/issues/39)) ([74ca8a3](https://github.com/wsuwebteam/web-design-system/commit/74ca8a3c28cb836730167cf11189eb2361cc774f))
+* organization in people list ([98938ae](https://github.com/wsuwebteam/web-design-system/commit/98938aeeecf04bd527cc4e64cfb23cd003f5ca4a))
+
 # [2.19.0](https://github.com/wsuwebteam/web-design-system/compare/v2.18.0...v2.19.0) (2024-01-24)
 
 
