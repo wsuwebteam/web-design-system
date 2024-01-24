@@ -1,0 +1,13 @@
+{% extends "component.njk" %}
+{% from "content-list/_macro.njk" import contentList %}
+
+{% block content %}
+<div class="wsu-demo-component">
+    {% include 'content-list/html.njk' %}
+
+<style>
+hr {
+    width: 100%;
+}
+</style>
+{%  endblock %}   
