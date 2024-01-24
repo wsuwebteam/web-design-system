@@ -1,3 +1,11 @@
+# [2.19.0](https://github.com/wsuwebteam/web-design-system/compare/v2.18.0...v2.19.0) (2024-01-24)
+
+
+### Features
+
+* support org display on people cards ([6d08160](https://github.com/wsuwebteam/web-design-system/commit/6d08160c0b8382820e5519c25c90862a36ae75ed))
+* support org display on people cards ([#38](https://github.com/wsuwebteam/web-design-system/issues/38)) ([2eec7f9](https://github.com/wsuwebteam/web-design-system/commit/2eec7f9eb7a2ba7f2f71ffb35eea34f3d2c2b421))
+
 # [2.18.0](https://github.com/wsuwebteam/web-design-system/compare/v2.17.0...v2.18.0) (2024-01-24)
 
 
