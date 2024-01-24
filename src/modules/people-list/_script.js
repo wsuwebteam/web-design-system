@@ -54,7 +54,7 @@ const PeopleList = function (el) {
   const includeChildDirectories = el.dataset.children ?? "";
   const displayFields = el.dataset.displayFields.split(",");
   const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
-  const useOrgs = el.dataset.useOrganizations ?? false;
+  const useOrgs = el.dataset.useOrganization ?? false;
   const excludedTerms = el.dataset.excludeTermValues
     .split(",")
     .filter((r) => r !== "");
@@ -93,7 +93,7 @@ const PeopleList = function (el) {
 
     let directories = person.directories ?? [];
 
-    let personOrgs = useOrgs ? directories : organizations;
+    let personOrgs = useOrgs ? organizations : directories;
   
     let profileUrl  = '';
 
