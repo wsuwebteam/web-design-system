@@ -54,6 +54,7 @@ const PeopleList = function (el) {
   const includeChildDirectories = el.dataset.children ?? "";
   const displayFields = el.dataset.displayFields.split(",");
   const onlyShowSelectedTermValues = el.dataset.onlyShowSelectedTermValues;
+  const useOrgs = el.dataset.useOrganizations ?? false;
   const excludedTerms = el.dataset.excludeTermValues
     .split(",")
     .filter((r) => r !== "");
@@ -81,10 +82,18 @@ const PeopleList = function (el) {
   let filterToggles;
   let searchInput;
 
+ 
+
   function getPersonHTML(person) {
     // console.log(person);
 
     let linkProfile = ( ( profileLink && person.bio ) || ( showProfile && person.bio ) ) ? true : false;
+
+    let organizations = person.university_organization ?? [];
+
+    let directories = person.directories ?? [];
+
+    let personOrgs = useOrgs ? directories : organizations;
   
     let profileUrl  = '';
 
@@ -152,6 +161,16 @@ const PeopleList = function (el) {
                 ? person.title
                     .map(
                       (t) => `<div class="wsu-card__person-title">${t}</div>`
+                    )
+                    .join("")
+                : ""
+            }
+
+            ${
+              ( displayFields.includes("organization") && personOrgs.length > 0  )
+                ? personOrgs
+                    .map(
+                      (o) => `<div class="wsu-card__person-org">${o.name}</div>`
                     )
                     .join("")
                 : ""
