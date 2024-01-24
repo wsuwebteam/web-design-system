@@ -1,0 +1,32 @@
+@import "../../../_assets/scss/variables";
+@import "../../../_assets/scss/mixins";
+
+.wsu-content-list {
+  list-style-type: none;
+  padding-left: 1.4em;
+
+  p {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+  &__item {
+    break-inside: avoid;
+  }
+  &__item-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__item-details {
+    font-size: 14px;
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  &__item-taxonomies {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item-taxonomies {
+    font-size: 14px;
+  }
+}
