@@ -15,10 +15,11 @@ const initSwiper = () => {
 
       const slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
       const carouselSlides = slideWrapper.children;
+      const carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
 
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
-        carouselSlides[i].setAttribute('data', `lbwps-gid: 'carousel-${index}'`);
+        carouselImages[i].setAttribute(`data-lbwps-gid: carousel-${index}`);
       };
 
       let desktopCols;
