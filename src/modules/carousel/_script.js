@@ -20,7 +20,6 @@ const initSwiper = () => {
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
         carouselImages[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
-        console.log(carouselImages[i].dataset);
       };
 
       let desktopCols;
