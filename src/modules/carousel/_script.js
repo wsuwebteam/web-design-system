@@ -4,6 +4,7 @@ import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from "swiper";
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 const initSwiper = () => {
   const carouselName = ".wsu-carousel";
+
   let carouselSliders = document.querySelectorAll(carouselName);
 
   if (carouselSliders.length > 0) {
@@ -17,6 +18,7 @@ const initSwiper = () => {
 
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
+        carouselSlides[i].setAttribute('data', `lbwps-gid: 'carousel-${index}'`);
       };
 
       let desktopCols;
