@@ -1,3 +1,16 @@
+## [2.19.3](https://github.com/wsuwebteam/web-design-system/compare/v2.19.2...v2.19.3) (2024-01-31)
+
+
+### Bug Fixes
+
+* added if statement to fix breaking change ([7b8b48d](https://github.com/wsuwebteam/web-design-system/commit/7b8b48d4ffe575c91bdadb7e4c453323c8d3ea68))
+* fixed breaking change to carousel caused by lack of sanity check ([#42](https://github.com/wsuwebteam/web-design-system/issues/42)) ([97155c5](https://github.com/wsuwebteam/web-design-system/commit/97155c5ec616ed03d7c105e40707650d2efc6351))
+* fixed contains IF statement ([cee6661](https://github.com/wsuwebteam/web-design-system/commit/cee6661a96b90d99194e38701f0e6322b59c7e0a))
+* fixing if logic ([50d599c](https://github.com/wsuwebteam/web-design-system/commit/50d599c76136141104fdb2ae753f1d5887b33247))
+* removed console logs ([e50e1a4](https://github.com/wsuwebteam/web-design-system/commit/e50e1a41a29b28e1d096e5e1876f0cbf96c9f6b3))
+* updated if statement ([93fe6f2](https://github.com/wsuwebteam/web-design-system/commit/93fe6f2e82c885933b7465ea759248ce1bcec6fb))
+* updated if statement typo ([a6084a1](https://github.com/wsuwebteam/web-design-system/commit/a6084a14774d8e1ceb253e861e752c939e63f053))
+
 ## [2.19.2](https://github.com/wsuwebteam/web-design-system/compare/v2.19.1...v2.19.2) (2024-01-31)
 
 
