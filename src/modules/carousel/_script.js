@@ -17,21 +17,28 @@ const initSwiper = () => {
       // define slider wrappers by targeting carousels that have been tagged with an index number, and drill down to the wrapper inside
       let slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
       let carouselSlides = slideWrapper.children;
-      let carouselImageSlides = slideWrapper.querySelectorAll('.wp-block-image a');
+      //let carouselImageSlides = slideWrapper.querySelectorAll('.wp-block-image a');
       
 
       
       // for each carousel slide in the slider, add swiper-slide
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
+
+        if ( carouselSlides[i].classList.contains('wp-block-image') ) {
+          let slideLink = carouselSlides[i].querySelector('a');
+          if ( slideLink ) {
+            slideLink.setAttribute('data-lbwps-gid', `carousel-${index}`);
+          } 
+        };
       };
 
       // for each slide that is a wp-block-image, add a data attribute for the lightbox plugin
-      for (let i = 0; i < carouselImageSlides.length; i++) {
+      /*for (let i = 0; i < carouselImageSlides.length; i++) {
         if (carouselImageSlides[i].parent.classList.contains('wp-block-image') && carouselImageSlides[i].parent.classList.contains('swiper-slide')) {
           carouselImageSlides[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
         };
-      };
+      };*/
 
       let desktopCols;
       let tabletLargeCols;
