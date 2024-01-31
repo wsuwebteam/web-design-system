@@ -1,3 +1,17 @@
+## [2.19.4](https://github.com/wsuwebteam/web-design-system/compare/v2.19.3...v2.19.4) (2024-01-31)
+
+
+### Bug Fixes
+
+* added console logs to debug ([dcf6584](https://github.com/wsuwebteam/web-design-system/commit/dcf658443e14379ef3e349adc01a7c39a3f8c154))
+* changed const to let ([786c7b6](https://github.com/wsuwebteam/web-design-system/commit/786c7b66974b374389e40d84cc93df93e0aef908))
+* changed loop context ([82509c1](https://github.com/wsuwebteam/web-design-system/commit/82509c1cf5825922e2ba6eb710ad28ca338eee0d))
+* fixed and refactored loop to fix breaking change to carousels ([#43](https://github.com/wsuwebteam/web-design-system/issues/43)) ([eff02cc](https://github.com/wsuwebteam/web-design-system/commit/eff02cc3d3b4511aaf5cc81ce9966a3131e1cac2))
+* fixing looping process ([913d399](https://github.com/wsuwebteam/web-design-system/commit/913d3999f43c10805f7e6d91bb69cfa7c2d428ec))
+* moved image slide loop outside to its own for loop ([556c05a](https://github.com/wsuwebteam/web-design-system/commit/556c05a8d6404642ad55edcfa19f418c6af50d54))
+* refactored loop ([7e5c6ca](https://github.com/wsuwebteam/web-design-system/commit/7e5c6ca03b2a75ecebf9b512608dd406069d7383))
+* removed console messages ([8e17747](https://github.com/wsuwebteam/web-design-system/commit/8e17747a74ce27b4c75f3a06b8cf910e4480c49a))
+
 ## [2.19.3](https://github.com/wsuwebteam/web-design-system/compare/v2.19.2...v2.19.3) (2024-01-31)
 
 
