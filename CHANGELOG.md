@@ -1,3 +1,14 @@
+## [2.19.2](https://github.com/wsuwebteam/web-design-system/compare/v2.19.1...v2.19.2) (2024-01-31)
+
+
+### Bug Fixes
+
+* fixed selector to target a under images ([7fc8ec6](https://github.com/wsuwebteam/web-design-system/commit/7fc8ec66ab6e4be9215cb3e80ab294240900f5b0))
+* fixed setattribute statement ([53544d5](https://github.com/wsuwebteam/web-design-system/commit/53544d54a8d509c8e9824cdc6f871850487aef66))
+* fixing looping issue on carousel lightbox ([246eea7](https://github.com/wsuwebteam/web-design-system/commit/246eea7638ce82fae50b83d8397d8e30c395bfd0))
+* removed console command ([6e7027a](https://github.com/wsuwebteam/web-design-system/commit/6e7027a27d71d1fd104649758c11777362264205))
+* updated carousel script to loop internally with lightboxes ([#41](https://github.com/wsuwebteam/web-design-system/issues/41)) ([a4257ff](https://github.com/wsuwebteam/web-design-system/commit/a4257ff1216fe4dfd5a8d9bb674088c07a447322))
+
 ## [2.19.1](https://github.com/wsuwebteam/web-design-system/compare/v2.19.0...v2.19.1) (2024-01-24)
 
 
