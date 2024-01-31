@@ -14,12 +14,17 @@ const initSwiper = () => {
 
       let slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
       let carouselSlides = slideWrapper.children;
-      let carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
 
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
+      };
+
+      for (let i = 0; i < carouselSlides.length; i++) {
         if (carouselSlides[i].classList.contains('wp-block-image') && carouselSlides[i].classList.contains('swiper-slide')) {
+          let carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
+          
           carouselImages[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
+          console.log('image slide loop working');
         }
       };
 
