@@ -12,9 +12,9 @@ const initSwiper = () => {
 
       carousel.classList.add(`wsu-carousel-${index}`);
 
-      const slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
-      const carouselSlides = slideWrapper.children;
-      const carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
+      let slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
+      let carouselSlides = slideWrapper.children;
+      let carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
 
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
