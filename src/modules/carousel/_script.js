@@ -16,14 +16,8 @@ const initSwiper = () => {
       
       // define slider wrappers by targeting carousels that have been tagged with an index number, and drill down to the wrapper inside
       let slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
-      console.log('carousel slider wrapper =' + slideWrapper);
-
-      // define slides inside each carousel, by targeting slideWrapper children. ONLY works if parent carousel gets an index number.
       let carouselSlides = slideWrapper.children;
-      console.log('carousel slides =' + carouselSlides);
-
       let carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
-      console.log('carousel image slides =' + carouselImages);
 
       // for each carousel slide in the slider, add swiper-slide
       for (let i = 0; i < carouselSlides.length; i++) {
@@ -34,7 +28,6 @@ const initSwiper = () => {
       for (let i = 0; i < carouselSlides.length; i++) {
         if (carouselSlides[i].classList.contains('wp-block-image') && carouselSlides[i].classList.contains('swiper-slide')) {
           carouselImages[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
-          console.log('image slide loop working' + i);
         }
       };
 
