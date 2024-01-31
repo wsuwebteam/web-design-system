@@ -3,26 +3,34 @@ import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from "swiper";
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 const initSwiper = () => {
   const carouselName = ".wsu-carousel";
-
+  
+  // Defining all sliders by the .wsu-carousel class name
   let carouselSliders = document.querySelectorAll(carouselName);
 
   if (carouselSliders.length > 0) {
-
+    // For each carousel with the .wsu-carousel class name
     carouselSliders.forEach((carousel, index) => {
 
+      // add .wsu-carousel-(index number) class name to each carousel with .wsu-carousel
       carousel.classList.add(`wsu-carousel-${index}`);
-
+      
+      // define slider wrappers by targeting carousels that have been tagged with an index number, and drill down to the wrapper inside
       let slideWrapper = document.querySelector(`.wsu-carousel-${index} .wsu-carousel__wrapper`);
+      console.log('carousel slider wrapper =' + slideWrapper);
+      // define slides inside each carousel, by targeting slideWrapper children. ONLY works if parent carousel gets an index number.
       let carouselSlides = slideWrapper.children;
+      console.log('carousel slides =' + carouselSlides);
 
+      // for each carousel slide in the slider, add swiper-slide
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
       };
 
+      // for each slide that is a wp-block-image, add a data attribute for the lightbox plugin
       for (let i = 0; i < carouselSlides.length; i++) {
         if (carouselSlides[i].classList.contains('wp-block-image') && carouselSlides[i].classList.contains('swiper-slide')) {
           let carouselImages = slideWrapper.querySelectorAll('.wp-block-image a');
-          
+
           carouselImages[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
           console.log('image slide loop working');
         }
