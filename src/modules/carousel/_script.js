@@ -1,5 +1,4 @@
 import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from "swiper";
-//Test
 
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 const initSwiper = () => {
@@ -19,7 +18,9 @@ const initSwiper = () => {
 
       for (let i = 0; i < carouselSlides.length; i++) {
         carouselSlides[i].classList.add(`swiper-slide`);
-        carouselImages[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
+        if (carouselSlides[i].classList.contains('wp-block-image') && carouselSlides[i].classList.contains('swiper-slide')) {
+          carouselImages[i].setAttribute('data-lbwps-gid', `carousel-${index}`);
+        }
       };
 
       let desktopCols;
