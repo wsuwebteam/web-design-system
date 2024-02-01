@@ -7,6 +7,7 @@
 {% from "quicklinks/_macro.njk" import quicklinks %}
 {% from "navigation-vertical/_macro.njk" import navigationVertical %}
 {% from "navigation-audience/_macro.njk" import navigationAudience %}
+{% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
 
 
 {% block content %}
@@ -21,6 +22,7 @@
         {{ navigationAudience() }}
         <div class="wsu-wrapper-content">
             <main role="main" id="wsu-content" class="wsu-wrapper-main" tabindex="-1">
+                {{ eyebrowHeader( classes='', text='Lorem ipsum dolor' ) }}
                 <h1>Lorem ipsum dolor sit amet</h1>
                 {% include 'row/html--thirds.njk' %}
             </main>
