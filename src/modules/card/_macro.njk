@@ -10,8 +10,9 @@
 {% from "meta/_macro.njk" import metaTags %}
 {% from "meta/_macro.njk" import metaWebsite %}
 {% from "button/_macro.njk" import button %}
+{% from "eyebrow-header/_macro.njk" import eyebrowHeader %}
 
-{% macro card( classes='', showImage=true, showByline=true, showTags=true, showDate=true, showTitle=true, showCaption=true) %}
+{% macro card( classes='', showImage=true, showByline=true, showTags=true, showDate=true, showTitle=true, showCaption=true, showEyebrow=false) %}
 <article class="wsu-card{{classes}}">
     {% if showImage %}<div class="wsu-image-frame wsu-image-frame--fixed-ratio">
         <a href="#" tabindex="-1" aria-hidden="true">
@@ -19,6 +20,7 @@
         </a>
     </div>{% endif %}
     <div class="wsu-card__content">
+        {% if showEyebrow %}{{ eyebrowHeader() }}{% endif %}
         {% if showTitle %}<h2 class="wsu-title"><a href="#">WSU Card Title Text</a></h2>{% endif %}
         {% if showDate %}{{ metaDate() }}{% endif %}
         {% if showCaption %}{{ caption() }}{% endif %}

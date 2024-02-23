@@ -6,6 +6,7 @@ const EventList = function (el) {
     search: el.dataset.search,
     dataSource: el.dataset.dataSource,
     count: el.dataset.count,
+    offset: el.dataset.offset,
     postIds: el.dataset.postIds,
     exclude: el.dataset.exclude,
     types: el.dataset.types,
