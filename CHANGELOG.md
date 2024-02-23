@@ -1,3 +1,15 @@
+# [2.20.0](https://github.com/wsuwebteam/web-design-system/compare/v2.19.4...v2.20.0) (2024-02-23)
+
+
+### Bug Fixes
+
+* offset is not being used on event modules ([420bbf0](https://github.com/wsuwebteam/web-design-system/commit/420bbf0a315ad4e0b20eb6d1b51bf790d8b610bd))
+
+
+### Features
+
+* add eyebrow heading to cards ([aeeccb9](https://github.com/wsuwebteam/web-design-system/commit/aeeccb96ecc5c143620f7c666b1331e232bc8fdc))
+
 ## [2.19.4](https://github.com/wsuwebteam/web-design-system/compare/v2.19.3...v2.19.4) (2024-01-31)
 
 
