@@ -1,3 +1,15 @@
+# [2.21.0](https://github.com/wsuwebteam/web-design-system/compare/v2.20.0...v2.21.0) (2024-04-01)
+
+
+### Bug Fixes
+
+* updated font size for citation ([789bebf](https://github.com/wsuwebteam/web-design-system/commit/789bebf23ef7aabf71f4715c057b8f8239e87f75))
+
+
+### Features
+
+* add location and no results message to event blocks ([733797a](https://github.com/wsuwebteam/web-design-system/commit/733797a026ab774697877f67a456b798bf76f6c0))
+
 # [2.20.0](https://github.com/wsuwebteam/web-design-system/compare/v2.19.4...v2.20.0) (2024-02-23)
 
 
