@@ -5,6 +5,7 @@ const EventList = function (el) {
     type: el.dataset.type,
     search: el.dataset.search,
     dataSource: el.dataset.dataSource,
+    noResultsMessage: el.dataset.noResultsMessage,
     count: el.dataset.count,
     offset: el.dataset.offset,
     postIds: el.dataset.postIds,
@@ -13,6 +14,7 @@ const EventList = function (el) {
     categories: el.dataset.categories,
     tags: el.dataset.tags,
     organizations: el.dataset.organizations,
+    locations: el.dataset.locations,
   };
 
   function generateHTML(events) {
@@ -74,8 +76,11 @@ const EventList = function (el) {
           &categories=${data.categories}
           &tags=${data.tags}
           &exclude=${data.exclude}
-          &organizations=${data.organizations}`;
+          &organizations=${data.organizations}
+          &locations=${data.locations}`;
       }
+
+      url = url.replace(/\s/g, "");
 
       const response = await fetch(url);
 
@@ -91,7 +96,12 @@ const EventList = function (el) {
 
   async function init() {
     const events = await getEvents();
-    generateHTML(events);
+
+    events.length > 0
+      ? generateHTML(events)
+      : (el.outerHTML = data.noResultsMessage
+          ? `<p>${data.noResultsMessage}</p>`
+          : "");
   }
 
   init();
