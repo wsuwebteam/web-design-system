@@ -113,6 +113,7 @@
 .wsu-gutenberg-decorator-editor{
     @import '../components/decorator/style';
     @import '../components/decorator-line/style';
+    @import "wsu-design-system.utilities.scss";
 }
 
 /** Temporary Fix **/
