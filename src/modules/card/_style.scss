@@ -7,14 +7,21 @@
     box-sizing: border-box;
 
     &[class*="wsu-color-background"]:not([class*="wsu-card--style-horizontal-"] ) {
-
         .wsu-card__content {
             padding-left: $wsu-spacing--medium;
             padding-right: $wsu-spacing--medium; 
-            
         }
-       
     }
+    
+    @media screen and (max-width: $wsu-breakpoint--tablet )  {
+        &[class*="wsu-color-background"] {
+            .wsu-card__content {
+                padding-left: $wsu-spacing--medium;
+                padding-right: $wsu-spacing--medium;  
+            }
+        }
+    }
+
     &--layout-reversed{
         @media screen and (min-width: $wsu-breakpoint--tablet )  {
             flex-direction: row-reverse;
