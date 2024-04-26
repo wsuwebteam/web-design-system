@@ -1,3 +1,11 @@
+## [2.21.1](https://github.com/wsuwebteam/web-design-system/compare/v2.21.0...v2.21.1) (2024-04-26)
+
+
+### Bug Fixes
+
+* updated card style to fix padding issue on horizontal mobile view ([0b03d8f](https://github.com/wsuwebteam/web-design-system/commit/0b03d8fb7103ab31d45855355a5e4ce25a85bb16))
+* updated card style to fix padding issue on horizontal mobile view ([#46](https://github.com/wsuwebteam/web-design-system/issues/46)) ([9d6308d](https://github.com/wsuwebteam/web-design-system/commit/9d6308d97a9aa573e5b58949b9b8ce9a36ff0093))
+
 # [2.21.0](https://github.com/wsuwebteam/web-design-system/compare/v2.20.0...v2.21.0) (2024-04-01)
 
 
