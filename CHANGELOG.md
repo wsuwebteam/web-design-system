@@ -1,3 +1,17 @@
+# [2.22.0](https://github.com/wsuwebteam/web-design-system/compare/v2.21.1...v2.22.0) (2024-05-02)
+
+
+### Bug Fixes
+
+* move decorator styles to custom scope ([d8d2b74](https://github.com/wsuwebteam/web-design-system/commit/d8d2b74c56b603123f04eb98e3489ebd8952e695))
+
+
+### Features
+
+* add decorator styles to Gutenberg ([9da8074](https://github.com/wsuwebteam/web-design-system/commit/9da80740906094660fc898ba67e5c45a3c4234a8))
+* add utilities to decorator editor ([502a60e](https://github.com/wsuwebteam/web-design-system/commit/502a60ef61ea8e4524a5a6ed5134a76a9fd4e554))
+* added fontawesome to script list in component for prototyping ([ef605d6](https://github.com/wsuwebteam/web-design-system/commit/ef605d600e15644a3d51323f6ba5ba10518b6e8f))
+
 ## [2.21.1](https://github.com/wsuwebteam/web-design-system/compare/v2.21.0...v2.21.1) (2024-04-26)
 
 
