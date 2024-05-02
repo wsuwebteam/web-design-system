@@ -32,7 +32,7 @@
     @import '../components/experimental_video-frame/style';
     @import '../components/experimental_backgrounds/style';
     @import '../components/background/style';
-    @import '../components/container/style';
+    @import '../components/container/style';    
     @import '../components/header-utility-bar/style';
     @import '../components/icon/style';
     @import '../components/image/style';
@@ -107,6 +107,12 @@
 
     @import "wsu-design-system.wordpress.scss";
 
+    @import "wsu-design-system.utilities.scss";
+}
+
+.wsu-gutenberg-decorator-editor{
+    @import '../components/decorator/style';
+    @import '../components/decorator-line/style';
     @import "wsu-design-system.utilities.scss";
 }
 
