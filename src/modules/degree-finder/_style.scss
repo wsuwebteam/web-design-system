@@ -2,331 +2,364 @@
 @import "../../../_assets/scss/mixins";
 
 .wsu-degree-finder {
-    margin-bottom: 3rem;
-    
-    &__hero{
-        background-color: #4d4d4d;
+  margin-bottom: 3rem;
 
-    }
-    &__hero-top{
-        display: flex;
-        justify-content: flex-end;
+  &__hero {
+    background-color: #4d4d4d;
+  }
+  &__hero-top {
+    display: flex;
+    justify-content: flex-end;
 
-        .wsu-degree-cta{
-            border: 2px solid white;
-        }
+    .wsu-degree-cta {
+      border: 2px solid white;
     }
-    &__hero-content{
-        max-width: 1200px;
-        margin: auto;
-        padding: 5.125rem 4.125rem 4.125rem;
-        color: white;
-        
-        h1 {
-            font-weight: $wsu-font-weight--bold;
-            margin-bottom: $wsu-spacing--xxmedium;
+  }
+  &__hero-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5.125rem 4.125rem 4.125rem;
+    color: white;
 
-            &::after{ 
-                content: none;
-            }
+    h1 {
+      font-weight: $wsu-font-weight--bold;
+      margin-bottom: $wsu-spacing--xxmedium;
 
-            + p {
-                font-size: $wsu-font-size--large;
-                font-weight: $wsu-font-weight--medium;
-                margin-bottom: $wsu-spacing--medium;
-            }
-        }
+      &::after {
+        content: none;
+      }
 
-        p:last-child{
-            margin-bottom: 0;
-            font-size: 1rem;
-        }
+      + p {
+        font-size: $wsu-font-size--large;
+        font-weight: $wsu-font-weight--medium;
+        margin-bottom: $wsu-spacing--medium;
+      }
     }
-    &__filter-wrapper{
-        background-color: $wsu-color--crimson;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        position: relative;
+
+    p:last-child {
+      margin-bottom: 0;
+      font-size: 1rem;
     }
-    &__filter-controls{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin: auto;
-        max-width: 1068px;
-        width: 1068px;
+  }
+  &__filter-wrapper {
+    background-color: $wsu-color--crimson;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  &__filter-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1068px;
+    width: 1068px;
+  }
+  &__filter-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    position: relative;
+  }
+  &__filter-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: $wsu-color--crimson;
+    width: 88%;
+    height: 100%;
+    padding: 1.5rem 0;
+    position: relative;
+  }
+  &__filter-types {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  &__filter-types li {
+    margin-bottom: 0;
+  }
+  &__filter-type {
+    padding: 0.25rem;
+    font-weight: 400;
+  }
+  &__filter-type::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: 0.25s ease all;
+  }
+  &__filter-type:hover::after,
+  &__filter-type:focus::after {
+    height: 2px;
+  }
+
+  &__filter-type:hover,
+  &__filter-type:focus,
+  &__filter-favorites:hover,
+  &__filter-favorites:focus {
+    box-shadow: none;
+    background-color: $wsu-color--crimson;
+    -webkit-text-stroke: 0.5px;
+  }
+  &__filter-right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    padding-right: 1.5rem;
+  }
+  &__filter-search-wrapper {
+    display: flex;
+    position: relative;
+  }
+  &__filter-search-submit {
+    position: absolute;
+    right: 0;
+  }
+  &__filter-search-submit .fa-magnifying-glass {
+    color: $wsu-color--crimson;
+    cursor: pointer;
+    padding: 7px;
+  }
+  &__filter-search-submit .fa-magnifying-glass:focus {
+    border: 2px solid $wsu-color--crimson;
+    border-radius: 5px;
+  }
+  &__filter-favorites {
+    cursor: pointer;
+    margin: 0 1rem;
+  }
+  &__filter-favorites svg {
+    margin-right: 0.5rem;
+  }
+  &__filter-search-field {
+    padding: 0.5rem !important;
+  }
+  &__filter-terms {
+    display: flex;
+    margin: auto;
+    background-color: $wsu-color--crimson;
+    position: relative;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.3);
+    padding: 2rem 0;
+  }
+  &__filter-terms-list-container {
+    margin: auto;
+    width: 100%;
+    max-width: 1068px;
+  }
+  &__filter-terms-list {
+    list-style-type: none;
+    width: 100%;
+    margin: 0 1.5rem;
+    padding: 0;
+  }
+  &__filter-terms-list label {
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+  }
+  &__filter-terms-list label:focus-within {
+    font-weight: 600;
+  }
+  &__filter-terms-list label .fa-check {
+    visibility: hidden;
+    margin-right: 0.5rem;
+  }
+  &__filter-terms-list input:checked + .fa-check {
+    visibility: visible;
+  }
+  &__filter-terms-list input:checked + .fa-check + &__filter-term-title {
+    font-weight: 600;
+  }
+  &__degrees-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  &__degrees-grid-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin: $wsu-spacing--xxmedium 0 $wsu-spacing--medium 0;
+
+    gap: $wsu-spacing--sxxsmall;
+  }
+
+  &__degrees-grid-control button:hover,
+  &__degrees-grid-control button:active,
+  &__degrees-grid-control button:focus {
+    color: $wsu-color--crimson;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &__degrees-grid-control button {
+    border: none;
+    color: #4d4d4d;
+    background-color: transparent;
+    transition: ease-in-out all 0.1s;
+  }
+  &__degrees-grid-control button[aria-checked="true"] {
+    color: $wsu-color--crimson;
+  }
+  &__degrees-grid--layout-list .wsu-card__content {
+    gap: 1rem;
+  }
+  .wsu-card__header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  .wsu-degree-cta {
+    width: fit-content;
+    margin-right: 0.5rem;
+    border: 1px solid white;
+  }
+  @media screen and (max-width: 576px) {
+    &__hero-content {
+      padding: 5.125rem 2.25rem 4.125rem;
     }
-    &__filter-title{
-        font-size: 1.25rem;
-        font-weight: 600;
-        position: relative;
+  }
+  @media screen and (max-width: $wsu-breakpoint--tablet) {
+    &__degrees-grid--layout-list .wsu-card__content {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      flex-direction: column;
     }
-    &__filter-list{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background: $wsu-color--crimson;
-        width: 88%;
-        height: 100%;
-        padding: 1.5rem 0;
-        position: relative;
+  }
+  @media screen and (max-width: 1100px) {
+    &__filter-title {
+      margin-left: 1rem;
     }
-    &__filter-types{
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-        margin-bottom: 0;
-        list-style-type: none;
+  }
+  @media screen and (max-width: $wsu-breakpoint--tablet-large) {
+    .wsu-degree-cta {
+      width: 100%;
+      margin-right: 0;
     }
-    &__filter-types li{
-        margin-bottom: 0;
+    &__filter-controls {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      width: unset;
+      padding: 1rem;
     }
-    &__filter-type{
-        padding: 0.25rem;
-        font-weight: 400;
+    &__filter-list {
+      gap: 1rem;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column-reverse;
+      padding-bottom: 0;
     }
-    &__filter-type::after{
-        content: '';
+    &__filter-types {
+      padding-left: 0;
+    }
+    &__filter-title {
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .wsu-card--style-horizontal-25 {
+      margin-bottom: 0;
+    }
+    .wsu-card--style-horizontal-25 .wsu-title a {
+      text-decoration: underline;
+    }
+    .wsu-card--style-horizontal-25 .wsu-image-frame {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .wsu-card--style-horizontal-25 .wsu-image-frame img {
+      object-fit: cover !important;
+    }
+    &__filter-right {
+      border-left: 2px solid hsla(0, 0%, 100%, 0.3);
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    .wsu-degree-finder {
+      &__filter-title {
         position: absolute;
-        width: 100%;
-        height: 0px;
-        bottom: 0;
-        left: 0;
-        background-color: #ffffff;
-        transition: 0.25s ease all;
+        margin-left: -3rem;
+        transform: translateX(-100%);
+        font-weight: 500;
+      }
+      &__filter-list {
+        width: calc(100% + 3rem);
+        margin: 0 -1.5rem;
+      }
+      &__filter-terms-list {
+        margin: 0;
+      }
     }
-    &__filter-type:hover::after,&__filter-type:focus::after{
-        height: 2px;
-    }
-
-    &__filter-type:hover,&__filter-type:focus,&__filter-favorites:hover,&__filter-favorites:focus{
-        box-shadow: none;
-        background-color: $wsu-color--crimson;
-        -webkit-text-stroke: 0.5px;
-    }
-    &__filter-right{
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        align-items: center;
-        padding-right: 1.5rem;
-    }
-    &__filter-search-wrapper{
-        display: flex;
-        position: relative;
-    }
-    &__filter-search-submit{
-        position: absolute;
-        right: 0;
-    }
-    &__filter-search-submit .fa-magnifying-glass{
-        color: $wsu-color--crimson;
-        cursor: pointer;
-        padding: 7px;
-    }
-    &__filter-search-submit .fa-magnifying-glass:focus{
-        border: 2px solid $wsu-color--crimson;
-        border-radius: 5px;
-    }
-    &__filter-favorites{
-        cursor: pointer;
-        margin: 0 1rem;
-    }
-    &__filter-favorites svg{
-        margin-right: 0.5rem;
-    }
-    &__filter-search-field{
-        padding: 0.5rem !important;
-    }
-    &__filter-terms{
-        display: flex;
-        margin: auto;
-        background-color: $wsu-color--crimson;
-        position: relative;
-        border-top: 1px solid hsla(0, 0%, 100%, .3);
-        padding: 2rem 0;
-    }
-    &__filter-terms-list-container{
-        margin: auto;
-        width: 100%;
-        max-width: 1068px;
-    }
-    &__filter-terms-list{
-        list-style-type: none;
-        width: 100%;
-        margin: 0 1.5rem;
-        padding: 0;
-    }
-    &__filter-terms-list label{
-        font-weight: 400;
-        cursor: pointer;
-        display: inline-block;
-    }
-    &__filter-terms-list label:focus-within{
-        font-weight: 600;        
-    }
-    &__filter-terms-list label .fa-check{
-        visibility: hidden;
-        margin-right: 0.5rem;
-    }
-    &__filter-terms-list input:checked + .fa-check{
-        visibility: visible;
-    }
-    &__filter-terms-list input:checked + .fa-check + &__filter-term-title{
-        font-weight: 600;
-    }
-    &__degrees-grid{
-        display: flex;
-        flex-direction: column;
-    }
-    &__degrees-grid-controls{
-        display: flex;
-        justify-content: flex-end;
-        margin: $wsu-spacing--xxmedium 0 $wsu-spacing--medium 0 ;
-
-        gap: $wsu-spacing--sxxsmall;
-    }
-    
-    &__degrees-grid-control button:hover,&__degrees-grid-control button:active,&__degrees-grid-control button:focus {
-        color: $wsu-color--crimson;
-        background-color: transparent;
-        cursor: pointer;
-    }
-    &__degrees-grid-control button{
-        border: none;
-        color:#4d4d4d;
-        background-color: transparent;
-        transition: ease-in-out all .1s;
-    }
-    &__degrees-grid-control button[aria-checked='true'] {
-        color: $wsu-color--crimson;
-    }
-    &__degrees-grid--layout-list .wsu-card__content{
-        gap: 1rem;
-    }
-    .wsu-card__header{
-        display: flex;
-        flex-direction: row;
-        gap: 0.75rem;
-    }
-    .wsu-degree-cta{
-        width: fit-content;
-        margin-right: 0.5rem;
-        border: 1px solid white;
-    }
-    @media screen and (max-width: 576px){
-        &__hero-content{
-            padding: 5.125rem 2.25rem 4.125rem;
-        } 
-    }
-    @media screen and (max-width: $wsu-breakpoint--tablet){
-        &__degrees-grid--layout-list .wsu-card__content{
-            display: flex;
-            gap: 1rem;
-            justify-content: space-between;
-            flex-direction: column;
-        }
-    }
-    @media screen and (max-width: 1100px){
-        &__filter-title{
-            margin-left: 1rem;
-        }
-
-    }
-    @media screen and (max-width: $wsu-breakpoint--tablet-large){
-        .wsu-degree-cta{
-            width: 100%;
-            margin-right: 0;
-        }
-        &__filter-controls{
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: flex-start;
-            width: unset;
-            padding: 1rem;
-        }
-        &__filter-list{
-            gap: 1rem;
-            width: 100%;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: column-reverse;
-            padding-bottom: 0;
-        }
-        &__filter-types{
-            padding-left: 0;
-        }
-        &__filter-title{
-            margin-left: 0;
-        }
-        
-    }
-    @media screen and (max-width: 768px){
-        .wsu-card--style-horizontal-25{
-            margin-bottom: 0;
-        }
-        .wsu-card--style-horizontal-25 .wsu-title a{
-            text-decoration: underline;
-        }
-        .wsu-card--style-horizontal-25 .wsu-image-frame{
-            display: none;
-        }
-    }
-    @media screen and (min-width: 768px){
-        .wsu-card--style-horizontal-25 .wsu-image-frame img {
-            object-fit: cover !important;
-        }
-        &__filter-right{
-            border-left: 2px solid hsla(0, 0%, 100%, .3);
-        }
-    }
-    @media screen and (min-width: 1400px){
-        .wsu-degree-finder {
-            &__filter-title{
-                position: absolute;
-                margin-left: -3rem;
-                transform: translateX(-100%);       
-                font-weight: 500;;         
-            }
-            &__filter-list{
-                width: calc(100% + 3rem);
-                margin: 0 -1.5rem;
-            }
-            &__filter-terms-list{
-                margin: 0;
-            }
-        }
-    }
+  }
 }
-@media screen and (max-width: $wsu-breakpoint--tablet-large){
-    .wsu-wrapper-site .wsu-width--full.wsu-degree-finder__filter-wrapper {
-        width: 100vw;
-    }
+@media screen and (max-width: $wsu-breakpoint--tablet-large) {
+  .wsu-wrapper-site .wsu-width--full.wsu-degree-finder__filter-wrapper {
+    width: 100vw;
+  }
 }
 
 // Favorite Icons Styling
-.wsu-card__content .wsu-degree-grid__favorite-icon-solid{
-    color: transparent;
-}
-.wsu-degree-grid__favorite-controls{
-    cursor: pointer;
-}
-.wsu-degree-grid__favorite-controls[aria-selected='true'] .wsu-degree-grid__favorite-icon-solid{
-    color: $wsu-color--crimson;
-}
-.wsu-degree-grid__favorite-controls[aria-selected='true'] .wsu-degree-grid__favorite-icon-regular{
-    color: $wsu-color--crimson;
-}
-.wsu-degree-grid__favorite-container:focus-visible{
+// .wsu-card__content .wsu-degree-grid__favorite-icon-solid {
+//   color: transparent;
+// }
+
+// .wsu-degree-grid__favorite-controls {
+//   cursor: pointer;
+// }
+
+// .wsu-degree-grid__favorite-controls[aria-selected="true"]
+//   .wsu-degree-grid__favorite-icon-solid {
+//   color: $wsu-color--crimson;
+// }
+
+// .wsu-degree-grid__favorite-controls[aria-selected="true"]
+//   .wsu-degree-grid__favorite-icon-regular {
+//   color: $wsu-color--crimson;
+// }
+
+.wsu-degree-grid__favorite-container {
+  padding: 10px;
+  margin-top: -10px;
+
+  &:has(:focus-visible) {
     outline: 2px solid $wsu-color--crimson;
     border-radius: 5px;
-}
-.wsu-degree-grid__favorite-container{
-    padding: 10px;
-    margin-top: -10px;
+  }
 }
 
+.wsu-degree-grid__favorite-icon-solid,
+.wsu-degree-grid__favorite-icon-regular {
+  color: $wsu-color--crimson;
+}
 
+.wsu-degree-grid__favorite-label {
+  .wsu-degree-grid__favorite-icon-solid {
+    display: none;
+  }
+
+  .wsu-degree-grid__favorite-icon-regular {
+    display: inline;
+  }
+
+  &[data-is-favorited="true"] {
+    .wsu-degree-grid__favorite-icon-solid {
+      display: inline;
+    }
+
+    .wsu-degree-grid__favorite-icon-regular {
+      display: none;
+    }
+  }
+}
