@@ -1,3 +1,10 @@
+## [2.22.1](https://github.com/wsuwebteam/web-design-system/compare/v2.22.0...v2.22.1) (2024-05-08)
+
+
+### Bug Fixes
+
+* degree finder favorite accessibility ([9510e38](https://github.com/wsuwebteam/web-design-system/commit/9510e3823bf2a42c289e70bd17bb82ec26c259a1))
+
 # [2.22.0](https://github.com/wsuwebteam/web-design-system/compare/v2.21.1...v2.22.0) (2024-05-02)
 
 
