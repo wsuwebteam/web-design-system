@@ -1,3 +1,12 @@
+## [2.22.2](https://github.com/wsuwebteam/web-design-system/compare/v2.22.1...v2.22.2) (2024-05-17)
+
+
+### Bug Fixes
+
+* global footer links ([06c18e4](https://github.com/wsuwebteam/web-design-system/commit/06c18e425a0402f9087154eb11aa040fdef49cc6))
+* quicklinks link flicker ([dac0546](https://github.com/wsuwebteam/web-design-system/commit/dac0546c79ecfd43a706fc08de31ddf99bab8d66))
+* title tag on boxed hero missing ([fe8af47](https://github.com/wsuwebteam/web-design-system/commit/fe8af47356e08d86c22aaa30f28349d2f0236da4))
+
 ## [2.22.1](https://github.com/wsuwebteam/web-design-system/compare/v2.22.0...v2.22.1) (2024-05-08)
 
 
