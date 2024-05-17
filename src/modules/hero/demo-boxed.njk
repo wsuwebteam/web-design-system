@@ -2,8 +2,10 @@
 {% from "hero/_v3-macro.njk" import v3_hero %}
 
 {% block content %}
-
+<hr />
 {{ v3_hero( style='boxed' ) }}
+<hr />
+{{ v3_hero( style='boxed', titleTag='h1', title='Im an H1 maybe' ) }}
 <hr />
 {{ v3_hero( style='boxed', isVideo='true' ) }}
 <hr />
