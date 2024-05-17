@@ -82,6 +82,10 @@
                 background-color: $wsu-color--crimson;
                 margin-bottom: 0.75rem;
             }
+
+            &::after {
+                display: none;
+            }
         }
 
         &__caption {

@@ -1,3 +1,190 @@
+## [2.22.1](https://github.com/wsuwebteam/web-design-system/compare/v2.22.0...v2.22.1) (2024-05-08)
+
+
+### Bug Fixes
+
+* degree finder favorite accessibility ([9510e38](https://github.com/wsuwebteam/web-design-system/commit/9510e3823bf2a42c289e70bd17bb82ec26c259a1))
+
+# [2.22.0](https://github.com/wsuwebteam/web-design-system/compare/v2.21.1...v2.22.0) (2024-05-02)
+
+
+### Bug Fixes
+
+* move decorator styles to custom scope ([d8d2b74](https://github.com/wsuwebteam/web-design-system/commit/d8d2b74c56b603123f04eb98e3489ebd8952e695))
+
+
+### Features
+
+* add decorator styles to Gutenberg ([9da8074](https://github.com/wsuwebteam/web-design-system/commit/9da80740906094660fc898ba67e5c45a3c4234a8))
+* add utilities to decorator editor ([502a60e](https://github.com/wsuwebteam/web-design-system/commit/502a60ef61ea8e4524a5a6ed5134a76a9fd4e554))
+* added fontawesome to script list in component for prototyping ([ef605d6](https://github.com/wsuwebteam/web-design-system/commit/ef605d600e15644a3d51323f6ba5ba10518b6e8f))
+
+## [2.21.1](https://github.com/wsuwebteam/web-design-system/compare/v2.21.0...v2.21.1) (2024-04-26)
+
+
+### Bug Fixes
+
+* updated card style to fix padding issue on horizontal mobile view ([0b03d8f](https://github.com/wsuwebteam/web-design-system/commit/0b03d8fb7103ab31d45855355a5e4ce25a85bb16))
+* updated card style to fix padding issue on horizontal mobile view ([#46](https://github.com/wsuwebteam/web-design-system/issues/46)) ([9d6308d](https://github.com/wsuwebteam/web-design-system/commit/9d6308d97a9aa573e5b58949b9b8ce9a36ff0093))
+
+# [2.21.0](https://github.com/wsuwebteam/web-design-system/compare/v2.20.0...v2.21.0) (2024-04-01)
+
+
+### Bug Fixes
+
+* updated font size for citation ([789bebf](https://github.com/wsuwebteam/web-design-system/commit/789bebf23ef7aabf71f4715c057b8f8239e87f75))
+
+
+### Features
+
+* add location and no results message to event blocks ([733797a](https://github.com/wsuwebteam/web-design-system/commit/733797a026ab774697877f67a456b798bf76f6c0))
+
+# [2.20.0](https://github.com/wsuwebteam/web-design-system/compare/v2.19.4...v2.20.0) (2024-02-23)
+
+
+### Bug Fixes
+
+* offset is not being used on event modules ([420bbf0](https://github.com/wsuwebteam/web-design-system/commit/420bbf0a315ad4e0b20eb6d1b51bf790d8b610bd))
+
+
+### Features
+
+* add eyebrow heading to cards ([aeeccb9](https://github.com/wsuwebteam/web-design-system/commit/aeeccb96ecc5c143620f7c666b1331e232bc8fdc))
+
+## [2.19.4](https://github.com/wsuwebteam/web-design-system/compare/v2.19.3...v2.19.4) (2024-01-31)
+
+
+### Bug Fixes
+
+* added console logs to debug ([dcf6584](https://github.com/wsuwebteam/web-design-system/commit/dcf658443e14379ef3e349adc01a7c39a3f8c154))
+* changed const to let ([786c7b6](https://github.com/wsuwebteam/web-design-system/commit/786c7b66974b374389e40d84cc93df93e0aef908))
+* changed loop context ([82509c1](https://github.com/wsuwebteam/web-design-system/commit/82509c1cf5825922e2ba6eb710ad28ca338eee0d))
+* fixed and refactored loop to fix breaking change to carousels ([#43](https://github.com/wsuwebteam/web-design-system/issues/43)) ([eff02cc](https://github.com/wsuwebteam/web-design-system/commit/eff02cc3d3b4511aaf5cc81ce9966a3131e1cac2))
+* fixing looping process ([913d399](https://github.com/wsuwebteam/web-design-system/commit/913d3999f43c10805f7e6d91bb69cfa7c2d428ec))
+* moved image slide loop outside to its own for loop ([556c05a](https://github.com/wsuwebteam/web-design-system/commit/556c05a8d6404642ad55edcfa19f418c6af50d54))
+* refactored loop ([7e5c6ca](https://github.com/wsuwebteam/web-design-system/commit/7e5c6ca03b2a75ecebf9b512608dd406069d7383))
+* removed console messages ([8e17747](https://github.com/wsuwebteam/web-design-system/commit/8e17747a74ce27b4c75f3a06b8cf910e4480c49a))
+
+## [2.19.3](https://github.com/wsuwebteam/web-design-system/compare/v2.19.2...v2.19.3) (2024-01-31)
+
+
+### Bug Fixes
+
+* added if statement to fix breaking change ([7b8b48d](https://github.com/wsuwebteam/web-design-system/commit/7b8b48d4ffe575c91bdadb7e4c453323c8d3ea68))
+* fixed breaking change to carousel caused by lack of sanity check ([#42](https://github.com/wsuwebteam/web-design-system/issues/42)) ([97155c5](https://github.com/wsuwebteam/web-design-system/commit/97155c5ec616ed03d7c105e40707650d2efc6351))
+* fixed contains IF statement ([cee6661](https://github.com/wsuwebteam/web-design-system/commit/cee6661a96b90d99194e38701f0e6322b59c7e0a))
+* fixing if logic ([50d599c](https://github.com/wsuwebteam/web-design-system/commit/50d599c76136141104fdb2ae753f1d5887b33247))
+* removed console logs ([e50e1a4](https://github.com/wsuwebteam/web-design-system/commit/e50e1a41a29b28e1d096e5e1876f0cbf96c9f6b3))
+* updated if statement ([93fe6f2](https://github.com/wsuwebteam/web-design-system/commit/93fe6f2e82c885933b7465ea759248ce1bcec6fb))
+* updated if statement typo ([a6084a1](https://github.com/wsuwebteam/web-design-system/commit/a6084a14774d8e1ceb253e861e752c939e63f053))
+
+## [2.19.2](https://github.com/wsuwebteam/web-design-system/compare/v2.19.1...v2.19.2) (2024-01-31)
+
+
+### Bug Fixes
+
+* fixed selector to target a under images ([7fc8ec6](https://github.com/wsuwebteam/web-design-system/commit/7fc8ec66ab6e4be9215cb3e80ab294240900f5b0))
+* fixed setattribute statement ([53544d5](https://github.com/wsuwebteam/web-design-system/commit/53544d54a8d509c8e9824cdc6f871850487aef66))
+* fixing looping issue on carousel lightbox ([246eea7](https://github.com/wsuwebteam/web-design-system/commit/246eea7638ce82fae50b83d8397d8e30c395bfd0))
+* removed console command ([6e7027a](https://github.com/wsuwebteam/web-design-system/commit/6e7027a27d71d1fd104649758c11777362264205))
+* updated carousel script to loop internally with lightboxes ([#41](https://github.com/wsuwebteam/web-design-system/issues/41)) ([a4257ff](https://github.com/wsuwebteam/web-design-system/commit/a4257ff1216fe4dfd5a8d9bb674088c07a447322))
+
+## [2.19.1](https://github.com/wsuwebteam/web-design-system/compare/v2.19.0...v2.19.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* add content-list to the wp-editor styles ([313b825](https://github.com/wsuwebteam/web-design-system/commit/313b82588bb581cb7bd99b7bf951e3dec19003a1))
+* organization ([#39](https://github.com/wsuwebteam/web-design-system/issues/39)) ([74ca8a3](https://github.com/wsuwebteam/web-design-system/commit/74ca8a3c28cb836730167cf11189eb2361cc774f))
+* organization in people list ([98938ae](https://github.com/wsuwebteam/web-design-system/commit/98938aeeecf04bd527cc4e64cfb23cd003f5ca4a))
+
+# [2.19.0](https://github.com/wsuwebteam/web-design-system/compare/v2.18.0...v2.19.0) (2024-01-24)
+
+
+### Features
+
+* support org display on people cards ([6d08160](https://github.com/wsuwebteam/web-design-system/commit/6d08160c0b8382820e5519c25c90862a36ae75ed))
+* support org display on people cards ([#38](https://github.com/wsuwebteam/web-design-system/issues/38)) ([2eec7f9](https://github.com/wsuwebteam/web-design-system/commit/2eec7f9eb7a2ba7f2f71ffb35eea34f3d2c2b421))
+
+# [2.18.0](https://github.com/wsuwebteam/web-design-system/compare/v2.17.0...v2.18.0) (2024-01-24)
+
+
+### Bug Fixes
+
+* prevent item wrapping ([c0c5bc8](https://github.com/wsuwebteam/web-design-system/commit/c0c5bc8e960ca35f97ecfa9f8cd02f353a3c64c0))
+* remove unwanted <li> ([b5a1111](https://github.com/wsuwebteam/web-design-system/commit/b5a1111c8017de696c22d8f63edb7cb1d82c299c))
+
+
+### Features
+
+* create content-list module ([#37](https://github.com/wsuwebteam/web-design-system/issues/37)) ([77a86ac](https://github.com/wsuwebteam/web-design-system/commit/77a86ac8de74c6db44218613384868761e80f5d2))
+* first build of content list block ([e45534a](https://github.com/wsuwebteam/web-design-system/commit/e45534a709a0114135048acd4d98200c0d94d86a))
+* updated spacing and added real text ([6f091dc](https://github.com/wsuwebteam/web-design-system/commit/6f091dc388a46264e784f35508147e77157bba81))
+
+# [2.17.0](https://github.com/wsuwebteam/web-design-system/compare/v2.16.1...v2.17.0) (2024-01-22)
+
+
+### Bug Fixes
+
+* accordion doesn't open when icon is clicked ([d9fdd34](https://github.com/wsuwebteam/web-design-system/commit/d9fdd34c444c2583533f4dd9e3d4a8ca5240ec2b))
+* add a margin bottom to the degree finder ([1f09da7](https://github.com/wsuwebteam/web-design-system/commit/1f09da72d87bfee13238850665c46d1c1f0f20a4))
+* add degree cta to styles ([00b6d8e](https://github.com/wsuwebteam/web-design-system/commit/00b6d8e355855dd9930cf7e548d3b7583fe9047b))
+* added style fixes to UI ([c026d86](https://github.com/wsuwebteam/web-design-system/commit/c026d86d720d3062158de7e0905d6ff7ae97d085))
+* button focus color ([a388d3f](https://github.com/wsuwebteam/web-design-system/commit/a388d3f3eaa8e3b7d5dec8be1f23a43b6178c4ff))
+* button quote location ([48e6acb](https://github.com/wsuwebteam/web-design-system/commit/48e6acb7571d4a8e26b670215a17d374e0687202))
+* cookies and button focus style ([228ba54](https://github.com/wsuwebteam/web-design-system/commit/228ba543d0581501a1b2b8508d23ae2e92d78051))
+* css path ([9b33b73](https://github.com/wsuwebteam/web-design-system/commit/9b33b736af904133171e5974e53f127110324e09))
+* degree cta style path ([8180686](https://github.com/wsuwebteam/web-design-system/commit/8180686ac1627d7980b585ce413d705188079971))
+* fixed responsive styles on finder ([707ccaa](https://github.com/wsuwebteam/web-design-system/commit/707ccaa76b65413d0bdf62d16fdf020070939039))
+* give dig deeper button a bit more space to grow ([d129730](https://github.com/wsuwebteam/web-design-system/commit/d1297302332350a0036daf3507a14c2942526efd))
+* list view spacing ([1d57893](https://github.com/wsuwebteam/web-design-system/commit/1d5789323cfe012b4b4050de82cf4b3b7c490635))
+* make ts checker happy ([5f66e34](https://github.com/wsuwebteam/web-design-system/commit/5f66e34e2fd1b7dc2f2ef08cc21d1a9c99b30ea4))
+* override slate styles ([46fa62e](https://github.com/wsuwebteam/web-design-system/commit/46fa62eaba797d7cbaf84d3ded3c2442d81ead39))
+* remove unwanted file ([2927c5a](https://github.com/wsuwebteam/web-design-system/commit/2927c5a236ba1a0d9a090625fd2153b6e68996c4))
+* show no results for favorites if no favorites are selected ([eb9679f](https://github.com/wsuwebteam/web-design-system/commit/eb9679f73b10e34ae7f772b0f1741c64a8b70290))
+* UI style updates and filter titles ([c5bd8e1](https://github.com/wsuwebteam/web-design-system/commit/c5bd8e182e969c15fac514fead524829be1745d6))
+
+
+### Features
+
+* add degree finder modules and bundles ([#27](https://github.com/wsuwebteam/web-design-system/issues/27)) ([7b60a6f](https://github.com/wsuwebteam/web-design-system/commit/7b60a6f8f3f63e1b73d7825c2800b5674ea3a5e8))
+* add loading spinner ([fe53850](https://github.com/wsuwebteam/web-design-system/commit/fe53850581d3937b9d7ae6dd5fafdd22584cd1d6))
+* added degree finder styles and layout ([2578a42](https://github.com/wsuwebteam/web-design-system/commit/2578a42b575af1a825cd98e045756263168d93df))
+* added degree list view and added styles ([28daf39](https://github.com/wsuwebteam/web-design-system/commit/28daf39d176e0d19058f662c54255dc3144025d9))
+* added focus states to degree filter ([f6563c3](https://github.com/wsuwebteam/web-design-system/commit/f6563c36d1eaa333e3d2085a79a94c91a85b4d5c))
+* added footer and style fixes to degree profile ([deba4de](https://github.com/wsuwebteam/web-design-system/commit/deba4de3a2e9ad618ff64d778404efaf2321d640))
+* added related degrees section ([0db1590](https://github.com/wsuwebteam/web-design-system/commit/0db159015fa0d1b603374abd74905d1e7000c5d3))
+* added styling to degree profile ([4319eec](https://github.com/wsuwebteam/web-design-system/commit/4319eec36319e81bd7da1052d933e84e111b232a))
+* added updated styles to profile ([cdba3cc](https://github.com/wsuwebteam/web-design-system/commit/cdba3cc28fc5c4fd1db126dc71cec6e1553fe743))
+* built finder filter and filter controls ([d4dbf63](https://github.com/wsuwebteam/web-design-system/commit/d4dbf637ed72d49f469f46380c85d6b757d2213a))
+* built wsu-error block ([9480ddc](https://github.com/wsuwebteam/web-design-system/commit/9480ddc402cae8888f0909481811fa43b440a1f6))
+* focus/scroll to degree list when pressing enter on search field ([4e20282](https://github.com/wsuwebteam/web-design-system/commit/4e202825d9a2de5f0a108dc9a8f15cf04cb0d0c0))
+* hacky lightweight localhost ([4c14243](https://github.com/wsuwebteam/web-design-system/commit/4c14243b2e3ddb900704d85711288e5f760c3955))
+* implement an intersection observer for conditional rendering to prevent lag ([7fe03ea](https://github.com/wsuwebteam/web-design-system/commit/7fe03eae14e289e09573c9c9fa60b66377a5317e))
+* split degree grid into separate macros ([4a13217](https://github.com/wsuwebteam/web-design-system/commit/4a13217ff8680cc97b3e8f51ddcaff6e752a18ce))
+* store url state for going back to degree list ([5166acd](https://github.com/wsuwebteam/web-design-system/commit/5166acddf5f1be76fcd5d4842cb262845b708d49))
+* update degree profile structure and styles ([57251bc](https://github.com/wsuwebteam/web-design-system/commit/57251bc6031cce472a2bdbb7087728710a9e3bfe))
+* updated college and department listing styling ([2ca4166](https://github.com/wsuwebteam/web-design-system/commit/2ca4166b0213dd576d4dc5ed6683a30410f7dc59))
+* updated icons to svgs ([01230be](https://github.com/wsuwebteam/web-design-system/commit/01230be8e7c6e148ae1be1a76b7f2efdefe01911))
+* updated styles and layout ([c52940f](https://github.com/wsuwebteam/web-design-system/commit/c52940f3ad6a70d14c73252349104a7a68595898))
+* updated styles to adjust for page width ([2ca6e69](https://github.com/wsuwebteam/web-design-system/commit/2ca6e691d7ea74624a9124bbb4469def94619d50))
+* WIP setup work area for degree finder ([42a4dd3](https://github.com/wsuwebteam/web-design-system/commit/42a4dd3877b9cdd5748a044fe91b145726b67eb1))
+
+## [2.16.1](https://github.com/wsuwebteam/web-design-system/compare/v2.16.0...v2.16.1) (2023-12-15)
+
+
+### Bug Fixes
+
+* header utility bar not hidden on mobile ([840812f](https://github.com/wsuwebteam/web-design-system/commit/840812f047e78002111595aa6a17b0077bdd5864))
+* header utility bar not hidden on mobile ([#31](https://github.com/wsuwebteam/web-design-system/issues/31)) ([e33ebdb](https://github.com/wsuwebteam/web-design-system/commit/e33ebdb82ca73a7bfc3796fa81a3b7821f81c7e7))
+
+# [2.16.0](https://github.com/wsuwebteam/web-design-system/compare/v2.15.0...v2.16.0) (2023-12-08)
+
+
+### Features
+
+* support people directory filter ([1ad29f6](https://github.com/wsuwebteam/web-design-system/commit/1ad29f66f677609ad17869b953a03be5428db25f))
+
 # [2.15.0](https://github.com/wsuwebteam/web-design-system/compare/v2.14.2...v2.15.0) (2023-11-03)
 
 
