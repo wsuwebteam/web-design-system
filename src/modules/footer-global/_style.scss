@@ -19,6 +19,11 @@
         margin-right: $wsu-spacing--small;
     }
 
+    &__navigation .wsu-menu-tertiary {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .wsu-menu-utility-horizontal > li {
         padding: 0 $wsu-spacing--small;
     }
