@@ -70,6 +70,10 @@
 
     .wsu-list--style-boxed {
         margin-left: $wsu-spacing--xsmall;
+
+        a {
+            display: inline-block;
+        }
     }
 
     h2 {
