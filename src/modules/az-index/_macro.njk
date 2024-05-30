@@ -69,14 +69,14 @@
         {% if showControls %}
             <div class="wsu-az-index__controls">
                 <nav class="wsu-az-index__nav" role="navigation" aria-label="A-Z Index Navigation">
-                    <ol class="wsu-az-index__nav-list">
+                    <ul class="wsu-az-index__nav-list">
                         {% for letter in alphabet %}
                             {% set r = range(0, 100) | random % 3 === 0 %}
                             <li class="wsu-az-index__nav-item">
                                 <a href="?c={{ letter }}" class="wsu-az-index__nav-link wsu-button {{"is-disabled" if r}}">{{ letter }}</a>
                             </li>
                         {% endfor %}
-                    </ol>
+                    </ul>
                 </nav>
                 <form action="" method="GET" class="wsu-az-index__search-form">
                     <input type="text" class="wsu-az-index__search-input" name="search" placeholder="Search">
@@ -86,13 +86,13 @@
 
         <div class="wsu-az-index__link-list-group">
             <h2 class="wsu-az-index__link-list-heading">A</h2>
-            <ol class="wsu-az-index__link-list">
+            <ul class="wsu-az-index__link-list">
                 {% for l in links %}
                     <li class="wsu-az-index__link-list-item">
                         <a href="#" class="wsu-az-index__link-list-link">{{ l }}</a>
                     </li>
                 {% endfor %}
-            </ol>
+            </ul>
         </div>
     </div>
 {% endmacro %}
