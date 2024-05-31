@@ -22,6 +22,14 @@
     &__navigation .wsu-menu-tertiary {
         flex-wrap: wrap;
         justify-content: center;
+
+        & > li > a::after {
+            background-color: #ffffff;
+        }
+
+        & > li > a:focus {
+            outline-color: #fff !important;
+        }
     }
 
     .wsu-menu-utility-horizontal > li {
