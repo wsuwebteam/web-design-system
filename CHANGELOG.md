@@ -1,3 +1,12 @@
+## [2.22.3](https://github.com/wsuwebteam/web-design-system/compare/v2.22.2...v2.22.3) (2024-06-05)
+
+
+### Bug Fixes
+
+* add degree names to add/remove buttons ([a3f7ed5](https://github.com/wsuwebteam/web-design-system/commit/a3f7ed531440a5f40fcfa1a319dcb652775d2ae4))
+* update footer link colors ([508a0bd](https://github.com/wsuwebteam/web-design-system/commit/508a0bdd2dff66d0086839ed15448d7ef2046516))
+* use ul instead of ol ([9ad8a3e](https://github.com/wsuwebteam/web-design-system/commit/9ad8a3e4429b24cddb4e381a4c31320675223065))
+
 ## [2.22.2](https://github.com/wsuwebteam/web-design-system/compare/v2.22.1...v2.22.2) (2024-05-17)
 
 
