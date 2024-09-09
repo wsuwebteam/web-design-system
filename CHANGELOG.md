@@ -1,3 +1,15 @@
+# [2.23.0](https://github.com/wsuwebteam/web-design-system/compare/v2.22.3...v2.23.0) (2024-09-09)
+
+
+### Bug Fixes
+
+* video player check video feature ([81c2c00](https://github.com/wsuwebteam/web-design-system/commit/81c2c00a88e01e631a47358dab119cbf8b2be3af))
+
+
+### Features
+
+* added no break class to list block ([7b96ce8](https://github.com/wsuwebteam/web-design-system/commit/7b96ce80a481a895132ef2a0e5ba0251a3c6ece1))
+
 ## [2.22.3](https://github.com/wsuwebteam/web-design-system/compare/v2.22.2...v2.22.3) (2024-06-05)
 
 
