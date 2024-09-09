@@ -20,7 +20,8 @@ class WsuVideoPlayer {
         this.loaded          = false;
         this.bgVideo         = this.wrapper.querySelector('.wsu-video-player__video-background');
         this.bgPlayer        = false;
-        this.container       = this.wrapper.querySelector('.wsu-video-player__video'); 
+        this.container       = this.wrapper.querySelector('.wsu-video-player__video');
+        this.timer           = false;
 
         this.init();
         
@@ -99,6 +100,8 @@ class WsuVideoPlayer {
 
     mouseleaveEvent( event ) {
 
+        clearTimeout( this.timer )
+
         if ( this.bgPlayer ) {
             window.setTimeout( () => this.pauseBgVideo(), 400 );
         } 
@@ -140,6 +143,14 @@ class WsuVideoPlayer {
     }
 
     loadBg( args = {} ) {
+
+        if ( typeof YT === 'undefined' ) {
+
+            this.timer = setTimeout( () => this.loadBg( args ), 300 );
+            
+            return false;
+        }
+
 
         let playerID = args.playerId ?? this.backgroundId;
 
