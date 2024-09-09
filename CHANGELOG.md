@@ -1,3 +1,10 @@
+## [2.23.1](https://github.com/wsuwebteam/web-design-system/compare/v2.23.0...v2.23.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* not constructor error ([026d10d](https://github.com/wsuwebteam/web-design-system/commit/026d10d70575b280b4075d755216fadf32099258))
+
 # [2.23.0](https://github.com/wsuwebteam/web-design-system/compare/v2.22.3...v2.23.0) (2024-09-09)
 
 
