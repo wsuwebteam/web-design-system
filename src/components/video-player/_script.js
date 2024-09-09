@@ -151,31 +151,43 @@ class WsuVideoPlayer {
             return false;
         }
 
+        try {
 
-        let playerID = args.playerId ?? this.backgroundId;
+            let playerID = args.playerId ?? this.backgroundId;
 
-        this.bgPlayer = new YT.Player( playerID, {
-            height: '390',
-            width: '640',
-            videoId: this.videoId,
-            playerVars: {
-                playsinline: 1,
-                autoplay: args.autoplay ?? 1,
-                mute: args.mute ?? 1,
-                controls: 0,
-                rel: 0,
-                modestbranding: 1,
-                loop: 1
-            },
-            events: {
-              'onReady': args.onReady ?? false,
-            //'onStateChange': onPlayerStateChange
-            }
+            this.bgPlayer = new YT.Player( playerID, {
+                height: '390',
+                width: '640',
+                videoId: this.videoId,
+                playerVars: {
+                    playsinline: 1,
+                    autoplay: args.autoplay ?? 1,
+                    mute: args.mute ?? 1,
+                    controls: 0,
+                    rel: 0,
+                    modestbranding: 1,
+                    loop: 1
+                },
+                events: {
+                'onReady': args.onReady ?? false,
+                //'onStateChange': onPlayerStateChange
+                }
 
-            
-        });
+                
+            });
 
-        this.wrapper.classList.add('wsu-status--background-loaded');
+            this.wrapper.classList.add('wsu-status--background-loaded');
+
+        } catch (err) {
+
+            console.log( err );
+
+            this.timer = setTimeout( () => this.loadBg( args ), 300 );
+
+        }
+
+
+        
 
     }
 
