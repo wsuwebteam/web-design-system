@@ -17,10 +17,16 @@ runs:
       working-directory: ${{ inputs.directory }}
       shell: bash
       run: |
+        # Initialize an empty array
         JSON_ARRAY=()
+
+        # Collect css/js files for processing
         FILES=$(find . -type f -iname '*.css' -or -iname '*.js')
+        
+        # Loop to generate JSON objects
         for f in $FILES; 
-        do          
+        do
+          # Create a JSON object for each iteration          
           INTEGRITY=$(openssl dgst -sha384 -binary $f | openssl base64 -A)
           NEW_PATH=$(echo $f | cut -c 3-)
           
@@ -29,6 +35,8 @@ runs:
               --arg file "$NEW_PATH" \
               --arg integrity "$INTEGRITY" \
               '{ "path": $file, "integrity": ("sha384-" + $integrity) }')
+
+          # Append the JSON object to the array
           JSON_ARRAY+=("$json_object")          
         done;
 
@@ -37,5 +45,4 @@ runs:
 
         # Write the JSON to a file
         echo "$final_json" > sri.json
-
-        cat ./sri.json
+        
