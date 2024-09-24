@@ -17,4 +17,8 @@ runs:
       working-directory: ${{ inputs.directory }}
       shell: bash
       run: |
-        for f in *; do echo ${f}; done;
+        FILES=(find. -type f -iname '*.css' -or -iname '*.js')
+        for f in ${FILES}; 
+        do 
+          echo ${f}; 
+        done;
