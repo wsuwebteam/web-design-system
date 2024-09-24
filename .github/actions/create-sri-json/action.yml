@@ -1,0 +1,20 @@
+name: "Create SRI JSON"
+description: "Creates a JSON file containing SRI information for files in a given directory"
+
+inputs:
+  directory:
+    description: "Directory containing files to generate SRI information for"
+    required: true
+
+outputs:
+  success:
+    description: "Boolean value representing whether or not SRI JSON was created successfully."
+    
+runs:
+  using: "composite"
+  steps:
+    - name: Echo Files
+      working-directory: ${{ inputs.directory }}
+      shell: bash
+      run: |
+        for f in *; do echo ${f}; done;
