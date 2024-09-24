@@ -13,7 +13,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Echo Files
+    - name: Generate SRI JSON
       working-directory: ${{ inputs.directory }}
       shell: bash
       run: |
@@ -45,4 +45,3 @@ runs:
 
         # Write the JSON to a file
         echo "$final_json" > sri.json
-        
