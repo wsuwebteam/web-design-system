@@ -20,15 +20,15 @@ runs:
         JSON_ARRAY=()
         FILES=$(find . -type f -iname '*.css' -or -iname '*.js')
         for f in $FILES; 
-        do
-          echo ${f}; 
+        do          
           INTEGRITY=$(openssl dgst -sha384 -binary $f | openssl base64 -A)
+          NEW_PATH=$(echo $f | cut -c 3-)
           
           json_object=$(jq -n \
               --arg index "$i" \
-              --arg file "$f" \
+              --arg file "$NEW_PATH" \
               --arg integrity "$INTEGRITY" \
-              '{ "path": $file, "integrity": $integrity }')
+              '{ "path": $file, "integrity": ("sha384-" + $integrity) }')
           JSON_ARRAY+=("$json_object")          
         done;
 
@@ -36,6 +36,6 @@ runs:
         final_json=$(jq -s '.' <<< "${JSON_ARRAY[@]}")
 
         # Write the JSON to a file
-        echo "$final_json" > output.json
+        echo "$final_json" > sri.json
 
-        cat ./output.json
+        cat ./sri.json
