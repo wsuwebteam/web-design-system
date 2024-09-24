@@ -17,8 +17,25 @@ runs:
       working-directory: ${{ inputs.directory }}
       shell: bash
       run: |
-        FILES=(find . -type f -iname '*.css' -or -iname '*.js')
-        for f in ${FILES}; 
-        do 
+        JSON_ARRAY=()
+        FILES=$(find . -type f -iname '*.css' -or -iname '*.js')
+        for f in $FILES; 
+        do
           echo ${f}; 
+          INTEGRITY=$(openssl dgst -sha384 -binary $f | openssl base64 -A)
+          
+          json_object=$(jq -n \
+              --arg index "$i" \
+              --arg file "$f" \
+              --arg integrity "$INTEGRITY" \
+              '{ "path": $file, "integrity": $integrity }')
+          JSON_ARRAY+=("$json_object")          
         done;
+
+        # Combine the array into a single JSON object
+        final_json=$(jq -s '.' <<< "${JSON_ARRAY[@]}")
+
+        # Write the JSON to a file
+        echo "$final_json" > output.json
+
+        cat ./output.json
