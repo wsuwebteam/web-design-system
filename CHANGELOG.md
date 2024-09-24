@@ -1,3 +1,40 @@
+## [2.23.1](https://github.com/wsuwebteam/web-design-system/compare/v2.23.0...v2.23.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* not constructor error ([026d10d](https://github.com/wsuwebteam/web-design-system/commit/026d10d70575b280b4075d755216fadf32099258))
+
+# [2.23.0](https://github.com/wsuwebteam/web-design-system/compare/v2.22.3...v2.23.0) (2024-09-09)
+
+
+### Bug Fixes
+
+* video player check video feature ([81c2c00](https://github.com/wsuwebteam/web-design-system/commit/81c2c00a88e01e631a47358dab119cbf8b2be3af))
+
+
+### Features
+
+* added no break class to list block ([7b96ce8](https://github.com/wsuwebteam/web-design-system/commit/7b96ce80a481a895132ef2a0e5ba0251a3c6ece1))
+
+## [2.22.3](https://github.com/wsuwebteam/web-design-system/compare/v2.22.2...v2.22.3) (2024-06-05)
+
+
+### Bug Fixes
+
+* add degree names to add/remove buttons ([a3f7ed5](https://github.com/wsuwebteam/web-design-system/commit/a3f7ed531440a5f40fcfa1a319dcb652775d2ae4))
+* update footer link colors ([508a0bd](https://github.com/wsuwebteam/web-design-system/commit/508a0bdd2dff66d0086839ed15448d7ef2046516))
+* use ul instead of ol ([9ad8a3e](https://github.com/wsuwebteam/web-design-system/commit/9ad8a3e4429b24cddb4e381a4c31320675223065))
+
+## [2.22.2](https://github.com/wsuwebteam/web-design-system/compare/v2.22.1...v2.22.2) (2024-05-17)
+
+
+### Bug Fixes
+
+* global footer links ([06c18e4](https://github.com/wsuwebteam/web-design-system/commit/06c18e425a0402f9087154eb11aa040fdef49cc6))
+* quicklinks link flicker ([dac0546](https://github.com/wsuwebteam/web-design-system/commit/dac0546c79ecfd43a706fc08de31ddf99bab8d66))
+* title tag on boxed hero missing ([fe8af47](https://github.com/wsuwebteam/web-design-system/commit/fe8af47356e08d86c22aaa30f28349d2f0236da4))
+
 ## [2.22.1](https://github.com/wsuwebteam/web-design-system/compare/v2.22.0...v2.22.1) (2024-05-08)
 
 
