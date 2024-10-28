@@ -1,7 +1,7 @@
 {
   "name": "@wsuwebteam/wsu-web-design-system",
   "description": "Web design system for Washington State University",
-  "version": "2.23.1",
+  "version": "2.23.2",
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",

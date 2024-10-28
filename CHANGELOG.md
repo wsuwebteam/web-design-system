@@ -1,3 +1,10 @@
+## [2.23.2](https://github.com/wsuwebteam/web-design-system/compare/v2.23.1...v2.23.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* use span instead of aria-label for favorite text ([d544171](https://github.com/wsuwebteam/web-design-system/commit/d5441716c74a3a6c90e1feda0de1178445d0eb27))
+
 ## [2.23.1](https://github.com/wsuwebteam/web-design-system/compare/v2.23.0...v2.23.1) (2024-09-09)
 
 

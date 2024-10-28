@@ -36,8 +36,8 @@ function Degree({ degree, isFavorited, toggleFavorite }: { degree: degreeType, i
 						<label
 							htmlFor={`favorite-${degree.id}`}
 							className="wsu-degree-grid__favorite-label"
-							data-is-favorited={isFavorited}
-							aria-label={`${isFavorited ? `Remove ${degree.title} from` : `Add ${degree.title} to`} favorites`}>
+							data-is-favorited={isFavorited}>
+							<span className="screen-reader-only">{`${isFavorited ? `Remove ${degree.title} from` : `Add ${degree.title} to`} favorites`}</span>
 							<input
 								id={`favorite-${degree.id}`}
 								className="screen-reader-only"
