@@ -1,3 +1,10 @@
+## [2.23.3](https://github.com/wsuwebteam/web-design-system/compare/v2.23.2...v2.23.3) (2024-12-06)
+
+
+### Bug Fixes
+
+* change term splitter to prevent issues ([ea96604](https://github.com/wsuwebteam/web-design-system/commit/ea96604cbc288e6c807d4d2f702c73720119cb6f))
+
 ## [2.23.2](https://github.com/wsuwebteam/web-design-system/compare/v2.23.1...v2.23.2) (2024-10-28)
 
 
