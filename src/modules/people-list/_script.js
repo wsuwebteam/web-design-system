@@ -8,7 +8,9 @@ import {
 
 const PeopleList = function (el) {
   const urlParams = new URLSearchParams(window.location.search);
-  const apiEndpoint = ( el.dataset.baseUrl.includes( '?') ) ? el.dataset.baseUrl : el.dataset.baseUrl + "/wp-json/peopleapi/v1/people?";
+  const apiEndpoint = el.dataset.baseUrl.includes("?")
+    ? el.dataset.baseUrl
+    : el.dataset.baseUrl + "/wp-json/peopleapi/v1/people?";
   let isInitialized = false;
   const queryAttributes = [
     "count",
@@ -82,41 +84,33 @@ const PeopleList = function (el) {
   let filterToggles;
   let searchInput;
 
- 
-
   function getPersonHTML(person) {
     // console.log(person);
 
-    let linkProfile = ( ( profileLink && person.bio ) || ( showProfile && person.bio ) ) ? true : false;
+    let linkProfile =
+      (profileLink && person.bio) || (showProfile && person.bio) ? true : false;
 
     let organizations = person.university_organization ?? [];
 
     let directories = person.directories ?? [];
 
     let personOrgs = useOrgs ? organizations : directories;
-  
-    let profileUrl  = '';
 
-    if ( showProfile ) {
+    let profileUrl = "";
 
-      profileUrl = ( customProfileLink ) ? `${customProfileLink}wsu-profile/${person.nid}` : `https://${window.location.hostname}${window.location.pathname}wsu-profile/${person.nid}`;
-
-    } else if ( profileLink ) {
-
+    if (showProfile) {
+      profileUrl = customProfileLink
+        ? `${customProfileLink}wsu-profile/${person.nid}`
+        : `https://${window.location.hostname}${window.location.pathname}wsu-profile/${person.nid}`;
+    } else if (profileLink) {
       profileUrl = `${profileLink}?nid=${person.nid}`;
-
     } else {
-
       profileUrl = person.profile_url;
-
     }
 
-    if ( ! profileUrl ) {
-
+    if (!profileUrl) {
       linkProfile = false;
-
     }
-
 
     return `<div class="wsu-card wsu-card-person wsu-image-frame--ratio-square wsu-card--outline-shadow js-people-list__person" data-nid="${
       person.nid
@@ -167,7 +161,7 @@ const PeopleList = function (el) {
             }
 
             ${
-              ( displayFields.includes("organization") && personOrgs.length > 0  )
+              displayFields.includes("organization") && personOrgs.length > 0
                 ? personOrgs
                     .map(
                       (o) => `<div class="wsu-card__person-org">${o.name}</div>`
@@ -257,7 +251,7 @@ const PeopleList = function (el) {
       .filter((r) => r !== "")
       .map((option) => {
         const parts = option.split("|");
-        let title = parts[1].split( '//' );
+        let title = parts[1].split("//");
 
         return { slug: parts[0], name: title[0].trim() };
       });
@@ -658,7 +652,7 @@ const PeopleList = function (el) {
     // create people list
     const peopleContainer = createPeopleContainer();
     populatePeopleContainer(people, peopleContainer);
-    content += peopleContainer.outerHTML; 
+    content += peopleContainer.outerHTML;
 
     // write html to dom
     el.innerHTML = content;
@@ -668,17 +662,17 @@ const PeopleList = function (el) {
     // build request
 
     const params = queryAttributes
-    .reduce(function (acc, curr, idx) {
-      const attrValue = el.getAttribute("data-" + curr);
+      .reduce(function (acc, curr, idx) {
+        const attrValue = el.getAttribute("data-" + curr);
 
-      if (attrValue) {
-        acc.push(curr + "=" + attrValue);
-      }
+        if (attrValue) {
+          acc.push(curr + "=" + attrValue);
+        }
 
-      return acc;
-    }, [])
-    .join("&"); 
-    
+        return acc;
+      }, [])
+      .join("&");
+
     // make request
     return fetch(apiEndpoint + params)
       .then((response) => response.json())
