@@ -247,11 +247,11 @@ const PeopleList = function (el) {
 
   function parseTermsAttribute(attribute) {
     return attribute
-      .split(",")
+      .split("|||")
       .filter((r) => r !== "")
       .map((option) => {
-        const parts = option.split("|");
-        let title = parts[1].split("//");
+        const parts = option.split("||");
+        let title = parts[1]?.split("//") || "";
 
         return { slug: parts[0], name: title[0].trim() };
       });
