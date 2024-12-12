@@ -9,6 +9,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const initialDegreeFinderState = {
 	siteUrl: '',
+	profileRootUrl: '',
 	queryParams: {
 		count: urlParams.get('count') || '',
 		page: urlParams.get('page') || '',
@@ -131,6 +132,7 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 			return {
 				...state,
 				siteUrl: state.siteUrl,
+				profileRootUrl: state.profileRootUrl,
 				queryParams: {} as Record<string, string>,
 				activeFilters: undefined
 			}
@@ -141,8 +143,9 @@ function degreeFinderReducer(state: DegreeFinderStateType, action: DegreeFinderA
 	}
 }
 
-export function DegreeFinderProvider({ siteUrl, children }: { siteUrl: string, children: JSX.Element | JSX.Element[] }) {
+export function DegreeFinderProvider({ siteUrl, profileRootUrl, children }: { siteUrl: string, profileRootUrl: string, children: JSX.Element | JSX.Element[] }) {
 	initialDegreeFinderState.siteUrl = siteUrl;
+	initialDegreeFinderState.profileRootUrl = profileRootUrl;
 	const [state, dispatch] = useReducer(degreeFinderReducer, initialDegreeFinderState);
 	const { data: filters, isLoading, error } = useFilterTerms(state.siteUrl);
 	const [cookies, setCookies] = useCookies(['degreeFinderUrlState']);

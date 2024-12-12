@@ -34,7 +34,9 @@ export function useFilterTerms(siteUrl: string) {
 export function useDegrees() {
     const state = useDegreeFinder();
     const requestUrl = new URL('/wp-json/wsu-degree-finder/v1/get-degrees', state.siteUrl);
-    requestUrl.search = new URLSearchParams(removeEmptyProperties(state.queryParams)).toString();
+	const searchParams = new URLSearchParams(removeEmptyProperties(state.queryParams));
+	searchParams.append('profile-root-url', state.profileRootUrl);
+    requestUrl.search = searchParams.toString();
 
     return useQuery(['degrees-query', requestUrl.search], async ({ signal }) => {
 		try{

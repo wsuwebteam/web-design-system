@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { QueryClient } from '@tanstack/react-query'
-import { PersistQueryClientProvider, PersistQueryClientOptions } from '@tanstack/react-query-persist-client';
-import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
+import { QueryClient } from "@tanstack/react-query";
+import {
+	PersistQueryClientProvider,
+	PersistQueryClientOptions,
+} from "@tanstack/react-query-persist-client";
+import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { default as DegreeFinder } from "./degree-finder";
 import { DegreeFinderProvider } from "./context";
@@ -22,8 +25,8 @@ const queryClient = new QueryClient({
 });
 
 const persister = createSyncStoragePersister({
-	storage: window.localStorage
-})
+	storage: window.localStorage,
+});
 
 const doNotPersistKeys: string[] = []; // do not cache queries with these keys
 const persistOptions: PersistQueryClientOptions = {
@@ -32,13 +35,15 @@ const persistOptions: PersistQueryClientOptions = {
 	maxAge: cacheTime,
 	dehydrateOptions: {
 		shouldDehydrateQuery: ({ queryKey }) => {
-			const key = typeof queryKey[0] === 'string' ? queryKey[0] : '';
+			const key = typeof queryKey[0] === "string" ? queryKey[0] : "";
 			return !doNotPersistKeys.includes(key);
-		}
-	}
-}
+		},
+	},
+};
 
-const domain = window.location.hostname.includes('wsu.edu') ? '.wsu.edu' : window.location.host;
+const domain = window.location.hostname.includes("wsu.edu")
+	? ".wsu.edu"
+	: window.location.host;
 const cookieExpireDate = new Date();
 cookieExpireDate.setDate(cookieExpireDate.getDate() + 365);
 
@@ -47,9 +52,19 @@ const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 		<React.StrictMode>
 			<PersistQueryClientProvider
 				client={queryClient}
-				persistOptions={persistOptions}>
-				<CookiesProvider defaultSetOptions={{ path: '/', expires: cookieExpireDate, domain: domain }}>
-					<DegreeFinderProvider siteUrl={props.siteUrl ?? '/'}>
+				persistOptions={persistOptions}
+			>
+				<CookiesProvider
+					defaultSetOptions={{
+						path: "/",
+						expires: cookieExpireDate,
+						domain: domain,
+					}}
+				>
+					<DegreeFinderProvider
+						siteUrl={props.siteUrl ?? "/"}
+						profileRootUrl={props.profileRootUrl ?? ""}
+					>
 						<DegreeFinder />
 						{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 					</DegreeFinderProvider>
@@ -59,9 +74,12 @@ const DegreeFinderRoot = ({ props }: { props: DOMStringMap }) => {
 	);
 };
 
-const elements = document.querySelectorAll<HTMLElement>(".js-wsu-degree-finder");
+const elements = document.querySelectorAll<HTMLElement>(
+	".js-wsu-degree-finder"
+);
 elements.forEach((el) => {
-	const rootEl = el.dataset.rootElement === 'parent' ? (el.parentElement || el) : el;
+	const rootEl =
+		el.dataset.rootElement === "parent" ? el.parentElement || el : el;
 	const app = ReactDOM.createRoot(rootEl);
 	app.render(<DegreeFinderRoot props={el.dataset} />);
 });
