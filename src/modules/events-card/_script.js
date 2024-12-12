@@ -15,7 +15,9 @@ const EventCards = function (el) {
     tags: el.dataset.tags,
     organizations: el.dataset.organizations,
     locations: el.dataset.locations,
+    displayFields: el.dataset.displayFields ?? "location,description",
   };
+  const displayFields = data.displayFields.split(",");
 
   function generateHTML(events) {
     const html = events
@@ -42,11 +44,15 @@ const EventCards = function (el) {
                     }                    
                 </div>
                 ${
-                  event.venue
+                  displayFields.includes("location") && event.venue
                     ? `<div class="wsu-events-card__meta-location">${event.venue}</div>`
                     : ""
                 }                
-                <p>${event.summary}</p>
+                ${
+                  displayFields.includes("description")
+                    ? `<p>${event.summary}</p>`
+                    : ""
+                }
             </div>
         </article>`;
       })
