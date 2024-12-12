@@ -15,7 +15,9 @@ const EventList = function (el) {
     tags: el.dataset.tags,
     organizations: el.dataset.organizations,
     locations: el.dataset.locations,
+    displayFields: el.dataset.displayFields ?? "location,description",
   };
+  const displayFields = data.displayFields.split(",");
 
   function generateHTML(events) {
     const html = `<ul class="${data.className}">
@@ -46,12 +48,16 @@ const EventList = function (el) {
                               : ""
                           }
                           ${
-                            event.venue
+                            displayFields.includes("location") && event.venue
                               ? `<div class="wsu-events-list__meta-location">${event.venue}</div>`
                               : ""
                           }
                         </div>
-                        <p>${event.summary}</p>
+                       ${
+                         displayFields.includes("description")
+                           ? `<p>${event.summary}</p>`
+                           : ""
+                       }
                     </div>
                 </div>
             </li>`;

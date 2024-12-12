@@ -1,1 +1,1 @@
-import '../../../modules/people-list/_script';
+import "../../../modules/people-list/_script";

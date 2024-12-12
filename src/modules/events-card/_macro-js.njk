@@ -1,10 +1,11 @@
-{% macro eventsCards(classes = '', type = 'feed', search = '', dataSource = 'http://wsuwp562.local', noResultsMessage = 'No upcoming events', count = 5, postIds = '44040,42140,43713,44041,44039', exclude = '44039,43713,42140', types = '', categories = '', tags = '', organizations = '406', locations = '') %}
+{% macro eventsCards(classes = '', type = 'feed', search = '', dataSource = 'https://events.wsu.edu', noResultsMessage = 'No upcoming events', count = 5, postIds = '', exclude = '', types = '', categories = '', tags = '', organizations = '', locations = '', displayFields = 'location') %}
     <div class="js-wsu-events-card wsu-events-card {{classes}}"
         data-component-id="{{range(100, 1000) | random}}"
         data-type="{{type}}"
         data-search="{{search}}"
         data-data-source="{{dataSource}}"
         data-no-results-message="{{noResultsMessage}}"
+        data-display-fields="{{displayFields}}"
         data-count="{{count}}"
         data-post-ids="{{postIds}}"
         data-exclude="{{exclude}}"
