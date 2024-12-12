@@ -1,10 +1,11 @@
-{% macro eventsList(classes = '', type = 'feed', search = '', dataSource = 'http://wsuwp562.local', noResultsMessage = 'No upcoming events', count = 5, postIds = '', exclude = '', types = '', categories = '', tags = '', organizations = '', locations = '301') %}
+{% macro eventsList(classes = '', type = 'feed', search = '', dataSource = 'https://events.wsu.edu', noResultsMessage = 'No upcoming events', count = 5, postIds = '', exclude = '', types = '', categories = '', tags = '', organizations = '', locations = '', displayFields = 'location,description') %}
     <div class="js-wsu-events-list wsu-events-list {{classes}}"
         data-component-id="{{range(100, 1000) | random}}"
         data-type="{{type}}"
         data-search="{{search}}"
         data-data-source="{{dataSource}}"
         data-no-results-message="{{noResultsMessage}}"
+        data-display-fields="{{displayFields}}"
         data-count="{{count}}"
         data-post-ids="{{postIds}}"
         data-exclude="{{exclude}}"
