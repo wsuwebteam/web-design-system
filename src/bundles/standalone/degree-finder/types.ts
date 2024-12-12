@@ -31,6 +31,7 @@ export type DegreeFinderDispatchType = Dispatch<DegreeFinderActionType>;
 
 export type DegreeFinderStateType = {
     siteUrl: string,
+    profileRootUrl: string,
     queryParams: Record<string, string>,
     filters?: filterTermCollectionType,
     activeFilters?: ActiveFiltersType,
