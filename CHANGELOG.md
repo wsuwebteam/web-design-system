@@ -1,3 +1,11 @@
+# [2.24.0](https://github.com/wsuwebteam/web-design-system/compare/v2.23.3...v2.24.0) (2024-12-12)
+
+
+### Features
+
+* make location & description optional fields on events ([bca02c5](https://github.com/wsuwebteam/web-design-system/commit/bca02c5aceeecb6885fbe349e3bb6e5674fe4015))
+* support profile-root-url ([47ac142](https://github.com/wsuwebteam/web-design-system/commit/47ac1423763e10a9062ba35e2ad3164b908e1234))
+
 ## [2.23.3](https://github.com/wsuwebteam/web-design-system/compare/v2.23.2...v2.23.3) (2024-12-06)
 
 
