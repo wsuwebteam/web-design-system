@@ -42,6 +42,9 @@ jobs:
           echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/"
           aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.beta/dist/bundles/
 
+      - name: Invalidate CloudFront cache
+        run: aws --no-cli-pager cloudfront create-invalidation --distribution-id ${{ secrets.AWS_WDS_DISTRIBUTION_ID }} --paths "/designsystem/2.beta/dist/bundles/*"
+
   deploy-production:
     runs-on: ubuntu-latest
     environment: production
@@ -65,6 +68,9 @@ jobs:
         run: |
           echo "Deploying assets to S3 | s3://cdn-web-wsu/designsystem/2.x/dist/bundles/"
           aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/2.x/dist/bundles/
+
+      - name: Invalidate CloudFront cache
+        run: aws --no-cli-pager cloudfront create-invalidation --distribution-id ${{ secrets.AWS_WDS_DISTRIBUTION_ID }} --paths "/designsystem/2.x/dist/bundles/*"
 
   create-release:
     runs-on: ubuntu-latest
