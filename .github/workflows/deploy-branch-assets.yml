@@ -57,3 +57,6 @@ jobs:
 
       - name: Push to S3
         run: aws s3 sync ./assets/ s3://cdn-web-wsu/designsystem/${{ github.ref_name }}/dist/bundles/
+
+      - name: Invalidate CloudFront cache
+        run: aws --no-cli-pager cloudfront create-invalidation --distribution-id ${{ secrets.AWS_WDS_DISTRIBUTION_ID }} --paths "/designsystem/${{ github.ref_name }}/dist/bundles/*"

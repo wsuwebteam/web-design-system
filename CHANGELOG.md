@@ -1,3 +1,32 @@
+# [3.0.0](https://github.com/wsuwebteam/web-design-system/compare/v2.24.0...v3.0.0) (2025-01-14)
+
+
+### Features
+
+* add cache invalidation to branch assets [skip ci] ([2a2448f](https://github.com/wsuwebteam/web-design-system/commit/2a2448f1f5c4b4fbed1d526feda1e30baacb9696))
+* cache invalidation for main branch [skip ci] ([c8c2383](https://github.com/wsuwebteam/web-design-system/commit/c8c23831d83e11b6d36b25c78fe5a92b21a4b74c))
+* **scholarships:** implement client-side filtering ([70c44bf](https://github.com/wsuwebteam/web-design-system/commit/70c44bf72903e6d79ffc77131ab552fd73398d3c))
+
+
+### BREAKING CHANGES
+
+* **scholarships:** replaces the API filtering with client-side filtering of the entire list.
+
+# [2.24.0](https://github.com/wsuwebteam/web-design-system/compare/v2.23.3...v2.24.0) (2024-12-12)
+
+
+### Features
+
+* make location & description optional fields on events ([bca02c5](https://github.com/wsuwebteam/web-design-system/commit/bca02c5aceeecb6885fbe349e3bb6e5674fe4015))
+* support profile-root-url ([47ac142](https://github.com/wsuwebteam/web-design-system/commit/47ac1423763e10a9062ba35e2ad3164b908e1234))
+
+## [2.23.3](https://github.com/wsuwebteam/web-design-system/compare/v2.23.2...v2.23.3) (2024-12-06)
+
+
+### Bug Fixes
+
+* change term splitter to prevent issues ([ea96604](https://github.com/wsuwebteam/web-design-system/commit/ea96604cbc288e6c807d4d2f702c73720119cb6f))
+
 ## [2.23.2](https://github.com/wsuwebteam/web-design-system/compare/v2.23.1...v2.23.2) (2024-10-28)
 
 

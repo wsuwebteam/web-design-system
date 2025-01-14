@@ -1,9 +1,7 @@
 import _range from 'lodash/range';
-import { IScholarshipsResponse } from "../interfaces";
 
-
-function Pagination({ data, listRef, params, setParams }: {
-	data: IScholarshipsResponse,
+function Pagination({ numberOfPages, listRef, params, setParams }: {
+	numberOfPages: number,
 	listRef?: React.MutableRefObject<HTMLDivElement | null>,
 	params: Record<string, string>,
 	setParams: (value: Record<string, string>) => void
@@ -58,30 +56,30 @@ function Pagination({ data, listRef, params, setParams }: {
 			</p>
 			<nav className="wsu-scholarship-list__pagination" role="navigation" aria-label="Pagination Navigation">
 				<ol className="wsu-scholarship-list__pagination-menu">
-
-					{data.numberOfPages <= 10 && _range(1, data.numberOfPages).map((pageNumber) => <PageLink pageNumber={pageNumber} />)}
+					{/* 1 2 3 4 5 6 7 8 9 10 */}
+					{numberOfPages <= 10 && _range(1, numberOfPages + 1).map((pageNumber, idx) => <PageLink key={idx} pageNumber={pageNumber} />)}
 
 					{/* 1 2 3 4 ... 17 */}
-					{currentPage <= 4 && (<>
-						{_range(1, 6).map((pageNumber) => <PageLink pageNumber={pageNumber} />)}
+					{numberOfPages > 10 && currentPage <= 4 && (<>
+						{_range(1, 6).map((pageNumber, idx) => <PageLink key={idx} pageNumber={pageNumber} />)}
 						<li className="wsu-scholarship-list__pagination-menu-item" aria-hidden={true}>&hellip;</li>
-						<PageLink pageNumber={data.numberOfPages} />
+						<PageLink pageNumber={numberOfPages} />
 					</>)}
 
 					{/* 1 ... 13 14 15 16 17 */}
-					{currentPage > data.numberOfPages - 4 && (<>
+					{numberOfPages > 10 && currentPage > numberOfPages - 4 && (<>
 						<PageLink pageNumber={1} />
 						<li className="wsu-scholarship-list__pagination-menu-item" aria-hidden={true}>&hellip;</li>
-						{_range(data.numberOfPages - 4, data.numberOfPages + 1).map((pageNumber) => <PageLink pageNumber={pageNumber} />)}
+						{_range(numberOfPages - 4, numberOfPages + 1).map((pageNumber, idx) => <PageLink key={idx} pageNumber={pageNumber} />)}
 					</>)}
 
 					{/* 1 ... 3 4 5 6 7 ... 17*/}
-					{currentPage <= data.numberOfPages - 4 && currentPage >= 5 && (<>
+					{numberOfPages > 10 && currentPage <= numberOfPages - 4 && currentPage >= 5 && (<>
 						<PageLink pageNumber={1} />
 						<li className="wsu-scholarship-list__pagination-menu-item" aria-hidden={true}>&hellip;</li>
-						{_range(currentPage - 2, currentPage + 3).map((pageNumber) => <PageLink pageNumber={pageNumber} />)}
+						{_range(currentPage - 2, currentPage + 3).map((pageNumber, idx) => <PageLink key={idx} pageNumber={pageNumber} />)}
 						<li className="wsu-scholarship-list__pagination-menu-item" aria-hidden={true}>&hellip;</li>
-						<PageLink pageNumber={data.numberOfPages} />
+						<PageLink pageNumber={numberOfPages} />
 					</>)}
 
 				</ol>
