@@ -1,45 +1,128 @@
-import { useState, useEffect, useRef } from "react";
-import { useQuery } from '@tanstack/react-query';
-import { IScholarship, IScholarshipsResponse } from "./interfaces";
-import { TableSortControl, Pagination } from './components';;
+import { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
+import {
+	IScholarship,
+	IScholarshipsResponse,
+	IScholarshipsQueryResult,
+} from "./interfaces";
+import { TableSortControl, Pagination } from "./components";
 import WSULogo from "./logo.svg";
+import ScholarshipsQueryBuilder from "./scholarships-query-builder";
 
 const API_PATH = "/wp-json/wsu-scholarships/v1/get-scholarships";
 
-function ScholarshipTable({ siteUrl, params, setParams }: {
-	siteUrl?: string,
-	params: Record<string, string>,
-	setParams: (value: Record<string, string>) => void
+function ScholarshipTable({
+	siteUrl,
+	params,
+	setParams,
+}: {
+	siteUrl?: string;
+	params: Record<string, string>;
+	setParams: (value: Record<string, string>) => void;
 }) {
-
-	const tableTop = useRef<null | HTMLDivElement>(null)
-	const [APIEndpoint, setAPIEndpoint] = useState<string>(getAPIEndpoint);
-	const { isLoading, isRefetching, error, data } = useQuery<IScholarshipsResponse, Error>(
-		['scholarships', APIEndpoint],
+	const APIEndpoint = `${siteUrl}${API_PATH}`;
+	const tableTop = useRef<null | HTMLDivElement>(null);
+	const { isLoading, isRefetching, error, data } = useQuery<
+		IScholarshipsResponse,
+		Error
+	>(
+		["scholarships", APIEndpoint],
 		({ signal }) => fetchScholarships(signal),
 		{
 			keepPreviousData: true,
-			refetchOnWindowFocus: false
+			refetchOnWindowFocus: false,
 		}
 	);
 
-	useEffect(() => {
-		setAPIEndpoint(getAPIEndpoint);
-	}, [params]);
+	const {
+		scholarships,
+		totalCount,
+		numberOfPages,
+	}: IScholarshipsQueryResult =
+		!isLoading && data
+			? new ScholarshipsQueryBuilder(data.scholarships)
+					.setSort(params.orderBy, params.order)
+					.setPagination(
+						parseInt(params.page),
+						parseInt(params.postsPerPage)
+					)
+					.addFilter((s: IScholarship) => {
+						if (params.grade && s.grade.length) {
+							return s.grade.includes(parseInt(params.grade));
+						}
+						return true;
+					})
+					.addFilter((s: IScholarship) => {
+						if (params.citizenship && s.citizenship.length) {
+							return s.citizenship.includes(
+								parseInt(params.citizenship)
+							);
+						}
+						return true;
+					})
+					.addFilter((s: IScholarship) => {
+						if (params.state && s.state) {
+							return s.state === params.state;
+						}
+						return true;
+					})
+					.addFilter((s: IScholarship) => {
+						if (params.gpa && s.gpa) {
+							const userGPA = parseFloat(params.gpa);
+							const minGPA = parseFloat(
+								s.gpa.split("-")[0].trim()
+							);
+							const maxGPA = parseFloat(
+								s.gpa.split("-")[1]?.trim() ?? "6.0" // I guess 6.0 is possible? 🤷‍♂️
+							);
 
-	async function fetchScholarships(signal: AbortSignal | undefined): Promise<IScholarshipsResponse> {
+							return minGPA <= userGPA && userGPA <= maxGPA;
+						}
+						return true;
+					})
+					.addFilter((s: IScholarship) => {
+						if (params.majors) {
+							const majors = params.majors
+								.split(",")
+								.map((m) => parseInt(m));
+							return majors.some((m) => s.major.includes(m));
+						}
+						return true;
+					})
+					.addFilter((s: IScholarship) => {
+						if (params.requirements) {
+							const requirements = params.requirements.split(",");
+							return requirements.some((m) =>
+								s.requirements.includes(m)
+							);
+						}
+						return true;
+					})
+					.addFilter((s: IScholarship) => {
+						if (params.fromWSU) {
+							if (params.fromWSU === "from-wsu") {
+								return s.data.includes("tag-wsu");
+							} else if (params.fromWSU === "outside-wsu") {
+								return !s.data.includes("tag-wsu");
+							}
+						}
+						return true;
+					})
+					.build()
+			: ({} as IScholarshipsQueryResult);
+
+	async function fetchScholarships(
+		signal: AbortSignal | undefined
+	): Promise<IScholarshipsResponse> {
 		const result = await fetch(APIEndpoint, { signal });
 
 		if (!result.ok) {
-			throw new Error('Something went wrong. Failed to find scholarships');
+			throw new Error(
+				"Something went wrong. Failed to find scholarships"
+			);
 		}
 		const json = await result.json();
 		return json;
-	}
-
-	function getAPIEndpoint() {
-		const queryStrings = new URLSearchParams(params);
-		return `${siteUrl}${API_PATH}?${queryStrings.toString()}`;
 	}
 
 	return (
@@ -51,16 +134,25 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 				</p>
 
 				<p className="wsu-scholarship-list__meta-data">
-					{data && <span className="wsu-scholarship-list__meta-count">{`${data.totalCount} scholarships found`}</span>}
-					<span id="wsu-scholarship-list__results-per-page-top">Results per page</span>
+					{data && (
+						<span className="wsu-scholarship-list__meta-count">{`${totalCount} scholarships found`}</span>
+					)}
+					<span id="wsu-scholarship-list__results-per-page-top">
+						Results per page
+					</span>
 					<span className="wsu-scholarship-list__select-control wsu-scholarship-list__results-per-page__control wsu-scholarship-list__results-per-page__control--top">
 						<select
 							className="wsu-scholarship-list__select-control__input wsu-scholarship-list__results-per-page__input"
 							aria-labelledby="wsu-scholarship-list__results-per-page--top"
 							value={params.postsPerPage}
-							onChange={e => {
-								setParams({ ...params, 'postsPerPage': e.target.value, 'page': '1' });
-							}}>
+							onChange={(e) => {
+								setParams({
+									...params,
+									postsPerPage: e.target.value,
+									page: "1",
+								});
+							}}
+						>
 							<option value="10">10</option>
 							<option value="25">25</option>
 							<option value="50">50</option>
@@ -89,7 +181,7 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 								label="Amount"
 								ariaLabel="Order by amount"
 								defaultDirection="desc"
-								metaKey="scholarship_amount"
+								metaKey="amount"
 								params={params}
 								setParams={setParams}
 							/>
@@ -98,17 +190,21 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 								label="Deadline"
 								ariaLabel="Order by deadline"
 								defaultDirection="desc"
-								metaKey="scholarship_deadline"
+								metaKey="deadline"
 								params={params}
 								setParams={setParams}
 							/>
-							<th><span className="wsu-screen-reader-only">Application</span></th>
+							<th>
+								<span className="wsu-screen-reader-only">
+									Application
+								</span>
+							</th>
 						</tr>
 					</thead>
-					<tbody className={isRefetching ? 'is-loading' : ''}>
+					<tbody className={isRefetching ? "is-loading" : ""}>
 						{!isLoading && data && (
 							<>
-								{data.scholarships.map((s: IScholarship) => (
+								{scholarships.map((s: IScholarship) => (
 									<tr key={s.id}>
 										<td>
 											{s.data.includes("tag-wsu") && (
@@ -116,7 +212,9 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 											)}
 											<a
 												href={s.permalink}
-												dangerouslySetInnerHTML={{ __html: s.title }}
+												dangerouslySetInnerHTML={{
+													__html: s.title,
+												}}
 											></a>
 										</td>
 										<td>{s.displayAmount}</td>
@@ -125,7 +223,8 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 											{s.applyLink && (
 												<a
 													className="wsu-scholarship-list__apply-link"
-													href={s.applyLink}>
+													href={s.applyLink}
+												>
 													Apply
 												</a>
 											)}
@@ -138,16 +237,26 @@ function ScholarshipTable({ siteUrl, params, setParams }: {
 				</table>
 			</div>
 
-			{!isLoading && !isRefetching && data && data.numberOfPages > 1 && <Pagination
-				data={data}
-				listRef={tableTop}
-				params={params}
-				setParams={setParams} />
-			}
+			{!isLoading && !isRefetching && data && numberOfPages > 1 && (
+				<Pagination
+					numberOfPages={numberOfPages}
+					listRef={tableTop}
+					params={params}
+					setParams={setParams}
+				/>
+			)}
 
-			{(isLoading || isRefetching) && <div className="wsu-scholarship-list__loading"></div>}
-			{error && <p className="wsu-scholarship-list__message">{error.message}</p>}
-			{!isRefetching && data && data.scholarships.length === 0 && <p className="wsu-scholarship-list__message">Sorry, no scholarships were found.</p>}
+			{(isLoading || isRefetching) && (
+				<div className="wsu-scholarship-list__loading"></div>
+			)}
+			{error && (
+				<p className="wsu-scholarship-list__message">{error.message}</p>
+			)}
+			{!isRefetching && data && scholarships.length === 0 && (
+				<p className="wsu-scholarship-list__message">
+					Sorry, no scholarships were found.
+				</p>
+			)}
 		</>
 	);
 }
