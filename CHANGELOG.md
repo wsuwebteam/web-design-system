@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/wsuwebteam/web-design-system/compare/v2.24.0...v3.0.0) (2025-01-14)
+
+
+### Features
+
+* add cache invalidation to branch assets [skip ci] ([2a2448f](https://github.com/wsuwebteam/web-design-system/commit/2a2448f1f5c4b4fbed1d526feda1e30baacb9696))
+* cache invalidation for main branch [skip ci] ([c8c2383](https://github.com/wsuwebteam/web-design-system/commit/c8c23831d83e11b6d36b25c78fe5a92b21a4b74c))
+* **scholarships:** implement client-side filtering ([70c44bf](https://github.com/wsuwebteam/web-design-system/commit/70c44bf72903e6d79ffc77131ab552fd73398d3c))
+
+
+### BREAKING CHANGES
+
+* **scholarships:** replaces the API filtering with client-side filtering of the entire list.
+
 # [2.24.0](https://github.com/wsuwebteam/web-design-system/compare/v2.23.3...v2.24.0) (2024-12-12)
 
 
