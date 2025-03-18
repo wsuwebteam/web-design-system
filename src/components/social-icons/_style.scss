@@ -59,6 +59,16 @@
         content: "\F11A";
     }
 
+    &__bluesky {
+    
+        svg {
+            padding-top: 0.3em;
+            width: 0.9em;
+            height: 0.9em;
+            fill: #262626;
+        }
+    }
+
 }
 @import 'social-icons--xlarge';
 @import 'social-icons--large';
