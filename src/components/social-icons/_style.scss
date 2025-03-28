@@ -29,9 +29,14 @@
         }
 
     }
+
+    &__twitter svg {
+        height: 0.9em !important;
+        vertical-align: baseline !important;
+    }
     
     &__twitter a::before  {
-        content: "\F148";
+        display: none;
     }
 
     &__facebook a::before,
@@ -70,6 +75,12 @@
     }
 
 }
+
+.wsu-footer-site .wsu-social-icons__twitter svg,
+.wsu-footer-site .wsu-social-icons__bluesky svg {
+    fill: #e5e5e5;
+}
+
 @import 'social-icons--xlarge';
 @import 'social-icons--large';
 @import 'social-icons--small';
