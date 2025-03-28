@@ -1,3 +1,11 @@
+# [3.1.0](https://github.com/wsuwebteam/web-design-system/compare/v3.0.0...v3.1.0) (2025-03-28)
+
+
+### Features
+
+* add bluesky support ([5b99fed](https://github.com/wsuwebteam/web-design-system/commit/5b99feda35add7b4fa414c1c419cab5552862fd3))
+* add hero block sidebar styles ([9e01f57](https://github.com/wsuwebteam/web-design-system/commit/9e01f5729fab61acab44a3b9ae31c508d8516c98))
+
 # [3.0.0](https://github.com/wsuwebteam/web-design-system/compare/v2.24.0...v3.0.0) (2025-01-14)
 
 
