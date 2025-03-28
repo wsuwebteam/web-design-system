@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/wsuwebteam/web-design-system/compare/v3.1.0...v3.2.0) (2025-03-28)
+
+
+### Features
+
+* update twitter logo ([27c1dcd](https://github.com/wsuwebteam/web-design-system/commit/27c1dcd7e0c9d502889ed20e58deb8ccb0863228))
+
 # [3.1.0](https://github.com/wsuwebteam/web-design-system/compare/v3.0.0...v3.1.0) (2025-03-28)
 
 
