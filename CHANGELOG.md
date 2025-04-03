@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/wsuwebteam/web-design-system/compare/v3.2.0...v3.2.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* hamburger menu hidden at 1260px ([9ed46a4](https://github.com/wsuwebteam/web-design-system/commit/9ed46a476978aa387df4a81f671013807f9dfb5a))
+
 # [3.2.0](https://github.com/wsuwebteam/web-design-system/compare/v3.1.0...v3.2.0) (2025-03-28)
 
 
