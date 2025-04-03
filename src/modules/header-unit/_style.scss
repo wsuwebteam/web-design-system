@@ -57,7 +57,7 @@ $wsu-space--logo: $wsu-spacing--medium;
         right: 0;
     }
 
-    @media screen and (min-width: $wsu-breakpoint--horizontal-nav ) {
+    @media screen and (min-width: #{$wsu-breakpoint--horizontal-nav + 1} ) {
 
         .wsu-button-menu {
             display: none;
