@@ -12,6 +12,22 @@
     padding: $wsu-spacing--sxxsmall $wsu-spacing--medium;
 
     &:focus {
-        top: $wsu-spacing--xxsmall; 
+        top: $wsu-spacing--xxsmall;
+    }
+
+    &.skip-to-menu-desktop {
+        display: none;
+    }
+
+    @media screen and ( min-width: 1260px ) {
+
+        &.skip-to-menu-mobile {
+            display: none;
+        }
+
+        &.skip-to-menu-desktop {
+            display: inline-block;
+        }
+
     }
 }
