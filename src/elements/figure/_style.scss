@@ -55,7 +55,8 @@ figure {
 
 }
 
-figcaption {
+figcaption,
+.wp-block-gallery.has-nested-images:not(.is-cropped) figure.wp-block-image figcaption {
     @include wsu-font--xsmall();
     font-weight: 500;
     position: relative;
@@ -76,4 +77,55 @@ img ~ figcaption {
         position: absolute;
         font-size: $wsu-font-size--medium;
     }
+}
+
+figure.wp-block-gallery.has-nested-images {
+
+    figure.wp-block-image figcaption {
+        padding-left: 1.4rem;
+        text-align: left;
+    }
+
+}
+
+.wp-block-gallery.has-nested-images:not(.is-cropped) {
+
+    figure.wp-block-image figcaption {
+        background: none;
+    }
+
+}
+
+.wp-block-gallery.has-nested-images.is-cropped {
+
+    figure.wp-block-image figcaption {
+        @include wsu-font--xsmall();
+        background: $wsu-color--gray-85;
+        background: rgba(38, 38, 38, 0.9);
+        font-weight: 500;
+        color: $wsu-color--gray-5;
+        padding: .75rem .5rem .75rem 1.9rem;
+    }
+
+    a ~ figcaption,
+    img ~ figcaption {
+
+        &::before {
+            padding: .6rem 0 0 .5rem;
+        }
+    }
+
+    &.wsu-custom-separate-captions {
+
+        figure.wp-block-image figcaption {
+            background: $wsu-color--gray-85;
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            flex-basis: auto;
+            flex-grow: 0;
+        }
+
+    }
+
 }
