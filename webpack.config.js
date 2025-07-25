@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const args = require('./env');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-
+ 
 module.exports = env => {
 	const DEV = args.env !== 'production';
 
