@@ -1,3 +1,13 @@
+## [3.2.2](https://github.com/wsuwebteam/web-design-system/compare/v3.2.1...v3.2.2) (2025-07-25)
+
+
+### Bug Fixes
+
+* embed block full width aspect ratio ([3703202](https://github.com/wsuwebteam/web-design-system/commit/370320223bc1cb093993b19f3b585323ac736573))
+* force update ([581eda2](https://github.com/wsuwebteam/web-design-system/commit/581eda23ecced02543cc887878e760d15c087e72))
+* gallery block image captions ([5e81d47](https://github.com/wsuwebteam/web-design-system/commit/5e81d4713e14f48f9dab4cd05b57f1dd5eb7c3fe))
+* skip to menu links broken sometimes ([f151145](https://github.com/wsuwebteam/web-design-system/commit/f15114544c1a71f8012ec22e491b07754581ae23))
+
 ## [3.2.1](https://github.com/wsuwebteam/web-design-system/compare/v3.2.0...v3.2.1) (2025-04-03)
 
 
