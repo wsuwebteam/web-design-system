@@ -1,5 +1,5 @@
 {% from "logo-lockup/_macro.njk" import logoLockup %}
-{% from "navigation-header/_macro.njk" import navigationHeader %}
+{% from "nav-site-horiz/_macro.njk" import navSiteHoriz %}
 {% from "header-utility-bar/_macro.njk" import headerUtilityBar %}
 {% from "button-menu/_macro.njk" import buttonMenu %}
 
@@ -11,7 +11,7 @@
            {{ headerUtilityBar() }}
            {{ buttonMenu( classes='wsu-slide-in-panel--open', ariaLabel='Open Site Menu', for='wsu-navigation-mobile' ) }}
         </div>
-        {% if showNav %}{{ navigationHeader( activeItem='Degree Programs') }}{% endif %}
+        {% if showNav %}{{ navSiteHoriz( activeItem='Degree Programs') }}{% endif %}
     </div>
 </header>
 {% endmacro %}
@@ -35,7 +35,7 @@
            {{ headerUtilityBar() }}
            {{ buttonMenu( classes='wsu-slide-in-panel--open', ariaLabel='Open Site Menu', for='wsu-navigation-mobile' ) }}
         </div>
-        {% if showNav %}{{ navigationHeader( activeItem='Degree Programs') }}{% endif %}
+        {% if showNav %}{{ navSiteHoriz( activeItem='Degree Programs') }}{% endif %}
     </div>
 </header>
 {% endmacro %}
