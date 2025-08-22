@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/wsuwebteam/web-design-system/compare/v3.2.2...v3.2.3) (2025-08-22)
+
+
+### Bug Fixes
+
+* Hero box style image frame fix ([bdef08c](https://github.com/wsuwebteam/web-design-system/commit/bdef08cdb9bb310593a2c1a8e746dec350de2df1))
+
 ## [3.2.2](https://github.com/wsuwebteam/web-design-system/compare/v3.2.1...v3.2.2) (2025-07-25)
 
 
