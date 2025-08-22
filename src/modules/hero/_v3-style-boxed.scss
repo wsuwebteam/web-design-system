@@ -104,7 +104,6 @@
     .wsu-image-frame,
     .wsu-video-frame {
         @extend %wsu-hero__position-fill;
-        @extend %wsu-hero__overflow-bottom;
         padding-top: 0;
         overflow: hidden;
     }
