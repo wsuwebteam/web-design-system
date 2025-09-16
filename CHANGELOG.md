@@ -1,3 +1,15 @@
+# [3.3.0](https://github.com/wsuwebteam/web-design-system/compare/v3.2.3...v3.3.0) (2025-09-16)
+
+
+### Bug Fixes
+
+* hero banner image frame overflow ([fe92d90](https://github.com/wsuwebteam/web-design-system/commit/fe92d90b36e4dadc317da24edaa90694ab407ec0))
+
+
+### Features
+
+* add max width options ([4caa120](https://github.com/wsuwebteam/web-design-system/commit/4caa1201c1e3d675612d4bd2d74f461ca67e05a9))
+
 ## [3.2.3](https://github.com/wsuwebteam/web-design-system/compare/v3.2.2...v3.2.3) (2025-08-22)
 
 
