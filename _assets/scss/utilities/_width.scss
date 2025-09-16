@@ -41,6 +41,22 @@
 
 .wsu-max-width {
 
+    &--full-flex {
+        max-width: 90% !important;
+    }
+
+    &--ultrawide {
+        max-width: 2200px !important;
+    }
+
+    &--xxhero {
+        max-width: 1600px !important;
+    }
+
+    &--xhero {
+        max-width: 1400px !important;
+    }
+
     &--hero {
         max-width: 1200px !important;
     }
