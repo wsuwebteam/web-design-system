@@ -1,0 +1,71 @@
+@import '../../../_assets/scss/variables';
+@import '../../../_assets/scss/mixins';
+@import '../../../_assets/scss/placeholders';
+
+.wsu-news-card--style-list {
+
+    .wsu-card {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        border-top: 1px solid #ccc;
+        padding: 1rem 0;
+        margin: 0 !important;
+    }
+
+    .wsu-card .wsu-image-frame {
+        width: 25%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-left: 0.75rem;
+        
+    }
+
+    .wsu-card .wsu-image-frame::before {
+        display: none;
+    }
+
+    .wsu-card .wsu-image-frame img {
+        aspect-ratio: 1/1;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+
+    .wsu-card .wsu-card__content {
+        order: -1;
+        padding: 0;
+        flex-grow: 1;
+    }
+
+    .wsu-caption {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin: 0 !important;
+    }
+
+    .wsu-title {
+        margin-top: 0.25rem;
+    }
+
+    .wsu-meta-date {
+        font-size: 0.6rem;
+        margin-left: 1rem;
+    }
+
+    .wsu-news-card-list--large .wsu-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .wsu-news-card-list--large .wsu-caption {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    .wsu-news-card-list--large .wsu-card .wsu-image-frame {
+        margin-left: 2rem;
+    }
+
+    
+}
