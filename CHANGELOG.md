@@ -1,3 +1,10 @@
+## [3.4.2](https://github.com/wsuwebteam/web-design-system/compare/v3.4.1...v3.4.2) (2026-01-13)
+
+
+### Bug Fixes
+
+* add issues permissions ([7bd4ce1](https://github.com/wsuwebteam/web-design-system/commit/7bd4ce16c794000dd22309a9a7535b3a6f9e7013))
+
 ## [3.4.1](https://github.com/wsuwebteam/web-design-system/compare/v3.4.0...v3.4.1) (2026-01-13)
 
 
