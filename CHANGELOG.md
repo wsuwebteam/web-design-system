@@ -1,3 +1,12 @@
+## [3.4.1](https://github.com/wsuwebteam/web-design-system/compare/v3.4.0...v3.4.1) (2026-01-13)
+
+
+### Bug Fixes
+
+* content permissions ([878aae2](https://github.com/wsuwebteam/web-design-system/commit/878aae2f9fd3bd9aaec888b0b1e201d60c7dda77))
+* package write permissions ([9a02d51](https://github.com/wsuwebteam/web-design-system/commit/9a02d51801470c17a2ba69205e2d945520b3489a))
+* rename npm token ([fbe435c](https://github.com/wsuwebteam/web-design-system/commit/fbe435cdffcb1397dabd4b5f1dcc8826bcfae5b7))
+
 # [3.4.0](https://github.com/wsuwebteam/web-design-system/compare/v3.3.0...v3.4.0) (2026-01-13)
 
 
