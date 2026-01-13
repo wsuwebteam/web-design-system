@@ -1,3 +1,16 @@
+# [3.4.0](https://github.com/wsuwebteam/web-design-system/compare/v3.3.0...v3.4.0) (2026-01-13)
+
+
+### Bug Fixes
+
+* updated swiper classes to avoid overrides outside of block ([e0d6662](https://github.com/wsuwebteam/web-design-system/commit/e0d66626dc0bcffbdb58250fc312449a56b0fe3c))
+* updated swiper classes to avoid overrides outside of block ([#49](https://github.com/wsuwebteam/web-design-system/issues/49)) ([88b7f49](https://github.com/wsuwebteam/web-design-system/commit/88b7f49049fa873f1d2ed39a9d84525d48bca8a0))
+
+
+### Features
+
+* add news cards styles ([1c49c72](https://github.com/wsuwebteam/web-design-system/commit/1c49c72cbd620d66135c6bafea6da8372984fb05))
+
 # [3.3.0](https://github.com/wsuwebteam/web-design-system/compare/v3.2.3...v3.3.0) (2025-09-16)
 
 
