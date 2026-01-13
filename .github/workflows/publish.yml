@@ -106,5 +106,6 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.PAT }}
+          NPM_TOKEN: ${{ secrets.CICD_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.CICD_TOKEN }}
         run: npx semantic-release
