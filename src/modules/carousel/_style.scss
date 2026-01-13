@@ -9,6 +9,13 @@
     overflow: hidden;
     margin: auto;
     
+
+    // Swiper class overrides to ensure correct tabbing order
+    .swiper-slide{
+        visibility: hidden; 
+        transition: all 150ms ease-in-out;
+    }
+
     &__pagination {
         display: flex; 
         justify-content: center; 
@@ -90,11 +97,6 @@
     }
 }
 
-// Swiper class overrides to ensure correct tabbing order
-.swiper-slide{
-    visibility: hidden;
-    transition: all 150ms ease-in-out;
-}
 
 .wsu-carousel[data-desktop-columns="5"] .wsu-carousel__wrapper{
     .swiper-slide-next + .swiper-slide + .swiper-slide + .swiper-slide {
