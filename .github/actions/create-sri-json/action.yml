@@ -1,0 +1,47 @@
+name: "Create SRI JSON"
+description: "Creates a JSON file containing SRI information for files in a given directory"
+
+inputs:
+  directory:
+    description: "Directory containing files to generate SRI information for"
+    required: true
+
+outputs:
+  success:
+    description: "Boolean value representing whether or not SRI JSON was created successfully."
+    
+runs:
+  using: "composite"
+  steps:
+    - name: Generate SRI JSON
+      working-directory: ${{ inputs.directory }}
+      shell: bash
+      run: |
+        # Initialize an empty array
+        JSON_ARRAY=()
+
+        # Collect css/js files for processing
+        FILES=$(find . -type f -iname '*.css' -or -iname '*.js')
+        
+        # Loop to generate JSON objects
+        for f in $FILES; 
+        do
+          # Create a JSON object for each iteration          
+          INTEGRITY=$(openssl dgst -sha384 -binary $f | openssl base64 -A)
+          NEW_PATH=$(echo $f | cut -c 3-)
+          
+          json_object=$(jq -n \
+              --arg index "$i" \
+              --arg file "$NEW_PATH" \
+              --arg integrity "$INTEGRITY" \
+              '{ "path": $file, "integrity": ("sha384-" + $integrity) }')
+
+          # Append the JSON object to the array
+          JSON_ARRAY+=("$json_object")          
+        done;
+
+        # Combine the array into a single JSON object
+        final_json=$(jq -s '.' <<< "${JSON_ARRAY[@]}")
+
+        # Write the JSON to a file
+        echo "$final_json" > sri.json

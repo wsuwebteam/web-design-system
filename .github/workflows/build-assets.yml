@@ -40,6 +40,11 @@ jobs:
         run: |
           npm ci          
           npm run build
+      
+      - name: Create SRI JSON
+        uses: ./.github/actions/create-sri-json
+        with:
+          directory: ./dist/bundles/
 
       - name: Publish artifact
         uses: actions/upload-artifact@v4
