@@ -74,7 +74,7 @@ class WsuMobileMenu {
         const KEYCODE_TAB = 9;
         const KEYCODE_ESCAPE = 27;
         let mobileMenu = document.querySelector(".wsu-mobile-menu");
-        
+
         try {
             if (event.code === "Escape" || event.keyCode === KEYCODE_ESCAPE) {
                 if (document.body.classList.contains("wsu-mobile-menu--is-open")) {
@@ -84,6 +84,11 @@ class WsuMobileMenu {
                     //toggleContainer.classList.remove("wsu-mobile-menu__toggle-container-open");
                 }
             }
+
+            if (!mobileMenu) {
+                return;
+            }
+
             // Gather all focusable elements in a list
             var query =
                 "a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type='email']:not([disabled]), input[type='text']:not([disabled]), input[type='radio']:not([disabled]), input[type='checkbox']:not([disabled]), select:not([disabled]), [tabindex='0']";

@@ -1,4 +1,7 @@
-import { ariaUpdate } from "../../../_assets/js/ariaUpdate"; 
+import { ariaUpdate } from "../../../_assets/js/ariaUpdate";
+import { elementGet } from "../../../_assets/js/partials/element";
+import { toggleAriaExpandedClose } from "../../../_assets/js/partials/toggle";
+import { keyDownEvent } from "../../../_assets/js/partials/events";
 
 class WsuNavigationSiteVertical {
 
