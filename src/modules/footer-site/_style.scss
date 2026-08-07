@@ -2,7 +2,7 @@
 @import '../../../_assets/scss/mixins';
 
 .wsu-footer-site {
-    
+
     box-sizing: border-box;
     padding: $wsu-spacing--xxmedium $wsu-spacing--large $wsu-spacing--xmedium;
     background-color: $wsu-color--gray-80;
@@ -38,7 +38,7 @@
         padding: 0;
         list-style-type: none;
         display: flex;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
 
         li {
             margin: 0;
@@ -49,10 +49,10 @@
                 content:"";
                 position: absolute;
                 top: 20%;
-                bottom: 20%; 
+                bottom: 20%;
                 width: 1px;
                 height: auto;
-                display: block; 
+                display: block;
                 left: 0;
                 background-color: $wsu-color--gray-25;
             }
@@ -64,13 +64,13 @@
                     display: none;
                 }
             }
-            
+
             a {
                 text-decoration: none;
                 color: inherit;
                 @include wsu-font--medium();
                 position: relative;
-                
+
                 &::before {
                     content: "";
                     display: block;
@@ -109,7 +109,7 @@
         margin-bottom: $wsu-spacing--component;
     }
 
-    .wsu-menu-utility { 
+    .wsu-menu-utility {
 
         li {
             text-transform: uppercase;
@@ -140,7 +140,7 @@
     .wsu-menu-utility ~ .wsu-coug-head {
         top: $wsu-spacing--xxmedium;
     }
- 
+
     .wsu-menu-deep-links {
         margin-bottom: $wsu-spacing--medium;
 
@@ -159,6 +159,19 @@
 
     .wsu-meta-address a:focus {
         outline-color: #fff;
+    }
+
+    .wsu-footer-site__widgets {
+
+        a {
+            color: currentcolor;
+            text-decoration-color: currentcolor;
+
+            &:hover,
+            &:focus {
+                text-decoration-color: transparent;
+            }
+        }
     }
 
 }
@@ -218,13 +231,13 @@
         }
 
     }
-    
+
 }
 
 
 /* ------------------- Print Styles ----------------- */
 
-@media print { 
+@media print {
     .wsu-footer-site {
         display: none !important;
     }

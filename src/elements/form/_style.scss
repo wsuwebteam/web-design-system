@@ -31,6 +31,8 @@
     &:focus {
         box-shadow: $wsu-dropshadow--low;
         border-color: $wsu-color--gray-80;
+        outline: 2px solid $wsu-color--gray-5;
+        outline-offset: 3px;
     }
 
 }
