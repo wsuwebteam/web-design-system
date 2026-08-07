@@ -1,3 +1,19 @@
+# [3.5.0](https://github.com/wsuwebteam/web-design-system/compare/v3.4.2...v3.5.0) (2026-08-07)
+
+
+### Bug Fixes
+
+* set footer widget link color to white on dark background ([3b8fcc1](https://github.com/wsuwebteam/web-design-system/commit/3b8fcc1b044c9eec1859f1947264dd2bcb64cfa1))
+* set footer widget link color to white on dark background ([#53](https://github.com/wsuwebteam/web-design-system/issues/53)) ([4125976](https://github.com/wsuwebteam/web-design-system/commit/4125976189024e9a6815b234abb990f1b9d8ee6f))
+* unclear select focus indicator on dark background ([c2e4097](https://github.com/wsuwebteam/web-design-system/commit/c2e4097af0ab9f5e84181e7b53e36bebe7f12ca1))
+* unclear select focus indicator on dark background ([#54](https://github.com/wsuwebteam/web-design-system/issues/54)) ([2435f2f](https://github.com/wsuwebteam/web-design-system/commit/2435f2f9f2c0f2afab21ff39fc4b7ee1a13f46d3))
+
+
+### Features
+
+* add unstyled fieldset version ([b47b4a4](https://github.com/wsuwebteam/web-design-system/commit/b47b4a4d1f743c9ac4a698d715972036ad75bdeb))
+* add unstyled fieldset version ([#51](https://github.com/wsuwebteam/web-design-system/issues/51)) ([48f8398](https://github.com/wsuwebteam/web-design-system/commit/48f83980a8f72d876e889bab2608142417140810))
+
 ## [3.4.2](https://github.com/wsuwebteam/web-design-system/compare/v3.4.1...v3.4.2) (2026-01-13)
 
 
