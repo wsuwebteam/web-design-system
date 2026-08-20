@@ -1,5 +1,7 @@
 import updateAriaElement from "../../../_assets/js/updateAriaElement";
-import { elementGetSiblings } from "../../../_assets/js/partials/element";
+import { elementGet, elementGetSiblings } from "../../../_assets/js/partials/element";
+import { toggleAriaExpandedClose } from "../../../_assets/js/partials/toggle";
+import { keyDownEvent } from "../../../_assets/js/partials/events";
 
 class WsuMenu {
 
